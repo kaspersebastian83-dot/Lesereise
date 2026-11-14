@@ -28,7 +28,8 @@ def espeak(text):
 EQ = [("ɡ", "g"), ("ɛ", "e"), ("ɪ", "i"), ("ɔ", "o"), ("ʊ", "u"), ("ʏ", "y"), ("œ", "ø"), ("ɐ", "a"),
       ("ʁ", "r"), ("ɾ", "r"), ("χ", "r"), ("ʀ", "r"), ("z", "s"), ("w", "v"), ("ʋ", "v"), ("ɑ", "a"), ("æ", "e"), ("ə", "e")]
 def norm(ipa):
-    ipa = re.sub(r"[ˈˌː̩̯ˑ\s\.\-ʰʔ'|]", "", ipa)
+    ipa = " ".join(t[:-1] if t in ("ph", "th", "kh") else t for t in ipa.split())
+    ipa = re.sub(r"[0-9ˈˌː̩̯ˑ\s\.\-ʰʔ'|]", "", ipa)
     for a, b in EQ:
         ipa = ipa.replace(a, b)
     return ipa
