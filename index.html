@@ -224,20 +224,27 @@ function pickVoice(){ try{ const v=speechSynthesis.getVoices().filter(v=>/^de/i.
 try{ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; }catch(e){}
 function stopAll(){ gen++; if(curAudio){ try{curAudio.pause()}catch(e){} curAudio=null; }
   try{speechSynthesis.cancel()}catch(e){} if(curRes){ const r=curRes; curRes=null; r(); } }
+/* clips shipped with the repo: audio/<key>.mp3, listed in audio/manifest.json */
+const repoClips=new Set(), repoBad=new Set();
+try{ fetch('audio/manifest.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null)
+  .then(m=>{ if(m&&Array.isArray(m.clips)) m.clips.forEach(k=>repoClips.add(k)); }).catch(()=>{}); }catch(e){}
 function playOne(key){
   return new Promise(res=>{
     let done=false; const fin=()=>{ if(!done){done=true; if(curRes===fin)curRes=null; res();} };
     curRes=fin;
-    if(clipUrl[key]){
-      try{ const a=new Audio(clipUrl[key]); curAudio=a; a.onended=fin; a.onerror=fin;
-        const p=a.play(); if(p&&p.catch)p.catch(fin); }catch(e){fin()}
-      setTimeout(fin,9000);
-    }else{
+    const speak=()=>{ if(done)return;
       const text=(CLIPS[key]&&CLIPS[key].tts)||key;
       try{ const u=new SpeechSynthesisUtterance(text); u.lang='de-DE'; u.rate=.8; u.pitch=1.15; if(deVoice)u.voice=deVoice;
         u.onend=fin; u.onerror=fin; speechSynthesis.speak(u); setTimeout(fin,1500+text.length*130); }
-      catch(e){ setTimeout(fin,350); }
-    }
+      catch(e){ setTimeout(fin,350); } };
+    const src = clipUrl[key] || (repoClips.has(key)&&!repoBad.has(key) ? 'audio/'+key+'.mp3' : null);
+    if(src){
+      const fromRepo=!clipUrl[key];
+      const fail=()=>{ if(fromRepo){ repoBad.add(key); speak(); } else fin(); };
+      try{ const a=new Audio(src); curAudio=a; a.onended=fin; a.onerror=fail;
+        const p=a.play(); if(p&&p.catch)p.catch(e=>{ if(e&&e.name==='NotAllowedError') fin(); else fail(); }); }catch(e){fail()}
+      setTimeout(fin,9000);
+    }else speak();
   });
 }
 async function say(...keys){ stopAll(); const my=gen;
@@ -405,7 +412,8 @@ function clipList(onlyMissing){
 }
 function openParent(){
   stopAll(); show('parent');
-  const total=Object.keys(CLIPS).length, have=Object.keys(clipUrl).length;
+  const total=Object.keys(CLIPS).length, have=Object.keys(clipUrl).length,
+    inRepo=Object.keys(CLIPS).filter(k=>repoClips.has(k)).length;
   const W=$('parentWrap');
   W.innerHTML=`
   <button class="x" id="pClose" aria-label="Schließen">×</button>
@@ -426,7 +434,7 @@ function openParent(){
 
   <h2>Stimme (ElevenLabs)</h2>
   <div class="box">
-    <p><b>${have} von ${total}</b> Aufnahmen geladen. Ohne Aufnahme spricht die Gerätestimme – die kann einzelne Laute nur ungenau.</p>
+    <p><b>${inRepo} von ${total}</b> Aufnahmen aus dem Repo (GitHub-Aktion „Stimmen erzeugen“), <b>${have}</b> hier auf dem Gerät importiert (haben Vorrang). Ohne Aufnahme spricht die Gerätestimme – die kann einzelne Laute nur ungenau.</p>
     <p>Dateien genau so benennen wie in der Liste (z. B. <code>laut_m.mp3</code>, <code>silbe_ma.mp3</code>, <code>wort_mama.mp3</code>) und hier alle auf einmal auswählen:</p>
     <p><input type="file" id="pFiles" accept="audio/*" multiple></p>
     <p id="pMsg"></p>
