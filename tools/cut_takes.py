@@ -161,7 +161,7 @@ def segments(x, thr_rel=-56.0, min_sil=0.07):
             i += 1
     return segs
 
-def cut_items(x, wins):
+def cut_items(x, wins, lead_end=None):
     segs = segments(x)
     out = []
     for w_i, w in enumerate(wins):
@@ -171,6 +171,10 @@ def cut_items(x, wins):
         if not ov:
             out.append(None); continue
         a, b = ov[0][0], ov[-1][1]
+        if w_i == 0 and lead_end is not None and a < lead_end - 0.1:
+            # the lead-in ("Lies mit:") ran straight into the first word: split at the quietest spot between them
+            db = env_db(x); lo = int(max(a, lead_end - 0.25) / 0.005); hi = int(min(b, t0 + 0.12) / 0.005)
+            if hi > lo + 2: a = (lo + int(np.argmin(db[lo:hi]))) * 0.005
         # never reach into the neighbours' aligned windows
         if w_i > 0 and wins[w_i - 1]: a = max(a, (wins[w_i - 1][3] + t0) / 2 if ov[0][0] < wins[w_i - 1][3] else a)
         if w_i + 1 < len(wins) and wins[w_i + 1]: b = min(b, (t1 + wins[w_i + 1][2]) / 2 if ov[-1][1] > wins[w_i + 1][2] else b)
@@ -207,7 +211,9 @@ def main():
             continue
         x = decode(jp[:-5] + ".mp3")
         wins = item_windows(take)
-        for c in cut_items(x, wins):
+        _al = take["alignment"]; _tx = "".join(_al["characters"]); _ci = _tx.find(":") if ":" in _tx[:20] else -1
+        lead_end = _al["character_end_times_seconds"][_ci] if _ci >= 0 else None
+        for c in cut_items(x, wins, lead_end):
             if c is None: continue
             key, say, a, b, t0, t1 = c
             seg = x[int(a * SR):int(b * SR)]

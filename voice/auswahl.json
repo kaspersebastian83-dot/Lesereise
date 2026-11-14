@@ -19,6 +19,8 @@
  "laut_u": "laut_u__vow_v3",
  "laut_w": "laut_w__cv_w_v3L-a",
  "laut_z": "laut_z__cv_z_v3L-a",
+ "s_sterne2": "alt",
+ "s_zucker1": "alt",
  "silbe_a": "silbe_a__syl_00_v3",
  "silbe_af": "silbe_af__syl_03_v3",
  "silbe_an": "silbe_an__syl_12_v3",
@@ -208,5 +210,17 @@
  "silbe_zie": "silbe_zie__syl_13_v2",
  "silbe_zo": "silbe_zo__cv_z_v3L",
  "silbe_zu": "silbe_zu__cv_z_v2P",
- "silbe_zug": "alt"
+ "silbe_zug": "alt",
+ "u_kirschbluete": "alt",
+ "u_kristall": "alt",
+ "u_sonnenschein": "alt",
+ "u_wolke": "alt",
+ "wort_bonbon": "alt",
+ "wort_ente": "alt",
+ "wort_kamel": "alt",
+ "wort_nilpferd": "alt",
+ "wort_robbe": "alt",
+ "wort_traktor": "alt",
+ "wort_trompete": "alt",
+ "wort_tuer": "alt"
 }
