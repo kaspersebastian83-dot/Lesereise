@@ -57,6 +57,8 @@ name = "facebook/wav2vec2-lv-60-espeak-cv-ft"
 proc = Wav2Vec2Processor.from_pretrained(name)
 model = Wav2Vec2ForCTC.from_pretrained(name).eval()
 
+_ref = os.path.join(ROOT, FOLDERS[0], "_ref_a.mp3") if FOLDERS else ""
+if os.path.exists(_ref): os.environ["REF_A"] = os.path.relpath(_ref, ROOT)
 REF_A = load(os.path.join(ROOT, os.environ.get("REF_A", "audio/laut_a.mp3"))) if os.path.exists(os.path.join(ROOT, os.environ.get("REF_A", "audio/laut_a.mp3"))) else None
 files = []
 for f in FOLDERS:
