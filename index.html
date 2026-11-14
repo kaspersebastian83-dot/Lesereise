@@ -3052,8 +3052,8 @@ const DRACHE2={id:'drache', v2:true, title:'Der kleine Drache und der Glitzer', 
   p:[['l1','LPOST',23,54,40,'lamp2'],['l2','LPOST',57,50,44,'lamp2'],['l3','LPOST',66,52,38,'lamp2'],['l4','LPOST',45,48,44,'lamp2']],
   lights:[{id:'drache',r0:13,rT:13,k0:.4,kT:.4},{id:'gross',r0:18,rT:18,k0:.35,kT:.35}],
   enter(){ TST.dm='hope'; TST.gm='smile'; lampOn('l1','fire',true); [0,1,2,3,4,5,6,7].forEach(i=>winOn(i,i%3?'fire':null));
-    const fire=(id,ms)=>bLater(()=>{ mood('gross','fire'); breathFx(mouthGd,lampPt(id),1300,'fire',()=>{ lampOn(id,'fire'); mood('gross','smile'); }); chime([196,262]); },ms);
-    fire('l3',2200); fire('l2',6200); },
+    const fire=(id,ms)=>bLater(()=>{ if(TB.done||TB.els[id].classList.contains('fire')) return; mood('gross','fire'); breathFx(mouthGd,lampPt(id),1300,'fire',()=>{ lampOn(id,'fire'); mood('gross','smile'); }); chime([196,262]); },ms);
+    fire('l3',11800); fire('l2',15600); },
   ready(){ ['l2','l3'].forEach(i=>{ if(!TB.els[i].classList.contains('fire')) lampOn(i,'fire',true); }); mood('gross','smile'); },
   a:{t:'flick',id:'drache',at:[.78,.47],n:2,w:'DRACHE'},
   s:'Es war einmal ein kleiner Drache. Er wohnte mit den großen Drachen auf dem Drachenberg, gleich beim Schloss des Königs. Heute war Lichterfest! Die großen Drachen zündeten mit ihrem Feuer die Laternen an. Fauch! Da wollte der kleine Drache auch helfen. Er rief: Eins, zwei, drei – und Feuer fliegt herbei! Hilf ihm pusten! Wisch von seinem Mund schnell nach oben!',
@@ -3131,7 +3131,7 @@ const DRACHE2={id:'drache', v2:true, title:'Der kleine Drache und der Glitzer', 
   p:[['n1','NESTB',25,45,9,'nest2 kid','ast'],['n2','NESTY',55,34,9,'nest2 kid','ast'],['n3','NESTP',78,26,9,'nest2 kid','ast'],
      ['k1','CHKP',42,87,12,'chick shiver'],['k2','CHKB',58,90,12,'chick shiver'],['k3','CHKY',74,87,12,'chick shiver']],
   lights:[{id:'drache',r0:12,rT:12,k0:.5,kT:.5},{id:'k2',r0:16,rT:16,k0:.5,kT:.5}],
-  enter(){ mood('drache','shy'); windFx(5); [['n1','#6ab8ff'],['n2','#ffd84a'],['n3','#ff8fc8']].forEach(([n,c])=>TB.els[n].style.setProperty('--nc',c)); bLater(()=>this.glow(),6500); },
+  enter(){ mood('drache','shy'); windFx(5); [['n1','#6ab8ff'],['n2','#ffd84a'],['n3','#ff8fc8']].forEach(([n,c])=>TB.els[n].style.setProperty('--nc',c)); bLater(()=>this.glow(),9300); },
   glow(){ if(TB.nlit) return; TB.nlit=true; mood('drache','puff'); ['n1','n2','n3'].forEach((n,i)=>bLater(()=>breathFx(mouthKd,()=>ctr(TB.els[n]),900,'glit',()=>{ const N=TB.els[n]; N.classList.add('lit'); sqs(N); light({el:N,r0:2,rT:11,k0:.8,kT:.8,warm:.3}); fxBurst(...ctr(N),12,GLCOL); chime([988+i*165]); }),i*300));
     bLater(()=>mood('drache','shy'),1600); },
   ready(){ this.glow(); },
@@ -3150,9 +3150,9 @@ const DRACHE2={id:'drache', v2:true, title:'Der kleine Drache und der Glitzer', 
   lights:[{id:'drache',r0:13,rT:13,k0:.55,kT:.55},{id:'koenig',r0:10,rT:10,k0:.3,kT:.3}],
   enter(){ TST.km='worry'; mood('koenig','worry'); mood('drache','shy'); mood('gross','smile'); windFx(10);
     LAMPS.forEach(i=>lampOn(i,'fire',true)); for(let i=0;i<8;i++) winOn(i,'fire');
-    LAMPS.forEach((id,k)=>bLater(()=>{ if(TB.done) return; lampOn(id,null); },2000+k*900)); [5,1,7,3,4,0,6,2].forEach((w,k)=>bLater(()=>{ if(!TB.done) winOn(w,null); },2400+k*500));
-    bLater(()=>{ if(TB.done) return; mood('gross','fire'); breathFx(mouthGd,lampPt('l3'),1500,'fizzle',()=>{ mood('gross','worry'); }); chime([196,165]); },7600);
-    bLater(()=>{ if(!TB.done) mood('gross','worry'); },9400); },
+    LAMPS.forEach((id,k)=>bLater(()=>{ if(TB.done) return; lampOn(id,null); },3000+k*900)); [5,1,7,3,4,0,6,2].forEach((w,k)=>bLater(()=>{ if(!TB.done) winOn(w,null); },3400+k*450));
+    bLater(()=>{ if(TB.done) return; mood('gross','fire'); breathFx(mouthGd,lampPt('l3'),1500,'fizzle',()=>{ mood('gross','worry'); }); chime([196,165]); },7300);
+    bLater(()=>{ if(!TB.done) mood('gross','worry'); },9600); },
   ready(){ if(TB.done) return; LAMPS.forEach(i=>{ if(TB.els[i].classList.contains('fire')) lampOn(i,null,true); }); for(let i=0;i<8;i++) winOn(i,null); mood('gross','worry'); },
   a:{t:'flick',id:'drache',at:[.78,.47],n:1,charge:1,ms:1800,wait:400,w:'LICHT'},
   s:'Am Schloss heulte der Sturm. Huuuh! Er pustete ein Licht nach dem anderen aus. Die großen Drachen fauchten Feuer, aber der Wind blies es sofort wieder aus. Alle hatten Angst im Dunkeln. Da sagte der kleine Drache: Ich versuche es! Leg den Finger auf ihn, dann holt er ganz tief Luft. Und dann wisch schnell nach oben!',
@@ -3171,7 +3171,7 @@ const DRACHE2={id:'drache', v2:true, title:'Der kleine Drache und der Glitzer', 
   p:[['l1','LPOST',21,54,40,'lamp2'],['l2','LPOST',46,48,42,'lamp2'],['l3','LPOST',67,52,40,'lamp2'],['l4','LPOST',96,50,40,'lamp2'],['kissen','KISSEN',57,77.5,5.4,'front'],['krone','CROWN',57,74,5.6,'crown front']],
   lights:[{id:'drache',r0:14,rT:14,k0:.5,kT:.5},{id:'koenig',r0:13,rT:13,k0:.45,kT:.45},{id:'krone',r0:8,rT:8,k0:.6,kT:.6,warm:.6}],
   enter(){ mood('drache','shy'); mood('koenig','smile'); TST.gm='sorry'; LAMPS.forEach(i=>lampOn(i,'glit',true)); for(let i=0;i<8;i++) winOn(i,'glit'); glitSparkle();
-    ['gross2','gross'].forEach((g,i)=>bLater(()=>{ const G=TB.els[g]; G.classList.remove('bow'); void G.offsetWidth; G.classList.add('bow'); mood(g,'sorry'); },5200+i*350)); },
+    ['gross2','gross'].forEach((g,i)=>bLater(()=>{ const G=TB.els[g]; G.classList.remove('bow'); void G.offsetWidth; G.classList.add('bow'); mood(g,'sorry'); },2900+i*350)); },
   a:{t:'drag',ids:['krone'],to:'kopf',w:'KRONE'},
   s:'Da wurde der Sturm ganz still. Die großen Drachen verbeugten sich vor dem kleinen Drachen. Es tut uns leid, dass wir gelacht haben. Dein Glitzer ist wunderbar! Und der König sagte: Ab heute bist du mein Lichtmeister. Setz ihm die Krone auf!',
   h:'Nimm die Krone und zieh sie auf den Kopf vom kleinen Drachen!',
