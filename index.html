@@ -2639,9 +2639,12 @@ function bCover(){ return `<div class="bcover"><span class="st" style="left:12%;
 function bSet(side,i){ $('bk').querySelector('.pg'+side).innerHTML=side==='L'?bPageL(i):bPageR(i); }
 function bDots(){ const n=bItems().length; $('bkDots').innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===BOOK.i?'on':''}"></i>`).join('');
   $('bookWrap').querySelector('.cL').classList.toggle('off',BOOK.i===0); $('bookWrap').querySelector('.cR').classList.toggle('off',BOOK.i>=n-1); }
-async function owlSay(...k){ const o=$('owl'); o.classList.add('talk'); const r=await say(...k); o.classList.remove('talk'); return r; }
+function owlSay(...k){ return say(...k); }
+/* the beak moves exactly while something is spoken in the book */
+setInterval(()=>{ const on=$('bookScr').classList.contains('on'); let sp=false; try{ sp=on&&((curAudio&&!curAudio.paused&&!curAudio.ended)||speechSynthesis.speaking); }catch(e){}
+  $('owl').classList.toggle('talk',!!sp); },150);
 function owlDo(c,ms){ const o=$('owl'); o.classList.remove(c); void o.offsetWidth; o.classList.add(c); setTimeout(()=>o.classList.remove(c),ms||2200); }
-const bLive=run=>BOOK.run===run&&$('bookScr').classList.contains('on');
+const bLive=(run,fl)=>BOOK.run===run&&(fl==null||BOOK.flow===fl)&&$('bookScr').classList.contains('on');
 function bTitle(i){ const it=bItems()[i]; return owlSay(it.k==='lesen'?'b_lesen':'t_'+it.t.id+'_titel'); }
 function bIdle(){ clearTimeout(BOOK.idle); const run=BOOK.run; if(BOOK.hints>=2) return;
   BOOK.idle=setTimeout(()=>{ if(!bLive(run)||!BOOK.open||BOOK.busy||BOOK.drag) return; BOOK.hints++; bHint(); owlSay('b_tipp'); bIdle(); },BOOK.hints?26000:13000); }
@@ -2658,7 +2661,7 @@ function bLeafMake(dir){ const n=bItems().length, i=BOOK.i, j=i+dir; if(j<0||j>=
   $('bk').appendChild(L); BOOK.leaf=L; return L; }
 function bLeafAngle(a){ const L=BOOK.leaf; if(!L) return; L.dataset.a=a; L.style.transform=`rotateY(${-a}deg)`; L.style.setProperty('--sh',Math.sin(a*Math.PI/180).toFixed(2)); }
 function bLeafEnd(ok){ const L=BOOK.leaf; if(!L) return; const dir=+L.dataset.dir, i=BOOK.i, j=i+dir;
-  if(ok){ BOOK.i=j; S.bookPage=j; save(); bSet(dir>0?'L':'R',j); chime([dir>0?988:880,dir>0?1318:1175]); }
+  if(ok){ BOOK.flow=(BOOK.flow||0)+1; BOOK.i=j; S.bookPage=j; save(); bSet(dir>0?'L':'R',j); chime([dir>0?988:880,dir>0?1318:1175]); }
   else bSet(dir>0?'R':'L',i);
   L.remove(); BOOK.leaf=null; BOOK.busy=false; bDots(); if(ok){ owlDo('joy',900); bTitle(BOOK.i); } bIdle(); }
 function bTurn(dir,from){ if(BOOK.busy||!BOOK.open) return; const L=BOOK.leaf||bLeafMake(dir);
@@ -2683,9 +2686,9 @@ function openBook(i,mode){ stopAll(); stopScene(); try{ qClear(); tClear(); fxSt
     const first=!S.seen.book; S.seen.book=true; save();
     (async()=>{ await wait(500); if(!bLive(run)) return; owlDo('wave',2200);
       await owlSay(first?'b_hallo1':rnd(['b_hallo2','b_hallo3'])); if(!bLive(run)) return;
-      L.remove(); await bOpen(); if(!bLive(run)) return;
-      if(first){ await wait(300); if(!bLive(run)) return; await owlSay('b_auf'); if(!bLive(run)) return; }
-      await bTitle(BOOK.i); if(bLive(run)) bIdle(); })(); }
+      L.remove(); await bOpen(); const fl=BOOK.flow||0; if(!bLive(run,fl)) return;
+      if(first){ await wait(300); if(!bLive(run,fl)) return; await owlSay('b_auf'); if(!bLive(run,fl)) return; }
+      await bTitle(BOOK.i); if(bLive(run,fl)) bIdle(); })(); }
   else { BOOK.open=true; w.classList.remove('closed'); $('bookScr').classList.remove('closedS');
     (async()=>{ await wait(350); if(!bLive(run)) return; owlDo('wave',1400); await owlSay('b_weiter'); if(bLive(run)) bIdle(); })(); } }
 /* start what is on the page */
