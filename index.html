@@ -275,7 +275,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 #tale .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;gap:2vw;padding:0 2vw;z-index:6;pointer-events:none}
 #tale .bar button{pointer-events:auto}
 #taleDots{margin-left:auto;display:flex;gap:1.2vw;padding-right:1vw} #taleDots i{width:2.2vh;height:2.2vh;border-radius:50%;background:rgba(255,255,255,.3);box-shadow:0 0 1vh rgba(0,0,0,.3)}
-#taleDots i.done{background:var(--gold)} #taleDots i.now{background:#fff;box-shadow:0 0 2vh 1vh rgba(255,255,255,.7)}
+#taleDots i.done{background:var(--gold)} #taleDots i.next{animation:pulse 1s ease-in-out infinite;background:rgba(255,255,255,.75)} #taleDots i.now{background:#fff;box-shadow:0 0 2vh 1vh rgba(255,255,255,.7)}
 .tp{position:absolute;translate:-50% -50%;line-height:1;z-index:3;padding:.5vh;filter:drop-shadow(0 0 2vh rgba(255,245,210,.6));transition:opacity .6s,filter .8s}
 .tp.tuni{z-index:4;padding:0}
 .tp.ask{animation:float 2.2s ease-in-out infinite}
@@ -727,23 +727,41 @@ function stopAll(){ gen++; if(curAudio){ try{curAudio.pause()}catch(e){} curAudi
 const repoClips=new Set(), repoBad=new Set();
 try{ fetch('audio/manifest.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null)
   .then(m=>{ if(m&&Array.isArray(m.clips)) m.clips.forEach(k=>repoClips.add(k)); }).catch(()=>{}); }catch(e){}
+/* one audio element for everything: once a tap has unlocked it (iPad/iPhone), later clips may play without a tap */
+const AUD=new Audio(); AUD.preload='auto'; let audTok=0, audUnlocked=false;
+function silentWav(){ const n=800,b=new ArrayBuffer(44+n),v=new DataView(b),w=(o,t)=>{ for(let i=0;i<t.length;i++) v.setUint8(o+i,t.charCodeAt(i)); };
+  w(0,'RIFF'); v.setUint32(4,36+n,true); w(8,'WAVE'); w(12,'fmt '); v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true);
+  v.setUint32(24,8000,true); v.setUint32(28,8000,true); v.setUint16(32,1,true); v.setUint16(34,8,true); w(36,'data'); v.setUint32(40,n,true);
+  for(let i=0;i<n;i++) v.setUint8(44+i,128); return URL.createObjectURL(new Blob([b],{type:'audio/wav'})); }
+function unlockAudio(){ if(audUnlocked) return; audUnlocked=true;
+  try{ if(!AUD.src){ AUD.src=silentWav(); const p=AUD.play(); if(p&&p.catch) p.catch(()=>{}); } }catch(e){}
+  try{ speechSynthesis.speak(new SpeechSynthesisUtterance('')); }catch(e){} }
+['pointerdown','touchend','click'].forEach(t=>document.addEventListener(t,unlockAudio,{capture:true,passive:true}));
 function playOne(key){
   return new Promise(res=>{
-    let done=false; const fin=()=>{ if(!done){done=true; if(curRes===fin)curRes=null; res();} };
+    let done=false, failed=false; const tm=[];
+    const fin=()=>{ if(!done){ done=true; tm.forEach(clearTimeout); if(curRes===fin)curRes=null; res(); } };
     curRes=fin;
+    /* device voice: if it never starts (no German voice, blocked), go on after a moment instead of waiting in silence */
     const speak=()=>{ if(done)return;
       const text=(CLIPS[key]&&CLIPS[key].tts)||key;
-      try{ const u=new SpeechSynthesisUtterance(text); u.lang='de-DE'; u.rate=.8; u.pitch=1.15; if(deVoice)u.voice=deVoice;
-        u.onend=fin; u.onerror=fin; speechSynthesis.speak(u); setTimeout(fin,1500+text.length*130); }
-      catch(e){ setTimeout(fin,350); } };
-    const src = clipUrl[key] || (repoClips.has(key)&&!repoBad.has(key) ? 'audio/'+key+'.mp3' : null);
-    if(src){
-      const fromRepo=!clipUrl[key];
-      const fail=()=>{ if(fromRepo){ repoBad.add(key); speak(); } else fin(); };
-      try{ const a=new Audio(src); curAudio=a; a.onended=fin; a.onerror=fail;
-        const p=a.play(); if(p&&p.catch)p.catch(e=>{ if(e&&e.name==='NotAllowedError') fin(); else fail(); }); }catch(e){fail()}
-      setTimeout(fin,9000);
-    }else speak();
+      try{ let started=false; const u=new SpeechSynthesisUtterance(text); u.lang='de-DE'; u.rate=.8; u.pitch=1.15; if(deVoice)u.voice=deVoice;
+        u.onstart=()=>{ if(started) return; started=true; tm.push(setTimeout(fin,2500+text.length*130)); };
+        u.onend=fin; u.onerror=fin; speechSynthesis.speak(u);
+        tm.push(setTimeout(()=>{ if(!started&&!speechSynthesis.speaking) fin(); },1800), setTimeout(fin,4000+text.length*130)); }
+      catch(e){ tm.push(setTimeout(fin,350)); } };
+    /* recorded clip: imported on this device, or audio/<key>.mp3 (tried even if an old manifest does not list it yet) */
+    const src = clipUrl[key] || (repoBad.has(key) ? null : 'audio/'+key+'.mp3');
+    if(!src) return speak();
+    const fromRepo=!clipUrl[key];
+    const fail=()=>{ if(done||failed) return; failed=true; tm.forEach(clearTimeout); tm.length=0; if(fromRepo){ repoBad.add(key); speak(); } else fin(); };
+    try{ const a=AUD, my=++audTok;
+      a.onended=()=>{ if(my===audTok) fin(); }; a.onerror=()=>{ if(my===audTok) fail(); };
+      a.onloadedmetadata=()=>{ if(my===audTok&&!done&&isFinite(a.duration)&&a.duration>0) tm.push(setTimeout(fin,a.duration*1000+2500)); };
+      a.src=src; curAudio=a;
+      const p=a.play(); if(p&&p.catch)p.catch(e=>{ if(my!==audTok) return; if(e&&e.name==='NotAllowedError') fin(); else if(!(e&&e.name==='AbortError')) fail(); });
+      tm.push(setTimeout(()=>{ if(my===audTok&&!done&&a.currentTime===0) fail(); },7000), setTimeout(fin,120000));
+    }catch(e){ fail(); }
   });
 }
 async function say(...keys){ stopAll(); const my=gen;
@@ -1459,6 +1477,7 @@ function hint2(speak){ if(!TB||!TB.live) return; G2[TB.a.t].hint(); if(speak) sa
 function miss2(){ TB.tries++; if(TB.tries>=2){ TB.tries=0; hint2(false); } }
 function done2(){ if(!TB||TB.done) return; TB.done=true; TB.live=false; TB.it.forEach(clearTimeout); ghostOff(); const sc=TB.sc, a=TB.a, run=tale.run;
   chime([784,988,1175,1568]); const [hx,hy]=ctr(TB.els.uni); hearts(hx,hy-vu()*8,4);
+  const dots=$('taleDots').children; if(dots[tale.i]) dots[tale.i].className='done'; if(dots[tale.i+1]) dots[tale.i+1].className='next';
   const v=TB.els.uni.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy');
   if(sc.done) sc.done();
   (async()=>{ await wait(400); if(!okRun(run,sc)) return;
@@ -1656,13 +1675,21 @@ const LATERNE2={id:'laterne', v2:true, title:'Die kleine Laterne', icon:'🏮', 
   enter(){ fxFlies(8,true,true); FX.att=wpx(24,44); },
   s:'Tief im Wald schwirrten kleine Glühwürmchen umher. Sie hatten sich verflogen und fanden ihren Baum nicht mehr. Zeig ihnen den Weg! Fahr mit dem Finger den leuchtenden Weg entlang.',
   h:'Fahr mit dem Finger den Punkten nach, bis zum Baum!',
-  done(){ TB.els.hoehle.classList.add('lit'); TB.holeL.rT=10; chime([1318,1568]); },
+  done(){ TB.els.hoehle.classList.add('lit'); TB.holeL.rT=10; chime([1318,1568]);
+    /* the path fades, the fireflies dance a big circle round their tree, then set off to the lantern */
+    (TB.dots||[]).forEach(d=>d&&(d.style.transition='opacity 1s',d.style.opacity=0)); if(TB.lead) TB.lead.style.opacity=0;
+    const [hx,hy]=ctr(TB.els.hoehle), t0=now(); FX.att=[hx,hy];
+    const iv=setInterval(()=>{ if(!TB||TB.sc.a.t!=='trace'||!FX.att){ clearInterval(iv); return; } const t=(now()-t0)/1000; if(t>4.2){ clearInterval(iv); FX.att=lanC(); return; }
+      FX.att=[hx+Math.cos(t*2.6)*vu()*12, hy-vu()*10+Math.sin(t*2.6)*vu()*9]; if(Math.random()<.25) fxBurst(FX.att[0],FX.att[1],6,['rgba(230,255,140,.95)','rgba(255,226,122,.9)'],14); },60); taleT.push(iv); },
   d:['Zu Hause! Die Glühwürmchen tanzten vor Freude und riefen: Wer uns hilft, dem helfen wir auch!',
-     ()=>{ FX.att=lanC(); },
+     ()=>{ FX.att=lanC(); const L=TB.els.lan; L.classList.remove('happy2'); void L.offsetWidth; L.classList.add('happy2'); },
      'Jedes schenkte der Kerze einen kleinen Funken.',
      ()=>{ LST.lit=true; const L=TB.els.lan; L.classList.add('lit'); TB.lanL=light({el:L,oy:.62,r0:4,rT:38,k0:.2,kT:1,warm:1,flick:1}); FX.darkT=.5;
        fxBurst(...lanC(),50,['rgba(255,226,122,.95)','rgba(255,190,90,.9)'],40); glitterBurst(...lanC(),40,30); chime([523,659,784,1047,1318]);
-       bLater(()=>FX.P.forEach(p=>{ p.sw=false; }),1500); }, 1200,
+       const L2=TB.els.lan; L2.classList.remove('happy2'); void L2.offsetWidth; L2.classList.add('happy2');
+       FX.em.push({rate:5,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(['rgba(255,226,122,.9)','rgba(255,255,255,.9)'])})});
+       bLater(()=>FX.P.forEach(p=>{ p.sw=false; }),1500); }, 400,
+     ()=>{ const v=TB.els.uni.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); hearts(...lanC(),6); },
      'Und die Laterne leuchtete, zum allerersten Mal! Sternlein oben, hell und klar, sang sie, seht ihr mich? Jetzt bin ich da!']},
  {set:'lichtung', dark:.48, fx:{leaves:1.2}, u:[28,64,44], lan:{at:'horn'}, lanR:34,
   p:[['wind','🌬️',80,40,17,'windc'],['farn','🌿',88,86,16]],
