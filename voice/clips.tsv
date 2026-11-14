@@ -21,6 +21,42 @@ g_bruecke	Das ist die Zauberbrücke. Sie ist zerbrochen! Wenn du zwei Laute zusa
 g_turm	Das ist der Sternenturm. Hier wohnen die Zauberwörter. Wer sie liest, bringt den Turm zum Leuchten.
 g_fertig	Geschafft! Deine Sterne fliegen zurück an den Himmel.
 g_level	Schau mal! Neue Buchstabensterne sind aufgewacht.
+g_herde	Das ist die Einhornwiese. Hier wohnen alle deine Einhörner. Tippe sie an!
+g_freund	Jetzt habt ihr noch eine Freundin mehr. Komm, wir suchen weiter nach den Sternen!
+c_1	Hörst du das Glitzern? Da fliegt ein Einhorn heran! Das ist Glitzer. Glitzer möchte deine Freundin sein.
+c_2	Schau, eine Sternschnuppe! Sie landet ganz sanft. Und es ist ein Einhorn! Das ist Sternchen.
+c_3	Hinter dem Mond versteckt sich jemand. Hallo, Mondschein! Komm heraus, wir lesen zusammen.
+c_4	Die kleine Wolke wackelt. Puff! Da ist Wolke, das flauschigste Einhorn am ganzen Himmel.
+c_5	Eine Blume wächst und wächst. Sie öffnet sich, und heraus springt Blume!
+c_6	Ein Regenbogen leuchtet auf. Wer rutscht denn da herunter? Juhu, das ist Regenbogen!
+c_7	Rosa Zuckerwatte-Wolken! Und mittendrin hüpft Zuckerwatte. Hihi, wie süß!
+c_8	Am Meer liegt eine Muschel. Sie öffnet sich ganz langsam. Darin schläft Perle. Guten Morgen, Perle!
+c_9	Die Kristalle funkeln immer heller. Und dann steht da Kristall und glitzert wie Eis.
+c_10	Die Sonne geht auf. Mit ihr kommt Sonnenschein und macht alles warm und hell.
+c_11	Es schneit! Die Flocken tanzen und werden zu einem Einhorn. Hallo, Schneeflocke!
+c_12	Lauter Schmetterlinge flattern herbei. Sie bringen Lavendel mit, ein ganz sanftes Einhorn.
+c_13	Rosa Blütenblätter regnen vom Baum. Kirschblüte tanzt durch den Blütenregen!
+c_14	Am Himmel tanzen bunte Lichter. Polarlicht fliegt mitten hindurch!
+c_15	Hüpf, hüpf, von Wolke zu Wolke. Himmelblau kommt dich besuchen! Jetzt sind alle Einhörner da!
+f_1	Alle deine Einhörner tanzen im Mondlicht. Was für ein Fest!
+f_2	Die Einhörner fliegen eine Runde über den Sternenhimmel. Wuiii!
+f_3	Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!
+u_funkel	Funkel
+u_glitzer	Glitzer
+u_sternchen	Sternchen
+u_mondschein	Mondschein
+u_wolke	Wolke
+u_blume	Blume
+u_regenbogen	Regenbogen
+u_zuckerwatte	Zuckerwatte
+u_perle	Perle
+u_kristall	Kristall
+u_sonnenschein	Sonnenschein
+u_schneeflocke	Schneeflocke
+u_lavendel	Lavendel
+u_kirschbluete	Kirschblüte
+u_polarlicht	Polarlicht
+u_himmelblau	Himmelblau
 laut_m	Mmmmm
 laut_a	Aaaah
 laut_l	Lllll

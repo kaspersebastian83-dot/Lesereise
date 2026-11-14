@@ -10,6 +10,11 @@ Lesen-lern-Spiel für Kinder ab ca. 3 Jahren – eine einzige HTML-Datei, offlin
 
 Buchstaben kommen in fünf Stufen dazu: `M A L O I` → `S N E` → `R T U` → `D H P F` → `B K W G Z`.
 
+## Einhörner
+Funkel und 15 Einhorn-Freundinnen. Nach jeder geschafften Runde kommt eine neue dazu – jede mit eigener kleiner
+Geschichte und Animation (aus der Wolke, vom Regenbogen, hinter dem Mond …). Auf der Einhornwiese (🦄-Knopf) wohnen alle;
+antippen = Name hören. Nach jeder richtigen Antwort fliegt ein Einhorn mit Glitzerspur vorbei.
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 
