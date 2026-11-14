@@ -469,13 +469,38 @@ m_buch	Das ist dein Märchenbuch. Welches Märchen möchtest du hören?
 m_hilf	Tippe auf das, was leuchtet!
 m_ende	Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.
 t_laterne_titel	Die kleine Laterne.
-t_laterne_1	Es war einmal eine kleine Laterne. Sie hing ganz allein an einem alten Baum im Zauberwald. Niemand brauchte sie mehr. Da kamst du mit deinem Einhorn vorbei. Tippe die Laterne an!
-t_laterne_2	Die Laterne seufzte: Ach, ich bin so staubig. Ich kann gar nicht mehr leuchten. Wischst du mir den Staub ab? Tippe auf alle Staubwolken!
-t_laterne_3	Nun war die Laterne blitzblank. Aber es fehlte noch ein Licht. Was gehört in eine Laterne? Such die Kerze!
-t_laterne_4	Da strahlte die Laterne heller als je zuvor! Im dunklen Wald hatten sich drei Tierkinder verlaufen. Sie sahen das Licht. Ruf sie alle herbei: den Igel, den Hasen und den Fuchs!
-t_laterne_5	Die Tierkinder waren so müde. Dein Einhorn sagte: Steigt auf, ich trage euch nach Hause! Wer darf zuerst reiten? Du darfst wählen.
-t_laterne_6	Bald lagen alle drei in ihren Betten. Der Mond hatte alles gesehen. Er sprach: Kleine Laterne, du hast ein gutes Herz. Dafür habe ich ein Geschenk. Tippe den Mond an!
-t_laterne_7	Da hob der Mond die kleine Laterne hoch hinauf an den Himmel. Dort leuchtet sie noch heute, als goldener Stern. Und wenn du abends hinaufschaust, dann zwinkert sie dir zu. Ende.
+t2_laterne_1	Es war einmal eine kleine Laterne. Sie hing an einer alten Eiche, ganz am Rand vom Zauberwald. Jede Nacht schaute sie zu den Sternen hinauf und sang leise: Sternlein oben, hell und klar, einmal leuchten, wunderbar! Aber die Laterne war ganz grau vor Staub, und kein Stern konnte sie sehen. Da kamst du mit deinem Einhorn vorbei. Reib mit dem Finger den Staub ab!
+t2_laterne_1h	Reib mit dem Finger über die Laterne, hin und her!
+t2_laterne_1d1	Die Laterne blinzelte. Oh, danke! Jetzt kann ich wieder sehen. Aber ich habe ja gar kein Licht in mir.
+t2_laterne_1d2	Da sagte dein Einhorn: Dann suchen wir eins!
+t2_laterne_1d3	Und es nahm die kleine Laterne auf sein Horn.
+t2_laterne_2	Am Waldrand stand eine Blume. Sie hatte sich fest zugemacht, denn die Nacht war kalt. Auf der Blume saß eine kleine Biene und zitterte. Brrr, summte sie, mir ist so kalt! Halte deinen Finger auf die Blume und wärme sie.
+t2_laterne_2h	Leg deinen Finger auf die Blume und halt ihn ganz still!
+t2_laterne_2d1	Die Blume wurde warm und ging auf. Die Biene trank einen Schluck Nektar und summte fröhlich: Danke! Wer mir hilft, dem helfe ich auch.
+t2_laterne_2d2	Und sie schenkte dir ein Stückchen Wachs. Daraus wurde eine Kerze.
+t2_laterne_3	Schau, eine Kerze! Die gehört in die Laterne. Zieh die Kerze mit dem Finger zur Laterne hinauf!
+t2_laterne_3h	Nimm die Kerze und zieh sie zur Laterne!
+t2_laterne_3d	Die Kerze passte ganz genau. Jetzt habe ich eine Kerze, sagte die Laterne. Aber sie brennt ja noch nicht. Wer schenkt mir nur eine Flamme?
+t2_laterne_4	Tief im Wald schwirrten kleine Glühwürmchen umher. Sie hatten sich verflogen und fanden ihren Baum nicht mehr. Zeig ihnen den Weg! Fahr mit dem Finger den leuchtenden Weg entlang.
+t2_laterne_4h	Fahr mit dem Finger den Punkten nach, bis zum Baum!
+t2_laterne_4d1	Zu Hause! Die Glühwürmchen tanzten vor Freude und riefen: Wer uns hilft, dem helfen wir auch!
+t2_laterne_4d2	Jedes schenkte der Kerze einen kleinen Funken.
+t2_laterne_4d3	Und die Laterne leuchtete, zum allerersten Mal! Sternlein oben, hell und klar, sang sie, seht ihr mich? Jetzt bin ich da!
+wort_licht	Licht
+t2_laterne_5	Doch da kam der Nachtwind. Er pustete so gern Lichter aus, nur so zum Spaß. Huiii, machte er, ich puste dich aus! Die kleine Flamme wackelte. Schieb den Wind mit dem Finger weg, ganz schnell!
+t2_laterne_5h	Wisch den Wind ganz schnell weg, so: wusch!
+t2_laterne_5d1	Dreimal hatte der Wind gepustet. Dreimal hatte die Flamme gewackelt. Aber sie ging nicht aus.
+t2_laterne_5d2	Da wurde der Nachtwind müde. Er gähnte und schlief unter einem Farn ein. Psst!
+t2_laterne_5w2	Huiii! Ich komme wieder!
+t2_laterne_5w3	Huiiiii! Jetzt puste ich ganz doll!
+wort_wind	Wind
+t2_laterne_6	Nun war es im Wald ganz still und dunkel. Da raschelte es im Gebüsch. Drei Tierkinder hatten sich verlaufen: ein Igel, ein Hase und ein Fuchs. Sie sahen das Licht der Laterne. Hol sie alle in den Lichtkreis! Zieh sie mit dem Finger zur Laterne.
+t2_laterne_6h	Zieh die Tierkinder mit dem Finger ins Licht!
+t2_laterne_6d1	Im Licht waren alle wieder froh. Die Laterne leuchtete ihnen den Weg nach Hause.
+t2_laterne_6d2	Und bald schliefen der Igel, der Hase und der Fuchs in ihren warmen Betten.
+t2_laterne_7	Dann trug dein Einhorn die kleine Laterne zurück an die alte Eiche. Und da geschah etwas Wunderbares. Die Sterne beugten sich zu ihr herab und sangen: Laterne unten, hell und klar, du leuchtest ja, wie wunderbar! Tippe die Sterne an, dann funkeln sie dir zu.
+t2_laterne_7h	Tippe auf die Sterne!
+t2_laterne_7d	Seitdem hängt die kleine Laterne am Rand vom Zauberwald und leuchtet allen, die sich verlaufen haben. Und jede Nacht zwinkern die Sterne ihr zu. Ende.
 t_prinzessin_titel	Die Prinzessin, die nicht lachen konnte.
 t_prinzessin_1	Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!
 t_prinzessin_2	Der König war traurig. Er rief: Wer meine Tochter zum Lachen bringt, bekommt die schönste Torte im ganzen Land! Da machtest du dich mit deinem Einhorn auf den Weg. Tippe auf die Burg!

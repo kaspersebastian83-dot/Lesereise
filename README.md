@@ -29,6 +29,15 @@ Die Schneeflocke und der Frühling · Der kleine Drache und der Glitzer. Das gew
 Niemand bleibt hängen: nach 7 s leuchtet das Richtige und die Bitte wird wiederholt, nach 2 falschen Tipps leuchtet es sofort,
 nach 22 s löst sich die Szene selbst und das Märchen geht weiter. Dasselbe gilt für die Abenteuer auf den Reisen.
 
+**Neue Märchenbühne (zuerst: Die kleine Laterne).** Jede Szene ist eine Bühne mit Tiefenebenen (Himmel, Ferne, Mitte, Spielebene,
+Vordergrund) in CSS-3D: Das Buch klappt auf, die Kamera fliegt von Ort zu Ort, die Ebenen bewegen sich leicht mit dem Finger.
+Eine Zeichenfläche darüber macht Licht und Dunkelheit (die Laterne leuchtet wirklich), Glühwürmchen, Wind, Blätter und Glitzer.
+Alles ohne Bibliotheken, offline. Gesten (ein Finger): Staub wegreiben, gedrückt halten, ziehen und ablegen, einem Weg nachfahren,
+wegwischen, antippen. Sicherheitsnetz für jede Geste: Beim Start zeigt ein Geisterfinger 👆 einmal die Bewegung; nach 7 s und
+14,5 s zeigt er sie wieder und der Hinweis wird gesprochen; nach 2 Fehlversuchen sofort; nach 22 s macht die Szene es selbst
+(spätestens nach 45 s). Was das Kind tut, löst das Nächste aus; die Erzählung danach ist in Stücke geteilt, damit Bild und
+Stimme genau zusammenpassen. Aufnahmen: `t2_<märchen>_<szene>` (Erzählung), `…h` (Hinweis), `…d1, d2 …` (was passiert ist).
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 

@@ -272,7 +272,8 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .book .pn{font-size:calc(var(--u)*3);font-weight:800;color:var(--light);text-shadow:0 0 1.5vh rgba(0,0,0,.7);max-width:28vw;text-align:center;line-height:1.15}
 .book.chosen{transform:scale(1.12)} .book.chosen .cover{box-shadow:0 0 0 .8vh var(--gold),0 0 9vh 3vh rgba(255,201,77,.8)}
 #tale{padding:0} #taleWorld{position:absolute;inset:0;overflow:hidden;transition:background 1s}
-#tale .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;gap:2vw;padding:0 2vw;z-index:6}
+#tale .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;gap:2vw;padding:0 2vw;z-index:6;pointer-events:none}
+#tale .bar button{pointer-events:auto}
 #taleDots{margin-left:auto;display:flex;gap:1.2vw;padding-right:1vw} #taleDots i{width:2.2vh;height:2.2vh;border-radius:50%;background:rgba(255,255,255,.3);box-shadow:0 0 1vh rgba(0,0,0,.3)}
 #taleDots i.done{background:var(--gold)} #taleDots i.now{background:#fff;box-shadow:0 0 2vh 1vh rgba(255,255,255,.7)}
 .tp{position:absolute;translate:-50% -50%;line-height:1;z-index:3;padding:.5vh;filter:drop-shadow(0 0 2vh rgba(255,245,210,.6));transition:opacity .6s,filter .8s}
@@ -287,6 +288,89 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp.poof{animation:poofp .6s ease-out forwards!important;pointer-events:none} @keyframes poofp{to{transform:scale(2.2);opacity:0}}
 .thing.hint{filter:drop-shadow(0 0 4vh #fff) drop-shadow(0 0 7vh var(--gold));animation:hintt .8s ease-in-out infinite}
 @keyframes hintt{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.25)}}
+
+/* fairy tales, new stage: depth layers, light, gestures */
+#taleWorld.v2{perspective:1000px;perspective-origin:50% 42%;touch-action:none;background:#05040f}
+#bigWord.mini{opacity:1;transform:translate(-50%,-9.5vh) scale(.5);transition:transform .7s cubic-bezier(.3,.8,.3,1)}
+#taleFx{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none;display:none}
+.st3{position:absolute;inset:0;transform-style:preserve-3d;--px:0px;--py:0px;will-change:transform,opacity}
+.lyr{position:absolute;inset:0;pointer-events:none}
+.l-sky,.l-far,.l-mid,.l-fore{left:-8%;right:-8%;top:-6%;bottom:-6%}
+.l-sky{transform:translate3d(calc(var(--px)*.95),calc(var(--py)*.95),-900px) scale(1.95)}
+.l-far{transform:translate3d(calc(var(--px)*.52),calc(var(--py)*.45),-500px) scale(1.52)}
+.l-mid{transform:translate3d(calc(var(--px)*.24),calc(var(--py)*.2),-220px) scale(1.23)}
+.l-fore{transform:translate3d(calc(var(--px)*-.42),calc(var(--py)*-.3),160px) scale(.85)}
+.l-sky i{position:absolute;border-radius:50%;background:#fff;animation:twinkle ease-in-out infinite}
+.moon2{position:absolute;width:13vh;height:13vh;border-radius:50%;translate:-50% -50%;
+  background:radial-gradient(circle at 35% 35%,#fffdf0,#ffe9a8 60%,#f5cf78);box-shadow:0 0 9vh 3vh rgba(255,225,150,.35)}
+.sil{position:absolute;left:0;width:100%;bottom:0}
+.m-e{position:absolute;translate:-50% -50%;line-height:1}
+.m-e svg,.tp2 svg{width:100%;height:auto;display:block;overflow:visible}
+.gnd{position:absolute;left:-12%;right:-12%;bottom:-10%;height:36%;border-radius:50% 50% 0 0/38% 38% 0 0}
+.tp2{position:absolute;translate:-50% -50%;line-height:1;pointer-events:none;filter:drop-shadow(0 0 2vh rgba(255,245,210,.45))}
+.tp2.big{filter:drop-shadow(0 1vh 2vh rgba(0,0,0,.35))}
+.u2{position:absolute;translate:-50% -50%;z-index:3}
+.u2 .ub{position:relative;animation:float 3s ease-in-out infinite}
+.u2 .uni{width:100%}
+.lan{position:absolute;z-index:4}
+.lan svg{width:100%;display:block;overflow:visible}
+.lan.onhorn{left:86%;top:.5%;width:26%;translate:-8% 0}
+.lan .lsw{transform-origin:50% 4%;animation:lsw 3.4s ease-in-out infinite}
+@keyframes lsw{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.lan .eyes-o{display:none} .lan.awake .eyes-o{display:inline} .lan.awake .eyes-c{display:none}
+.lan .candle{opacity:0;transition:opacity .5s} .lan.cand .candle{opacity:1}
+.lan .flame{opacity:0;transform-box:view-box;transform-origin:50px 88px;transition:opacity .6s}
+.lan.lit .flame{opacity:1;animation:flick .45s ease-in-out infinite alternate}
+.lan.windy .flame{animation:flickw .16s ease-in-out infinite alternate}
+.lan .halo{opacity:0;transition:opacity 1.2s} .lan.lit .halo{opacity:1}
+.lan .glass{transition:fill .8s,fill-opacity .8s} .lan.lit .glass{fill:#ffe39a;fill-opacity:.85}
+.lan.dusty svg{filter:grayscale(var(--g,1)) brightness(calc(1 - var(--g,1)*.3))}
+.lan.happy2 .lsw{animation:hop .5s ease-in-out 3}
+@keyframes flick{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.9,1.1) rotate(4deg)}}
+@keyframes flickw{from{transform:scale(.75,.85) rotate(-22deg)}to{transform:scale(.65,1.05) rotate(16deg)}}
+.str{position:absolute;width:.45vh;translate:-50% 0;background:linear-gradient(#3a2a1a,#6b4a2a);border-radius:1vh}
+.dust{position:absolute;translate:-50% -50%;width:62%;aspect-ratio:1;border-radius:50%;pointer-events:none;z-index:5;transition:opacity .25s;
+  background:radial-gradient(circle,rgba(160,150,138,.95) 0,rgba(140,130,120,.8) 40%,rgba(130,120,110,0) 70%)}
+.ring2{position:absolute;left:50%;top:50%;width:1.75em;height:1.75em;translate:-50% -50%;pointer-events:none;z-index:5;overflow:visible}
+.ring2 circle{fill:none;stroke-linecap:round}
+.ring2 .bg{stroke:rgba(255,255,255,.25);stroke-width:5}
+.ring2 .fg{stroke:#ffd25a;stroke-width:7;filter:drop-shadow(0 0 6px #ffb84d);stroke-dasharray:1 1;stroke-dashoffset:1;transform:rotate(-90deg);transform-origin:50% 50%}
+.ring2.pulse .bg{animation:rpulse .8s ease-in-out infinite} @keyframes rpulse{50%{stroke:#fff;stroke-width:9}}
+.tp2.pressed{scale:1.08}
+.tdot{position:absolute;width:2.4vh;height:2.4vh;translate:-50% -50%;border-radius:50%;z-index:2;pointer-events:none;
+  background:rgba(255,240,190,.32);box-shadow:0 0 1.4vh rgba(255,230,150,.45);transition:background .3s,box-shadow .3s}
+.tdot.on{background:#ffe27a;box-shadow:0 0 2.6vh 1vh rgba(255,215,100,.8)}
+.leader{position:absolute;width:9vh;height:9vh;translate:-50% -50%;border-radius:50%;z-index:3;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,250,200,.95) 0,rgba(255,225,120,.55) 30%,rgba(255,200,80,0) 70%);animation:pulse 1.2s ease-in-out infinite}
+.hole{position:absolute;width:15%;height:16%;translate:-50% -50%;border-radius:50%;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 60%,#120a04 0,#2a1a0c 55%,rgba(60,40,20,.0) 75%)}
+.hole.lit{background:radial-gradient(ellipse at 50% 60%,#fff6b0 0,#ffd25a 40%,rgba(255,180,60,0) 75%);transition:background 1s}
+.lring{position:absolute;left:50%;top:58%;border-radius:50%;translate:-50% -50%;z-index:-1;pointer-events:none;
+  border:.5vh dashed rgba(255,225,150,.5);box-shadow:inset 0 0 6vh rgba(255,210,120,.25);animation:spin 40s linear infinite;transition:border-color .3s,box-shadow .3s}
+.lring.near{border-color:#ffe27a;box-shadow:inset 0 0 9vh rgba(255,215,110,.55),0 0 4vh rgba(255,215,110,.4)}
+@keyframes spin{to{rotate:360deg}}
+#ghost{position:absolute;left:0;top:0;z-index:7;pointer-events:none;opacity:0;will-change:transform}
+#ghost .gr{position:absolute;left:-4.5vh;top:-4.5vh;width:9vh;height:9vh;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.85) 0,rgba(255,255,255,.35) 35%,rgba(255,255,255,0) 70%)}
+#ghost .gf{position:absolute;left:-4.2vh;top:-1.2vh;font-size:9.5vh;line-height:1;filter:drop-shadow(0 0 2vh rgba(255,255,255,.9))}
+.shiver{animation:shiver .13s linear infinite} @keyframes shiver{0%,100%{transform:translateX(-.3vh)}50%{transform:translateX(.4vh)}}
+.buzz{animation:buzz 2.6s ease-in-out infinite}
+@keyframes buzz{0%,100%{transform:translate(0,0)}25%{transform:translate(5vh,-3vh) rotate(12deg)}50%{transform:translate(0,-6vh)}75%{transform:translate(-5vh,-2vh) rotate(-12deg)}}
+.lost{animation:lost 2.4s ease-in-out infinite} @keyframes lost{50%{transform:rotate(-8deg) translateY(.8vh)}}
+.hopy{animation:hop .55s ease-in-out infinite}
+.wig{animation:wob .5s ease-in-out}
+.lift{scale:1.22;z-index:9!important;filter:drop-shadow(0 2.5vh 2vh rgba(0,0,0,.45)) drop-shadow(0 0 3vh #fff3b0)!important}
+.windc{animation:windc 1.4s ease-in-out infinite} @keyframes windc{50%{transform:translateX(-3.5vh) scale(1.08)}}
+.bloom{animation:bloom 1s cubic-bezier(.2,1.6,.4,1)} @keyframes bloom{from{transform:scale(.3) rotate(-40deg)}}
+.twk{animation:twk 1s ease-out} @keyframes twk{30%{transform:scale(1.6) rotate(25deg);filter:drop-shadow(0 0 4vh #fff) drop-shadow(0 0 8vh #ffd25a)}}
+.skystar{filter:drop-shadow(0 0 2.5vh rgba(255,230,140,.95))}
+.tp2.g2hint{animation:hintp .8s ease-in-out infinite!important;filter:drop-shadow(0 0 4vh #fff) drop-shadow(0 0 7vh var(--gold))!important}
+.book3d{position:absolute;left:50%;top:52%;width:min(50vh,36vw);height:min(64vh,46vw);translate:-50% -50%;transform-style:preserve-3d;z-index:4}
+.book3d .pg{position:absolute;inset:0;border-radius:1vh 2.4vh 2.4vh 1vh;background:linear-gradient(90deg,#e8d8b4,#fff8e6 14%,#fffaf0);
+  box-shadow:0 3vh 8vh rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;font-size:16vh}
+.book3d .cv{position:absolute;inset:0;border-radius:1vh 2.4vh 2.4vh 1vh;transform-origin:0 50%;backface-visibility:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:20vh;border:.6vh solid rgba(255,225,160,.85);border-left-width:2.2vh;
+  box-shadow:0 0 6vh rgba(255,217,138,.5),inset 0 0 5vh rgba(255,255,255,.25)}
 
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
@@ -936,7 +1020,7 @@ function drawDrift(){ const D=$('drift'); D.innerHTML='';
   ids.forEach((i,k)=>{ const d=el('div','d'+(k%2?' back':'')); d.style.top=(8+k*13+Math.random()*5)+'vh';
     d.style.animationDuration=(22+Math.random()*12)+'s'; d.style.animationDelay=(-Math.random()*20)+'s';
     d.innerHTML=uniSVG(HERD[i],{cls:'uni flying'+(k%2?' flip':'')}); D.appendChild(d); }); }
-function goHome(){ stopAll(); stopScene(); try{ qClear(); tClear(); tale=null; TA=null; }catch(e){} G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky(); drawDrift();
+function goHome(){ stopAll(); stopScene(); try{ qClear(); tClear(); fxStop(); ghostOff(); tale=null; TA=null; TB=null; }catch(e){} G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky(); drawDrift();
   $('herdCount').textContent=S.herd+1;
   document.querySelectorAll('.station').forEach((b,i)=>b.classList.toggle('fresh',!S.seen[STATIONS[i].id]));
   show('home'); }
@@ -1148,23 +1232,479 @@ const TBG={wald:TRIPS[0].bg, meer:TRIPS[1].bg, wiese:TRIPS[2].bg, schloss:TRIPS[
   nacht:'linear-gradient(180deg,#0b0828 0%,#231a58 60%,#3c2c7a 100%)', dunkel:'linear-gradient(180deg,#05040f 0%,#0f0c26 60%,#1a1538 100%)',
   winter:'linear-gradient(180deg,#8fb8e8 0%,#cfe4fa 55%,#ffffff 100%)', strand:'linear-gradient(180deg,#6fc3ff 0%,#bfe9ff 50%,#ffe9a8 78%,#ffd978 100%)',
   tief:'linear-gradient(180deg,#0b3a6e 0%,#0a2550 60%,#071636 100%)', stube:'linear-gradient(180deg,#5a3a6e 0%,#8a5a7a 55%,#c98a6a 100%)'};
+/* ================= MÄRCHEN, neue Bühne: Tiefenebenen, Licht, Gesten ================= */
+/* A v2 tale scene: set (backdrop), dark (0..1), fx, u:[x,y,size vh], lan (the lantern), p:[[id,emoji,x,y,size vh,class]],
+   a:{t:rub|hold|drag|trace|swipe|tapall, ...}, s (narration incl. the request), h (short hint line), d (what her action caused).
+   Never stuck: right when the scene is ready a ghost finger shows the gesture once (silent); after 7 s and 14.5 s it shows it
+   again and the hint line is spoken; after 2 failed tries it shows it at once; after 22 s without success the scene solves itself
+   with the same movement, and after 45 s at the latest no matter what. */
+let TB=null, LST=null, LANC=0;
+const now=()=>performance.now();
+function lanternSVG(){ const id='ln'+(++LANC);
+  return `<svg viewBox="0 0 100 140"><defs>
+   <radialGradient id="${id}h"><stop offset="0" stop-color="#fff3c0" stop-opacity=".95"/><stop offset=".45" stop-color="#ffc25a" stop-opacity=".4"/><stop offset="1" stop-color="#ff9a3a" stop-opacity="0"/></radialGradient>
+   <linearGradient id="${id}f" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a1a"/><stop offset=".55" stop-color="#ffd24a"/><stop offset="1" stop-color="#fffbe0"/></linearGradient></defs>
+   <g class="lsw"><circle class="halo" cx="50" cy="80" r="72" fill="url(#${id}h)"/>
+   <circle cx="50" cy="9" r="6" fill="none" stroke="#6b4a2a" stroke-width="4"/>
+   <path d="M20 36 L50 15 L80 36 Z" fill="#e6b04e" stroke="#6b4a2a" stroke-width="3.5" stroke-linejoin="round"/>
+   <rect x="16" y="33" width="68" height="9" rx="4.5" fill="#c98f2e" stroke="#6b4a2a" stroke-width="3"/>
+   <rect class="glass" x="23" y="42" width="54" height="62" rx="11" fill="#fff4d0" fill-opacity=".5" stroke="#6b4a2a" stroke-width="3.5"/>
+   <g class="candle"><rect x="42" y="88" width="16" height="15" rx="3" fill="#fffaf0" stroke="#d8c08a" stroke-width="2"/><path d="M50 88 V84" stroke="#5a4030" stroke-width="2"/></g>
+   <path class="flame" d="M50 69 C57 76 58 83 50 88 C42 83 43 76 50 69Z" fill="url(#${id}f)"/>
+   <g class="eyes-c" stroke="#3b2a5a" stroke-width="3" stroke-linecap="round" fill="none"><path d="M35 56 q5 4 10 0"/><path d="M55 56 q5 4 10 0"/></g>
+   <g class="eyes-o"><ellipse cx="40" cy="55" rx="4.3" ry="5.5" fill="#3b2a5a"/><ellipse cx="60" cy="55" rx="4.3" ry="5.5" fill="#3b2a5a"/>
+     <circle cx="41.6" cy="53" r="1.7" fill="#fff"/><circle cx="61.6" cy="53" r="1.7" fill="#fff"/></g>
+   <ellipse cx="32" cy="64" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".7"/><ellipse cx="68" cy="64" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".7"/>
+   <path d="M44 65 q6 5 12 0" fill="none" stroke="#3b2a5a" stroke-width="2.6" stroke-linecap="round"/>
+   <rect x="19" y="103" width="62" height="10" rx="5" fill="#c98f2e" stroke="#6b4a2a" stroke-width="3"/>
+   <path d="M42 113 L50 122 L58 113" fill="#c98f2e" stroke="#6b4a2a" stroke-width="3" stroke-linejoin="round"/></g></svg>`; }
+
+/* ---------- drawn set pieces (big emoji get blurry, these stay sharp) ---------- */
+function oakSVG(){ return `<svg viewBox="0 0 200 240">
+  <path d="M94 150 Q74 132 50 124 M106 146 Q128 128 152 120" stroke="#4a3222" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M80 240 Q90 196 91 128 L109 128 Q110 196 122 240 Z" fill="#6b4a32" stroke="#3e2a1c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M96 150 Q98 180 95 214 M104 168 Q106 190 104 206" stroke="#4a3222" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <g fill="#1d4a2a"><circle cx="61" cy="96" r="41"/><circle cx="148" cy="94" r="43"/><circle cx="103" cy="66" r="53"/><circle cx="103" cy="112" r="41"/></g>
+  <g fill="#2f7d3f"><circle cx="58" cy="92" r="38"/><circle cx="145" cy="90" r="40"/><circle cx="100" cy="62" r="50"/><circle cx="100" cy="108" r="38"/></g>
+  <g fill="#4ea65a" opacity=".6"><circle cx="86" cy="42" r="20"/><circle cx="134" cy="68" r="13"/><circle cx="46" cy="80" r="13"/><circle cx="104" cy="98" r="10"/></g>
+  <g fill="#ff8fb0"><circle cx="70" cy="106" r="4"/><circle cx="128" cy="114" r="4"/><circle cx="114" cy="38" r="4"/><circle cx="160" cy="84" r="4"/><circle cx="40" cy="100" r="3.5"/></g></svg>`; }
+function pineSVG(){ return `<svg viewBox="0 0 100 160"><rect x="44" y="128" width="12" height="32" rx="3" fill="#4a3222"/>
+  <path d="M50 2 L86 58 L14 58Z M50 30 L94 98 L6 98Z M50 62 L100 138 L0 138Z" fill="#1f5a3a" stroke="#14402a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M50 8 L64 34 L50 30Z M50 36 L70 70 L50 64Z M50 68 L74 108 L50 100Z" fill="#2f7a4a" opacity=".8"/></svg>`; }
+function candleSVG(){ return `<svg viewBox="0 0 60 120"><rect x="16" y="30" width="28" height="84" rx="7" fill="#fffaf0" stroke="#d8c08a" stroke-width="3"/>
+  <path d="M16 44 Q22 52 26 44 Q30 58 34 46 Q38 50 44 42" fill="none" stroke="#efe2c0" stroke-width="3"/>
+  <path d="M30 30 V18" stroke="#5a4030" stroke-width="3.5" stroke-linecap="round"/><ellipse cx="30" cy="114" rx="20" ry="5" fill="#d8c08a" opacity=".6"/></svg>`; }
+const SVGP={OAK:[oakSVG,.83],OAKH:[oakSVG,.83],PINE:[pineSVG,.62],CANDLE:[candleSVG,.5]};
+function prop(e,x,y,z,cls){ const sv=SVGP[e], d=el('div',cls,sv?sv[0]():e); d.style.cssText=`left:${x}%;top:${y}%;`+(sv?`width:${z*sv[1]}vh`:`font-size:${z}vh`); return d; }
+
+/* ---------- backdrops ---------- */
+function seeded(n){ let s=(n*7919)%233280; return ()=>((s=(s*9301+49297)%233280)/233280); }
+function pines(seed,n,h,col,base){ const r=seeded(seed), w=1000/n; let d=`M0 400 L0 ${400-base}`;
+  for(let i=0;i<=n;i++){ const x=i*w+(r()-.5)*w*.5, ht=h*(.55+r()*.6), bw=w*(.8+r()*.6);
+    d+=` L${(x-bw/2)|0} ${400-base} L${x|0} ${(400-base-ht)|0} L${(x+bw/2)|0} ${400-base}`; }
+  return `<path d="${d} L1000 400Z" fill="${col}"/>`; }
+function hills(seed,y,amp,col){ const r=seeded(seed); let d=`M0 400 L0 ${y}`;
+  for(let x=0;x<1000;x+=200){ d+=` Q${x+100} ${y-amp*(.4+r())} ${x+200} ${y+(r()-.5)*amp*.6}`; } return `<path d="${d} L1000 400Z" fill="${col}"/>`; }
+const sil=(inner,h)=>`<svg class="sil" style="height:${h||55}%" viewBox="0 0 1000 400" preserveAspectRatio="none">${inner}</svg>`;
+const SETS2={
+  rand:{sky:'linear-gradient(180deg,#0a0830 0%,#1f1856 55%,#3a2c78 100%)', moon:[80,16], stars:55,
+    far:sil(hills(3,210,70,'#241c5c')+pines(5,26,120,'#1a1446',150),58), gnd:'linear-gradient(180deg,#2b5a47 0%,#173a2e 50%,#0e241d 100%)',
+    mid:[['PINE',6,50,26],['PINE',95,46,30],['PINE',86,54,22],['PINE',16,56,17]], act:[['eiche','OAK',72,44,80,'big']],
+    fore:[['🌿',3,95,20],['🌿',97,96,20],['🍄',91,92,9],['🌾',12,97,15]]},
+  wiese:{sky:'linear-gradient(180deg,#0c0a34 0%,#262062 60%,#463a8a 100%)', moon:[16,14], stars:50,
+    far:sil(hills(7,240,90,'#2a2366')+hills(11,290,60,'#1f1a52'),60), gnd:'linear-gradient(180deg,#36684a 0%,#1d4232 60%,#10281f 100%)',
+    mid:[['🌳',88,52,20],['PINE',96,48,24],['🌳',4,54,18]], act:[['d1','🌼',84,86,7],['d2','🌸',92,80,6],['d3','🌼',8,90,6]],
+    fore:[['🌿',2,96,20],['🌾',96,96,20],['🌿',60,104,16]]},
+  tief:{sky:'linear-gradient(180deg,#05041a 0%,#0e0c30 60%,#1a1748 100%)', stars:18,
+    far:sil(pines(13,30,170,'#141238',120)+pines(17,22,150,'#0e0c2a',60),75), gnd:'linear-gradient(180deg,#1d3a30 0%,#10241d 60%,#08140f 100%)',
+    mid:[['PINE',4,44,40],['PINE',22,38,34],['PINE',50,36,30],['PINE',64,42,34],['PINE',97,44,40]],
+    fore:[['🌿',2,96,20],['🍄',30,98,10],['🌿',98,98,20],['🍄',70,99,8]]},
+  lichtung:{sky:'linear-gradient(180deg,#0a0a2e 0%,#1d1a52 55%,#33306e 100%)', moon:[60,12], stars:35,
+    far:sil(hills(23,230,60,'#211b54')+pines(29,24,110,'#181344',140),58), gnd:'linear-gradient(180deg,#2c5646 0%,#183a2e 60%,#0d231b 100%)',
+    mid:[['PINE',4,46,32],['🌳',96,50,22],['PINE',88,54,22]], act:[],
+    fore:[['🌿',2,96,20],['🌿',88,97,20],['🌾',50,104,16]]}
+};
+function buildStage(sc){
+  const B=SETS2[sc.set], st=el('div','st3');
+  const sky=el('div','lyr l-sky'); sky.style.background=B.sky;
+  for(let i=0;i<(B.stars||0);i++){ const d=document.createElement('i'), z=1+Math.random()*2.4;
+    d.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*55}%;width:${z}px;height:${z}px;animation-duration:${2+Math.random()*4}s;animation-delay:${-Math.random()*5}s`; sky.appendChild(d); }
+  if(B.moon){ const m=el('div','moon2'); m.style.left=B.moon[0]+'%'; m.style.top=B.moon[1]+'%'; sky.appendChild(m); }
+  const far=el('div','lyr l-far',B.far||''), mid=el('div','lyr l-mid'), act=el('div','lyr l-act'), fore=el('div','lyr l-fore');
+  const deco=(L,arr)=>(arr||[]).forEach(([e,x,y,z])=>L.appendChild(prop(e,x,y,z,'m-e')));
+  deco(mid,B.mid); deco(fore,B.fore);
+  const g=el('div','gnd'); g.style.background=B.gnd; act.appendChild(g);
+  st.append(sky,far,mid,act,fore); st._act=act; return st;
+}
+
+/* ---------- light and particles (one canvas over the stage) ---------- */
+const FX={cv:null,cx:null,P:[],L:[],em:[],dark:0,darkT:0,on:false,t:0,att:null,spr:{}};
+function fxSprite(col){ if(FX.spr[col]) return FX.spr[col]; const c=document.createElement('canvas'); c.width=c.height=64;
+  const g=c.getContext('2d'), r=g.createRadialGradient(32,32,0,32,32,32); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.2,col); r.addColorStop(1,'rgba(0,0,0,0)');
+  g.fillStyle=r; g.fillRect(0,0,64,64); return FX.spr[col]=c; }
+function fxStart(){ if(!FX.cv){ const c=document.createElement('canvas'); c.id='taleFx'; $('tale').insertBefore(c,$('tale').querySelector('.bar')); FX.cv=c; FX.cx=c.getContext('2d'); }
+  FX.cv.style.display='block'; FX.P=[]; FX.L=[]; FX.em=[]; FX.att=null; FX.dark=FX.darkT=0;
+  if(!FX.on){ FX.on=true; FX.t=now(); requestAnimationFrame(fxLoop); } }
+function fxStop(){ FX.on=false; FX.P=[]; FX.L=[]; FX.em=[]; if(FX.cv){ FX.cx.clearRect(0,0,FX.cv.width,FX.cv.height); FX.cv.style.display='none'; } }
+function light(o){ o.r=o.r0!=null?o.r0:0; o.k=o.k0!=null?o.k0:0; o.rT=o.rT!=null?o.rT:o.r; o.kT=o.kT!=null?o.kT:1; FX.L.push(o); return o; }
+function fxAdd(p){ p.age=0; if(FX.P.length<260) FX.P.push(p); return p; }
+function fxBurst(x,y,n,cols,spd){ const u=vu(); for(let i=0;i<n;i++){ const a=Math.random()*6.283, v=(spd||30)*u*(.3+Math.random());
+  fxAdd({k:'spark',x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-8*u,life:.7+Math.random()*.8,s:1.6+Math.random()*1.8,c:rnd(cols||['rgba(255,226,122,.9)','rgba(255,182,225,.9)','rgba(182,227,255,.9)'])}); } }
+function fxFlies(n,amb,sw){ const u=vu(); for(let i=0;i<n;i++) fxAdd({k:'fly',x:Math.random()*innerWidth,y:innerHeight*(.25+Math.random()*.6),vx:0,vy:0,life:1e9,
+  s:1.1+Math.random()*.8,ph:Math.random()*6.283,amb:amb,sw:sw,c:'rgba(230,255,140,.75)'}); }
+function fxLoop(){ if(!FX.on) return; if(!taleOn()){ fxStop(); return; } requestAnimationFrame(fxLoop);
+  const tn=now(), dt=Math.min(.05,(tn-FX.t)/1000); FX.t=tn;
+  const c=FX.cv, cx=FX.cx, dpr=Math.min(1.5,devicePixelRatio||1), W=innerWidth, H=innerHeight, u=vu();
+  if(c.width!==Math.round(W*dpr)||c.height!==Math.round(H*dpr)){ c.width=Math.round(W*dpr); c.height=Math.round(H*dpr); }
+  cx.setTransform(dpr,0,0,dpr,0,0); cx.clearRect(0,0,W,H);
+  /* parallax: a slow breathing sway, plus a little of where her finger is */
+  if(TB&&TB.st){ const s=tn/1000; let px=Math.sin(s*.33)*1.4*u, py=Math.sin(s*.26)*.7*u;
+    if(TB.pd){ px+=(TB.pd.cx/W-.5)*-3.5*u; py+=(TB.pd.cy/H-.5)*-2*u; }
+    TB.st.style.setProperty('--px',px.toFixed(1)+'px'); TB.st.style.setProperty('--py',py.toFixed(1)+'px'); }
+  /* continuous emitters */
+  FX.em.forEach(e=>{ e.acc=(e.acc||0)+dt*e.rate; while(e.acc>=1){ e.acc--; e.fn(); } });
+  /* darkness with holes where lights are */
+  FX.dark+=(FX.darkT-FX.dark)*Math.min(1,dt*1.6);
+  const Ls=[]; FX.L=FX.L.filter(l=>!l.dead);
+  FX.L.forEach(l=>{ let x,y; if(l.el){ if(!l.el.isConnected) return; const r=l.el.getBoundingClientRect(); x=r.left+r.width*(l.ox!=null?l.ox:.5); y=r.top+r.height*(l.oy!=null?l.oy:.5); }
+    else if(l.fn){ const q=l.fn(); if(!q) return; x=q[0]; y=q[1]; } else { x=l.x; y=l.y; }
+    l.r+=(l.rT-l.r)*Math.min(1,dt*1.8); l.k+=(l.kT-l.k)*Math.min(1,dt*1.8);
+    const fl=l.flick? 1+(Math.sin(tn/85)*.035+(Math.random()-.5)*.04)*l.flick : 1; Ls.push({x,y,r:l.r*u*fl,k:l.k,warm:l.warm}); });
+  if(FX.dark>.01){ cx.globalCompositeOperation='source-over'; cx.fillStyle=`rgba(4,3,22,${FX.dark.toFixed(3)})`; cx.fillRect(0,0,W,H);
+    cx.globalCompositeOperation='destination-out';
+    Ls.forEach(l=>{ if(l.r<2||l.k<.02) return; const g=cx.createRadialGradient(l.x,l.y,0,l.x,l.y,l.r);
+      g.addColorStop(0,`rgba(0,0,0,${l.k})`); g.addColorStop(.5,`rgba(0,0,0,${l.k*.72})`); g.addColorStop(1,'rgba(0,0,0,0)'); cx.fillStyle=g; cx.fillRect(l.x-l.r,l.y-l.r,l.r*2,l.r*2); }); }
+  cx.globalCompositeOperation='lighter';
+  Ls.forEach(l=>{ if(!l.warm||l.r<2) return; const R=l.r*.85, g=cx.createRadialGradient(l.x,l.y,0,l.x,l.y,R);
+    g.addColorStop(0,`rgba(255,200,110,${(.3*l.warm*l.k).toFixed(3)})`); g.addColorStop(1,'rgba(255,150,50,0)'); cx.fillStyle=g; cx.fillRect(l.x-R,l.y-R,R*2,R*2); });
+  /* particles */
+  for(let i=FX.P.length-1;i>=0;i--){ const p=FX.P[i]; p.age+=dt; if(p.age>p.life){ FX.P.splice(i,1); continue; }
+    const f=p.age/p.life; let a=1, sz=p.s*u;
+    if(p.k==='fly'){ if(p.sw&&FX.att){ const tx=FX.att[0]+Math.cos(tn/400+p.ph)*4*u*(1+p.ph%1), ty=FX.att[1]+Math.sin(tn/330+p.ph*1.7)*3*u;
+        p.vx+=(tx-p.x)*4*dt; p.vy+=(ty-p.y)*4*dt; p.vx*=.9; p.vy*=.9; }
+      else { p.vx+=(Math.random()-.5)*40*u*dt; p.vy+=(Math.random()-.5)*40*u*dt; p.vx*=.97; p.vy*=.97;
+        if(p.x<0)p.vx+=u; if(p.x>W)p.vx-=u; if(p.y<H*.15)p.vy+=u; if(p.y>H*.95)p.vy-=u; }
+      p.x+=p.vx*dt*(p.sw?1:.6); p.y+=p.vy*dt*(p.sw?1:.6); a=.45+.55*Math.sin(tn/260+p.ph*3); sz*=2.6; }
+    else if(p.k==='spark'){ p.vy+=22*u*dt; p.vx*=.98; p.x+=p.vx*dt; p.y+=p.vy*dt; a=1-f; sz*=2.2*(1-f*.5); }
+    else if(p.k==='dust'){ p.x+=p.vx*dt; p.y+=p.vy*dt; a=Math.sin(Math.PI*f)*.8; sz*=2; }
+    else if(p.k==='glit'){ p.y+=p.vy*dt; p.x+=Math.sin(tn/500+p.ph)*u*4*dt; a=Math.min(1,(1-f)*2)*(.6+.4*Math.sin(tn/120+p.ph)); sz*=2; }
+    else if(p.k==='warm'){ p.y+=p.vy*dt; p.x+=Math.sin(tn/300+p.ph)*u*3*dt; a=Math.sin(Math.PI*f); sz*=2.2; }
+    else if(p.k==='streak'){ p.x+=p.vx*dt; p.y+=p.vy*dt; const al=Math.sin(Math.PI*f)*.55; cx.strokeStyle=`rgba(230,240,255,${al.toFixed(3)})`; cx.lineWidth=Math.max(1,.35*u); cx.lineCap='round';
+      cx.beginPath(); cx.moveTo(p.x,p.y); cx.quadraticCurveTo(p.x+p.len*.5,p.y-p.len*.08,p.x+p.len,p.y); cx.stroke(); continue; }
+    else if(p.k==='leaf'){ p.x+=p.vx*dt; p.y+=p.vy*dt+Math.sin(tn/250+p.ph)*u*.3; p.rot+=p.vr*dt; cx.globalCompositeOperation='source-over';
+      cx.save(); cx.translate(p.x,p.y); cx.rotate(p.rot); cx.globalAlpha=Math.min(1,(1-f)*3); cx.font=`${(p.s*u)|0}px serif`; cx.fillText(p.e,-p.s*u/2,p.s*u/3); cx.restore(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
+    if(a<=0) continue; cx.globalAlpha=Math.max(0,Math.min(1,a)); cx.drawImage(fxSprite(p.c),p.x-sz,p.y-sz,sz*2,sz*2); }
+  cx.globalAlpha=1; cx.globalCompositeOperation='source-over'; }
+
+/* ---------- ghost finger ---------- */
+function ghostEl(){ let g=$('ghost'); if(!g){ g=el('div','','<div class="gr"></div><div class="gf">👆</div>'); g.id='ghost'; $('tale').appendChild(g); } return g; }
+function ghostOff(){ const g=$('ghost'); if(g){ g.getAnimations().forEach(a=>a.cancel()); g.style.opacity=0; } }
+/* frames: [x,y,scale,opacity] in px */
+function ghost(frames,dur,iter){ const g=ghostEl(); g.getAnimations().forEach(a=>a.cancel());
+  const kf=frames.map(f=>({transform:`translate(${f[0]}px,${f[1]}px) scale(${f[2]==null?1:f[2]})`,opacity:f[3]==null?1:f[3]}));
+  try{ const a=g.animate(kf,{duration:dur,iterations:iter||1,easing:'ease-in-out'}); g.style.opacity=0; a.onfinish=()=>{ g.style.opacity=0; }; return a; }catch(e){} }
+
+/* ---------- helpers ---------- */
+const ctr=e=>{ const r=e.getBoundingClientRect(); return [r.left+r.width/2, r.top+r.height/2]; };
+function nearEl(e,x,y,pad){ if(!e) return false; const r=e.getBoundingClientRect(), p=pad||0;
+  return x>r.left-p&&x<r.right+p&&y>r.top-p&&y<r.bottom+p; }
+function wpos(x,y){ const r=TB.W.getBoundingClientRect(); return [(x-r.left)/r.width*100,(y-r.top)/r.height*100]; }
+function wpx(px,py){ const r=TB.W.getBoundingClientRect(); return [r.left+r.width*px/100, r.top+r.height*py/100]; }
+function lanC(){ const L=TB&&TB.els.lan; if(!L) return [innerWidth/2,innerHeight/2]; const r=L.getBoundingClientRect(); return [r.left+r.width/2, r.top+r.height*.58]; }
+function readWord(w){ const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className=''; void bw.offsetWidth; bw.className='show'; return 'wort_'+keyOf(w); }
+function holdWord(w){ const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className='hold'; }
+function wiggle(e){ e.classList.remove('wig'); void e.offsetWidth; e.classList.add('wig'); }
+const okRun=(run,sc)=>tale&&tale.run===run&&taleOn()&&TB&&TB.sc===sc;
+function bLater(fn,ms){ const sc=TB&&TB.sc, run=tale&&tale.run; tLater(()=>{ if(okRun(run,sc)) fn(); },ms); }
+
+/* ---------- running a tale ---------- */
+function startTale2(t){ tale={t,i:-1,pick:null,run:++taleRun,v2:true}; TB=null; LST={awake:false,cand:false,lit:false};
+  const W=$('taleWorld'); W.innerHTML=''; W.className='v2'; W.style.background=''; show('tale'); fxStart();
+  $('taleDots').innerHTML=t.sc.map(()=>'<i></i>').join('');
+  /* the book opens in 3D, then we fly into its first page */
+  const run=tale.run, bk=el('div','book3d',`<div class="pg">✨</div><div class="cv" style="background:${t.cover}">${t.icon}</div>`); W.appendChild(bk);
+  FX.darkT=0; fxFlies(10,true,false);
+  const cv=bk.querySelector('.cv');
+  try{ bk.animate([{transform:'translateZ(-400px) rotateX(18deg)',opacity:0},{transform:'translateZ(0) rotateX(8deg)',opacity:1}],{duration:900,easing:'cubic-bezier(.2,.8,.3,1)',fill:'both'});
+    cv.animate([{transform:'rotateY(0)'},{transform:'rotateY(0)',offset:.35},{transform:'rotateY(-168deg)'}],{duration:2200,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+  chime([523,659,784,1047]);
+  (async()=>{ await Promise.all([say('t_'+t.id+'_titel'), wait(2400)]); if(!tale||tale.run!==run||!taleOn()) return;
+    try{ bk.animate([{transform:'translateZ(0) rotateX(8deg)',opacity:1},{transform:'translateZ(850px) rotateX(0)',opacity:0}],{duration:1000,easing:'ease-in',fill:'forwards'}); }catch(e){}
+    setTimeout(()=>bk.remove(),1000); nextScene2(); })(); }
+
+function nextScene2(){
+  if(!tale||!tale.t||!tale.v2) return; tClear(); hideWord(); ghostOff(); tale.i++; const t=tale.t, run=tale.run;
+  if(tale.i>=t.sc.length){ TB=null; return endTale(); }
+  const sc=t.sc[tale.i], prev=TB&&TB.sc, W=$('taleWorld'), same=prev&&prev.set===sc.set;
+  $('taleDots').innerHTML=t.sc.map((_,k)=>`<i class="${k<tale.i?'done':k===tale.i?'now':''}"></i>`).join('');
+  const old=TB&&TB.st, st=buildStage(sc); W.appendChild(st);
+  TB={sc,a:sc.a,W,st,act:st._act,run,els:{},live:false,done:false,tries:0,it:[],t0:0,pd:null,n:i=>'t2_'+t.id+'_'+(tale.i+1)+(i||'')};
+  /* camera: a new place flies in from the depth, the same place just cross-fades */
+  if(old){ old.style.pointerEvents='none';
+    try{ old.animate(same?[{opacity:1},{opacity:0}]:[{transform:'none',opacity:1},{transform:'translateZ(520px)',opacity:0}],{duration:same?700:1000,easing:'ease-in',fill:'forwards'}); }catch(e){}
+    setTimeout(()=>old.remove(),same?750:1050); }
+  try{ st.animate(same?[{opacity:0},{opacity:1}]:[{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0},{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0,offset:.15},{transform:'none',opacity:1}],
+    {duration:same?700:1500,easing:'cubic-bezier(.2,.7,.3,1)'}); }catch(e){}
+  /* light */
+  FX.L=[]; FX.em=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0;
+  const fx=sc.fx||{}; if(fx.flies) fxFlies(fx.flies,true,false);
+  if(fx.leaves) FX.em.push({rate:fx.leaves,fn:()=>{ const u=vu(); fxAdd({k:'leaf',e:rnd(['🍃','🍂','🍃']),x:innerWidth*1.05,y:innerHeight*(.2+Math.random()*.6),vx:-(40+Math.random()*40)*u,vy:(Math.random()-.3)*8*u,rot:0,vr:(Math.random()-.5)*6,s:3+Math.random()*2,ph:Math.random()*6,life:4}); }});
+  if(fx.glit) FX.em.push({rate:fx.glit,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(['rgba(255,226,122,.9)','rgba(255,255,255,.9)','rgba(255,182,225,.9)'])})});
+  /* the unicorn, always there */
+  const u=sc.u||[20,68,38], ue=el('div','u2'); ue.style.cssText=`left:${u[0]}%;top:${u[1]}%;width:${u[2]}vh`;
+  ue.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; TB.act.appendChild(ue); TB.els.uni=ue;
+  if(!same){ try{ ue.animate([{transform:'translateX(-70vw)'},{transform:'translateX(-70vw)',offset:.2},{transform:'none'}],{duration:2200,easing:'cubic-bezier(.25,.8,.3,1)'}); }catch(e){} later(()=>trail(ue,1800),300); }
+  /* props of the set and of the scene */
+  const B=SETS2[sc.set]; [...(B.act||[]),...(sc.p||[])].forEach(([id,e,x,y,z,cls])=>{ const b=prop(e,x,y,z,'tp2 '+(cls||'')); TB.act.appendChild(b); TB.els[id]=b;
+    if(e==='OAKH'){ const h=el('div','hole'); h.style.left='50%'; h.style.top='80%'; b.appendChild(h); TB.els.hoehle=h; } });
+  /* the lantern: on the old oak or on the unicorn's horn */
+  if(sc.lan){ const L=el('div','lan'+(LST.awake?' awake':' dusty')+(LST.cand?' cand':'')+(LST.lit?' lit':''),lanternSVG());
+    if(sc.lan.at==='horn'){ L.classList.add('onhorn'); ue.querySelector('.ub').appendChild(L); }
+    else { L.style.cssText=`left:${sc.lan.x}%;top:${sc.lan.y}%;width:${sc.lan.w}vh;translate:-50% 0`; const s=el('div','str'); s.style.cssText=`left:${sc.lan.x}%;top:${sc.lan.y-6}%;height:6.5%`; TB.act.append(s,L); }
+    TB.els.lan=L; if(LST.lit) TB.lanL=light({el:L,oy:.62,r0:6,rT:sc.lanR||30,k0:.3,kT:1,warm:1,flick:1}); }
+  (sc.lights||[]).forEach(l=>{ const o=Object.assign({},l); if(o.id){ o.el=TB.els[o.id]; } TB[(l.name||('L'+Math.random()))]=light(o); });
+  if(sc.enter) sc.enter();
+  chime([659,880]);
+  (async()=>{ await Promise.all([say(TB.n()), wait(same?900:2500)]); if(!okRun(run,sc)) return; ready2(); })(); }
+
+function ready2(){ if(!TB||TB.done) return; TB.live=true; TB.t0=now(); const a=TB.a;
+  if(typeof a.w==='string'){ holdWord(a.w); bLater(()=>{ const bw=$('bigWord'); if(bw.className==='hold') bw.className='mini'; },2400); }
+  G2[a.t].setup(); if(TB.sc.ready) TB.sc.ready();
+  bLater(()=>{ if(TB.live) G2[a.t].hint(); },500);      // show it once, without words
+  arm2(); bLater(()=>{ if(TB.live) G2[a.t].auto(); },45000); }
+function arm2(){ TB.it.forEach(clearTimeout); TB.it=[]; const sc=TB.sc, run=tale.run, go=(fn,ms)=>TB.it.push(setTimeout(()=>{ if(okRun(run,sc)&&TB.live) fn(); },ms));
+  go(()=>hint2(true),7000); go(()=>hint2(true),14500); go(()=>{ TB.autoing=true; G2[TB.a.t].auto(); },22000); }
+let lastPoke=0; function poke2(){ if(TB.autoing) return; const t=now(); if(t-lastPoke<900) return; lastPoke=t; arm2(); }
+function hint2(speak){ if(!TB||!TB.live) return; G2[TB.a.t].hint(); if(speak) say(TB.n('h')); }
+function miss2(){ TB.tries++; if(TB.tries>=2){ TB.tries=0; hint2(false); } }
+function done2(){ if(!TB||TB.done) return; TB.done=true; TB.live=false; TB.it.forEach(clearTimeout); ghostOff(); const sc=TB.sc, a=TB.a, run=tale.run;
+  chime([784,988,1175,1568]); const [hx,hy]=ctr(TB.els.uni); hearts(hx,hy-vu()*8,4);
+  const v=TB.els.uni.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy');
+  if(sc.done) sc.done();
+  (async()=>{ await wait(400); if(!okRun(run,sc)) return;
+    if(typeof a.w==='string'){ await say(readWord(a.w)); if(!okRun(run,sc)) return; }
+    /* d: what her action caused, spoken in parts; functions in between run the matching animation, numbers wait */
+    const seq=Array.isArray(sc.d)?sc.d:sc.d?[sc.d]:[]; let si=0;
+    for(const it of seq){ if(!okRun(run,sc)) return;
+      if(typeof it==='string'){ si++; await say(TB.n('d'+(Array.isArray(sc.d)?si:''))); }
+      else if(typeof it==='function') it(); else await wait(it); }
+    if(!okRun(run,sc)) return; await wait(500); if(!okRun(run,sc)) return; hideWord(); nextScene2(); })(); }
+
+/* ---------- pointer input: one finger ---------- */
+(function(){ const W=$('taleWorld'); const live=()=>tale&&tale.v2&&TB&&taleOn();
+  W.addEventListener('pointerdown',e=>{ if(!live()) return; if(TB.pd&&TB.pd.id!==e.pointerId) return; e.preventDefault();
+    try{ W.setPointerCapture(e.pointerId); }catch(_){}
+    TB.pd={id:e.pointerId,x:e.clientX,y:e.clientY,cx:e.clientX,cy:e.clientY,t:now()};
+    if(!TB.live){ idleTap(e.clientX,e.clientY); return; } const g=G2[TB.a.t]; if(g.down) g.down(e.clientX,e.clientY); });
+  W.addEventListener('pointermove',e=>{ if(!live()||!TB.pd||TB.pd.id!==e.pointerId) return; TB.pd.cx=e.clientX; TB.pd.cy=e.clientY;
+    if(!TB.live) return; const g=G2[TB.a.t]; if(g.move) g.move(e.clientX,e.clientY); });
+  const up=e=>{ if(!live()||!TB.pd||TB.pd.id!==e.pointerId) return; const pd=TB.pd; TB.pd=null;
+    if(!TB.live) return; const g=G2[TB.a.t]; if(g.up) g.up(e.clientX,e.clientY,pd); };
+  W.addEventListener('pointerup',up); W.addEventListener('pointercancel',up); })();
+function idleTap(x,y){ const ids=Object.keys(TB.els).filter(k=>k!=='lan'); for(const id of ids){ const b=TB.els[id];
+    if(nearEl(b,x,y,vu()*2)){ if(id==='uni'){ const v=b.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); } else wiggle(b);
+      fxBurst(x,y,10); chime([1175]); return; } } fxBurst(x,y,6); }
+
+/* ---------- the gestures ---------- */
+const G2={
+ /* rub the dust off: grey puffs over the target fade where her finger goes; ~70 % is enough */
+ rub:{ setup(){ const T=TB.els[TB.a.id]; TB.spots=[];
+     for(let i=0;i<9;i++){ const d=el('div','dust'); d.style.left=(24+26*(i%3)+(Math.random()-.5)*6)+'%'; d.style.top=(34+20*Math.floor(i/3)+(Math.random()-.5)*5)+'%'; T.appendChild(d); TB.spots.push({el:d,o:1}); }
+     T.classList.add('dusty'); T.style.setProperty('--g',1); TB.rubP=0; },
+   down(x,y){ this.move(x,y); },
+   move(x,y){ if(!TB.pd) return; const R=vu()*9; let hit=0;
+     TB.spots.forEach(s=>{ if(s.o>0){ const [sx,sy]=ctr(s.el); if(Math.hypot(x-sx,y-sy)>=R) return; s.o=Math.max(0,s.o-.16); s.el.style.opacity=s.o; hit++; } });
+     if(hit){ if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*20*vu(),vy:-(5+Math.random()*10)*vu(),s:.8+Math.random(),life:1.2,c:'rgba(220,210,190,.6)'}); this.prog(); } },
+   prog(){ const cl=1-TB.spots.reduce((a,s)=>a+s.o,0)/TB.spots.length, T=TB.els[TB.a.id]; T.style.setProperty('--g',(1-cl).toFixed(2));
+     if(cl-TB.rubP>.12){ TB.rubP=cl; poke2(); chime([880+cl*800]); }
+     if(cl>=.7&&!TB.done){ TB.spots.forEach(s=>{ s.o=0; s.el.style.opacity=0; }); T.classList.remove('dusty'); const [x,y]=ctr(T); fxBurst(x,y,30); glitterBurst(x,y,26,20); done2(); } },
+   zig(){ const r=TB.els[TB.a.id].getBoundingClientRect(), f=[]; for(let i=0;i<7;i++){ f.push([r.left+r.width*(i%2?.82:.18), r.top+r.height*(.3+i*.07),1,i?1:0]); } f.push([r.right,r.bottom,1,0]); return f; },
+   hint(){ ghost(this.zig(),2200); },
+   auto(){ ghost(this.zig(),2200); TB.spots.forEach((s,i)=>bLater(()=>{ s.o=0; s.el.style.opacity=0; this.prog(); },250+i*190)); } },
+
+ /* press and hold: a golden ring fills up while her finger stays */
+ hold:{ setup(){ const T=TB.els[TB.a.id];
+     const R=el('div','',`<svg class="ring2" viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44" pathLength="1"/></svg>`).firstChild;
+     T.appendChild(R); TB.ring=R; TB.hp=0; TB.holding=false; TB.lastT=now(); this.loop(); },
+   loop(){ const sc=TB.sc, run=tale.run, step=()=>{ if(!okRun(run,sc)||TB.done) return; requestAnimationFrame(step);
+       const t=now(), dt=Math.min(.25,(t-TB.lastT)/1000); TB.lastT=t; if(!(TB.holding||TB.autoHold)) return;
+       TB.hp=Math.min(1,TB.hp+dt/(TB.autoHold?1.8:(TB.a.ms||2000)/1000)); const T=TB.els[TB.a.id];
+       TB.ring.querySelector('.fg').style.strokeDashoffset=(1-TB.hp).toFixed(3); T.style.scale=(1+TB.hp*.18).toFixed(3);
+       if(Math.random()<.35){ const [x,y]=ctr(T); fxAdd({k:'warm',x:x+(Math.random()-.5)*vu()*12,y:y+vu()*4,vy:-(8+Math.random()*10)*vu(),ph:Math.random()*6,s:1+Math.random(),life:1.4,c:'rgba(255,190,90,.8)'}); }
+       if(TB.hpL) TB.hpL.rT=6+TB.hp*22;
+       if(Math.floor(TB.hp*4)>Math.floor((TB.hpLast||0)*4)) chime([660+TB.hp*660]); TB.hpLast=TB.hp;
+       if(TB.hp>=1){ TB.holding=false; TB.ring.style.opacity=0; T.style.scale=''; G2.hold.finish(); } };
+     requestAnimationFrame(step); },
+   finish(){ const T=TB.els[TB.a.id], [x,y]=ctr(T); fxBurst(x,y,34); glitterBurst(x,y,30,22); done2(); },
+   down(x,y){ const T=TB.els[TB.a.id], r=T.getBoundingClientRect(); if(nearEl(T,x,y,Math.max(r.width*.4,vu()*6))){ TB.holding=true; TB.lastT=now(); T.classList.add('pressed'); TB.ring.classList.remove('pulse'); poke2(); } },
+   move(x,y){ if(!TB.holding) return; const T=TB.els[TB.a.id]; if(!nearEl(T,x,y,vu()*16)) this.up(); },
+   up(){ if(!TB.holding) return; TB.holding=false; TB.els[TB.a.id].classList.remove('pressed'); if(TB.hp<1&&TB.hp>.01) miss2(); },
+   hint(){ const [x,y]=ctr(TB.els[TB.a.id]); TB.ring.classList.add('pulse'); ghost([[x+vu()*6,y+vu()*14,1,0],[x,y,1,1],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],2400);
+     bLater(()=>TB.ring&&TB.ring.classList.remove('pulse'),2600); },
+   auto(){ const [x,y]=ctr(TB.els[TB.a.id]); ghost([[x,y+vu()*10,1,0],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1]],2200); TB.autoHold=true; } },
+
+ /* drag something to where it belongs; generous zone, it snaps in */
+ drag:{ setup(){ const a=TB.a; TB.left=a.ids.slice(); TB.dg=null; TB.home={};
+     a.ids.forEach(id=>{ const b=TB.els[id]; TB.home[id]=[b.style.left,b.style.top]; });
+     if(a.to==='ring'){ const rg=el('div','lring'); rg.style.width=rg.style.height=(a.r||32)*2+'vh'; TB.els.lan.appendChild(rg); TB.ring=rg; } },
+   zone(){ const a=TB.a; if(a.to==='ring'||a.to==='lan'){ const [x,y]=lanC(); return {x,y,r:vu()*(a.to==='ring'?(a.r||32):16)}; }
+     const T=TB.els[a.to], [x,y]=ctr(T); return {x,y,r:Math.max(T.getBoundingClientRect().width*.8,vu()*14)}; },
+   slot(id){ const a=TB.a, z=this.zone(); if(a.to!=='ring') return [z.x,z.y]; const k=a.ids.indexOf(id), ang=[.55,1.15,.1][k%3]*Math.PI/2+.25; return [z.x+Math.cos(ang)*z.r*.62, z.y+Math.sin(ang)*z.r*.55]; },
+   down(x,y){ const id=TB.left.find(id=>{ const b=TB.els[id], r=b.getBoundingClientRect(); return nearEl(b,x,y,Math.max(r.width*.35,vu()*5)); }); if(!id) return;
+     const b=TB.els[id], [cx,cy]=ctr(b); b.getAnimations().forEach(a=>a.cancel()); b.style.transition='none'; b.classList.add('lift'); b.dataset.cls=b.className;
+     ['lost','buzz','shiver'].forEach(c=>b.classList.remove(c)); TB.dg={id,b,ox:x-cx,oy:y-cy,sx:x,sy:y,moved:0}; chime([988]); },
+   move(x,y){ const d=TB.dg; if(!d) return; const [px,py]=wpos(x-d.ox,y-d.oy); d.b.style.left=px+'%'; d.b.style.top=py+'%'; d.moved=Math.max(d.moved,Math.hypot(x-d.sx,y-d.sy));
+     const z=this.zone(), [cx,cy]=[x-d.ox,y-d.oy], near=Math.hypot(cx-z.x,cy-z.y)<z.r*1.15; if(TB.ring) TB.ring.classList.toggle('near',near);
+     if(Math.random()<.25) fxAdd({k:'spark',x:cx,y:cy,vx:(Math.random()-.5)*10*vu(),vy:-5*vu(),life:.6,s:1.2,c:'rgba(255,240,180,.9)'}); },
+   up(x,y){ const d=TB.dg; if(!d) return; TB.dg=null; const b=d.b; b.classList.remove('lift'); if(TB.ring) TB.ring.classList.remove('near');
+     const [cx,cy]=ctr(b), z=this.zone();
+     if(Math.hypot(cx-z.x,cy-z.y)<z.r*1.15) return this.success(d.id);
+     this.back(d.id); if(d.moved<vu()*2.5) hint2(false); else miss2(); },
+   back(id){ const b=TB.els[id]; b.style.transition='left .5s cubic-bezier(.3,1.5,.5,1),top .5s cubic-bezier(.3,1.5,.5,1)'; b.style.left=TB.home[id][0]; b.style.top=TB.home[id][1];
+     bLater(()=>{ b.style.transition=''; b.className=b.dataset.cls||b.className; b.classList.remove('lift'); },550); },
+   success(id){ if(!TB.left.includes(id)) return; TB.left=TB.left.filter(x=>x!==id); const b=TB.els[id], a=TB.a, [sx,sy]=this.slot(id), [px,py]=wpos(sx,sy);
+     b.getAnimations().forEach(q=>q.cancel()); b.classList.remove('lift','lost','buzz','shiver','g2hint'); b.style.transition='left .45s ease-out,top .45s ease-out'; b.style.left=px+'%'; b.style.top=py+'%';
+     fxBurst(sx,sy,22); chime([1175,1568]); poke2();
+     if(a.w&&typeof a.w==='object'&&a.w[id]){ const k=readWord(a.w[id]); say(k); }
+     if(TB.sc.item) TB.sc.item(id,b);
+     if(!TB.left.length) bLater(()=>done2(),a.w&&typeof a.w==='object'?1500:500); },
+   path(id){ const b=TB.els[id], [x0,y0]=ctr(b), [x1,y1]=this.slot(id), mx=(x0+x1)/2, my=Math.min(y0,y1)-vu()*14; return [[x0,y0],[mx,my],[x1,y1]]; },
+   hint(){ const id=TB.left[0]; if(!id) return; const [p0,p1,p2]=this.path(id); TB.els[id].classList.add('g2hint'); bLater(()=>TB.els[id]&&TB.els[id].classList.remove('g2hint'),2400);
+     ghost([[p0[0],p0[1]+vu()*6,1,0],[p0[0],p0[1],.85,1],[p1[0],p1[1],.85,1],[p2[0],p2[1],.85,1],[p2[0],p2[1],1,0]],2200); },
+   auto(){ const ids=TB.left.slice(); ids.forEach((id,k)=>bLater(()=>{ if(!TB.left.includes(id)) return; const b=TB.els[id], [p0,p1,p2]=this.path(id);
+       ghost([[p0[0],p0[1],.85,1],[p1[0],p1[1],.85,1],[p2[0],p2[1],.85,1],[p2[0],p2[1],1,0]],1100);
+       b.getAnimations().forEach(q=>q.cancel()); b.classList.remove('lost','buzz','shiver');
+       try{ b.animate([{transform:'none'},{transform:`translate(${p1[0]-p0[0]}px,${p1[1]-p0[1]}px) scale(1.15)`},{transform:`translate(${p2[0]-p0[0]}px,${p2[1]-p0[1]}px)`}],{duration:1000,easing:'ease-in-out'}); }catch(e){}
+       bLater(()=>{ const [px,py]=wpos(p2[0],p2[1]); b.style.transition='none'; b.style.left=px+'%'; b.style.top=py+'%'; this.success(id); },980); },k*1600)); } },
+
+ /* trace the glowing path; the swarm follows her finger */
+ trace:{ setup(){ const pts=TB.a.path.map(([x,y])=>wpx(x,y)), S=[], N=56; if(TB.a.end&&TB.els[TB.a.end]) pts[pts.length-1]=ctr(TB.els[TB.a.end]);
+     /* Catmull-Rom through the points, resampled evenly */
+     const dense=[]; for(let i=0;i<pts.length-1;i++){ const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
+       for(let t=0;t<1;t+=.02){ const t2=t*t,t3=t2*t, f=(a,b,c,d)=>.5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t2+(-a+3*b-3*c+d)*t3); dense.push([f(p0[0],p1[0],p2[0],p3[0]),f(p0[1],p1[1],p2[1],p3[1])]); } }
+     dense.push(pts[pts.length-1]); let L=0; const acc=[0]; for(let i=1;i<dense.length;i++){ L+=Math.hypot(dense[i][0]-dense[i-1][0],dense[i][1]-dense[i-1][1]); acc.push(L); }
+     for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1);
+       S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
+     TB.S=S.map(p=>wpos(p[0],p[1])); TB.k=0; TB.dots=TB.S.map((p,i)=>{ if(i%2) return null; const d=el('div','tdot'); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; TB.act.appendChild(d); return d; });
+     const ld=el('div','leader'); TB.act.appendChild(ld); TB.lead=ld; FX.P.forEach(p=>{ if(p.sw) p.x=S[0][0]+(Math.random()-.5)*40, p.y=S[0][1]+(Math.random()-.5)*40; }); this.draw(); },
+   pt(k){ return wpx(...TB.S[Math.min(TB.S.length-1,k)]); },
+   draw(){ const p=TB.S[TB.k]; TB.lead.style.left=p[0]+'%'; TB.lead.style.top=p[1]+'%'; TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
+   down(x,y){ TB.trMoved=false; TB.trGain=0; this.move(x,y); },
+   move(x,y){ if(!TB.pd||TB.done) return; TB.trMoved=true; const tol=vu()*12; let best=-1,bd=1e9;
+     for(let j=TB.k;j<Math.min(TB.S.length,TB.k+9);j++){ const [px,py]=this.pt(j), d=Math.hypot(x-px,y-py); if(d<tol&&d<bd){ bd=d; best=j; } }
+     if(best>TB.k){ TB.trGain+=best-TB.k; TB.k=best; this.draw(); if(TB.k%6===0){ chime([700+TB.k*14]); poke2(); } if(Math.random()<.6) fxAdd({k:'spark',x,y,vx:0,vy:-6*vu(),life:.6,s:1.3,c:'rgba(230,255,140,.9)'}); }
+     if(TB.k>=TB.S.length-1) this.finish(); },
+   up(){ if(TB.trMoved&&!TB.trGain) miss2(); },
+   finish(){ if(TB.done||!TB.live) return; FX.att=this.pt(TB.S.length-1); const [x,y]=FX.att; fxBurst(x,y,30,['rgba(230,255,140,.9)','rgba(255,226,122,.9)']); TB.lead.style.opacity=0; done2(); },
+   hint(){ const f=[]; for(let j=TB.k;j<TB.S.length;j+=4){ const [x,y]=this.pt(j); f.push([x,y,.85,1]); } if(!f.length) return; f[0][3]=0; f.push([...f[f.length-1].slice(0,2),1,0]); ghost(f,Math.max(1200,f.length*160)); },
+   auto(){ this.hint(); const run=tale.run, sc=TB.sc, iv=setInterval(()=>{ if(!okRun(run,sc)||TB.done){ clearInterval(iv); return; } TB.k=Math.min(TB.S.length-1,TB.k+1); this.draw(); if(TB.k>=TB.S.length-1){ clearInterval(iv); this.finish(); } },60); taleT.push(iv); } },
+
+ /* flick the wind away; it comes back stronger, three times */
+ swipe:{ setup(){ TB.step=0; TB.wready=true; this.blow(); },
+   blow(){ const w=TB.els[TB.a.id], L=TB.els.lan; if(L) L.classList.add('windy'); if(TB.lanL) TB.lanL.flick=3;
+     FX.em=FX.em.filter(e=>!e.wind); FX.em.push({wind:1,rate:9+TB.step*5,fn:()=>{ if(!TB||!TB.wready) return; const [x,y]=ctr(w), u=vu(); fxAdd({k:'streak',x:x-u*4,y:y+(Math.random()-.5)*u*16,vx:-(70+Math.random()*50)*u,vy:(Math.random()-.3)*6*u,len:(6+Math.random()*8)*u,life:.8}); }}); },
+   down(x,y){ TB.sw={x,y,t:now(),ok:false}; },
+   move(x,y){ const s=TB.sw; if(!s) return; if(Math.random()<.5) fxAdd({k:'spark',x,y,vx:0,vy:0,life:.4,s:1.1,c:'rgba(220,235,255,.9)'});
+     const d=Math.hypot(x-s.x,y-s.y), dt=now()-s.t; if(TB.wready&&d>vu()*13&&d/dt>.3){ s.ok=true; this.fire(x-s.x,y-s.y); TB.sw=null; } },
+   up(x,y){ const s=TB.sw; TB.sw=null; if(!s||s.ok) return; const d=Math.hypot(x-s.x,y-s.y); if(TB.wready&&d>vu()*13) this.fire(x-s.x,y-s.y); else if(d>vu()*3) miss2(); },
+   fire(dx,dy){ if(!TB.wready||TB.done) return; TB.wready=false; const w=TB.els[TB.a.id], u=vu(), [x,y]=ctr(w);
+     const m=Math.hypot(dx,dy)||1, ux=dx>-.2*m? Math.max(.4,dx/m):.7, uy=dy/m*.6-.3;
+     w.getAnimations().forEach(q=>q.cancel()); w.classList.remove('windc');
+     try{ w.animate([{transform:'none',opacity:1},{transform:`translate(${ux*70*u}px,${uy*70*u}px) rotate(${ux*200}deg) scale(.4)`,opacity:0}],{duration:900,easing:'cubic-bezier(.3,.7,.4,1)',fill:'forwards'}); }catch(e){}
+     for(let i=0;i<14;i++) fxAdd({k:'streak',x:x-u*10,y:y+(Math.random()-.5)*u*14,vx:ux*(90+Math.random()*60)*u,vy:uy*40*u,len:-(6+Math.random()*8)*u,life:.7});
+     fxBurst(x,y,16,['rgba(220,235,255,.9)','rgba(255,255,255,.9)']); chime([880,1175]);
+     const L=TB.els.lan; if(L) L.classList.remove('windy'); if(TB.lanL) TB.lanL.flick=1; TB.step++; poke2();
+     if(TB.step>=(TB.a.n||3)){ FX.em=FX.em.filter(e=>!e.wind); return bLater(()=>done2(),700); }
+     bLater(()=>this.back(),1700); },
+   back(){ const w=TB.els[TB.a.id], z=parseFloat(w.dataset.z||w.style.fontSize)*1.22; w.dataset.z=z; w.style.fontSize=z+'vh';
+     w.getAnimations().forEach(q=>q.cancel()); try{ w.animate([{transform:'translateX(40vw) scale(.6)',opacity:0},{transform:'none',opacity:1}],{duration:1100,easing:'cubic-bezier(.2,.8,.3,1)'}); }catch(e){}
+     say(TB.n('w'+(TB.step+1))); bLater(()=>{ w.classList.add('windc'); TB.wready=true; this.blow(); if(TB.autoing) bLater(()=>this.auto(),1400); },1100); },
+   hint(){ const [x,y]=ctr(TB.els[TB.a.id]), u=vu(); ghost([[x-u*16,y+u*4,1,0],[x-u*14,y+u*3,.9,1],[x+u*16,y-u*5,.9,1],[x+u*20,y-u*6,1,0],[x-u*16,y+u*4,1,0],[x-u*14,y+u*3,.9,1],[x+u*16,y-u*5,.9,1],[x+u*20,y-u*6,1,0]],1800); },
+   auto(){ if(!TB.wready) return; const [x,y]=ctr(TB.els[TB.a.id]), u=vu(); ghost([[x-u*14,y+u*3,.9,1],[x+u*16,y-u*5,.9,1],[x+u*20,y-u*6,1,0]],600); bLater(()=>this.fire(1,-.2),350); } },
+
+ /* tap every one of them */
+ tapall:{ setup(){ TB.left=TB.a.ids.slice(); },
+   down(x,y){ const id=TB.left.find(id=>nearEl(TB.els[id],x,y,vu()*5)); if(id) this.tap(id); },
+   tap(id){ if(!TB.left.includes(id)) return; TB.left=TB.left.filter(x=>x!==id); const b=TB.els[id], [x,y]=ctr(b), n=TB.a.ids.length-TB.left.length;
+     b.classList.remove('g2hint','twk'); void b.offsetWidth; b.classList.add('twk'); fxBurst(x,y,24); glitterBurst(x,y,14,14); chime([[784,880,988,1175,1318,1568][Math.min(5,n-1)]]); poke2();
+     if(TB.sc.item) TB.sc.item(id,b); if(!TB.left.length) bLater(()=>done2(),700); },
+   hint(){ const id=TB.left[0]; if(!id) return; const [x,y]=ctr(TB.els[id]); TB.els[id].classList.add('g2hint'); ghost([[x,y+vu()*10,1,0],[x,y,1,1],[x,y,.8,1],[x,y,1,1],[x,y,1,0]],1600); },
+   auto(){ TB.left.slice().forEach((id,k)=>bLater(()=>{ const [x,y]=ctr(TB.els[id]); ghost([[x,y,1,1],[x,y,.8,1],[x,y,1,0]],500); this.tap(id); },k*700)); } }
+};
+
+/* ================= Die kleine Laterne ================= */
+/* motif: the lantern's little song to the stars – sung as a wish (1), with first light (4), and answered by the stars (7) */
+const LATERNE2={id:'laterne', v2:true, title:'Die kleine Laterne', icon:'🏮', cover:TBG.wald, sc:[
+ {set:'rand', dark:.3, fx:{flies:6}, u:[17,70,36], lan:{at:'tree',x:60,y:51,w:17},
+  lights:[{id:'lan',r0:20,rT:20,k0:.6,kT:.6}],
+  a:{t:'rub',id:'lan',w:'LATERNE'},
+  s:'Es war einmal eine kleine Laterne. Sie hing an einer alten Eiche, ganz am Rand vom Zauberwald. Jede Nacht schaute sie zu den Sternen hinauf und sang leise: Sternlein oben, hell und klar, einmal leuchten, wunderbar! Aber die Laterne war ganz grau vor Staub, und kein Stern konnte sie sehen. Da kamst du mit deinem Einhorn vorbei. Reib mit dem Finger den Staub ab!',
+  h:'Reib mit dem Finger über die Laterne, hin und her!',
+  done(){ LST.awake=true; const L=TB.els.lan; L.classList.add('awake'); fxBurst(...ctr(L),20); },
+  d:['Die Laterne blinzelte. Oh, danke! Jetzt kann ich wieder sehen. Aber ich habe ja gar kein Licht in mir.',
+     ()=>{ const U=TB.els.uni; U.style.transition='left 1.8s ease-in-out'; U.style.left='38%'; },
+     'Da sagte dein Einhorn: Dann suchen wir eins!', 600,
+     ()=>{ /* the lantern hops from the branch onto the horn */
+       const L=TB.els.lan, ub=TB.els.uni.querySelector('.ub'), a=L.getBoundingClientRect(); L.classList.add('onhorn'); L.style.cssText=''; ub.appendChild(L);
+       const b=L.getBoundingClientRect(), s=a.width/b.width, dx=a.left-b.left, dy=a.top-b.top; TB.act.querySelector('.str').style.opacity=0;
+       try{ L.animate([{transform:`translate(${dx}px,${dy}px) scale(${s})`},{transform:`translate(${dx/2}px,${dy/2-vu()*12}px) scale(${(s+1)/2}) rotate(20deg)`},{transform:'none'}],{duration:1100,easing:'ease-in-out'}); }catch(e){}
+       bLater(()=>{ fxBurst(...ctr(L),24); chime([988,1318]); },1100); },
+     'Und es nahm die kleine Laterne auf sein Horn.', 500]},
+ {set:'wiese', dark:.3, fx:{flies:4}, u:[22,64,42], lan:{at:'horn'},
+  p:[['blume','🌷',62,68,22],['biene','🐝',63,49,9,'shiver']],
+  lights:[{id:'blume',name:'hpL',r0:6,rT:6,k0:.8,kT:.8,warm:.6}],
+  a:{t:'hold',id:'blume',w:'BIENE'},
+  s:'Am Waldrand stand eine Blume. Sie hatte sich fest zugemacht, denn die Nacht war kalt. Auf der Blume saß eine kleine Biene und zitterte. Brrr, summte sie, mir ist so kalt! Halte deinen Finger auf die Blume und wärme sie.',
+  h:'Leg deinen Finger auf die Blume und halt ihn ganz still!',
+  done(){ const B=TB.els.blume, Bi=TB.els.biene; B.firstChild.textContent='🌼'; B.classList.add('bloom'); Bi.classList.remove('shiver'); Bi.classList.add('buzz'); TB.hpL.rT=18; },
+  d:['Die Blume wurde warm und ging auf. Die Biene trank einen Schluck Nektar und summte fröhlich: Danke! Wer mir hilft, dem helfe ich auch.',
+     ()=>{ LST.wax=true; const Bi=TB.els.biene, k=prop('CANDLE',63,47,16,'tp2'); TB.act.appendChild(k); fxBurst(...ctr(Bi),26);
+       try{ k.animate([{transform:'scale(0) rotate(-90deg)',opacity:0},{transform:'translateY(-6vh) scale(1.3)',opacity:1,offset:.4},{transform:'translate(-11vw,30vh) scale(1)'}],{duration:1500,easing:'ease-in-out',fill:'forwards'}); }catch(e){} },
+     'Und sie schenkte dir ein Stückchen Wachs. Daraus wurde eine Kerze.', 700]},
+ {set:'wiese', dark:.3, fx:{flies:4}, u:[22,64,42], lan:{at:'horn'},
+  p:[['blume','🌼',62,68,22],['biene','🐝',76,52,9,'buzz'],['kerze','CANDLE',52,80,16]],
+  lights:[{id:'blume',r0:18,rT:18,k0:.7,kT:.7,warm:.4}],
+  a:{t:'drag',ids:['kerze'],to:'lan',w:'KERZE'},
+  s:'Schau, eine Kerze! Die gehört in die Laterne. Zieh die Kerze mit dem Finger zur Laterne hinauf!',
+  h:'Nimm die Kerze und zieh sie zur Laterne!',
+  item(id,b){ try{ b.animate([{transform:'none',opacity:1},{transform:'scale(.2)',opacity:0}],{duration:500,fill:'forwards'}); }catch(e){} LST.cand=true; TB.els.lan.classList.add('cand'); },
+  d:'Die Kerze passte ganz genau. Jetzt habe ich eine Kerze, sagte die Laterne. Aber sie brennt ja noch nicht. Wer schenkt mir nur eine Flamme?'},
+ {set:'tief', dark:.66, fx:{}, u:[13,74,32], lan:{at:'horn'},
+  p:[['baum','OAKH',83,46,78,'big']],
+  lights:[{fn:()=>FX.att,r0:14,rT:14,k0:.85,kT:.85,warm:.5},{id:'hoehle',name:'holeL',r0:0,rT:0,k0:.9,kT:.9,warm:1}],
+  a:{t:'trace',path:[[24,44],[34,32],[46,50],[58,34],[70,50],[83,64]],end:'hoehle',w:'LICHT'},
+  enter(){ fxFlies(8,true,true); FX.att=wpx(24,44); },
+  s:'Tief im Wald schwirrten kleine Glühwürmchen umher. Sie hatten sich verflogen und fanden ihren Baum nicht mehr. Zeig ihnen den Weg! Fahr mit dem Finger den leuchtenden Weg entlang.',
+  h:'Fahr mit dem Finger den Punkten nach, bis zum Baum!',
+  done(){ TB.els.hoehle.classList.add('lit'); TB.holeL.rT=10; chime([1318,1568]); },
+  d:['Zu Hause! Die Glühwürmchen tanzten vor Freude und riefen: Wer uns hilft, dem helfen wir auch!',
+     ()=>{ FX.att=lanC(); },
+     'Jedes schenkte der Kerze einen kleinen Funken.',
+     ()=>{ LST.lit=true; const L=TB.els.lan; L.classList.add('lit'); TB.lanL=light({el:L,oy:.62,r0:4,rT:38,k0:.2,kT:1,warm:1,flick:1}); FX.darkT=.5;
+       fxBurst(...lanC(),50,['rgba(255,226,122,.95)','rgba(255,190,90,.9)'],40); glitterBurst(...lanC(),40,30); chime([523,659,784,1047,1318]);
+       bLater(()=>FX.P.forEach(p=>{ p.sw=false; }),1500); }, 1200,
+     'Und die Laterne leuchtete, zum allerersten Mal! Sternlein oben, hell und klar, sang sie, seht ihr mich? Jetzt bin ich da!']},
+ {set:'lichtung', dark:.48, fx:{leaves:1.2}, u:[28,64,44], lan:{at:'horn'}, lanR:34,
+  p:[['wind','🌬️',80,40,17,'windc'],['farn','🌿',88,86,16]],
+  a:{t:'swipe',id:'wind',n:3,w:'WIND'},
+  s:'Doch da kam der Nachtwind. Er pustete so gern Lichter aus, nur so zum Spaß. Huiii, machte er, ich puste dich aus! Die kleine Flamme wackelte. Schieb den Wind mit dem Finger weg, ganz schnell!',
+  h:'Wisch den Wind ganz schnell weg, so: wusch!',
+  x:[['w2','Huiii! Ich komme wieder!'],['w3','Huiiiii! Jetzt puste ich ganz doll!']],
+  done(){ FX.em=FX.em.filter(e=>!e.wind); },
+  d:['Dreimal hatte der Wind gepustet. Dreimal hatte die Flamme gewackelt. Aber sie ging nicht aus.',
+     ()=>{ const w=TB.els.wind; w.getAnimations().forEach(q=>q.cancel()); w.style.fontSize='9vh'; w.style.left='86%'; w.style.top='80%';
+       try{ w.animate([{transform:'translate(-20vw,-40vh) scale(.4)',opacity:0},{transform:'none',opacity:1}],{duration:1600,easing:'ease-out',fill:'forwards'}); }catch(e){}
+       bLater(()=>{ const z=prop('💤',90,70,7,'tp2'); TB.act.appendChild(z); try{ z.animate([{transform:'scale(0)',opacity:0},{transform:'scale(1)',opacity:1}],{duration:900,fill:'forwards'}); }catch(e){} },1800); },
+     'Da wurde der Nachtwind müde. Er gähnte und schlief unter einem Farn ein. Psst!', 600]},
+ {set:'tief', dark:.72, fx:{flies:3}, u:[26,62,40], lan:{at:'horn'}, lanR:36,
+  p:[['igel','🦔',70,84,13,'lost'],['hase','🐰',86,58,13,'lost'],['fuchs','🦊',90,86,14,'lost']],
+  lights:[{id:'igel',r0:9,rT:9,k0:.55,kT:.55},{id:'hase',r0:9,rT:9,k0:.55,kT:.55},{id:'fuchs',r0:9,rT:9,k0:.55,kT:.55}],
+  a:{t:'drag',ids:['igel','hase','fuchs'],to:'ring',r:30,w:{igel:'IGEL',hase:'HASE',fuchs:'FUCHS'}},
+  s:'Nun war es im Wald ganz still und dunkel. Da raschelte es im Gebüsch. Drei Tierkinder hatten sich verlaufen: ein Igel, ein Hase und ein Fuchs. Sie sahen das Licht der Laterne. Hol sie alle in den Lichtkreis! Zieh sie mit dem Finger zur Laterne.',
+  h:'Zieh die Tierkinder mit dem Finger ins Licht!',
+  item(id,b){ b.classList.add('hopy'); hearts(...ctr(b),3); },
+  d:['Im Licht waren alle wieder froh. Die Laterne leuchtete ihnen den Weg nach Hause.',
+     ()=>['igel','hase','fuchs'].forEach((id,k)=>{ const b=TB.els[id]; try{ b.animate([{transform:'none',opacity:1},{transform:'translate(60vw,-4vh) scale(.5)',opacity:0}],{duration:2600,delay:k*400,easing:'ease-in',fill:'forwards'}); }catch(e){} }),
+     'Und bald schliefen der Igel, der Hase und der Fuchs in ihren warmen Betten.', 800]},
+ {set:'rand', dark:.24, fx:{flies:5,glit:3}, u:[20,72,34], lan:{at:'tree',x:60,y:51,w:17}, lanR:26,
+  p:[['s1','⭐',7,32,9,'skystar'],['s2','⭐',21,25,8,'skystar'],['s3','⭐',35,36,8,'skystar'],['s4','⭐',47,46,9,'skystar'],['s5','⭐',11,50,8,'skystar']],
+  lights:['s1','s2','s3','s4','s5'].map(id=>({id,r0:9,rT:9,k0:.6,kT:.6})),
+  a:{t:'tapall',ids:['s1','s2','s3','s4','s5'],w:'STERN'},
+  enter(){ ['s1','s2','s3','s4','s5'].forEach((id,k)=>{ const b=TB.els[id]; try{ b.animate([{transform:'translateY(-30vh) scale(.4)',opacity:0},{transform:'translateY(-30vh) scale(.4)',opacity:0,offset:.3},{transform:'translateY(2vh) scale(1.15) rotate(-20deg)',opacity:1,offset:.8},{transform:'none'}],{duration:2600+k*250,easing:'ease-out'}); }catch(e){} }); },
+  s:'Dann trug dein Einhorn die kleine Laterne zurück an die alte Eiche. Und da geschah etwas Wunderbares. Die Sterne beugten sich zu ihr herab und sangen: Laterne unten, hell und klar, du leuchtest ja, wie wunderbar! Tippe die Sterne an, dann funkeln sie dir zu.',
+  h:'Tippe auf die Sterne!',
+  item(id,b){ if(TB.lanL) TB.lanL.rT=26+(5-TB.left.length)*2; },
+  d:'Seitdem hängt die kleine Laterne am Rand vom Zauberwald und leuchtet allen, die sich verlaufen haben. Und jede Nacht zwinkern die Sterne ihr zu. Ende.'}
+]};
+function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
+  t.sc.forEach((s,i)=>{ const k='t2_'+t.id+'_'+(i+1); reg(k,s.s,null,'Märchen'); if(s.h) reg(k+'h',s.h,null,'Märchen'); if(typeof s.d==='string') reg(k+'d',s.d,null,'Märchen');
+    if(Array.isArray(s.d)) s.d.filter(x=>typeof x==='string').forEach((x,j)=>reg(k+'d'+(j+1),x,null,'Märchen'));
+    (s.x||[]).forEach(([xk,xt])=>reg(k+xk,xt,null,'Märchen'));
+    const w=s.a&&s.a.w; (typeof w==='string'?[w]:w?Object.values(w):[]).forEach(W=>reg('wort_'+keyOf(W),cap(W),null,'Wörter')); }); }
+
 /* scene: bg, fx, u:[x,y,size vh,flip] (unicorn), p:[[id,emoji,x,y,size vh,class]], a:{t:tap|all|choose|times|find|none,...}, s: narration */
 const TALES=[
- {id:'laterne', title:'Die kleine Laterne', icon:'🏮', cover:TBG.wald, sc:[
-  {bg:'wald',fx:'fire', p:[['baum','🌳',72,50,56],['lat','🏮',66,44,16,'dim']], a:{t:'tap',id:'lat',w:'LATERNE'},
-   s:'Es war einmal eine kleine Laterne. Sie hing ganz allein an einem alten Baum im Zauberwald. Niemand brauchte sie mehr. Da kamst du mit deinem Einhorn vorbei. Tippe die Laterne an!'},
-  {bg:'wald',fx:'fire', p:[['lat','🏮',62,50,40,'dim'],['d1','💨',52,36,13],['d2','💨',72,46,13],['d3','💨',58,66,13]], a:{t:'all',ids:['d1','d2','d3'],m:'poof'},
-   s:'Die Laterne seufzte: Ach, ich bin so staubig. Ich kann gar nicht mehr leuchten. Wischst du mir den Staub ab? Tippe auf alle Staubwolken!'},
-  {bg:'wald',fx:'fire', p:[['lat','🏮',80,38,28,'dim'],['kerze','🕯️',42,70,17],['pilz','🍄',58,78,16],['nuss','🌰',52,58,14]], a:{t:'tap',id:'kerze',w:'KERZE',fin:'light'},
-   s:'Nun war die Laterne blitzblank. Aber es fehlte noch ein Licht. Was gehört in eine Laterne? Such die Kerze!'},
-  {bg:'wald',fx:'fire', p:[['lat','🏮',52,32,26,'glow'],['igel','🦔',34,80,14],['hase','🐰',66,82,14],['fuchs','🦊',88,70,14]], a:{t:'all',ids:['igel','hase','fuchs'],m:'come',to:[52,52],w:{igel:'IGEL',hase:'HASE',fuchs:'FUCHS'}},
-   s:'Da strahlte die Laterne heller als je zuvor! Im dunklen Wald hatten sich drei Tierkinder verlaufen. Sie sahen das Licht. Ruf sie alle herbei: den Igel, den Hasen und den Fuchs!'},
-  {bg:'wald',fx:'fire', p:[['lat','🏮',84,26,18,'glow'],['igel','🦔',42,58,19],['hase','🐰',60,58,19],['fuchs','🦊',78,58,19]], a:{t:'choose',ids:['igel','hase','fuchs'],w:{igel:'IGEL',hase:'HASE',fuchs:'FUCHS'}},
-   s:'Die Tierkinder waren so müde. Dein Einhorn sagte: Steigt auf, ich trage euch nach Hause! Wer darf zuerst reiten? Du darfst wählen.'},
-  {bg:'nacht', p:[['mond','🌙',80,38,30],['haus','🏠',46,74,18],['pick','$',34,62,11]], a:{t:'tap',id:'mond',w:'MOND'},
-   s:'Bald lagen alle drei in ihren Betten. Der Mond hatte alles gesehen. Er sprach: Kleine Laterne, du hast ein gutes Herz. Dafür habe ich ein Geschenk. Tippe den Mond an!'},
-  {bg:'sterne', p:[['mond','🌙',24,24,24],['stern','🌟',62,30,26,'glow tw']], a:{t:'none'}, fx:'glit',
-   s:'Da hob der Mond die kleine Laterne hoch hinauf an den Himmel. Dort leuchtet sie noch heute, als goldener Stern. Und wenn du abends hinaufschaust, dann zwinkert sie dir zu. Ende.'}]},
+ LATERNE2,
  {id:'prinzessin', title:'Die Prinzessin, die nicht lachen konnte', icon:'👸', cover:TBG.schloss, sc:[
   {bg:'schloss', p:[['burg','🏰',74,38,46],['prin','👸',56,68,22]], a:{t:'tap',id:'prin'},
    s:'Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!'},
@@ -1244,13 +1784,13 @@ const TALES=[
 reg('m_buch','Das ist dein Märchenbuch. Welches Märchen möchtest du hören?',null,'Märchen');
 reg('m_hilf','Tippe auf das, was leuchtet!',null,'Märchen');
 reg('m_ende','Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.',null,'Märchen');
-TALES.forEach(t=>{ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen'); t.sc.forEach((s,i)=>reg('t_'+t.id+'_'+(i+1),s.s,null,'Märchen')); });
+TALES.forEach(t=>{ if(t.v2) return regTale2(t); reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen'); t.sc.forEach((s,i)=>reg('t_'+t.id+'_'+(i+1),s.s,null,'Märchen')); });
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
 function tLater(fn,ms){ taleT.push(setTimeout(fn,ms)); }
 function tClear(){ taleT.forEach(clearTimeout); taleT=[]; }
-function taleShelf(){ stopAll(); stopScene(); tClear(); hideWord(); tale=null; TA=null; tripChrome('pick');
+function taleShelf(){ stopAll(); stopScene(); tClear(); hideWord(); fxStop(); ghostOff(); tale=null; TA=null; TB=null; tripChrome('pick');
   const T=$('tripBody'); T.className='shelf'; T.innerHTML='';
   TALES.forEach((t,i)=>{ const b=el('button','book');
     b.innerHTML=`<div class="cover" style="background:${t.cover}">${t.icon}${S.tales[t.id]?'<b>⭐</b>':''}</div><div class="pn">${t.title}</div>`;
@@ -1258,7 +1798,7 @@ function taleShelf(){ stopAll(); stopScene(); tClear(); hideWord(); tale=null; T
     b.onclick=()=>{ if(tale) return; chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22); b.classList.add('chosen'); tale={pending:true}; setTimeout(()=>startTale(t),700); };
     T.appendChild(b); });
   show('trip'); say('m_buch'); }
-function startTale(t){ if(!trip) trip={uni:0}; tale={t,i:-1,pick:null,run:++taleRun}; show('tale'); nextScene(); }
+function startTale(t){ if(!trip) trip={uni:0}; if(t.v2) return startTale2(t); fxStop(); TB=null; $('taleWorld').className=''; tale={t,i:-1,pick:null,run:++taleRun}; show('tale'); nextScene(); }
 function tEl(id){ return TA&&TA.els[id]; }
 function nextScene(){
   if(!tale||!tale.t) return; stopScene(); tClear(); hideWord(); tale.i++; const t=tale.t, run=tale.run;
@@ -1326,7 +1866,7 @@ async function endTale(){ const t=tale.t, run=tale.run; tClear(); hideWord(); S.
   const g=el('div','gift','⭐'); $('taleWorld').appendChild(g); chime([523,659,784,1047,1318]); glitterBurst(innerWidth/2,innerHeight/2,60,40); rainDown(['✦','✧','★','💖'],3000,40);
   await say('m_ende'); await wait(1200); if(!tale||tale.run!==run||!taleOn()) return; taleShelf(); }
 $('btnTale').onclick=()=>{ stopAll(); if(S.herd===0){ trip={uni:0}; taleShelf(); } else tripPick(taleShelf); };
-$('btnTaleHome').onclick=()=>{ tClear(); tale=null; TA=null; trip=null; hideWord(); goHome(); };
+$('btnTaleHome').onclick=()=>{ tClear(); fxStop(); ghostOff(); tale=null; TA=null; TB=null; trip=null; hideWord(); goHome(); };
 $('btnTaleShelf').onclick=taleShelf;
 
 
