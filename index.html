@@ -135,7 +135,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .flip{transform:scaleX(-1)}
 .uni.flip.happy{animation:hopflip .55s ease-in-out 4} @keyframes hopflip{0%,100%{transform:scaleX(-1)}40%{transform:scaleX(-1) translateY(-3vh)}}
 #fx{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden}
-#fx span{position:absolute;left:0;top:0;line-height:1;will-change:transform,opacity}
+#fx span{position:absolute;left:0;top:0;line-height:1;will-change:transform,opacity;font-weight:800;white-space:nowrap}
 .flyby{position:fixed;left:0;width:min(17vw,22vh);pointer-events:none;z-index:8}
 #drift{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 #drift .d{position:absolute;left:0;width:min(11vw,14vh);opacity:.85;animation:drift linear infinite}
@@ -291,6 +291,29 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 
 /* fairy tales, new stage: depth layers, light, gestures */
 #taleWorld.v2{perspective:1000px;perspective-origin:50% 42%;touch-action:none;background:#05040f}
+.sun2{position:absolute;width:15vh;height:15vh;border-radius:50%;translate:-50% -50%;background:radial-gradient(circle at 40% 40%,#fffbe0,#ffe066 55%,#ffb84d);box-shadow:0 0 10vh 4vh rgba(255,220,120,.55)}
+.dust.tick{background:none}
+.rbw{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:visible}
+.rbw polyline{stroke-width:1.5vh;opacity:.92;filter:drop-shadow(0 0 1vh rgba(255,255,255,.6))}
+.poof2{animation:poof2 .7s ease-out forwards!important;pointer-events:none} @keyframes poof2{40%{transform:scale(1.25)}100%{transform:scale(1.9);opacity:0}}
+.ring2a{animation:bell 1s ease-in-out} @keyframes bell{20%{transform:rotate(25deg)}40%{transform:rotate(-20deg)}60%{transform:rotate(14deg)}80%{transform:rotate(-8deg)}}
+.prin{position:absolute;z-index:4} .prin svg{width:100%;display:block;overflow:visible}
+.prin .m,.prin .ey{display:none}
+.prin[data-mood=sad] .m-sad,.prin[data-mood=sad] .ey-o,.prin[data-mood=sad] .brow{display:inline}
+.prin[data-mood=smile] .m-smile,.prin[data-mood=smile] .ey-o{display:inline}
+.prin[data-mood=giggle] .m-giggle,.prin[data-mood=giggle] .ey-c{display:inline}
+.prin[data-mood=laugh] .m-laugh,.prin[data-mood=laugh] .ey-c{display:inline}
+.prin.onback{left:42%;top:14%;width:30%;translate:-50% -72%}
+.prin .pb{transform-origin:50% 100%} .prin.laughing .pb{animation:giggle .35s ease-in-out infinite} .prin.wiggle .pb{animation:giggle .3s ease-in-out 2}
+@keyframes giggle{0%,100%{transform:rotate(0) scale(1)}25%{transform:rotate(-5deg) scale(1.03,.97)}75%{transform:rotate(5deg) scale(.97,1.03)}}
+.bird svg{width:100%;display:block;overflow:visible} .bird .bw{transform-box:view-box;transform-origin:52px 42px;animation:bflap .35s ease-in-out infinite alternate}
+@keyframes bflap{to{transform:rotate(-28deg)}} .bird .hd{transform-box:view-box;transform-origin:72px 32px;transition:transform .8s} .bird.shy .hd{transform:translate(-18px,12px) rotate(-35deg) scale(.9)} .bird.shy .bw{animation:none;transform:rotate(-35deg)}
+.bird.oncrown{position:absolute;left:50%;top:-6%;width:46%;translate:-50% -60%}
+.bubble2{width:1em;height:1em;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.9) 0,rgba(255,255,255,.15) 18%,rgba(180,230,255,.12) 55%,rgba(255,170,230,.45) 85%,rgba(255,255,255,.7) 100%);
+  box-shadow:0 0 3vh rgba(200,240,255,.6),inset 0 0 2vh rgba(255,255,255,.5);animation:float 2.4s ease-in-out infinite}
+.beams{position:absolute;pointer-events:none;z-index:2;opacity:0;transition:opacity 2s;mix-blend-mode:screen;
+  background:conic-gradient(from 200deg at 50% 0%,transparent 0deg,rgba(255,240,180,.5) 8deg,transparent 16deg,rgba(255,240,180,.4) 26deg,transparent 34deg,rgba(255,240,180,.45) 44deg,transparent 52deg)}
+.beams.on{opacity:1}
 #bigWord.mini{opacity:1;transform:translate(-50%,-9.5vh) scale(.5);transition:transform .7s cubic-bezier(.3,.8,.3,1)}
 #taleFx{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none;display:none}
 .st3{position:absolute;inset:0;transform-style:preserve-3d;--px:0px;--py:0px;will-change:transform,opacity}
@@ -1135,7 +1158,8 @@ function qArm(tk){ qClear(); const step=Q?Q.step:-1;
   const hint=()=>{ if(!ok()) return; const b=Q.els[Q.adv.need[Q.step]]; if(b) b.classList.add('hint'); ask(); };
   questT.push(setTimeout(hint,8000), setTimeout(hint,17000), setTimeout(()=>{ if(!ok()) return; const w=Q.adv.need[Q.step]; tapThing(Q.els[w],w,tk); },26000)); }
 const landOn=()=>$('land').classList.contains('on');
-function wordHTML(W){ const w=WORDS.find(x=>x.word===W);
+const TSYL={BLASE:'BLA-SE',VOGEL:'VO-GEL',LACHEN:'LA-CHEN',GLOCKE:'GLO-CKE'};
+function wordHTML(W){ const w=WORDS.find(x=>x.word===W)||(TSYL[W]&&{syl:TSYL[W].split('-')});
   return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
 function hideWord(){ $('bigWord').className=''; }
 function tripChrome(mode){ $('btnChest').textContent=mode==='chest'?'🗺️':'🎁'; $('btnChest').style.visibility=mode==='pick'?'hidden':'visible'; $('btnChest').dataset.m=mode; }
@@ -1328,10 +1352,11 @@ function buildStage(sc){
   for(let i=0;i<(B.stars||0);i++){ const d=document.createElement('i'), z=1+Math.random()*2.4;
     d.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*55}%;width:${z}px;height:${z}px;animation-duration:${2+Math.random()*4}s;animation-delay:${-Math.random()*5}s`; sky.appendChild(d); }
   if(B.moon){ const m=el('div','moon2'); m.style.left=B.moon[0]+'%'; m.style.top=B.moon[1]+'%'; sky.appendChild(m); }
+  if(B.sun){ const m=el('div','sun2'); m.style.left=B.sun[0]+'%'; m.style.top=B.sun[1]+'%'; sky.appendChild(m); }
   const far=el('div','lyr l-far',B.far||''), mid=el('div','lyr l-mid'), act=el('div','lyr l-act'), fore=el('div','lyr l-fore');
   const deco=(L,arr)=>(arr||[]).forEach(([e,x,y,z])=>L.appendChild(prop(e,x,y,z,'m-e')));
-  deco(mid,B.mid); deco(fore,B.fore);
-  const g=el('div','gnd'); g.style.background=B.gnd; act.appendChild(g);
+  deco(far,B.farp); deco(mid,B.mid); deco(fore,B.fore);
+  if(B.gnd){ const g=el('div','gnd'); g.style.background=B.gnd; act.appendChild(g); }
   st.append(sky,far,mid,act,fore); st._act=act; return st;
 }
 
@@ -1389,6 +1414,7 @@ function fxLoop(){ if(!FX.on) return; if(!taleOn()){ fxStop(); return; } request
     else if(p.k==='warm'){ p.y+=p.vy*dt; p.x+=Math.sin(tn/300+p.ph)*u*3*dt; a=Math.sin(Math.PI*f); sz*=2.2; }
     else if(p.k==='streak'){ p.x+=p.vx*dt; p.y+=p.vy*dt; const al=Math.sin(Math.PI*f)*.55; cx.strokeStyle=`rgba(230,240,255,${al.toFixed(3)})`; cx.lineWidth=Math.max(1,.35*u); cx.lineCap='round';
       cx.beginPath(); cx.moveTo(p.x,p.y); cx.quadraticCurveTo(p.x+p.len*.5,p.y-p.len*.08,p.x+p.len,p.y); cx.stroke(); continue; }
+    else if(p.k==='drop'){ p.y+=p.vy*dt; cx.strokeStyle=`rgba(80,130,215,${(.85*(1-f)).toFixed(3)})`; cx.lineWidth=Math.max(1.5,.45*u); cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(p.x,p.y+p.len); cx.stroke(); continue; }
     else if(p.k==='leaf'){ p.x+=p.vx*dt; p.y+=p.vy*dt+Math.sin(tn/250+p.ph)*u*.3; p.rot+=p.vr*dt; cx.globalCompositeOperation='source-over';
       cx.save(); cx.translate(p.x,p.y); cx.rotate(p.rot); cx.globalAlpha=Math.min(1,(1-f)*3); cx.font=`${(p.s*u)|0}px serif`; cx.fillText(p.e,-p.s*u/2,p.s*u/3); cx.restore(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
     if(a<=0) continue; cx.globalAlpha=Math.max(0,Math.min(1,a)); cx.drawImage(fxSprite(p.c),p.x-sz,p.y-sz,sz*2,sz*2); }
@@ -1416,7 +1442,8 @@ const okRun=(run,sc)=>tale&&tale.run===run&&taleOn()&&TB&&TB.sc===sc;
 function bLater(fn,ms){ const sc=TB&&TB.sc, run=tale&&tale.run; tLater(()=>{ if(okRun(run,sc)) fn(); },ms); }
 
 /* ---------- running a tale ---------- */
-function startTale2(t){ tale={t,i:-1,pick:null,run:++taleRun,v2:true}; TB=null; LST={awake:false,cand:false,lit:false};
+let TST={};
+function startTale2(t){ tale={t,i:-1,pick:null,run:++taleRun,v2:true}; TB=null; LST={awake:false,cand:false,lit:false}; TST={};
   const W=$('taleWorld'); W.innerHTML=''; W.className='v2'; W.style.background=''; show('tale'); fxStart();
   $('taleDots').innerHTML=t.sc.map(()=>'<i></i>').join('');
   /* the book opens in 3D, then we fly into its first page */
@@ -1460,7 +1487,8 @@ function nextScene2(){
     if(sc.lan.at==='horn'){ L.classList.add('onhorn'); ue.querySelector('.ub').appendChild(L); }
     else { L.style.cssText=`left:${sc.lan.x}%;top:${sc.lan.y}%;width:${sc.lan.w}vh;translate:-50% 0`; const s=el('div','str'); s.style.cssText=`left:${sc.lan.x}%;top:${sc.lan.y-6}%;height:6.5%`; TB.act.append(s,L); }
     TB.els.lan=L; if(LST.lit) TB.lanL=light({el:L,oy:.62,r0:6,rT:sc.lanR||30,k0:.3,kT:1,warm:1,flick:1}); }
-  (sc.lights||[]).forEach(l=>{ const o=Object.assign({},l); if(o.id){ o.el=TB.els[o.id]; } TB[(l.name||('L'+Math.random()))]=light(o); });
+  if(tale.t.cast) tale.t.cast(sc);
+  (sc.lights||[]).forEach(l=>{ const o=Object.assign({},l); if(o.id){ o.el=TB.els[o.id]; if(!o.el) return; } TB[(l.name||('L'+Math.random()))]=light(o); });
   if(sc.enter) sc.enter();
   chime([659,880]);
   (async()=>{ await Promise.all([say(TB.n()), wait(same?900:2500)]); if(!okRun(run,sc)) return; ready2(); })(); }
@@ -1509,14 +1537,14 @@ const G2={
  /* rub the dust off: grey puffs over the target fade where her finger goes; ~70 % is enough */
  rub:{ setup(){ const T=TB.els[TB.a.id]; TB.spots=[];
      for(let i=0;i<9;i++){ const d=el('div','dust'); d.style.left=(24+26*(i%3)+(Math.random()-.5)*6)+'%'; d.style.top=(34+20*Math.floor(i/3)+(Math.random()-.5)*5)+'%'; T.appendChild(d); TB.spots.push({el:d,o:1}); }
-     T.classList.add('dusty'); T.style.setProperty('--g',1); TB.rubP=0; },
+     if(TB.a.tickle) TB.spots.forEach(s=>s.el.classList.add('tick')); else { T.classList.add('dusty'); T.style.setProperty('--g',1); } TB.rubP=0; },
    down(x,y){ this.move(x,y); },
    move(x,y){ if(!TB.pd) return; const R=vu()*9; let hit=0;
      TB.spots.forEach(s=>{ if(s.o>0){ const [sx,sy]=ctr(s.el); if(Math.hypot(x-sx,y-sy)>=R) return; s.o=Math.max(0,s.o-.16); s.el.style.opacity=s.o; hit++; } });
-     if(hit){ if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*20*vu(),vy:-(5+Math.random()*10)*vu(),s:.8+Math.random(),life:1.2,c:'rgba(220,210,190,.6)'}); this.prog(); } },
+     if(hit){ if(TB.sc.rubbing) TB.sc.rubbing(x,y); else if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*20*vu(),vy:-(5+Math.random()*10)*vu(),s:.8+Math.random(),life:1.2,c:'rgba(220,210,190,.6)'}); this.prog(); } },
    prog(){ const cl=1-TB.spots.reduce((a,s)=>a+s.o,0)/TB.spots.length, T=TB.els[TB.a.id]; T.style.setProperty('--g',(1-cl).toFixed(2));
-     if(cl-TB.rubP>.12){ TB.rubP=cl; poke2(); chime([880+cl*800]); }
-     if(cl>=.7&&!TB.done){ TB.spots.forEach(s=>{ s.o=0; s.el.style.opacity=0; }); T.classList.remove('dusty'); const [x,y]=ctr(T); fxBurst(x,y,30); glitterBurst(x,y,26,20); done2(); } },
+     if(cl-TB.rubP>.12){ TB.rubP=cl; poke2(); chime([880+cl*800]); if(TB.sc.rubStep) TB.sc.rubStep(cl); }
+     if(cl>=.7&&!TB.done){ TB.spots.forEach(s=>{ s.o=0; s.el.style.opacity=0; }); T.classList.remove('dusty'); T.style.removeProperty('--g'); const [x,y]=ctr(T); fxBurst(x,y,30); glitterBurst(x,y,26,20); done2(); } },
    zig(){ const r=TB.els[TB.a.id].getBoundingClientRect(), f=[]; for(let i=0;i<7;i++){ f.push([r.left+r.width*(i%2?.82:.18), r.top+r.height*(.3+i*.07),1,i?1:0]); } f.push([r.right,r.bottom,1,0]); return f; },
    hint(){ ghost(this.zig(),2200); },
    auto(){ ghost(this.zig(),2200); TB.spots.forEach((s,i)=>bLater(()=>{ s.o=0; s.el.style.opacity=0; this.prog(); },250+i*190)); } },
@@ -1524,15 +1552,15 @@ const G2={
  /* press and hold: a golden ring fills up while her finger stays */
  hold:{ setup(){ const T=TB.els[TB.a.id];
      const R=el('div','',`<svg class="ring2" viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44" pathLength="1"/></svg>`).firstChild;
-     T.appendChild(R); TB.ring=R; TB.hp=0; TB.holding=false; TB.lastT=now(); this.loop(); },
+     const rr=T.getBoundingClientRect(); R.style.width=R.style.height=Math.max(rr.width,rr.height)*1.6+'px'; T.appendChild(R); TB.ring=R; TB.hp=0; TB.holding=false; TB.lastT=now(); this.loop(); },
    loop(){ const sc=TB.sc, run=tale.run, step=()=>{ if(!okRun(run,sc)||TB.done) return; requestAnimationFrame(step);
        const t=now(), dt=Math.min(.25,(t-TB.lastT)/1000); TB.lastT=t; if(!(TB.holding||TB.autoHold)) return;
        TB.hp=Math.min(1,TB.hp+dt/(TB.autoHold?1.8:(TB.a.ms||2000)/1000)); const T=TB.els[TB.a.id];
-       TB.ring.querySelector('.fg').style.strokeDashoffset=(1-TB.hp).toFixed(3); T.style.scale=(1+TB.hp*.18).toFixed(3);
-       if(Math.random()<.35){ const [x,y]=ctr(T); fxAdd({k:'warm',x:x+(Math.random()-.5)*vu()*12,y:y+vu()*4,vy:-(8+Math.random()*10)*vu(),ph:Math.random()*6,s:1+Math.random(),life:1.4,c:'rgba(255,190,90,.8)'}); }
+       TB.ring.querySelector('.fg').style.strokeDashoffset=(1-TB.hp).toFixed(3); T.style.scale=(1+TB.hp*(TB.a.grow||.18)).toFixed(3);
+       if(Math.random()<.35){ const [x,y]=ctr(T); fxAdd({k:'warm',x:x+(Math.random()-.5)*vu()*12,y:y+vu()*4,vy:-(8+Math.random()*10)*vu(),ph:Math.random()*6,s:1+Math.random(),life:1.4,c:TB.a.pc||'rgba(255,190,90,.8)'}); }
        if(TB.hpL) TB.hpL.rT=6+TB.hp*22;
        if(Math.floor(TB.hp*4)>Math.floor((TB.hpLast||0)*4)) chime([660+TB.hp*660]); TB.hpLast=TB.hp;
-       if(TB.hp>=1){ TB.holding=false; TB.ring.style.opacity=0; T.style.scale=''; G2.hold.finish(); } };
+       if(TB.hp>=1){ TB.holding=false; TB.ring.style.opacity=0; if(!TB.a.grow) T.style.scale=''; G2.hold.finish(); } };
      requestAnimationFrame(step); },
    finish(){ const T=TB.els[TB.a.id], [x,y]=ctr(T); fxBurst(x,y,34); glitterBurst(x,y,30,22); done2(); },
    down(x,y){ const T=TB.els[TB.a.id], r=T.getBoundingClientRect(); if(nearEl(T,x,y,Math.max(r.width*.4,vu()*6))){ TB.holding=true; TB.lastT=now(); T.classList.add('pressed'); TB.ring.classList.remove('pulse'); poke2(); } },
@@ -1585,9 +1613,11 @@ const G2={
      for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1);
        S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
      TB.S=S.map(p=>wpos(p[0],p[1])); TB.k=0; TB.dots=TB.S.map((p,i)=>{ if(i%2) return null; const d=el('div','tdot'); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; TB.act.appendChild(d); return d; });
+     if(TB.a.rainbow){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${['#ff5f6d','#ffb347','#ffe66b','#6bdc8a','#5fb8ff','#a57bff'].map(c=>`<polyline fill="none" stroke="${c}" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      const ld=el('div','leader'); TB.act.appendChild(ld); TB.lead=ld; FX.P.forEach(p=>{ if(p.sw) p.x=S[0][0]+(Math.random()-.5)*40, p.y=S[0][1]+(Math.random()-.5)*40; }); this.draw(); },
    pt(k){ return wpx(...TB.S[Math.min(TB.S.length-1,k)]); },
-   draw(){ const p=TB.S[TB.k]; TB.lead.style.left=p[0]+'%'; TB.lead.style.top=p[1]+'%'; TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
+   draw(){ const p=TB.S[TB.k]; TB.lead.style.left=p[0]+'%'; TB.lead.style.top=p[1]+'%';
+     if(TB.rbw){ const pts=TB.S.slice(0,TB.k+1); TB.rbw.querySelectorAll('polyline').forEach((l,i)=>l.setAttribute('points',pts.map(q=>q[0].toFixed(2)+','+(q[1]+(i-2.5)*1.25).toFixed(2)).join(' '))); } TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
    down(x,y){ TB.trMoved=false; TB.trGain=0; this.move(x,y); },
    move(x,y){ if(!TB.pd||TB.done) return; TB.trMoved=true; const tol=vu()*12; let best=-1,bd=1e9;
      for(let j=TB.k;j<Math.min(TB.S.length,TB.k+9);j++){ const [px,py]=this.pt(j), d=Math.hypot(x-px,y-py); if(d<tol&&d<bd){ bd=d; best=j; } }
@@ -1601,7 +1631,9 @@ const G2={
  /* flick the wind away; it comes back stronger, three times */
  swipe:{ setup(){ TB.step=0; TB.wready=true; this.blow(); },
    blow(){ const w=TB.els[TB.a.id], L=TB.els.lan; if(L) L.classList.add('windy'); if(TB.lanL) TB.lanL.flick=3;
-     FX.em=FX.em.filter(e=>!e.wind); FX.em.push({wind:1,rate:9+TB.step*5,fn:()=>{ if(!TB||!TB.wready) return; const [x,y]=ctr(w), u=vu(); fxAdd({k:'streak',x:x-u*4,y:y+(Math.random()-.5)*u*16,vx:-(70+Math.random()*50)*u,vy:(Math.random()-.3)*6*u,len:(6+Math.random()*8)*u,life:.8}); }}); },
+     FX.em=FX.em.filter(e=>!e.wind);
+     if(TB.a.rain){ FX.em.push({wind:1,rate:28,fn:()=>{ if(!TB||!TB.wready) return; const r=w.getBoundingClientRect(), u=vu(); fxAdd({k:'drop',x:r.left+r.width*(.2+Math.random()*.6),y:r.top+r.height*.75,vy:(55+Math.random()*25)*u,life:.55,len:3.2*u}); }}); return; }
+     FX.em.push({wind:1,rate:9+TB.step*5,fn:()=>{ if(!TB||!TB.wready) return; const [x,y]=ctr(w), u=vu(); fxAdd({k:'streak',x:x-u*4,y:y+(Math.random()-.5)*u*16,vx:-(70+Math.random()*50)*u,vy:(Math.random()-.3)*6*u,len:(6+Math.random()*8)*u,life:.8}); }}); },
    down(x,y){ TB.sw={x,y,t:now(),ok:false}; },
    move(x,y){ const s=TB.sw; if(!s) return; if(Math.random()<.5) fxAdd({k:'spark',x,y,vx:0,vy:0,life:.4,s:1.1,c:'rgba(220,235,255,.9)'});
      const d=Math.hypot(x-s.x,y-s.y), dt=now()-s.t; if(TB.wready&&d>vu()*13&&d/dt>.3){ s.ok=true; this.fire(x-s.x,y-s.y); TB.sw=null; } },
@@ -1625,7 +1657,7 @@ const G2={
  tapall:{ setup(){ TB.left=TB.a.ids.slice(); },
    down(x,y){ const id=TB.left.find(id=>nearEl(TB.els[id],x,y,vu()*5)); if(id) this.tap(id); },
    tap(id){ if(!TB.left.includes(id)) return; TB.left=TB.left.filter(x=>x!==id); const b=TB.els[id], [x,y]=ctr(b), n=TB.a.ids.length-TB.left.length;
-     b.classList.remove('g2hint','twk'); void b.offsetWidth; b.classList.add('twk'); fxBurst(x,y,24); glitterBurst(x,y,14,14); chime([[784,880,988,1175,1318,1568][Math.min(5,n-1)]]); poke2();
+     const fx=TB.a.m==='poof'?'poof2':TB.a.m==='ring'?'ring2a':'twk'; b.classList.remove('g2hint',fx); void b.offsetWidth; b.classList.add(fx); fxBurst(x,y,24); glitterBurst(x,y,14,14); chime([[784,880,988,1175,1318,1568][Math.min(5,n-1)]]); poke2();
      if(TB.sc.item) TB.sc.item(id,b); if(!TB.left.length) bLater(()=>done2(),700); },
    hint(){ const id=TB.left[0]; if(!id) return; const [x,y]=ctr(TB.els[id]); TB.els[id].classList.add('g2hint'); ghost([[x,y+vu()*10,1,0],[x,y,1,1],[x,y,.8,1],[x,y,1,1],[x,y,1,0]],1600); },
    auto(){ TB.left.slice().forEach((id,k)=>bLater(()=>{ const [x,y]=ctr(TB.els[id]); ghost([[x,y,1,1],[x,y,.8,1],[x,y,1,0]],500); this.tap(id); },k*700)); } }
@@ -1723,6 +1755,155 @@ const LATERNE2={id:'laterne', v2:true, title:'Die kleine Laterne', icon:'🏮', 
   item(id,b){ if(TB.lanL) TB.lanL.rT=26+(5-TB.left.length)*2; },
   d:'Seitdem hängt die kleine Laterne am Rand vom Zauberwald und leuchtet allen, die sich verlaufen haben. Und jede Nacht zwinkern die Sterne ihr zu. Ende.'}
 ]};
+/* ---------- set pieces for the princess tale ---------- */
+function princessSVG(){ return `<svg viewBox="0 0 100 150"><g class="pb">
+  <path d="M36 74 Q50 66 64 74 L84 138 Q50 152 16 138 Z" fill="#ff9ad5" stroke="#9a4a86" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M30 112 Q50 120 70 112 M24 130 Q50 140 76 130" fill="none" stroke="#ffd1ec" stroke-width="3" stroke-linecap="round"/>
+  <path d="M38 80 Q50 86 62 80" fill="none" stroke="#ffe27a" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="30" cy="96" rx="6" ry="9" fill="#ffe0c8" stroke="#9a5a5a" stroke-width="2.5" transform="rotate(20 30 96)"/><ellipse cx="70" cy="96" rx="6" ry="9" fill="#ffe0c8" stroke="#9a5a5a" stroke-width="2.5" transform="rotate(-20 70 96)"/>
+  <path d="M22 50 Q18 76 30 82 L34 56 Z M78 50 Q82 76 70 82 L66 56 Z" fill="#ffcf5a" stroke="#b8862e" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="50" cy="46" r="25" fill="#ffe8d6" stroke="#9a5a5a" stroke-width="3"/>
+  <path d="M25 48 Q22 18 50 18 Q78 18 75 48 Q70 30 52 30 Q44 38 30 36 Q27 40 25 48Z" fill="#ffcf5a" stroke="#b8862e" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M35 22 L38 6 L45 16 L50 3 L55 16 L62 6 L65 22 Z" fill="#ffd84a" stroke="#b8862e" stroke-width="2.5" stroke-linejoin="round"/><circle cx="50" cy="14" r="2.6" fill="#ff7ab8"/>
+  <g class="ey ey-o"><ellipse cx="41" cy="47" rx="3.6" ry="4.6" fill="#3b2a5a"/><ellipse cx="59" cy="47" rx="3.6" ry="4.6" fill="#3b2a5a"/><circle cx="42.2" cy="45.4" r="1.4" fill="#fff"/><circle cx="60.2" cy="45.4" r="1.4" fill="#fff"/></g>
+  <g class="ey ey-c" fill="none" stroke="#3b2a5a" stroke-width="2.8" stroke-linecap="round"><path d="M36 48 q5 -6 10 0"/><path d="M54 48 q5 -6 10 0"/></g>
+  <g class="ey brow" stroke="#b8862e" stroke-width="2.4" stroke-linecap="round"><path d="M35 41 L44 37.5"/><path d="M65 41 L56 37.5"/></g>
+  <ellipse cx="34" cy="55" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".75"/><ellipse cx="66" cy="55" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".75"/>
+  <path class="m m-sad" d="M44 60 q6 -5 12 0" fill="none" stroke="#7a2a3a" stroke-width="2.6" stroke-linecap="round"/>
+  <path class="m m-smile" d="M43 57 q7 6 14 0" fill="none" stroke="#7a2a3a" stroke-width="2.6" stroke-linecap="round"/>
+  <path class="m m-giggle" d="M44 56 q6 8 12 0 Z" fill="#7a2a3a" stroke="#7a2a3a" stroke-width="2" stroke-linejoin="round"/>
+  <g class="m m-laugh"><path d="M41 55 q9 15 18 0 Z" fill="#7a2a3a" stroke="#7a2a3a" stroke-width="2" stroke-linejoin="round"/><path d="M45 61 q5 4 10 0" fill="#ff7a8a"/></g></g></svg>`; }
+function birdSVG(){ const id='bd'+(++LANC); return `<svg viewBox="0 0 100 80"><defs><radialGradient id="${id}" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff6c0"/><stop offset=".6" stop-color="#ffd23f"/><stop offset="1" stop-color="#f0a020"/></radialGradient></defs>
+  <path d="M26 46 L4 34 L9 50 L3 64 L28 56Z" fill="#ffc42e" stroke="#a8701a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M42 66 L40 76 M54 66 L56 76" stroke="#e08a2a" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="48" cy="48" rx="27" ry="20" fill="url(#${id})" stroke="#a8701a" stroke-width="2.5"/>
+  <g class="hd"><circle cx="72" cy="32" r="15" fill="url(#${id})" stroke="#a8701a" stroke-width="2.5"/><path d="M66 18 Q68 8 74 12 Q76 6 80 12" fill="none" stroke="#ffc42e" stroke-width="3" stroke-linecap="round"/>
+   <path d="M85 30 L97 35 L85 40Z" fill="#ff8a2a" stroke="#a8501a" stroke-width="2" stroke-linejoin="round"/><circle cx="76" cy="29" r="3.2" fill="#3b2a1a"/><circle cx="77" cy="28" r="1.1" fill="#fff"/><ellipse cx="74" cy="38" rx="3.5" ry="2" fill="#ff9ac0" opacity=".7"/></g>
+  <path class="bw" d="M36 44 Q50 18 66 42 Q52 52 36 44Z" fill="#ffb81e" stroke="#a8701a" stroke-width="2.5" stroke-linejoin="round"/></svg>`; }
+function castleSVG(){ const t=(x,y,w,h,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${c}" stroke="#8a62b0" stroke-width="3"/>
+   <path d="M${x-6} ${y+2} L${x+w/2} ${y-34} L${x+w+6} ${y+2}Z" fill="#ff8fcf" stroke="#9a4a86" stroke-width="3" stroke-linejoin="round"/><path d="M${x+w/2} ${y-34} V${y-48}" stroke="#9a4a86" stroke-width="2.5"/><path d="M${x+w/2} ${y-48} l14 5 -14 5Z" fill="#ffe27a"/>
+   <path d="M${x+w/2-9} ${y+30} v-8 a9 9 0 0 1 18 0 v8Z" fill="#5a3a8a" opacity=".8"/>`;
+  return `<svg viewBox="0 0 200 200"><path d="M30 196 Q10 170 40 160 L160 160 Q190 170 170 196Z" fill="#ffffff" opacity=".9"/>
+   <rect x="46" y="96" width="108" height="72" fill="#efe2ff" stroke="#8a62b0" stroke-width="3"/>
+   <path d="M46 96 h108 M46 96 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8 h12 v-8 h12 v8" fill="none" stroke="#8a62b0" stroke-width="3"/>
+   ${t(22,74,30,94,'#f6ecff')}${t(148,74,30,94,'#f6ecff')}${t(84,46,32,64,'#fbf4ff')}
+   <path d="M86 168 v-26 a14 14 0 0 1 28 0 v26Z" fill="#c38bff" stroke="#8a62b0" stroke-width="3"/><circle cx="108" cy="156" r="2.4" fill="#ffe27a"/>
+   <g fill="#8fc7ff" stroke="#8a62b0" stroke-width="2"><rect x="58" y="116" width="12" height="16" rx="6"/><rect x="130" y="116" width="12" height="16" rx="6"/></g>
+   <path d="M10 196 Q0 176 22 172 Q26 156 46 166 Q60 154 76 170 L124 170 Q140 154 154 166 Q174 156 178 172 Q200 176 190 196Z" fill="#ffffff"/></svg>`; }
+function windowSVG(){ return `<svg viewBox="0 0 100 120"><defs><linearGradient id="wsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fc6ff"/><stop offset="1" stop-color="#e6f6ff"/></linearGradient></defs>
+  <path d="M10 118 V48 A40 40 0 0 1 90 48 V118Z" fill="#fff4fb" stroke="#8a62b0" stroke-width="4"/>
+  <path d="M18 112 V50 A32 32 0 0 1 82 50 V112Z" fill="url(#wsky)"/>
+  <g fill="#fff" opacity=".95"><ellipse cx="34" cy="84" rx="12" ry="6"/><ellipse cx="42" cy="80" rx="9" ry="6"/><ellipse cx="66" cy="62" rx="10" ry="5"/></g>
+  <path d="M50 18 V112 M18 72 H82" stroke="#d8b6e8" stroke-width="4"/><path d="M6 118 H94" stroke="#8a62b0" stroke-width="6" stroke-linecap="round"/></svg>`; }
+function curtainSVG(){ return `<svg viewBox="0 0 100 120"><path d="M4 6 H96" stroke="#b8862e" stroke-width="5" stroke-linecap="round"/><circle cx="4" cy="6" r="4" fill="#ffd84a"/><circle cx="96" cy="6" r="4" fill="#ffd84a"/>
+  <path d="M8 8 H92 Q96 60 90 118 Q50 112 10 118 Q4 60 8 8Z" fill="#c25a9a" stroke="#7a2a5a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M22 10 Q20 60 24 116 M38 10 Q40 60 36 114 M54 10 Q52 60 56 114 M70 10 Q72 60 68 114 M84 10 Q82 60 86 116" stroke="#9a3a7a" stroke-width="4" fill="none" opacity=".7"/>
+  <path d="M8 104 Q50 96 92 104" stroke="#ffd84a" stroke-width="4" fill="none" stroke-dasharray="2 6" stroke-linecap="round"/></svg>`; }
+function hillSVG(){ return `<svg viewBox="0 0 200 140"><path d="M0 140 Q4 92 40 90 Q44 50 84 52 Q96 8 132 26 Q168 22 166 64 Q200 70 200 140Z" fill="#fff" stroke="#c9b6ff" stroke-width="3"/>
+  <path d="M30 120 Q60 104 92 118 M110 96 Q140 84 170 100" stroke="#e2d8ff" stroke-width="5" fill="none" stroke-linecap="round"/></svg>`; }
+function pondSVG(){ return `<svg viewBox="0 0 160 50"><ellipse cx="80" cy="25" rx="78" ry="23" fill="#7fc8ff" stroke="#ffffff" stroke-width="4"/><ellipse cx="80" cy="22" rx="60" ry="14" fill="#a8dcff"/>
+  <path d="M40 22 q10 -4 20 0 M96 30 q12 -4 24 0" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`; }
+Object.assign(SVGP,{PRIN:[princessSVG,.67],BIRD:[birdSVG,1.25],CASTLE:[castleSVG,1],FENSTER:[windowSVG,.83],VORHANG:[curtainSVG,.83],HILL:[hillSVG,1.43],POND:[pondSVG,3.2],
+  CLD:[()=>CLOUD('#ffffff'),1.82],CLDG:[()=>CLOUD('#8f9aae'),1.82]});
+const SKYDAY='linear-gradient(180deg,#6fc0ff 0%,#a8dcff 55%,#e6f6ff 100%)', SKYHIGH='linear-gradient(180deg,#86b2ff 0%,#c4b4ff 55%,#ffd6ec 100%)', CLOUDFLOOR='linear-gradient(180deg,#ffffff 0%,#f1f5ff 50%,#dfe8fb 100%)';
+const CLOUDSFAR=[['CLD',14,30,11],['CLD',48,20,8],['CLD',78,32,10]];
+Object.assign(SETS2,{
+  saal:{sky:'linear-gradient(180deg,#b590d6 0%,#d4b2e6 60%,#ead0f0 100%)', gnd:'linear-gradient(180deg,#b58ad6 0%,#8f63b8 60%,#6e4a96 100%)',
+    act:[['fenster','FENSTER',64,40,56]], fore:[['🪴',4,92,18],['🧸',96,94,12]]},
+  wolken:{sky:SKYDAY, sun:[84,14], farp:CLOUDSFAR, mid:[['CLD',6,58,16],['CLD',94,56,18]], gnd:CLOUDFLOOR, fore:[['CLD',4,102,20],['CLD',97,104,22]]},
+  teich:{sky:SKYDAY, sun:[84,14], farp:CLOUDSFAR, mid:[['CLD',6,58,16],['CLD',94,56,18]], gnd:CLOUDFLOOR, act:[['teich','POND',60,84,12]], fore:[['CLD',4,102,20],['CLD',97,104,22]]},
+  himmel:{sky:SKYHIGH, sun:[14,16], farp:[['CLD',30,40,9],['CLD',60,52,7],['CLD',88,30,9]], mid:[['CLD',40,80,14],['CLD',8,40,10]], act:[['berg','HILL',84,74,44]], fore:[['CLD',4,104,22],['CLD',60,108,20]]},
+  gipfel:{sky:SKYHIGH, sun:[14,16], farp:[['CLD',30,36,8],['CLD',70,28,7]], mid:[['CLD',6,56,14],['CLD',96,52,16]], gnd:CLOUDFLOOR, fore:[['CLD',4,104,20],['CLD',97,104,22]]},
+  schloss2:{sky:'linear-gradient(180deg,#7fc6ff 0%,#c7e8ff 60%,#fff0fa 100%)', sun:[88,13], farp:CLOUDSFAR, mid:[['CLD',6,60,16]], gnd:CLOUDFLOOR,
+    act:[['burg','CASTLE',63,44,70]], fore:[['CLD',4,104,20],['CLD',97,104,22]]}
+});
+function setMood(m){ TST.mood=m; const p=TB&&TB.els.prin; if(p){ p.dataset.mood=m; p.classList.remove('wiggle'); void p.offsetWidth; p.classList.add('wiggle'); } }
+function hihi(x,y,t){ const u=vu(); particle(t||rnd(['hihi','hi!','haha']),x,y,u*4.6,'#ff4fa8',(x,y)=>[{transform:`translate(${x}px,${y}px) scale(.4)`,opacity:0},
+  {transform:`translate(${x+(Math.random()-.5)*8*u}px,${y-6*u}px) scale(1)`,opacity:1,offset:.3},{transform:`translate(${x+(Math.random()-.5)*16*u}px,${y-18*u}px) scale(.9)`,opacity:0}],1500); }
+
+/* ================= Die Prinzessin, die nicht lachen konnte ================= */
+/* motif: the golden bird's song, and a laugh that grows in three steps (smile, giggle, laugh) */
+const PRINZ2={id:'prinzessin', v2:true, title:'Die Prinzessin, die nicht lachen konnte', icon:'👸', cover:TBG.schloss,
+ cast(sc){ if(!sc.pr) return; const pr=el('div','prin',princessSVG()); pr.dataset.mood=TST.mood||'sad';
+   if(sc.pr==='back'){ pr.classList.add('onback'); TB.els.uni.querySelector('.ub').appendChild(pr); }
+   else { const [x,y,z]=sc.pr; pr.style.cssText=`left:${x}%;top:${y}%;width:${z*.67}vh;translate:-50% -50%`; TB.act.appendChild(pr); }
+   TB.els.prin=pr; if(TST.bird){ const b=el('div','bird oncrown',birdSVG()); pr.appendChild(b); TB.els.cbird=b; } },
+ sc:[
+ {set:'saal', dark:.42, u:[14,70,32], pr:[34,63,30],
+  p:[['vorhang','VORHANG',64,40,56],['seite','',93,42,1]],
+  lights:[{id:'prin',r0:14,rT:14,k0:.5,kT:.5}],
+  a:{t:'drag',ids:['vorhang'],to:'seite',w:'SONNE'},
+  s:'Es war einmal eine kleine Prinzessin. Sie wohnte im Wolkenschloss, hoch über allen Wolken. Früher lachte sie den ganzen Tag, und ein goldener Vogel sang dazu: Tirili, tirila, das Lachen ist da! Doch eines Morgens war der Vogel fort, und mit ihm ihr Lachen. Seitdem war die Prinzessin traurig, und die Vorhänge blieben zu. Zieh den Vorhang zur Seite!',
+  h:'Nimm den Vorhang und zieh ihn zur Seite!',
+  item(id,b){ b.style.transition='left .45s ease-out,top .45s ease-out,scale .6s ease-out'; b.style.scale='.42 1'; FX.darkT=0;
+    const f=TB.els.fenster, bm=el('div','beams'); bm.style.cssText=`left:${f.style.left};top:${f.style.top};width:70vh;height:90vh;translate:-50% -30%`; TB.act.appendChild(bm); requestAnimationFrame(()=>bm.classList.add('on')); },
+  d:['Die Sonne schien herein. Und da, draußen am Himmel, glitzerte eine goldene Feder!',
+     ()=>{ const f=TB.els.fenster.getBoundingClientRect(), fe=el('div','tp2','🪶'); fe.style.cssText=`left:0;top:0;font-size:7vh;filter:sepia(1) saturate(4) hue-rotate(-12deg) brightness(1.15) drop-shadow(0 0 2vh #ffd84a);z-index:3`;
+       TB.act.appendChild(fe); try{ fe.animate([{transform:`translate(${f.left+f.width*.25}px,${f.top+f.height*.6}px) rotate(-30deg)`,opacity:0},{transform:`translate(${f.left+f.width*.45}px,${f.top+f.height*.4}px) rotate(20deg)`,opacity:1,offset:.3},
+         {transform:`translate(${f.left+f.width*.8}px,${f.top+f.height*.25}px) rotate(-20deg)`,opacity:1,offset:.8},{transform:`translate(${f.left+f.width*.9}px,${f.top+f.height*.15}px) rotate(0) scale(.4)`,opacity:0}],{duration:3600,easing:'ease-in-out',fill:'forwards'}); }catch(e){} },
+     'Der Vogel ist davongeflogen, sagte dein Einhorn. Komm, Prinzessin, wir holen dein Lachen zurück!',
+     ()=>{ const p=TB.els.prin; p.style.transition='left 1.4s ease-in-out'; p.style.left='24%'; }, 900]},
+ {set:'wolken', u:[22,62,44], pr:'back',
+  p:[['schaf','🐑',66,70,17,'lost'],['regen','CLDG',66,40,15]],
+  a:{t:'swipe',id:'regen',n:2,rain:1,w:'WOLKE'},
+  s:'Dein Einhorn flog mit der Prinzessin über das Wolkenland. Dort stand ein kleines Wolkenschaf. Über ihm hing eine graue Regenwolke und machte es ganz nass. Plitsch, platsch! Wisch die Regenwolke weg!',
+  h:'Wisch die Regenwolke mit dem Finger weg, ganz schnell!',
+  x:[['w2','Plitsch, platsch! Da ist sie wieder!']],
+  d:[()=>{ const s=TB.els.schaf; s.classList.remove('lost'); s.classList.add('wig'); const [x,y]=ctr(s), u=vu(); for(let i=0;i<24;i++) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*60*u,vy:-(10+Math.random()*30)*u,life:.9,s:1.2,c:'rgba(170,210,255,.9)'});
+       try{ s.animate([{transform:'none'},{transform:'scale(1.35,1.2)'},{transform:'scale(1.3,1.25)'}],{duration:700,fill:'forwards',easing:'cubic-bezier(.2,1.6,.4,1)'}); }catch(e){} },
+     'Das Schaf schüttelte sich: Brrr! Da stand seine Wolle in alle Richtungen ab, wie ein Pusteblumenball.',
+     ()=>setMood('smile'),
+     'Und die Prinzessin? Ihre Mundwinkel gingen ein kleines bisschen nach oben. Das war ihr erstes Lächeln!',
+     ()=>hearts(...ctr(TB.els.schaf),4),
+     'Mäh, danke! sagte das Schaf. Ich habe den goldenen Vogel gesehen. Er flog zum Wolkenteich.', 300]},
+ {set:'teich', u:[20,62,42], pr:'back',
+  p:[['frosch','🐸',56,78,12],['blase','',66,56,9,'bubble2']],
+  a:{t:'hold',id:'blase',grow:1.7,pc:'rgba(200,170,255,.85)',w:'BLASE'},
+  s:'Am Wolkenteich saß ein kleiner Frosch. Er wollte die größte Seifenblase der Welt pusten. Aber jede Blase machte nur plopp und war weg. Halte deinen Finger auf die Seifenblase, dann wird sie riesengroß!',
+  h:'Leg den Finger auf die Seifenblase und halt ihn ganz still!',
+  d:[()=>{ const f=TB.els.frosch, b=TB.els.blase, [fx,fy]=ctr(f), [bx,by]=ctr(b);
+       try{ f.animate([{transform:'none'},{transform:`translate(${(bx-fx)/2}px,${(by-fy)/2-vu()*14}px) rotate(-20deg)`},{transform:`translate(${bx-fx}px,${by-fy}px) scale(.9)`}],{duration:900,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+       bLater(()=>{ [f,b].forEach(e=>{ const a=e.getAnimations()[0], base=a?`translate(${bx-fx}px,${by-fy}px) scale(.9) `:''; try{ e.animate([{transform:(e===f?base:'')+'translateY(0)'},{transform:(e===f?base:'')+'translateY(-60vh)'}],{duration:6000,easing:'ease-in',fill:'forwards'}); }catch(_){} }); },1000); },
+     'Die Seifenblase wurde so groß, dass der Frosch hineinhüpfte. Quak! Und dann schwebte er mit ihr davon.',
+     ()=>{ setMood('giggle'); const [x,y]=ctr(TB.els.prin); hihi(x,y-vu()*8,'hihi'); bLater(()=>hihi(x+vu()*4,y-vu()*10,'hihi'),600); },
+     'Da kicherte die Prinzessin. Hihi! Und der Frosch rief von oben: Der goldene Vogel sitzt auf dem höchsten Wolkenberg!', 300]},
+ {set:'himmel', u:[16,72,34], pr:'back',
+  a:{t:'trace',rainbow:1,path:[[24,60],[34,45],[48,35],[64,35],[77,44],[86,58]],w:'REGENBOGEN'},
+  s:'Aber der Wolkenberg war so hoch! Wie sollten sie da hinaufkommen? Da sagte dein Einhorn: Ich weiß was! Mal mit dem Finger einen Regenbogen, bis ganz nach oben!',
+  h:'Fahr mit dem Finger den Punkten nach, bis zum Berg!',
+  d:[()=>{ const U=TB.els.uni, S=TB.S.map(q=>wpx(q[0],q[1])), [ux,uy]=ctr(U), o=[S[0][0]-ux,S[0][1]-uy+vu()*10];
+       const kf=S.filter((_,i)=>i%5===0||i===S.length-1).map(([x,y])=>({transform:`translate(${x-S[0][0]}px,${y-S[0][1]}px)`}));
+       trail(U,3200); try{ U.animate(kf,{duration:3200,easing:'ease-in-out',fill:'forwards'}); }catch(e){} },
+     'Hui! Über den Regenbogen flogen sie hinauf, bis auf den höchsten Wolkenberg.', 1400]},
+ {set:'gipfel', u:[20,66,40], pr:'back',
+  p:[['vogel','BIRD',70,44,9,'bird shy'],['w1','CLD',52,50,15],['w2','CLD',70,44,17],['w3','CLD',86,54,15]],
+  a:{t:'tapall',ids:['w1','w3','w2'],m:'poof',w:'VOGEL'},
+  s:'Oben war es ganz still. Nur drei dicke Wolken saßen da. Und hinter einer Wolke piepste es leise. Puste die Wolken weg! Tippe sie an.',
+  h:'Tippe auf die Wolken!',
+  item(id,b){ if(id==='w2'){ const v=TB.els.vogel; fxBurst(...ctr(v),20,['rgba(255,226,122,.95)']); } },
+  d:['Da war er, der goldene Vogel! Aber er steckte den Kopf unter den Flügel und piepste: Ich bin so schüchtern. Ich komme nur nach Hause, wenn ich die Prinzessin lachen höre.', 300]},
+ {set:'gipfel', u:[17,68,34], pr:[47,58,40],
+  p:[['wk','CLD',82,58,12],['vogel','BIRD',82,49,9,'bird shy']],
+  a:{t:'rub',id:'prin',tickle:1,w:'LACHEN'},
+  s:'Die Prinzessin seufzte: Aber ich kann doch noch nicht richtig lachen. Da zwinkerte dein Einhorn: Dann kitzeln wir dich! Kitzle die Prinzessin mit dem Finger, hin und her!',
+  h:'Kitzle die Prinzessin am Bauch, hin und her!',
+  rubbing(x,y){ if(Math.random()<.18) hihi(x,y-vu()*4); const p=TB.els.prin; if(!p.classList.contains('wiggle')||Math.random()<.05){ p.classList.remove('wiggle'); void p.offsetWidth; p.classList.add('wiggle'); } },
+  rubStep(cl){ if(cl>.3&&TST.mood!=='giggle') setMood('giggle'); },
+  done(){ setMood('laugh'); TB.els.prin.classList.add('laughing'); const [x,y]=ctr(TB.els.prin); for(let i=0;i<6;i++) bLater(()=>hihi(x+(Math.random()-.5)*vu()*20,y-vu()*12,rnd(['haha','hihi','hahaha'])),i*350); },
+  d:['Hihi! Haha! Hahaha! Die Prinzessin lachte und lachte, so laut, dass es über alle Wolken klang.',
+     ()=>{ const v=TB.els.vogel, p=TB.els.prin; v.classList.remove('shy'); chime([1318,1568,1760]); const a=ctr(v), r=p.getBoundingClientRect(), tx=r.left+r.width/2, ty=r.top-vu()*2;
+       try{ v.animate([{transform:'none'},{transform:`translate(${(tx-a[0])/2}px,${(ty-a[1])/2-vu()*16}px)`},{transform:`translate(${tx-a[0]}px,${ty-a[1]}px) scale(.8)`}],{duration:1800,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+       TST.bird=true; bLater(()=>{ fxBurst(tx,ty,30); hearts(tx,ty,6); },1800); },
+     'Da hob der goldene Vogel den Kopf. Er flatterte herbei und setzte sich auf ihre Krone.', 600]},
+ {set:'schloss2', u:[17,70,34], pr:[35,63,28],
+  p:[], a:{t:'tapall',ids:['g1','g2','g3'],m:'ring',w:'GLOCKE'},
+  enter(){ setMood('laugh'); const B=TB.els.burg; [[18.5,49],[50,35],[81.5,49]].forEach(([x,y],k)=>{ const g=el('div','tp2','🔔'); g.style.cssText=`left:${x}%;top:${y}%;font-size:7vh;transform-origin:50% 10%`; B.appendChild(g); TB.els['g'+(k+1)]=g; }); },
+  s:'Dann flogen sie alle zusammen nach Hause zum Wolkenschloss. Und weil die Prinzessin wieder lachen konnte, sollte es das ganze Land hören. Läute die Glocken! Tippe sie an.',
+  h:'Tippe auf die Glocken!',
+  d:'Seitdem singt der goldene Vogel jeden Morgen: Tirili, tirila, das Lachen ist da! Und die Prinzessin lacht mit. Ende.',
+  done(){ FX.em.push({rate:4,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(['rgba(255,226,122,.9)','rgba(255,182,225,.9)'])})}); TB.els.prin.classList.add('laughing'); }}
+]};
+
 function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
   t.sc.forEach((s,i)=>{ const k='t2_'+t.id+'_'+(i+1); reg(k,s.s,null,'Märchen'); if(s.h) reg(k+'h',s.h,null,'Märchen'); if(typeof s.d==='string') reg(k+'d',s.d,null,'Märchen');
     if(Array.isArray(s.d)) s.d.filter(x=>typeof x==='string').forEach((x,j)=>reg(k+'d'+(j+1),x,null,'Märchen'));
@@ -1732,21 +1913,7 @@ function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
 /* scene: bg, fx, u:[x,y,size vh,flip] (unicorn), p:[[id,emoji,x,y,size vh,class]], a:{t:tap|all|choose|times|find|none,...}, s: narration */
 const TALES=[
  LATERNE2,
- {id:'prinzessin', title:'Die Prinzessin, die nicht lachen konnte', icon:'👸', cover:TBG.schloss, sc:[
-  {bg:'schloss', p:[['burg','🏰',74,38,46],['prin','👸',56,68,22]], a:{t:'tap',id:'prin'},
-   s:'Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!'},
-  {bg:'schloss', p:[['koenig','🤴',44,58,22],['burg','🏰',80,48,36]], a:{t:'tap',id:'burg',w:'BURG'},
-   s:'Der König war traurig. Er rief: Wer meine Tochter zum Lachen bringt, bekommt die schönste Torte im ganzen Land! Da machtest du dich mit deinem Einhorn auf den Weg. Tippe auf die Burg!'},
-  {bg:'schloss', p:[['prin','👸',84,30,18],['banane','🍌',42,64,19],['ente','🦆',60,64,19],['hut','🎩',78,64,19]], a:{t:'choose',ids:['banane','ente','hut'],w:{banane:'BANANE',ente:'ENTE',hut:'HUT'}},
-   s:'Zuerst kam ein Ritter mit einer goldenen Krone. Die Prinzessin lachte nicht. Dann kam ein Zauberer mit einem Ring. Sie lachte wieder nicht. Was ist denn wirklich lustig? Du darfst wählen.'},
-  {bg:'schloss', u:[46,64,44], p:[['prin','👸',86,30,18],['k1','☁️',30,84,22],['k2','☁️',62,86,24],['pick','$',56,36,13]], a:{t:'times',id:'uni',n:3},
-   s:'Dein Einhorn setzte es sich auf den Kopf und tanzte. Da stolperte es und purzelte mitten in einen Berg aus Kissen. Plumps! Kitzle dein Einhorn, damit es wieder aufsteht. Tippe es dreimal an!'},
-  {bg:'schloss', p:[['prin','👸',54,60,26,'party'],['h1','❤️',34,30,13],['h2','❤️',52,22,13],['h3','❤️',72,30,13],['h4','❤️',86,50,13]], a:{t:'all',ids:['h1','h2','h3','h4'],m:'poof'},
-   s:'Da geschah es. Die Prinzessin kicherte. Erst ganz leise. Dann lachte sie laut! Sie lachte so sehr, dass lauter kleine Herzen aus dem Schloss flogen. Fang alle Herzen!'},
-  {bg:'schloss', p:[['koenig','🤴',36,42,20],['torte','🎂',62,68,22],['krone','👑',82,58,15],['kerze','🕯️',48,78,13]], a:{t:'tap',id:'torte',w:'TORTE'},
-   s:'Der König hielt sein Wort. Er ließ die größte Torte bringen, die du je gesehen hast. Mit Sahne und Erdbeeren. Wo ist die Torte?'},
-  {bg:'schloss', p:[['koenig','🤴',40,50,20],['prin','👸',58,54,22,'party'],['torte','🎂',76,70,20],['h1','❤️',50,24,11,'tw'],['h2','❤️',72,30,11,'tw']], a:{t:'none'}, fx:'glit',
-   s:'Die Prinzessin, der König, du und dein Einhorn aßen zusammen die ganze Torte auf. Von diesem Tag an lachte die Prinzessin jeden Morgen. Und wenn sie nicht aufgehört hat, dann lacht sie noch heute. Ende.'}]},
+ PRINZ2,
  {id:'welle', title:'Die kleine Welle', icon:'🌊', cover:TBG.meer, sc:[
   {bg:'meer', u:[18,36,30], p:[['welle','🌊',60,60,34]], a:{t:'tap',id:'welle'},
    s:'Es war einmal eine kleine Welle. Sie wohnte weit draußen im Glitzermeer. Sie hatte nur einen einzigen Wunsch: Einmal wollte sie den Strand sehen. Tippe die kleine Welle an!'},

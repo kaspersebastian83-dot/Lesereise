@@ -502,13 +502,37 @@ t2_laterne_7	Dann trug dein Einhorn die kleine Laterne zurück an die alte Eiche
 t2_laterne_7h	Tippe auf die Sterne!
 t2_laterne_7d	Seitdem hängt die kleine Laterne am Rand vom Zauberwald und leuchtet allen, die sich verlaufen haben. Und jede Nacht zwinkern die Sterne ihr zu. Ende.
 t_prinzessin_titel	Die Prinzessin, die nicht lachen konnte.
-t_prinzessin_1	Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!
-t_prinzessin_2	Der König war traurig. Er rief: Wer meine Tochter zum Lachen bringt, bekommt die schönste Torte im ganzen Land! Da machtest du dich mit deinem Einhorn auf den Weg. Tippe auf die Burg!
-t_prinzessin_3	Zuerst kam ein Ritter mit einer goldenen Krone. Die Prinzessin lachte nicht. Dann kam ein Zauberer mit einem Ring. Sie lachte wieder nicht. Was ist denn wirklich lustig? Du darfst wählen.
-t_prinzessin_4	Dein Einhorn setzte es sich auf den Kopf und tanzte. Da stolperte es und purzelte mitten in einen Berg aus Kissen. Plumps! Kitzle dein Einhorn, damit es wieder aufsteht. Tippe es dreimal an!
-t_prinzessin_5	Da geschah es. Die Prinzessin kicherte. Erst ganz leise. Dann lachte sie laut! Sie lachte so sehr, dass lauter kleine Herzen aus dem Schloss flogen. Fang alle Herzen!
-t_prinzessin_6	Der König hielt sein Wort. Er ließ die größte Torte bringen, die du je gesehen hast. Mit Sahne und Erdbeeren. Wo ist die Torte?
-t_prinzessin_7	Die Prinzessin, der König, du und dein Einhorn aßen zusammen die ganze Torte auf. Von diesem Tag an lachte die Prinzessin jeden Morgen. Und wenn sie nicht aufgehört hat, dann lacht sie noch heute. Ende.
+t2_prinzessin_1	Es war einmal eine kleine Prinzessin. Sie wohnte im Wolkenschloss, hoch über allen Wolken. Früher lachte sie den ganzen Tag, und ein goldener Vogel sang dazu: Tirili, tirila, das Lachen ist da! Doch eines Morgens war der Vogel fort, und mit ihm ihr Lachen. Seitdem war die Prinzessin traurig, und die Vorhänge blieben zu. Zieh den Vorhang zur Seite!
+t2_prinzessin_1h	Nimm den Vorhang und zieh ihn zur Seite!
+t2_prinzessin_1d1	Die Sonne schien herein. Und da, draußen am Himmel, glitzerte eine goldene Feder!
+t2_prinzessin_1d2	Der Vogel ist davongeflogen, sagte dein Einhorn. Komm, Prinzessin, wir holen dein Lachen zurück!
+t2_prinzessin_2	Dein Einhorn flog mit der Prinzessin über das Wolkenland. Dort stand ein kleines Wolkenschaf. Über ihm hing eine graue Regenwolke und machte es ganz nass. Plitsch, platsch! Wisch die Regenwolke weg!
+t2_prinzessin_2h	Wisch die Regenwolke mit dem Finger weg, ganz schnell!
+t2_prinzessin_2d1	Das Schaf schüttelte sich: Brrr! Da stand seine Wolle in alle Richtungen ab, wie ein Pusteblumenball.
+t2_prinzessin_2d2	Und die Prinzessin? Ihre Mundwinkel gingen ein kleines bisschen nach oben. Das war ihr erstes Lächeln!
+t2_prinzessin_2d3	Mäh, danke! sagte das Schaf. Ich habe den goldenen Vogel gesehen. Er flog zum Wolkenteich.
+t2_prinzessin_2w2	Plitsch, platsch! Da ist sie wieder!
+t2_prinzessin_3	Am Wolkenteich saß ein kleiner Frosch. Er wollte die größte Seifenblase der Welt pusten. Aber jede Blase machte nur plopp und war weg. Halte deinen Finger auf die Seifenblase, dann wird sie riesengroß!
+t2_prinzessin_3h	Leg den Finger auf die Seifenblase und halt ihn ganz still!
+t2_prinzessin_3d1	Die Seifenblase wurde so groß, dass der Frosch hineinhüpfte. Quak! Und dann schwebte er mit ihr davon.
+t2_prinzessin_3d2	Da kicherte die Prinzessin. Hihi! Und der Frosch rief von oben: Der goldene Vogel sitzt auf dem höchsten Wolkenberg!
+wort_blase	Blase
+t2_prinzessin_4	Aber der Wolkenberg war so hoch! Wie sollten sie da hinaufkommen? Da sagte dein Einhorn: Ich weiß was! Mal mit dem Finger einen Regenbogen, bis ganz nach oben!
+t2_prinzessin_4h	Fahr mit dem Finger den Punkten nach, bis zum Berg!
+t2_prinzessin_4d1	Hui! Über den Regenbogen flogen sie hinauf, bis auf den höchsten Wolkenberg.
+t2_prinzessin_5	Oben war es ganz still. Nur drei dicke Wolken saßen da. Und hinter einer Wolke piepste es leise. Puste die Wolken weg! Tippe sie an.
+t2_prinzessin_5h	Tippe auf die Wolken!
+t2_prinzessin_5d1	Da war er, der goldene Vogel! Aber er steckte den Kopf unter den Flügel und piepste: Ich bin so schüchtern. Ich komme nur nach Hause, wenn ich die Prinzessin lachen höre.
+wort_vogel	Vogel
+t2_prinzessin_6	Die Prinzessin seufzte: Aber ich kann doch noch nicht richtig lachen. Da zwinkerte dein Einhorn: Dann kitzeln wir dich! Kitzle die Prinzessin mit dem Finger, hin und her!
+t2_prinzessin_6h	Kitzle die Prinzessin am Bauch, hin und her!
+t2_prinzessin_6d1	Hihi! Haha! Hahaha! Die Prinzessin lachte und lachte, so laut, dass es über alle Wolken klang.
+t2_prinzessin_6d2	Da hob der goldene Vogel den Kopf. Er flatterte herbei und setzte sich auf ihre Krone.
+wort_lachen	Lachen
+t2_prinzessin_7	Dann flogen sie alle zusammen nach Hause zum Wolkenschloss. Und weil die Prinzessin wieder lachen konnte, sollte es das ganze Land hören. Läute die Glocken! Tippe sie an.
+t2_prinzessin_7h	Tippe auf die Glocken!
+t2_prinzessin_7d	Seitdem singt der goldene Vogel jeden Morgen: Tirili, tirila, das Lachen ist da! Und die Prinzessin lacht mit. Ende.
+wort_glocke	Glocke
 t_welle_titel	Die kleine Welle.
 t_welle_1	Es war einmal eine kleine Welle. Sie wohnte weit draußen im Glitzermeer. Sie hatte nur einen einzigen Wunsch: Einmal wollte sie den Strand sehen. Tippe die kleine Welle an!
 t_welle_2	Aber der Weg zum Strand war weit. Viel zu weit für eine kleine Welle. Dein Einhorn flog über das Wasser und rief die Meerestiere zu Hilfe. Ruf den Wal!
