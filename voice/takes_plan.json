@@ -1,0 +1,1838 @@
+{
+ "takes": [
+  {
+   "id": "cv_m_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Mah. Meh. Mie. Moh. Muh.",
+   "items": [
+    {
+     "key": "silbe_ma",
+     "say": "Mah"
+    },
+    {
+     "key": "silbe_me",
+     "say": "Meh"
+    },
+    {
+     "key": "silbe_mi",
+     "say": "Mie"
+    },
+    {
+     "key": "silbe_mo",
+     "say": "Moh"
+    },
+    {
+     "key": "silbe_mu",
+     "say": "Muh"
+    }
+   ]
+  },
+  {
+   "id": "cv_m_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Mah. Meh. Mie. Moh. Muh.",
+   "items": [
+    {
+     "key": "silbe_ma",
+     "say": "Mah"
+    },
+    {
+     "key": "silbe_me",
+     "say": "Meh"
+    },
+    {
+     "key": "silbe_mi",
+     "say": "Mie"
+    },
+    {
+     "key": "silbe_mo",
+     "say": "Moh"
+    },
+    {
+     "key": "silbe_mu",
+     "say": "Muh"
+    }
+   ]
+  },
+  {
+   "id": "cv_m_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ma. Me. Mi. Mo. Mu.",
+   "items": [
+    {
+     "key": "silbe_ma",
+     "say": "Ma"
+    },
+    {
+     "key": "silbe_me",
+     "say": "Me"
+    },
+    {
+     "key": "silbe_mi",
+     "say": "Mi"
+    },
+    {
+     "key": "silbe_mo",
+     "say": "Mo"
+    },
+    {
+     "key": "silbe_mu",
+     "say": "Mu"
+    }
+   ]
+  },
+  {
+   "id": "cv_l_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Lah. Leh. Lie. Loh. Luh.",
+   "items": [
+    {
+     "key": "silbe_la",
+     "say": "Lah"
+    },
+    {
+     "key": "silbe_le",
+     "say": "Leh"
+    },
+    {
+     "key": "silbe_li",
+     "say": "Lie"
+    },
+    {
+     "key": "silbe_lo",
+     "say": "Loh"
+    },
+    {
+     "key": "silbe_lu",
+     "say": "Luh"
+    }
+   ]
+  },
+  {
+   "id": "cv_l_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Lah. Leh. Lie. Loh. Luh.",
+   "items": [
+    {
+     "key": "silbe_la",
+     "say": "Lah"
+    },
+    {
+     "key": "silbe_le",
+     "say": "Leh"
+    },
+    {
+     "key": "silbe_li",
+     "say": "Lie"
+    },
+    {
+     "key": "silbe_lo",
+     "say": "Loh"
+    },
+    {
+     "key": "silbe_lu",
+     "say": "Luh"
+    }
+   ]
+  },
+  {
+   "id": "cv_l_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: La. Le. Li. Lo. Lu.",
+   "items": [
+    {
+     "key": "silbe_la",
+     "say": "La"
+    },
+    {
+     "key": "silbe_le",
+     "say": "Le"
+    },
+    {
+     "key": "silbe_li",
+     "say": "Li"
+    },
+    {
+     "key": "silbe_lo",
+     "say": "Lo"
+    },
+    {
+     "key": "silbe_lu",
+     "say": "Lu"
+    }
+   ]
+  },
+  {
+   "id": "cv_s_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Sah. Seh. Sie. Soh. Suh.",
+   "items": [
+    {
+     "key": "silbe_sa",
+     "say": "Sah"
+    },
+    {
+     "key": "silbe_se",
+     "say": "Seh"
+    },
+    {
+     "key": "silbe_si",
+     "say": "Sie"
+    },
+    {
+     "key": "silbe_so",
+     "say": "Soh"
+    },
+    {
+     "key": "silbe_su",
+     "say": "Suh"
+    }
+   ]
+  },
+  {
+   "id": "cv_s_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Sah. Seh. Sie. Soh. Suh.",
+   "items": [
+    {
+     "key": "silbe_sa",
+     "say": "Sah"
+    },
+    {
+     "key": "silbe_se",
+     "say": "Seh"
+    },
+    {
+     "key": "silbe_si",
+     "say": "Sie"
+    },
+    {
+     "key": "silbe_so",
+     "say": "Soh"
+    },
+    {
+     "key": "silbe_su",
+     "say": "Suh"
+    }
+   ]
+  },
+  {
+   "id": "cv_s_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Sa. Se. Si. So. Su.",
+   "items": [
+    {
+     "key": "silbe_sa",
+     "say": "Sa"
+    },
+    {
+     "key": "silbe_se",
+     "say": "Se"
+    },
+    {
+     "key": "silbe_si",
+     "say": "Si"
+    },
+    {
+     "key": "silbe_so",
+     "say": "So"
+    },
+    {
+     "key": "silbe_su",
+     "say": "Su"
+    }
+   ]
+  },
+  {
+   "id": "cv_n_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Nah. Neh. Nie. Noh. Nuh.",
+   "items": [
+    {
+     "key": "silbe_na",
+     "say": "Nah"
+    },
+    {
+     "key": "silbe_ne",
+     "say": "Neh"
+    },
+    {
+     "key": "silbe_ni",
+     "say": "Nie"
+    },
+    {
+     "key": "silbe_no",
+     "say": "Noh"
+    },
+    {
+     "key": "silbe_nu",
+     "say": "Nuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_n_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Nah. Neh. Nie. Noh. Nuh.",
+   "items": [
+    {
+     "key": "silbe_na",
+     "say": "Nah"
+    },
+    {
+     "key": "silbe_ne",
+     "say": "Neh"
+    },
+    {
+     "key": "silbe_ni",
+     "say": "Nie"
+    },
+    {
+     "key": "silbe_no",
+     "say": "Noh"
+    },
+    {
+     "key": "silbe_nu",
+     "say": "Nuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_n_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Na. Ne. Ni. No. Nu.",
+   "items": [
+    {
+     "key": "silbe_na",
+     "say": "Na"
+    },
+    {
+     "key": "silbe_ne",
+     "say": "Ne"
+    },
+    {
+     "key": "silbe_ni",
+     "say": "Ni"
+    },
+    {
+     "key": "silbe_no",
+     "say": "No"
+    },
+    {
+     "key": "silbe_nu",
+     "say": "Nu"
+    }
+   ]
+  },
+  {
+   "id": "cv_r_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Rah. Reh. Rie. Roh. Ruh.",
+   "items": [
+    {
+     "key": "silbe_ra",
+     "say": "Rah"
+    },
+    {
+     "key": "silbe_re",
+     "say": "Reh"
+    },
+    {
+     "key": "silbe_ri",
+     "say": "Rie"
+    },
+    {
+     "key": "silbe_ro",
+     "say": "Roh"
+    },
+    {
+     "key": "silbe_ru",
+     "say": "Ruh"
+    }
+   ]
+  },
+  {
+   "id": "cv_r_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Rah. Reh. Rie. Roh. Ruh.",
+   "items": [
+    {
+     "key": "silbe_ra",
+     "say": "Rah"
+    },
+    {
+     "key": "silbe_re",
+     "say": "Reh"
+    },
+    {
+     "key": "silbe_ri",
+     "say": "Rie"
+    },
+    {
+     "key": "silbe_ro",
+     "say": "Roh"
+    },
+    {
+     "key": "silbe_ru",
+     "say": "Ruh"
+    }
+   ]
+  },
+  {
+   "id": "cv_r_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ra. Re. Ri. Ro. Ru.",
+   "items": [
+    {
+     "key": "silbe_ra",
+     "say": "Ra"
+    },
+    {
+     "key": "silbe_re",
+     "say": "Re"
+    },
+    {
+     "key": "silbe_ri",
+     "say": "Ri"
+    },
+    {
+     "key": "silbe_ro",
+     "say": "Ro"
+    },
+    {
+     "key": "silbe_ru",
+     "say": "Ru"
+    }
+   ]
+  },
+  {
+   "id": "cv_t_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Tah. Teh. Tie. Toh. Tuh.",
+   "items": [
+    {
+     "key": "silbe_ta",
+     "say": "Tah"
+    },
+    {
+     "key": "silbe_te",
+     "say": "Teh"
+    },
+    {
+     "key": "silbe_ti",
+     "say": "Tie"
+    },
+    {
+     "key": "silbe_to",
+     "say": "Toh"
+    },
+    {
+     "key": "silbe_tu",
+     "say": "Tuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_t_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Tah. Teh. Tie. Toh. Tuh.",
+   "items": [
+    {
+     "key": "silbe_ta",
+     "say": "Tah"
+    },
+    {
+     "key": "silbe_te",
+     "say": "Teh"
+    },
+    {
+     "key": "silbe_ti",
+     "say": "Tie"
+    },
+    {
+     "key": "silbe_to",
+     "say": "Toh"
+    },
+    {
+     "key": "silbe_tu",
+     "say": "Tuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_t_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ta. Te. Ti. To. Tu.",
+   "items": [
+    {
+     "key": "silbe_ta",
+     "say": "Ta"
+    },
+    {
+     "key": "silbe_te",
+     "say": "Te"
+    },
+    {
+     "key": "silbe_ti",
+     "say": "Ti"
+    },
+    {
+     "key": "silbe_to",
+     "say": "To"
+    },
+    {
+     "key": "silbe_tu",
+     "say": "Tu"
+    }
+   ]
+  },
+  {
+   "id": "cv_d_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Dah. Deh. Die. Doh. Duh.",
+   "items": [
+    {
+     "key": "silbe_da",
+     "say": "Dah"
+    },
+    {
+     "key": "silbe_de",
+     "say": "Deh"
+    },
+    {
+     "key": "silbe_di",
+     "say": "Die"
+    },
+    {
+     "key": "silbe_do",
+     "say": "Doh"
+    },
+    {
+     "key": "silbe_du",
+     "say": "Duh"
+    }
+   ]
+  },
+  {
+   "id": "cv_d_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Dah. Deh. Die. Doh. Duh.",
+   "items": [
+    {
+     "key": "silbe_da",
+     "say": "Dah"
+    },
+    {
+     "key": "silbe_de",
+     "say": "Deh"
+    },
+    {
+     "key": "silbe_di",
+     "say": "Die"
+    },
+    {
+     "key": "silbe_do",
+     "say": "Doh"
+    },
+    {
+     "key": "silbe_du",
+     "say": "Duh"
+    }
+   ]
+  },
+  {
+   "id": "cv_d_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Da. De. Di. Do. Du.",
+   "items": [
+    {
+     "key": "silbe_da",
+     "say": "Da"
+    },
+    {
+     "key": "silbe_de",
+     "say": "De"
+    },
+    {
+     "key": "silbe_di",
+     "say": "Di"
+    },
+    {
+     "key": "silbe_do",
+     "say": "Do"
+    },
+    {
+     "key": "silbe_du",
+     "say": "Du"
+    }
+   ]
+  },
+  {
+   "id": "cv_h_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Hah. Heh. Hie. Hoh. Huh.",
+   "items": [
+    {
+     "key": "silbe_ha",
+     "say": "Hah"
+    },
+    {
+     "key": "silbe_he",
+     "say": "Heh"
+    },
+    {
+     "key": "silbe_hi",
+     "say": "Hie"
+    },
+    {
+     "key": "silbe_ho",
+     "say": "Hoh"
+    },
+    {
+     "key": "silbe_hu",
+     "say": "Huh"
+    }
+   ]
+  },
+  {
+   "id": "cv_h_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hah. Heh. Hie. Hoh. Huh.",
+   "items": [
+    {
+     "key": "silbe_ha",
+     "say": "Hah"
+    },
+    {
+     "key": "silbe_he",
+     "say": "Heh"
+    },
+    {
+     "key": "silbe_hi",
+     "say": "Hie"
+    },
+    {
+     "key": "silbe_ho",
+     "say": "Hoh"
+    },
+    {
+     "key": "silbe_hu",
+     "say": "Huh"
+    }
+   ]
+  },
+  {
+   "id": "cv_h_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ha. He. Hi. Ho. Hu.",
+   "items": [
+    {
+     "key": "silbe_ha",
+     "say": "Ha"
+    },
+    {
+     "key": "silbe_he",
+     "say": "He"
+    },
+    {
+     "key": "silbe_hi",
+     "say": "Hi"
+    },
+    {
+     "key": "silbe_ho",
+     "say": "Ho"
+    },
+    {
+     "key": "silbe_hu",
+     "say": "Hu"
+    }
+   ]
+  },
+  {
+   "id": "cv_p_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Pah. Peh. Pie. Poh. Puh.",
+   "items": [
+    {
+     "key": "silbe_pa",
+     "say": "Pah"
+    },
+    {
+     "key": "silbe_pe",
+     "say": "Peh"
+    },
+    {
+     "key": "silbe_pi",
+     "say": "Pie"
+    },
+    {
+     "key": "silbe_po",
+     "say": "Poh"
+    },
+    {
+     "key": "silbe_pu",
+     "say": "Puh"
+    }
+   ]
+  },
+  {
+   "id": "cv_p_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pah. Peh. Pie. Poh. Puh.",
+   "items": [
+    {
+     "key": "silbe_pa",
+     "say": "Pah"
+    },
+    {
+     "key": "silbe_pe",
+     "say": "Peh"
+    },
+    {
+     "key": "silbe_pi",
+     "say": "Pie"
+    },
+    {
+     "key": "silbe_po",
+     "say": "Poh"
+    },
+    {
+     "key": "silbe_pu",
+     "say": "Puh"
+    }
+   ]
+  },
+  {
+   "id": "cv_p_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Pa. Pe. Pi. Po. Pu.",
+   "items": [
+    {
+     "key": "silbe_pa",
+     "say": "Pa"
+    },
+    {
+     "key": "silbe_pe",
+     "say": "Pe"
+    },
+    {
+     "key": "silbe_pi",
+     "say": "Pi"
+    },
+    {
+     "key": "silbe_po",
+     "say": "Po"
+    },
+    {
+     "key": "silbe_pu",
+     "say": "Pu"
+    }
+   ]
+  },
+  {
+   "id": "cv_f_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Fah. Feh. Fie. Foh. Fuh.",
+   "items": [
+    {
+     "key": "silbe_fa",
+     "say": "Fah"
+    },
+    {
+     "key": "silbe_fe",
+     "say": "Feh"
+    },
+    {
+     "key": "silbe_fi",
+     "say": "Fie"
+    },
+    {
+     "key": "silbe_fo",
+     "say": "Foh"
+    },
+    {
+     "key": "silbe_fu",
+     "say": "Fuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_f_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Fah. Feh. Fie. Foh. Fuh.",
+   "items": [
+    {
+     "key": "silbe_fa",
+     "say": "Fah"
+    },
+    {
+     "key": "silbe_fe",
+     "say": "Feh"
+    },
+    {
+     "key": "silbe_fi",
+     "say": "Fie"
+    },
+    {
+     "key": "silbe_fo",
+     "say": "Foh"
+    },
+    {
+     "key": "silbe_fu",
+     "say": "Fuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_f_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Fa. Fe. Fi. Fo. Fu.",
+   "items": [
+    {
+     "key": "silbe_fa",
+     "say": "Fa"
+    },
+    {
+     "key": "silbe_fe",
+     "say": "Fe"
+    },
+    {
+     "key": "silbe_fi",
+     "say": "Fi"
+    },
+    {
+     "key": "silbe_fo",
+     "say": "Fo"
+    },
+    {
+     "key": "silbe_fu",
+     "say": "Fu"
+    }
+   ]
+  },
+  {
+   "id": "cv_b_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Bah. Beh. Bie. Boh. Buh.",
+   "items": [
+    {
+     "key": "silbe_ba",
+     "say": "Bah"
+    },
+    {
+     "key": "silbe_be",
+     "say": "Beh"
+    },
+    {
+     "key": "silbe_bi",
+     "say": "Bie"
+    },
+    {
+     "key": "silbe_bo",
+     "say": "Boh"
+    },
+    {
+     "key": "silbe_bu",
+     "say": "Buh"
+    }
+   ]
+  },
+  {
+   "id": "cv_b_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bah. Beh. Bie. Boh. Buh.",
+   "items": [
+    {
+     "key": "silbe_ba",
+     "say": "Bah"
+    },
+    {
+     "key": "silbe_be",
+     "say": "Beh"
+    },
+    {
+     "key": "silbe_bi",
+     "say": "Bie"
+    },
+    {
+     "key": "silbe_bo",
+     "say": "Boh"
+    },
+    {
+     "key": "silbe_bu",
+     "say": "Buh"
+    }
+   ]
+  },
+  {
+   "id": "cv_b_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ba. Be. Bi. Bo. Bu.",
+   "items": [
+    {
+     "key": "silbe_ba",
+     "say": "Ba"
+    },
+    {
+     "key": "silbe_be",
+     "say": "Be"
+    },
+    {
+     "key": "silbe_bi",
+     "say": "Bi"
+    },
+    {
+     "key": "silbe_bo",
+     "say": "Bo"
+    },
+    {
+     "key": "silbe_bu",
+     "say": "Bu"
+    }
+   ]
+  },
+  {
+   "id": "cv_k_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Kah. Keh. Kie. Koh. Kuh.",
+   "items": [
+    {
+     "key": "silbe_ka",
+     "say": "Kah"
+    },
+    {
+     "key": "silbe_ke",
+     "say": "Keh"
+    },
+    {
+     "key": "silbe_ki",
+     "say": "Kie"
+    },
+    {
+     "key": "silbe_ko",
+     "say": "Koh"
+    },
+    {
+     "key": "silbe_ku",
+     "say": "Kuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_k_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Kah. Keh. Kie. Koh. Kuh.",
+   "items": [
+    {
+     "key": "silbe_ka",
+     "say": "Kah"
+    },
+    {
+     "key": "silbe_ke",
+     "say": "Keh"
+    },
+    {
+     "key": "silbe_ki",
+     "say": "Kie"
+    },
+    {
+     "key": "silbe_ko",
+     "say": "Koh"
+    },
+    {
+     "key": "silbe_ku",
+     "say": "Kuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_k_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ka. Ke. Ki. Ko. Ku.",
+   "items": [
+    {
+     "key": "silbe_ka",
+     "say": "Ka"
+    },
+    {
+     "key": "silbe_ke",
+     "say": "Ke"
+    },
+    {
+     "key": "silbe_ki",
+     "say": "Ki"
+    },
+    {
+     "key": "silbe_ko",
+     "say": "Ko"
+    },
+    {
+     "key": "silbe_ku",
+     "say": "Ku"
+    }
+   ]
+  },
+  {
+   "id": "cv_w_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Wah. Weh. Wie. Woh. Wuh.",
+   "items": [
+    {
+     "key": "silbe_wa",
+     "say": "Wah"
+    },
+    {
+     "key": "silbe_we",
+     "say": "Weh"
+    },
+    {
+     "key": "silbe_wi",
+     "say": "Wie"
+    },
+    {
+     "key": "silbe_wo",
+     "say": "Woh"
+    },
+    {
+     "key": "silbe_wu",
+     "say": "Wuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_w_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Wah. Weh. Wie. Woh. Wuh.",
+   "items": [
+    {
+     "key": "silbe_wa",
+     "say": "Wah"
+    },
+    {
+     "key": "silbe_we",
+     "say": "Weh"
+    },
+    {
+     "key": "silbe_wi",
+     "say": "Wie"
+    },
+    {
+     "key": "silbe_wo",
+     "say": "Woh"
+    },
+    {
+     "key": "silbe_wu",
+     "say": "Wuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_w_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Wa. We. Wi. Wo. Wu.",
+   "items": [
+    {
+     "key": "silbe_wa",
+     "say": "Wa"
+    },
+    {
+     "key": "silbe_we",
+     "say": "We"
+    },
+    {
+     "key": "silbe_wi",
+     "say": "Wi"
+    },
+    {
+     "key": "silbe_wo",
+     "say": "Wo"
+    },
+    {
+     "key": "silbe_wu",
+     "say": "Wu"
+    }
+   ]
+  },
+  {
+   "id": "cv_g_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Gah. Geh. Gie. Goh. Guh.",
+   "items": [
+    {
+     "key": "silbe_ga",
+     "say": "Gah"
+    },
+    {
+     "key": "silbe_ge",
+     "say": "Geh"
+    },
+    {
+     "key": "silbe_gi",
+     "say": "Gie"
+    },
+    {
+     "key": "silbe_go",
+     "say": "Goh"
+    },
+    {
+     "key": "silbe_gu",
+     "say": "Guh"
+    }
+   ]
+  },
+  {
+   "id": "cv_g_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Gah. Geh. Gie. Goh. Guh.",
+   "items": [
+    {
+     "key": "silbe_ga",
+     "say": "Gah"
+    },
+    {
+     "key": "silbe_ge",
+     "say": "Geh"
+    },
+    {
+     "key": "silbe_gi",
+     "say": "Gie"
+    },
+    {
+     "key": "silbe_go",
+     "say": "Goh"
+    },
+    {
+     "key": "silbe_gu",
+     "say": "Guh"
+    }
+   ]
+  },
+  {
+   "id": "cv_g_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ga. Ge. Gi. Go. Gu.",
+   "items": [
+    {
+     "key": "silbe_ga",
+     "say": "Ga"
+    },
+    {
+     "key": "silbe_ge",
+     "say": "Ge"
+    },
+    {
+     "key": "silbe_gi",
+     "say": "Gi"
+    },
+    {
+     "key": "silbe_go",
+     "say": "Go"
+    },
+    {
+     "key": "silbe_gu",
+     "say": "Gu"
+    }
+   ]
+  },
+  {
+   "id": "cv_z_v2L",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Zah. Zeh. Zie. Zoh. Zuh.",
+   "items": [
+    {
+     "key": "silbe_za",
+     "say": "Zah"
+    },
+    {
+     "key": "silbe_ze",
+     "say": "Zeh"
+    },
+    {
+     "key": "silbe_zi",
+     "say": "Zie"
+    },
+    {
+     "key": "silbe_zo",
+     "say": "Zoh"
+    },
+    {
+     "key": "silbe_zu",
+     "say": "Zuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_z_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zah. Zeh. Zie. Zoh. Zuh.",
+   "items": [
+    {
+     "key": "silbe_za",
+     "say": "Zah"
+    },
+    {
+     "key": "silbe_ze",
+     "say": "Zeh"
+    },
+    {
+     "key": "silbe_zi",
+     "say": "Zie"
+    },
+    {
+     "key": "silbe_zo",
+     "say": "Zoh"
+    },
+    {
+     "key": "silbe_zu",
+     "say": "Zuh"
+    }
+   ]
+  },
+  {
+   "id": "cv_z_v2P",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Za. Ze. Zi. Zo. Zu.",
+   "items": [
+    {
+     "key": "silbe_za",
+     "say": "Za"
+    },
+    {
+     "key": "silbe_ze",
+     "say": "Ze"
+    },
+    {
+     "key": "silbe_zi",
+     "say": "Zi"
+    },
+    {
+     "key": "silbe_zo",
+     "say": "Zo"
+    },
+    {
+     "key": "silbe_zu",
+     "say": "Zu"
+    }
+   ]
+  },
+  {
+   "id": "vow_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: A. E. I. O. U.",
+   "items": [
+    {
+     "key": "laut_a",
+     "say": "A"
+    },
+    {
+     "key": "laut_e",
+     "say": "E"
+    },
+    {
+     "key": "laut_i",
+     "say": "I"
+    },
+    {
+     "key": "laut_o",
+     "say": "O"
+    },
+    {
+     "key": "laut_u",
+     "say": "U"
+    }
+   ]
+  },
+  {
+   "id": "vow_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: A. E. I. O. U.",
+   "items": [
+    {
+     "key": "laut_a",
+     "say": "A"
+    },
+    {
+     "key": "laut_e",
+     "say": "E"
+    },
+    {
+     "key": "laut_i",
+     "say": "I"
+    },
+    {
+     "key": "laut_o",
+     "say": "O"
+    },
+    {
+     "key": "laut_u",
+     "say": "U"
+    }
+   ]
+  },
+  {
+   "id": "syl_00_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Oh. Ah. Nas. Son. Maus. Au. Tor. Tas.",
+   "items": [
+    {
+     "key": "silbe_o",
+     "say": "Oh"
+    },
+    {
+     "key": "silbe_a",
+     "say": "Ah"
+    },
+    {
+     "key": "silbe_nas",
+     "say": "Nas"
+    },
+    {
+     "key": "silbe_son",
+     "say": "Son"
+    },
+    {
+     "key": "silbe_maus",
+     "say": "Maus"
+    },
+    {
+     "key": "silbe_au",
+     "say": "Au"
+    },
+    {
+     "key": "silbe_tor",
+     "say": "Tor"
+    },
+    {
+     "key": "silbe_tas",
+     "say": "Tas"
+    }
+   ]
+  },
+  {
+   "id": "syl_01_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Nuss. Hut. Hund. Del. Fon. Mond. Haus. Mel.",
+   "items": [
+    {
+     "key": "silbe_nuss",
+     "say": "Nuss"
+    },
+    {
+     "key": "silbe_hut",
+     "say": "Hut"
+    },
+    {
+     "key": "silbe_hund",
+     "say": "Hund"
+    },
+    {
+     "key": "silbe_del",
+     "say": "Del"
+    },
+    {
+     "key": "silbe_fon",
+     "say": "Fon"
+    },
+    {
+     "key": "silbe_mond",
+     "say": "Mond"
+    },
+    {
+     "key": "silbe_haus",
+     "say": "Haus"
+    },
+    {
+     "key": "silbe_mel",
+     "say": "Mel"
+    }
+   ]
+  },
+  {
+   "id": "syl_02_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Wal. Ger. Bus. Bel. Bra. Wol. En. In.",
+   "items": [
+    {
+     "key": "silbe_wal",
+     "say": "Wal"
+    },
+    {
+     "key": "silbe_ger",
+     "say": "Ger"
+    },
+    {
+     "key": "silbe_bus",
+     "say": "Bus"
+    },
+    {
+     "key": "silbe_bel",
+     "say": "Bel"
+    },
+    {
+     "key": "silbe_bra",
+     "say": "Bra"
+    },
+    {
+     "key": "silbe_wol",
+     "say": "Wol"
+    },
+    {
+     "key": "silbe_en",
+     "say": "En"
+    },
+    {
+     "key": "silbe_in",
+     "say": "In"
+    }
+   ]
+  },
+  {
+   "id": "syl_03_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Sel. Lat. Eh. Fant. Af. Er. Rad. Rol.",
+   "items": [
+    {
+     "key": "silbe_sel",
+     "say": "Sel"
+    },
+    {
+     "key": "silbe_lat",
+     "say": "Lat"
+    },
+    {
+     "key": "silbe_e",
+     "say": "Eh"
+    },
+    {
+     "key": "silbe_fant",
+     "say": "Fant"
+    },
+    {
+     "key": "silbe_af",
+     "say": "Af"
+    },
+    {
+     "key": "silbe_er",
+     "say": "Er"
+    },
+    {
+     "key": "silbe_rad",
+     "say": "Rad"
+    },
+    {
+     "key": "silbe_rol",
+     "say": "Rol"
+    }
+   ]
+  },
+  {
+   "id": "syl_04_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ler. Man. Tel. Ter. Heft. Lam. Uh. Hemd.",
+   "items": [
+    {
+     "key": "silbe_ler",
+     "say": "Ler"
+    },
+    {
+     "key": "silbe_man",
+     "say": "Man"
+    },
+    {
+     "key": "silbe_tel",
+     "say": "Tel"
+    },
+    {
+     "key": "silbe_ter",
+     "say": "Ter"
+    },
+    {
+     "key": "silbe_heft",
+     "say": "Heft"
+    },
+    {
+     "key": "silbe_lam",
+     "say": "Lam"
+    },
+    {
+     "key": "silbe_u",
+     "say": "Uh"
+    },
+    {
+     "key": "silbe_hemd",
+     "say": "Hemd"
+    }
+   ]
+  },
+  {
+   "id": "syl_05_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Hand. Arm. Mund. Der. Ham. Mer. Saft. Rat.",
+   "items": [
+    {
+     "key": "silbe_hand",
+     "say": "Hand"
+    },
+    {
+     "key": "silbe_arm",
+     "say": "Arm"
+    },
+    {
+     "key": "silbe_mund",
+     "say": "Mund"
+    },
+    {
+     "key": "silbe_der",
+     "say": "Der"
+    },
+    {
+     "key": "silbe_ham",
+     "say": "Ham"
+    },
+    {
+     "key": "silbe_mer",
+     "say": "Mer"
+    },
+    {
+     "key": "silbe_saft",
+     "say": "Saft"
+    },
+    {
+     "key": "silbe_rat",
+     "say": "Rat"
+    }
+   ]
+  },
+  {
+   "id": "syl_06_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Pin. Pan. Mam. Mut. Fin. Hum. Pla. Net.",
+   "items": [
+    {
+     "key": "silbe_pin",
+     "say": "Pin"
+    },
+    {
+     "key": "silbe_pan",
+     "say": "Pan"
+    },
+    {
+     "key": "silbe_mam",
+     "say": "Mam"
+    },
+    {
+     "key": "silbe_mut",
+     "say": "Mut"
+    },
+    {
+     "key": "silbe_fin",
+     "say": "Fin"
+    },
+    {
+     "key": "silbe_hum",
+     "say": "Hum"
+    },
+    {
+     "key": "silbe_pla",
+     "say": "Pla"
+    },
+    {
+     "key": "silbe_net",
+     "say": "Net"
+    }
+   ]
+  },
+  {
+   "id": "syl_07_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ei. Eis. Uhr. Ohr. Sei. Lei. Mais. Ball.",
+   "items": [
+    {
+     "key": "silbe_ei",
+     "say": "Ei"
+    },
+    {
+     "key": "silbe_eis",
+     "say": "Eis"
+    },
+    {
+     "key": "silbe_uhr",
+     "say": "Uhr"
+    },
+    {
+     "key": "silbe_ohr",
+     "say": "Ohr"
+    },
+    {
+     "key": "silbe_sei",
+     "say": "Sei"
+    },
+    {
+     "key": "silbe_lei",
+     "say": "Lei"
+    },
+    {
+     "key": "silbe_mais",
+     "say": "Mais"
+    },
+    {
+     "key": "silbe_ball",
+     "say": "Ball"
+    }
+   ]
+  },
+  {
+   "id": "syl_08_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Brot. Kind. Ie. Gel. Kar. Baum. Gen. Pilz.",
+   "items": [
+    {
+     "key": "silbe_brot",
+     "say": "Brot"
+    },
+    {
+     "key": "silbe_kind",
+     "say": "Kind"
+    },
+    {
+     "key": "silbe_i",
+     "say": "Ie"
+    },
+    {
+     "key": "silbe_gel",
+     "say": "Gel"
+    },
+    {
+     "key": "silbe_kar",
+     "say": "Kar"
+    },
+    {
+     "key": "silbe_baum",
+     "say": "Baum"
+    },
+    {
+     "key": "silbe_gen",
+     "say": "Gen"
+    },
+    {
+     "key": "silbe_pilz",
+     "say": "Pilz"
+    }
+   ]
+  },
+  {
+   "id": "syl_09_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Bir. Trau. But. Bett. Boot. Zug. Trak. Zelt.",
+   "items": [
+    {
+     "key": "silbe_bir",
+     "say": "Bir"
+    },
+    {
+     "key": "silbe_trau",
+     "say": "Trau"
+    },
+    {
+     "key": "silbe_but",
+     "say": "But"
+    },
+    {
+     "key": "silbe_bett",
+     "say": "Bett"
+    },
+    {
+     "key": "silbe_boot",
+     "say": "Boot"
+    },
+    {
+     "key": "silbe_zug",
+     "say": "Zug"
+    },
+    {
+     "key": "silbe_trak",
+     "say": "Trak"
+    },
+    {
+     "key": "silbe_zelt",
+     "say": "Zelt"
+    }
+   ]
+  },
+  {
+   "id": "syl_10_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Blatt. Pferd. Kro. Dil. Raf. Kat. Tar. Trom.",
+   "items": [
+    {
+     "key": "silbe_blatt",
+     "say": "Blatt"
+    },
+    {
+     "key": "silbe_pferd",
+     "say": "Pferd"
+    },
+    {
+     "key": "silbe_kro",
+     "say": "Kro"
+    },
+    {
+     "key": "silbe_dil",
+     "say": "Dil"
+    },
+    {
+     "key": "silbe_raf",
+     "say": "Raf"
+    },
+    {
+     "key": "silbe_kat",
+     "say": "Kat"
+    },
+    {
+     "key": "silbe_tar",
+     "say": "Tar"
+    },
+    {
+     "key": "silbe_trom",
+     "say": "Trom"
+    }
+   ]
+  },
+  {
+   "id": "syl_11_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Bril. Ring. Herz. Sen. Keks. Bon. Tro. Rot.",
+   "items": [
+    {
+     "key": "silbe_bril",
+     "say": "Bril"
+    },
+    {
+     "key": "silbe_ring",
+     "say": "Ring"
+    },
+    {
+     "key": "silbe_herz",
+     "say": "Herz"
+    },
+    {
+     "key": "silbe_sen",
+     "say": "Sen"
+    },
+    {
+     "key": "silbe_keks",
+     "say": "Keks"
+    },
+    {
+     "key": "silbe_bon",
+     "say": "Bon"
+    },
+    {
+     "key": "silbe_tro",
+     "say": "Tro"
+    },
+    {
+     "key": "silbe_rot",
+     "say": "Rot"
+    }
+   ]
+  },
+  {
+   "id": "syl_12_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Tof. Fel. An. Ker. Burg. Wurm. Rob. Fla.",
+   "items": [
+    {
+     "key": "silbe_tof",
+     "say": "Tof"
+    },
+    {
+     "key": "silbe_fel",
+     "say": "Fel"
+    },
+    {
+     "key": "silbe_an",
+     "say": "An"
+    },
+    {
+     "key": "silbe_ker",
+     "say": "Ker"
+    },
+    {
+     "key": "silbe_burg",
+     "say": "Burg"
+    },
+    {
+     "key": "silbe_wurm",
+     "say": "Wurm"
+    },
+    {
+     "key": "silbe_rob",
+     "say": "Rob"
+    },
+    {
+     "key": "silbe_fla",
+     "say": "Fla"
+    }
+   ]
+  },
+  {
+   "id": "syl_13_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Min. Ril. Nil. Ber. Kuh. Zie. Gei. Bein.",
+   "items": [
+    {
+     "key": "silbe_min",
+     "say": "Min"
+    },
+    {
+     "key": "silbe_ril",
+     "say": "Ril"
+    },
+    {
+     "key": "silbe_nil",
+     "say": "Nil"
+    },
+    {
+     "key": "silbe_ber",
+     "say": "Ber"
+    },
+    {
+     "key": "silbe_kuh",
+     "say": "Kuh"
+    },
+    {
+     "key": "silbe_zie",
+     "say": "Zie"
+    },
+    {
+     "key": "silbe_gei",
+     "say": "Gei"
+    },
+    {
+     "key": "silbe_bein",
+     "say": "Bein"
+    }
+   ]
+  },
+  {
+   "id": "syl_14_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Zahn. Geist. Bie.",
+   "items": [
+    {
+     "key": "silbe_zahn",
+     "say": "Zahn"
+    },
+    {
+     "key": "silbe_geist",
+     "say": "Geist"
+    },
+    {
+     "key": "silbe_bie",
+     "say": "Bie"
+    }
+   ]
+  }
+ ]
+}

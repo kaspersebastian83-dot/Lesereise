@@ -1,0 +1,50 @@
+name: Silben-Rohaufnahmen
+
+# Lässt Silben und Laute als Liste vorlesen ("Mah. Meh. Mie. Moh. Muh.") – mit Zeitmarken.
+# Daraus werden die einzelnen Silben und Laute geschnitten (tools/cut_takes.py).
+
+on:
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Plan-Datei"
+        default: "voice/takes_plan.json"
+      only_missing:
+        description: "Nur fehlende Rohaufnahmen"
+        type: boolean
+        default: true
+      only_ids:
+        description: "Nur diese Aufnahmen (z. B. cv_m_v2L) – leer = alle"
+        default: ""
+      voice_id:
+        description: "ElevenLabs Voice-ID (Standard: Carlotta)"
+        default: "hSzY2zmYNQPukJaIll7k"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stimmen
+  cancel-in-progress: false
+
+jobs:
+  takes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rohaufnahmen
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          PLAN: ${{ inputs.plan }}
+          VOICE_ID: ${{ inputs.voice_id }}
+          ONLY_MISSING: ${{ inputs.only_missing }}
+          ONLY_IDS: ${{ inputs.only_ids }}
+        run: python3 tools/raw_takes.py
+      - name: Ins Repo übernehmen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add voice/raw
+          git diff --cached --quiet && echo "Keine Änderungen." && exit 0
+          git commit -m "Silben-Rohaufnahmen"
+          git pull --rebase -q && git push

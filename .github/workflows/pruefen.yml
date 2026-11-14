@@ -1,0 +1,41 @@
+name: Aufnahmen prüfen
+
+# Prüft mit einer Lauterkennung, was in den Aufnahmen wirklich gesprochen wird.
+# Kostet keine ElevenLabs-Credits. Ergebnis steht im Log (Zeilen "CHK").
+
+on:
+  workflow_dispatch:
+    inputs:
+      ordner:
+        description: "Ordner mit mp3-Dateien (Komma-getrennt)"
+        default: "audio"
+      keys:
+        description: "Nur Aufnahmen, die so anfangen (Komma-getrennt)"
+        default: "laut_,silbe_"
+
+concurrency:
+  group: pruefen
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-wav2vec2-espeak
+      - name: Werkzeuge installieren
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq espeak-ng ffmpeg >/dev/null
+          pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -q "transformers<5" phonemizer numpy
+      - name: Prüfen
+        env:
+          FOLDERS: ${{ inputs.ordner }}
+          KEYS: ${{ inputs.keys }}
+        run: python tools/check_audio.py
