@@ -82,7 +82,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
   text-shadow:0 0 1.6vh rgba(255,201,77,.95),0 0 4vh rgba(255,201,77,.5);animation:float 3.4s ease-in-out infinite}
 #letterSky button.off{color:rgba(255,255,255,.22);text-shadow:none;font-size:calc(var(--u)*3);animation:none;pointer-events:none}
 #letterSky button.new{animation:wake 1.2s ease-out backwards,float 3.4s ease-in-out 1.2s infinite}
-#home .funkel{width:min(16vw,20vh);margin-bottom:1vh;animation:float 3s ease-in-out infinite;position:relative}
+#home .funkel{width:min(19vw,24vh);margin-bottom:1vh;animation:float 3s ease-in-out infinite;position:relative}
 #home .row{display:flex;gap:calc(var(--u)*3.5);align-items:flex-end;justify-content:center;position:relative}
 .station{display:flex;flex-direction:column;align-items:center;gap:1vh}
 .station .round{width:calc(var(--u)*17);height:calc(var(--u)*17);font-size:calc(var(--u)*8.5)}
@@ -122,6 +122,146 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
   filter:drop-shadow(0 0 1.5vh rgba(255,201,77,.9))}
 @keyframes rise{to{transform:translateY(-120vh) rotate(200deg);opacity:.2}}
 
+/* unicorns */
+.uni{overflow:visible;display:block}
+.uni .spk4{animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1.25) rotate(45deg)}}
+.uni .wing{animation:flap 1.6s ease-in-out infinite}
+.uni .wing.far{animation-delay:-.25s}
+.uni.flying .wing{animation-duration:.45s}
+@keyframes flap{0%,100%{transform:rotate(0)}50%{transform:rotate(-13deg)}}
+.uni .aura{animation:aura 3s ease-in-out infinite} @keyframes aura{50%{opacity:.5}}
+.uni.happy{animation:hop .55s ease-in-out 4}
+.flip{transform:scaleX(-1)}
+.uni.flip.happy{animation:hopflip .55s ease-in-out 4} @keyframes hopflip{0%,100%{transform:scaleX(-1)}40%{transform:scaleX(-1) translateY(-3vh)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden}
+#fx span{position:absolute;left:0;top:0;line-height:1;will-change:transform,opacity}
+.flyby{position:fixed;left:0;width:min(17vw,22vh);pointer-events:none;z-index:8}
+#drift{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+#drift .d{position:absolute;left:0;width:min(11vw,14vh);opacity:.85;animation:drift linear infinite}
+@keyframes drift{from{transform:translateX(-20vw)}to{transform:translateX(120vw)}}
+#drift .d.back{animation-name:driftb} @keyframes driftb{from{transform:translateX(120vw)}to{transform:translateX(-20vw)}}
+#btnMeadow{width:calc(var(--u)*11);height:calc(var(--u)*11);font-size:calc(var(--u)*6);position:relative}
+#btnMeadow b{position:absolute;right:-.3em;top:-.3em;background:var(--gold);color:var(--ink);border-radius:1em;font-size:.45em;padding:.15em .45em}
+/* meadow */
+#meadow{justify-content:flex-start;padding-top:2vh}
+#meadow .bar{width:100%;display:flex;align-items:center;justify-content:space-between;padding:0 2vw}
+#meadow .count{font-size:calc(var(--u)*5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.8)}
+.pasture{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vh 2vw;width:94vw;margin-top:1vh}
+.pen{position:relative;height:19vh;display:flex;align-items:flex-end;justify-content:center}
+.pen .cl{position:absolute;bottom:0;left:4%;right:4%;height:5.5vh;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 40%,rgba(255,255,255,.95),rgba(235,225,255,.55) 55%,transparent 72%)}
+.pen .uni{height:100%;width:auto;position:relative;animation:float 3s ease-in-out infinite}
+.pen .uni.flip{animation:floatflip 3s ease-in-out infinite} @keyframes floatflip{0%,100%{transform:scaleX(-1)}50%{transform:scaleX(-1) translateY(-1.6vh)}}
+.pen.locked .uni{filter:brightness(0) opacity(.22);animation:none}
+.pen.locked::after{content:'?';position:absolute;top:30%;font-size:6vh;font-weight:800;color:rgba(255,255,255,.35)}
+/* story scenes */
+#storyArt.scenehost{display:block;position:relative;align-self:stretch}
+.scene{position:absolute;inset:0;overflow:hidden}
+.scene .host{position:absolute;left:4%;bottom:4%;width:min(25vw,32vh);z-index:3}
+.scene .arrive{position:absolute;right:8%;bottom:6%;width:min(42vw,54vh);z-index:3}
+.scene .uni{width:100%}
+#btnStory.wait{opacity:.15;pointer-events:none;transition:opacity .6s}
+.sc-flyin .arrive,.sc-aurora .arrive{animation:flyin 2.8s cubic-bezier(.2,.7,.3,1) both}
+@keyframes flyin{0%{transform:translate(-120vw,-45vh) rotate(-12deg)}70%{transform:translate(4vw,-7vh) rotate(5deg)}100%{transform:none}}
+.sc-fall .arrive{animation:fall 2.6s cubic-bezier(.3,.6,.3,1) both}
+@keyframes fall{0%{transform:translate(35vw,-95vh) scale(.2) rotate(30deg)}80%{transform:translate(0,-4vh) scale(1.05) rotate(-3deg)}100%{transform:none}}
+.moonp{position:absolute;right:15%;bottom:16%;width:min(34vw,44vh);aspect-ratio:1;border-radius:50%;z-index:4;
+  background:radial-gradient(circle at 35% 35%,#fffdf0,#ffe9a8 60%,#f5cf78);box-shadow:0 0 9vh 3vh rgba(255,225,150,.5);animation:moonmove 3.2s ease-in-out both}
+@keyframes moonmove{0%,35%{transform:none}100%{transform:translate(-22vw,-26vh) scale(.4);opacity:.8}}
+.sc-moon .arrive{animation:peek 3.2s ease-out both}
+@keyframes peek{0%,30%{transform:scale(.55) translateX(-4vw);opacity:0}45%{opacity:1}100%{transform:none;opacity:1}}
+.cloudp{position:absolute;right:2%;bottom:0;width:min(52vw,66vh);z-index:4;animation:wob .55s 3,poof .7s 1.8s forwards}
+@keyframes poof{to{transform:scale(1.7);opacity:0}}
+.sc-cloud .arrive{animation:popin 2.8s ease-out both}
+@keyframes popin{0%,58%{transform:scale(.6);opacity:0}76%{transform:scale(1.12);opacity:1}100%{transform:none}}
+.growp{position:absolute;right:18%;bottom:10%;font-size:min(30vw,38vh);line-height:1;z-index:4;animation:grow 2.8s ease-out forwards;
+  filter:drop-shadow(0 0 3vh rgba(255,240,200,.8))}
+@keyframes grow{0%{transform:scale(0)}50%{transform:scale(1)}66%{transform:scale(1.18);opacity:1}80%{transform:scale(.2);opacity:0}100%{opacity:0;transform:scale(0)}}
+.flash{position:absolute;inset:0;z-index:5;pointer-events:none;background:radial-gradient(circle at 70% 60%,#fff,rgba(255,255,255,0) 60%);opacity:0;animation:flash 3s forwards}
+@keyframes flash{0%,58%{opacity:0}66%{opacity:.95}100%{opacity:0}}
+.sc-grow .arrive{animation:popin2 3s ease-out both}
+@keyframes popin2{0%,66%{transform:scale(0);opacity:0}80%{transform:scale(1.15);opacity:1}100%{transform:none}}
+.rainbowp{position:absolute;inset:0;width:100%;height:100%;z-index:2}
+.rainbowp path{fill:none;stroke-linecap:round;stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.6s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sc-rainbow .arrive{animation:slide 3.4s ease-in-out both}
+@keyframes slide{0%,38%{transform:translate(-60vw,-52vh) rotate(24deg);opacity:0}44%{opacity:1}70%{transform:translate(-24vw,-30vh) rotate(12deg)}100%{transform:none}}
+.sunp{position:absolute;right:14%;bottom:-40%;width:min(42vw,54vh);aspect-ratio:1;border-radius:50%;z-index:1;
+  background:radial-gradient(#fff7c2,#ffd23f 55%,#ff9d2e);box-shadow:0 0 14vh 6vh rgba(255,200,80,.55);animation:sunrise 3.2s ease-out forwards}
+@keyframes sunrise{to{transform:translateY(-50vh)}}
+.sc-sun .arrive{animation:rise 3.2s ease-out both} @keyframes rise{0%{transform:translateY(65vh)}100%{transform:none}}
+.sc-rain .arrive{animation:materialize 3.2s ease-out both}
+@keyframes materialize{0%,45%{opacity:0;filter:blur(14px) brightness(2.2);transform:scale(.8)}100%{opacity:1;filter:none;transform:none}}
+.aur{position:absolute;left:-10%;right:-10%;height:16vh;filter:blur(16px);opacity:.75;z-index:1;
+  background:linear-gradient(90deg,transparent,#3fe0a8,#5fb8ff,#c77bff,transparent);animation:wave 3.5s ease-in-out infinite alternate}
+@keyframes wave{from{transform:skewY(-6deg) translateY(0)}to{transform:skewY(6deg) translateY(4vh)}}
+.hopcl{position:absolute;bottom:4%;width:min(20vw,26vh);z-index:2}
+.sc-hop .arrive{animation:hop3 3.2s ease-in-out both}
+@keyframes hop3{0%{transform:translate(-72vw,0)}14%{transform:translate(-60vw,-20vh)}28%{transform:translate(-48vw,0)}42%{transform:translate(-36vw,-20vh)}56%{transform:translate(-24vw,0)}76%{transform:translate(-8vw,-16vh)}100%{transform:none}}
+.dance{position:absolute;left:0;right:0;bottom:24%;display:flex;justify-content:center;gap:.5vw;flex-wrap:wrap}
+.dance .uni{width:min(17vw,23vh)}
+
+/* journeys */
+#btnTrip{width:calc(var(--u)*11);height:calc(var(--u)*11);font-size:calc(var(--u)*6);margin-left:1.2vw}
+#trip,#ride,#land{padding:0;justify-content:flex-start}
+#trip{padding-top:2vh}
+#trip .bar,#land .bar,#ride .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 2vw;z-index:6}
+.pickgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vh 2vw;width:94vw;margin-top:12vh}
+.mapgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4vh 4vw;width:88vw;margin-top:13vh}
+.place{display:flex;flex-direction:column;align-items:center;gap:1.2vh;transition:transform .3s}
+.place .pic{width:min(24vw,30vh);aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:min(13vw,16vh);
+  border:.5vh solid rgba(255,225,160,.7);box-shadow:0 0 5vh rgba(255,217,138,.45),inset 0 0 4vh rgba(255,255,255,.25);animation:float 3.4s ease-in-out infinite}
+.place:nth-child(2n) .pic{animation-delay:-1.2s} .place:nth-child(3n) .pic{animation-delay:-2.1s}
+.place .pn{font-size:calc(var(--u)*4);font-weight:800;color:var(--light);text-shadow:0 0 1.5vh rgba(0,0,0,.7)}
+.place.chosen{transform:scale(1.15)} .place.chosen .pic{box-shadow:0 0 0 .8vh var(--gold),0 0 9vh 3vh rgba(255,201,77,.8)}
+#rideWorld,#landWorld{position:absolute;inset:0;overflow:hidden}
+.layer{position:absolute;left:0;top:0;width:200vw;height:100%;animation:scroll linear infinite;pointer-events:none}
+.layer span{position:absolute;line-height:1}
+.layer.far{opacity:.55;filter:blur(.3px)} .layer.mid{filter:drop-shadow(0 0 1.5vh rgba(255,255,255,.35))}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100vw)}}
+.ground{position:absolute;left:0;right:0;bottom:0;height:16vh;background:linear-gradient(180deg,rgba(255,255,255,.0),rgba(255,255,255,.18));
+  border-top-left-radius:50% 30%;border-top-right-radius:50% 30%;pointer-events:none}
+.rider{position:absolute;left:12%;top:30%;width:min(30vw,40vh);z-index:3;animation:ride 1.4s ease-in-out infinite;pointer-events:none}
+@keyframes ride{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3.5vh) rotate(3deg)}}
+.catch{position:absolute;left:0;font-size:min(8vw,11vh);line-height:1;z-index:4;filter:drop-shadow(0 0 2vh rgba(255,240,180,.9));padding:1.5vh}
+#ride .count{font-size:calc(var(--u)*5.5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.9)}
+.whoosh{position:absolute;inset:0;z-index:7;background:radial-gradient(circle,#fff,rgba(255,255,255,0) 70%);animation:whoosh .7s forwards;pointer-events:none}
+@keyframes whoosh{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(2.2)}}
+i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a0;box-shadow:0 0 2vh 1vh rgba(255,240,120,.7);animation:firefly 4s ease-in-out infinite;pointer-events:none}
+@keyframes firefly{0%,100%{opacity:.2;transform:translate(0,0)}50%{opacity:1;transform:translate(3vw,-3vh)}}
+.landuni{position:absolute;left:2%;bottom:6%;width:min(28vw,38vh);z-index:3}
+.thing{position:absolute;transform:translate(-50%,-50%);font-size:min(12vw,15vh);line-height:1;z-index:3;padding:1vh;
+  filter:drop-shadow(0 0 2.5vh rgba(255,245,210,.8));animation:float 3.2s ease-in-out infinite}
+.thing.boing{animation:boing .7s ease-out}
+@keyframes boing{0%{transform:translate(-50%,-50%) scale(1)}30%{transform:translate(-50%,-62%) scale(1.35) rotate(-10deg)}60%{transform:translate(-50%,-48%) scale(.92) rotate(8deg)}100%{transform:translate(-50%,-50%) scale(1)}}
+#bigWord{position:fixed;left:50%;top:14vh;transform:translate(-50%,0) scale(.5);z-index:8;opacity:0;pointer-events:none;
+  background:var(--stone);border-radius:calc(var(--u)*3);padding:1vh calc(var(--u)*3);font-size:calc(var(--u)*11);font-weight:800;letter-spacing:.03em;
+  box-shadow:0 0 0 .7vh var(--gold),0 0 7vh 2vh rgba(255,201,77,.6)}
+#bigWord.show{animation:bigword 2.4s ease-out forwards}
+@keyframes bigword{0%{opacity:0;transform:translate(-50%,0) scale(.4)}15%{opacity:1;transform:translate(-50%,0) scale(1.08)}25%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-2vh) scale(1)}}
+.caughtBadge{position:absolute;right:3vw;top:3vh;font-size:calc(var(--u)*5.5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.9);z-index:6}
+#land .bar{justify-content:flex-start;gap:2vw}
+
+.place .badges{display:flex;gap:1vw;font-size:calc(var(--u)*4.2);height:calc(var(--u)*5);filter:drop-shadow(0 0 1vh rgba(255,230,160,.8))}
+.place .badges .no{opacity:.3;filter:none}
+.mapgrid{gap:2.5vh 4vw;margin-top:9vh} .place{gap:.6vh} .place .pic{width:min(18vw,21vh);font-size:min(9.5vw,11vh)}
+.chestgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:3vh 3vw;width:86vw;margin-top:15vh}
+.slot{aspect-ratio:1;max-height:22vh;justify-self:center;width:min(18vw,22vh);border-radius:22%;font-size:min(10vw,12vh);line-height:1;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);border:.4vh solid rgba(255,225,160,.6);box-shadow:0 0 4vh rgba(255,217,138,.35),inset 0 0 3vh rgba(255,255,255,.15);animation:float 3.2s ease-in-out infinite}
+.slot.no{color:rgba(255,255,255,.3);font-weight:800;border-style:dashed;box-shadow:none;animation:none}
+.boing2{animation:boing2 .6s ease-out!important} @keyframes boing2{30%{transform:scale(1.3) rotate(-8deg)}60%{transform:scale(.92) rotate(6deg)}}
+.resident{position:absolute;left:5%;top:17%;font-size:min(13vw,17vh);line-height:1;z-index:4;padding:1vh;filter:drop-shadow(0 0 3vh rgba(255,245,210,.95));animation:float 2.6s ease-in-out infinite}
+.resident.party{animation:hop .5s ease-in-out infinite}
+.thing.wobt{animation:wobt .5s} @keyframes wobt{0%,100%{transform:translate(-50%,-50%) rotate(0)}25%{transform:translate(-50%,-50%) rotate(-12deg)}75%{transform:translate(-50%,-50%) rotate(12deg)}}
+#bigWord.hold{opacity:1;transform:translate(-50%,0) scale(1);animation:wordpulse 1.6s ease-in-out infinite}
+@keyframes wordpulse{50%{box-shadow:0 0 0 .7vh var(--gold),0 0 11vh 4vh rgba(255,201,77,.85)}}
+.herald{position:absolute;right:-12vw;top:16vh;font-size:min(10vw,13vh);z-index:2;filter:drop-shadow(0 0 3vh rgba(255,245,210,.9));animation:herald 6s ease-in-out forwards}
+@keyframes herald{0%{transform:translateX(0)}30%,70%{transform:translateX(-26vw) rotate(-8deg)}50%{transform:translateX(-26vw) translateY(-3vh) rotate(8deg)}100%{transform:translateX(0)}}
+.gift{pointer-events:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:min(34vw,42vh);line-height:1;z-index:7;filter:drop-shadow(0 0 6vh rgba(255,225,140,1));animation:giftin .8s cubic-bezier(.2,1.4,.4,1)}
+@keyframes giftin{from{transform:translate(-50%,-50%) scale(0) rotate(-40deg)}}
+.gift.away{transition:transform .8s ease-in,opacity .8s;transform:translate(-50%,-160%) scale(.2);opacity:0}
+
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -140,20 +280,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute">
-  <symbol id="uni" viewBox="0 0 200 180">
-    <ellipse cx="92" cy="112" rx="56" ry="36" fill="#fff" stroke="#3b3350" stroke-width="4"/>
-    <path d="M50 132v34M74 142v28M112 142v28M134 132v34" stroke="#3b3350" stroke-width="13" stroke-linecap="round"/>
-    <path d="M50 132v34M74 142v28M112 142v28M134 132v34" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-    <path d="M38 104c-22-4-30 14-22 34 4-14 12-20 24-20z" fill="#b78cf0" stroke="#3b3350" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M118 96c4-30 18-50 40-52 20-2 34 12 32 30-1 12-10 20-22 18-8 8-14 22-22 30z" fill="#fff" stroke="#3b3350" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M158 46l14-40 8 42z" fill="#ffc94d" stroke="#3b3350" stroke-width="4" stroke-linejoin="round"/>
-    <path d="M150 44c-22 0-40 18-42 52 10-6 14-16 18-26 6-2 16-10 24-26z" fill="#f08cc0" stroke="#3b3350" stroke-width="4" stroke-linejoin="round"/>
-    <circle cx="168" cy="66" r="5" fill="#3b3350"/>
-    <path d="M176 82c4 3 8 3 11 0" stroke="#3b3350" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-    <circle cx="156" cy="80" r="6" fill="#ffc9d6" opacity=".8"/>
-  </symbol>
-</svg>
+<div id="fx"></div>
 
 <div id="sky">
   <div class="moon"></div>
@@ -164,7 +291,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 </div>
 
 <section id="start" class="screen on">
-  <svg class="funkel" viewBox="0 0 200 180"><use href="#uni"/></svg>
+  <div class="funkel-slot"></div>
   <button class="round orb go" id="btnStart" aria-label="Start"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg></button>
 </section>
 
@@ -175,11 +302,14 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 
 <section id="home" class="screen">
   <div class="top">
-    <div class="stars"><b>★</b><span id="starCount">0</span></div>
+    <div class="stars"><b>★</b><span id="starCount">0</span>
+      <button class="round orb" id="btnMeadow" aria-label="Einhornwiese" style="margin-left:2vw">🦄<b id="herdCount">1</b></button>
+      <button class="round orb" id="btnTrip" aria-label="Reise">🗺️</button></div>
     <button class="round gear" id="btnGear" aria-label="Elternbereich (lange drücken)">⚙</button>
   </div>
+  <div id="drift"></div>
   <div id="letterSky"></div>
-  <svg class="funkel" viewBox="0 0 200 180"><use href="#uni"/></svg>
+  <div class="funkel-slot"></div>
   <div class="row" id="stations"></div>
 </section>
 
@@ -193,12 +323,144 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 </section>
 
 <section id="done" class="screen">
-  <svg class="funkel" viewBox="0 0 200 180"><use href="#uni"/></svg>
+  <div class="funkel-slot"></div>
   <div class="big" id="doneStars"></div>
   <button class="round orb go" id="btnDone" aria-label="Weiter">🏠</button>
 </section>
 
+<section id="meadow" class="screen">
+  <div class="bar">
+    <button class="round hb" id="btnMeadowHome" aria-label="Zurück">🏠</button>
+    <div class="count" id="meadowCount"></div>
+    <div style="width:calc(var(--u)*10)"></div>
+  </div>
+  <div class="pasture" id="pasture"></div>
+</section>
+
+<section id="trip" class="screen">
+  <div class="bar"><button class="round hb" id="btnTripHome" aria-label="Zurück">🏠</button><button class="round orb hb" id="btnChest" aria-label="Schatzkiste">🎁</button></div>
+  <div id="tripBody"></div>
+</section>
+
+<section id="ride" class="screen">
+  <div id="rideWorld"></div>
+  <div class="bar"><button class="round hb" id="btnRideHome" aria-label="Zurück">🏠</button><div class="count">✨ <span id="rideCount">0</span></div></div>
+</section>
+
+<section id="land" class="screen">
+  <div id="landWorld"></div>
+  <div class="bar"><button class="round hb" id="btnLandHome" aria-label="Nach Hause">🏠</button><button class="round hb" id="btnLandAgain" aria-label="Neue Reise">🗺️</button></div>
+</section>
+<div id="bigWord"></div>
+
 <section id="parent" class="screen"><div class="wrap" id="parentWrap"></div></section>
+
+<script>
+"use strict";
+/* ================= UNICORNS ================= */
+/* every unicorn is drawn from one design with its own colours; gradients get unique ids per drawing */
+const HERD = [
+  {name:'Funkel',      body:'#ffffff', line:'#6b4a8f', mane:['#ff8fcf','#c38bff','#8fc7ff'], wing:'#f3e6ff', horn:['#fff3b0','#ffc94d'], hoof:'#ffd36b', extra:'star'},
+  {name:'Glitzer',     body:'#fff0fa', line:'#9a4a86', mane:['#ff5fb7','#ff9ad5','#ffd1ec'], wing:'#ffd6f0', horn:['#fff6c8','#f7b6ff'], hoof:'#f7b6ff', extra:'flowers'},
+  {name:'Sternchen',   body:'#fffbea', line:'#8a6a2a', mane:['#ffcf3f','#ffe58a','#fff4c4'], wing:'#fff1b8', horn:['#ffffff','#ffd24a'], hoof:'#ffd24a', extra:'tiara'},
+  {name:'Mondschein',  body:'#eef0ff', line:'#3f4a8a', mane:['#5b6bff','#8f9bff','#c9d0ff'], wing:'#dfe4ff', horn:['#ffffff','#bfc7ff'], hoof:'#bfc7ff', extra:'moon'},
+  {name:'Wolke',       body:'#f4fbff', line:'#4a7a9a', mane:['#bfe6ff','#e3f4ff','#ffffff'], wing:'#ffffff', horn:['#ffffff','#9fd6ff'], hoof:'#9fd6ff', extra:'none'},
+  {name:'Blume',       body:'#fff8f0', line:'#7a5a3a', mane:['#ff8a5c','#ffb35c','#ffd86b'], wing:'#ffe9d6', horn:['#fff7d6','#ffb35c'], hoof:'#ffb35c', extra:'flowers'},
+  {name:'Regenbogen',  body:'#ffffff', line:'#5a4a8a', mane:['#ff5f6d','#ffb347','#ffe66b','#6bdc8a','#5fb8ff','#a57bff'], wing:'#f6f0ff', horn:['#ffffff','#ff9ad5'], hoof:'#a57bff', extra:'star'},
+  {name:'Zuckerwatte', body:'#fff4fb', line:'#9a5a8a', mane:['#ffb6e1','#b6e3ff','#ffd6f2'], wing:'#e8f6ff', horn:['#ffffff','#ffb6e1'], hoof:'#b6e3ff', extra:'bow'},
+  {name:'Perle',       body:'#fbfaf6', line:'#7a7a8a', mane:['#e9e4ff','#fff0f6','#e4fbff'], wing:'#ffffff', horn:['#ffffff','#e9d6ff'], hoof:'#e9e4ff', extra:'tiara'},
+  {name:'Kristall',    body:'#effcff', line:'#2f7a8a', mane:['#3fd6e8','#8ff0ff','#d6fbff'], wing:'#d9fbff', horn:['#ffffff','#7fe9ff'], hoof:'#7fe9ff', extra:'star'},
+  {name:'Sonnenschein',body:'#fffde8', line:'#9a6a1a', mane:['#ff9d2e','#ffd23f','#fff27a'], wing:'#fff6c2', horn:['#fffbe0','#ffb02e'], hoof:'#ffb02e', extra:'none'},
+  {name:'Schneeflocke',body:'#ffffff', line:'#5a7aa0', mane:['#a8d8ff','#d8eeff','#ffffff'], wing:'#eef8ff', horn:['#ffffff','#cfe9ff'], hoof:'#cfe9ff', extra:'snow'},
+  {name:'Lavendel',    body:'#faf5ff', line:'#6a4a9a', mane:['#9a6bff','#c7a6ff','#e6d9ff'], wing:'#efe6ff', horn:['#ffffff','#c7a6ff'], hoof:'#c7a6ff', extra:'flowers'},
+  {name:'Kirschblüte', body:'#fff7f9', line:'#9a4a62', mane:['#ff7aa8','#ffb3c9','#ffe0ea'], wing:'#ffe8f0', horn:['#fff4f7','#ff9cbc'], hoof:'#ff9cbc', extra:'bow'},
+  {name:'Polarlicht',  body:'#f2fff8', line:'#2a6a6a', mane:['#3fe0a8','#5fb8ff','#c77bff'], wing:'#e0fff4', horn:['#ffffff','#5fe0c8'], hoof:'#5fb8ff', extra:'moon'},
+  {name:'Himmelblau',  body:'#f2f8ff', line:'#2a5a9a', mane:['#3f8cff','#7fb8ff','#bfe0ff'], wing:'#dcecff', horn:['#ffffff','#7fb8ff'], hoof:'#7fb8ff', extra:'tiara'}
+];
+let UID=0;
+function sparkleStar(x,y,r,cls,delay){
+  const s=r, t=r*.28;
+  return `<path class="${cls||'spk4'}" style="animation-delay:${delay||0}s;transform-origin:${x}px ${y}px" d="M${x} ${y-s} Q${x+t} ${y-t} ${x+s} ${y} Q${x+t} ${y+t} ${x} ${y+s} Q${x-t} ${y+t} ${x-s} ${y} Q${x-t} ${y-t} ${x} ${y-s}Z" fill="#fff"/>`;
+}
+function uniSVG(p, opt){
+  opt=opt||{}; const id='u'+(++UID), L=p.line, M=p.mane;
+  const lw=5;   // outline width
+  /* gradient stops */
+  const maneStops=M.map((c,i)=>`<stop offset="${(i/(M.length-1||1)).toFixed(2)}" stop-color="${c}"/>`).join('');
+  const defs=`<defs>
+    <radialGradient id="${id}b" cx="40%" cy="30%" r="80%"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="${p.body}"/><stop offset="1" stop-color="${p.body}" stop-opacity=".92"/></radialGradient>
+    <linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1">${maneStops}</linearGradient>
+    <linearGradient id="${id}w" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="${M[0]}"/><stop offset=".3" stop-color="${p.wing}"/><stop offset=".5" stop-color="#fff"/><stop offset=".7" stop-color="${p.wing}"/><stop offset="1" stop-color="${M[M.length-1]}"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0;-1 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="${id}h" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${p.horn[1]}"/><stop offset="1" stop-color="${p.horn[0]}"/></linearGradient>
+    <radialGradient id="${id}g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff8d6" stop-opacity=".9"/><stop offset="1" stop-color="#fff8d6" stop-opacity="0"/></radialGradient>
+  </defs>`;
+  /* silhouette parts (drawn twice: thick outline first, fill on top -> no inner lines) */
+  const legs=[
+    'M80 146 Q78 172 84 196', 'M102 150 Q102 174 106 194',   // back legs
+    'M142 150 Q140 172 144 194', 'M162 146 Q182 160 176 182' // front legs, one prancing
+  ];
+  const bodyParts=`
+    <ellipse cx="118" cy="128" rx="60" ry="35"/>
+    <path d="M136 118 C146 92 164 76 178 68 L204 86 C188 98 176 116 168 136 Z"/>
+    <circle cx="190" cy="66" r="28"/>
+    <ellipse cx="214" cy="82" rx="20" ry="15"/>
+    <path d="M174 48 L168 20 L190 40 Z" stroke-linejoin="round"/>`;
+  const legStroke=(w,c)=>legs.map(d=>`<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`).join('');
+  const hooves=[[84,196],[106,194],[144,194],[176,182]].map(([x,y],i)=>`<ellipse cx="${x}" cy="${y}" rx="9" ry="6" fill="${p.hoof}" stroke="${L}" stroke-width="3" transform="rotate(${i==3?-35:0} ${x} ${y})"/>`).join('');
+  /* tail + mane as flowing strands */
+  const tail=[['M64 120 C30 108 14 140 28 170',17],['M64 128 C42 130 30 156 44 182',14],['M62 116 C38 94 18 102 10 126',12]];
+  const mane=[['M184 40 C160 36 148 58 154 80',15],['M178 50 C154 56 142 80 150 102',14],['M170 64 C148 76 140 100 146 122',13],['M164 80 C146 96 142 116 150 134',11]];
+  const strand=(arr,w0,col)=>arr.map(([d,w],i)=>`<path d="${d}" fill="none" stroke="${col||M[i%M.length]}" stroke-width="${w+(w0||0)}" stroke-linecap="round"/>`).join('');
+  const shine=arr=>arr.map(([d,w])=>`<path d="${d}" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="${Math.max(2,w*.22)}" stroke-linecap="round" stroke-dasharray="14 22"/>`).join('');
+  /* wings: far wing behind, near wing over the body */
+  const wingPath='M118 110 C102 70 74 36 34 16 C46 36 42 46 54 56 C40 60 44 72 60 76 C46 82 52 94 68 96 C58 104 66 112 84 112 C98 120 110 118 118 110 Z';
+  const feathers='M110 104 C92 84 72 62 48 40 M104 108 C86 94 70 82 54 70 M98 112 C84 104 74 98 64 94';
+  const wing=(far)=>`<g class="wing${far?' far':''}" style="transform-origin:118px 110px">
+      <path d="${wingPath}" fill="url(#${id}w)" stroke="${L}" stroke-width="${lw-1}" stroke-linejoin="round" ${far?'opacity=".75" transform="translate(16 -6) scale(.92)"':''}/>
+      ${far?'':`<path d="M118 110 C100 112 84 112 68 104 C58 112 60 120 76 120 C90 124 108 122 118 110Z" fill="${M[1%M.length]}" opacity=".55"/>
+      <path d="M60 76 C70 84 82 92 98 96 M54 56 C66 64 80 74 102 86" fill="none" stroke="${M[0]}" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
+      <path d="${feathers}" fill="none" stroke="${L}" stroke-opacity=".35" stroke-width="2.5" stroke-linecap="round"/>`}
+    </g>`;
+  /* accessories */
+  let extra='';
+  if(p.extra==='flowers') extra=[[176,42,'#ff7ab8'],[188,36,'#ffd24a'],[164,52,'#9a6bff']].map(([x,y,c])=>
+      `<g transform="translate(${x} ${y})">${[0,72,144,216,288].map(a=>`<ellipse rx="4.5" ry="7" cy="-6" fill="${c}" stroke="${L}" stroke-width="1.2" transform="rotate(${a})"/>`).join('')}<circle r="3.5" fill="#fff6b0"/></g>`).join('');
+  if(p.extra==='tiara') extra=`<path d="M170 46 L176 34 L182 42 L190 28 L196 40 L202 34 L204 48 Z" fill="#ffe27a" stroke="${L}" stroke-width="2" stroke-linejoin="round"/><circle cx="190" cy="40" r="3" fill="#ff7ab8"/>`;
+  if(p.extra==='star') extra=`<path d="M100 120 l4 9 10 1 -8 6 3 10 -9 -6 -9 6 3 -10 -8 -6 10 -1z" fill="#ffe27a" stroke="${L}" stroke-width="1.6" stroke-linejoin="round" opacity=".95"/>`;
+  if(p.extra==='moon') extra=`<path d="M104 116 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="#fff3b0" stroke="${L}" stroke-width="1.6"/>`;
+  if(p.extra==='bow') extra=`<g transform="translate(58 122)"><path d="M0 0 L-12 -8 L-12 8 Z M0 0 L12 -8 L12 8 Z" fill="#ff7ab8" stroke="${L}" stroke-width="1.6" stroke-linejoin="round"/><circle r="3.5" fill="#ff9ad5" stroke="${L}" stroke-width="1.2"/></g>`;
+  if(p.extra==='snow') extra=`<g transform="translate(104 128)" stroke="#9fd6ff" stroke-width="2.4" stroke-linecap="round">${[0,60,120].map(a=>`<path d="M0 -10 V10" transform="rotate(${a})"/>`).join('')}</g>`;
+  /* glitter around */
+  const sp=[[30,60,7],[226,30,6],[60,26,5],[232,120,6],[20,150,5],[150,20,5],[200,170,6],[110,40,4]]
+     .map(([x,y,r],i)=>sparkleStar(x,y,r,'spk4',(i*.37)%2.4)).join('');
+  return `<svg class="${opt.cls||'uni'}" viewBox="-6 -8 252 216" ${opt.attr||''} aria-label="${p.name}">${defs}
+    <ellipse cx="120" cy="120" rx="120" ry="100" fill="url(#${id}g)" class="aura"/>
+    ${wing(true)}
+    <g stroke="${L}" stroke-width="${lw*2}" stroke-linejoin="round" fill="${L}">${strand(tail,lw*2,L)}${legStroke(15+lw*2,L)}${bodyParts}</g>
+    ${strand(tail,0)}${shine(tail)}
+    ${legStroke(15,p.body)}${hooves}
+    <g fill="url(#${id}b)">${bodyParts}</g>
+    ${wing(false)}
+    <g stroke="${L}" stroke-width="${lw*2}" stroke-linecap="round" fill="none">${strand(mane,lw*2,L)}</g>
+    ${strand(mane,0)}${shine(mane)}
+    <path d="M188 42 L214 0 L204 46 Z" fill="url(#${id}h)" stroke="${L}" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M195 34 L207 30 M199 24 L210 20 M203 14 L212 11" stroke="${L}" stroke-opacity=".45" stroke-width="2" stroke-linecap="round"/>
+    <path d="M192 40 C200 30 210 36 206 46" fill="none" stroke="${M[0]}" stroke-width="10" stroke-linecap="round"/>
+    ${extra}
+    <ellipse cx="200" cy="68" rx="7.5" ry="10" fill="#3b2a5a"/>
+    <ellipse cx="202.5" cy="64" rx="3" ry="3.8" fill="#fff"/><circle cx="197.5" cy="72" r="1.6" fill="#fff"/>
+    <path d="M205 59 l5 -4 M207.5 63 l6 -2.5 M193 59 l-2 -4" stroke="#3b2a5a" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="208" cy="88" rx="7" ry="4.5" fill="#ff9ac0" opacity=".6"/>
+    <path d="M222 90 q5 4 10 -1" fill="none" stroke="${L}" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="228" cy="78" r="1.8" fill="${L}" opacity=".6"/>
+    <g fill="#fff" opacity=".85">${[[96,140,2.2],[130,146,1.6],[118,112,1.8],[150,128,1.4],[84,124,1.5],[200,96,1.4]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>
+    <g class="glitter">${sp}</g>
+  </svg>`;
+}
+</script>
 
 <script>
 "use strict";
@@ -235,7 +497,7 @@ const WORDS = [
   ['ZELT','⛺'],['RE-GEN-BO-GEN','🌈'],['BLATT','🍃'],['PFERD','🐴'],['KRO-KO-DIL','🐊'],['GI-RAF-FE','🦒'],['KAT-ZE','🐱'],
   ['RO-BO-TER','🤖'],['GI-TAR-RE','🎸'],['TROM-PE-TE','🎺'],['TROM-MEL','🥁'],['BRIL-LE','👓'],['KRO-NE','👑'],['RING','💍'],
   ['HERZ','❤️'],['BE-SEN','🧹'],['KEKS','🍪'],['BON-BON','🍬'],['ZI-TRO-NE','🍋'],['KA-ROT-TE','🥕'],['KAR-TOF-FEL','🥔'],
-  ['AN-KER','⚓'],['EN-GEL','👼'],['KER-ZE','🕯️'],['BURG','🏯'],['WURM','🪱'],['ROB-BE','🦭'],['FLA-MIN-GO','🦩'],['KO-A-LA','🐨'],
+  ['AN-KER','⚓'],['EN-GEL','👼'],['KER-ZE','🕯️'],['BURG','🏰'],['WURM','🪱'],['ROB-BE','🦭'],['FLA-MIN-GO','🦩'],['KO-A-LA','🐨'],
   ['GO-RIL-LA','🦍'],['NIL-PFERD','🦛'],['BI-BER','🦫'],
   ['KUH','🐮',4],['ZIE-GE','🐐',4],['PA-PA-GEI','🦜',4],['BEIN','🦵',4],['ZAHN','🦷',4],['GEIST','👻',4],['BIE-NE','🐝',4]
 ].map(([w,e,m])=>({syl:w.split('-'),word:w.replace(/-/g,''),emoji:e,min:m||0}));
@@ -259,7 +521,43 @@ const PROMPTS = {
   g_bruecke:'Das ist die Zauberbrücke. Sie ist zerbrochen! Wenn du zwei Laute zusammenschiebst, wächst sie wieder zusammen.',
   g_turm:'Das ist der Sternenturm. Hier wohnen die Zauberwörter. Wer sie liest, bringt den Turm zum Leuchten.',
   g_fertig:'Geschafft! Deine Sterne fliegen zurück an den Himmel.',
-  g_level:'Schau mal! Neue Buchstabensterne sind aufgewacht.'
+  g_level:'Schau mal! Neue Buchstabensterne sind aufgewacht.',
+  g_herde:'Das ist die Einhornwiese. Hier wohnen alle deine Einhörner. Tippe sie an!',
+  g_freund:'Jetzt habt ihr noch eine Freundin mehr. Komm, wir suchen weiter nach den Sternen!',
+  c_1:'Hörst du das Glitzern? Da fliegt ein Einhorn heran! Das ist Glitzer. Glitzer möchte deine Freundin sein.',
+  c_2:'Schau, eine Sternschnuppe! Sie landet ganz sanft. Und es ist ein Einhorn! Das ist Sternchen.',
+  c_3:'Hinter dem Mond versteckt sich jemand. Hallo, Mondschein! Komm heraus, wir lesen zusammen.',
+  c_4:'Die kleine Wolke wackelt. Puff! Da ist Wolke, das flauschigste Einhorn am ganzen Himmel.',
+  c_5:'Eine Blume wächst und wächst. Sie öffnet sich, und heraus springt Blume!',
+  c_6:'Ein Regenbogen leuchtet auf. Wer rutscht denn da herunter? Juhu, das ist Regenbogen!',
+  c_7:'Rosa Zuckerwatte-Wolken! Und mittendrin hüpft Zuckerwatte. Hihi, wie süß!',
+  c_8:'Am Meer liegt eine Muschel. Sie öffnet sich ganz langsam. Darin schläft Perle. Guten Morgen, Perle!',
+  c_9:'Die Kristalle funkeln immer heller. Und dann steht da Kristall und glitzert wie Eis.',
+  c_10:'Die Sonne geht auf. Mit ihr kommt Sonnenschein und macht alles warm und hell.',
+  c_11:'Es schneit! Die Flocken tanzen und werden zu einem Einhorn. Hallo, Schneeflocke!',
+  c_12:'Lauter Schmetterlinge flattern herbei. Sie bringen Lavendel mit, ein ganz sanftes Einhorn.',
+  c_13:'Rosa Blütenblätter regnen vom Baum. Kirschblüte tanzt durch den Blütenregen!',
+  c_14:'Am Himmel tanzen bunte Lichter. Polarlicht fliegt mitten hindurch!',
+  c_15:'Hüpf, hüpf, von Wolke zu Wolke. Himmelblau kommt dich besuchen! Jetzt sind alle Einhörner da!',
+  f_1:'Alle deine Einhörner tanzen im Mondlicht. Was für ein Fest!',
+  f_2:'Die Einhörner fliegen eine Runde über den Sternenhimmel. Wuiii!',
+  f_3:'Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!',
+  r_wer:'Mit welchem Einhorn möchtest du reiten?',
+  r_wohin:'Wohin reiten wir heute? Such dir einen zauberhaften Ort aus!',
+  r_fang:'Fang unterwegs den Glitzer!',
+  r_heim:'Was für eine zauberhafte Reise! Komm, wir reiten nach Hause.',
+  d_wald_los:'Auf in den Zauberwald! Halt dich gut fest!',
+  d_meer_los:'Auf zum Glitzermeer! Halt dich gut fest!',
+  d_wiese_los:'Auf zur Blumenwiese! Halt dich gut fest!',
+  d_schloss_los:'Auf zum Wolkenschloss! Halt dich gut fest!',
+  d_zucker_los:'Auf ins Zuckerland! Halt dich gut fest!',
+  d_sterne_los:'Wir fliegen zu den Sternen! Halt dich gut fest!',
+  d_wald_an:'Wir sind im Zauberwald. Hier leuchten die Glühwürmchen. Tippe auf die Tiere!',
+  d_meer_an:'Wir sind am Glitzermeer. Die Wellen glitzern. Wer schwimmt denn da?',
+  d_wiese_an:'Wir sind auf der Blumenwiese. Hier duftet es so gut! Tippe auf die Blumen und Tiere.',
+  d_schloss_an:'Wir sind am Wolkenschloss. Hier wohnt die Wolkenkönigin. Schau mal, was es hier alles gibt!',
+  d_zucker_an:'Wir sind im Zuckerland. Hier ist alles aus Zucker. Mmmh, lecker!',
+  d_sterne_an:'Wir sind bei den Sternen. Da ist der Mond! Und da fliegt eine Rakete!'
 };
 const STATIONS = [
   {id:'laute', icon:'🌲', lbl:'M',    tale:'g_wald',    art:'<span class="emo">🌲</span><span class="emo sm">✨</span><span class="emo">🌳</span>'},
@@ -267,13 +565,13 @@ const STATIONS = [
   {id:'blend', icon:'🌉', lbl:'M→A',  tale:'g_bruecke', art:'<span class="emo">🌉</span><span class="emo sm">✨</span>'},
   {id:'wort',  icon:'🏰', lbl:'MAMA', tale:'g_turm',    art:'<span class="emo">🏰</span><span class="emo sm">📖</span>'}
 ];
-const FUNKEL='<svg class="funkel" viewBox="0 0 200 180"><use href="#uni"/></svg>';
+const funkel=()=>uniSVG(HERD[0],{cls:'uni funkel'});
 const skyLetters=(cls)=>['M','A','L','O','I','S','N'].map((l,i)=>
   `<span class="sl ${cls||''}" style="left:${5+i*11}%;top:${[6,16,3,12,5,15,2][i]}%;animation-delay:${i*.18}s">${l}</span>`).join('');
 const INTRO = [
-  {say:['g_intro1'], art:skyLetters()+FUNKEL},
-  {say:['g_intro2'], art:skyLetters('blow')+'<span class="emo">🌬️</span>'+FUNKEL},
-  {say:['g_intro3'], art:FUNKEL+'<span class="emo sm">💧</span>'}
+  {say:['g_intro1'], art:()=>skyLetters()+funkel()},
+  {say:['g_intro2'], art:()=>skyLetters('blow')+'<span class="emo">🌬️</span>'+funkel()},
+  {say:['g_intro3'], art:()=>funkel()+'<span class="emo sm">💧</span>'}
 ];
 
 /* ================= CLIP REGISTRY ================= */
@@ -287,6 +585,7 @@ const WORD_VOICE = {WAL:'Wahl'};
 const keyOf = s => s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
 function reg(key,text,tts,group){ if(!CLIPS[key]) CLIPS[key]={text,tts:tts||text,group}; }
 Object.entries(PROMPTS).forEach(([k,t])=>reg(k,t,t,'Ansagen'));
+HERD.forEach(u=>reg('u_'+keyOf(u.name),u.name,u.name,'Einhörner'));
 SETS.join('').split('').forEach(L=>reg('laut_'+keyOf(L),SOUND_TEXT[L],SOUND_TTS[L],'Laute'));
 SETS.join('').split('').filter(L=>!VOW.includes(L)).forEach(C=>VOW.split('').forEach(V=>{
   const s=C+V; reg('silbe_'+keyOf(s), sylVoice(s), s.toLowerCase(), 'Silben'); }));
@@ -296,9 +595,9 @@ Object.values(ANLAUT).flat().forEach(([w])=>reg('wort_'+keyOf(w), w, null, 'Wör
 
 /* ================= STATE ================= */
 const LS='funkelsLesereise.v1';
-let S={stars:0,level:0,streak:0,mixed:false,roundLen:5,seen:{}};
+let S={stars:0,level:0,streak:0,mixed:false,roundLen:5,seen:{},herd:0};
 try{ Object.assign(S, JSON.parse(localStorage.getItem(LS)||'{}')); }catch(e){}
-S.level=Math.max(0,Math.min(SETS.length-1,S.level|0)); if(!S.seen||typeof S.seen!=='object') S.seen={};
+S.level=Math.max(0,Math.min(SETS.length-1,S.level|0)); if(!S.seen||typeof S.seen!=='object') S.seen={}; S.herd=Math.max(0,Math.min(HERD.length-1,S.herd|0));
 const save=()=>{ try{localStorage.setItem(LS,JSON.stringify(S))}catch(e){} };
 
 /* ================= AUDIO ================= */
@@ -374,9 +673,99 @@ function chime(notes){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAu
   sky.insertBefore(d,sky.firstChild); } })();
 let storyQ=null;
 function story(scenes, then){ stopAll(); storyQ={scenes:scenes.slice(), then}; show('story'); storyNext(); }
-function storyNext(){ if(!storyQ) return; const sc=storyQ.scenes.shift();
+let sceneT=[];
+function later(fn,ms){ sceneT.push(setTimeout(fn,ms)); }
+function stopScene(){ sceneT.forEach(t=>{clearTimeout(t);clearInterval(t);}); sceneT=[]; }
+function storyNext(){ if(!storyQ) return; stopScene(); const sc=storyQ.scenes.shift();
   if(!sc){ const t=storyQ.then; storyQ=null; stopAll(); if(t) t(); return; }
-  $('storyArt').innerHTML=sc.art; chime([659,880]); say(...sc.say); }
+  const art=$('storyArt'); art.classList.toggle('scenehost',!!sc.scene);
+  art.innerHTML=typeof sc.art==='function'?sc.art():sc.art; chime([659,880]);
+  const btn=$('btnStory'); btn.classList.toggle('wait',!!sc.wait); if(sc.wait) later(()=>btn.classList.remove('wait'),sc.wait);
+  if(sc.run) setTimeout(()=>sc.run(art),30);
+  say(...sc.say); }
+
+/* ---- glitter effects ---- */
+const GLC=['#ffffff','#ffe27a','#ffb6e1','#b6e3ff','#d8b6ff'];
+const vu=()=>Math.min(innerWidth,innerHeight)/100;
+function particle(ch,x,y,size,color,anim,ms){ const p=document.createElement('span'); p.textContent=ch;
+  p.style.cssText=`font-size:${size}px;color:${color};text-shadow:0 0 ${size*.6}px ${color}`;
+  $('fx').appendChild(p);
+  try{ p.animate(anim(x,y),{duration:ms,easing:'cubic-bezier(.2,.7,.3,1)',fill:'forwards'}).onfinish=()=>p.remove(); }catch(e){ p.remove(); }
+  setTimeout(()=>p.remove(),ms+200); }
+function glitterBurst(x,y,n,spread){ const u=vu();
+  for(let i=0;i<(n||26);i++){ const a=Math.random()*Math.PI*2, d=(spread||22)*u*(.4+Math.random()*.8), sz=u*(1.6+Math.random()*2.6);
+    particle(rnd(['✦','✧','★','✦']),x,y,sz,rnd(GLC),(x,y)=>[
+      {transform:`translate(${x}px,${y}px) scale(.2)`,opacity:1},
+      {transform:`translate(${x+Math.cos(a)*d}px,${y+Math.sin(a)*d}px) scale(1) rotate(${Math.random()*180}deg)`,opacity:1,offset:.6},
+      {transform:`translate(${x+Math.cos(a)*d*1.15}px,${y+Math.sin(a)*d*1.15+3*u}px) scale(.3)`,opacity:0}],900+Math.random()*700); } }
+function hearts(x,y,n){ const u=vu();
+  for(let i=0;i<(n||7);i++){ const dx=(Math.random()-.5)*14*u;
+    particle(rnd(['💖','💜','💗','💕']),x,y,u*(3+Math.random()*2.5),'#ff9ad5',(x,y)=>[
+      {transform:`translate(${x}px,${y}px) scale(.3)`,opacity:0},{transform:`translate(${x+dx*.5}px,${y-6*u}px) scale(1)`,opacity:1,offset:.25},
+      {transform:`translate(${x+dx}px,${y-26*u}px) scale(.8)`,opacity:0}],1600+Math.random()*700); } }
+function trail(el,ms){ const t0=Date.now(), u=vu();
+  const iv=setInterval(()=>{ if(!el.isConnected||Date.now()-t0>ms){ clearInterval(iv); return; }
+    const r=el.getBoundingClientRect(); const flip=!!el.querySelector('.flip');
+    const x=flip? r.right-r.width*.2 : r.left+r.width*.2, y=r.top+r.height*.55;
+    for(let i=0;i<2;i++) particle(rnd(['✦','✧','✦']),x+(Math.random()-.5)*r.width*.15,y+(Math.random()-.5)*r.height*.2,u*(1.2+Math.random()*2),rnd(GLC),(x,y)=>[
+      {transform:`translate(${x}px,${y}px) scale(1)`,opacity:1},{transform:`translate(${x+(Math.random()-.5)*4*u}px,${y+6*u}px) scale(.2)`,opacity:0}],800+Math.random()*500);
+  },45); sceneT.push(iv); }
+function centerOf(el){ const r=el.getBoundingClientRect(); return [r.left+r.width/2, r.top+r.height/2]; }
+function rainDown(ch,ms,n){ const u=vu();
+  for(let i=0;i<n;i++) later(()=>{ const x=Math.random()*innerWidth, sway=(Math.random()-.5)*20*u;
+    particle(rnd(ch),x,-6*u,u*(2.5+Math.random()*3),'#fff',(x,y)=>[
+      {transform:`translate(${x}px,${y}px) rotate(0)`,opacity:0},{transform:`translate(${x+sway*.5}px,${innerHeight*.4}px) rotate(120deg)`,opacity:1,offset:.4},
+      {transform:`translate(${x+sway}px,${innerHeight+5*u}px) rotate(260deg)`,opacity:.6}],3200+Math.random()*1800); }, Math.random()*ms); }
+
+/* ---- story chapters: a new unicorn arrives after every round ---- */
+const CLOUD=(c)=>`<svg viewBox="0 0 200 110"><path d="M40 100 C10 100 6 64 34 58 C30 26 74 16 90 40 C104 10 156 14 158 50 C192 48 198 98 164 100 Z" fill="${c}" stroke="rgba(255,255,255,.9)" stroke-width="4"/></svg>`;
+const CH=[null,
+  {t:'flyin',arr:2800},{t:'fall',arr:2600},{t:'moon',arr:2900},{t:'cloud',arr:2300,c:'#ffffff'},{t:'grow',arr:2300,p:'🌷'},
+  {t:'rainbow',arr:3300},{t:'cloud',arr:2300,c:'#ffc4e6'},{t:'grow',arr:2300,p:'🐚'},{t:'grow',arr:2300,p:'💎'},{t:'sun',arr:3000},
+  {t:'rain',arr:2600,r:['❄️','❄','✻']},{t:'rain',arr:2600,r:['🦋','🦋','✦']},{t:'rain',arr:2600,r:['🌸','🌸','💮']},{t:'aurora',arr:2800},{t:'hop',arr:3200}];
+function chapterScene(i){
+  const c=CH[i], u=HERD[i];
+  return {scene:true, wait:c.arr+600, say:['c_'+i,'g_freund'], art:()=>{
+    let props='';
+    if(c.t==='moon') props='<div class="moonp"></div>';
+    if(c.t==='cloud') props=`<div class="cloudp">${CLOUD(c.c)}</div>`;
+    if(c.t==='grow') props=`<div class="growp">${c.p}</div><div class="flash"></div>`;
+    if(c.t==='rainbow') props=`<svg class="rainbowp" viewBox="0 0 100 60" preserveAspectRatio="none">${['#ff5f6d','#ffb347','#ffe66b','#6bdc8a','#5fb8ff','#a57bff'].map((col,k)=>
+        `<path d="M${-4+k*1.6} ${28+k*1.6} Q 34 ${-14+k*2.4} ${70-k*1.2} 52" stroke="${col}" stroke-width="2.2" style="animation-delay:${k*.08}s"/>`).join('')}</svg>`;
+    if(c.t==='sun') props='<div class="sunp"></div>';
+    if(c.t==='aurora') props='<div class="aur" style="top:6%"></div><div class="aur" style="top:20%;animation-delay:-1.2s;opacity:.55"></div><div class="aur" style="top:34%;animation-delay:-2.4s;opacity:.4"></div>';
+    if(c.t==='hop') props=[6,30,54].map(x=>`<div class="hopcl" style="left:${x}%">${CLOUD('#eaf4ff')}</div>`).join('');
+    return `<div class="scene sc-${c.t}">${props}
+      <div class="host">${uniSVG(HERD[0],{cls:'uni'})}</div>
+      <div class="arrive">${uniSVG(u,{cls:'uni flip'})}</div></div>`; },
+    run:(root)=>{
+      const arr=root.querySelector('.arrive'), host=root.querySelector('.host'); if(!arr) return;
+      if(['flyin','fall','rainbow','hop','aurora'].includes(c.t)) trail(arr,c.arr);
+      if(c.t==='rain') rainDown(c.r,2200,46);
+      if(c.t==='grow') later(()=>glitterBurst(...centerOf(arr),40,30),c.arr-150);
+      later(()=>{ chime([784,988,1175,1568]); glitterBurst(...centerOf(arr),34,26); hearts(...centerOf(host),6); hearts(...centerOf(arr),6);
+        arr.querySelector('.uni').classList.add('happy'); host.querySelector('.uni').classList.add('happy'); },c.arr);
+      later(()=>glitterBurst(...centerOf(arr),20,18),c.arr+1400);
+    }};
+}
+function finaleScene(){
+  const pick=shuffle(HERD.map((_,i)=>i)).slice(0,7);
+  return {scene:true, wait:1500, say:[rnd(['f_1','f_2','f_3'])], art:()=>`<div class="scene"><div class="dance">${
+      pick.map((i,k)=>`<div style="animation:hop .7s ${k*.1}s ease-in-out infinite">${uniSVG(HERD[i],{cls:'uni'+(k%2?' flip':'')})}</div>`).join('')}</div></div>`,
+    run:()=>{ rainDown(['✦','✧','★','💖'],3500,60); later(()=>glitterBurst(innerWidth/2,innerHeight*.6,50,40),400); }};
+}
+function flyby(){ try{
+  const i=Math.floor(Math.random()*(S.herd+1)), d=document.createElement('div'), toLeft=Math.random()<.4;
+  d.className='flyby'; d.style.top=(6+Math.random()*18)+'vh';
+  d.innerHTML=uniSVG(HERD[i],{cls:'uni flying'+(toLeft?' flip':'')}); document.body.appendChild(d);
+  const w=innerWidth, a=d.animate([{transform:`translateX(${toLeft?w*1.1:-w*.25}px)`},{transform:`translateX(${w*.45}px) translateY(-3vh)`},
+    {transform:`translateX(${toLeft?-w*.25:w*1.1}px) translateY(1vh)`}],{duration:2300,easing:'ease-in-out'});
+  const u=vu();
+  const iv=setInterval(()=>{ if(!d.isConnected){clearInterval(iv);return;} const r=d.getBoundingClientRect(), x=toLeft?r.right-r.width*.2:r.left+r.width*.2;
+    particle(rnd(['✦','✧']),x,r.top+r.height*.55,u*(1.2+Math.random()*1.6),rnd(GLC),(x,y)=>[{transform:`translate(${x}px,${y}px)`,opacity:1},{transform:`translate(${x}px,${y+5*u}px) scale(.2)`,opacity:0}],900); },50);
+  a.onfinish=()=>{ clearInterval(iv); d.remove(); }; setTimeout(()=>{ clearInterval(iv); d.remove(); },2600);
+}catch(e){} }
+
 function flyStar(fromEl,toEl){ try{ const a=fromEl.getBoundingClientRect(), b=toEl.getBoundingClientRect(), st=el('div','flystar','★');
   st.style.left=(a.left+a.width/2)+'px'; st.style.top=(a.top+a.height/2)+'px'; document.body.appendChild(st);
   requestAnimationFrame(()=>{ st.style.transform=`translate(${b.left+b.width/2-a.left-a.width/2}px,${b.top+b.height/2-a.top-a.height/2}px) translate(-50%,-50%) scale(.6)`; });
@@ -386,7 +775,7 @@ function flyStar(fromEl,toEl){ try{ const a=fromEl.getBoundingClientRect(), b=to
 let G=null;      // {mode, i, got, first, busy, lastKey}
 function startRound(mode){
   if(!S.seen[mode]){ const st=STATIONS.find(x=>x.id===mode); S.seen[mode]=true; save();
-    return story([{say:[st.tale], art:st.art+FUNKEL}], ()=>startRound(mode)); }
+    return story([{say:[st.tale], art:st.art+funkel()}], ()=>startRound(mode)); }
   G={mode,i:0,busy:false,last:null};
   const p=$('prog'); p.innerHTML=''; for(let i=0;i<S.roundLen;i++) p.appendChild(el('span','','★'));
   show('game'); nextTask(true);
@@ -400,7 +789,7 @@ function nextTask(first){
 async function correct(tile, afterKeys){
   if(G.busy) return; G.busy=true; const g=G;
   if(tile) tile.classList.add('good');
-  chime(); flyStar(tile||$('stage'), $('prog').children[G.i]);
+  chime(); flyStar(tile||$('stage'), $('prog').children[G.i]); flyby();
   S.stars++; let levelUp=false;
   if(G.firstTry){ S.streak++; if(S.streak>=15 && S.level<SETS.length-1){ S.level++; S.streak=0; levelUp=true; } }
   save();
@@ -418,8 +807,10 @@ function wrong(tile, replay){
   tile.classList.remove('wob'); void tile.offsetWidth; tile.classList.add('wob','dim');
   say(...replay);
 }
+let nextChapter=null;
 async function finishRound(){
   G=null; show('done'); $('doneStars').textContent='★'.repeat(S.roundLen);
+  if(S.herd<HERD.length-1){ S.herd++; nextChapter=S.herd; } else nextChapter=0; save();
   for(let i=0;i<24;i++){ const c=el('div','conf',rnd(['⭐','✨','🌟','⭐'])); c.style.left=Math.random()*96+'vw';
     c.style.animationDuration=(2.6+Math.random()*2.5)+'s'; c.style.animationDelay=Math.random()*1.2+'s';
     $('done').appendChild(c); setTimeout(()=>c.remove(),6500); }
@@ -509,7 +900,13 @@ function drawSky(){ const box=$('letterSky'), have=letters(); box.innerHTML='';
     if(on) b.onclick=()=>{ chime([1318]); say('laut_'+keyOf(l)); };
     box.appendChild(b); });
   skyShown=S.level; }
-function goHome(){ stopAll(); G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky();
+function drawDrift(){ const D=$('drift'); D.innerHTML='';
+  const n=Math.min(3,S.herd); const ids=shuffle(HERD.map((_,i)=>i).slice(1,S.herd+1)).slice(0,n);
+  ids.forEach((i,k)=>{ const d=el('div','d'+(k%2?' back':'')); d.style.top=(8+k*13+Math.random()*5)+'vh';
+    d.style.animationDuration=(22+Math.random()*12)+'s'; d.style.animationDelay=(-Math.random()*20)+'s';
+    d.innerHTML=uniSVG(HERD[i],{cls:'uni flying'+(k%2?' flip':'')}); D.appendChild(d); }); }
+function goHome(){ stopAll(); stopScene(); G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky(); drawDrift();
+  $('herdCount').textContent=S.herd+1;
   document.querySelectorAll('.station').forEach((b,i)=>b.classList.toggle('fresh',!S.seen[STATIONS[i].id]));
   show('home'); }
 STATIONS.forEach(st=>{
@@ -522,7 +919,192 @@ $('btnStart').onclick=()=>{ chime();
   else { goHome(); say('p_start','g_wohin'); } };
 $('btnStory').onclick=storyNext;
 $('btnHome').onclick=goHome;
-$('btnDone').onclick=goHome;
+$('btnDone').onclick=()=>{ const c=nextChapter; nextChapter=null;
+  if(c) story([chapterScene(c)], goHome); else if(c===0) story([finaleScene()], goHome); else goHome(); };
+function drawMeadow(){ const P=$('pasture'); P.innerHTML='';
+  $('meadowCount').textContent='🦄 '+(S.herd+1)+' / '+HERD.length;
+  HERD.forEach((u,i)=>{ const b=el('button','pen'+(i>S.herd?' locked':''));
+    b.innerHTML='<div class="cl"></div>'+uniSVG(u,{cls:'uni'+(i%2?' flip':''),attr:`style="animation-delay:${-i*.4}s"`});
+    if(i<=S.herd) b.onclick=()=>{ const v=b.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy');
+      chime([988,1318]); glitterBurst(...centerOf(v),24,18); say('u_'+keyOf(u.name)); };
+    P.appendChild(b); }); }
+$('btnMeadow').onclick=()=>{ stopAll(); drawMeadow(); show('meadow'); say('g_herde'); };
+$('btnMeadowHome').onclick=goHome;
+document.querySelectorAll('.funkel-slot').forEach(d=>d.outerHTML=funkel());
+/* ================= JOURNEYS: pick a unicorn, pick a place, ride there, live a little adventure ================= */
+/* every place has two adventures: someone needs help, she fetches three things by reading/hearing the word, and gets a keepsake */
+const TRIPS=[
+ {id:'wald',   name:'Zauberwald',    icon:'🌲', bg:'linear-gradient(180deg,#081a24 0%,#123d3a 55%,#1d6a4c 100%)', far:['🌲','🌳','🌲','🏔️'], mid:['🍄','🌿','🌲','🦋','🌳','🍄'], catchE:['✨','🌟'], fire:true,
+  things:[['🦔','IGEL'],['🦊','FUCHS'],['🍄','PILZ'],['🐰','HASE'],['🌳','BAUM'],['🌰','NUSS'],['🍃','BLATT']],
+  adv:[{who:'🦉', need:['IGEL','FUCHS','HASE'], gift:'🪶', giftName:'Zauberfeder',
+        tin:'Die kleine Eule hat heute Geburtstag! Sie möchte ein Fest feiern. Aber ihre Freunde sind noch nicht da. Holst du sie?',
+        tout:'Alle Freunde sind da! Die Eule freut sich riesig. Zum Dank schenkt sie dir eine Zauberfeder.'},
+       {who:'🧚', need:['PILZ','NUSS','BLATT'], gift:'🍀', giftName:'Glücksklee',
+        tin:'Die Waldfee kocht eine Zaubersuppe. Dafür braucht sie drei Dinge aus dem Wald. Hilfst du ihr?',
+        tout:'Mmmh! Die Zaubersuppe glitzert und duftet. Die Waldfee schenkt dir einen Glücksklee.'}]},
+ {id:'meer',   name:'Glitzermeer',   icon:'🌊', bg:'linear-gradient(180deg,#0a1a3f 0%,#1b4f8f 50%,#2d9fcf 100%)', far:['🏝️','⛵','🌊','🏝️'], mid:['🐚','🫧','🪸','🌊','🐠'], catchE:['🫧','✨'],
+  things:[['🐟','FISCH'],['🐳','WAL'],['🐬','DELFIN'],['🦭','ROBBE'],['⛵','BOOT'],['⚓','ANKER'],['🗺️','KARTE']],
+  adv:[{who:'🧜‍♀️', need:['FISCH','DELFIN','ROBBE'], gift:'🐚', giftName:'Zaubermuschel',
+        tin:'Die kleine Meerjungfrau spielt Verstecken. Aber sie findet ihre Freunde nicht mehr! Hilfst du suchen?',
+        tout:'Gefunden! Alle lachen und planschen. Die Meerjungfrau schenkt dir eine Zaubermuschel.'},
+       {who:'🦜', need:['BOOT','ANKER','KARTE'], gift:'💎', giftName:'Edelstein',
+        tin:'Der Papagei Polly will zur Schatzinsel segeln. Aber es fehlt noch so viel! Hilfst du ihm packen?',
+        tout:'Leinen los! Auf der Insel findet Polly einen Schatz. Er teilt ihn mit dir und schenkt dir einen Edelstein.'}]},
+ {id:'wiese',  name:'Blumenwiese',   icon:'🌸', bg:'linear-gradient(180deg,#6fbfff 0%,#bfe6ff 50%,#8fdc7f 100%)', far:['🌳','⛰️','🌳','🏡'], mid:['🌸','🌼','🌷','🦋','🌻','🌷'], catchE:['🦋','🌼'],
+  things:[['🌹','ROSE'],['🐝','BIENE'],['🐴','PFERD'],['🐮','KUH'],['🐐','ZIEGE'],['🍃','BLATT'],['🦆','ENTE']],
+  adv:[{who:'🐞', need:['KUH','ZIEGE','PFERD'], gift:'💐', giftName:'Blumenkranz',
+        tin:'Der kleine Marienkäfer macht ein Picknick. Er möchte die großen Tiere einladen. Holst du sie?',
+        tout:'Was für ein lustiges Picknick! Der Marienkäfer flicht dir zum Dank einen Blumenkranz.'},
+       {who:'🦋', need:['ROSE','BIENE','ENTE'], gift:'🌈', giftName:'Regenbogenband',
+        tin:'Der Schmetterling hat sich verflogen. Er sucht den Weg zum Teich. Wer kann ihm helfen?',
+        tout:'Da ist der Teich! Der Schmetterling tanzt vor Freude. Er schenkt dir ein Regenbogenband.'}]},
+ {id:'schloss',name:'Wolkenschloss', icon:'🏰', bg:'linear-gradient(180deg,#a996ff 0%,#f0c2ff 55%,#ffe3f3 100%)', far:['☁️','🏰','☁️','🌈'], mid:['☁️','✨','☁️','🎀'], catchE:['💖','✨'],
+  things:[['👑','KRONE'],['🏰','BURG'],['💍','RING'],['❤️','HERZ'],['👼','ENGEL'],['🕯️','KERZE'],['🏮','LATERNE']],
+  adv:[{who:'👸', need:['KRONE','RING','HERZ'], gift:'🎀', giftName:'Glitzerschleife',
+        tin:'Die Wolkenprinzessin will zum Ball. Aber oje, sie hat ihren Schmuck verlegt! Hilfst du suchen?',
+        tout:'Wie schön die Prinzessin aussieht! Jetzt kann der Ball beginnen. Sie schenkt dir eine Glitzerschleife.'},
+       {who:'🐉', need:['KERZE','LATERNE','ENGEL'], gift:'🔮', giftName:'Zauberkugel',
+        tin:'Der kleine Drache kann nicht schlafen. Es ist so dunkel im Schloss! Machst du es hell für ihn?',
+        tout:'Jetzt ist es hell und gemütlich. Der kleine Drache schläft ein und träumt süß. Er schenkt dir eine Zauberkugel.'}]},
+ {id:'zucker', name:'Zuckerland',    icon:'🍭', bg:'linear-gradient(180deg,#ff8acb 0%,#ffc4e6 55%,#fff0c4 100%)', far:['🍭','🧁','🍰','🍭'], mid:['🍬','🍭','🍩','🧁','🍓'], catchE:['🍬','🍭'],
+  things:[['🍦','EIS'],['🍪','KEKS'],['🍬','BONBON'],['🎂','TORTE'],['🧃','SAFT'],['🍌','BANANE']],
+  adv:[{who:'🐻', need:['BANANE','KEKS','SAFT'], gift:'🍭', giftName:'Zuckerstange',
+        tin:'Der Bäcker-Bär backt eine Torte für alle Einhörner. Aber ihm fehlen noch Zutaten! Holst du sie?',
+        tout:'Fertig ist die Einhorntorte! Jeder bekommt ein Stück. Du auch! Und eine Zuckerstange dazu.'},
+       {who:'🐭', need:['EIS','BONBON','TORTE'], gift:'🧁', giftName:'Glitzerkuchen',
+        tin:'Die kleine Maus feiert ein Naschfest. Sie wünscht sich drei leckere Sachen. Bringst du sie ihr?',
+        tout:'Die Maus ist satt und glücklich. Sie tanzt um den Tisch und schenkt dir einen Glitzerkuchen.'}]},
+ {id:'sterne', name:'Sternenreise',  icon:'🌙', bg:'linear-gradient(180deg,#03021a 0%,#150c42 60%,#2a1b6e 100%)', far:['🪐','🌙','⭐','🌍'], mid:['⭐','✨','🌟','☄️'], catchE:['⭐','🌟'],
+  things:[['🌙','MOND'],['🚀','RAKETE'],['🪐','PLANET'],['🤖','ROBOTER'],['🏮','LATERNE'],['⭐','STERN']],
+  adv:[{who:'👩‍🚀', need:['RAKETE','ROBOTER','LATERNE'], gift:'🌕', giftName:'Mondstein',
+        tin:'Die Astronautin Mia möchte nach Hause fliegen. Aber sie hat noch nicht alles beisammen. Hilfst du ihr?',
+        tout:'Drei, zwei, eins, los! Mia winkt dir zu. Zum Abschied schenkt sie dir einen Mondstein.'},
+       {who:'🌠', need:['MOND','PLANET','STERN'], gift:'✨', giftName:'Sternenstaub',
+        tin:'Ein kleines Sternchen ist vom Himmel gepurzelt. Es will zurück zu seinen Freunden. Zeigst du ihm den Weg?',
+        tout:'Das Sternchen leuchtet wieder hoch am Himmel. Es schickt dir glitzernden Sternenstaub.'}]}
+];
+/* voice lines for the adventures */
+reg('q_such','Such für mich:',null,'Ansagen');
+reg('r_schatz','Das ist deine Schatzkiste. Hier liegen alle Geschenke von deinen Reisen.',null,'Ansagen');
+reg('r_alle','Du hast alle Abenteuer bestanden! Du bist eine echte Einhornreiterin!',null,'Ansagen');
+reg('r_nochmal','Schau dich ruhig noch um. Tippe alles an!',null,'Ansagen');
+TRIPS.forEach(d=>{ d.things.forEach(([e,w])=>reg('wort_'+keyOf(w),cap(w),null,'Wörter'));
+  d.adv.forEach((a,i)=>{ a.id=d.id+(i+1); reg('a_'+a.id+'_in',a.tin,null,'Abenteuer'); reg('a_'+a.id+'_out',a.tout,null,'Abenteuer'); reg('s_'+a.id,a.giftName,null,'Abenteuer'); }); });
+const ALLADV=TRIPS.flatMap(d=>d.adv);
+if(!S.loot||typeof S.loot!=='object') S.loot={};
+if(!S.tn||typeof S.tn!=='object') S.tn={};
+
+const LANDPOS=[[34,68],[50,82],[66,66],[82,80],[44,44],[62,40],[86,46]];
+let trip=null, Q=null;
+const landOn=()=>$('land').classList.contains('on');
+function wordHTML(W){ const w=WORDS.find(x=>x.word===W);
+  return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
+function hideWord(){ $('bigWord').className=''; }
+function tripChrome(mode){ $('btnChest').textContent=mode==='chest'?'🗺️':'🎁'; $('btnChest').style.visibility=mode==='pick'?'hidden':'visible'; $('btnChest').dataset.m=mode; }
+function tripPick(){ stopAll(); stopScene(); hideWord(); Q=null;
+  if(S.herd===0){ trip={uni:0}; return tripMap(); }
+  trip={uni:null}; tripChrome('pick'); const T=$('tripBody'); T.className='pickgrid'; T.innerHTML='';
+  HERD.slice(0,S.herd+1).forEach((u,i)=>{ const b=el('button','pen');
+    b.innerHTML='<div class="cl"></div>'+uniSVG(u,{cls:'uni'+(i%2?' flip':''),attr:`style="animation-delay:${-i*.4}s"`});
+    b.onclick=()=>{ if(trip.uni!=null) return; trip.uni=i; const v=b.querySelector('.uni'); v.classList.add('happy');
+      chime([988,1318]); glitterBurst(...centerOf(v),26,20); say('u_'+keyOf(u.name)); later(tripMap,1400); };
+    T.appendChild(b); });
+  show('trip'); say('r_wer'); }
+function tripMap(){ stopScene(); hideWord(); if(!trip) trip={uni:0}; trip.dest=null; tripChrome('map');
+  const T=$('tripBody'); T.className='mapgrid'; T.innerHTML='';
+  TRIPS.forEach(d=>{ const b=el('button','place');
+    b.innerHTML=`<div class="pic" style="background:${d.bg}">${d.icon}</div><div class="pn">${d.name}</div>
+      <div class="badges">${d.adv.map(a=>`<span class="${S.loot[a.id]?'':'no'}">${S.loot[a.id]?a.gift:'✧'}</span>`).join('')}</div>`;
+    b.onclick=()=>{ if(trip.dest) return; trip.dest=d; b.classList.add('chosen'); chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22);
+      say('d_'+d.id+'_los'); later(()=>startRide(d),1300); };
+    T.appendChild(b); });
+  show('trip'); say('r_wohin'); }
+function tripChest(){ stopAll(); stopScene(); tripChrome('chest'); const T=$('tripBody'); T.className='chestgrid'; T.innerHTML='';
+  ALLADV.forEach((a,i)=>{ const got=!!S.loot[a.id], b=el('button','slot'+(got?'':' no'),got?a.gift:'?'); b.style.animationDelay=(-i*.3)+'s';
+    if(got) b.onclick=()=>{ b.classList.remove('boing2'); void b.offsetWidth; b.classList.add('boing2'); chime([1175,1568]); glitterBurst(...centerOf(b),22,16); say('s_'+a.id); };
+    T.appendChild(b); });
+  show('trip'); say('r_schatz'); }
+function layer(items,n,cls,dur,yr,size){ const L=el('div','layer '+cls); L.style.animationDuration=dur+'s';
+  let h=''; for(let k=0;k<n;k++){ const x=(k+Math.random()*.6)/n*100, y=yr[0]+Math.random()*(yr[1]-yr[0]), e=rnd(items), z=size*(.7+Math.random()*.6);
+    const sp=`style="top:${y}vh;font-size:${z}vh;left:%Lvw"`; h+=`<span ${sp.replace('%L',x)}>${e}</span><span ${sp.replace('%L',x+100)}>${e}</span>`; }
+  L.innerHTML=h; return L; }
+function startRide(d){
+  stopScene(); const R=$('rideWorld'); R.innerHTML=''; R.style.background=d.bg; trip.caught=0; $('rideCount').textContent='0';
+  R.append(layer(d.far,6,'far',38,[18,48],13), layer(d.mid,9,'mid',15,[58,80],10));
+  R.appendChild(el('div','ground'));
+  if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${20+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; R.appendChild(f); }
+  const rider=el('div','rider'); rider.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni flying'}); R.appendChild(rider);
+  show('ride'); later(()=>trail(rider,15000),200); later(()=>say('r_fang'),2600);
+  const spawn=()=>{ if(!$('ride').classList.contains('on')) return; const c=el('button','catch',rnd(d.catchE)); const y=12+Math.random()*58;
+    c.style.top=y+'vh'; R.appendChild(c); const w=innerWidth, dur=4800+Math.random()*1500, amp=(Math.random()*6+3);
+    const a=c.animate([{transform:`translateX(${w*1.05}px) translateY(0)`},{transform:`translateX(${w*.7}px) translateY(-${amp}vh)`},{transform:`translateX(${w*.35}px) translateY(${amp}vh)`},
+      {transform:`translateX(-${w*.1}px) translateY(0)`}],{duration:dur,easing:'linear'}); a.onfinish=()=>c.remove();
+    c.onpointerdown=()=>{ trip.caught++; $('rideCount').textContent=trip.caught; chime([rnd([1047,1175,1318,1568,1760])]); glitterBurst(...centerOf(c),16,12); c.remove(); }; };
+  const iv=setInterval(spawn,850); sceneT.push(iv);
+  /* halfway: whoever needs help waves from afar */
+  const adv=pickAdv(d); trip.adv=adv;
+  later(()=>{ const h=el('div','herald',adv.who); R.appendChild(h); },7000);
+  later(()=>{ R.appendChild(el('div','whoosh')); },14300);
+  later(()=>arrive(d),15000); }
+function pickAdv(d){ const open=d.adv.filter(a=>!S.loot[a.id]); if(open.length) return open[0];
+  S.tn[d.id]=(S.tn[d.id]|0)+1; save(); return d.adv[S.tn[d.id]%d.adv.length]; }
+function boing(b){ b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('boing'); }
+function arrive(d){
+  stopScene(); hideWord(); const L=$('landWorld'); L.innerHTML=''; L.style.background=d.bg; const tk=trip, adv=trip.adv||pickAdv(d);
+  L.appendChild(el('div','ground'));
+  if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${15+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; L.appendChild(f); }
+  const u=el('button','landuni'); u.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni'}); L.appendChild(u);
+  u.onclick=()=>{ const v=u.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); glitterBurst(...centerOf(v),22,16);
+    if(!Q) say('u_'+keyOf(HERD[trip.uni].name)); };
+  const who=el('button','resident',adv.who); L.appendChild(who);
+  who.onclick=()=>{ boing2(who); if(Q&&Q.active) ask(); };
+  Q={adv,step:-1,active:false,intro:true,who,els:{}};
+  d.things.forEach(([e,w],k)=>{ const b=el('button','thing',e); const [x,y]=LANDPOS[k];
+    b.style.left=x+'%'; b.style.top=y+'%'; b.style.animationDelay=(-k*.5)+'s'; Q.els[w]=b;
+    b.onclick=()=>tapThing(b,w,tk);
+    L.appendChild(b); });
+  if(trip.caught>0) L.appendChild(el('div','caughtBadge',`${d.catchE[0]} ${trip.caught}`));
+  show('land'); later(()=>glitterBurst(innerWidth/2,innerHeight*.45,40,40),200); chime([523,659,784,1047]);
+  (async()=>{ await say('d_'+d.id+'_an','a_'+adv.id+'_in'); if(trip!==tk||!landOn()||!Q) return; Q.intro=false; nextAsk(tk); })(); }
+function boing2(b){ b.classList.remove('boing2'); void b.offsetWidth; b.classList.add('boing2'); }
+function ask(){ if(!Q) return; const w=Q.adv.need[Q.step]; const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className='hold'; say('q_such','wort_'+keyOf(w)); }
+function nextAsk(tk){ if(!Q||trip!==tk||!landOn()) return; Q.step++;
+  if(Q.step>=Q.adv.need.length) return endQuest(tk);
+  Q.active=true; boing2(Q.who); ask(); }
+async function tapThing(b,w,tk){
+  if(Q&&Q.intro){ boing(b); return; }
+  if(Q&&Q.active){ const target=Q.adv.need[Q.step];
+    if(w===target){ Q.active=false; boing(b); chime(); glitterBurst(...centerOf(b),26,18);
+      /* the thing hops over to whoever asked for it */
+      try{ const a=centerOf(b), c=centerOf(Q.who); b.style.animation='none';
+        b.animate([{transform:'translate(-50%,-50%) scale(1)'},{transform:`translate(calc(-50% + ${(c[0]-a[0])*.5}px),calc(-50% + ${(c[1]-a[1])*.5-innerHeight*.12}px)) scale(1.2)`,offset:.5},
+          {transform:`translate(calc(-50% + ${c[0]-a[0]+innerWidth*.07*(Q.step+1)}px),calc(-50% + ${c[1]-a[1]+innerHeight*.02}px)) scale(.55)`}],{duration:900,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+      b.style.pointerEvents='none'; hearts(...centerOf(Q.who),4);
+      await say(rnd(['p_lob1','p_lob2','p_lob3','p_lob4','g_lob1'])); await wait(250); nextAsk(tk); }
+    else { b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('wobt'); say('wort_'+keyOf(w),'q_such','wort_'+keyOf(target)); }
+    return; }
+  /* free play */
+  boing(b); chime([1175,1568]); glitterBurst(...centerOf(b),22,16);
+  const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className=''; void bw.offsetWidth; bw.className='show'; say('wort_'+keyOf(w)); }
+async function endQuest(tk){
+  const adv=Q.adv, who=Q.who, els=Q.els; hideWord(); Q.active=false; Q.intro=true;
+  who.classList.add('party'); chime([523,659,784,1047,1318]); hearts(...centerOf(who),10); glitterBurst(...centerOf(who),40,30); rainDown(['✦','✧','★','💖'],2500,36);
+  await say('a_'+adv.id+'_out'); if(trip!==tk||!landOn()) return;
+  const first=!S.loot[adv.id]; S.loot[adv.id]=true; save();
+  const g=el('div','gift',adv.gift); $('landWorld').appendChild(g); chime([784,988,1175,1568]); later(()=>glitterBurst(innerWidth/2,innerHeight/2,50,34),350);
+  await say('s_'+adv.id); await wait(900); if(trip!==tk||!landOn()) return;
+  g.classList.add('away'); setTimeout(()=>g.remove(),900);
+  /* everything comes back for free play */
+  Object.values(els).forEach(b=>{ try{ b.getAnimations().forEach(a=>a.cancel()); }catch(e){} b.style.animation=''; b.style.pointerEvents=''; });
+  Q=null;
+  if(first && ALLADV.every(a=>S.loot[a.id])) await say('r_alle'); else await say('r_nochmal'); }
+$('btnTrip').onclick=tripPick;
+$('btnTripHome').onclick=()=>{ trip=null; goHome(); };
+$('btnRideHome').onclick=()=>{ trip=null; goHome(); };
+$('btnChest').onclick=()=>{ $('btnChest').dataset.m==='chest' ? tripMap() : tripChest(); };
+$('btnLandHome').onclick=()=>{ hideWord(); Q=null; stopScene(); say('r_heim'); const tk=trip; later(()=>{ if(trip===tk){ trip=null; goHome(); } },2600); };
+$('btnLandAgain').onclick=tripPick;
+
 
 /* parent gate: hold the gear for 1.5 s */
 let gearT=null;
@@ -574,19 +1156,23 @@ function openParent(){
 
   <h2>Aufnahmen anhören und prüfen</h2>
   <div class="box">
-    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
+    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen','Einhörner','Abenteuer'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
     <p>▶ antippen zum Anhören, ✗ für falsche Aufnahmen. Die markierten Namen unten kopieren und bei der GitHub-Aktion in „Nur diese Aufnahmen“ einfügen.</p>
     <div id="pChk"></div>
     <textarea id="pBad" readonly style="height:70px"></textarea>
     <div class="seg"><button class="btn pri" id="pBadCopy">Markierte kopieren</button><button class="btn" id="pBadClear">Markierungen löschen</button></div>
   </div>
 
+  <h2>Einhörner</h2>
+  <div class="box"><p>${S.herd+1} von ${HERD.length} Einhörnern gefunden. Nach jeder geschafften Runde kommt ein neues dazu.</p>
+    <div class="seg" id="pHerd"><button data-v="0">Nur Funkel</button><button data-v="${HERD.length-1}">Alle zeigen</button></div></div>
+
   <h2>Geschichte</h2>
   <div class="box"><button class="btn" id="pStory">Geschichte noch einmal von vorn erzählen</button> <span id="pStoryMsg"></span>
     <p>Die Einleitung und die vier Orte werden beim nächsten Start wieder vorgestellt.</p></div>
 
   <h2>Zurücksetzen</h2>
-  <div class="box"><button class="btn warn" id="pReset">Sterne und Stufe zurücksetzen</button> <span id="pResetMsg"></span></div>`;
+  <div class="box"><button class="btn warn" id="pReset">Sterne, Stufe, Einhörner und Reise-Geschenke zurücksetzen</button> <span id="pResetMsg"></span></div>`;
 
   const lv=$('pLevel');
   SETS.forEach((s,i)=>{ const b=el('button',i===S.level?'sel':'', (i+1)+' · +'+s.split('').join(' ')); b.onclick=()=>{S.level=i;S.streak=0;save();openParent()}; lv.appendChild(b); });
@@ -620,8 +1206,9 @@ function openParent(){
   $('pBadCopy').onclick=async()=>{ try{ await navigator.clipboard.writeText($('pBad').value); $('pBadCopy').textContent='Kopiert ✓'; }
     catch(e){ $('pBad').focus(); $('pBad').select(); } };
   $('pBadClear').onclick=()=>{ BAD.clear(); saveBad(); drawChk(document.querySelector('#pChkGrp .sel').dataset.v); showBad(); };
+  $('pHerd').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.herd=+v; save(); openParent(); };
   $('pStory').onclick=()=>{ S.seen={}; save(); $('pStoryMsg').textContent='Wird beim nächsten Start erzählt.'; };
-  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
+  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;S.loot={};S.tn={};save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
 }
 </script>
 </body>

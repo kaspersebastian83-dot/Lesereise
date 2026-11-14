@@ -2538,6 +2538,889 @@
     }
    ],
    "seed": 777
+  },
+  {
+   "id": "w_x000_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Funkel. Glitzer. Sternchen. Mondschein. Wolke. Blume.",
+   "items": [
+    {
+     "key": "u_funkel",
+     "say": "Funkel"
+    },
+    {
+     "key": "u_glitzer",
+     "say": "Glitzer"
+    },
+    {
+     "key": "u_sternchen",
+     "say": "Sternchen"
+    },
+    {
+     "key": "u_mondschein",
+     "say": "Mondschein"
+    },
+    {
+     "key": "u_wolke",
+     "say": "Wolke"
+    },
+    {
+     "key": "u_blume",
+     "say": "Blume"
+    }
+   ]
+  },
+  {
+   "id": "w_x001_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Regenbogen. Zuckerwatte. Perle. Kristall. Sonnenschein. Schneeflocke.",
+   "items": [
+    {
+     "key": "u_regenbogen",
+     "say": "Regenbogen"
+    },
+    {
+     "key": "u_zuckerwatte",
+     "say": "Zuckerwatte"
+    },
+    {
+     "key": "u_perle",
+     "say": "Perle"
+    },
+    {
+     "key": "u_kristall",
+     "say": "Kristall"
+    },
+    {
+     "key": "u_sonnenschein",
+     "say": "Sonnenschein"
+    },
+    {
+     "key": "u_schneeflocke",
+     "say": "Schneeflocke"
+    }
+   ]
+  },
+  {
+   "id": "w_x002_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Lavendel. Kirschblüte. Polarlicht. Himmelblau. Mama. Oma.",
+   "items": [
+    {
+     "key": "u_lavendel",
+     "say": "Lavendel"
+    },
+    {
+     "key": "u_kirschbluete",
+     "say": "Kirschblüte"
+    },
+    {
+     "key": "u_polarlicht",
+     "say": "Polarlicht"
+    },
+    {
+     "key": "u_himmelblau",
+     "say": "Himmelblau"
+    },
+    {
+     "key": "wort_mama",
+     "say": "Mama"
+    },
+    {
+     "key": "wort_oma",
+     "say": "Oma"
+    }
+   ]
+  },
+  {
+   "id": "w_x003_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Lama. Limo. Lila. Nase. Melone. Ananas.",
+   "items": [
+    {
+     "key": "wort_lama",
+     "say": "Lama"
+    },
+    {
+     "key": "wort_limo",
+     "say": "Limo"
+    },
+    {
+     "key": "wort_lila",
+     "say": "Lila"
+    },
+    {
+     "key": "wort_nase",
+     "say": "Nase"
+    },
+    {
+     "key": "wort_melone",
+     "say": "Melone"
+    },
+    {
+     "key": "wort_ananas",
+     "say": "Ananas"
+    }
+   ]
+  },
+  {
+   "id": "w_x004_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Sonne. Rose. Tomate. Maus. Auto. Torte.",
+   "items": [
+    {
+     "key": "wort_sonne",
+     "say": "Sonne"
+    },
+    {
+     "key": "wort_rose",
+     "say": "Rose"
+    },
+    {
+     "key": "wort_tomate",
+     "say": "Tomate"
+    },
+    {
+     "key": "wort_maus",
+     "say": "Maus"
+    },
+    {
+     "key": "wort_auto",
+     "say": "Auto"
+    },
+    {
+     "key": "wort_torte",
+     "say": "Torte"
+    }
+   ]
+  },
+  {
+   "id": "w_x005_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Tasse. Nuss. Papa. Opa. Hose. Hase.",
+   "items": [
+    {
+     "key": "wort_tasse",
+     "say": "Tasse"
+    },
+    {
+     "key": "wort_nuss",
+     "say": "Nuss"
+    },
+    {
+     "key": "wort_papa",
+     "say": "Papa"
+    },
+    {
+     "key": "wort_opa",
+     "say": "Opa"
+    },
+    {
+     "key": "wort_hose",
+     "say": "Hose"
+    },
+    {
+     "key": "wort_hase",
+     "say": "Hase"
+    }
+   ]
+  },
+  {
+   "id": "w_x006_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Dose. Sofa. Dino. Foto. Hut. Hund.",
+   "items": [
+    {
+     "key": "wort_dose",
+     "say": "Dose"
+    },
+    {
+     "key": "wort_sofa",
+     "say": "Sofa"
+    },
+    {
+     "key": "wort_dino",
+     "say": "Dino"
+    },
+    {
+     "key": "wort_foto",
+     "say": "Foto"
+    },
+    {
+     "key": "wort_hut",
+     "say": "Hut"
+    },
+    {
+     "key": "wort_hund",
+     "say": "Hund"
+    }
+   ]
+  },
+  {
+   "id": "w_x007_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Nudel. Telefon. Mond. Haus. Lupe. Banane.",
+   "items": [
+    {
+     "key": "wort_nudel",
+     "say": "Nudel"
+    },
+    {
+     "key": "wort_telefon",
+     "say": "Telefon"
+    },
+    {
+     "key": "wort_mond",
+     "say": "Mond"
+    },
+    {
+     "key": "wort_haus",
+     "say": "Haus"
+    },
+    {
+     "key": "wort_lupe",
+     "say": "Lupe"
+    },
+    {
+     "key": "wort_banane",
+     "say": "Banane"
+    }
+   ]
+  },
+  {
+   "id": "w_x008_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Kamel. Kiwi. Wahl. Tiger. Bus. Gabel.",
+   "items": [
+    {
+     "key": "wort_kamel",
+     "say": "Kamel"
+    },
+    {
+     "key": "wort_kiwi",
+     "say": "Kiwi"
+    },
+    {
+     "key": "wort_wal",
+     "say": "Wahl"
+    },
+    {
+     "key": "wort_tiger",
+     "say": "Tiger"
+    },
+    {
+     "key": "wort_bus",
+     "say": "Bus"
+    },
+    {
+     "key": "wort_gabel",
+     "say": "Gabel"
+    }
+   ]
+  },
+  {
+   "id": "w_x009_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zebra. Wolke. Ente. Insel. Salat. Elefant.",
+   "items": [
+    {
+     "key": "wort_zebra",
+     "say": "Zebra"
+    },
+    {
+     "key": "wort_wolke",
+     "say": "Wolke"
+    },
+    {
+     "key": "wort_ente",
+     "say": "Ente"
+    },
+    {
+     "key": "wort_insel",
+     "say": "Insel"
+    },
+    {
+     "key": "wort_salat",
+     "say": "Salat"
+    },
+    {
+     "key": "wort_elefant",
+     "say": "Elefant"
+    }
+   ]
+  },
+  {
+   "id": "w_x010_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Affe. Erde. Tor. Rad. Roller. Mantel.",
+   "items": [
+    {
+     "key": "wort_affe",
+     "say": "Affe"
+    },
+    {
+     "key": "wort_erde",
+     "say": "Erde"
+    },
+    {
+     "key": "wort_tor",
+     "say": "Tor"
+    },
+    {
+     "key": "wort_rad",
+     "say": "Rad"
+    },
+    {
+     "key": "wort_roller",
+     "say": "Roller"
+    },
+    {
+     "key": "wort_mantel",
+     "say": "Mantel"
+    }
+   ]
+  },
+  {
+   "id": "w_x011_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Laterne. Nadel. Heft. Lampe. Uhu. Hemd.",
+   "items": [
+    {
+     "key": "wort_laterne",
+     "say": "Laterne"
+    },
+    {
+     "key": "wort_nadel",
+     "say": "Nadel"
+    },
+    {
+     "key": "wort_heft",
+     "say": "Heft"
+    },
+    {
+     "key": "wort_lampe",
+     "say": "Lampe"
+    },
+    {
+     "key": "wort_uhu",
+     "say": "Uhu"
+    },
+    {
+     "key": "wort_hemd",
+     "say": "Hemd"
+    }
+   ]
+  },
+  {
+   "id": "w_x012_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hand. Arm. Mund. Feder. Hammer. Saft.",
+   "items": [
+    {
+     "key": "wort_hand",
+     "say": "Hand"
+    },
+    {
+     "key": "wort_arm",
+     "say": "Arm"
+    },
+    {
+     "key": "wort_mund",
+     "say": "Mund"
+    },
+    {
+     "key": "wort_feder",
+     "say": "Feder"
+    },
+    {
+     "key": "wort_hammer",
+     "say": "Hammer"
+    },
+    {
+     "key": "wort_saft",
+     "say": "Saft"
+    }
+   ]
+  },
+  {
+   "id": "w_x013_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pirat. Pinsel. Radio. Panda. Mammut. Delfin.",
+   "items": [
+    {
+     "key": "wort_pirat",
+     "say": "Pirat"
+    },
+    {
+     "key": "wort_pinsel",
+     "say": "Pinsel"
+    },
+    {
+     "key": "wort_radio",
+     "say": "Radio"
+    },
+    {
+     "key": "wort_panda",
+     "say": "Panda"
+    },
+    {
+     "key": "wort_mammut",
+     "say": "Mammut"
+    },
+    {
+     "key": "wort_delfin",
+     "say": "Delfin"
+    }
+   ]
+  },
+  {
+   "id": "w_x014_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hummer. Planet. Ei. Eis. Eimer. Uhr.",
+   "items": [
+    {
+     "key": "wort_hummer",
+     "say": "Hummer"
+    },
+    {
+     "key": "wort_planet",
+     "say": "Planet"
+    },
+    {
+     "key": "wort_ei",
+     "say": "Ei"
+    },
+    {
+     "key": "wort_eis",
+     "say": "Eis"
+    },
+    {
+     "key": "wort_eimer",
+     "say": "Eimer"
+    },
+    {
+     "key": "wort_uhr",
+     "say": "Uhr"
+    }
+   ]
+  },
+  {
+   "id": "w_x015_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ohr. Seife. Leiter. Mais. Ball. Brot.",
+   "items": [
+    {
+     "key": "wort_ohr",
+     "say": "Ohr"
+    },
+    {
+     "key": "wort_seife",
+     "say": "Seife"
+    },
+    {
+     "key": "wort_leiter",
+     "say": "Leiter"
+    },
+    {
+     "key": "wort_mais",
+     "say": "Mais"
+    },
+    {
+     "key": "wort_ball",
+     "say": "Ball"
+    },
+    {
+     "key": "wort_brot",
+     "say": "Brot"
+    }
+   ]
+  },
+  {
+   "id": "w_x016_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Kind. Igel. Karte. Baum. Rakete. Regen.",
+   "items": [
+    {
+     "key": "wort_kind",
+     "say": "Kind"
+    },
+    {
+     "key": "wort_igel",
+     "say": "Igel"
+    },
+    {
+     "key": "wort_karte",
+     "say": "Karte"
+    },
+    {
+     "key": "wort_baum",
+     "say": "Baum"
+    },
+    {
+     "key": "wort_rakete",
+     "say": "Rakete"
+    },
+    {
+     "key": "wort_regen",
+     "say": "Regen"
+    }
+   ]
+  },
+  {
+   "id": "w_x017_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pilz. Birne. Traube. Butter. Bett. Boot.",
+   "items": [
+    {
+     "key": "wort_pilz",
+     "say": "Pilz"
+    },
+    {
+     "key": "wort_birne",
+     "say": "Birne"
+    },
+    {
+     "key": "wort_traube",
+     "say": "Traube"
+    },
+    {
+     "key": "wort_butter",
+     "say": "Butter"
+    },
+    {
+     "key": "wort_bett",
+     "say": "Bett"
+    },
+    {
+     "key": "wort_boot",
+     "say": "Boot"
+    }
+   ]
+  },
+  {
+   "id": "w_x018_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zug. Traktor. Zelt. Regenbogen. Blatt. Pferd.",
+   "items": [
+    {
+     "key": "wort_zug",
+     "say": "Zug"
+    },
+    {
+     "key": "wort_traktor",
+     "say": "Traktor"
+    },
+    {
+     "key": "wort_zelt",
+     "say": "Zelt"
+    },
+    {
+     "key": "wort_regenbogen",
+     "say": "Regenbogen"
+    },
+    {
+     "key": "wort_blatt",
+     "say": "Blatt"
+    },
+    {
+     "key": "wort_pferd",
+     "say": "Pferd"
+    }
+   ]
+  },
+  {
+   "id": "w_x019_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Krokodil. Giraffe. Katze. Roboter. Gitarre. Trompete.",
+   "items": [
+    {
+     "key": "wort_krokodil",
+     "say": "Krokodil"
+    },
+    {
+     "key": "wort_giraffe",
+     "say": "Giraffe"
+    },
+    {
+     "key": "wort_katze",
+     "say": "Katze"
+    },
+    {
+     "key": "wort_roboter",
+     "say": "Roboter"
+    },
+    {
+     "key": "wort_gitarre",
+     "say": "Gitarre"
+    },
+    {
+     "key": "wort_trompete",
+     "say": "Trompete"
+    }
+   ]
+  },
+  {
+   "id": "w_x020_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Trommel. Brille. Krone. Ring. Herz. Besen.",
+   "items": [
+    {
+     "key": "wort_trommel",
+     "say": "Trommel"
+    },
+    {
+     "key": "wort_brille",
+     "say": "Brille"
+    },
+    {
+     "key": "wort_krone",
+     "say": "Krone"
+    },
+    {
+     "key": "wort_ring",
+     "say": "Ring"
+    },
+    {
+     "key": "wort_herz",
+     "say": "Herz"
+    },
+    {
+     "key": "wort_besen",
+     "say": "Besen"
+    }
+   ]
+  },
+  {
+   "id": "w_x021_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Keks. Bonbon. Zitrone. Karotte. Kartoffel. Anker.",
+   "items": [
+    {
+     "key": "wort_keks",
+     "say": "Keks"
+    },
+    {
+     "key": "wort_bonbon",
+     "say": "Bonbon"
+    },
+    {
+     "key": "wort_zitrone",
+     "say": "Zitrone"
+    },
+    {
+     "key": "wort_karotte",
+     "say": "Karotte"
+    },
+    {
+     "key": "wort_kartoffel",
+     "say": "Kartoffel"
+    },
+    {
+     "key": "wort_anker",
+     "say": "Anker"
+    }
+   ]
+  },
+  {
+   "id": "w_x022_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Engel. Kerze. Burg. Wurm. Robbe. Flamingo.",
+   "items": [
+    {
+     "key": "wort_engel",
+     "say": "Engel"
+    },
+    {
+     "key": "wort_kerze",
+     "say": "Kerze"
+    },
+    {
+     "key": "wort_burg",
+     "say": "Burg"
+    },
+    {
+     "key": "wort_wurm",
+     "say": "Wurm"
+    },
+    {
+     "key": "wort_robbe",
+     "say": "Robbe"
+    },
+    {
+     "key": "wort_flamingo",
+     "say": "Flamingo"
+    }
+   ]
+  },
+  {
+   "id": "w_x023_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Koala. Gorilla. Nilpferd. Biber. Kuh. Ziege.",
+   "items": [
+    {
+     "key": "wort_koala",
+     "say": "Koala"
+    },
+    {
+     "key": "wort_gorilla",
+     "say": "Gorilla"
+    },
+    {
+     "key": "wort_nilpferd",
+     "say": "Nilpferd"
+    },
+    {
+     "key": "wort_biber",
+     "say": "Biber"
+    },
+    {
+     "key": "wort_kuh",
+     "say": "Kuh"
+    },
+    {
+     "key": "wort_ziege",
+     "say": "Ziege"
+    }
+   ]
+  },
+  {
+   "id": "w_x024_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Papagei. Bein. Zahn. Geist. Biene. Apfel.",
+   "items": [
+    {
+     "key": "wort_papagei",
+     "say": "Papagei"
+    },
+    {
+     "key": "wort_bein",
+     "say": "Bein"
+    },
+    {
+     "key": "wort_zahn",
+     "say": "Zahn"
+    },
+    {
+     "key": "wort_geist",
+     "say": "Geist"
+    },
+    {
+     "key": "wort_biene",
+     "say": "Biene"
+    },
+    {
+     "key": "wort_apfel",
+     "say": "Apfel"
+    }
+   ]
+  },
+  {
+   "id": "w_x025_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ameise. Löwe. Tür. Pinguin. Fisch. Fuchs.",
+   "items": [
+    {
+     "key": "wort_ameise",
+     "say": "Ameise"
+    },
+    {
+     "key": "wort_loewe",
+     "say": "Löwe"
+    },
+    {
+     "key": "wort_tuer",
+     "say": "Tür"
+    },
+    {
+     "key": "wort_pinguin",
+     "say": "Pinguin"
+    },
+    {
+     "key": "wort_fisch",
+     "say": "Fisch"
+    },
+    {
+     "key": "wort_fuchs",
+     "say": "Fuchs"
+    }
+   ]
+  },
+  {
+   "id": "w_x026_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bär. Zauberfeder. Glücksklee. Zaubermuschel. Edelstein. Blumenkranz.",
+   "items": [
+    {
+     "key": "wort_baer",
+     "say": "Bär"
+    },
+    {
+     "key": "s_wald1",
+     "say": "Zauberfeder"
+    },
+    {
+     "key": "s_wald2",
+     "say": "Glücksklee"
+    },
+    {
+     "key": "s_meer1",
+     "say": "Zaubermuschel"
+    },
+    {
+     "key": "s_meer2",
+     "say": "Edelstein"
+    },
+    {
+     "key": "s_wiese1",
+     "say": "Blumenkranz"
+    }
+   ]
+  },
+  {
+   "id": "w_x027_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Regenbogenband. Glitzerschleife. Zauberkugel. Zuckerstange. Glitzerkuchen. Stern.",
+   "items": [
+    {
+     "key": "s_wiese2",
+     "say": "Regenbogenband"
+    },
+    {
+     "key": "s_schloss1",
+     "say": "Glitzerschleife"
+    },
+    {
+     "key": "s_schloss2",
+     "say": "Zauberkugel"
+    },
+    {
+     "key": "s_zucker1",
+     "say": "Zuckerstange"
+    },
+    {
+     "key": "s_zucker2",
+     "say": "Glitzerkuchen"
+    },
+    {
+     "key": "wort_stern",
+     "say": "Stern"
+    }
+   ]
+  },
+  {
+   "id": "w_x028_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Mondstein. Sternenstaub.",
+   "items": [
+    {
+     "key": "s_sterne1",
+     "say": "Mondstein"
+    },
+    {
+     "key": "s_sterne2",
+     "say": "Sternenstaub"
+    }
+   ]
   }
  ]
 }

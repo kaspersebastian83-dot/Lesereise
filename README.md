@@ -10,6 +10,18 @@ Lesen-lern-Spiel für Kinder ab ca. 3 Jahren – eine einzige HTML-Datei, offlin
 
 Buchstaben kommen in fünf Stufen dazu: `M A L O I` → `S N E` → `R T U` → `D H P F` → `B K W G Z`.
 
+## Einhörner
+Funkel und 15 Einhorn-Freundinnen. Nach jeder geschafften Runde kommt eine neue dazu – jede mit eigener kleiner
+Geschichte und Animation (aus der Wolke, vom Regenbogen, hinter dem Mond …). Auf der Einhornwiese (🦄-Knopf) wohnen alle;
+antippen = Name hören. Nach jeder richtigen Antwort fliegt ein Einhorn mit Glitzerspur vorbei.
+
+## Zauberreise (🗺️)
+Einhorn aussuchen → Ort aussuchen (Zauberwald, Glitzermeer, Blumenwiese, Wolkenschloss, Zuckerland, Sternenreise) →
+Ritt durch die Landschaft, unterwegs Glitzer fangen → am Ziel wartet ein kleines Abenteuer: Jemand braucht Hilfe
+(Eule, Waldfee, Meerjungfrau, Papagei Polly, Marienkäfer, Schmetterling, Wolkenprinzessin, kleiner Drache, Bäcker-Bär,
+Maus, Astronautin Mia, Sternchen). Drei Dinge werden gesucht – das Wort steht groß in Silbenfarben da und wird vorgelesen.
+Zum Dank gibt es ein Geschenk für die Schatzkiste (🎁, 12 Geschenke, 2 Abenteuer je Ort). Danach freies Antippen.
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 
@@ -27,3 +39,13 @@ z. B. `laut_m.mp3`, `silbe_ma.mp3`, `wort_mama.mp3`; dort lassen sich die Dateie
 
 Reihenfolge beim Abspielen: auf dem Gerät importierte Aufnahme → Aufnahme aus `audio/` → Gerätestimme.
 Wenn Wörter im Spiel geändert werden, muss `voice/clips.tsv` mitgeändert werden.
+
+## Silben und Laute
+Silben werden nicht einzeln vorgelesen (das klang oft englisch oder seltsam), sondern als Liste
+wie bei einer Lehrerin („Lies mit: Mah. Meh. Mie. Moh. Muh.“, ElevenLabs v3 mit Zeitmarken) und dann geschnitten.
+Die Einzellaute werden aus diesen Aufnahmen gebaut: Vokale gehalten, M/N/L/S/W/R gedehnt, F/H verlängert, T/P/K/B/D/G kurz.
+Das passiert automatisch in „Stimmen erzeugen“. Einzelne Silben/Laute neu: bei „Nur diese Aufnahmen“ z. B. `silbe_me,laut_m` eintragen –
+dann wird die ganze Zeile neu aufgenommen.
+
+„Aufnahmen prüfen“ (kostet keine Credits) lässt eine Lauterkennung hören, was in den Dateien gesprochen wird; Ergebnis im Log.
+Auswahl je Silbe/Laut: `voice/auswahl.json` (`alt` = frühere Einzelaufnahme behalten).

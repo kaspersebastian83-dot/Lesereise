@@ -21,6 +21,58 @@ g_bruecke	Das ist die Zauberbrücke. Sie ist zerbrochen! Wenn du zwei Laute zusa
 g_turm	Das ist der Sternenturm. Hier wohnen die Zauberwörter. Wer sie liest, bringt den Turm zum Leuchten.
 g_fertig	Geschafft! Deine Sterne fliegen zurück an den Himmel.
 g_level	Schau mal! Neue Buchstabensterne sind aufgewacht.
+g_herde	Das ist die Einhornwiese. Hier wohnen alle deine Einhörner. Tippe sie an!
+g_freund	Jetzt habt ihr noch eine Freundin mehr. Komm, wir suchen weiter nach den Sternen!
+c_1	Hörst du das Glitzern? Da fliegt ein Einhorn heran! Das ist Glitzer. Glitzer möchte deine Freundin sein.
+c_2	Schau, eine Sternschnuppe! Sie landet ganz sanft. Und es ist ein Einhorn! Das ist Sternchen.
+c_3	Hinter dem Mond versteckt sich jemand. Hallo, Mondschein! Komm heraus, wir lesen zusammen.
+c_4	Die kleine Wolke wackelt. Puff! Da ist Wolke, das flauschigste Einhorn am ganzen Himmel.
+c_5	Eine Blume wächst und wächst. Sie öffnet sich, und heraus springt Blume!
+c_6	Ein Regenbogen leuchtet auf. Wer rutscht denn da herunter? Juhu, das ist Regenbogen!
+c_7	Rosa Zuckerwatte-Wolken! Und mittendrin hüpft Zuckerwatte. Hihi, wie süß!
+c_8	Am Meer liegt eine Muschel. Sie öffnet sich ganz langsam. Darin schläft Perle. Guten Morgen, Perle!
+c_9	Die Kristalle funkeln immer heller. Und dann steht da Kristall und glitzert wie Eis.
+c_10	Die Sonne geht auf. Mit ihr kommt Sonnenschein und macht alles warm und hell.
+c_11	Es schneit! Die Flocken tanzen und werden zu einem Einhorn. Hallo, Schneeflocke!
+c_12	Lauter Schmetterlinge flattern herbei. Sie bringen Lavendel mit, ein ganz sanftes Einhorn.
+c_13	Rosa Blütenblätter regnen vom Baum. Kirschblüte tanzt durch den Blütenregen!
+c_14	Am Himmel tanzen bunte Lichter. Polarlicht fliegt mitten hindurch!
+c_15	Hüpf, hüpf, von Wolke zu Wolke. Himmelblau kommt dich besuchen! Jetzt sind alle Einhörner da!
+f_1	Alle deine Einhörner tanzen im Mondlicht. Was für ein Fest!
+f_2	Die Einhörner fliegen eine Runde über den Sternenhimmel. Wuiii!
+f_3	Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!
+r_wer	Mit welchem Einhorn möchtest du reiten?
+r_wohin	Wohin reiten wir heute? Such dir einen zauberhaften Ort aus!
+r_fang	Fang unterwegs den Glitzer!
+r_heim	Was für eine zauberhafte Reise! Komm, wir reiten nach Hause.
+d_wald_los	Auf in den Zauberwald! Halt dich gut fest!
+d_meer_los	Auf zum Glitzermeer! Halt dich gut fest!
+d_wiese_los	Auf zur Blumenwiese! Halt dich gut fest!
+d_schloss_los	Auf zum Wolkenschloss! Halt dich gut fest!
+d_zucker_los	Auf ins Zuckerland! Halt dich gut fest!
+d_sterne_los	Wir fliegen zu den Sternen! Halt dich gut fest!
+d_wald_an	Wir sind im Zauberwald. Hier leuchten die Glühwürmchen. Tippe auf die Tiere!
+d_meer_an	Wir sind am Glitzermeer. Die Wellen glitzern. Wer schwimmt denn da?
+d_wiese_an	Wir sind auf der Blumenwiese. Hier duftet es so gut! Tippe auf die Blumen und Tiere.
+d_schloss_an	Wir sind am Wolkenschloss. Hier wohnt die Wolkenkönigin. Schau mal, was es hier alles gibt!
+d_zucker_an	Wir sind im Zuckerland. Hier ist alles aus Zucker. Mmmh, lecker!
+d_sterne_an	Wir sind bei den Sternen. Da ist der Mond! Und da fliegt eine Rakete!
+u_funkel	Funkel
+u_glitzer	Glitzer
+u_sternchen	Sternchen
+u_mondschein	Mondschein
+u_wolke	Wolke
+u_blume	Blume
+u_regenbogen	Regenbogen
+u_zuckerwatte	Zuckerwatte
+u_perle	Perle
+u_kristall	Kristall
+u_sonnenschein	Sonnenschein
+u_schneeflocke	Schneeflocke
+u_lavendel	Lavendel
+u_kirschbluete	Kirschblüte
+u_polarlicht	Polarlicht
+u_himmelblau	Himmelblau
 laut_m	Mmmmm
 laut_a	Aaaah
 laut_l	Lllll
@@ -372,3 +424,44 @@ wort_pinguin	Pinguin
 wort_fisch	Fisch
 wort_fuchs	Fuchs
 wort_baer	Bär
+q_such	Such für mich:
+r_schatz	Das ist deine Schatzkiste. Hier liegen alle Geschenke von deinen Reisen.
+r_alle	Du hast alle Abenteuer bestanden! Du bist eine echte Einhornreiterin!
+r_nochmal	Schau dich ruhig noch um. Tippe alles an!
+a_wald1_in	Die kleine Eule hat heute Geburtstag! Sie möchte ein Fest feiern. Aber ihre Freunde sind noch nicht da. Holst du sie?
+a_wald1_out	Alle Freunde sind da! Die Eule freut sich riesig. Zum Dank schenkt sie dir eine Zauberfeder.
+s_wald1	Zauberfeder
+a_wald2_in	Die Waldfee kocht eine Zaubersuppe. Dafür braucht sie drei Dinge aus dem Wald. Hilfst du ihr?
+a_wald2_out	Mmmh! Die Zaubersuppe glitzert und duftet. Die Waldfee schenkt dir einen Glücksklee.
+s_wald2	Glücksklee
+a_meer1_in	Die kleine Meerjungfrau spielt Verstecken. Aber sie findet ihre Freunde nicht mehr! Hilfst du suchen?
+a_meer1_out	Gefunden! Alle lachen und planschen. Die Meerjungfrau schenkt dir eine Zaubermuschel.
+s_meer1	Zaubermuschel
+a_meer2_in	Der Papagei Polly will zur Schatzinsel segeln. Aber es fehlt noch so viel! Hilfst du ihm packen?
+a_meer2_out	Leinen los! Auf der Insel findet Polly einen Schatz. Er teilt ihn mit dir und schenkt dir einen Edelstein.
+s_meer2	Edelstein
+a_wiese1_in	Der kleine Marienkäfer macht ein Picknick. Er möchte die großen Tiere einladen. Holst du sie?
+a_wiese1_out	Was für ein lustiges Picknick! Der Marienkäfer flicht dir zum Dank einen Blumenkranz.
+s_wiese1	Blumenkranz
+a_wiese2_in	Der Schmetterling hat sich verflogen. Er sucht den Weg zum Teich. Wer kann ihm helfen?
+a_wiese2_out	Da ist der Teich! Der Schmetterling tanzt vor Freude. Er schenkt dir ein Regenbogenband.
+s_wiese2	Regenbogenband
+a_schloss1_in	Die Wolkenprinzessin will zum Ball. Aber oje, sie hat ihren Schmuck verlegt! Hilfst du suchen?
+a_schloss1_out	Wie schön die Prinzessin aussieht! Jetzt kann der Ball beginnen. Sie schenkt dir eine Glitzerschleife.
+s_schloss1	Glitzerschleife
+a_schloss2_in	Der kleine Drache kann nicht schlafen. Es ist so dunkel im Schloss! Machst du es hell für ihn?
+a_schloss2_out	Jetzt ist es hell und gemütlich. Der kleine Drache schläft ein und träumt süß. Er schenkt dir eine Zauberkugel.
+s_schloss2	Zauberkugel
+a_zucker1_in	Der Bäcker-Bär backt eine Torte für alle Einhörner. Aber ihm fehlen noch Zutaten! Holst du sie?
+a_zucker1_out	Fertig ist die Einhorntorte! Jeder bekommt ein Stück. Du auch! Und eine Zuckerstange dazu.
+s_zucker1	Zuckerstange
+a_zucker2_in	Die kleine Maus feiert ein Naschfest. Sie wünscht sich drei leckere Sachen. Bringst du sie ihr?
+a_zucker2_out	Die Maus ist satt und glücklich. Sie tanzt um den Tisch und schenkt dir einen Glitzerkuchen.
+s_zucker2	Glitzerkuchen
+wort_stern	Stern
+a_sterne1_in	Die Astronautin Mia möchte nach Hause fliegen. Aber sie hat noch nicht alles beisammen. Hilfst du ihr?
+a_sterne1_out	Drei, zwei, eins, los! Mia winkt dir zu. Zum Abschied schenkt sie dir einen Mondstein.
+s_sterne1	Mondstein
+a_sterne2_in	Ein kleines Sternchen ist vom Himmel gepurzelt. Es will zurück zu seinen Freunden. Zeigst du ihm den Weg?
+a_sterne2_out	Das Sternchen leuchtet wieder hoch am Himmel. Es schickt dir glitzernden Sternenstaub.
+s_sterne2	Sternenstaub

@@ -111,7 +111,7 @@ def fade(x, fin=0.004, fout=0.03):
     if b: x[-b:] *= np.linspace(1, 0, b) ** 1.5
     return x
 
-def level(x, target_db=-19.0, peak_db=-1.5):
+def level(x, target_db=-15.5, peak_db=-1.0):
     act = x[np.abs(x) > 10 ** (-50 / 20)]
     rms = np.sqrt((act ** 2).mean()) if len(act) else 1e-6
     g = 10 ** (target_db / 20) / max(rms, 1e-6)
@@ -221,7 +221,7 @@ def main():
             encode(pad(fade(level(seg), 0.004, 0.04)), os.path.join(OUT, f"{key}__{tid}.mp3")); made += 1
             # letter sounds from CV syllables
             syl = key[6:]
-            if not (len(syl) == 2 and syl[1] in "aeiou" and syl[0] not in "aeiou"):
+            if not key.startswith("silbe_") or not (len(syl) == 2 and syl[1] in "aeiou" and syl[0] not in "aeiou"):
                 continue
             C, V = syl[0], syl[1]
             # aligned consonant end = start of 2nd char of the item
@@ -241,13 +241,15 @@ def main():
                 encode(fade(level(seg[on:]), 0.002, 0.05), os.path.join(OUT, "_ref_a.mp3"))
             DIAG.append(f"{tid}\t{say}\tseg={len(seg)/SR:.3f}\thint={c_end:.3f}\tonset={on/SR:.3f}\tcons={dur:.3f}")
             if C in HELD and dur >= 0.04:
-                if C == "z":   # keep the t-burst, extend the s
-                    k = int(SR * 0.035); y = np.concatenate([cons[:k], grain_noise(cons[k:], 0.42)])
-                elif C in "sfhr":
-                    y = np.concatenate([cons[:int(SR * 0.02)], grain_noise(cons, 0.42 if C == "h" else 0.55)])
+                # chosen after phoneme checks: grains for steady noise (f, h), a smooth stretch for the rest,
+                # z stays natural ("ts"); repeating periods (PSOLA) made w/s wobble like "wa-wa"
+                if C == "z":
+                    y = fade(level(cons), 0.01, 0.04)
+                elif C in "fh":
+                    y = fade(level(np.concatenate([cons[:int(SR * 0.02)], grain_noise(cons, 0.42 if C == "h" else 0.55)])), 0.03, 0.12)
                 else:
-                    y = np.concatenate([cons[:int(SR * 0.03)], psola_hold(cons, 0.55)])
-                y = fade(level(y), 0.03, 0.12)
+                    target = 0.32 if C == "l" else 0.5
+                    y = fade(level(stretch(cons, max(0.1, min(1.0, dur / target)), C in "mnlw")), 0.03, 0.12)
             elif C in VOICELESS_STOP:
                 y = fade(level(seg[:on + int(SR * 0.008)]), 0.002, 0.02)
             elif C in VOICED_STOP:
