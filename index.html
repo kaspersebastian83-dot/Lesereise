@@ -546,6 +546,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .ill .art svg{width:100%;display:block;overflow:visible}
 .ill .tw{position:absolute;color:#fff6c0;font-size:2.6vh;animation:twinkle 2.6s ease-in-out infinite;text-shadow:0 0 1.5vh #ffd86a}
 .ill .emo{font-size:22vh;line-height:1}
+.ill .bub3{position:absolute;border-radius:50%;border:.3vh solid rgba(230,250,255,.85);background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 30%);animation:float 2.6s ease-in-out infinite}
 .ill .lt{position:absolute;font:800 4vh/1 ui-rounded,system-ui,sans-serif;color:#ffe27a;text-shadow:0 0 2vh rgba(255,216,106,.9);animation:float 3s ease-in-out infinite}
 .pt{position:absolute;inset:8% 9% 8% 7%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6vh;text-align:center}
 .pt .ttl{font:700 4.6vh/1.15 Georgia,"Times New Roman",serif;color:#5a2e6e}
@@ -577,6 +578,150 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 #owl.talk .obd{animation:owltalk .9s ease-in-out infinite} @keyframes owltalk{0%,100%{transform:rotate(-2deg) scale(1)}50%{transform:rotate(3deg) scale(1.02,.98)}}
 #btnGear2{position:absolute;right:3vw;top:2vh;z-index:6}
 #bkFinger{position:absolute;left:0;top:0;z-index:8;font-size:9vh;pointer-events:none;opacity:0;filter:drop-shadow(0 0 2vh rgba(255,255,255,.9))}
+
+/* wave tale: the little wave, the old turtle, the shy shell, the whale, the child; sea, deep water, fog; new gestures */
+.sea2{position:absolute;left:-12%;right:-12%;bottom:-8%;top:var(--sea,60%);transition:top 1.8s cubic-bezier(.3,.8,.3,1);pointer-events:none}
+.sea2 .sb{position:absolute;inset:0}
+.sea2 svg{position:absolute;left:0;width:200%;height:3.4vh;top:-2.6vh;animation:swv 9s linear infinite}
+.sea2 svg.s2{top:-1.4vh;height:2.6vh;animation-duration:13s;animation-direction:reverse;opacity:.8}
+.sea2 .sl2{position:absolute;left:0;right:0;top:-.3vh;height:.5vh;background:rgba(255,255,255,.35);filter:blur(.3vh)}
+@keyframes swv{to{transform:translateX(-50%)}}
+.shore2{position:absolute;pointer-events:none;border-radius:58% 0 0 0/80% 0 0 0;
+  background:linear-gradient(180deg,#f4dca0 0%,#e8c888 40%,#d2ac6c 100%);box-shadow:inset 1.4vh 1vh 2vh -1vh rgba(120,90,40,.45)}
+.surf2{position:absolute;left:-10%;right:-10%;top:-2%;pointer-events:none}
+.surf2::after{content:"";position:absolute;left:0;right:0;bottom:-1.2vh;height:2.4vh;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.7) 0 4vh,rgba(200,240,255,.25) 4vh 7vh,rgba(255,255,255,.55) 7vh 9vh,rgba(200,240,255,.2) 9vh 13vh);
+  filter:blur(.35vh);animation:surfm 6s linear infinite}
+@keyframes surfm{to{background-position:26vh 0}}
+.rays2{position:absolute;left:-20%;right:-20%;top:-4%;height:92%;pointer-events:none;mix-blend-mode:screen;
+  background:repeating-linear-gradient(104deg,rgba(255,255,255,0) 0 5%,rgba(210,245,255,.17) 6% 8.5%,rgba(255,255,255,0) 9.5% 15%,rgba(210,245,255,.07) 16% 17%,rgba(255,255,255,0) 18% 23%);
+  -webkit-mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.6) 45%,transparent 92%);mask-image:linear-gradient(180deg,#000 0,rgba(0,0,0,.6) 45%,transparent 92%);
+  animation:rays2 11s ease-in-out infinite alternate}
+@keyframes rays2{from{transform:translateX(-3%) skewX(-2deg)}to{transform:translateX(3%) skewX(2deg)}}
+.caus2{position:absolute;left:-10%;right:-10%;bottom:-6%;height:30%;pointer-events:none;mix-blend-mode:screen;opacity:.5;
+  background:radial-gradient(ellipse 5vh 1.6vh at 20% 30%,rgba(255,255,255,.5),transparent),radial-gradient(ellipse 6vh 1.8vh at 55% 60%,rgba(255,255,255,.45),transparent),
+   radial-gradient(ellipse 4vh 1.4vh at 80% 25%,rgba(255,255,255,.5),transparent),radial-gradient(ellipse 5vh 1.5vh at 38% 80%,rgba(255,255,255,.4),transparent);
+  background-size:40vh 14vh;animation:caus 7s ease-in-out infinite alternate}
+@keyframes caus{to{background-position:9vh 3vh;opacity:.3}}
+.fog2{position:absolute;left:-30%;width:160%;pointer-events:none;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 50%,rgba(226,226,246,.62) 0,rgba(226,226,246,.32) 40%,rgba(226,226,246,0) 70%);animation:fogd 16s ease-in-out infinite alternate}
+@keyframes fogd{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+.kelpsv{transform-origin:50% 100%;animation:kelp 5.5s ease-in-out infinite} @keyframes kelp{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(4deg) skewX(3deg)}}
+.u2.uw .ub::after{content:"";position:absolute;left:-10%;top:-14%;width:120%;height:122%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.55) 0,rgba(255,255,255,0) 14%),radial-gradient(circle,rgba(200,240,255,0) 58%,rgba(200,240,255,.22) 68%,rgba(255,255,255,.55) 71%,rgba(200,240,255,0) 73%);
+  box-shadow:0 0 3vh rgba(180,235,255,.35)}
+/* the little wave and the big waves */
+.wel>.bb{transform-origin:50% 92%;scale:var(--wz,1);transition:scale .7s cubic-bezier(.3,1.6,.5,1);animation:wbob 2.8s ease-in-out infinite}
+@keyframes wbob{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-3%)}}
+.wel .ey,.wel .m,.wel .blush{display:none}
+.wel[data-mood=longing] .ey-up,.wel[data-mood=longing] .m-soft{display:inline}
+.wel[data-mood=sad] .ey-sad,.wel[data-mood=sad] .m-sad{display:inline}
+.wel[data-mood=oh] .ey-w,.wel[data-mood=oh] .m-o{display:inline}
+.wel[data-mood=brave] .ey-br,.wel[data-mood=brave] .m-grin{display:inline}
+.wel[data-mood=smile] .ey-o,.wel[data-mood=smile] .m-grin{display:inline}
+.wel[data-mood=happy] .ey-j,.wel[data-mood=happy] .m-big,.wel[data-mood=happy] .blush,
+.wel[data-mood=glow] .ey-j,.wel[data-mood=glow] .m-big,.wel[data-mood=glow] .blush{display:inline}
+.wel[data-mood=sing] .ey-j,.wel[data-mood=sing] .m-o,.wel[data-mood=sing] .blush{display:inline}
+.wel[data-mood=sing] .m-o{transform-box:fill-box;transform-origin:center;animation:sing .42s ease-in-out infinite alternate}
+.tp2.wel{filter:drop-shadow(0 0 1.6vh rgba(170,235,255,.55))}
+.tp2.wel[data-mood=glow]{filter:drop-shadow(0 0 2vh #c8f6ff) drop-shadow(0 0 5vh rgba(120,220,255,.85))}
+.wel .wc{transform-box:view-box;transform-origin:44px 62px;animation:wcurl 2.8s ease-in-out infinite} @keyframes wcurl{50%{transform:rotate(-6deg) scale(1.04)}}
+.wel .ey-o,.wel .ey-up,.wel .ey-br,.wel .ey-w{transform-box:fill-box;transform-origin:center;animation:blink 4.6s infinite}
+.wel.big .bdy{filter:saturate(.85)} .tp2.wel.big{filter:drop-shadow(0 1vh 2vh rgba(10,20,60,.35))}
+.wel.flat>.bb{animation:wflat 1.6s ease-in-out forwards} @keyframes wflat{0%{transform:none}30%{transform:scale(1.15,1.2) translateY(-8%)}55%{transform:scale(1.7,.32)}75%{transform:scale(1.2,.6)}100%{transform:scale(.85,.85)}}
+.wel.onkr{position:absolute;left:44%;top:6%;width:36%;translate:-50% -62%;filter:none}
+.wel .perl2{position:absolute;left:66%;top:16%;width:24%;translate:-50% -50%;filter:drop-shadow(0 0 1.4vh #fff) drop-shadow(0 0 3vh rgba(255,200,250,.9));animation:pglow 1.8s ease-in-out infinite}
+@keyframes pglow{50%{scale:1.12;filter:drop-shadow(0 0 2vh #fff) drop-shadow(0 0 5vh rgba(255,200,250,1))}}
+.perl2 svg,.tp2.perl svg{width:100%;display:block;overflow:visible}
+.tp2.perl{filter:drop-shadow(0 0 1.6vh #fff) drop-shadow(0 0 4vh rgba(255,190,250,.95));animation:pglow 1.8s ease-in-out infinite}
+.gift2{position:absolute;left:62%;top:6%;translate:-50% -50%;font-size:4.2vh;line-height:1;filter:drop-shadow(0 0 1vh #fff)}
+.wel.roll{animation:wroll 2.8s cubic-bezier(.4,.1,.6,1) forwards} @keyframes wroll{0%{transform:none;opacity:1}100%{transform:translateX(55vw) scale(.55);opacity:0}}
+.wel.rise{animation:wrise 2.2s cubic-bezier(.2,.8,.3,1)} @keyframes wrise{0%{transform:translateY(30%) scale(.3);opacity:0}100%{transform:none;opacity:1}}
+/* the old turtle */
+.krt>.bb{animation:kswim 3.2s ease-in-out infinite} @keyframes kswim{50%{transform:translateY(-4%) rotate(-2deg)}}
+.krt .ey,.krt .m,.krt .blush,.krt .tear{display:none}
+.krt[data-mood=lost] .ey-l,.krt[data-mood=lost] .m-w,.krt[data-mood=lost] .tear{display:inline}
+.krt[data-mood=smile] .ey-o,.krt[data-mood=smile] .m-s{display:inline}
+.krt[data-mood=happy] .ey-j,.krt[data-mood=happy] .m-s,.krt[data-mood=happy] .blush{display:inline}
+.krt[data-mood=push] .ey-sq,.krt[data-mood=push] .m-s,.krt[data-mood=push] .blush{display:inline}
+.krt .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+.krt .fl{transform-box:view-box;animation:kfl 1.6s ease-in-out infinite} .krt .ff{transform-origin:112px 78px} .krt .fb{transform-origin:46px 80px;animation-delay:-.5s}
+.krt .fh{transform-origin:112px 50px;animation-name:kflh;animation-delay:-.3s}
+@keyframes kfl{50%{transform:rotate(22deg)}} @keyframes kflh{50%{transform:rotate(-20deg)}}
+.krt.fly .fl{animation-duration:.55s}
+.krt .hd{transform-box:view-box;transform-origin:126px 60px;transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
+.krt[data-mood=lost] .hd{animation:klook 3s ease-in-out infinite} @keyframes klook{0%,100%{transform:rotate(6deg)}50%{transform:rotate(-8deg) translateY(-3px)}}
+.krt[data-mood=happy] .hd{transform:rotate(-10deg) translateY(-2px)}
+/* the shy shell: --op opens the lid */
+.msl{--op:0}
+.msl .lid{transform-box:view-box;transform-origin:16px 54px;transform:rotate(calc(var(--op)*-38deg)) translateY(calc(var(--op)*-4px))}
+.msl .inn{opacity:calc(var(--op)*3)} .msl .ing{opacity:calc(var(--op)*1.2)}
+.msl .ey,.msl .m{display:none}
+.msl[data-mood=shy] .ey-c,.msl[data-mood=shy] .m-shy{display:inline}
+.msl[data-mood=peek] .ey-p,.msl[data-mood=peek] .m-shy{display:inline}
+.msl[data-mood=happy] .ey-j,.msl[data-mood=happy] .m-s{display:inline}
+.msl>.bb{animation:breathe 3.4s ease-in-out infinite} .msl[data-mood=shy]>.bb{animation:mshy 2.4s ease-in-out infinite} @keyframes mshy{50%{transform:scale(.97,1.02) rotate(-1.5deg)}}
+.msl .prl{filter:drop-shadow(0 0 3px #fff)}
+.tp2.msl.lit{filter:drop-shadow(0 0 2vh rgba(255,220,250,.8)) drop-shadow(0 0 5vh rgba(255,190,240,.6))}
+/* the whale */
+.wal2>.bb{animation:wbreath 4s ease-in-out infinite} @keyframes wbreath{50%{transform:scale(1.015,.985)}}
+.wal2 .ey,.wal2 .m,.wal2 .blush{display:none}
+.wal2[data-mood=asleep] .ey-z,.wal2[data-mood=asleep] .m-s{display:inline}
+.wal2[data-mood=blink] .ey-b,.wal2[data-mood=blink] .m-s{display:inline}
+.wal2[data-mood=awake] .ey-o,.wal2[data-mood=awake] .m-o{display:inline}
+.wal2[data-mood=happy] .ey-j,.wal2[data-mood=happy] .m-s,.wal2[data-mood=happy] .blush{display:inline}
+.wal2 .tl{transform-box:view-box;transform-origin:212px 80px;animation:wtail 3.4s ease-in-out infinite} @keyframes wtail{50%{transform:rotate(-9deg)}}
+.wal2[data-mood=asleep] .tl{animation-duration:6s}
+.wal2 .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 4.8s infinite}
+.tp2.wal2.far{filter:brightness(.7) saturate(.8)}
+/* the child */
+.kind2>.bb{animation:breathe 3s ease-in-out infinite}
+.kind2 .ey,.kind2 .m,.kind2 .blush,.kind2 .tear,.kind2 .arm-up{display:none}
+.kind2[data-mood=sad] .ey-sad,.kind2[data-mood=sad] .m-sad,.kind2[data-mood=sad] .tear{display:inline}
+.kind2[data-mood=oh] .ey-w,.kind2[data-mood=oh] .m-o{display:inline}
+.kind2[data-mood=laugh] .ey-j,.kind2[data-mood=laugh] .m-l,.kind2[data-mood=laugh] .blush,.kind2[data-mood=laugh] .arm-up{display:inline}
+.kind2[data-mood=laugh] .arm-dn{display:none}
+.kind2[data-mood=laugh]>.bb{animation:giggle .5s ease-in-out infinite}
+.kind2 .tear{transform-box:fill-box;animation:tear 1.8s ease-in infinite}
+.kind2 .hd{transform-box:view-box;transform-origin:55px 76px;transition:transform .6s} .kind2[data-mood=sad] .hd{transform:rotate(7deg) translateY(3px)}
+/* the moon with a face */
+.mondw{filter:drop-shadow(0 0 3vh rgba(255,236,170,.65))}
+.mondw .ey,.mondw .m{display:none}
+.mondw[data-mood=smile] .ey-o,.mondw[data-mood=smile] .m-s{display:inline}
+.mondw[data-mood=sing] .ey-j,.mondw[data-mood=sing] .m-o{display:inline}
+.mondw[data-mood=wink] .ey-w,.mondw[data-mood=wink] .m-s{display:inline}
+.mondw .m-o{transform-box:fill-box;transform-origin:center;animation:sing .42s ease-in-out infinite alternate}
+.mondw .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 5.4s infinite}
+.mondw .mwb{transform-box:view-box;transform-origin:50px 50px;animation:lsw 7s ease-in-out infinite}
+/* lighthouse, castle, glowing finds, fish */
+.lth .lmp{transform-box:view-box;transform-origin:50px 47px}
+.lth .lrm{transition:fill .6s} .lth.on .lrm{fill:#fff6c8}
+.lth .lcore{animation:lcore 1.4s ease-in-out infinite alternate} @keyframes lcore{to{opacity:.7}}
+.burg2 .wtr{opacity:var(--fill,0);transition:opacity 1.4s} .burg2 .wsh{opacity:calc(var(--fill,0)*.9)}
+.burg2 .wsh path{animation:wsh 2.4s ease-in-out infinite alternate} @keyframes wsh{to{transform:translateX(6px)}}
+.tp2.lm2{filter:brightness(.8) saturate(.7)}
+.tp2.lm2.found{filter:drop-shadow(0 0 1.6vh rgba(150,255,235,.95)) drop-shadow(0 0 4vh rgba(120,220,255,.8));animation:lmglow 2.2s ease-in-out infinite}
+@keyframes lmglow{50%{scale:1.1}}
+.tp2 .jb{transform-box:fill-box;transform-origin:50% 0;animation:jelly 2s ease-in-out infinite} @keyframes jelly{50%{transform:scale(1.08,.88)}}
+.tp2 .atn{transform-box:view-box;transform-origin:35px 50px;animation:anem 3s ease-in-out infinite} @keyframes anem{50%{transform:skewX(8deg)}}
+.reef2 .hm{transition:opacity 1.4s} .reef2.lit .hm{opacity:.85}
+.tp2.fish2{filter:drop-shadow(0 0 1vh rgba(255,255,255,.5))}
+.fish2.jump{animation:fjump 1.8s cubic-bezier(.4,0,.6,1) infinite}
+@keyframes fjump{0%,58%,100%{transform:translateY(0) rotate(0);opacity:0}62%{opacity:1;transform:translateY(-2vh) rotate(-30deg)}79%{transform:translateY(-15vh) rotate(0deg);opacity:1}96%{transform:translateY(-1vh) rotate(40deg);opacity:1}}
+.fish2.swim{animation:fswim 9s linear infinite} @keyframes fswim{from{transform:translateX(30vw)}to{transform:translateX(-60vw)}}
+.rbw3{position:absolute;pointer-events:none;opacity:0;transition:opacity 2.4s;overflow:visible} .rbw3.on{opacity:.85}
+/* the new gestures */
+.pb2{z-index:4} .pb2 .bubble2{animation:pbw 1.6s ease-in-out infinite;border:.35vh solid rgba(235,250,255,.85)} @keyframes pbw{50%{transform:scale(1.06,.94)}}
+.pb2.popd{animation:poof2 .45s ease-out forwards!important}
+.dring2{position:absolute;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:3;
+  border:.55vh dashed rgba(255,240,190,.55);box-shadow:0 0 2.6vh rgba(255,226,140,.35),inset 0 0 2.6vh rgba(255,226,140,.25);animation:spin 30s linear infinite;transition:border-color .3s,opacity .6s}
+.dring2.on{border-color:#ffe27a;box-shadow:0 0 4vh rgba(255,226,140,.6),inset 0 0 4vh rgba(255,226,140,.45)} .dring2.pulse{animation:spin 30s linear infinite,rpls .8s ease-in-out infinite}
+@keyframes rpls{50%{border-width:.9vh;border-color:#fff}}
+.tp2.dmark2 svg path{fill:#ffe27a;stroke:#fff;stroke-width:2;stroke-linejoin:round} .tp2.dmark2{filter:drop-shadow(0 0 2vh #ffd25a) drop-shadow(0 0 4vh rgba(255,200,90,.8));animation:dnext 1s ease-in-out infinite}
+.band2{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
+.band2 .bl{stroke:rgba(230,250,255,.9);stroke-width:.8vh;stroke-linecap:round;stroke-dasharray:1.4vh 1vh;opacity:0;filter:drop-shadow(0 0 1vh #bff4ff)}
+.swdot{position:absolute;width:2.2vh;height:2.2vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:4;opacity:0;
+  background:radial-gradient(circle,#fff 0,#dff8ff 45%,rgba(160,230,255,0) 72%);box-shadow:0 0 1.6vh rgba(170,235,255,.9)}
 
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
@@ -1345,7 +1490,7 @@ function qArm(tk){ qClear(); const step=Q?Q.step:-1;
   const hint=()=>{ if(!ok()) return; const b=Q.els[Q.adv.need[Q.step]]; if(b) b.classList.add('hint'); ask(); };
   questT.push(setTimeout(hint,8000), setTimeout(hint,17000), setTimeout(()=>{ if(!ok()) return; const w=Q.adv.need[Q.step]; tapThing(Q.els[w],w,tk); },26000)); }
 const landOn=()=>$('land').classList.contains('on');
-const TSYL={BLASE:'BLA-SE',VOGEL:'VO-GEL',LACHEN:'LA-CHEN',GLOCKE:'GLO-CKE',HONIG:'HO-NIG',KUCHEN:'KU-CHEN',MILCH:'MILCH',TEIG:'TEIG',STERN:'STERN',DRACHE:'DRA-CHE',NEBEL:'NE-BEL',EULE:'EU-LE'};
+const TSYL={BLASE:'BLA-SE',VOGEL:'VO-GEL',LACHEN:'LA-CHEN',GLOCKE:'GLO-CKE',HONIG:'HO-NIG',KUCHEN:'KU-CHEN',MILCH:'MILCH',TEIG:'TEIG',STERN:'STERN',DRACHE:'DRA-CHE',NEBEL:'NE-BEL',EULE:'EU-LE',WELLE:'WEL-LE',PERLE:'PER-LE',LICHT:'LICHT',TURM:'TURM'};
 function wordHTML(W){ const w=WORDS.find(x=>x.word===W)||(TSYL[W]&&{syl:TSYL[W].split('-')});
   return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
 function hideWord(){ $('bigWord').className=''; }
@@ -1544,14 +1689,20 @@ function buildStage(sc){
   const deco=(L,arr)=>(arr||[]).forEach(([e,x,y,z])=>L.appendChild(prop(e,x,y,z,'m-e')));
   deco(far,B.farp); deco(mid,B.mid); deco(fore,B.fore);
   if(B.gnd){ const g=el('div','gnd'); g.style.background=B.gnd; act.appendChild(g); }
+  if(B.surf){ const g=el('div','surf2'); g.style.cssText=`height:${B.surf.h+2}%;background:${B.surf.bg}`; act.appendChild(g); }
+  if(B.rays) act.appendChild(el('div','rays2')); if(B.caus) act.appendChild(el('div','caus2'));
+  if(B.sea){ const g=el('div','sea2',seaHTML(B.sea)); g.style.setProperty('--sea',B.sea.top+'%'); act.appendChild(g); st._sea=g; }
+  if(B.shore){ const g=el('div','shore2'); g.style.cssText=B.shore; act.appendChild(g); }
+  (B.fog||[]).forEach(([y,h,o],i)=>{ const g=el('div','fog2'); g.style.cssText=`top:${y}%;height:${h}vh;opacity:${o};animation-delay:${-i*3.7}s;animation-duration:${14+i*3}s`; (i%2?fore:act).appendChild(g); });
   st.append(sky,far,mid,act,fore); st._act=act; return st;
 }
 
 /* ---------- light and particles (one canvas over the stage) ---------- */
 const FX={cv:null,cx:null,P:[],L:[],em:[],dr:[],dark:0,darkT:0,on:false,t:0,att:null,spr:{}};
-function fxSprite(col){ if(FX.spr[col]) return FX.spr[col]; const c=document.createElement('canvas'); c.width=c.height=64;
-  const g=c.getContext('2d'), r=g.createRadialGradient(32,32,0,32,32,32); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.2,col); r.addColorStop(1,'rgba(0,0,0,0)');
-  g.fillStyle=r; g.fillRect(0,0,64,64); return FX.spr[col]=c; }
+/* clean:1 sets (bright daylight) fade the sprite to transparent colour instead of transparent black, so sparks don't grey the picture */
+function fxSprite(col){ const key=(FX.clean?'c':'')+col; if(FX.spr[key]) return FX.spr[key]; const c=document.createElement('canvas'); c.width=c.height=64;
+  const g=c.getContext('2d'), r=g.createRadialGradient(32,32,0,32,32,32); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.2,col); r.addColorStop(1,FX.clean?col.replace(/[\d.]+\)\s*$/,'0)'):'rgba(0,0,0,0)');
+  g.fillStyle=r; g.fillRect(0,0,64,64); return FX.spr[key]=c; }
 function fxStart(){ if(!FX.cv){ const c=document.createElement('canvas'); c.id='taleFx'; $('tale').insertBefore(c,$('tale').querySelector('.bar')); FX.cv=c; FX.cx=c.getContext('2d'); }
   FX.cv.style.display='block'; FX.P=[]; FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.dark=FX.darkT=0;
   if(!FX.on){ FX.on=true; FX.t=now(); requestAnimationFrame(fxLoop); } }
@@ -1580,7 +1731,7 @@ function fxLoop(){ if(!FX.on) return; if(!taleOn()){ fxStop(); return; } request
     else if(l.fn){ const q=l.fn(); if(!q) return; x=q[0]; y=q[1]; } else { x=l.x; y=l.y; }
     l.r+=(l.rT-l.r)*Math.min(1,dt*1.8); l.k+=(l.kT-l.k)*Math.min(1,dt*1.8);
     const fl=l.flick? 1+(Math.sin(tn/85)*.035+(Math.random()-.5)*.04)*l.flick : 1; Ls.push({x,y,r:l.r*u*fl,k:l.k,warm:l.warm}); });
-  if(FX.dark>.01){ cx.globalCompositeOperation='source-over'; cx.fillStyle=`rgba(4,3,22,${FX.dark.toFixed(3)})`; cx.fillRect(0,0,W,H);
+  if(FX.dark>.01){ cx.globalCompositeOperation='source-over'; cx.fillStyle=`rgba(${FX.dc||'4,3,22'},${FX.dark.toFixed(3)})`; cx.fillRect(0,0,W,H);
     cx.globalCompositeOperation='destination-out';
     Ls.forEach(l=>{ if(l.r<2||l.k<.02) return; const g=cx.createRadialGradient(l.x,l.y,0,l.x,l.y,l.r);
       g.addColorStop(0,`rgba(0,0,0,${l.k})`); g.addColorStop(.5,`rgba(0,0,0,${l.k*.72})`); g.addColorStop(1,'rgba(0,0,0,0)'); cx.fillStyle=g; cx.fillRect(l.x-l.r,l.y-l.r,l.r*2,l.r*2); }); }
@@ -1615,6 +1766,13 @@ function fxLoop(){ if(!FX.on) return; if(!taleOn()){ fxStop(); return; } request
     else if(p.k==='drop'){ p.y+=p.vy*dt; cx.strokeStyle=`rgba(80,130,215,${(.85*(1-f)).toFixed(3)})`; cx.lineWidth=Math.max(1.5,.45*u); cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(p.x,p.y+p.len); cx.stroke(); continue; }
     else if(p.k==='leaf'){ p.x+=p.vx*dt; p.y+=p.vy*dt+Math.sin(tn/250+p.ph)*u*.3; p.rot+=p.vr*dt; cx.globalCompositeOperation='source-over';
       cx.save(); cx.translate(p.x,p.y); cx.rotate(p.rot); cx.globalAlpha=Math.min(1,(1-f)*3); cx.font=`${(p.s*u)|0}px serif`; cx.fillText(p.e,-p.s*u/2,p.s*u/3); cx.restore(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
+    else if(p.k==='foam'){ if(p.g){ p.vy+=p.g*dt; p.x+=p.vx*dt; p.y+=p.vy*dt; if(p.vy>0&&p.y>=p.yEnd){ p.y=p.yEnd; p.g=0; p.sp=1; p.life=Math.min(p.life,p.age+.45); } }
+      const st=p.g?Math.min(.75,Math.hypot(p.vx,p.vy)/(80*u)):0; cx.globalCompositeOperation='source-over'; cx.globalAlpha=Math.max(0,Math.min(1,(1-f)*2.5))*.92; cx.fillStyle='#fff';
+      cx.save(); cx.translate(p.x,p.y); if(p.sp) cx.scale(1.6,.5); else { cx.rotate(Math.atan2(p.vy,p.vx)); cx.scale(1+st,1-st*.45); } cx.beginPath(); cx.arc(0,0,sz*1.05,0,6.283); cx.fill(); cx.restore();
+      cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
+    else if(p.k==='bub'){ p.y+=p.vy*dt; p.x+=Math.sin(tn/300+p.ph)*u*4*dt; cx.globalCompositeOperation='source-over'; cx.globalAlpha=Math.max(0,Math.min(1,(1-f)*3))*.85;
+      cx.strokeStyle='rgba(225,248,255,.95)'; cx.lineWidth=Math.max(1,u*.22); cx.beginPath(); cx.arc(p.x,p.y,sz*1.2,0,6.283); cx.stroke();
+      cx.fillStyle='rgba(255,255,255,.9)'; cx.beginPath(); cx.arc(p.x-sz*.45,p.y-sz*.45,sz*.3,0,6.283); cx.fill(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
     if(a<=0) continue; cx.globalAlpha=Math.max(0,Math.min(1,a)); cx.drawImage(fxSprite(p.c),p.x-sz,p.y-sz,sz*2,sz*2); }
   cx.globalAlpha=1; cx.globalCompositeOperation='source-over'; }
 
@@ -1661,7 +1819,7 @@ function nextScene2(){
   const sc=t.sc[tale.i], prev=TB&&TB.sc, W=$('taleWorld'), same=prev&&prev.set===sc.set;
   $('taleDots').innerHTML=t.sc.map((_,k)=>`<i class="${k<tale.i?'done':k===tale.i?'now':''}"></i>`).join('');
   const old=TB&&TB.st, st=buildStage(sc); W.appendChild(st);
-  TB={sc,a:sc.a,W,st,act:st._act,run,els:{},live:false,done:false,tries:0,it:[],t0:0,pd:null,n:i=>'t2_'+t.id+'_'+(tale.i+1)+(i||'')};
+  TB={sc,a:sc.a,W,st,act:st._act,sea:st._sea||null,run,els:{},live:false,done:false,tries:0,it:[],t0:0,pd:null,n:i=>'t2_'+t.id+'_'+(tale.i+1)+(i||'')};
   /* camera: a new place flies in from the depth, the same place just cross-fades */
   if(old){ old.style.pointerEvents='none';
     try{ old.animate(same?[{opacity:1},{opacity:0}]:[{transform:'none',opacity:1},{transform:'translateZ(520px)',opacity:0}],{duration:same?700:1000,easing:'ease-in',fill:'forwards'}); }catch(e){}
@@ -1669,7 +1827,7 @@ function nextScene2(){
   try{ st.animate(same?[{opacity:0},{opacity:1}]:[{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0},{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0,offset:.15},{transform:'none',opacity:1}],
     {duration:same?700:1500,easing:'cubic-bezier(.2,.7,.3,1)'}); }catch(e){}
   /* light */
-  FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0;
+  FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0; FX.dc=sc.dcol||SETS2[sc.set].dcol||null; FX.clean=!!SETS2[sc.set].clean;
   const fx=sc.fx||{}; if(fx.flies) fxFlies(fx.flies,true,false);
   if(fx.leaves) FX.em.push({rate:fx.leaves,fn:()=>{ const u=vu(); fxAdd({k:'leaf',e:rnd(['🍃','🍂','🍃']),x:innerWidth*1.05,y:innerHeight*(.2+Math.random()*.6),vx:-(40+Math.random()*40)*u,vy:(Math.random()-.3)*8*u,rot:0,vr:(Math.random()-.5)*6,s:3+Math.random()*2,ph:Math.random()*6,life:4}); }});
   if(fx.glit) FX.em.push({rate:fx.glit,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(['rgba(255,226,122,.9)','rgba(255,255,255,.9)','rgba(255,182,225,.9)'])})});
@@ -2644,7 +2802,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -3186,6 +3344,653 @@ const DRACHE2={id:'drache', v2:true, title:'Der kleine Drache und der Glitzer', 
      'Seitdem leuchtet jeden Abend Glitzer über dem Schloss. Ende.']}
 ]};
 
+/* ================= Die kleine Welle: drawn cast and set pieces ================= */
+function welleSVG(big){ const id='wl'+(++LANC), E='#0b2f5a', C=big?['#7ab8ee','#3a84d4','#1f58a8','#163e86']:['#a4ecff','#4cbcf2','#2386d8','#1a62b4'];
+  return `<svg viewBox="0 0 120 112"><defs><linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C[0]}"/><stop offset=".5" stop-color="${C[1]}"/><stop offset="1" stop-color="${C[2]}"/></linearGradient>
+   <linearGradient id="${id}c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0fdff"/><stop offset="1" stop-color="${C[0]}"/></linearGradient></defs>
+  <g class="wc"><path d="M30 64 Q19 26 55 13 Q91 2 104 28 Q112 48 95 54 Q79 58 75 45 Q73 33 87 31 Q79 21 63 25 Q43 31 47 64Z" fill="url(#${id}c)" stroke="${C[3]}" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M34 52 Q30 27 56 18 Q85 10 98 28" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" opacity=".9"/>
+   <circle cx="99" cy="41" r="3.2" fill="#fff"/><circle cx="91" cy="47" r="2.2" fill="#fff"/><circle cx="104" cy="33" r="1.8" fill="#fff"/></g>
+  <path class="bdy" d="M10 104 Q8 66 34 52 Q60 40 86 52 Q112 66 110 104 Q60 114 10 104Z" fill="url(#${id}b)" stroke="${C[3]}" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M21 72 Q33 58 52 56" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+  <g fill="#fff" opacity=".9"><circle cx="15" cy="99" r="3.6"/><circle cx="105" cy="99" r="3.6"/><circle cx="25" cy="105" r="2.6"/><circle cx="95" cy="105" r="2.6"/><circle cx="60" cy="108" r="2.4"/></g>
+  <g class="blush"><ellipse cx="37" cy="88" rx="6" ry="3.4" fill="#ff9ac8" opacity=".75"/><ellipse cx="83" cy="88" rx="6" ry="3.4" fill="#ff9ac8" opacity=".75"/></g>
+  <g class="ey ey-o"><ellipse cx="47" cy="77" rx="4.8" ry="6" fill="${E}"/><ellipse cx="73" cy="77" rx="4.8" ry="6" fill="${E}"/><circle cx="48.8" cy="74.6" r="1.9" fill="#fff"/><circle cx="74.8" cy="74.6" r="1.9" fill="#fff"/></g>
+  <g class="ey ey-up"><ellipse cx="48.5" cy="75" rx="4.8" ry="6" fill="${E}"/><ellipse cx="74.5" cy="75" rx="4.8" ry="6" fill="${E}"/><circle cx="50.4" cy="72.2" r="2" fill="#fff"/><circle cx="76.4" cy="72.2" r="2" fill="#fff"/>
+   <path d="M40 66 q6 -4.5 12 -1.5 M67 64.5 q6 -3 12 1.5" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round" opacity=".7"/></g>
+  <g class="ey ey-sad"><ellipse cx="47" cy="79" rx="4.3" ry="5" fill="${E}"/><ellipse cx="73" cy="79" rx="4.3" ry="5" fill="${E}"/><circle cx="48.4" cy="77.4" r="1.6" fill="#fff"/><circle cx="74.4" cy="77.4" r="1.6" fill="#fff"/>
+   <path d="M39 71 Q45 71 52 66.5 M81 71 Q75 71 68 66.5" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/></g>
+  <g class="ey ey-w"><circle cx="47" cy="77" r="6.4" fill="#fff" stroke="${E}" stroke-width="1.6"/><circle cx="73" cy="77" r="6.4" fill="#fff" stroke="${E}" stroke-width="1.6"/><circle cx="47" cy="78" r="3.2" fill="${E}"/><circle cx="73" cy="78" r="3.2" fill="${E}"/></g>
+  <g class="ey ey-br"><ellipse cx="47" cy="78" rx="4.8" ry="5.6" fill="${E}"/><ellipse cx="73" cy="78" rx="4.8" ry="5.6" fill="${E}"/><circle cx="48.8" cy="75.8" r="1.9" fill="#fff"/><circle cx="74.8" cy="75.8" r="1.9" fill="#fff"/>
+   <path d="M39 67 L52 71 M81 67 L68 71" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"/></g>
+  <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="3.2" stroke-linecap="round"><path d="M40 79 q7 -8 14 0"/><path d="M66 79 q7 -8 14 0"/></g>
+  <path class="m m-soft" d="M55 91 q5 3.6 10 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+  <path class="m m-sad" d="M53 94 q7 -5 14 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="60" cy="92" rx="3.8" ry="4.6" fill="#7a2a4a" stroke="${E}" stroke-width="1.6"/>
+  <path class="m m-grin" d="M51 89 q9 8 18 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+  <g class="m m-big"><path d="M49 88 q11 14 22 0Z" fill="#7a2a4a" stroke="${E}" stroke-width="2" stroke-linejoin="round"/><path d="M54 94 q6 3.4 12 0" fill="#ff7a9a"/></g></svg>`; }
+function perlSVG(){ const id='pr'+(++LANC); return `<svg viewBox="0 0 40 40"><defs><radialGradient id="${id}" cx="38%" cy="34%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#fff0fb"/><stop offset="1" stop-color="#d4c0f0"/></radialGradient></defs>
+  <circle cx="20" cy="20" r="15" fill="url(#${id})" stroke="#c4aee6" stroke-width="1.5"/><ellipse cx="14" cy="13" rx="4.2" ry="3" fill="#fff"/><circle cx="27" cy="26" r="1.6" fill="#fff" opacity=".7"/></svg>`; }
+function krSVG(){ const G='#9fcc78', GS='#3d6a2a', E='#1b2633';
+  return `<svg viewBox="0 0 170 110">
+  <g class="fl fb"><path d="M42 78 Q16 90 12 104 Q32 106 54 86Z" fill="${G}" stroke="${GS}" stroke-width="3" stroke-linejoin="round"/></g>
+  <path d="M30 72 Q18 74 12 68 Q22 64 32 66Z" fill="${G}" stroke="${GS}" stroke-width="2.5" stroke-linejoin="round"/>
+  <g class="fl ff"><path d="M104 80 Q120 102 136 104 Q134 88 116 76Z" fill="${G}" stroke="${GS}" stroke-width="3" stroke-linejoin="round"/></g>
+  <path d="M28 72 Q30 26 76 22 Q122 26 124 72 Q76 84 28 72Z" fill="#7d9c48" stroke="#3d5a22" stroke-width="3"/>
+  <g fill="#a8c46a" stroke="#5a7a32" stroke-width="2" stroke-linejoin="round"><path d="M62 38 l14 -7 14 7 v14 l-14 7 -14 -7Z"/><path d="M38 52 l12 -6 10 6 v12 l-10 6 -12 -6Z"/><path d="M92 52 l12 -6 12 6 v12 l-12 6 -12 -6Z"/></g>
+  <g fill="#c8dc8a" opacity=".6"><circle cx="70" cy="40" r="3"/><circle cx="46" cy="54" r="2.4"/></g>
+  <path d="M28 72 Q76 86 124 72 Q125 80 76 90 Q27 80 28 72Z" fill="#e8dca0" stroke="#9a8a50" stroke-width="2.5"/>
+  <g class="fl fh"><path d="M110 56 Q130 40 150 44 Q138 56 118 62Z" fill="${G}" stroke="${GS}" stroke-width="2.6" stroke-linejoin="round" opacity=".9"/></g>
+  <g class="hd"><path d="M116 66 Q128 56 140 54" fill="none" stroke="${GS}" stroke-width="15" stroke-linecap="round"/><path d="M116 66 Q128 56 140 54" fill="none" stroke="${G}" stroke-width="10" stroke-linecap="round"/>
+   <circle cx="148" cy="50" r="17" fill="${G}" stroke="${GS}" stroke-width="3"/><g fill="#7fb05a" opacity=".7"><circle cx="139" cy="42" r="2.6"/><circle cx="146" cy="38" r="2"/><circle cx="141" cy="58" r="2.2"/></g>
+   <g class="blush"><ellipse cx="156" cy="58" rx="4" ry="2.4" fill="#ff9ab0" opacity=".75"/></g>
+   <g class="ey ey-o"><ellipse cx="152" cy="47" rx="3.6" ry="4.6" fill="${E}"/><circle cx="153.3" cy="45.2" r="1.4" fill="#fff"/></g>
+   <g class="ey ey-l"><ellipse cx="150.5" cy="48" rx="3.2" ry="4" fill="${E}"/><circle cx="151.4" cy="46.6" r="1.2" fill="#fff"/><path d="M144 39 Q150 37.5 157 41" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"><path d="M147 48 q5 -6 10 0"/></g>
+   <g class="ey ey-sq" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M147 44 L154 47.5 L147 51"/></g>
+   <path d="M143 39 Q150 34 158 38" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>
+   <circle cx="152" cy="47.5" r="7.5" fill="none" stroke="#8a6a3a" stroke-width="2"/><path d="M144.6 46 L136 44" stroke="#8a6a3a" stroke-width="2" stroke-linecap="round"/>
+   <path class="m m-s" d="M153 59 q5 3.5 10 -1" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+   <path class="m m-w" d="M154 60 q2.5 -2 5 0 q2.5 2 5 0" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round"/>
+   <path class="tear" d="M156 54 q-2 4 0 6 q2 -2 0 -6Z" fill="#9adcff" stroke="#4a9ad0" stroke-width="1"/></g></svg>`; }
+function mslSVG(){ const id='ms'+(++LANC), P='#ffb8cc', PS='#c2577a', E='#5a1a3a';
+  const rib=(y0,y1)=>[-36,-24,-12,0,12,24,36].map(d=>`<path d="M60 ${y0} L${60+d*1.15} ${y1}"/>`).join('');
+  return `<svg viewBox="0 0 120 104"><defs><radialGradient id="${id}" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#fff7d8" stop-opacity=".95"/><stop offset=".5" stop-color="#ffd0f0" stop-opacity=".45"/><stop offset="1" stop-color="#ff9ad8" stop-opacity="0"/></radialGradient></defs>
+  <ellipse class="ing" cx="60" cy="48" rx="58" ry="40" fill="url(#${id})"/>
+  <g class="inn"><ellipse cx="60" cy="54" rx="44" ry="11" fill="#ffe6f0" stroke="#e8a0c0" stroke-width="2"/>
+   <g class="prl"><circle cx="62" cy="45" r="12.5" fill="#fff8fe" stroke="#d8c0ec" stroke-width="1.6"/><ellipse cx="57" cy="40" rx="4.2" ry="3" fill="#fff"/><circle cx="68" cy="51" r="2" fill="#f0e0ff"/></g></g>
+  <path d="M14 54 Q16 94 60 98 Q104 94 106 54 Q84 62 60 62 Q36 62 14 54Z" fill="${P}" stroke="${PS}" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#e88aa8" stroke-width="2" fill="none" opacity=".8">${rib(96,64)}</g>
+  <g class="ey ey-c" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M42 76 q6 5 12 0"/><path d="M66 76 q6 5 12 0"/><path d="M44 79 l-2 3 M52 79 l2 3 M68 79 l-2 3 M76 79 l2 3" stroke-width="1.6"/></g>
+  <g class="ey ey-p"><ellipse cx="48" cy="76" rx="3.6" ry="4.4" fill="${E}"/><ellipse cx="72" cy="76" rx="3.6" ry="4.4" fill="${E}"/><circle cx="49" cy="74.4" r="1.3" fill="#fff"/><circle cx="73" cy="74.4" r="1.3" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"><path d="M42 78 q6 -7 12 0"/><path d="M66 78 q6 -7 12 0"/></g>
+  <ellipse cx="38" cy="84" rx="5.5" ry="3" fill="#ff7aa8" opacity=".7"/><ellipse cx="82" cy="84" rx="5.5" ry="3" fill="#ff7aa8" opacity=".7"/>
+  <path class="m m-shy" d="M55 87 q2.5 2 5 0 q2.5 2 5 0" fill="none" stroke="${E}" stroke-width="2" stroke-linecap="round"/>
+  <path class="m m-s" d="M53 85 q7 7 14 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+  <g class="lid"><path d="M14 54 Q12 14 60 10 Q108 14 106 54 Q84 60 60 60 Q36 60 14 54Z" fill="#ffc8d8" stroke="${PS}" stroke-width="3" stroke-linejoin="round"/>
+   <g stroke="#f0a0b8" stroke-width="2.2" fill="none">${rib(12,56)}</g><path d="M30 30 Q44 18 62 18" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" opacity=".7"/></g>
+  <rect x="50" y="96" width="20" height="7" rx="3" fill="${P}" stroke="${PS}" stroke-width="2.5"/></svg>`; }
+function walSVG(){ const B='#5b82dc', S='#2a3e86', E='#14204a';
+  return `<svg viewBox="0 0 260 150">
+  <g class="tl"><path d="M206 72 Q230 62 234 38 Q246 54 258 48 Q252 72 236 82 Q252 94 256 114 Q238 106 230 94 Q222 88 204 90Z" fill="#4a6cc8" stroke="${S}" stroke-width="3" stroke-linejoin="round"/></g>
+  <path class="bdy" d="M20 92 Q16 44 80 34 Q150 24 214 68 Q226 80 214 92 Q170 128 90 128 Q28 126 20 92Z" fill="${B}" stroke="${S}" stroke-width="3"/>
+  <path d="M24 100 Q40 126 96 126 Q160 124 208 90 Q150 112 92 113 Q46 113 24 100Z" fill="#d4e2ff" stroke="#8aa4e0" stroke-width="2"/>
+  <g stroke="#a8bce8" stroke-width="2" fill="none"><path d="M54 112 Q60 118 70 120 M80 114 Q88 120 100 121 M110 113 Q118 118 130 118 M140 110 Q148 114 158 113"/></g>
+  <g fill="#7aa0ec" opacity=".75"><circle cx="120" cy="50" r="5"/><circle cx="150" cy="58" r="3.6"/><circle cx="104" cy="44" r="3"/><circle cx="170" cy="70" r="3"/></g>
+  <path d="M90 110 Q100 138 126 142 Q118 120 108 106Z" fill="#4a6cc8" stroke="${S}" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="98" cy="36" rx="7" ry="2.6" fill="${S}"/>
+  <g class="blush"><ellipse cx="66" cy="92" rx="7" ry="3.6" fill="#ff9ac0" opacity=".7"/></g>
+  <path class="ey ey-z" d="M44 78 q7 6 15 0" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/>
+  <g class="ey ey-b"><path d="M44 79 q7 3 15 0" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/><path d="M45 79 q6.5 -4.4 13 0Z" fill="${E}"/></g>
+  <g class="ey ey-o"><ellipse cx="52" cy="77" rx="5.4" ry="6.6" fill="${E}"/><circle cx="54" cy="74.6" r="2.2" fill="#fff"/></g>
+  <path class="ey ey-j" d="M44 80 q7 -8 15 0" fill="none" stroke="${E}" stroke-width="3.2" stroke-linecap="round"/>
+  <path class="m m-s" d="M24 97 Q44 108 72 101" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/>
+  <g class="m m-o"><path d="M24 97 Q44 108 72 101" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/><ellipse cx="40" cy="104" rx="8" ry="6" fill="#7a2a4a" stroke="${E}" stroke-width="2"/></g></svg>`; }
+function kindSVG(){ const K='#ffd9b8', KS='#c8906a', H='#8a5a3a', E='#2a1a10';
+  return `<svg viewBox="0 0 110 132">
+  <ellipse cx="40" cy="124" rx="17" ry="8" fill="#5aa0e8" stroke="#2a5aa0" stroke-width="2.5"/><ellipse cx="70" cy="124" rx="17" ry="8" fill="#5aa0e8" stroke="#2a5aa0" stroke-width="2.5"/>
+  <ellipse cx="25" cy="126" rx="7" ry="4.6" fill="${K}" stroke="${KS}" stroke-width="2"/><ellipse cx="85" cy="126" rx="7" ry="4.6" fill="${K}" stroke="${KS}" stroke-width="2"/>
+  <path d="M30 122 Q27 84 55 78 Q83 84 80 122Z" fill="#ffcf4a" stroke="#b8862e" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M31 96 Q55 102 79 96 M30 110 Q55 116 80 110" fill="none" stroke="#ff8a5a" stroke-width="4"/>
+  <g class="arm-dn" fill="none" stroke-linecap="round"><path d="M34 90 Q22 102 30 116" stroke="${KS}" stroke-width="10"/><path d="M34 90 Q22 102 30 116" stroke="${K}" stroke-width="6"/>
+   <path d="M76 90 Q88 102 80 116" stroke="${KS}" stroke-width="10"/><path d="M76 90 Q88 102 80 116" stroke="${K}" stroke-width="6"/></g>
+  <g class="arm-up" fill="none" stroke-linecap="round"><path d="M34 88 Q18 74 20 56" stroke="${KS}" stroke-width="10"/><path d="M34 88 Q18 74 20 56" stroke="${K}" stroke-width="6"/>
+   <path d="M76 88 Q92 74 90 56" stroke="${KS}" stroke-width="10"/><path d="M76 88 Q92 74 90 56" stroke="${K}" stroke-width="6"/></g>
+  <g class="hd"><circle cx="28" cy="40" r="9" fill="${H}"/><circle cx="82" cy="40" r="9" fill="${H}"/><circle cx="31" cy="46" r="3.4" fill="#ff6aa0"/><circle cx="79" cy="46" r="3.4" fill="#ff6aa0"/>
+   <circle cx="55" cy="50" r="26" fill="${K}" stroke="${KS}" stroke-width="2.5"/>
+   <path d="M29 48 Q28 20 55 20 Q84 20 81 48 Q76 34 60 32 Q62 38 56 40 Q52 33 44 34 Q34 38 29 48Z" fill="${H}" stroke="#5a3a22" stroke-width="2" stroke-linejoin="round"/>
+   <g class="blush"><ellipse cx="40" cy="60" rx="5" ry="3" fill="#ff8aa0" opacity=".7"/><ellipse cx="70" cy="60" rx="5" ry="3" fill="#ff8aa0" opacity=".7"/></g>
+   <g class="ey ey-sad"><ellipse cx="46" cy="53" rx="3" ry="3.6" fill="${E}"/><ellipse cx="64" cy="53" rx="3" ry="3.6" fill="${E}"/><circle cx="47" cy="52" r="1" fill="#fff"/><circle cx="65" cy="52" r="1" fill="#fff"/>
+    <path d="M40 46 Q45 46 50 43 M70 46 Q65 46 60 43" fill="none" stroke="#5a3a22" stroke-width="2" stroke-linecap="round"/></g>
+   <g class="ey ey-w"><circle cx="46" cy="52" r="4.6" fill="#fff" stroke="${KS}" stroke-width="1.4"/><circle cx="64" cy="52" r="4.6" fill="#fff" stroke="${KS}" stroke-width="1.4"/><circle cx="46" cy="53" r="2.4" fill="${E}"/><circle cx="64" cy="53" r="2.4" fill="${E}"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M41 54 q5 -6 10 0"/><path d="M59 54 q5 -6 10 0"/></g>
+   <ellipse cx="55" cy="59" rx="2.4" ry="1.8" fill="#e8a888"/>
+   <path class="m m-sad" d="M49 68 q6 -4.4 12 0" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round"/>
+   <ellipse class="m m-o" cx="55" cy="67" rx="3.2" ry="3.8" fill="#8a3a3a"/>
+   <g class="m m-l"><path d="M46 63 q9 12 18 0Z" fill="#8a3a3a" stroke="${E}" stroke-width="1.6" stroke-linejoin="round"/><path d="M50 68 q5 3 10 0" fill="#ff7a8a"/></g>
+   <path class="tear" d="M44 58 q-2 4 0 6 q2 -2 0 -6Z" fill="#9adcff" stroke="#4a9ad0" stroke-width=".8"/></g></svg>`; }
+function mondwSVG(){ const id='mw'+(++LANC), E='#5a4220';
+  return `<svg viewBox="0 0 100 100"><defs><radialGradient id="${id}" cx="40%" cy="38%" r="65%"><stop offset="0" stop-color="#fffdf2"/><stop offset=".6" stop-color="#ffeaa8"/><stop offset="1" stop-color="#f2cc70"/></radialGradient></defs>
+  <g class="mwb"><circle cx="50" cy="50" r="44" fill="url(#${id})"/><g fill="#efc860" opacity=".45"><circle cx="28" cy="30" r="6"/><circle cx="74" cy="72" r="7"/><circle cx="76" cy="30" r="4"/><circle cx="24" cy="70" r="4.5"/></g>
+   <g class="ey ey-o"><ellipse cx="38" cy="46" rx="3.8" ry="4.8" fill="${E}"/><ellipse cx="62" cy="46" rx="3.8" ry="4.8" fill="${E}"/><circle cx="39.3" cy="44.2" r="1.5" fill="#fff"/><circle cx="63.3" cy="44.2" r="1.5" fill="#fff"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"><path d="M32 47 q6 -6 12 0"/><path d="M56 47 q6 -6 12 0"/></g>
+   <g class="ey ey-w"><ellipse cx="38" cy="46" rx="3.8" ry="4.8" fill="${E}"/><path d="M56 47 q6 -5 12 0" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"/></g>
+   <ellipse cx="29" cy="58" rx="5" ry="3" fill="#ff9ab0" opacity=".55"/><ellipse cx="71" cy="58" rx="5" ry="3" fill="#ff9ab0" opacity=".55"/>
+   <path class="m m-s" d="M42 61 q8 8 16 0" fill="none" stroke="#8a5a2a" stroke-width="2.8" stroke-linecap="round"/>
+   <ellipse class="m m-o" cx="50" cy="64" rx="5" ry="6" fill="#8a4a2a"/></g></svg>`; }
+function lthSVG(){ const id='lh'+(++LANC);
+  return `<svg viewBox="0 0 100 250" class="lthsv"><defs><radialGradient id="${id}"><stop offset="0" stop-color="#fffbe0"/><stop offset=".5" stop-color="#ffe27a" stop-opacity=".8"/><stop offset="1" stop-color="#ffc040" stop-opacity="0"/></radialGradient></defs>
+  <path d="M0 250 Q3 214 24 206 Q50 194 76 206 Q97 214 100 250Z" fill="#3a3456" stroke="#221e38" stroke-width="3"/><path d="M14 222 Q30 212 44 216 M60 214 Q76 210 88 222" stroke="#4e4870" stroke-width="3" fill="none"/>
+  <path d="M30 210 L36 74 L64 74 L70 210Z" fill="#f4f0ff" stroke="#3a3456" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M33.3 150 L66.7 150 L67.9 177 L32.1 177Z M35.1 108 L64.9 108 L65.9 130 L34.1 130Z" fill="#e8506a"/>
+  <path d="M44 210 v-15 a6 6 0 0 1 12 0 v15Z" fill="#5a3a4a" stroke="#3a3456" stroke-width="2"/><rect x="45" y="88" width="10" height="12" rx="5" fill="#ffe8a0" stroke="#3a3456" stroke-width="2"/>
+  <rect x="24" y="66" width="52" height="8" rx="2" fill="#3a3456"/><path d="M28 66 V58 M38 66 V58 M50 66 V58 M62 66 V58 M72 66 V58 M26 58 H74" stroke="#3a3456" stroke-width="2.4"/>
+  <rect class="lrm" x="35" y="34" width="30" height="26" rx="3" fill="#bfb6d8" fill-opacity=".9" stroke="#3a3456" stroke-width="3"/>
+  <circle class="lcore" cx="50" cy="47" r="15" fill="url(#${id})"/>
+  <g class="lmp"><path d="M50 40 L63 43 Q66 47 63 51 L50 54 Z" fill="#ffe27a" stroke="#b8862e" stroke-width="1.5" stroke-linejoin="round"/><circle cx="50" cy="47" r="5.5" fill="#fffbe0" stroke="#e0b040" stroke-width="1.5"/></g>
+  <path d="M46 34 V60 M54 34 V60" stroke="#3a3456" stroke-width="1.6" opacity=".6"/>
+  <path d="M30 36 L50 14 L70 36Z" fill="#e8506a" stroke="#3a3456" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="12" r="3.4" fill="#3a3456"/></svg>`; }
+function burgSVG(){ const S='#f0cf86', SS='#b08a48';
+  const cren=(x,y,w,h,n)=>{ const m=w/(2*n-1); let d=`M${x} ${y+h} V${y}`; for(let i=0;i<2*n-1;i++){ const X=(x+m*(i+1)).toFixed(1); if(i%2===0){ d+=` H${X}`; if(i<2*n-2) d+=` V${y+6}`; } else d+=` H${X} V${y}`; } return d+` V${y+h}Z`; };
+  return `<svg viewBox="0 0 220 132"><ellipse cx="110" cy="106" rx="106" ry="22" fill="#c89a5a" stroke="#a07a42" stroke-width="3"/>
+  <ellipse class="wtr" cx="110" cy="106" rx="100" ry="18" fill="#58c4f0"/>
+  <g class="wsh" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M28 106 q8 -3 16 0"/><path d="M164 110 q8 -3 16 0"/><path d="M98 120 q8 -3 16 0"/><path d="M58 117 q6 -2 12 0"/><path d="M140 118 q6 -2 12 0"/></g>
+  <ellipse cx="110" cy="99" rx="70" ry="12" fill="#f4d896" stroke="#c8a464" stroke-width="2.5"/>
+  <g fill="${S}" stroke="${SS}" stroke-width="2.5" stroke-linejoin="round"><path d="${cren(58,62,24,38,3)}"/><path d="${cren(138,62,24,38,3)}"/><path d="${cren(84,46,52,54,4)}"/></g>
+  <g fill="#a87a3a"><path d="M101 100 v-14 a9 9 0 0 1 18 0 v14Z"/><rect x="66" y="74" width="8" height="10" rx="4"/><rect x="146" y="74" width="8" height="10" rx="4"/><rect x="94" y="58" width="8" height="10" rx="4"/><rect x="118" y="58" width="8" height="10" rx="4"/></g>
+  <path d="M110 46 V24" stroke="#8a6a3a" stroke-width="2.4"/><path d="M110 24 l16 5 -16 5Z" fill="#ff6aa0"/>
+  <g fill="#ffb0c8" stroke="#c86a8a" stroke-width="1.2"><circle cx="70" cy="94" r="2.6"/><circle cx="150" cy="94" r="2.6"/><circle cx="90" cy="88" r="2.2"/></g></svg>`; }
+function kelpSVG(dark){ const c=dark?['#103a40','#0a262a']:['#46a868','#1e6a3a'], d=(-Math.random()*5).toFixed(1);
+  const lf=[[40,44,1],[38,92,-1],[44,140,1],[36,200,-1],[42,252,1],[20,150,-1],[64,172,1],[18,232,1],[62,250,-1]].map(([x,y,s])=>`<path d="M${x} ${y} q${s*16} -11 ${s*24} 3 q${-s*12} 7 ${-s*24} -3Z"/>`).join('');
+  return `<svg class="kelpsv" viewBox="0 0 80 320" style="animation-delay:${d}s;animation-duration:${(4.6+Math.random()*2).toFixed(1)}s"><g fill="none" stroke-linecap="round">
+  <path d="M40 320 C30 260 52 220 38 160 C26 110 50 70 40 10" stroke="${c[1]}" stroke-width="10"/><path d="M40 320 C30 260 52 220 38 160 C26 110 50 70 40 10" stroke="${c[0]}" stroke-width="5.5"/>
+  <path d="M22 320 C16 280 30 250 20 200 C14 170 24 140 18 110" stroke="${c[1]}" stroke-width="7"/><path d="M60 320 C66 280 54 240 64 190 C70 160 60 130 66 96" stroke="${c[1]}" stroke-width="7"/></g>
+  <g fill="${c[0]}" stroke="${c[1]}" stroke-width="2">${lf}</g></svg>`; }
+function coralSVG(a,b){ const br='M50 90 V54 M50 64 Q30 54 26 28 M50 58 Q70 48 72 20 M28 42 Q15 36 13 22 M71 36 Q86 32 88 16 M50 70 Q66 70 74 58';
+  return `<svg viewBox="0 0 100 92"><g fill="none" stroke-linecap="round"><path d="${br}" stroke="${b}" stroke-width="11"/><path d="${br}" stroke="${a}" stroke-width="6.5"/></g>
+  <g fill="#fff" opacity=".55"><circle cx="26" cy="30" r="2.4"/><circle cx="72" cy="22" r="2.4"/><circle cx="13" cy="24" r="2"/><circle cx="88" cy="18" r="2"/></g></svg>`; }
+function reefSVG(){ return `<svg viewBox="0 0 160 110"><path d="M6 110 Q4 60 34 40 Q60 22 92 30 Q132 36 150 70 Q158 90 154 110Z" fill="#2c3c5e" stroke="#141e34" stroke-width="3"/>
+  <g fill="#3a4c72"><circle cx="40" cy="62" r="8"/><circle cx="122" cy="58" r="10"/><circle cx="98" cy="44" r="6"/><circle cx="60" cy="40" r="5"/></g>
+  <path d="M58 110 Q60 74 80 70 Q100 74 102 110Z" fill="#0a1222"/><path class="hm" d="M64 110 Q66 80 80 78 Q94 80 96 110Z" fill="#ffd88a" opacity="0"/></svg>`; }
+function glShellSVG(){ return `<svg viewBox="0 0 60 54"><path d="M30 50 L6 22 Q12 4 30 2 Q48 4 54 22Z" fill="#a8f4ff" stroke="#3ab8d8" stroke-width="2.6" stroke-linejoin="round"/>
+  <g stroke="#56cce6" stroke-width="2"><path d="M30 48 L16 10 M30 48 L30 4 M30 48 L44 10 M30 48 L9 20 M30 48 L51 20"/></g><rect x="23" y="45" width="14" height="7" rx="2.5" fill="#a8f4ff" stroke="#3ab8d8" stroke-width="2"/></svg>`; }
+function jellySVG(){ return `<svg viewBox="0 0 60 84"><path class="jb" d="M6 34 Q6 4 30 4 Q54 4 54 34 Q47 30 42 36 Q36 30 30 36 Q24 30 18 36 Q13 30 6 34Z" fill="#ffc2f4" fill-opacity=".9" stroke="#e070c8" stroke-width="2.6" stroke-linejoin="round"/>
+  <g fill="none" stroke="#ff9ae8" stroke-width="2.6" stroke-linecap="round"><path d="M16 37 q-4 12 2 22 q4 10 -2 20 M30 37 q4 14 -2 24 q-4 8 2 18 M44 37 q4 12 -2 22 q-4 10 2 18"/></g>
+  <circle cx="22" cy="17" r="3.4" fill="#fff" opacity=".85"/><circle cx="25" cy="25" r="1.6" fill="#7a2a6a"/><circle cx="35" cy="25" r="1.6" fill="#7a2a6a"/><path d="M27 29 q3 2.4 6 0" fill="none" stroke="#7a2a6a" stroke-width="1.4" stroke-linecap="round"/></svg>`; }
+function seastarSVG(){ return `<svg viewBox="0 0 60 60"><path d="M30 4 C33 16 36 21 56 22 C42 30 40 35 46 54 C34 44 26 44 14 54 C20 35 18 30 4 22 C24 21 27 16 30 4Z" fill="#ffd27a" stroke="#d88a2a" stroke-width="2.6" stroke-linejoin="round"/>
+  <g fill="#fff4c0"><circle cx="30" cy="16" r="1.8"/><circle cx="44" cy="25" r="1.8"/><circle cx="40" cy="42" r="1.8"/><circle cx="20" cy="42" r="1.8"/><circle cx="16" cy="25" r="1.8"/><circle cx="30" cy="30" r="2.4"/></g></svg>`; }
+function anemSVG(){ return `<svg viewBox="0 0 70 62"><g class="atn" fill="none" stroke="#7affd0" stroke-width="5.5" stroke-linecap="round"><path d="M35 52 Q20 36 12 22 M35 52 Q28 32 26 12 M35 52 Q35 30 36 7 M35 52 Q44 32 46 12 M35 52 Q52 36 58 22"/></g>
+  <g fill="#fff"><circle cx="12" cy="22" r="2.6"/><circle cx="26" cy="12" r="2.6"/><circle cx="36" cy="7" r="2.6"/><circle cx="46" cy="12" r="2.6"/><circle cx="58" cy="22" r="2.6"/></g>
+  <ellipse cx="35" cy="54" rx="19" ry="8" fill="#ff8fb0" stroke="#c04a78" stroke-width="2.6"/></svg>`; }
+function fishSVG(c,d){ return `<svg viewBox="0 0 70 40"><path d="M52 20 L68 8 Q64 20 68 32Z" fill="${c}" stroke="${d}" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="30" cy="20" rx="24" ry="15" fill="${c}" stroke="${d}" stroke-width="2.5"/><path d="M24 6 Q34 -1 42 8" fill="${c}" stroke="${d}" stroke-width="2.2"/>
+  <path d="M32 11 q7 9 0 18" fill="none" stroke="${d}" stroke-width="2" opacity=".55"/><circle cx="16" cy="17" r="3.6" fill="#1b2633"/><circle cx="17.2" cy="15.8" r="1.3" fill="#fff"/>
+  <path d="M8 24 q4 3.4 8 0" fill="none" stroke="#1b2633" stroke-width="2" stroke-linecap="round"/></svg>`; }
+function sbankSVG(){ return `<svg viewBox="0 0 300 64"><path d="M0 64 Q40 22 120 15 Q200 10 262 32 Q290 44 300 64Z" fill="#b89c68" stroke="#7a6440" stroke-width="3"/>
+  <path d="M24 54 Q80 28 150 25 Q220 25 270 46" fill="none" stroke="#d8c08a" stroke-width="3" opacity=".7"/>
+  <g fill="#f0d8e8" stroke="#a88aa0" stroke-width="1.2"><circle cx="96" cy="30" r="3"/><circle cx="182" cy="26" r="2.6"/><circle cx="230" cy="38" r="2.4"/></g></svg>`; }
+function palmSVG(){ return `<svg viewBox="0 0 120 200"><path d="M62 200 Q56 140 70 70" fill="none" stroke="#6a4a2a" stroke-width="13" stroke-linecap="round"/><path d="M62 200 Q56 140 70 70" fill="none" stroke="#9a7044" stroke-width="7" stroke-linecap="round" stroke-dasharray="6 5"/>
+  <g fill="#3e9a5a" stroke="#1f5a34" stroke-width="2.5" stroke-linejoin="round"><path d="M70 70 Q40 50 6 62 Q36 40 70 62Z"/><path d="M70 70 Q96 44 118 58 Q96 36 70 62Z"/><path d="M70 66 Q54 30 30 18 Q64 22 74 62Z"/><path d="M70 66 Q90 28 112 26 Q88 40 74 64Z"/><path d="M70 72 Q60 92 40 104 Q62 98 74 74Z"/></g>
+  <g fill="#8a5a2a" stroke="#5a3a1a" stroke-width="1.5"><circle cx="66" cy="74" r="5"/><circle cx="76" cy="76" r="5"/></g></svg>`; }
+function isleSVG(){ return `<svg viewBox="0 0 140 60"><path d="M0 60 Q30 40 70 38 Q110 40 140 60Z" fill="#4a3468"/><path d="M76 40 Q74 22 82 8" fill="none" stroke="#4a3468" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#4a3468"><path d="M82 8 Q68 2 56 10 Q70 6 82 12Z"/><path d="M82 8 Q96 0 108 8 Q94 6 82 12Z"/><path d="M82 8 Q78 -4 70 -8 Q82 -2 84 8Z"/></g></svg>`; }
+Object.assign(SVGP,{LTH:[lthSVG,.4],KELP:[()=>kelpSVG(),.25],KELPD:[()=>kelpSVG(1),.25],CORAL:[()=>coralSVG('#ff8fb0','#c04a78'),1.09],CORAL2:[()=>coralSVG('#ffb45a','#c8742a'),1.09],
+  REEF:[reefSVG,1.45],GSHELL:[glShellSVG,1.11],JELLY:[jellySVG,.71],SSTAR:[seastarSVG,1],ANEM:[anemSVG,1.13],SBANK:[sbankSVG,4.69],PALM:[palmSVG,.6],ISLE:[isleSVG,2.33]});
+/* the sea: a body of water whose surface (--sea, % from the top) can rise and fall */
+function seaHTML(o){ const c=o.c, crest=(k)=>{ let d='M0 20'; for(let x=0;x<800;x+=50) d+=` Q${x+12.5} ${k?6:2} ${x+25} 12 T${x+50} 20`; return d+' V40 H0Z'; };
+  return `<div class="sb" style="background:linear-gradient(180deg,${c[0]} 0%,${c[1]} 35%,${c[2]} 100%)"></div>
+   <svg viewBox="0 0 800 40" preserveAspectRatio="none"><path d="${crest(0)}" fill="${o.crest||c[0]}"/></svg><svg class="s2" viewBox="0 0 800 40" preserveAspectRatio="none"><path d="${crest(1)}" fill="${c[0]}"/></svg><div class="sl2"></div>`; }
+Object.assign(SETS2,{
+  meermorgen:{clean:1, sky:'linear-gradient(180deg,#2e2a72 0%,#7a52a2 26%,#e88a9a 46%,#ffbf8a 56%,#ffe0a8 64%)', stars:14, sun:[62.4,51.8],
+    farp:[['ISLE',72.7,55,4]], sea:{top:60,c:['#8a8ade','#4a62b8','#1e2e78'],crest:'#a29ae6'}, fore:[]},
+  tiefsee:{sky:'linear-gradient(180deg,#0e4670 0%,#072a4c 35%,#03182e 70%,#020c1a 100%)', rays:1, dcol:'2,10,26',
+    far:sil(hills(81,250,90,'#061a30')+hills(83,300,60,'#04142a'),60), gnd:'linear-gradient(180deg,#1e3242 0%,#122230 60%,#0a141e 100%)',
+    mid:[['KELPD',19,56,46],['KELPD',26,62,34],['KELPD',79,56,48],['KELPD',64,63,30]], act:[['heim','REEF',88,73,24,'reef2']],
+    fore:[['🪸',4,97,10],['🐚',97,97,7]]},
+  tangwald:{clean:1, sky:'linear-gradient(180deg,#46c2e6 0%,#2290c6 34%,#0f5e92 72%,#093c64 100%)', rays:1, surf:{h:22,bg:'linear-gradient(180deg,#ffc89a 0%,#ffe4c0 55%,#d8f4ff 100%)'},
+    gnd:'linear-gradient(180deg,#e0c890 0%,#b8985e 55%,#8a6e40 100%)', caus:1,
+    mid:[['KELP',18,57,50],['KELP',28,61,40],['KELP',46,63,32],['KELP',77,57,48],['KELP',83,61,38]], fore:[['KELP',1,84,44],['KELP',99,88,40],['🪸',8,98,9],['🐚',91,98,6]]},
+  bucht:{clean:1, sky:'linear-gradient(180deg,#86e6ee 0%,#40b8d6 38%,#1e88b6 78%,#156690 100%)', rays:1, surf:{h:11,bg:'linear-gradient(180deg,#bfeaff 0%,#e6fbff 100%)'},
+    gnd:'linear-gradient(180deg,#f4e0ae 0%,#d2b47c 55%,#a88a56 100%)', caus:1,
+    mid:[['KELP',17,54,40],['KELP',83,53,42],['CORAL',21,62,20],['CORAL2',28,65,13],['CORAL2',75,62,21],['CORAL',82,65,15]], fore:[['🐚',6,97,7],['⭐',93,96,7],['🪸',78,99,9]]},
+  nebel:{sky:'linear-gradient(180deg,#1a1a3e 0%,#36325e 40%,#5e527e 72%,#80729a 100%)', stars:8,
+    far:sil(hills(91,268,40,'#2c2a50')+hills(93,300,26,'#242246'),40), sea:{top:64,c:['#4e4c80','#30305e','#1a1a3c']},
+    shore:'left:80%;right:-8%;top:61%;bottom:-8%', act:[['turm','LTH',44,55,54,'big lth']], fog:[[44,10,.9],[58,13,.8],[70,11,.85],[80,9,.7]]},
+  sandbank:{sky:'linear-gradient(180deg,#04051c 0%,#0c1442 45%,#1a2868 80%,#26367c 100%)', stars:80, dcol:'3,4,22',
+    far:sil(hills(97,262,40,'#141c4a')+hills(99,300,24,'#10163e'),40), sea:{top:70,c:['rgba(58,76,154,.86)','rgba(30,44,110,.93)','#0e1640'],crest:'rgba(74,92,174,.9)'},
+    shore:'left:86%;right:-8%;top:62%;bottom:-8%', act:[['bank','SBANK',57,68.5,16,'bank2']]},
+  strand:{clean:1, sky:'linear-gradient(180deg,#5aa6e4 0%,#9acaf0 32%,#ffd8b4 58%,#ffc89c 66%)', sun:[36.7,48.6],
+    sea:{top:54,c:['#6ac8ee','#3a94d0','#2068aa'],crest:'#9ae0fa'}, shore:'left:40%;right:-8%;top:52%;bottom:-8%',
+    act:[['palme','PALM',95,38,46]], fore:[['🐚',50,97,6],['⭐',66,98,6]]}
+});
+
+/* ---------- six more gestures (one finger): rock, torch, pop, open, dial, swing ---------- */
+const angOf=(x,y,c)=>Math.atan2(y-c[1],x-c[0])*180/Math.PI;
+function angDiff(a,b){ let d=(a-b)%360; if(d>180) d-=360; if(d<-180) d+=360; return d; }
+function ghostXY(){ const g=$('ghost'); if(!g||+getComputedStyle(g).opacity<.3) return null; const r=g.getBoundingClientRect(); return [r.left,r.top]; }
+const BIOCOL=['rgba(120,255,230,.95)','rgba(150,220,255,.95)','rgba(200,255,190,.9)','rgba(255,255,255,.9)'];
+/* white foam drops that fly up and splat flat when they land (squash and stretch) */
+function foam(x,y,n,pw){ const u=vu(); for(let i=0;i<(n||12);i++){ const a=-Math.PI/2+(Math.random()-.5)*2.3, v=(16+Math.random()*26)*u*(pw||1);
+  fxAdd({k:'foam',x:x+(Math.random()-.5)*u*5,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:75*u,yEnd:y+u*(1+Math.random()*3),life:1.7,s:.6+Math.random()*.9}); } }
+function bubs(x,y,n,sp){ const u=vu(); for(let i=0;i<(n||6);i++) fxAdd({k:'bub',x:x+(Math.random()-.5)*u*(sp||4),y:y+(Math.random()-.5)*u*2,vy:-(8+Math.random()*12)*u,ph:Math.random()*6,s:.35+Math.random()*.7,life:1.4+Math.random()*1.4}); }
+
+Object.assign(G2,{
+ /* rock: swipe back and forth, anywhere; every stroke of a few cm (either way, slow or uneven) rocks it higher. The wave leans
+    with the finger while it moves. a:{id, n, len (vh per stroke), gap (ms), grow, wait}; hooks rocking(lean), rockStep(k,dir);
+    after stroke k the line <scene>w<k+1> is spoken if it exists, and the next stroke waits for it */
+ rock:{ setup(){ TB.rk=0; TB.rs=null; TB.rBusy=false; TB.rT=0; TB.rAuto=false; TB.rDone=false; TB.rLean=0; TB.rTap=0; TB.rGh=false;
+     g2loop(dt=>{ const W=TB.els[TB.a.id]; if(!W) return; let tg=0; const u=vu();
+       if(TB.pd&&TB.rs&&!TB.rBusy) tg=(TB.pd.cx-TB.rs.sx)/(u*12);
+       else if(TB.rGh){ const g=ghostXY(); if(g) tg=(g[0]-ctr(W)[0])/(u*12); }
+       tg=Math.max(-1,Math.min(1,tg)); TB.rLean+=(tg-TB.rLean)*Math.min(1,dt*7); W.style.rotate=(TB.rLean*10).toFixed(2)+'deg';
+       if(TB.sc.rocking) TB.sc.rocking(TB.rLean); }); },
+   down(x,y){ TB.rs={sx:x,ex:x,dir:0,cnt:false,mv:0,lx:x,ly:y,got:false}; },
+   move(x,y){ const s=TB.rs; if(!s||TB.rDone) return; const u=vu(); s.mv+=Math.hypot(x-s.lx,y-s.ly); s.lx=x; s.ly=y;
+     if(!s.dir){ if(Math.abs(x-s.sx)>u*1.5){ s.dir=Math.sign(x-s.sx); s.ex=x; } }
+     else if(s.dir>0?x>=s.ex:x<=s.ex) s.ex=x;
+     else if(Math.abs(x-s.ex)>u*2.5){ s.sx=s.ex; s.ex=x; s.dir=-s.dir; s.cnt=false; }
+     if(Math.random()<.35) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*8*u,vy:-4*u,life:.7,s:1,c:'rgba(200,240,255,.85)'});
+     if(s.dir&&!s.cnt&&Math.abs(x-s.sx)>u*(TB.a.len||6.5)&&!TB.rBusy&&now()-TB.rT>(TB.a.gap||420)){ s.cnt=true; s.got=true; this.step(s.dir); } },
+   up(){ const s=TB.rs; TB.rs=null; if(!s||TB.rDone) return;
+     if(!s.got){ if(s.mv<vu()*2){ if(++TB.rTap>=2){ TB.rTap=0; hint2(false); } } else if(!TB.rBusy) miss2(); } },
+   step(dir){ if(TB.rDone||TB.done) return; const a=TB.a, n=a.n||3, k=++TB.rk, W=TB.els[a.id], [x,y]=ctr(W), u=vu(); TB.rT=now();
+     const bb=W.querySelector('.bb')||W; bb.getAnimations().forEach(q=>{ if(q.id==='rk') q.cancel(); });
+     try{ const an=bb.animate([{transform:'none'},{transform:`translateX(${dir*5}%) rotate(${dir*11}deg) scale(1.1,.92)`,offset:.35},{transform:`translateX(${-dir*2}%) rotate(${-dir*5}deg) scale(.95,1.07)`,offset:.7},{transform:'none'}],{duration:760,easing:'ease-out'}); an.id='rk'; }catch(e){}
+     const r=W.getBoundingClientRect(); foam(x+dir*r.width*.3,r.bottom-r.height*.2,6+k*4,.7+k*.15);
+     chime([[523,659],[659,784],[784,988,1175],[880,1175,1568]][Math.min(3,k-1)]); poke2();
+     if(TB.sc.rockStep) TB.sc.rockStep(k,dir);
+     if(k>=n){ TB.rDone=true; return bLater(()=>done2(),a.wait||900); }
+     const key=TB.n('w'+(k+1)), sc=TB.sc;
+     if(CLIPS[key]&&!TB.autoing){ TB.rBusy=true; say(key).then(()=>{ if(TB&&TB.sc===sc){ TB.rBusy=false; if(TB.rAuto&&!TB.rDone) bLater(()=>this.autoStep(),350); } }); }
+     else if(TB.rAuto) bLater(()=>this.autoStep(),a.auto||900); },
+   frames(m){ const [x,y]=ctr(TB.els[TB.a.id]), u=vu(), yy=y+u*2, f=[[x-u*13,yy+u*6,1,0],[x-u*13,yy,.85,1]];
+     for(let i=0;i<m;i++) f.push([x+(i%2?-u*13:u*13),yy+(i%2?u:0),.85,1]); f.push([f[f.length-1][0],yy,1,0]); return f; },
+   hint(){ if(TB.rDone) return; TB.rGh=true; ghost(this.frames(4),2600); bLater(()=>{ if(TB) TB.rGh=false; },2650); },
+   auto(){ if(TB.rAuto||TB.rDone) return; TB.rAuto=true; this.autoStep(); },
+   autoStep(){ if(!TB||TB.rDone||!TB.live) return; if(TB.rBusy) return bLater(()=>this.autoStep(),300);
+     const dir=TB.rk%2?-1:1, [x,y]=ctr(TB.els[TB.a.id]), u=vu(); TB.rGh=true; ghost([[x-dir*u*12,y+u*2,.85,1],[x+dir*u*12,y+u*2,.85,1],[x+dir*u*13,y+u*2,1,0]],650);
+     bLater(()=>{ TB.rGh=false; this.step(dir); },430); } },
+
+ /* torch: in the dark the light follows her finger; hidden things light up when the light finds them and stay lit. Glowing
+    plankton trails behind the finger. a:{ids, r (light radius vh), lr (light of a found thing)}; hook item(id,el,k) */
+ torch:{ setup(){ const a=TB.a; TB.tLeft=a.ids.slice(); TB.tk=0; TB.tAuto=false; TB.tNear={}; TB.tPos=null; TB.tGh=false; TB.tTap=0; TB.tR=0;
+     a.ids.forEach(id=>TB.els[id].classList.add('hid'));
+     TB.tL=light({fn:()=>TB.tPos,r0:0,rT:0,k0:1,kT:1});
+     g2loop(dt=>{ let p=null, R=a.r||17;
+       if(TB.pd) p=[TB.pd.cx,TB.pd.cy]; else if(TB.tGh){ p=ghostXY(); R*=.85; }
+       if(p){ TB.tPos=p; if(TB.pd||TB.tAuto) this.near(p,dt); if(Math.random()<.55) this.bio(p[0],p[1]); } else R=TB.tPos?6:0;
+       TB.tR+=(R-TB.tR)*Math.min(1,dt*(p?7:2.5)); TB.tL.r=TB.tL.rT=TB.tR; }); },
+   bio(x,y){ const u=vu(); fxAdd({k:'dust',x:x+(Math.random()-.5)*u*7,y:y+(Math.random()-.5)*u*7,vx:(Math.random()-.5)*9*u,vy:(Math.random()-.6)*9*u,life:1.1+Math.random()*1.3,s:.45+Math.random()*.6,c:rnd(BIOCOL)}); },
+   near(p,dt){ const R=vu()*(TB.a.r||17)*.62; TB.tLeft.slice().forEach(id=>{ const [x,y]=ctr(TB.els[id]);
+     if(Math.hypot(p[0]-x,p[1]-y)<R){ TB.tNear[id]=(TB.tNear[id]||0)+dt; if(TB.tNear[id]>.15) this.found(id); } else TB.tNear[id]=0; }); },
+   found(id){ if(!TB.tLeft.includes(id)||TB.done) return; TB.tLeft=TB.tLeft.filter(q=>q!==id); const b=TB.els[id], [x,y]=ctr(b), k=++TB.tk;
+     b.classList.remove('hid','g2hint'); b.classList.add('found'); sqs(b); light({el:b,r0:2,rT:TB.a.lr||9,k0:.95,kT:.95});
+     for(let i=0;i<12;i++) this.bio(x+(Math.random()-.5)*vu()*8,y+(Math.random()-.5)*vu()*8); fxBurst(x,y,7,['rgba(140,255,230,.8)']); dingRing(x,y,vu()*16,'#9ffff0'); chime([[659,784],[784,988],[988,1175],[1175,1568]][Math.min(3,k-1)]); poke2();
+     if(TB.sc.item) TB.sc.item(id,b,k);
+     if(!TB.tLeft.length) bLater(()=>done2(),800); },
+   down(){ TB.tK0=TB.tk; TB.tMv=0; TB.tP0=TB.pd?[TB.pd.x,TB.pd.y]:null; },
+   move(x,y){ if(TB.tP0) TB.tMv=Math.max(TB.tMv||0,Math.hypot(x-TB.tP0[0],y-TB.tP0[1])); },
+   up(){ if(TB.done) return; const u=vu(); if((TB.tMv||0)<u*2){ if(++TB.tTap>=2){ TB.tTap=0; hint2(false); } } else if(TB.tk===TB.tK0&&TB.tMv>u*22) miss2(); },
+   target(){ const from=TB.tPos||[innerWidth*.5,innerHeight*.62]; let best=null,bd=1e9; TB.tLeft.forEach(id=>{ const c=ctr(TB.els[id]), d=Math.hypot(c[0]-from[0],c[1]-from[1]); if(d<bd){ bd=d; best=id; } }); return best; },
+   path(id){ const from=TB.tPos||[innerWidth*.5,innerHeight*.62], [x,y]=ctr(TB.els[id]), u=vu();
+     return [[from[0],from[1]+u*6,1,0],[from[0],from[1],.85,1],[(from[0]+x)/2,(from[1]+y)/2-u*6,.85,1],[x-u*5,y,.85,1],[x,y-u*4,.85,1],[x+u*4,y,.85,1],[x,y+u*2,.85,1],[x,y+u*2,1,0]]; },
+   hint(){ if(TB.tAuto) return; const id=this.target(); if(!id) return; const [x,y]=ctr(TB.els[id]); TB.tGh=true; ghost(this.path(id),2600);
+     fxBurst(x,y,5,['rgba(150,255,235,.7)']); bLater(()=>{ if(TB) TB.tGh=false; },2650); },
+   auto(){ if(TB.tAuto) return; TB.tAuto=true; const step=()=>{ if(!TB||TB.done||!TB.live) return; const id=this.target(); if(!id) return;
+       TB.tGh=true; ghost(this.path(id).slice(1,6),1100); bLater(()=>{ this.found(id); bLater(step,450); },900); }; step(); } },
+
+ /* pop: bubbles drift up from a spot; tap them before they reach the top. Missed ones just float away – and the next ones come
+    slower. a:{n, src+at | from:[x%,y%], top (y% where they vanish), max, every (ms), v (vh/s), sz (vh), spread}; hooks popped(k,x,y) */
+ pop:{ setup(){ const a=TB.a; TB.pb=[]; TB.pk=0; TB.pSlow=1; TB.pAuto=false; TB.pNext=now()+150; TB.pDone=false;
+     g2loop(dt=>{ if(TB.pDone) return; const u=vu(), t=now();
+       if(TB.pb.filter(b=>!b.gone).length<(a.max||3)&&t>=TB.pNext&&!TB.pAuto){ this.spawn(); TB.pNext=t+(a.every||1400)/TB.pSlow; }
+       const top=wpx(0,a.top||26)[1];
+       TB.pb.forEach(b=>{ if(b.gone) return; b.age+=dt; b.y-=b.v*u*dt; b.x=b.x0+Math.sin(b.age*1.7+b.ph)*u*2.6; putAt(b.el,b.x,b.y); if(b.y<top) this.lose(b); }); }); },
+   src(){ const a=TB.a; return a.src? relPx(a.src,a.at||[.5,.5]) : wpx(...(a.from||[50,80])); },
+   spawn(){ const a=TB.a, u=vu(), [sx,sy]=this.src(), z=(a.sz||8)*(.85+Math.random()*.3), e=el('div','tp2 pb2','<div class="bubble2"></div>'); e.style.fontSize=z+'vh'; TB.act.appendChild(e);
+     const b={el:e,x0:sx+(Math.random()-.5)*u*(a.spread||8),y:sy,v:(a.v||8.5)*TB.pSlow*(.9+Math.random()*.2),age:0,ph:Math.random()*6,gone:false}; b.x=b.x0; putAt(e,b.x,b.y);
+     try{ e.animate([{transform:'scale(.2)',opacity:0},{transform:'none',opacity:1}],{duration:500,easing:'cubic-bezier(.3,1.6,.5,1)'}); }catch(err){}
+     bubs(sx,sy,3); TB.pb.push(b); if(TB.sc.spawned) TB.sc.spawned(b); return b; },
+   lose(b){ b.gone=true; b.el.style.transition='opacity .8s'; b.el.style.opacity=0; bLater(()=>b.el.remove(),900); TB.pSlow=Math.max(.45,TB.pSlow*.82); },
+   hit(x,y){ const u=vu(); let best=null,bd=1e9; TB.pb.forEach(b=>{ if(b.gone) return; const r=b.el.getBoundingClientRect(), d=Math.hypot(x-r.left-r.width/2,y-r.top-r.height/2);
+     if(d<Math.max(r.width*.85,u*8)&&d<bd){ bd=d; best=b; } }); return best; },
+   down(x,y){ if(TB.pDone) return; const b=this.hit(x,y); if(b) return this.pop(b);
+     TB.pSlow=Math.max(.45,TB.pSlow*.85); bubs(x,y,4); miss2(); },
+   pop(b){ if(b.gone||TB.pDone||TB.done) return; b.gone=true; const r=b.el.getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2, u=vu(), k=++TB.pk, n=TB.a.n||5;
+     b.el.classList.add('popd'); bLater(()=>b.el.remove(),500); dingRing(x,y,r.width*1.4,'#dff6ff'); bubs(x,y,6,r.width/u*.6);
+     fxBurst(x,y,7,['rgba(220,248,255,.85)','rgba(255,190,240,.8)']); bubble('plopp!',x,y-u*3,3.4+Math.min(k,4)*.3,'#e8fbff');
+     chime([[784,988],[880,1047],[988,1175],[1047,1318],[1175,1568],[1318,1760]][Math.min(5,k-1)]); poke2();
+     if(TB.sc.popped) TB.sc.popped(k,x,y);
+     if(k>=n){ TB.pDone=true; TB.pb.forEach(q=>{ if(!q.gone){ q.gone=true; q.el.style.transition='opacity .6s'; q.el.style.opacity=0; } }); bLater(()=>done2(),TB.a.wait||600); } },
+   next(){ const live=TB.pb.filter(b=>!b.gone); return live.length? live.reduce((m,q)=>q.y>m.y?q:m) : null; },
+   hint(){ if(TB.pDone||TB.pAuto) return; const b=this.next(), u=vu(); let p;
+     if(b){ b.el.classList.add('g2hint'); bLater(()=>b.el.classList.remove('g2hint'),1600); p=[b.x,b.y-b.v*u*.65]; } else { const s=this.src(); p=[s[0],s[1]-u*6]; }
+     ghost([[p[0]+u*5,p[1]+u*14,1,0],[p[0],p[1],1,1],[p[0],p[1],.75,1],[p[0],p[1],1,1],[p[0],p[1],1,0]],1300); },
+   auto(){ if(TB.pAuto||TB.pDone) return; TB.pAuto=true; const step=()=>{ if(!TB||TB.pDone||TB.done) return; const b=this.next()||this.spawn(), u=vu();
+       bLater(()=>{ if(b.gone) return step(); const r=b.el.getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2; ghost([[x,y+u*8,1,0],[x,y,.8,1],[x,y,1,0]],420); bLater(()=>{ this.pop(b); bLater(step,600); },230); },b.age<.3?350:0); };
+     step(); } },
+
+ /* open: lay the finger on it and keep it there; it opens slowly (--op 0..1). Progress stays when she lets go, after 70 % it opens
+    by itself. a:{id, ms}; hook opening(p) */
+ open:{ setup(){ const T=TB.els[TB.a.id], rr=T.getBoundingClientRect(); TB.op=TST.op||0; TB.oHold=false; TB.oAuto=false; TB.oq=0; TB.oTap=0;
+     const R=el('div','',`<svg class="ring2" viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44" pathLength="1"/></svg>`).firstChild;
+     R.style.width=R.style.height=Math.max(rr.width,rr.height)*1.35+'px'; T.appendChild(R); TB.ring=R;
+     g2loop(dt=>{ if(!(TB.oHold||TB.oAuto)||TB.op>=1) return; TB.op=Math.min(1,TB.op+dt/((TB.oAuto?1.6:(TB.a.ms||2600))/1000)); this.set();
+       if(Math.random()<.45){ const r=T.getBoundingClientRect(), u=vu(); fxAdd({k:'warm',x:r.left+r.width*(.3+Math.random()*.4),y:r.top+r.height*.52,vy:-(6+Math.random()*8)*u,ph:Math.random()*6,s:.8+Math.random()*.7,life:1.3,c:rnd(['rgba(255,220,250,.9)','rgba(255,250,220,.9)'])}); }
+       if(TB.op>=1) this.finish(); }); this.set(); },
+   set(){ const T=TB.els[TB.a.id], p=TB.op; T.style.setProperty('--op',p.toFixed(3)); TST.op=p; TB.ring.querySelector('.fg').style.strokeDashoffset=(1-p).toFixed(3);
+     if(TB.sc.opening) TB.sc.opening(p); const q=Math.floor(p*5); if(q>TB.oq){ TB.oq=q; chime([660+q*120]); poke2(); sqs(T); } },
+   down(x,y){ if(TB.oAuto||TB.op>=1) return; const T=TB.els[TB.a.id], r=T.getBoundingClientRect(); if(!nearEl(T,x,y,Math.max(r.width*.4,vu()*6))){ fxBurst(x,y,5,['rgba(255,255,255,.8)']); return miss2(); }
+     TB.oHold=true; TB.oP0=TB.op; T.classList.add('pressed'); TB.ring.classList.remove('pulse'); poke2(); },
+   move(x,y){ if(TB.oHold&&!nearEl(TB.els[TB.a.id],x,y,vu()*16)) this.up(); },
+   up(){ if(!TB.oHold) return; TB.oHold=false; TB.els[TB.a.id].classList.remove('pressed');
+     if(TB.op>=.7){ TB.oAuto=true; return; } if(TB.op-TB.oP0<.04){ if(++TB.oTap>=2){ TB.oTap=0; hint2(false); } } },
+   finish(){ if(TB.done) return; TB.oHold=false; TB.ring.style.opacity=0; const T=TB.els[TB.a.id]; T.classList.remove('pressed'); const [x,y]=ctr(T); fxBurst(x,y,30,GLCOL); glitterBurst(x,y,24,18); done2(); },
+   hint(){ if(TB.oAuto) return; const [x,y]=ctr(TB.els[TB.a.id]), u=vu(); TB.ring.classList.add('pulse'); ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],2600);
+     bLater(()=>TB.ring&&TB.ring.classList.remove('pulse'),2700); },
+   auto(){ if(TB.oAuto||TB.op>=1) return; const [x,y]=ctr(TB.els[TB.a.id]); ghost([[x,y+vu()*10,1,0],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1]],2000); TB.oAuto=true; } },
+
+ /* dial: turn something by circling around it – it turns towards her finger (never faster than a hand turns a wheel), so going
+    round in a circle turns it, and so does pointing. Reaching the mark is enough (or one full turn with full:1).
+    a:{id, c:[fx,fy] (pivot in the prop), part (selector of the turning part), from (deg, 0 = right, 90 = down), mark:[x%,y%] or to (deg),
+    R (ring radius vh), tol, spd, full}; hook dialing(deg); TST.dA keeps the angle */
+ dial:{ setup(){ const a=TB.a; TB.da=TST.dA!=null?TST.dA:(a.from||0); TB.dAuto=false; TB.dOk=0; TB.dTurn=0; TB.dGrab=false; TB.dq=0; TB.dTap=0; TB.dGain=false; TB.dGh=false;
+     const R=el('div','dring2'); TB.act.appendChild(R); TB.dring=R;
+     if(a.mark){ const m=el('div','tp2 dmark2','<svg viewBox="0 0 40 40"><path d="M20 2 L25.3 14.6 L38.5 15.5 L28.4 24.2 L31.6 37.5 L20 30.2 L8.4 37.5 L11.6 24.2 L1.5 15.5 L14.7 14.6Z"/></svg>');
+       m.style.cssText=`left:${a.mark[0]}%;top:${a.mark[1]}%;width:${a.msz||6}vh`; TB.act.appendChild(m); TB.els.marke=m; TB.markL=light({el:m,r0:4,rT:6,k0:.8,kT:.8}); }
+     TB.dOff0=Math.abs(angDiff(this.to(),TB.da));
+     g2loop(dt=>{ const c=this.c(), Rr=this.R(); putAt(R,...c); R.style.width=R.style.height=Rr*2+'px';
+       const to=this.to(); let tg=null;
+       if(TB.dAuto) tg=to; else if(TB.pd&&TB.dGrab) tg=angOf(TB.pd.cx,TB.pd.cy,c);
+       if(tg!=null){ const d=angDiff(tg,TB.da), mx=(TB.dAuto?(a.aspd||120):(a.spd||230))*dt, st=Math.sign(d)*Math.min(Math.abs(d),mx); TB.da+=st; TB.dTurn+=Math.abs(st); }
+       this.apply(); const off=Math.abs(angDiff(to,TB.da));
+       if(TB.pd&&TB.dGrab&&off<TB.dOff0-8) TB.dGain=true;
+       const q=Math.floor((1-Math.min(180,off)/180)*6); if(q>TB.dq){ TB.dq=q; chime([523+q*110]); poke2(); }
+       if(off<(a.tol||15)){ TB.dOk+=dt; if(TB.dOk>.2) this.finish(); } else TB.dOk=0;
+       if(a.full&&TB.dTurn>=360) this.finish(); }); },
+   c(){ return relPx(TB.a.id,TB.a.c||[.5,.5]); },
+   R(){ return vu()*(TB.a.R||15); },
+   to(){ const a=TB.a; if(a.mark&&TB.els.marke) return angOf(...ctr(TB.els.marke),this.c()); return a.to||0; },
+   apply(){ const a=TB.a, T=TB.els[a.id], P=a.part?T.querySelector(a.part):T; if(P) P.style.transform=`rotate(${TB.da.toFixed(1)}deg)`; TST.dA=TB.da; if(TB.sc.dialing) TB.sc.dialing(TB.da); },
+   down(x,y){ if(TB.dAuto||TB.done) return; const c=this.c(), d=Math.hypot(x-c[0],y-c[1]), m=TB.els.marke;
+     if((d<this.R()*2.3&&d>vu())||(m&&nearEl(m,x,y,vu()*10))){ TB.dGrab=true; TB.dMv=0; TB.dP0=[x,y]; TB.dOff0=Math.abs(angDiff(this.to(),TB.da)); TB.dGain=false; TB.dring.classList.add('on'); TB.dring.classList.remove('pulse'); poke2(); }
+     else { fxBurst(x,y,5,['rgba(255,255,255,.8)']); miss2(); } },
+   move(x,y){ if(TB.dGrab&&TB.dP0) TB.dMv=Math.max(TB.dMv,Math.hypot(x-TB.dP0[0],y-TB.dP0[1])); },
+   up(){ if(!TB.dGrab) return; TB.dGrab=false; TB.dring.classList.remove('on'); if(TB.done) return;
+     if(TB.dMv<vu()*1.5&&!TB.dGain){ if(++TB.dTap>=2){ TB.dTap=0; hint2(false); } } else if(!TB.dGain) miss2(); },
+   arc(){ const c=this.c(), R=this.R()*1.05, d=angDiff(this.to(),TB.da), N=10, f=[];
+     for(let i=0;i<=N;i++){ const an=(TB.da+d*i/N)*Math.PI/180; f.push([c[0]+Math.cos(an)*R,c[1]+Math.sin(an)*R,.85,1]); } return f; },
+   hint(){ if(TB.dAuto||TB.done) return; const f=this.arc(), u=vu(); f.unshift([f[0][0],f[0][1]+u*6,1,0]); f.push([f[f.length-1][0],f[f.length-1][1],1,0]);
+     ghost(f,2600); TB.dring.classList.add('pulse'); bLater(()=>TB.dring&&TB.dring.classList.remove('pulse'),2700);
+     const m=TB.els.marke; if(m){ m.classList.add('g2hint'); bLater(()=>m.classList.remove('g2hint'),2600); } },
+   auto(){ if(TB.dAuto||TB.done) return; const f=this.arc(), d=Math.abs(angDiff(this.to(),TB.da)); f.push([f[f.length-1][0],f[f.length-1][1],1,0]);
+     ghost(f,Math.max(900,d/(TB.a.aspd||120)*1000)); TB.dAuto=true; },
+   finish(){ if(TB.done) return; TB.dAuto=false; TB.dGrab=false; TB.da=this.to(); this.apply(); TB.dring.style.opacity=0;
+     const m=TB.els.marke; if(m){ const [x,y]=ctr(m); fxBurst(x,y,26,['rgba(255,236,150,.95)','rgba(255,255,255,.95)']); glitterBurst(x,y,20,16); TB.markL.rT=16; }
+     chime([784,988,1175,1568]); done2(); } },
+
+ /* swing: pull it back like a sling and let go – it flies to where it should go; the direction doesn't matter. A dashed band and a
+    dotted arc show the pull. a:{id, to (prop) + at:[fx,fy], min/max (vh), lift (vh), ms}; hooks pulling(p), flung(), landed(x,y) */
+ swing:{ setup(){ const a=TB.a, W=TB.els[a.id]; TB.swH=[parseFloat(W.style.left),parseFloat(W.style.top)]; TB.sg=null; TB.swDone=false; TB.swAuto=false; TB.swTap=0;
+     const sv=el('div','',`<svg class="band2" viewBox="0 0 100 100" preserveAspectRatio="none"><line class="bl" vector-effect="non-scaling-stroke"/></svg>`).firstChild; TB.act.appendChild(sv); TB.band=sv;
+     TB.swDots=[0,1,2,3,4,5].map(()=>{ const d=el('div','swdot'); TB.act.appendChild(d); return d; }); },
+   tgt(){ const a=TB.a; return a.at? relPx(a.to,a.at) : ctr(TB.els[a.to]); },
+   home(){ return wpx(...TB.swH); },
+   down(x,y){ if(TB.swDone||TB.swAuto) return; const W=TB.els[TB.a.id], r=W.getBoundingClientRect();
+     if(!nearEl(W,x,y,Math.max(r.width*.5,vu()*7))){ fxBurst(x,y,5,['rgba(255,255,255,.8)']); return miss2(); }
+     W.getAnimations().forEach(q=>q.cancel()); W.style.transition='none'; TB.sg={sx:x,sy:y,dx:0,dy:0,mv:0,q:0}; W.classList.add('pressed'); chime([784]); poke2(); },
+   move(x,y){ const g=TB.sg; if(!g) return; const u=vu(), M=u*(TB.a.max||20); let dx=x-g.sx, dy=y-g.sy; const L=Math.hypot(dx,dy); if(L>M){ dx*=M/L; dy*=M/L; }
+     g.dx=dx; g.dy=dy; g.mv=Math.max(g.mv,Math.min(L,M)); const p=Math.min(1,L/M), [hx,hy]=this.home(); this.draw(hx+dx,hy+dy,p);
+     const q=Math.floor(p*4); if(q>g.q){ g.q=q; chime([440+q*110]); } if(TB.sc.pulling) TB.sc.pulling(p); },
+   draw(px,py,p){ const W=TB.els[TB.a.id], [hx,hy]=this.home(), [tx,ty]=this.tgt(), u=vu(); putAt(W,px,py); W.style.rotate=((px-hx)/u*1.2).toFixed(1)+'deg';
+     const l=TB.band.querySelector('.bl'), [ax,ay]=wpos(hx,hy), [bx,by]=wpos(px,py); l.setAttribute('x1',ax.toFixed(2)); l.setAttribute('y1',ay.toFixed(2)); l.setAttribute('x2',bx.toFixed(2)); l.setAttribute('y2',by.toFixed(2)); l.style.opacity=p>.05?1:0;
+     const mx=(px+tx)/2, my=Math.min(py,ty)-u*(TB.a.lift||16);
+     TB.swDots.forEach((d,i)=>{ const t=(i+1)/7, x=(1-t)*(1-t)*px+2*(1-t)*t*mx+t*t*tx, y=(1-t)*(1-t)*py+2*(1-t)*t*my+t*t*ty; putAt(d,x,y); d.style.opacity=(p*(1-i*.11)).toFixed(2); d.style.scale=(.6+p*.6).toFixed(2); }); },
+   clear(){ TB.band.querySelector('.bl').style.opacity=0; TB.swDots.forEach(d=>d.style.opacity=0); },
+   up(){ const g=TB.sg; if(!g) return; TB.sg=null; const W=TB.els[TB.a.id]; W.classList.remove('pressed'); const L=Math.hypot(g.dx,g.dy);
+     if(L>=vu()*(TB.a.min||6)) return this.fly();
+     this.back(); if(g.mv<vu()*2){ if(++TB.swTap>=2){ TB.swTap=0; hint2(false); } } else miss2(); },
+   back(){ const W=TB.els[TB.a.id]; this.clear(); W.style.transition='left .55s cubic-bezier(.3,1.6,.5,1),top .55s cubic-bezier(.3,1.6,.5,1),rotate .4s';
+     W.style.left=TB.swH[0]+'%'; W.style.top=TB.swH[1]+'%'; W.style.rotate='0deg'; bLater(()=>{ if(!TB.sg) W.style.transition='none'; },600); },
+   fly(){ if(TB.swDone||TB.done) return; TB.swDone=true; this.clear(); const a=TB.a, W=TB.els[a.id], [x0,y0]=ctr(W), [tx,ty]=this.tgt(), u=vu(), ms=a.ms||1000;
+     const mx=(x0+tx)/2, my=Math.min(y0,ty)-u*(a.lift||16); W.style.rotate='0deg'; chime([523,784,1047]); poke2(); if(TB.sc.flung) TB.sc.flung();
+     try{ W.animate([{transform:'none'},{transform:`translate(${mx-x0}px,${my-y0}px) scale(1.1,.92) rotate(10deg)`},{transform:`translate(${tx-x0}px,${ty-y0}px) scale(1.25,.7)`}],{duration:ms,easing:'ease-in',fill:'forwards'}); }catch(e){}
+     const sc=TB.sc, t0=now(), iv=setInterval(()=>{ if(!TB||TB.sc!==sc||now()-t0>ms){ clearInterval(iv); return; } const [fx,fy]=ctr(W); foam(fx,fy,2,.5); },70); taleT.push(iv);
+     bLater(()=>{ W.getAnimations().forEach(q=>q.cancel()); putAt(W,tx,ty); foam(tx,ty,22,1.2); if(TB.sc.landed) TB.sc.landed(tx,ty); done2(); },ms); },
+   pullDir(){ const [hx,hy]=this.home(), [tx,ty]=this.tgt(), d=Math.hypot(hx-tx,hy-ty)||1; return [(hx-tx)/d,(hy-ty)/d]; },
+   hint(){ if(TB.swDone||TB.swAuto) return; const W=TB.els[TB.a.id], [x,y]=ctr(W), [vx,vy]=this.pullDir(), u=vu(), D=u*13;
+     ghost([[x+u*4,y+u*12,1,0],[x,y,1,1],[x,y,.82,1],[x+vx*D,y+vy*D,.82,1],[x+vx*D,y+vy*D,.82,1],[x+vx*D,y+vy*D,1,0]],2400);
+     try{ W.animate([{transform:'none'},{transform:'none',offset:.32},{transform:`translate(${vx*D}px,${vy*D}px) scale(.94,1.06)`,offset:.78},{transform:'none',offset:.9},{transform:'none'}],{duration:2400,easing:'ease-in-out'}); }catch(e){} },
+   auto(){ if(TB.swDone||TB.swAuto) return; TB.swAuto=true; const [x,y]=ctr(TB.els[TB.a.id]), [vx,vy]=this.pullDir(), u=vu(), D=u*14, [hx,hy]=this.home(), sc=TB.sc, run=tale.run, t0=now();
+     ghost([[x,y,.82,1],[x+vx*D,y+vy*D,.82,1],[x+vx*D,y+vy*D,1,0]],900);
+     const iv=setInterval(()=>{ if(!okRun(run,sc)){ clearInterval(iv); return; } const f=Math.min(1,(now()-t0)/700); this.draw(hx+vx*D*f,hy+vy*D*f,f*.75); if(f>=1){ clearInterval(iv); bLater(()=>this.fly(),180); } },30); taleT.push(iv); } }
+});
+
+/* ================= Die kleine Welle ================= */
+/* motif: the wave's verse – sung as her wish (1), hummed to the shy shell (4), sung by everyone at the end (7). Rule of three: she
+   helps the turtle (light), the whale (wakes him for the sunrise) and is given the pearl by the shell – and the turtle, the whale and
+   the moon come back to help her over the sandbar (6). Her face goes from longing to brave to glowing happy, the child's from sad
+   to laughing. */
+const WVERS='Wellchen, Wellchen, hin und her – ich bring dir was vom großen Meer!';
+/* real clip lengths in s, filled in after the voice job; timed enter() animations use the position of a phrase × the length */
+const WDUR={};
+function atPh(ph,sfx){ const k=TB.n(sfx||''), c=CLIPS[k]; if(!c) return 0; const i=Math.max(0,c.text.indexOf(ph)); return Math.round(i/c.text.length*(WDUR[k]||c.text.length/12.6)*1000); }
+function tide(top){ TST.tide=top; if(TB&&TB.sea) TB.sea.style.setProperty('--sea',top+'%'); }
+function behindSea(ids){ if(!TB.sea) return; ids.forEach(id=>{ const e=TB.els[id]; if(e&&e.parentNode===TB.act) TB.act.insertBefore(e,TB.sea); }); }
+function toAct(e){ const r=e.getBoundingClientRect(); e.getAnimations().forEach(q=>q.cancel()); e.classList.remove('onkr'); e.style.cssText=''; TB.act.appendChild(e);
+  putAt(e,r.left+r.width/2,r.top+r.height/2); e.style.width=(r.width/innerHeight*100).toFixed(2)+'vh'; if(e.classList.contains('wel')) e.style.setProperty('--wz',TST.wz||1); return e; }
+/* light on the water under the sun or the moon */
+function gladeFx(X,K,col){ const sc=TB.sc; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc||!TB.sea) return false; const k=K(); if(k<.02) return; const u=vu(), cx=FX.cx, x=X(), top=TB.sea.getBoundingClientRect().top;
+  cx.globalCompositeOperation='lighter'; for(let i=0;i<15;i++){ const f=i/14, y=top+u*(.6+f*f*30), w=u*(2.5+f*13)*(.65+.35*Math.sin(tn/320+i*1.7)), a=k*(.3-.16*f)*(.55+.45*Math.sin(tn/170+i*2.3));
+    cx.fillStyle=`rgba(${col},${Math.max(0,a).toFixed(3)})`; cx.beginPath(); cx.ellipse(x+Math.sin(tn/900+i)*u*2,y,w,u*(.3+f*.5),0,0,6.283); cx.fill(); } }); }
+/* the lighthouse beam: a cone that cuts the darkness and lights the fog */
+function beamFx(P,A,len){ const sc=TB.sc; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const p=P(), a=A(); if(!p||a==null) return; const u=vu(), cx=FX.cx, L=u*(len||140), h=.16, s=Math.tan(h);
+  cx.save(); cx.translate(p[0],p[1]); cx.rotate(a*Math.PI/180);
+  const cone=()=>{ cx.beginPath(); cx.moveTo(0,-u*1.4); cx.lineTo(L,-L*s); cx.quadraticCurveTo(L*1.05,0,L,L*s); cx.lineTo(0,u*1.4); cx.closePath(); };
+  let g=cx.createLinearGradient(0,0,L,0); g.addColorStop(0,'rgba(0,0,0,.9)'); g.addColorStop(.55,'rgba(0,0,0,.5)'); g.addColorStop(1,'rgba(0,0,0,0)');
+  cx.globalCompositeOperation='destination-out'; cx.fillStyle=g; cone(); cx.fill();
+  g=cx.createLinearGradient(0,0,L,0); g.addColorStop(0,'rgba(255,246,200,.42)'); g.addColorStop(.45,'rgba(255,236,170,.15)'); g.addColorStop(1,'rgba(255,230,160,0)');
+  cx.globalCompositeOperation='lighter'; cx.fillStyle=g; cone(); cx.fill(); cx.restore(); cx.globalCompositeOperation='source-over';
+  if(Math.random()<.5){ const d=Math.random()*L*.85, w=(Math.random()-.5)*2*d*s*.8, an=a*Math.PI/180; fxAdd({k:'dust',x:p[0]+Math.cos(an)*d-Math.sin(an)*w,y:p[1]+Math.sin(an)*d+Math.cos(an)*w,vx:(Math.random()-.5)*4*u,vy:(Math.random()-.5)*3*u,life:1.6,s:.5+Math.random()*.6,c:'rgba(255,244,200,.7)'}); } }); }
+/* a whale's fountain: white spray with squash, and coloured glitter where the sun catches it */
+function fountainFx(P,ms,pw){ const t0=now(), sc=TB.sc; chime([392,523,659,784]);
+  FX.em.push({rate:55,fn:()=>{ if(!TB||TB.sc!==sc||now()-t0>ms) return; const p=P(); if(!p) return; const u=vu(), a=-Math.PI/2+(Math.random()-.5)*.55, v=(52+Math.random()*30)*u*(pw||1);
+    fxAdd({k:'foam',x:p[0]+(Math.random()-.5)*u*3,y:p[1],vx:Math.cos(a)*v,vy:Math.sin(a)*v,g:75*u,yEnd:p[1]+u*2,life:2.4,s:.6+Math.random()*.9});
+    if(Math.random()<.6){ const b=v*(.55+Math.random()*.4); fxAdd({k:'spark',x:p[0],y:p[1]-u*4,vx:Math.cos(a)*b*.9,vy:Math.sin(a)*b,life:1.3+Math.random()*.7,s:.5+Math.random()*.7,
+      c:rnd(['rgba(255,130,160,.95)','rgba(255,214,110,.95)','rgba(140,255,170,.95)','rgba(130,190,255,.95)','rgba(210,150,255,.95)','rgba(255,255,255,.95)'])}); } }}); }
+function rainbow(x,y,w){ const r=el('div','rbw3',`<svg viewBox="0 0 200 100">${['#ff5f6d','#ffb347','#ffe66b','#6bdc8a','#5fb8ff','#a57bff'].map((c,i)=>`<path d="M${10+i*6} 100 A${90-i*6} ${90-i*6} 0 0 1 ${190-i*6} 100" fill="none" stroke="${c}" stroke-width="6" opacity=".85"/>`).join('')}</svg>`);
+  r.style.cssText=`left:${x}%;top:${y}%;width:${w}vh;translate:-50% -100%`; TB.act.appendChild(r); requestAnimationFrame(()=>requestAnimationFrame(()=>r.classList.add('on'))); return r; }
+function snoreZ(){ FX.em.push({rate:.65,fn:()=>{ const e=TB&&TB.els.wal; if(!e||!e.isConnected||TST.whm!=='asleep') return; const [x,y]=relPx('wal',[.2,.36]), u=vu();
+  particle('z',x,y,u*(2.4+Math.random()*1.4),'#e0eaff',(x,y)=>[{transform:`translate(${x}px,${y}px) scale(.5)`,opacity:0},{transform:`translate(${x-u*3}px,${y-u*4}px) scale(1)`,opacity:.95,offset:.3},{transform:`translate(${x-u*8}px,${y-u*12}px) scale(1.2) rotate(-15deg)`,opacity:0}],2400); }}); }
+function swimFish(n,y0,y1){ const cols=[['#ffd84a','#b8862e'],['#ff9a5a','#c0582a'],['#7ad0ff','#2a7ab8'],['#ff8fc8','#b04a86']];
+  for(let i=0;i<n;i++){ const f=el('div','tp2 fish2 swim',fishSVG(...cols[i%4])); f.style.cssText=`left:${80+Math.random()*20}%;top:${y0+Math.random()*(y1-y0)}%;width:${3.5+Math.random()*2.5}vh;animation-delay:${(-Math.random()*9).toFixed(1)}s;animation-duration:${(8+Math.random()*5).toFixed(1)}s`;
+    TB.act.appendChild(f); } }
+function fishJump(pts){ const cols=[['#ff9a5a','#c0582a'],['#ffd84a','#b8862e'],['#ff8fc8','#b04a86'],['#7ad0ff','#2a7ab8']], sc=TB.sc;
+  pts.forEach(([x,y,z],i)=>{ const f=el('div','tp2 fish2 jump',fishSVG(...cols[i%4])); f.style.cssText=`left:${x}%;top:${y}%;width:${z}vh;animation-delay:${(i*.45).toFixed(2)}s`;
+    TB.act.insertBefore(f,TB.sea); TB.els['fi'+i]=f;
+    const sp=()=>{ if(!TB||TB.sc!==sc) return; const [fx,fy]=wpx(x,TST.tide||54); foam(fx,fy,7,.6); tLater(sp,1800); }; tLater(sp,i*450+1080); }); }
+function givePearl(){ const M=TB.els.muschel, W=TB.els.welle, src=M.querySelector('.prl'), [x0,y0]=ctr(src), u=vu();
+  const fp=el('div','tp2 perl',perlSVG()); fp.style.width=(src.getBoundingClientRect().width/innerHeight*100*1.1).toFixed(2)+'vh'; TB.act.appendChild(fp); putAt(fp,x0,y0); src.style.opacity=0;
+  const p=el('div','perl2',perlSVG()); p.style.opacity=0; W.querySelector('.bb').appendChild(p); TB.els.perle=p; const [x1,y1]=ctr(p);
+  try{ fp.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${(y1-y0)/2-u*16}px) scale(1.4)`},{transform:`translate(${x1-x0}px,${y1-y0}px) scale(.9)`}],{duration:1300,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+  bLater(()=>{ fp.remove(); p.style.opacity=1; TST.perl=true; mood('welle','glow'); glitterBurst(x1,y1,22,14); chime([1047,1318,1568]); },1300); }
+
+const WELLE2={id:'welle', v2:true, title:'Die kleine Welle', icon:'🌊', cover:TBG.meer,
+ cast(sc){ const A=TB.act, mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); if(!par) e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
+     (par&&TB.els[par]?TB.els[par].querySelector('.bb'):A).appendChild(e); TB.els[id]=e; return e; };
+  if(sc.uw) TB.els.uni.classList.add('uw');
+  (sc.gw||[]).forEach(([id,x,y,z])=>{ mk(id,'wel big',welleSVG(1),x,y,z).dataset.mood=TST[id]||'smile'; });
+  if(sc.wa){ const [x,y,z,cls]=sc.wa; mk('wal','wal2'+(cls?' '+cls:''),walSVG(),x,y,z*1.73).dataset.mood=TST.whm||'asleep'; }
+  if(sc.kr){ const [x,y,z]=sc.kr; mk('kroete','krt',krSVG(),x,y,z).dataset.mood=TST.tm||'lost'; }
+  if(sc.ms){ const [x,y,z]=sc.ms, m=mk('muschel','msl',mslSVG(),x,y,z); m.dataset.mood=TST.sm||'shy'; m.style.setProperty('--op',TST.op||0); }
+  if(sc.bg2){ const [x,y,z]=sc.bg2, b=el('div','tp2 burg2',burgSVG()); b.style.cssText=`left:${x}%;top:${y}%;width:${z}vh;--fill:${TST.fill||0}`; A.appendChild(b); TB.els.burg=b; }
+  if(sc.kd){ const [x,y,z]=sc.kd; mk('kind','kind2',kindSVG(),x,y,z).dataset.mood=TST.cm||'sad'; }
+  if(sc.mw){ const [x,y,z]=sc.mw, m=el('div','tp2 mondw',mondwSVG()); m.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; m.dataset.mood=TST.mwm||'smile'; A.appendChild(m); TB.els.mondw=m; }
+  if(sc.wl){ const [x,y,z,par]=sc.wl, w=mk('welle','wel'+(par?' onkr':''),welleSVG(),x,y,z,par); w.dataset.mood=TST.wm||'longing'; w.style.setProperty('--wz',TST.wz||1);
+    if(TST.perl){ const p=el('div','perl2',perlSVG()); w.querySelector('.bb').appendChild(p); TB.els.perle=p; } } },
+ /* little reactions when she taps someone between the tasks */
+ react(id,b,x,y){ const u=vu();
+  if(id==='welle'){ sqs(b); bubble(rnd(['hihi!','blubb!','hui!']),x,y-u*5,4,'#c8f6ff'); const r=b.getBoundingClientRect(); foam(x,r.bottom-r.height*.2,8,.8); chime([988,1318]); return true; }
+  if(id==='perle'){ sqs(b); glitterBurst(x,y,14,10); chime([1568,2093]); return true; }
+  if(/^gw\d$/.test(id)){ sqs(b); bubble(rnd(['hoho!','wusch!','rausch!']),x,y-u*6,4.6,'#c8e6ff'); foam(x,y,10,1); chime([392,523]); return true; }
+  if(id==='kroete'){ sqs(b); bubble(rnd(['hallo!','oh, hallo!','hihi']),x,y-u*5,4,'#d8f4b0'); chime([523,659]); return true; }
+  if(id==='wal'){ sqs(b); bubble(rnd(['blubb!','brumm!','hmm…']),x,y-u*6,4.8,'#c8dcff'); bubs(...relPx('wal',[.38,.22]),8); chime([196,262]); return true; }
+  if(id==='muschel'){ sqs(b); bubble(rnd(['hihi','oh!','pst!']),x,y-u*4,3.8,'#ffd0e0'); chime([1175,1318]); return true; }
+  if(id==='kind'){ sqs(b); bubble(rnd(['hallo!','hihi!','juhu!']),x,y-u*5,4,'#fff3b0'); chime([784,988]); return true; }
+  if(id==='mondw'){ sqs(b); bubble(rnd(['huhu!','hallo!']),x,y-u*4,4.2,'#fff3c0'); chime([659,880]); return true; }
+  if(id==='turm'){ wiggle(b); fxBurst(...relPx('turm',[.5,.19]),12,FIRECOL); chime([1175]); return true; }
+  if(/^(burg|palme|bank|heim)$/.test(id)){ wiggle(b); chime([880]); return true; }
+  if(/^m\d$/.test(id)||/^fi\d$/.test(id)){ sqs(b); chime([1318]); return true; }
+  return false; },
+ sc:[
+ /* 1 – the wish: the big waves roll to the beach, each with a gift; she tries – grows – and falls flat; they laugh kindly */
+ {set:'meermorgen', dark:0, u:[13,37,22], gw:[['gw3',75,54.5,19],['gw1',62,57,28],['gw2',86,59,24]], wl:[40,64,15],
+  enter(){ TST.wm='longing'; TST.wz=1; mood('welle','longing'); gladeFx(()=>ctr(TB.st.querySelector('.sun2'))[0],()=>1,'255,214,150');
+    const roll=(id,gift,ms)=>bLater(()=>{ if(TB.done) return; const G=TB.els[id], g=el('div','gift2',gift); G.querySelector('.bb').appendChild(g); sqs(G); chime([523,659]);
+      bLater(()=>{ if(TB.done) return; G.classList.add('roll'); foam(...ctr(G),10,.9); },700);
+      bLater(()=>{ g.remove(); G.classList.remove('roll'); G.classList.add('rise'); bLater(()=>G.classList.remove('rise'),2300); },3500); },ms);
+    roll('gw1','🐚',atPh('eine Muschel')); roll('gw2','🪨',atPh('einen Stein')); roll('gw3','🪵',atPh('ein Stück Holz'));
+    bLater(()=>{ if(TB.done) return; mood('welle','sing'); notes(TB.els.welle,5); },atPh('Da sang'));
+    bLater(()=>{ if(!TB.done) mood('welle','longing'); },atPh('Sie wollte auch'));
+    bLater(()=>{ if(!TB.done) mood('welle','brave'); },atPh('Hilf ihr')); },
+  ready(){ ['gw1','gw2','gw3'].forEach(id=>{ const G=TB.els[id]; G.classList.remove('roll','rise'); G.querySelectorAll('.gift2').forEach(g=>g.remove()); }); mood('welle','brave'); },
+  a:{t:'rock',id:'welle',n:3,wait:2100,w:'WELLE'},
+  s:'Es war einmal eine kleine Welle. Sie wohnte weit draußen im großen Meer. Jeden Morgen rollten die großen Wellen zum Strand, und jede brachte ihm etwas mit: eine Muschel, einen Stein, ein Stück Holz. Da sang die kleine Welle: '+WVERS+' Sie wollte auch zum Strand. Hilf ihr, Schwung zu holen! Wisch mit dem Finger hin und her.',
+  h:'Wisch mit dem Finger hin und her, dann schaukelt die kleine Welle!',
+  rockStep(k){ const W=TB.els.welle; TST.wz=1+k*.18; W.style.setProperty('--wz',TST.wz); mood('welle',k===2?'oh':'brave');
+    if(k===2) ['gw1','gw2'].forEach(g=>mood(g,'oh'));
+    if(k===3) bLater(()=>{ W.classList.add('flat'); mood('welle','oh');
+      bLater(()=>{ const r=W.getBoundingClientRect(); foam(r.left+r.width/2,r.bottom-r.height*.25,30,1.3); chime([392,330,262]); TST.wz=1; W.style.setProperty('--wz',1); mood('welle','sad'); },850); },550); },
+  d:['Platsch! Da fiel die kleine Welle in sich zusammen.',
+     ()=>{ ['gw1','gw2','gw3'].forEach((g,i)=>bLater(()=>{ mood(g,'happy'); const [x,y]=ctr(TB.els[g]), u=vu(); bubble(rnd(['hihi!','hoho!','haha!']),x-u*4,y-u*12,4.6,'#c8e6ff'); },i*260)); },
+     'Die großen Wellen lachten freundlich: Hihi! Du bist noch viel zu klein, kleine Welle. Der Strand ist so weit weg!',
+     ()=>{ mood('welle','sad'); ['gw1','gw2','gw3'].forEach(g=>mood(g,'smile')); const W=TB.els.welle;
+       bLater(()=>{ try{ W.animate([{transform:'none',opacity:1},{transform:'translateY(4vh) scale(.9)',opacity:1,offset:.3},{transform:'translateY(34vh) scale(.6)',opacity:0}],{duration:2600,easing:'ease-in',fill:'forwards'}); }catch(e){}
+         const r=W.getBoundingClientRect(); foam(r.left+r.width/2,r.top+r.height*.7,12,.7); },2600); },
+     'Da wurde die kleine Welle traurig. Sie sank hinab, tief hinunter ins dunkle Meer.', 1200]},
+ /* 2 – helper 1: in the dark deep the old turtle lost her way home – the light of her finger finds the glowing marks */
+ {set:'tiefsee', dark:.93, uw:1, u:[11,30,19], wl:[23,56,12], kr:[45,57,26],
+  p:[['m1','GSHELL',55,84,9,'lm2'],['m2','JELLY',65,49,9,'lm2'],['m3','SSTAR',76,82,9,'lm2'],['m4','ANEM',50,6,10.5,'lm2 kid','heim']],
+  lights:[{id:'welle',r0:10,rT:10,k0:.75,kT:.75},{id:'kroete',name:'krL',r0:12,rT:12,k0:.4,kT:.4},{id:'uni',r0:11,rT:11,k0:.5,kT:.5}],
+  enter(){ TST.wm='sad'; TST.tm='lost'; TST.wz=1; mood('welle','sad'); mood('kroete','lost');
+    const W=TB.els.welle; try{ W.animate([{transform:'translateY(-40vh) scale(.6)',opacity:0},{transform:'none',opacity:1}],{duration:2400,easing:'cubic-bezier(.2,.8,.3,1)'}); }catch(e){}
+    FX.em.push({rate:4,fn:()=>{ if(!TB) return; const u=vu(); fxAdd({k:'dust',x:Math.random()*innerWidth,y:innerHeight*(.2+Math.random()*.75),vx:(Math.random()-.5)*4*u,vy:-(1+Math.random()*3)*u,life:3+Math.random()*2,s:.35+Math.random()*.4,c:rnd(BIOCOL)}); }});
+    bLater(()=>{ if(!TB.done){ mood('welle','oh'); bubs(...ctr(TB.els.kroete),6); } },atPh('Da hörte'));
+    bLater(()=>{ if(!TB.done){ mood('welle','brave'); const [x,y]=ctr(TB.els.welle); for(let i=0;i<16;i++) G2.torch.bio(x,y); } },atPh('Die kleine Welle hatte')); },
+  ready(){ mood('welle','brave'); },
+  a:{t:'torch',ids:['m1','m2','m3','m4'],r:17,lr:9,w:'LICHT'},
+  s:'Unten in der Tiefe war es ganz dunkel. Da hörte die kleine Welle jemanden seufzen. Es war eine alte Schildkröte. Oh je, sagte sie, es ist so dunkel. Ich finde meinen Weg nach Hause nicht mehr! Die kleine Welle hatte ein bisschen Glitzer in ihrem Schaum. Leuchte mit deinem Finger durch das Dunkel, und such die kleinen Lichter!',
+  h:'Fahr mit dem Finger durch das Dunkel. Wo leuchtet es?',
+  item(id,b,k){ const [x,y]=ctr(b); bubble(['da!','oh!','noch eins!','juhu!'][k-1],x,y-vu()*6,3.6,'#bffff0'); if(k>=2) mood('kroete','smile'); if(k===1) this.trail(); sqs(TB.els.kroete); },
+  trail(){ const sc=TB.sc, ord=['m1','m2','m3','m4']; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const u=vu(), cx=FX.cx;
+    const pts=[relPx('kroete',[.9,.45])].concat(ord.filter(i=>TB.els[i].classList.contains('found')).map(i=>ctr(TB.els[i]))); if(pts.length<2) return;
+    cx.globalCompositeOperation='lighter'; const spr=fxSprite('rgba(140,255,230,.9)');
+    for(let s=0;s<pts.length-1;s++){ const a=pts[s], b=pts[s+1], n=Math.max(3,Math.round(Math.hypot(b[0]-a[0],b[1]-a[1])/(u*3.2)));
+      for(let i=0;i<n;i++){ const f=(i+(tn/1100)%1)/n, x=a[0]+(b[0]-a[0])*f, y=a[1]+(b[1]-a[1])*f-Math.sin(f*Math.PI)*u*5, r=u*(.8+.3*Math.sin(tn/200+i));
+        cx.globalAlpha=.5; cx.drawImage(spr,x-r*2,y-r*2,r*4,r*4); } } cx.globalAlpha=1; }); },
+  done(){ mood('kroete','happy'); const H=TB.els.heim; H.classList.add('lit'); light({el:H,oy:.8,r0:4,rT:16,k0:.9,kT:.9,warm:.6}); TB.krL.rT=16; TB.krL.kT=.7; },
+  d:['Da leuchtete ein Weg aus Licht, mitten durch die Tiefe, bis zu ihrem Zuhause.',
+     ()=>{ const K=TB.els.kroete; sqs(K); hearts(...ctr(K),4); },
+     'Danke, kleine Welle! sagte die Schildkröte. Du hast mir Licht gebracht. Komm, steig auf meinen Rücken. Ich bringe dich ein Stück weiter!',
+     ()=>{ const K=TB.els.kroete, W=TB.els.welle; mood('welle','happy'); hopTo(W,K.querySelector('.bb'),'onkr',1000);
+       bLater(()=>{ K.classList.add('fly'); try{ K.animate([{transform:'none'},{transform:'translate(70vw,-14vh) scale(.8)'}],{duration:2600,easing:'ease-in',fill:'forwards'}); }catch(e){} trail(K,2400); },1300); }, 2600]},
+ /* 3 – helper 2: the whale sleeps through the sunrise; she pops his snore bubbles, he wakes and blows her far ahead */
+ {set:'tangwald', dark:0, uw:1, u:[10,47,18], wa:[67,63,30], kr:[25,71,22], wl:[0,0,0,'kroete'],
+  lights:[{id:'welle',r0:9,rT:9,k0:.4,kT:.4}],
+  enter(){ TST.wm='happy'; TST.tm='smile'; TST.whm='asleep'; mood('welle','happy'); snoreZ(); swimFish(3,40,62);
+    const K=TB.els.kroete; try{ K.animate([{transform:'translateX(-40vw)'},{transform:'none'}],{duration:2600,easing:'cubic-bezier(.2,.8,.3,1)'}); }catch(e){}
+    FX.em.push({rate:.9,fn:()=>{ if(TST.whm==='asleep'&&TB&&TB.els.wal) bubs(...relPx('wal',[.38,.22]),2,4); }});
+    bLater(()=>{ if(!TB.done) mood('welle','oh'); },atPh('Oh, sagte'));
+    bLater(()=>{ if(!TB.done) mood('welle','brave'); },atPh('Mach die Blasen')); },
+  ready(){ mood('welle','brave'); },
+  a:{t:'pop',n:5,src:'wal',at:[.38,.22],top:27,max:3,every:1300,v:8,sz:8.5,spread:10,w:'WAL'},
+  s:'Die Schildkröte schwamm mit ihr durch den Tangwald. Dort lag ein großer Wal und schlief. Er schnarchte, und bei jedem Schnarcher stiegen Blubberblasen auf. Oh, sagte die Schildkröte, der Wal will doch die Sonne aufgehen sehen! Mach die Blasen plopp, dann wacht er auf. Tippe auf die Blasen!',
+  h:'Tippe auf die Blasen. Plopp!',
+  popped(k){ const W=TB.els.wal; sqs(W); if(k===2){ const [x,y]=relPx('wal',[.2,.45]); bubble('hm?',x,y-vu()*4,4,'#c8dcff'); } if(k===4) mood('wal','blink'); if(k>=3) mood('welle','happy'); },
+  done(){ mood('wal','awake'); TST.whm='awake'; },
+  d:['Plopp! Da wachte der Wal auf und gähnte.',
+     ()=>{ const W=TB.els.wal; try{ W.animate([{transform:'none'},{transform:'translateY(-27vh) rotate(-5deg)'}],{duration:2400,easing:'ease-in-out',fill:'forwards'}); }catch(e){} bLater(()=>mood('wal','happy'),1400); },
+     'Oh, die Sonne! brummte er. Danke, kleine Welle! Halt dich gut fest!',
+     ()=>{ const W=TB.els.welle, u=vu(); toAct(W); mood('welle','oh'); const [x0,y0]=ctr(W), [bx,by]=relPx('wal',[.38,.22]);
+       try{ W.animate([{transform:'none'},{transform:`translate(${(bx-x0)*.5}px,${(by-y0)*.5-u*10}px) rotate(-10deg)`,offset:.2},{transform:`translate(${bx-x0}px,${by-y0-u*5}px) scale(.9)`,offset:.32},
+         {transform:`translate(${bx-x0}px,${-y0+u*4}px) scale(1.05) rotate(-15deg)`,offset:.55},{transform:`translate(${innerWidth*1.2-x0}px,${-y0-u*10}px) scale(.6) rotate(30deg)`,opacity:.9}],{duration:4200,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+       bLater(()=>{ mood('welle','happy'); fountainFx(()=>relPx('wal',[.38,.2]),4200); const [fx]=relPx('wal',[.38,.2]); rainbow(fx/innerWidth*100+6,24,46); },1100); trail(W,4200); },
+     'Und der Wal pustete eine riesige Fontäne. Die Sonne glitzerte darin wie ein Regenbogen, und die kleine Welle flog hoch hinaus!', 1400]},
+ /* 4 – helper 3: a shy shell; she lays her finger on it while the wave hums – it opens slowly and gives her the pearl */
+ {set:'bucht', dark:0, uw:1, u:[12,40,18], wl:[29,58,13], ms:[56,74,22],
+  lights:[{id:'muschel',name:'shL',oy:.5,r0:6,rT:6,k0:.6,kT:.6,warm:.25},{id:'welle',r0:9,rT:9,k0:.6,kT:.6}],
+  enter(){ TST.wm='happy'; TST.sm='shy'; TST.op=0; mood('welle','happy'); mood('muschel','shy'); swimFish(2,30,52);
+    const W=TB.els.welle; try{ W.animate([{transform:'translateY(-62vh) scale(.6)',opacity:0},{transform:'translateY(-62vh) scale(.6)',opacity:0,offset:.25},{transform:'translateY(3vh) scale(1.2,.82)',opacity:1,offset:.78},{transform:'none'}],{duration:2700,easing:'ease-in'}); }catch(e){}
+    bLater(()=>{ const r=W.getBoundingClientRect(); bubs(r.left+r.width/2,r.bottom-r.height*.2,18,10); chime([523,392]); },2100);
+    bLater(()=>{ if(!TB.done){ mood('welle','oh'); sqs(TB.els.muschel); } },atPh('Die Muschel war'));
+    bLater(()=>{ if(TB.done) return; mood('welle','sing'); notes(TB.els.welle,5); },atPh('Da summte'));
+    bLater(()=>{ if(!TB.done) mood('welle','smile'); },atPh('Leg deinen')); },
+  ready(){ mood('welle','smile'); },
+  a:{t:'open',id:'muschel',ms:2600,w:'PERLE'},
+  s:'Platsch! Die kleine Welle landete in einer stillen Bucht. Auf dem Grund saß eine Muschel, ganz fest zu. Die Muschel war schüchtern. Da summte die kleine Welle ganz leise ihr Lied. Leg deinen Finger auf die Muschel, ganz sanft, und lass ihn liegen.',
+  h:'Leg den Finger auf die Muschel und lass ihn still liegen.',
+  opening(p){ if(p>.2&&TST.sm==='shy'){ TST.sm='peek'; mood('muschel','peek'); } TB.shL.rT=6+p*16; TB.shL.kT=.6+p*.4;
+    if(TST.wm!=='sing'){ TST.wm='sing'; mood('welle','sing'); } if(Math.random()<.05) notes(TB.els.welle,1); },
+  done(){ mood('muschel','happy'); TST.sm='happy'; TB.els.muschel.classList.add('lit'); TB.shL.rT=24; TB.shL.kT=1; mood('welle','oh'); },
+  d:['Langsam ging die Muschel auf. Und drinnen lag eine Perle. Sie leuchtete wie ein kleiner Mond.',
+     ()=>{ hearts(...ctr(TB.els.muschel),3); mood('welle','happy'); },
+     'Die ist für dich, flüsterte die Muschel, weil du so lieb warst. Bring sie zum Strand!',
+     ()=>givePearl(), 1700]},
+ /* 5 – fog: the lighthouse lamp is stuck looking out to sea – she turns it round to the shore */
+ {set:'nebel', dark:.6, u:[11,33,18], wl:[22,70,11],
+  lights:[{id:'welle',r0:9,rT:9,k0:.7,kT:.7},{id:'turm',name:'lampL',oy:.19,r0:7,rT:7,k0:.95,kT:.95,warm:.9}],
+  enter(){ TST.wm='oh'; TST.dA=180; mood('welle','oh'); const T=TB.els.turm; T.classList.add('on'); T.querySelector('.lmp').style.transform='rotate(180deg)';
+    beamFx(()=>relPx('turm',[.5,.188]),()=>TST.dA!=null?TST.dA:180,140);
+    bLater(()=>{ if(!TB.done) mood('welle','sad'); },atPh('sah den Strand'));
+    bLater(()=>{ if(!TB.done) mood('welle','brave'); },atPh('Dreh die Lampe')); },
+  ready(){ mood('welle','brave'); },
+  a:{t:'dial',id:'turm',c:[.5,.188],part:'.lmp',from:180,mark:[90,62],tol:15,R:14,w:'TURM'},
+  s:'Am Abend kam der Nebel. Weich und grau legte er sich über das Meer, und die kleine Welle sah den Strand nicht mehr. Da stand ein alter Leuchtturm. Aber seine Lampe schaute nur hinaus aufs Meer. Dreh die Lampe zum Strand! Fahr mit dem Finger im Kreis um die Lampe, bis das Licht zum Stern zeigt.',
+  h:'Fahr mit dem Finger im Kreis um die Lampe, bis das Licht zum Stern zeigt!',
+  dialing(a){ const off=Math.abs(angDiff(G2.dial.to(),a)); if(off<60&&TST.wm!=='smile'){ TST.wm='smile'; mood('welle','smile'); } },
+  done(){ const sc=TB.sc; light({el:TB.els.marke,r0:6,rT:20,k0:.9,kT:.9,warm:.5});
+    FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const u=vu(), cx=FX.cx, a=ctr(TB.els.welle), b=ctr(TB.els.marke), spr=fxSprite('rgba(255,236,160,.9)'); cx.globalCompositeOperation='lighter';
+      for(let i=0;i<16;i++){ const f=(i+(tn/1300)%1)/16, x=a[0]+(b[0]-a[0])*f, y=a[1]+(b[1]-a[1])*f+u*2, r=u*(.7+.25*Math.sin(tn/180+i)); cx.globalAlpha=.55; cx.drawImage(spr,x-r*2,y-r*2,r*4,r*4); } cx.globalAlpha=1; }); },
+  d:['Da leuchtete der Turm hell durch den Nebel, einen Weg aus Licht, bis zum Strand.',
+     ()=>{ mood('welle','happy'); sqs(TB.els.welle); },
+     'Danke, Leuchtturm! rief die kleine Welle, und sie rollte los, immer dem Licht nach.',
+     ()=>{ const W=TB.els.welle; W.style.transition='left 3s ease-in-out,top 3s ease-in-out'; W.style.left='76%'; W.style.top='66%'; trail(W,3000); }, 2400]},
+ /* 6 – the obstacle: low tide, a sandbar; rocking again, the friends she helped come back and help, the moon lifts the tide */
+ {set:'sandbank', dark:.36, u:[11,32,18], wl:[29,66.5,12], mw:[76,19,15], kr:[-12,69,13], wa:[-16,69,13],
+  lights:[{id:'welle',r0:9,rT:9,k0:.7,kT:.7},{id:'mondw',name:'moonL',r0:15,rT:15,k0:.6,kT:.6,warm:.3}],
+  enter(){ TST.wm='sad'; TST.mwm='smile'; TST.tm='smile'; TST.whm='happy'; TST.glade=.35; tide(70); mood('welle','sad'); behindSea(['bank','wal','kroete']);
+    gladeFx(()=>ctr(TB.els.mondw)[0],()=>TST.glade,'255,240,190');
+    bLater(()=>{ if(TB.done) return; mood('mondw','wink'); sqs(TB.els.mondw); bLater(()=>mood('mondw','smile'),1400); },atPh('Da schaute'));
+    bLater(()=>{ if(!TB.done) mood('welle','brave'); },atPh('Schaukel')); },
+  ready(){ mood('welle','brave'); },
+  a:{t:'rock',id:'welle',n:3,gap:500,wait:700,w:'MOND'},
+  s:'In der Nacht war das Wasser ganz niedrig. Vor dem Strand lag eine Sandbank, und die kleine Welle kam nicht hinüber. Sie war zu klein. Da schaute der Mond herunter und lächelte. Schaukel sie wieder hin und her! Bei jedem Schwung steigt das Wasser ein bisschen.',
+  h:'Wisch mit dem Finger hin und her, dann steigt das Wasser!',
+  x:[['w2','Schau, da kommt die alte Schildkröte und schiebt mit!'],['w3','Und da kommt der Wal und pustet! Noch einmal!']],
+  rockStep(k){ const t=[70,66,61,53][k], W=TB.els.welle, u=vu(); tide(t); TST.glade=.35+k*.25; W.style.transition='top 1.8s cubic-bezier(.3,.8,.3,1)'; W.style.top=(t-3.5)+'%';
+    const K=TB.els.kroete, Wa=TB.els.wal; [K,Wa].forEach(e=>{ e.style.transition='left 2.2s cubic-bezier(.3,.8,.3,1),top 1.8s cubic-bezier(.3,.8,.3,1)'; });
+    if(k>=1){ K.style.left='19%'; K.style.top=(t-1.5)+'%'; } if(k>=2){ Wa.style.left='13%'; Wa.style.top=(t-.5)+'%'; }
+    if(k===1){ mood('kroete','push'); bLater(()=>{ const [x,y]=ctr(K); bubble('hau ruck!',x,y-u*8,4,'#d8f4b0'); foam(x+u*6,y,10,.8); },1400); }
+    if(k===2){ bLater(()=>{ mood('wal','happy'); fountainFx(()=>relPx('wal',[.38,.2]),2200,.7); },1600); }
+    if(k===3){ mood('mondw','sing'); TST.mwm='sing'; TB.moonL.rT=24; TB.moonL.kT=.9; const sc=TB.sc, t0=now();
+      FX.em.push({rate:40,fn:()=>{ if(!TB||TB.sc!==sc||now()-t0>2600) return; const [mx,my]=ctr(TB.els.mondw), [wx,wy]=ctr(TB.els.welle), f=Math.random();
+        fxAdd({k:'glit',x:mx+(wx-mx)*f+(Math.random()-.5)*u*8,y:my+(wy-my)*f,vy:(6+Math.random()*8)*u,ph:Math.random()*6,s:.6+Math.random()*.7,life:2,c:rnd(['rgba(255,246,200,.95)','rgba(255,255,255,.95)','rgba(200,220,255,.9)'])}); }});
+      mood('welle','happy'); bLater(()=>{ const [x0,y0]=ctr(W), [x1]=wpx(74,0);
+        try{ W.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${-u*12}px) rotate(12deg) scale(1.1,.9)`},{transform:`translate(${x1-x0}px,0) scale(1.15,.85)`}],{duration:1500,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+        bLater(()=>{ W.getAnimations().forEach(q=>q.cancel()); W.style.transition='none'; W.style.left='74%'; const r=W.getBoundingClientRect(); foam(r.left+r.width/2,r.bottom-r.height*.25,20,1.1); chime([784,1047,1318]); },1500); trail(W,1500); },1700); } },
+  d:['Da zog der Mond das Wasser hoch, so hoch wie noch nie. Hui! Die kleine Welle rollte über die Sandbank!',
+     ()=>{ mood('mondw','smile'); mood('kroete','happy'); ['welle','kroete','wal'].forEach(id=>sqs(TB.els[id])); },
+     'Siehst du, sagte der Mond. Deine Freunde helfen dir, weil du ihnen geholfen hast.',
+     ()=>{ ['welle','kroete','wal'].forEach((id,i)=>bLater(()=>hearts(...ctr(TB.els[id]),3),i*300)); }, 1300]},
+ /* 7 – the ending: the sad child, the dry moat; she swings in, fills it, leaves the pearl – everyone sings, fish jump in rhythm */
+ {set:'strand', dark:0, u:[11,29,18], gw:[['gw1',9,51.5,11],['gw2',33,52.5,9]], kr:[38,52,10], wl:[25,57,13], bg2:[70,71,36], kd:[89,61,16],
+  enter(){ TST.wm='happy'; TST.cm='sad'; TST.fill=0; TST.tide=54; mood('kind','sad'); mood('welle','happy'); behindSea(['gw1','gw2','kroete']); mood('kroete','smile');
+    bLater(()=>{ if(TB.done) return; const [x,y]=ctr(TB.els.kind); bubble('schnief',x-vu()*3,y-vu()*12,3.8,'#cfe8ff'); mood('welle','oh'); },atPh('schniefte'));
+    bLater(()=>{ if(!TB.done) mood('welle','brave'); },atPh('Hol Schwung')); },
+  ready(){ mood('welle','brave'); },
+  a:{t:'swing',id:'welle',to:'burg',at:[.26,.84],min:6,max:20,lift:15,ms:1050,w:'KIND'},
+  s:'Am Morgen kam die kleine Welle endlich zum Strand. Dort saß ein Kind bei seiner Sandburg und war traurig. Der Graben um meine Burg ist ganz trocken, schniefte es. Das Meer kommt nicht bis hierher. Hol Schwung! Zieh die kleine Welle zurück und lass sie los!',
+  h:'Leg den Finger auf die kleine Welle, zieh sie zurück und lass los!',
+  pulling(p){ if(p>.4&&TST.wm!=='brave'){ TST.wm='brave'; mood('welle','brave'); } },
+  flung(){ mood('welle','happy'); },
+  landed(x,y){ const B=TB.els.burg, W=TB.els.welle, u=vu(); B.style.setProperty('--fill',1); TST.fill=1; TST.wz=.75; W.style.setProperty('--wz',.75); sqs(W); mood('kind','oh'); chime([523,659,784,1047]);
+    const [bx,by]=relPx('burg',[.5,.8]); for(let i=0;i<4;i++) bLater(()=>foam(bx+(Math.random()-.5)*u*24,by,8,.7),200+i*220);
+    const P=TB.els.perle; if(P){ const fp=toAct(P); fp.className='tp2 perl'; const [x0,y0]=ctr(fp), [x1,y1]=relPx('kind',[.22,.98]);
+      try{ fp.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${(y1-y0)/2-u*14}px) scale(1.3)`},{transform:`translate(${x1-x0}px,${y1-y0}px)`}],{duration:1200,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+      bLater(()=>{ glitterBurst(x1,y1,20,12); chime([1318,1568]); },1200); TST.perl=false; } },
+  d:['Schwupp! Die kleine Welle rollte den Strand hinauf und füllte den Graben bis obenhin. Und die Perle legte sie dem Kind vor die Füße.',
+     ()=>{ mood('kind','laugh'); const K=TB.els.kind; hearts(...ctr(K),5); mood('welle','glow'); ['gw1','gw2'].forEach(g=>mood(g,'oh')); },
+     'Da lachte das Kind vor Freude. Und die großen Wellen staunten: So klein, und so viel gebracht!',
+     ()=>{ ['welle','gw1','gw2'].forEach(id=>mood(id,'sing')); mood('kroete','happy');
+       ['welle','kind','kroete','gw1','gw2'].forEach((c,i)=>bLater(()=>{ const e=TB.els[c]; if(e){ e.classList.add('sing'); notes(e,5); } },i*120)); TB.els.uni.classList.add('sing');
+       fishJump([[8,56,5.5],[18,57,4.5],[30,56,5.5],[40,57,4.5]]);
+       FX.em.push({rate:4,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(GLCOL)})}); chime([523,659,784,1047]); },
+     'Und alle sangen: '+WVERS+' '+WVERS,
+     ()=>{ ['welle','kind','kroete'].forEach(c=>TB.els[c]&&notes(TB.els[c],3)); mood('welle','glow'); const W=TB.els.welle;
+       try{ W.animate([{transform:'translateX(0)'},{transform:'translateX(-5vh)'},{transform:'translateX(0)'}],{duration:3000,iterations:Infinity,easing:'ease-in-out'}); }catch(e){} },
+     'Seitdem kommt die kleine Welle jeden Morgen und jeden Abend wieder, hin und her. Und das Kind wartet schon auf sie. Ende.']}
+]};
+
 function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
   t.sc.forEach((s,i)=>{ const k='t2_'+t.id+'_'+(i+1); reg(k,s.s,null,'Märchen'); if(s.h) reg(k+'h',s.h,null,'Märchen'); if(typeof s.d==='string') reg(k+'d',s.d,null,'Märchen');
     if(Array.isArray(s.d)) s.d.filter(x=>typeof x==='string').forEach((x,j)=>reg(k+'d'+(j+1),x,null,'Märchen'));
@@ -3196,21 +4001,7 @@ function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
 const TALES=[
  LATERNE2,
  PRINZ2,
- {id:'welle', title:'Die kleine Welle', icon:'🌊', cover:TBG.meer, sc:[
-  {bg:'meer', u:[18,36,30], p:[['welle','🌊',60,60,34]], a:{t:'tap',id:'welle'},
-   s:'Es war einmal eine kleine Welle. Sie wohnte weit draußen im Glitzermeer. Sie hatte nur einen einzigen Wunsch: Einmal wollte sie den Strand sehen. Tippe die kleine Welle an!'},
-  {bg:'meer', u:[18,36,30], p:[['welle','🌊',32,76,16],['fisch','🐟',52,50,14],['wal','🐳',72,64,26],['robbe','🦭',88,42,14]], a:{t:'tap',id:'wal',w:'WAL'},
-   s:'Aber der Weg zum Strand war weit. Viel zu weit für eine kleine Welle. Dein Einhorn flog über das Wasser und rief die Meerestiere zu Hilfe. Ruf den Wal!'},
-  {bg:'meer', u:[18,46,28], p:[['sonne','☀️',62,24,22],['c1','☁️',42,22,26,'dark'],['c2','☁️',63,26,28,'dark'],['c3','☁️',84,20,24,'dark'],['welle','🌊',52,78,16],['wal','🐳',30,80,16]], a:{t:'all',ids:['c1','c2','c3'],m:'poof'},
-   s:'Der Wal pustete eine große Fontäne. Hui! Da sauste die Welle ein gutes Stück voran. Doch dann zog ein Sturm auf. Die Wolken wurden ganz dunkel. Schieb alle Wolken weg!'},
-  {bg:'tief', u:[18,36,28], p:[['muschel','🐚',44,66,19],['edel','💎',61,66,19],['seestern','⭐',78,66,19]], a:{t:'choose',ids:['muschel','edel','seestern']},
-   s:'Die Sonne schien wieder. Tief unten auf dem Meeresgrund sah die Welle etwas glitzern. Ein Geschenk für den Strand! Was nimmt die kleine Welle mit? Du darfst wählen.'},
-  {bg:'meer', u:[18,36,28], p:[['delfin','🐬',66,48,28,'party'],['welle','🌊',38,76,16],['pick','$',38,62,10]], a:{t:'tap',id:'delfin',w:'DELFIN'},
-   s:'Nun kam der Delfin. Er sprang in hohen Bögen über das Wasser und rief: Mir nach! Ich kenne den Weg! Folge dem Delfin. Tippe ihn an!'},
-  {bg:'strand', u:[16,40,28], p:[['palme','🌴',90,46,34],['boot','⛵',70,62,26],['kind','🧒',50,72,17],['welle','🌊',26,84,16]], a:{t:'tap',id:'boot',w:'BOOT'},
-   s:'Endlich! Da war der Strand. Im warmen Sand lag ein kleines Boot. Und daneben spielte ein Kind. Die Welle rollte ganz sanft heran. Tippe auf das Boot!'},
-  {bg:'strand', u:[16,40,28], p:[['abend','🌅',80,24,26],['kind','🧒',56,66,19,'party'],['pick','$',46,82,13,'glow'],['welle','🌊',24,84,16]], a:{t:'none'}, fx:'glit',
-   s:'Die kleine Welle legte ihr Geschenk in den Sand, genau vor die Füße des Kindes. Das Kind lachte vor Freude. Dann rollte die Welle glücklich zurück ins Meer. Und jeden Abend kommt sie wieder und bringt etwas Schönes mit. Ende.'}]},
+ WELLE2,
  BAER2,
  {id:'schneeflocke', title:'Die Schneeflocke und der Frühling', icon:'❄️', cover:TBG.winter, sc:[
   {bg:'winter',fx:'snow', u:[34,64,46], p:[['flocke','❄️',53,40,13,'tw']], a:{t:'tap',id:'flocke'},
@@ -3264,6 +4055,9 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
   if(id==='drache') return `<div class="art" style="width:46%;margin-top:10%"><div class="chr kdr" data-mood="proud" style="position:relative;width:100%"><div class="bb">${kdrSVG()}<div class="kopf"><div class="crown onhead">${crownSVG()}</div></div></div></div></div>`+
     `<div class="art bglit" style="position:absolute;right:9%;top:6%;width:12%">${lpostSVG().replace('<svg','<svg class="lamp2 glit"')}</div>`+
     [[18,22],[30,12],[74,30],[86,18],[16,62],[82,62]].map(([x,y],k)=>`<span class="tw gl" style="left:${x}%;top:${y}%;animation-delay:${-k*.35}s">✦</span>`).join('')+tw;
+  if(id==='welle') return `<div class="art" style="width:46%;margin-top:6%"><div class="chr wel" data-mood="glow" style="position:relative;width:100%;filter:drop-shadow(0 0 2vh #c8f6ff) drop-shadow(0 0 5vh rgba(120,220,255,.8))"><div class="bb">${welleSVG()}<div class="perl2">${perlSVG()}</div></div></div></div>`+
+    `<div class="art" style="position:absolute;left:9%;bottom:12%;width:15%;animation-delay:-1.2s">${fishSVG('#ffd84a','#b8862e')}</div><div class="art" style="position:absolute;right:8%;top:12%;width:11%;animation-delay:-.6s;transform:scaleX(-1)">${fishSVG('#ff8fc8','#b04a86')}</div>`+
+    [[16,24,3.2],[26,40,2.2],[80,62,2.8],[72,80,2],[88,34,2.4]].map(([x,y,z],k)=>`<span class="bub3" style="left:${x}%;top:${y}%;width:${z}vh;height:${z}vh;animation-delay:${-k*.5}s"></span>`).join('')+tw;
   return `<div class="art"><span class="emo">${t.icon}</span></div>`+tw; }
 function bPageL(i){ const it=bItems()[i]; return `<div class="ill" style="background:${it.k==='lesen'?TBG.nacht:it.t.cover}">${bArt(it)}</div>`; }
 function bPageR(i){ const it=bItems()[i], done=it.k==='tale'&&S.tales[it.t.id];
