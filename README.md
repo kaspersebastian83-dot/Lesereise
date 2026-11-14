@@ -22,6 +22,13 @@ Ritt durch die Landschaft, unterwegs Glitzer fangen → am Ziel wartet ein klein
 Maus, Astronautin Mia, Sternchen). Drei Dinge werden gesucht – das Wort steht groß in Silbenfarben da und wird vorgelesen.
 Zum Dank gibt es ein Geschenk für die Schatzkiste (🎁, 12 Geschenke, 2 Abenteuer je Ort). Danach freies Antippen.
 
+## Märchenbuch (📖)
+Sechs eigene Märchen, jedes in sieben Szenen interaktiv erzählt (antippen, alles einsammeln, wählen, suchen):
+Die kleine Laterne · Die Prinzessin, die nicht lachen konnte · Die kleine Welle · Der Bär, der einen Mond backen wollte ·
+Die Schneeflocke und der Frühling · Der kleine Drache und der Glitzer. Das gewählte Einhorn ist immer dabei.
+Niemand bleibt hängen: nach 7 s leuchtet das Richtige und die Bitte wird wiederholt, nach 2 falschen Tipps leuchtet es sofort,
+nach 22 s löst sich die Szene selbst und das Märchen geht weiter. Dasselbe gilt für die Abenteuer auf den Reisen.
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 

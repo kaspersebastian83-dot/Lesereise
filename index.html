@@ -262,6 +262,32 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 @keyframes giftin{from{transform:translate(-50%,-50%) scale(0) rotate(-40deg)}}
 .gift.away{transition:transform .8s ease-in,opacity .8s;transform:translate(-50%,-160%) scale(.2);opacity:0}
 
+/* fairy tales */
+#btnTale{width:calc(var(--u)*11);height:calc(var(--u)*11);font-size:calc(var(--u)*6);margin-left:1.2vw}
+.shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5vh 3vw;width:90vw;margin-top:10vh}
+.book{display:flex;flex-direction:column;align-items:center;gap:.8vh;animation:float 3.6s ease-in-out infinite}
+.book .cover{position:relative;width:min(22vw,26vh);height:min(24vw,29vh);border-radius:1.2vh 3vh 3vh 1.2vh;display:flex;align-items:center;justify-content:center;font-size:min(12vw,15vh);
+  border:.5vh solid rgba(255,225,160,.8);border-left-width:1.6vh;box-shadow:0 0 5vh rgba(255,217,138,.45),inset 0 0 4vh rgba(255,255,255,.2)}
+.book .cover b{position:absolute;right:-1.5vh;top:-2vh;font-size:6vh;filter:drop-shadow(0 0 1.5vh rgba(255,220,120,1))}
+.book .pn{font-size:calc(var(--u)*3);font-weight:800;color:var(--light);text-shadow:0 0 1.5vh rgba(0,0,0,.7);max-width:28vw;text-align:center;line-height:1.15}
+.book.chosen{transform:scale(1.12)} .book.chosen .cover{box-shadow:0 0 0 .8vh var(--gold),0 0 9vh 3vh rgba(255,201,77,.8)}
+#tale{padding:0} #taleWorld{position:absolute;inset:0;overflow:hidden;transition:background 1s}
+#tale .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;gap:2vw;padding:0 2vw;z-index:6}
+#taleDots{margin-left:auto;display:flex;gap:1.2vw;padding-right:1vw} #taleDots i{width:2.2vh;height:2.2vh;border-radius:50%;background:rgba(255,255,255,.3);box-shadow:0 0 1vh rgba(0,0,0,.3)}
+#taleDots i.done{background:var(--gold)} #taleDots i.now{background:#fff;box-shadow:0 0 2vh 1vh rgba(255,255,255,.7)}
+.tp{position:absolute;translate:-50% -50%;line-height:1;z-index:3;padding:.5vh;filter:drop-shadow(0 0 2vh rgba(255,245,210,.6));transition:opacity .6s,filter .8s}
+.tp.tuni{z-index:4;padding:0}
+.tp.ask{animation:float 2.2s ease-in-out infinite}
+.tp.hint{animation:hintp .8s ease-in-out infinite!important;filter:drop-shadow(0 0 4vh #fff) drop-shadow(0 0 7vh var(--gold))!important;z-index:5}
+@keyframes hintp{50%{transform:scale(1.25)}}
+.tp.dim{filter:brightness(.5) saturate(.6)} .tp.dark{filter:brightness(.45) drop-shadow(0 0 1vh #000)}
+.tp.glow{filter:drop-shadow(0 0 3vh #fff3b0) drop-shadow(0 0 7vh var(--gold))}
+.tp.tw{animation:pulse 1.6s ease-in-out infinite} .tp.party{animation:hop .6s ease-in-out infinite}
+.tp.fade{opacity:.15;pointer-events:none}
+.tp.poof{animation:poofp .6s ease-out forwards!important;pointer-events:none} @keyframes poofp{to{transform:scale(2.2);opacity:0}}
+.thing.hint{filter:drop-shadow(0 0 4vh #fff) drop-shadow(0 0 7vh var(--gold));animation:hintt .8s ease-in-out infinite}
+@keyframes hintt{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.25)}}
+
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -304,7 +330,8 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
   <div class="top">
     <div class="stars"><b>★</b><span id="starCount">0</span>
       <button class="round orb" id="btnMeadow" aria-label="Einhornwiese" style="margin-left:2vw">🦄<b id="herdCount">1</b></button>
-      <button class="round orb" id="btnTrip" aria-label="Reise">🗺️</button></div>
+      <button class="round orb" id="btnTrip" aria-label="Reise">🗺️</button>
+      <button class="round orb" id="btnTale" aria-label="Märchenbuch">📖</button></div>
     <button class="round gear" id="btnGear" aria-label="Elternbereich (lange drücken)">⚙</button>
   </div>
   <div id="drift"></div>
@@ -350,6 +377,10 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 <section id="land" class="screen">
   <div id="landWorld"></div>
   <div class="bar"><button class="round hb" id="btnLandHome" aria-label="Nach Hause">🏠</button><button class="round hb" id="btnLandAgain" aria-label="Neue Reise">🗺️</button></div>
+</section>
+<section id="tale" class="screen">
+  <div id="taleWorld"></div>
+  <div class="bar"><button class="round hb" id="btnTaleHome" aria-label="Zurück">🏠</button><button class="round hb" id="btnTaleShelf" aria-label="Märchenbuch">📖</button><div id="taleDots"></div></div>
 </section>
 <div id="bigWord"></div>
 
@@ -905,7 +936,7 @@ function drawDrift(){ const D=$('drift'); D.innerHTML='';
   ids.forEach((i,k)=>{ const d=el('div','d'+(k%2?' back':'')); d.style.top=(8+k*13+Math.random()*5)+'vh';
     d.style.animationDuration=(22+Math.random()*12)+'s'; d.style.animationDelay=(-Math.random()*20)+'s';
     d.innerHTML=uniSVG(HERD[i],{cls:'uni flying'+(k%2?' flip':'')}); D.appendChild(d); }); }
-function goHome(){ stopAll(); stopScene(); G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky(); drawDrift();
+function goHome(){ stopAll(); stopScene(); try{ qClear(); tClear(); tale=null; TA=null; }catch(e){} G=null; storyQ=null; $('starCount').textContent=S.stars; drawSky(); drawDrift();
   $('herdCount').textContent=S.herd+1;
   document.querySelectorAll('.station').forEach((b,i)=>b.classList.toggle('fresh',!S.seen[STATIONS[i].id]));
   show('home'); }
@@ -995,19 +1026,24 @@ if(!S.loot||typeof S.loot!=='object') S.loot={};
 if(!S.tn||typeof S.tn!=='object') S.tn={};
 
 const LANDPOS=[[34,68],[50,82],[66,66],[82,80],[44,44],[62,40],[86,46]];
-let trip=null, Q=null;
+let trip=null, Q=null, questT=[];
+function qClear(){ questT.forEach(clearTimeout); questT=[]; }
+function qArm(tk){ qClear(); const step=Q?Q.step:-1;
+  const ok=()=>Q&&Q.active&&Q.step===step&&trip===tk&&landOn();
+  const hint=()=>{ if(!ok()) return; const b=Q.els[Q.adv.need[Q.step]]; if(b) b.classList.add('hint'); ask(); };
+  questT.push(setTimeout(hint,8000), setTimeout(hint,17000), setTimeout(()=>{ if(!ok()) return; const w=Q.adv.need[Q.step]; tapThing(Q.els[w],w,tk); },26000)); }
 const landOn=()=>$('land').classList.contains('on');
 function wordHTML(W){ const w=WORDS.find(x=>x.word===W);
   return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
 function hideWord(){ $('bigWord').className=''; }
 function tripChrome(mode){ $('btnChest').textContent=mode==='chest'?'🗺️':'🎁'; $('btnChest').style.visibility=mode==='pick'?'hidden':'visible'; $('btnChest').dataset.m=mode; }
-function tripPick(){ stopAll(); stopScene(); hideWord(); Q=null;
-  if(S.herd===0){ trip={uni:0}; return tripMap(); }
+function tripPick(next){ if(typeof next!=='function') next=tripMap; stopAll(); stopScene(); hideWord(); qClear(); Q=null;
+  if(S.herd===0){ trip={uni:0}; return next(); }
   trip={uni:null}; tripChrome('pick'); const T=$('tripBody'); T.className='pickgrid'; T.innerHTML='';
   HERD.slice(0,S.herd+1).forEach((u,i)=>{ const b=el('button','pen');
     b.innerHTML='<div class="cl"></div>'+uniSVG(u,{cls:'uni'+(i%2?' flip':''),attr:`style="animation-delay:${-i*.4}s"`});
     b.onclick=()=>{ if(trip.uni!=null) return; trip.uni=i; const v=b.querySelector('.uni'); v.classList.add('happy');
-      chime([988,1318]); glitterBurst(...centerOf(v),26,20); say('u_'+keyOf(u.name)); later(tripMap,1400); };
+      chime([988,1318]); glitterBurst(...centerOf(v),26,20); say('u_'+keyOf(u.name)); later(next,1400); };
     T.appendChild(b); });
   show('trip'); say('r_wer'); }
 function tripMap(){ stopScene(); hideWord(); if(!trip) trip={uni:0}; trip.dest=null; tripChrome('map');
@@ -1070,18 +1106,19 @@ function boing2(b){ b.classList.remove('boing2'); void b.offsetWidth; b.classLis
 function ask(){ if(!Q) return; const w=Q.adv.need[Q.step]; const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className='hold'; say('q_such','wort_'+keyOf(w)); }
 function nextAsk(tk){ if(!Q||trip!==tk||!landOn()) return; Q.step++;
   if(Q.step>=Q.adv.need.length) return endQuest(tk);
-  Q.active=true; boing2(Q.who); ask(); }
+  Q.active=true; Q.miss=0; boing2(Q.who); ask(); qArm(tk); }
 async function tapThing(b,w,tk){
   if(Q&&Q.intro){ boing(b); return; }
   if(Q&&Q.active){ const target=Q.adv.need[Q.step];
-    if(w===target){ Q.active=false; boing(b); chime(); glitterBurst(...centerOf(b),26,18);
+    if(w===target){ Q.active=false; qClear(); b.classList.remove('hint'); boing(b); chime(); glitterBurst(...centerOf(b),26,18);
       /* the thing hops over to whoever asked for it */
       try{ const a=centerOf(b), c=centerOf(Q.who); b.style.animation='none';
         b.animate([{transform:'translate(-50%,-50%) scale(1)'},{transform:`translate(calc(-50% + ${(c[0]-a[0])*.5}px),calc(-50% + ${(c[1]-a[1])*.5-innerHeight*.12}px)) scale(1.2)`,offset:.5},
           {transform:`translate(calc(-50% + ${c[0]-a[0]+innerWidth*.07*(Q.step+1)}px),calc(-50% + ${c[1]-a[1]+innerHeight*.02}px)) scale(.55)`}],{duration:900,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
       b.style.pointerEvents='none'; hearts(...centerOf(Q.who),4);
       await say(rnd(['p_lob1','p_lob2','p_lob3','p_lob4','g_lob1'])); await wait(250); nextAsk(tk); }
-    else { b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('wobt'); say('wort_'+keyOf(w),'q_such','wort_'+keyOf(target)); }
+    else { Q.miss=(Q.miss|0)+1; if(Q.miss>=2&&Q.els[target]) Q.els[target].classList.add('hint'); qArm(tk);
+      b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('wobt'); say('wort_'+keyOf(w),'q_such','wort_'+keyOf(target)); }
     return; }
   /* free play */
   boing(b); chime([1175,1568]); glitterBurst(...centerOf(b),22,16);
@@ -1098,12 +1135,200 @@ async function endQuest(tk){
   Object.values(els).forEach(b=>{ try{ b.getAnimations().forEach(a=>a.cancel()); }catch(e){} b.style.animation=''; b.style.pointerEvents=''; });
   Q=null;
   if(first && ALLADV.every(a=>S.loot[a.id])) await say('r_alle'); else await say('r_nochmal'); }
-$('btnTrip').onclick=tripPick;
+$('btnTrip').onclick=()=>tripPick();
 $('btnTripHome').onclick=()=>{ trip=null; goHome(); };
 $('btnRideHome').onclick=()=>{ trip=null; goHome(); };
 $('btnChest').onclick=()=>{ $('btnChest').dataset.m==='chest' ? tripMap() : tripChest(); };
-$('btnLandHome').onclick=()=>{ hideWord(); Q=null; stopScene(); say('r_heim'); const tk=trip; later(()=>{ if(trip===tk){ trip=null; goHome(); } },2600); };
-$('btnLandAgain').onclick=tripPick;
+$('btnLandHome').onclick=()=>{ hideWord(); qClear(); Q=null; stopScene(); say('r_heim'); const tk=trip; later(()=>{ if(trip===tk){ trip=null; goHome(); } },2600); };
+$('btnLandAgain').onclick=()=>tripPick();
+/* ================= MÄRCHENBUCH: whole interactive fairy tales ================= */
+/* Never stuck: after the narration every scene waits for her; after 7 s the right thing glows and the request is repeated,
+   after 2 wrong taps it glows at once, and after 22 s the scene solves itself and the tale goes on. */
+const TBG={wald:TRIPS[0].bg, meer:TRIPS[1].bg, wiese:TRIPS[2].bg, schloss:TRIPS[3].bg, zucker:TRIPS[4].bg, sterne:TRIPS[5].bg,
+  nacht:'linear-gradient(180deg,#0b0828 0%,#231a58 60%,#3c2c7a 100%)', dunkel:'linear-gradient(180deg,#05040f 0%,#0f0c26 60%,#1a1538 100%)',
+  winter:'linear-gradient(180deg,#8fb8e8 0%,#cfe4fa 55%,#ffffff 100%)', strand:'linear-gradient(180deg,#6fc3ff 0%,#bfe9ff 50%,#ffe9a8 78%,#ffd978 100%)',
+  tief:'linear-gradient(180deg,#0b3a6e 0%,#0a2550 60%,#071636 100%)', stube:'linear-gradient(180deg,#5a3a6e 0%,#8a5a7a 55%,#c98a6a 100%)'};
+/* scene: bg, fx, u:[x,y,size vh,flip] (unicorn), p:[[id,emoji,x,y,size vh,class]], a:{t:tap|all|choose|times|find|none,...}, s: narration */
+const TALES=[
+ {id:'laterne', title:'Die kleine Laterne', icon:'🏮', cover:TBG.wald, sc:[
+  {bg:'wald',fx:'fire', p:[['baum','🌳',72,50,56],['lat','🏮',66,44,16,'dim']], a:{t:'tap',id:'lat',w:'LATERNE'},
+   s:'Es war einmal eine kleine Laterne. Sie hing ganz allein an einem alten Baum im Zauberwald. Niemand brauchte sie mehr. Da kamst du mit deinem Einhorn vorbei. Tippe die Laterne an!'},
+  {bg:'wald',fx:'fire', p:[['lat','🏮',62,50,40,'dim'],['d1','💨',52,36,13],['d2','💨',72,46,13],['d3','💨',58,66,13]], a:{t:'all',ids:['d1','d2','d3'],m:'poof'},
+   s:'Die Laterne seufzte: Ach, ich bin so staubig. Ich kann gar nicht mehr leuchten. Wischst du mir den Staub ab? Tippe auf alle Staubwolken!'},
+  {bg:'wald',fx:'fire', p:[['lat','🏮',80,38,28,'dim'],['kerze','🕯️',42,70,17],['pilz','🍄',58,78,16],['nuss','🌰',52,58,14]], a:{t:'tap',id:'kerze',w:'KERZE',fin:'light'},
+   s:'Nun war die Laterne blitzblank. Aber es fehlte noch ein Licht. Was gehört in eine Laterne? Such die Kerze!'},
+  {bg:'wald',fx:'fire', p:[['lat','🏮',52,32,26,'glow'],['igel','🦔',34,80,14],['hase','🐰',66,82,14],['fuchs','🦊',88,70,14]], a:{t:'all',ids:['igel','hase','fuchs'],m:'come',to:[52,52],w:{igel:'IGEL',hase:'HASE',fuchs:'FUCHS'}},
+   s:'Da strahlte die Laterne heller als je zuvor! Im dunklen Wald hatten sich drei Tierkinder verlaufen. Sie sahen das Licht. Ruf sie alle herbei: den Igel, den Hasen und den Fuchs!'},
+  {bg:'wald',fx:'fire', p:[['lat','🏮',84,26,18,'glow'],['igel','🦔',42,58,19],['hase','🐰',60,58,19],['fuchs','🦊',78,58,19]], a:{t:'choose',ids:['igel','hase','fuchs'],w:{igel:'IGEL',hase:'HASE',fuchs:'FUCHS'}},
+   s:'Die Tierkinder waren so müde. Dein Einhorn sagte: Steigt auf, ich trage euch nach Hause! Wer darf zuerst reiten? Du darfst wählen.'},
+  {bg:'nacht', p:[['mond','🌙',80,38,30],['haus','🏠',46,74,18],['pick','$',34,62,11]], a:{t:'tap',id:'mond',w:'MOND'},
+   s:'Bald lagen alle drei in ihren Betten. Der Mond hatte alles gesehen. Er sprach: Kleine Laterne, du hast ein gutes Herz. Dafür habe ich ein Geschenk. Tippe den Mond an!'},
+  {bg:'sterne', p:[['mond','🌙',24,24,24],['stern','🌟',62,30,26,'glow tw']], a:{t:'none'}, fx:'glit',
+   s:'Da hob der Mond die kleine Laterne hoch hinauf an den Himmel. Dort leuchtet sie noch heute, als goldener Stern. Und wenn du abends hinaufschaust, dann zwinkert sie dir zu. Ende.'}]},
+ {id:'prinzessin', title:'Die Prinzessin, die nicht lachen konnte', icon:'👸', cover:TBG.schloss, sc:[
+  {bg:'schloss', p:[['burg','🏰',74,38,46],['prin','👸',56,68,22]], a:{t:'tap',id:'prin'},
+   s:'Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!'},
+  {bg:'schloss', p:[['koenig','🤴',44,58,22],['burg','🏰',80,48,36]], a:{t:'tap',id:'burg',w:'BURG'},
+   s:'Der König war traurig. Er rief: Wer meine Tochter zum Lachen bringt, bekommt die schönste Torte im ganzen Land! Da machtest du dich mit deinem Einhorn auf den Weg. Tippe auf die Burg!'},
+  {bg:'schloss', p:[['prin','👸',84,30,18],['banane','🍌',42,64,19],['ente','🦆',60,64,19],['hut','🎩',78,64,19]], a:{t:'choose',ids:['banane','ente','hut'],w:{banane:'BANANE',ente:'ENTE',hut:'HUT'}},
+   s:'Zuerst kam ein Ritter mit einer goldenen Krone. Die Prinzessin lachte nicht. Dann kam ein Zauberer mit einem Ring. Sie lachte wieder nicht. Was ist denn wirklich lustig? Du darfst wählen.'},
+  {bg:'schloss', u:[46,64,44], p:[['prin','👸',86,30,18],['k1','☁️',30,84,22],['k2','☁️',62,86,24],['pick','$',56,36,13]], a:{t:'times',id:'uni',n:3},
+   s:'Dein Einhorn setzte es sich auf den Kopf und tanzte. Da stolperte es und purzelte mitten in einen Berg aus Kissen. Plumps! Kitzle dein Einhorn, damit es wieder aufsteht. Tippe es dreimal an!'},
+  {bg:'schloss', p:[['prin','👸',54,60,26,'party'],['h1','❤️',34,30,13],['h2','❤️',52,22,13],['h3','❤️',72,30,13],['h4','❤️',86,50,13]], a:{t:'all',ids:['h1','h2','h3','h4'],m:'poof'},
+   s:'Da geschah es. Die Prinzessin kicherte. Erst ganz leise. Dann lachte sie laut! Sie lachte so sehr, dass lauter kleine Herzen aus dem Schloss flogen. Fang alle Herzen!'},
+  {bg:'schloss', p:[['koenig','🤴',36,42,20],['torte','🎂',62,68,22],['krone','👑',82,58,15],['kerze','🕯️',48,78,13]], a:{t:'tap',id:'torte',w:'TORTE'},
+   s:'Der König hielt sein Wort. Er ließ die größte Torte bringen, die du je gesehen hast. Mit Sahne und Erdbeeren. Wo ist die Torte?'},
+  {bg:'schloss', p:[['koenig','🤴',40,50,20],['prin','👸',58,54,22,'party'],['torte','🎂',76,70,20],['h1','❤️',50,24,11,'tw'],['h2','❤️',72,30,11,'tw']], a:{t:'none'}, fx:'glit',
+   s:'Die Prinzessin, der König, du und dein Einhorn aßen zusammen die ganze Torte auf. Von diesem Tag an lachte die Prinzessin jeden Morgen. Und wenn sie nicht aufgehört hat, dann lacht sie noch heute. Ende.'}]},
+ {id:'welle', title:'Die kleine Welle', icon:'🌊', cover:TBG.meer, sc:[
+  {bg:'meer', u:[18,36,30], p:[['welle','🌊',60,60,34]], a:{t:'tap',id:'welle'},
+   s:'Es war einmal eine kleine Welle. Sie wohnte weit draußen im Glitzermeer. Sie hatte nur einen einzigen Wunsch: Einmal wollte sie den Strand sehen. Tippe die kleine Welle an!'},
+  {bg:'meer', u:[18,36,30], p:[['welle','🌊',32,76,16],['fisch','🐟',52,50,14],['wal','🐳',72,64,26],['robbe','🦭',88,42,14]], a:{t:'tap',id:'wal',w:'WAL'},
+   s:'Aber der Weg zum Strand war weit. Viel zu weit für eine kleine Welle. Dein Einhorn flog über das Wasser und rief die Meerestiere zu Hilfe. Ruf den Wal!'},
+  {bg:'meer', u:[18,46,28], p:[['sonne','☀️',62,24,22],['c1','☁️',42,22,26,'dark'],['c2','☁️',63,26,28,'dark'],['c3','☁️',84,20,24,'dark'],['welle','🌊',52,78,16],['wal','🐳',30,80,16]], a:{t:'all',ids:['c1','c2','c3'],m:'poof'},
+   s:'Der Wal pustete eine große Fontäne. Hui! Da sauste die Welle ein gutes Stück voran. Doch dann zog ein Sturm auf. Die Wolken wurden ganz dunkel. Schieb alle Wolken weg!'},
+  {bg:'tief', u:[18,36,28], p:[['muschel','🐚',44,66,19],['edel','💎',61,66,19],['seestern','⭐',78,66,19]], a:{t:'choose',ids:['muschel','edel','seestern']},
+   s:'Die Sonne schien wieder. Tief unten auf dem Meeresgrund sah die Welle etwas glitzern. Ein Geschenk für den Strand! Was nimmt die kleine Welle mit? Du darfst wählen.'},
+  {bg:'meer', u:[18,36,28], p:[['delfin','🐬',66,48,28,'party'],['welle','🌊',38,76,16],['pick','$',38,62,10]], a:{t:'tap',id:'delfin',w:'DELFIN'},
+   s:'Nun kam der Delfin. Er sprang in hohen Bögen über das Wasser und rief: Mir nach! Ich kenne den Weg! Folge dem Delfin. Tippe ihn an!'},
+  {bg:'strand', u:[16,40,28], p:[['palme','🌴',90,46,34],['boot','⛵',70,62,26],['kind','🧒',50,72,17],['welle','🌊',26,84,16]], a:{t:'tap',id:'boot',w:'BOOT'},
+   s:'Endlich! Da war der Strand. Im warmen Sand lag ein kleines Boot. Und daneben spielte ein Kind. Die Welle rollte ganz sanft heran. Tippe auf das Boot!'},
+  {bg:'strand', u:[16,40,28], p:[['abend','🌅',80,24,26],['kind','🧒',56,66,19,'party'],['pick','$',46,82,13,'glow'],['welle','🌊',24,84,16]], a:{t:'none'}, fx:'glit',
+   s:'Die kleine Welle legte ihr Geschenk in den Sand, genau vor die Füße des Kindes. Das Kind lachte vor Freude. Dann rollte die Welle glücklich zurück ins Meer. Und jeden Abend kommt sie wieder und bringt etwas Schönes mit. Ende.'}]},
+ {id:'mondkuchen', title:'Der Bär, der einen Mond backen wollte', icon:'🐻', cover:TBG.zucker, sc:[
+  {bg:'zucker', p:[['baer','🐻',60,56,30],['maus','🐭',82,76,12]], a:{t:'tap',id:'baer'},
+   s:'Es war einmal ein kleiner Bär. Er war Bäcker im Zuckerland. Seine Freundin, die Maus, fürchtete sich im Dunkeln. Da hatte der Bär eine Idee: Ich backe ihr einen Mond! Tippe den Bären an!'},
+  {bg:'zucker', p:[['baer','🐻',86,40,22],['topf','🥣',54,38,24],['ei','🥚',40,70,16],['butter','🧈',58,78,16],['banane','🍌',74,68,16]], a:{t:'all',ids:['ei','butter','banane'],m:'come',to:[54,36],w:{ei:'EI',butter:'BUTTER',banane:'BANANE'}},
+   s:'Für einen Mondkuchen braucht man drei Dinge: ein Ei, Butter und eine Banane. Hilfst du dem Bären? Tippe alle Zutaten an!'},
+  {bg:'stube', p:[['uhr','⏲️',56,56,30],['baer','🐻',84,60,20],['s1','⭐',40,26,15],['s2','⭐',56,20,15],['s3','⭐',72,26,15]], a:{t:'all',ids:['s1','s2','s3'],m:'poof'},
+   s:'Der Bär rührte und rührte. Dann schob er den Kuchen in den Ofen. Jetzt heißt es warten. Zähl mit bis drei: Tippe auf die Sterne!'},
+  {bg:'stube', p:[['kuchen','🌕',54,40,36,'glow'],['bonbon','🍬',38,80,15],['keks','🍪',54,82,15],['eis','🍦',70,80,15]], a:{t:'choose',ids:['bonbon','keks','eis'],w:{bonbon:'BONBON',keks:'KEKS',eis:'EIS'}},
+   s:'Pling! Der Kuchen war fertig. Rund und gelb wie der Mond. Aber er sah noch so leer aus. Womit schmücken wir ihn? Du darfst wählen.'},
+  {bg:'nacht', p:[['baer','🐻',38,72,17],['kuchen','🌕',38,56,12,'glow'],['baum','🌳',56,56,28],['haus','🏠',76,62,26],['zelt','⛺',93,72,14]], a:{t:'tap',id:'haus',w:'HAUS'},
+   s:'Wunderschön! Vorsichtig trug der Bär den Mondkuchen durch die Nacht. Dein Einhorn leuchtete ihm den Weg. Wo wohnt die Maus? Tippe auf das Haus!'},
+  {bg:'stube', p:[['kuchen','🌕',84,40,24,'glow'],['maus','🐭',58,70,24],['baer','🐻',38,50,18]], a:{t:'tap',id:'maus',w:'MAUS'},
+   s:'Die Maus machte große Augen. Ein Mond? Nur für mich? Sie stellte ihn ans Fenster. Und wirklich: Er leuchtete ein kleines bisschen. Tippe die Maus an!'},
+  {bg:'stube', p:[['kuchen','🌕',80,30,24,'glow tw'],['maus','🐭',60,70,20,'party'],['baer','🐻',42,58,22],['pick','$',72,82,11]], a:{t:'none'}, fx:'glit',
+   s:'Seit dieser Nacht hat die Maus keine Angst mehr. Denn sie weiß: Wer einen Freund hat, der ihm einen Mond backt, der ist niemals allein. Und ein Stückchen Kuchen gab es auch noch. Ende.'}]},
+ {id:'schneeflocke', title:'Die Schneeflocke und der Frühling', icon:'❄️', cover:TBG.winter, sc:[
+  {bg:'winter',fx:'snow', u:[34,64,46], p:[['flocke','❄️',53,40,13,'tw']], a:{t:'tap',id:'flocke'},
+   s:'Es war einmal eine kleine Schneeflocke. Sie tanzte vom Himmel herab und landete genau auf der Nase von deinem Einhorn. Hatschi! Tippe die Schneeflocke an!'},
+  {bg:'winter',fx:'snow', p:[['flocke','❄️',52,28,12,'tw'],['m1','⚪',42,80,13],['m2','⚪',60,82,13],['m3','⚪',78,80,13]], a:{t:'all',ids:['m1','m2','m3'],m:'morph',to:{m1:'🌷',m2:'🌼',m3:'🌸'}},
+   s:'Die Schneeflocke sagte: Alle erzählen vom Frühling. Von Blumen und von Bienen. Den möchte ich so gerne sehen! Aber der Frühling schlief noch tief unter dem Schnee. Wecke alle Blumen auf!'},
+  {bg:'winter', p:[['sonne','☀️',40,50,22],['mond','🌙',62,48,18],['wolke','☁️',84,50,20],['b1','🌷',46,84,10],['b2','🌼',62,86,10],['b3','🌸',78,84,10]], a:{t:'tap',id:'sonne',w:'SONNE'},
+   s:'Die ersten Blumen streckten sich. Aber brrr, es war noch viel zu kalt. Wer kann es warm machen? Ruf die Sonne!'},
+  {bg:'wiese', p:[['biene','🐝',44,58,19],['hase','🐰',61,58,19],['ente','🦆',78,58,19]], a:{t:'choose',ids:['biene','hase','ente'],w:{biene:'BIENE',hase:'HASE',ente:'ENTE'}},
+   s:'Die Sonne lachte und schickte ihre wärmsten Strahlen. Der Schnee schmolz, und die Tiere kamen aus ihren Verstecken. Wer kommt zuerst heraus? Du darfst wählen.'},
+  {bg:'wiese', p:[['flocke','❄️',44,34,8,'tw'],['rose','🌹',66,62,28],['blatt','🍃',86,72,14],['pick','$',50,82,13]], a:{t:'tap',id:'rose',w:'ROSE'},
+   s:'Die Schneeflocke staunte. So bunt! So schön! Doch ihr wurde ganz warm. Sie wurde kleiner und kleiner. Hab keine Angst, sagte dein Einhorn. Setz dich auf die Rose! Tippe auf die Rose!'},
+  {bg:'wiese', p:[['rose','🌹',60,62,40],['tropfen','💧',62,42,13,'glow tw']], a:{t:'tap',id:'tropfen'},
+   s:'Da geschah ein kleines Wunder. Die Schneeflocke wurde zu einem Tautropfen. Er glitzerte in der Sonne wie ein Diamant. Tippe den Tautropfen an!'},
+  {bg:'wiese', p:[['bogen','🌈',62,26,40],['rose','🌹',58,68,26],['tropfen','💧',59,54,9,'glow tw'],['pick','$',80,80,13,'party']], a:{t:'none'}, fx:'glit',
+   s:'Nun konnte sie den ganzen Frühling sehen. Und wenn der Winter wiederkommt, steigt sie hinauf in die Wolken und tanzt als Schneeflocke herab. So geht es Jahr für Jahr. Ende.'}]},
+ {id:'drache', title:'Der kleine Drache und der Glitzer', icon:'🐉', cover:TBG.nacht, sc:[
+  {bg:'schloss', p:[['drache','🐉',62,56,32],['g1','🐲',86,24,17],['g2','🐲',72,18,12]], a:{t:'tap',id:'drache',fin:'glit'},
+   s:'Es war einmal ein kleiner Drache. Alle Drachen konnten Feuer spucken. Nur er nicht. Wenn er es versuchte, kam nur Glitzer heraus. Tippe den kleinen Drachen an!'},
+  {bg:'schloss', u:[16,44,28], p:[['drache','🐉',62,46,15],['c1','☁️',40,34,28],['c2','☁️',62,46,30],['c3','☁️',84,32,28]], a:{t:'find',ids:['c1','c2','c3'],hit:'c2'},
+   s:'Die großen Drachen lachten: Glitzer! Wozu soll das gut sein? Da wurde der kleine Drache traurig und flog davon. Dein Einhorn flog hinterher. Hinter welcher Wolke versteckt er sich? Tippe die Wolken an!'},
+  {bg:'schloss', p:[['drache','🐉',62,56,30]], a:{t:'times',id:'drache',n:3,fin:'glit'},
+   s:'Dein Einhorn sagte: Ich finde Glitzer wunderschön! Komm, wir üben zusammen. Eins, zwei, drei: Hatschi! Tippe dreimal auf den Drachen!'},
+  {bg:'dunkel', p:[['burg','🏰',52,30,30,'dim'],['kerze','🕯️',44,72,18,'dim'],['laterne','🏮',61,72,18,'dim'],['mond','🌙',78,72,18,'dim']], a:{t:'choose',ids:['kerze','laterne','mond'],w:{kerze:'KERZE',laterne:'LATERNE',mond:'MOND'}},
+   s:'In dieser Nacht kam ein großer Sturm. Er blies alle Lichter im Schloss aus. Die Kerze, die Laterne, sogar den Mond deckte er zu. Es war stockdunkel. Welches Licht versuchen wir? Du darfst wählen.'},
+  {bg:'dunkel', p:[['burg','🏰',54,30,30,'dim'],['pick','$',82,70,13,'dim'],['drache','🐉',60,66,26]], a:{t:'tap',id:'drache',fin:'light'},
+   s:'Aber es wollte einfach nicht brennen. Alle im Schloss hatten Angst. Da holte der kleine Drache ganz tief Luft. Hilf ihm! Tippe auf den Drachen!'},
+  {bg:'nacht', p:[['burg','🏰',52,46,44,'glow'],['f1','✨',30,26,13,'tw'],['f2','✨',50,16,13,'tw'],['f3','✨',72,24,13,'tw'],['f4','✨',86,48,13,'tw']], a:{t:'all',ids:['f1','f2','f3','f4'],m:'poof'}, fx:'glit',
+   s:'Hatschi! Tausend Glitzerfunken flogen durch die Nacht. Sie setzten sich auf die Türme, auf die Bäume und auf die Wolken. Das ganze Schloss funkelte! Fang alle Funken!'},
+  {bg:'nacht', p:[['burg','🏰',76,40,40,'glow'],['drache','🐉',52,62,26,'party'],['krone','👑',53,44,10],['koenig','🤴',34,50,17]], a:{t:'none'}, fx:'glit',
+   s:'Nun lachte niemand mehr über den kleinen Drachen. Der König machte ihn zum Lichtmeister im Schloss. Jeden Abend pustet er die Sterne an den Himmel. Denn das, was an dir anders ist, ist oft dein größter Schatz. Ende.'}]}
+];
+reg('m_buch','Das ist dein Märchenbuch. Welches Märchen möchtest du hören?',null,'Märchen');
+reg('m_hilf','Tippe auf das, was leuchtet!',null,'Märchen');
+reg('m_ende','Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.',null,'Märchen');
+TALES.forEach(t=>{ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen'); t.sc.forEach((s,i)=>reg('t_'+t.id+'_'+(i+1),s.s,null,'Märchen')); });
+if(!S.tales||typeof S.tales!=='object') S.tales={};
+let tale=null, taleRun=0, TA=null, taleT=[];
+const taleOn=()=>$('tale').classList.contains('on');
+function tLater(fn,ms){ taleT.push(setTimeout(fn,ms)); }
+function tClear(){ taleT.forEach(clearTimeout); taleT=[]; }
+function taleShelf(){ stopAll(); stopScene(); tClear(); hideWord(); tale=null; TA=null; tripChrome('pick');
+  const T=$('tripBody'); T.className='shelf'; T.innerHTML='';
+  TALES.forEach((t,i)=>{ const b=el('button','book');
+    b.innerHTML=`<div class="cover" style="background:${t.cover}">${t.icon}${S.tales[t.id]?'<b>⭐</b>':''}</div><div class="pn">${t.title}</div>`;
+    b.style.animationDelay=(-i*.5)+'s';
+    b.onclick=()=>{ if(tale) return; chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22); b.classList.add('chosen'); tale={pending:true}; setTimeout(()=>startTale(t),700); };
+    T.appendChild(b); });
+  show('trip'); say('m_buch'); }
+function startTale(t){ if(!trip) trip={uni:0}; tale={t,i:-1,pick:null,run:++taleRun}; show('tale'); nextScene(); }
+function tEl(id){ return TA&&TA.els[id]; }
+function nextScene(){
+  if(!tale||!tale.t) return; stopScene(); tClear(); hideWord(); tale.i++; const t=tale.t, run=tale.run;
+  if(tale.i>=t.sc.length) return endTale();
+  const sc=t.sc[tale.i], W=$('taleWorld'); W.innerHTML=''; W.style.background=TBG[sc.bg]||sc.bg;
+  W.appendChild(el('div','ground'));
+  if(sc.fx==='fire') for(let k=0;k<16;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${15+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; W.appendChild(f); }
+  if(sc.fx==='snow'){ rainDown(['❄','❄️','✻'],9000,50); }
+  if(sc.fx==='glit'){ rainDown(['✦','✧','★'],6000,40); }
+  $('taleDots').innerHTML=t.sc.map((_,k)=>`<i class="${k<tale.i?'done':k===tale.i?'now':''}"></i>`).join('');
+  TA={sc,a:sc.a,live:false,done:false,left:[],wrong:0,n:0,els:{}};
+  const u=sc.u||[15,70,34], ub=el('button','tp tuni'); ub.style.cssText=`left:${u[0]}%;top:${u[1]}%;width:${u[2]}vh`;
+  ub.innerHTML=uniSVG(HERD[trip.uni|0],{cls:'uni'+(u[3]?' flip':'')}); ub.onclick=()=>tapProp('uni'); W.appendChild(ub); TA.els.uni=ub;
+  sc.p.forEach(([id,e,x,y,z,cls])=>{ if(e==='$'){ if(!tale.pick) return; e=tale.pick; }
+    const b=el('button','tp '+(cls||''),e); b.style.cssText=`left:${x}%;top:${y}%;font-size:${z||16}vh`; b.onclick=()=>tapProp(id); W.appendChild(b); TA.els[id]=b; });
+  const a=sc.a; TA.left = a.t==='tap'||a.t==='times' ? [a.id] : a.t==='none' ? [] : a.ids.slice();
+  chime([659,880]);
+  (async()=>{ if(tale.i===0) await say('t_'+t.id+'_titel','t_'+t.id+'_1'); else await say('t_'+t.id+'_'+(tale.i+1));
+    if(!tale||tale.run!==run||!taleOn()||TA.sc!==sc) return; sceneReady(); })(); }
+function sceneReady(){ const a=TA.a; if(TA.done) return; TA.live=true;
+  if(a.t==='none'){ TA.done=true; return tLater(nextScene,1600); }
+  if(a.w&&typeof a.w==='string'){ const bw=$('bigWord'); bw.innerHTML=wordHTML(a.w); bw.className='hold'; }
+  TA.left.forEach(id=>tEl(id)&&tEl(id).classList.add('ask'));
+  armIdle(); }
+function armIdle(){ tClear(); tLater(()=>taleHint(true),7000); tLater(()=>taleHint(true),14500); tLater(taleAuto,22000); }
+function taleHint(speak){ if(!TA||!TA.live) return; const a=TA.a;
+  const ids = a.t==='find' ? [a.hit] : a.t==='choose' ? TA.left : TA.left;
+  ids.forEach(id=>tEl(id)&&tEl(id).classList.add('hint'));
+  if(speak){ if(a.w&&typeof a.w==='string') say('q_such','wort_'+keyOf(a.w)); else say('m_hilf'); } }
+function taleAuto(){ if(!TA||!TA.live) return; const a=TA.a, run=tale.run, sc=TA.sc;
+  const seq = a.t==='times' ? Array(Math.max(1,a.n-TA.n)).fill(a.id) : a.t==='choose' ? [TA.left[0]] : a.t==='find' ? [a.hit] : TA.left.slice();
+  seq.forEach((id,k)=>tLater(()=>{ if(tale&&tale.run===run&&TA&&TA.sc===sc&&TA.live) tapProp(id,true); },k*750)); }
+function propFx(b,n){ chime([1175,1568]); glitterBurst(...centerOf(b),n||22,16); }
+function tapProp(id,auto){
+  if(!TA||!tale) return; const b=tEl(id), a=TA.a; if(!b) return;
+  if(!TA.live){ boing2(b); return; }
+  const good = a.t==='find' ? a.ids.includes(id)&&TA.left.includes(id) : TA.left.includes(id);
+  if(!good){ boing2(b); if(a.t!=='none'&&id!=='uni'||a.t==='times'){ TA.wrong++; if(TA.wrong>=2) taleHint(false); } return; }
+  if(!auto) armIdle();
+  b.classList.remove('ask','hint');
+  if(a.t==='tap'){ propFx(b,30); boing2(b); return sceneDone(); }
+  if(a.t==='times'){ TA.n++; propFx(b,18+TA.n*8); boing2(b); if(id==='uni'){ const v=b.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); }
+    if(TA.n>=a.n) return sceneDone(); b.classList.add('ask'); return; }
+  if(a.t==='choose'){ propFx(b,34); boing2(b); tale.pick=b.textContent; TA.left.forEach(o=>{ if(o!==id&&tEl(o)) tEl(o).classList.add('fade'); });
+    if(a.w&&a.w[id]) say('wort_'+keyOf(a.w[id])); b.classList.add('glow'); return sceneDone(); }
+  if(a.t==='find'){ TA.left=TA.left.filter(x=>x!==id); b.classList.add('poof'); chime([880]);
+    if(id===a.hit){ const d=tEl('drache'); if(d){ propFx(d,34); boing2(d); } return sceneDone(); } return; }
+  /* all */
+  TA.left=TA.left.filter(x=>x!==id); propFx(b);
+  if(a.w&&a.w[id]){ const bw=$('bigWord'); bw.innerHTML=wordHTML(a.w[id]); bw.className=''; void bw.offsetWidth; bw.className='show'; say('wort_'+keyOf(a.w[id])); }
+  if(a.m==='poof') b.classList.add('poof');
+  else if(a.m==='morph'){ b.textContent=a.to[id]; b.style.fontSize='17vh'; boing2(b); }
+  else if(a.m==='come'){ try{ const r=$('taleWorld').getBoundingClientRect(), c=centerOf(b), k=a.ids.indexOf(id)-1;
+      const tx=r.left+r.width*a.to[0]/100+k*r.width*.08, ty=r.top+r.height*a.to[1]/100+r.height*.1;
+      b.animate([{transform:'none'},{transform:`translate(${(tx-c[0])*.5}px,${(ty-c[1])*.5-r.height*.1}px) scale(1.15)`,offset:.5},{transform:`translate(${tx-c[0]}px,${ty-c[1]}px) scale(.8)`}],{duration:900,easing:'ease-in-out',fill:'forwards'}); }catch(e){} }
+  if(!TA.left.length) sceneDone(); }
+function sceneDone(){ if(!TA||TA.done) return; TA.done=true; TA.live=false; tClear(); const a=TA.a, W=$('taleWorld');
+  if(a.w&&typeof a.w==='string') hideWord();
+  Object.values(TA.els).forEach(b=>b.classList.remove('ask','hint'));
+  if(a.fin==='light'){ W.style.background=TBG.nacht; Object.values(TA.els).forEach(b=>{ b.classList.remove('dim'); }); W.appendChild(el('div','whoosh')); }
+  if(a.fin==='glit'||a.fin==='light') glitterBurst(innerWidth*.6,innerHeight*.5,70,46);
+  chime([784,988,1175,1568]); hearts(...centerOf(TA.els.uni),4);
+  tLater(nextScene, a.t==='choose'||(a.t==='all'&&a.w) ? 2300 : 1800); }
+async function endTale(){ const t=tale.t, run=tale.run; tClear(); hideWord(); S.tales[t.id]=true; save();
+  const g=el('div','gift','⭐'); $('taleWorld').appendChild(g); chime([523,659,784,1047,1318]); glitterBurst(innerWidth/2,innerHeight/2,60,40); rainDown(['✦','✧','★','💖'],3000,40);
+  await say('m_ende'); await wait(1200); if(!tale||tale.run!==run||!taleOn()) return; taleShelf(); }
+$('btnTale').onclick=()=>{ stopAll(); if(S.herd===0){ trip={uni:0}; taleShelf(); } else tripPick(taleShelf); };
+$('btnTaleHome').onclick=()=>{ tClear(); tale=null; TA=null; trip=null; hideWord(); goHome(); };
+$('btnTaleShelf').onclick=taleShelf;
+
 
 
 /* parent gate: hold the gear for 1.5 s */
@@ -1156,7 +1381,7 @@ function openParent(){
 
   <h2>Aufnahmen anhören und prüfen</h2>
   <div class="box">
-    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen','Einhörner','Abenteuer'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
+    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen','Einhörner','Abenteuer','Märchen'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
     <p>▶ antippen zum Anhören, ✗ für falsche Aufnahmen. Die markierten Namen unten kopieren und bei der GitHub-Aktion in „Nur diese Aufnahmen“ einfügen.</p>
     <div id="pChk"></div>
     <textarea id="pBad" readonly style="height:70px"></textarea>
@@ -1208,7 +1433,7 @@ function openParent(){
   $('pBadClear').onclick=()=>{ BAD.clear(); saveBad(); drawChk(document.querySelector('#pChkGrp .sel').dataset.v); showBad(); };
   $('pHerd').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.herd=+v; save(); openParent(); };
   $('pStory').onclick=()=>{ S.seen={}; save(); $('pStoryMsg').textContent='Wird beim nächsten Start erzählt.'; };
-  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;S.loot={};S.tn={};save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
+  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;S.loot={};S.tn={};S.tales={};save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
 }
 </script>
 </body>

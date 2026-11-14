@@ -465,3 +465,54 @@ s_sterne1	Mondstein
 a_sterne2_in	Ein kleines Sternchen ist vom Himmel gepurzelt. Es will zurück zu seinen Freunden. Zeigst du ihm den Weg?
 a_sterne2_out	Das Sternchen leuchtet wieder hoch am Himmel. Es schickt dir glitzernden Sternenstaub.
 s_sterne2	Sternenstaub
+m_buch	Das ist dein Märchenbuch. Welches Märchen möchtest du hören?
+m_hilf	Tippe auf das, was leuchtet!
+m_ende	Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.
+t_laterne_titel	Die kleine Laterne.
+t_laterne_1	Es war einmal eine kleine Laterne. Sie hing ganz allein an einem alten Baum im Zauberwald. Niemand brauchte sie mehr. Da kamst du mit deinem Einhorn vorbei. Tippe die Laterne an!
+t_laterne_2	Die Laterne seufzte: Ach, ich bin so staubig. Ich kann gar nicht mehr leuchten. Wischst du mir den Staub ab? Tippe auf alle Staubwolken!
+t_laterne_3	Nun war die Laterne blitzblank. Aber es fehlte noch ein Licht. Was gehört in eine Laterne? Such die Kerze!
+t_laterne_4	Da strahlte die Laterne heller als je zuvor! Im dunklen Wald hatten sich drei Tierkinder verlaufen. Sie sahen das Licht. Ruf sie alle herbei: den Igel, den Hasen und den Fuchs!
+t_laterne_5	Die Tierkinder waren so müde. Dein Einhorn sagte: Steigt auf, ich trage euch nach Hause! Wer darf zuerst reiten? Du darfst wählen.
+t_laterne_6	Bald lagen alle drei in ihren Betten. Der Mond hatte alles gesehen. Er sprach: Kleine Laterne, du hast ein gutes Herz. Dafür habe ich ein Geschenk. Tippe den Mond an!
+t_laterne_7	Da hob der Mond die kleine Laterne hoch hinauf an den Himmel. Dort leuchtet sie noch heute, als goldener Stern. Und wenn du abends hinaufschaust, dann zwinkert sie dir zu. Ende.
+t_prinzessin_titel	Die Prinzessin, die nicht lachen konnte.
+t_prinzessin_1	Es war einmal eine Prinzessin. Sie wohnte hoch oben im Wolkenschloss. Sie hatte alles, was man sich wünschen kann. Aber sie hatte noch nie gelacht. Tippe die Prinzessin an!
+t_prinzessin_2	Der König war traurig. Er rief: Wer meine Tochter zum Lachen bringt, bekommt die schönste Torte im ganzen Land! Da machtest du dich mit deinem Einhorn auf den Weg. Tippe auf die Burg!
+t_prinzessin_3	Zuerst kam ein Ritter mit einer goldenen Krone. Die Prinzessin lachte nicht. Dann kam ein Zauberer mit einem Ring. Sie lachte wieder nicht. Was ist denn wirklich lustig? Du darfst wählen.
+t_prinzessin_4	Dein Einhorn setzte es sich auf den Kopf und tanzte. Da stolperte es und purzelte mitten in einen Berg aus Kissen. Plumps! Kitzle dein Einhorn, damit es wieder aufsteht. Tippe es dreimal an!
+t_prinzessin_5	Da geschah es. Die Prinzessin kicherte. Erst ganz leise. Dann lachte sie laut! Sie lachte so sehr, dass lauter kleine Herzen aus dem Schloss flogen. Fang alle Herzen!
+t_prinzessin_6	Der König hielt sein Wort. Er ließ die größte Torte bringen, die du je gesehen hast. Mit Sahne und Erdbeeren. Wo ist die Torte?
+t_prinzessin_7	Die Prinzessin, der König, du und dein Einhorn aßen zusammen die ganze Torte auf. Von diesem Tag an lachte die Prinzessin jeden Morgen. Und wenn sie nicht aufgehört hat, dann lacht sie noch heute. Ende.
+t_welle_titel	Die kleine Welle.
+t_welle_1	Es war einmal eine kleine Welle. Sie wohnte weit draußen im Glitzermeer. Sie hatte nur einen einzigen Wunsch: Einmal wollte sie den Strand sehen. Tippe die kleine Welle an!
+t_welle_2	Aber der Weg zum Strand war weit. Viel zu weit für eine kleine Welle. Dein Einhorn flog über das Wasser und rief die Meerestiere zu Hilfe. Ruf den Wal!
+t_welle_3	Der Wal pustete eine große Fontäne. Hui! Da sauste die Welle ein gutes Stück voran. Doch dann zog ein Sturm auf. Die Wolken wurden ganz dunkel. Schieb alle Wolken weg!
+t_welle_4	Die Sonne schien wieder. Tief unten auf dem Meeresgrund sah die Welle etwas glitzern. Ein Geschenk für den Strand! Was nimmt die kleine Welle mit? Du darfst wählen.
+t_welle_5	Nun kam der Delfin. Er sprang in hohen Bögen über das Wasser und rief: Mir nach! Ich kenne den Weg! Folge dem Delfin. Tippe ihn an!
+t_welle_6	Endlich! Da war der Strand. Im warmen Sand lag ein kleines Boot. Und daneben spielte ein Kind. Die Welle rollte ganz sanft heran. Tippe auf das Boot!
+t_welle_7	Die kleine Welle legte ihr Geschenk in den Sand, genau vor die Füße des Kindes. Das Kind lachte vor Freude. Dann rollte die Welle glücklich zurück ins Meer. Und jeden Abend kommt sie wieder und bringt etwas Schönes mit. Ende.
+t_mondkuchen_titel	Der Bär, der einen Mond backen wollte.
+t_mondkuchen_1	Es war einmal ein kleiner Bär. Er war Bäcker im Zuckerland. Seine Freundin, die Maus, fürchtete sich im Dunkeln. Da hatte der Bär eine Idee: Ich backe ihr einen Mond! Tippe den Bären an!
+t_mondkuchen_2	Für einen Mondkuchen braucht man drei Dinge: ein Ei, Butter und eine Banane. Hilfst du dem Bären? Tippe alle Zutaten an!
+t_mondkuchen_3	Der Bär rührte und rührte. Dann schob er den Kuchen in den Ofen. Jetzt heißt es warten. Zähl mit bis drei: Tippe auf die Sterne!
+t_mondkuchen_4	Pling! Der Kuchen war fertig. Rund und gelb wie der Mond. Aber er sah noch so leer aus. Womit schmücken wir ihn? Du darfst wählen.
+t_mondkuchen_5	Wunderschön! Vorsichtig trug der Bär den Mondkuchen durch die Nacht. Dein Einhorn leuchtete ihm den Weg. Wo wohnt die Maus? Tippe auf das Haus!
+t_mondkuchen_6	Die Maus machte große Augen. Ein Mond? Nur für mich? Sie stellte ihn ans Fenster. Und wirklich: Er leuchtete ein kleines bisschen. Tippe die Maus an!
+t_mondkuchen_7	Seit dieser Nacht hat die Maus keine Angst mehr. Denn sie weiß: Wer einen Freund hat, der ihm einen Mond backt, der ist niemals allein. Und ein Stückchen Kuchen gab es auch noch. Ende.
+t_schneeflocke_titel	Die Schneeflocke und der Frühling.
+t_schneeflocke_1	Es war einmal eine kleine Schneeflocke. Sie tanzte vom Himmel herab und landete genau auf der Nase von deinem Einhorn. Hatschi! Tippe die Schneeflocke an!
+t_schneeflocke_2	Die Schneeflocke sagte: Alle erzählen vom Frühling. Von Blumen und von Bienen. Den möchte ich so gerne sehen! Aber der Frühling schlief noch tief unter dem Schnee. Wecke alle Blumen auf!
+t_schneeflocke_3	Die ersten Blumen streckten sich. Aber brrr, es war noch viel zu kalt. Wer kann es warm machen? Ruf die Sonne!
+t_schneeflocke_4	Die Sonne lachte und schickte ihre wärmsten Strahlen. Der Schnee schmolz, und die Tiere kamen aus ihren Verstecken. Wer kommt zuerst heraus? Du darfst wählen.
+t_schneeflocke_5	Die Schneeflocke staunte. So bunt! So schön! Doch ihr wurde ganz warm. Sie wurde kleiner und kleiner. Hab keine Angst, sagte dein Einhorn. Setz dich auf die Rose! Tippe auf die Rose!
+t_schneeflocke_6	Da geschah ein kleines Wunder. Die Schneeflocke wurde zu einem Tautropfen. Er glitzerte in der Sonne wie ein Diamant. Tippe den Tautropfen an!
+t_schneeflocke_7	Nun konnte sie den ganzen Frühling sehen. Und wenn der Winter wiederkommt, steigt sie hinauf in die Wolken und tanzt als Schneeflocke herab. So geht es Jahr für Jahr. Ende.
+t_drache_titel	Der kleine Drache und der Glitzer.
+t_drache_1	Es war einmal ein kleiner Drache. Alle Drachen konnten Feuer spucken. Nur er nicht. Wenn er es versuchte, kam nur Glitzer heraus. Tippe den kleinen Drachen an!
+t_drache_2	Die großen Drachen lachten: Glitzer! Wozu soll das gut sein? Da wurde der kleine Drache traurig und flog davon. Dein Einhorn flog hinterher. Hinter welcher Wolke versteckt er sich? Tippe die Wolken an!
+t_drache_3	Dein Einhorn sagte: Ich finde Glitzer wunderschön! Komm, wir üben zusammen. Eins, zwei, drei: Hatschi! Tippe dreimal auf den Drachen!
+t_drache_4	In dieser Nacht kam ein großer Sturm. Er blies alle Lichter im Schloss aus. Die Kerze, die Laterne, sogar den Mond deckte er zu. Es war stockdunkel. Welches Licht versuchen wir? Du darfst wählen.
+t_drache_5	Aber es wollte einfach nicht brennen. Alle im Schloss hatten Angst. Da holte der kleine Drache ganz tief Luft. Hilf ihm! Tippe auf den Drachen!
+t_drache_6	Hatschi! Tausend Glitzerfunken flogen durch die Nacht. Sie setzten sich auf die Türme, auf die Bäume und auf die Wolken. Das ganze Schloss funkelte! Fang alle Funken!
+t_drache_7	Nun lachte niemand mehr über den kleinen Drachen. Der König machte ihn zum Lichtmeister im Schloss. Jeden Abend pustet er die Sterne an den Himmel. Denn das, was an dir anders ist, ist oft dein größter Schatz. Ende.
