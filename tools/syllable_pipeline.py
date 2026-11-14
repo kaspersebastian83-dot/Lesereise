@@ -68,7 +68,9 @@ def install():
     n = 0
     for k in C:
         if not k.startswith(("silbe_", "laut_")): continue
-        cands = [os.path.basename(f)[:-4] for f in glob.glob(os.path.join(CAND, k + "__*.mp3"))]
+        if pick.get(k) == "alt" and os.path.exists(os.path.join(AUDIO, k + ".mp3")):
+            continue  # the earlier single recording was judged better – keep it
+        cands = [os.path.basename(f)[:-4] for f in glob.glob(os.path.join(CAND, k + "__*.mp3")) if "~" not in f]
         if not cands: continue
         name = pick.get(k) if pick.get(k) in cands else None
         if not name:

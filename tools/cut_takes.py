@@ -255,8 +255,14 @@ def main():
             else:
                 continue
             encode(pad(y), os.path.join(OUT, f"laut_{C}__{tid}-{V}.mp3")); made += 1
-            if C in HELD and dur >= 0.04 and os.environ.get("RAWCONS"):  # diagnosis: unstretched consonant
-                encode(pad(fade(level(cons), 0.004, 0.02)), os.path.join(OUT, f"laut_{C}__{tid}-{V}~kurz.mp3")); made += 1
+            if C in HELD and dur >= 0.04 and os.environ.get("RAWCONS"):  # diagnosis variants
+                body = cons
+                V_ = {"kurz": fade(level(cons), 0.01, 0.03),
+                      "psola": fade(level(np.concatenate([cons[:int(SR * 0.03)], psola_hold(cons, 0.5)])), 0.03, 0.12),
+                      "rb": fade(level(stretch(cons, max(0.1, dur / 0.5), C not in "fh")), 0.03, 0.12),
+                      "grain": fade(level(np.concatenate([cons[:int(SR * 0.02)], grain_noise(cons, 0.5)])), 0.03, 0.12)}
+                for nm, yy in V_.items():
+                    encode(pad(yy), os.path.join(OUT, f"laut_{C}__{tid}-{V}~{nm}.mp3")); made += 1
     open(os.path.join(OUT, "_diag.tsv"), "w").write("\n".join(DIAG))
     print(made, "Dateien geschrieben nach", OUT)
 

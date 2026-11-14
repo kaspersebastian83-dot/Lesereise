@@ -75,7 +75,7 @@ for path in files:
         print(f"CHK\t{fn}\t{key}\t{exp}\t(leer)\t9\tbad"); n_bad += 1; continue
     if key.startswith("laut_") and key[5:] not in "aeiou" and REF_A is not None:
         # single consonants are tested as the game uses them: sound, then "aa" -> must be heard as e.g. "m a"
-        wav = trim(wav); ref = trim(REF_A); xf = 160  # 10 ms crossfade straight into the vowel ("mmmaaa")
+        wav = trim(wav) * 0.4; ref = trim(REF_A); xf = 400  # consonant ~8 dB below the vowel, 25 ms crossfade ("mmmaaa")
         w = np.linspace(0, 1, xf, dtype=np.float32)
         wav = np.concatenate([wav[:-xf], wav[-xf:] * (1 - w) + ref[:xf] * w, ref[xf:]]); exp = exp + " aː"
     wav = np.pad(wav, (3200, 3200))
