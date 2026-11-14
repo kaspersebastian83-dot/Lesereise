@@ -105,7 +105,7 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .bigpic{font-size:calc(var(--u)*22);line-height:1;filter:drop-shadow(0 0 2.5vh rgba(255,235,190,.45))}
 .opts{display:flex;gap:3.5vw;justify-content:center;flex-wrap:wrap}
 .word{display:flex;gap:1vw}
-.word .tile{min-width:0;padding:0 calc(var(--u)*2.6)}
+.word .tile{min-width:0;font-size:calc(var(--u)*13*var(--ws,1));padding:0 calc(var(--u)*2.6*var(--ws,1))}
 .arrow{font-size:calc(var(--u)*8);width:calc(var(--u)*14);height:calc(var(--u)*14);animation:pulse 1.4s infinite}
 .blend{display:flex;align-items:center;gap:6vw;position:relative}
 .blend.merged{gap:0}
@@ -209,12 +209,12 @@ const SOUND_TEXT = {A:'Aaaah',E:'Eeeeh',I:'Iiiih',O:'Ooooh',U:'Uuuuh',M:'Mmmmm',
   F:'Fffff',W:'Wwwww',H:'Hhh',T:'T',D:'D',P:'P',B:'B',K:'K',G:'G',Z:'Ts'};
 const SOUND_TTS = {A:'aa',E:'ee',I:'ie',O:'oh',U:'uh',M:'mmm',L:'lll',S:'sss',N:'nnn',R:'rrr',F:'fff',W:'www',H:'h',T:'t',D:'d',P:'p',B:'b',K:'k',G:'g',Z:'ts'};
 const ANLAUT = {
-  M:[['Maus','🐭'],['Mond','🌙']], A:[['Apfel','🍎'],['Affe','🐒'],['Ameise','🐜']], L:[['Löwe','🦁'],['Lampe','💡'],['Lama','🦙']],
-  O:[['Oma','👵'],['Ohr','👂']], I:[['Igel','🦔']], S:[['Sonne','☀️'],['Sofa','🛋️']], N:[['Nase','👃'],['Nuss','🌰']],
-  E:[['Elefant','🐘'],['Ente','🦆']], R:[['Rose','🌹'],['Rakete','🚀'],['Regen','🌧️']], T:[['Tiger','🐯'],['Tomate','🍅'],['Tür','🚪']],
-  U:[['Uhr','⏰'],['Uhu','🦉']], D:[['Dino','🦖'],['Dose','🥫']], H:[['Hase','🐰'],['Hund','🐶'],['Haus','🏠']],
-  P:[['Pilz','🍄'],['Pinguin','🐧']], F:[['Fisch','🐟'],['Fuchs','🦊']], B:[['Banane','🍌'],['Ball','⚽'],['Bär','🐻']],
-  K:[['Katze','🐱'],['Kuh','🐮']], W:[['Wal','🐳'],['Wolke','☁️']], G:[['Gabel','🍴'],['Giraffe','🦒']], Z:[['Zebra','🦓'],['Zug','🚂']]
+  M:[['Maus','🐭'],['Mond','🌙'],['Mund','👄']], A:[['Apfel','🍎'],['Affe','🐒'],['Ameise','🐜'],['Anker','⚓']], L:[['Löwe','🦁'],['Lampe','💡'],['Lama','🦙'],['Lupe','🔍']],
+  O:[['Oma','👵'],['Ohr','👂'],['Opa','👴']], I:[['Igel','🦔'],['Insel','🏝️']], S:[['Sonne','☀️'],['Sofa','🛋️'],['Salat','🥗']], N:[['Nase','👃'],['Nuss','🌰'],['Nudel','🍝']],
+  E:[['Elefant','🐘'],['Ente','🦆'],['Engel','👼']], R:[['Rose','🌹'],['Rakete','🚀'],['Regen','🌧️'],['Roboter','🤖']], T:[['Tiger','🐯'],['Tomate','🍅'],['Tür','🚪'],['Trommel','🥁']],
+  U:[['Uhr','⏰'],['Uhu','🦉']], D:[['Dino','🦖'],['Dose','🥫'],['Delfin','🐬']], H:[['Hase','🐰'],['Hund','🐶'],['Haus','🏠'],['Hose','👖']],
+  P:[['Pilz','🍄'],['Pinguin','🐧'],['Papagei','🦜']], F:[['Fisch','🐟'],['Fuchs','🦊'],['Feder','🪶']], B:[['Banane','🍌'],['Ball','⚽'],['Bär','🐻'],['Brot','🍞']],
+  K:[['Katze','🐱'],['Kuh','🐮'],['Krone','👑'],['Kiwi','🥝']], W:[['Wal','🐳'],['Wolke','☁️'],['Wurm','🪱']], G:[['Gabel','🍴'],['Giraffe','🦒'],['Gitarre','🎸']], Z:[['Zebra','🦓'],['Zug','🚂'],['Zitrone','🍋']]
 };
 const WORDS = [
   ['MA-MA','👩'],['O-MA','👵'],['LA-MA','🦙'],['LI-MO','🥤'],['LI-LA','💜'],
@@ -222,8 +222,23 @@ const WORDS = [
   ['RO-SE','🌹'],['TO-MA-TE','🍅'],['MAUS','🐭'],['AU-TO','🚗'],['TOR-TE','🎂'],['TAS-SE','☕'],['NUSS','🌰'],
   ['PA-PA','👨'],['O-PA','👴'],['HO-SE','👖'],['HA-SE','🐰'],['DO-SE','🥫'],['SO-FA','🛋️'],['DI-NO','🦖'],['FO-TO','📷'],
   ['HUT','🎩'],['HUND','🐶'],['NU-DEL','🍝'],['TE-LE-FON','☎️'],['MOND','🌙'],['HAUS','🏠'],['LU-PE','🔍'],
-  ['BA-NA-NE','🍌'],['KA-MEL','🐫'],['KI-WI','🥝'],['WAL','🐳'],['TI-GER','🐯'],['BUS','🚌'],['GA-BEL','🍴'],['ZE-BRA','🦓'],['WOL-KE','☁️']
-].map(([w,e])=>({syl:w.split('-'),word:w.replace(/-/g,''),emoji:e}));
+  ['BA-NA-NE','🍌'],['KA-MEL','🐫'],['KI-WI','🥝'],['WAL','🐳'],['TI-GER','🐯'],['BUS','🚌'],['GA-BEL','🍴'],['ZE-BRA','🦓'],['WOL-KE','☁️'],
+  /* more sound-true words; third value = earliest letter stage (index) for words with ei, ie, au, silent h */
+  ['EN-TE','🦆'],['IN-SEL','🏝️'],['SA-LAT','🥗'],['E-LE-FANT','🐘'],['AF-FE','🐒'],
+  ['ER-DE','🌍'],['TOR','🥅'],['RAD','🚲'],['ROL-LER','🛴'],['MAN-TEL','🧥'],['LA-TER-NE','🏮'],['NA-DEL','🪡'],
+  ['HEFT','📓'],['LAM-PE','💡'],['U-HU','🦉'],['HEMD','👕'],['HAND','✋'],['ARM','💪'],['MUND','👄'],['FE-DER','🪶'],
+  ['HAM-MER','🔨'],['SAFT','🧃'],['PI-RAT','🏴‍☠️'],['PIN-SEL','🖌️'],['RA-DI-O','📻'],['PAN-DA','🐼'],['MAM-MUT','🦣'],
+  ['DEL-FIN','🐬'],['HUM-MER','🦞'],['PLA-NET','🪐'],
+  ['EI','🥚',3],['EIS','🍦',3],['EI-MER','🪣',3],['UHR','⏰',3],['OHR','👂',3],['SEI-FE','🧼',3],['LEI-TER','🪜',3],['MAIS','🌽',3],
+  ['BALL','⚽'],['BROT','🍞'],['KIND','🧒'],['I-GEL','🦔'],['KAR-TE','🗺️'],['BAUM','🌳'],['RA-KE-TE','🚀'],['RE-GEN','🌧️'],
+  ['PILZ','🍄'],['BIR-NE','🍐'],['TRAU-BE','🍇'],['BUT-TER','🧈'],['BETT','🛏️'],['BOOT','⛵'],['ZUG','🚂'],['TRAK-TOR','🚜'],
+  ['ZELT','⛺'],['RE-GEN-BO-GEN','🌈'],['BLATT','🍃'],['PFERD','🐴'],['KRO-KO-DIL','🐊'],['GI-RAF-FE','🦒'],['KAT-ZE','🐱'],
+  ['RO-BO-TER','🤖'],['GI-TAR-RE','🎸'],['TROM-PE-TE','🎺'],['TROM-MEL','🥁'],['BRIL-LE','👓'],['KRO-NE','👑'],['RING','💍'],
+  ['HERZ','❤️'],['BE-SEN','🧹'],['KEKS','🍪'],['BON-BON','🍬'],['ZI-TRO-NE','🍋'],['KA-ROT-TE','🥕'],['KAR-TOF-FEL','🥔'],
+  ['AN-KER','⚓'],['EN-GEL','👼'],['KER-ZE','🕯️'],['BURG','🏯'],['WURM','🪱'],['ROB-BE','🦭'],['FLA-MIN-GO','🦩'],['KO-A-LA','🐨'],
+  ['GO-RIL-LA','🦍'],['NIL-PFERD','🦛'],['BI-BER','🦫'],
+  ['KUH','🐮',4],['ZIE-GE','🐐',4],['PA-PA-GEI','🦜',4],['BEIN','🦵',4],['ZAHN','🦷',4],['GEIST','👻',4],['BIE-NE','🐝',4]
+].map(([w,e,m])=>({syl:w.split('-'),word:w.replace(/-/g,''),emoji:e,min:m||0}));
 const PROMPTS = {
   p_start:'Hallo! Ich bin Funkel. Komm, wir lesen!',
   p_laute:'Hör genau hin. Welcher Buchstabe ist das?',
@@ -468,11 +483,11 @@ const TASKS={
   },
   /* 4 — read a word in coloured syllables, match the picture */
   wort(first){
-    const L=letters(), ok=WORDS.filter(w=>w.word.split('').every(ch=>L.includes(ch)));
+    const L=letters(), ok=WORDS.filter(w=>S.level>=w.min && w.word.split('').every(ch=>L.includes(ch)));
     const fresh=ok.filter(w=>w.word.split('').some(ch=>newest().includes(ch)));
     let t; do{ t=(fresh.length&&Math.random()<.6)? rnd(fresh):rnd(ok) }while(t.word===G.last&&ok.length>1); G.last=t.word;
     const wk='wort_'+keyOf(t.word);
-    const word=el('div','word');
+    const word=el('div','word'); word.style.setProperty('--ws',Math.min(1,6.5/t.word.length));
     t.syl.forEach((s,i)=>{ const b=el('button','tile '+(i%2?'cB':'cA'),dSyl(s,i===0));
       b.onclick=()=>{ if(!G||G.busy)return; say('silbe_'+keyOf(s)); }; word.appendChild(b); });
     const pics=shuffle([t,...shuffle(WORDS.filter(w=>w.emoji!==t.emoji)).slice(0,2)]);
