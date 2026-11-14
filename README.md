@@ -27,3 +27,13 @@ z. B. `laut_m.mp3`, `silbe_ma.mp3`, `wort_mama.mp3`; dort lassen sich die Dateie
 
 Reihenfolge beim Abspielen: auf dem Gerät importierte Aufnahme → Aufnahme aus `audio/` → Gerätestimme.
 Wenn Wörter im Spiel geändert werden, muss `voice/clips.tsv` mitgeändert werden.
+
+## Silben und Laute
+Silben werden nicht einzeln vorgelesen (das klang oft englisch oder seltsam), sondern als Liste
+wie bei einer Lehrerin („Lies mit: Mah. Meh. Mie. Moh. Muh.“, ElevenLabs v3 mit Zeitmarken) und dann geschnitten.
+Die Einzellaute werden aus diesen Aufnahmen gebaut: Vokale gehalten, M/N/L/S/W/R gedehnt, F/H verlängert, T/P/K/B/D/G kurz.
+Das passiert automatisch in „Stimmen erzeugen“. Einzelne Silben/Laute neu: bei „Nur diese Aufnahmen“ z. B. `silbe_me,laut_m` eintragen –
+dann wird die ganze Zeile neu aufgenommen.
+
+„Aufnahmen prüfen“ (kostet keine Credits) lässt eine Lauterkennung hören, was in den Dateien gesprochen wird; Ergebnis im Log.
+Auswahl je Silbe/Laut: `voice/auswahl.json` (`alt` = frühere Einzelaufnahme behalten).
