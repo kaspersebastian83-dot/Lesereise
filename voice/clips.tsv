@@ -8,13 +8,19 @@ p_lob1	Super!
 p_lob2	Toll gemacht!
 p_lob3	Genau!
 p_lob4	Juhu!
+g_lob1	Zauberhaft!
+g_lob2	Der Stern leuchtet!
 p_nochmal	Hör noch mal hin.
-p_fertig	Geschafft! Du hast alle Sterne gesammelt.
-p_level	Wow! Jetzt kommen neue Buchstaben dazu.
-p_s1	Laute hören
-p_s2	Womit fängt es an?
-p_s3	Zusammenschieben
-p_s4	Wörter lesen
+g_intro1	Es war einmal ein kleines Einhorn. Es heißt Funkel. Jede Nacht schaute Funkel hinauf zu den Buchstabensternen. Sie leuchteten so schön!
+g_intro2	Doch eines Nachts kam ein wilder Wind. Huiii! Er pustete alle Buchstabensterne vom Himmel.
+g_intro3	Nun ist der Himmel ganz dunkel. Und Funkel ist traurig. Hilfst du Funkel, die Sterne wiederzufinden?
+g_wohin	Wohin reiten wir heute?
+g_wald	Das ist der Flüsterwald. Hier flüstern die Sterne zwischen den Bäumen. Wer genau hinhört, findet sie.
+g_wiese	Das ist die Mondwiese. Im Gras liegen lauter Dinge. Jedes kennt den Stern, mit dem es anfängt.
+g_bruecke	Das ist die Zauberbrücke. Sie ist zerbrochen! Wenn du zwei Laute zusammenschiebst, wächst sie wieder zusammen.
+g_turm	Das ist der Sternenturm. Hier wohnen die Zauberwörter. Wer sie liest, bringt den Turm zum Leuchten.
+g_fertig	Geschafft! Deine Sterne fliegen zurück an den Himmel.
+g_level	Schau mal! Neue Buchstabensterne sind aufgewacht.
 laut_m	Mmmmm
 laut_a	Aaaah
 laut_l	Lllll

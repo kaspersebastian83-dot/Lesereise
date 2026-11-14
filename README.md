@@ -3,10 +3,10 @@
 Lesen-lern-Spiel für Kinder ab ca. 3 Jahren – eine einzige HTML-Datei, offline nutzbar, keine Abhängigkeiten.
 
 ## Stationen
-1. **Laute hören** – Laut hören, Buchstaben finden
-2. **Anlaut** – Womit fängt das Wort an?
-3. **Zusammenschieben** – zwei Laute zu einer Silbe verbinden (M + A → MA)
-4. **Wörter lesen** – Wort in farbigen Silben lesen, passendes Bild antippen
+1. **Flüsterwald (Laute hören)** – Laut hören, Buchstaben finden
+2. **Mondwiese (Anlaut)** – Womit fängt das Wort an?
+3. **Zauberbrücke (Zusammenschieben)** – zwei Laute zu einer Silbe verbinden (M + A → MA)
+4. **Sternenturm (Wörter lesen)** – Wort in farbigen Silben lesen, passendes Bild antippen
 
 Buchstaben kommen in fünf Stufen dazu: `M A L O I` → `S N E` → `R T U` → `D H P F` → `B K W G Z`.
 
