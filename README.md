@@ -17,8 +17,10 @@ antippen = Name hören. Nach jeder richtigen Antwort fliegt ein Einhorn mit Glit
 
 ## Zauberreise (🗺️)
 Einhorn aussuchen → Ort aussuchen (Zauberwald, Glitzermeer, Blumenwiese, Wolkenschloss, Zuckerland, Sternenreise) →
-Ritt durch die Landschaft, unterwegs Glitzer fangen → am Ziel Dinge antippen: sie hüpfen, sagen ihr Wort und zeigen es
-groß in Silbenfarben.
+Ritt durch die Landschaft, unterwegs Glitzer fangen → am Ziel wartet ein kleines Abenteuer: Jemand braucht Hilfe
+(Eule, Waldfee, Meerjungfrau, Papagei Polly, Marienkäfer, Schmetterling, Wolkenprinzessin, kleiner Drache, Bäcker-Bär,
+Maus, Astronautin Mia, Sternchen). Drei Dinge werden gesucht – das Wort steht groß in Silbenfarben da und wird vorgelesen.
+Zum Dank gibt es ein Geschenk für die Schatzkiste (🎁, 12 Geschenke, 2 Abenteuer je Ort). Danach freies Antippen.
 
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.

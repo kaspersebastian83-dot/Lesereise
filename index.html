@@ -243,6 +243,25 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .caughtBadge{position:absolute;right:3vw;top:3vh;font-size:calc(var(--u)*5.5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.9);z-index:6}
 #land .bar{justify-content:flex-start;gap:2vw}
 
+.place .badges{display:flex;gap:1vw;font-size:calc(var(--u)*4.2);height:calc(var(--u)*5);filter:drop-shadow(0 0 1vh rgba(255,230,160,.8))}
+.place .badges .no{opacity:.3;filter:none}
+.mapgrid{gap:2.5vh 4vw;margin-top:9vh} .place{gap:.6vh} .place .pic{width:min(18vw,21vh);font-size:min(9.5vw,11vh)}
+.chestgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:3vh 3vw;width:86vw;margin-top:15vh}
+.slot{aspect-ratio:1;max-height:22vh;justify-self:center;width:min(18vw,22vh);border-radius:22%;font-size:min(10vw,12vh);line-height:1;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);border:.4vh solid rgba(255,225,160,.6);box-shadow:0 0 4vh rgba(255,217,138,.35),inset 0 0 3vh rgba(255,255,255,.15);animation:float 3.2s ease-in-out infinite}
+.slot.no{color:rgba(255,255,255,.3);font-weight:800;border-style:dashed;box-shadow:none;animation:none}
+.boing2{animation:boing2 .6s ease-out!important} @keyframes boing2{30%{transform:scale(1.3) rotate(-8deg)}60%{transform:scale(.92) rotate(6deg)}}
+.resident{position:absolute;left:5%;top:17%;font-size:min(13vw,17vh);line-height:1;z-index:4;padding:1vh;filter:drop-shadow(0 0 3vh rgba(255,245,210,.95));animation:float 2.6s ease-in-out infinite}
+.resident.party{animation:hop .5s ease-in-out infinite}
+.thing.wobt{animation:wobt .5s} @keyframes wobt{0%,100%{transform:translate(-50%,-50%) rotate(0)}25%{transform:translate(-50%,-50%) rotate(-12deg)}75%{transform:translate(-50%,-50%) rotate(12deg)}}
+#bigWord.hold{opacity:1;transform:translate(-50%,0) scale(1);animation:wordpulse 1.6s ease-in-out infinite}
+@keyframes wordpulse{50%{box-shadow:0 0 0 .7vh var(--gold),0 0 11vh 4vh rgba(255,201,77,.85)}}
+.herald{position:absolute;right:-12vw;top:16vh;font-size:min(10vw,13vh);z-index:2;filter:drop-shadow(0 0 3vh rgba(255,245,210,.9));animation:herald 6s ease-in-out forwards}
+@keyframes herald{0%{transform:translateX(0)}30%,70%{transform:translateX(-26vw) rotate(-8deg)}50%{transform:translateX(-26vw) translateY(-3vh) rotate(8deg)}100%{transform:translateX(0)}}
+.gift{pointer-events:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:min(34vw,42vh);line-height:1;z-index:7;filter:drop-shadow(0 0 6vh rgba(255,225,140,1));animation:giftin .8s cubic-bezier(.2,1.4,.4,1)}
+@keyframes giftin{from{transform:translate(-50%,-50%) scale(0) rotate(-40deg)}}
+.gift.away{transition:transform .8s ease-in,opacity .8s;transform:translate(-50%,-160%) scale(.2);opacity:0}
+
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -319,7 +338,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 </section>
 
 <section id="trip" class="screen">
-  <div class="bar"><button class="round hb" id="btnTripHome" aria-label="Zurück">🏠</button></div>
+  <div class="bar"><button class="round hb" id="btnTripHome" aria-label="Zurück">🏠</button><button class="round orb hb" id="btnChest" aria-label="Schatzkiste">🎁</button></div>
   <div id="tripBody"></div>
 </section>
 
@@ -478,7 +497,7 @@ const WORDS = [
   ['ZELT','⛺'],['RE-GEN-BO-GEN','🌈'],['BLATT','🍃'],['PFERD','🐴'],['KRO-KO-DIL','🐊'],['GI-RAF-FE','🦒'],['KAT-ZE','🐱'],
   ['RO-BO-TER','🤖'],['GI-TAR-RE','🎸'],['TROM-PE-TE','🎺'],['TROM-MEL','🥁'],['BRIL-LE','👓'],['KRO-NE','👑'],['RING','💍'],
   ['HERZ','❤️'],['BE-SEN','🧹'],['KEKS','🍪'],['BON-BON','🍬'],['ZI-TRO-NE','🍋'],['KA-ROT-TE','🥕'],['KAR-TOF-FEL','🥔'],
-  ['AN-KER','⚓'],['EN-GEL','👼'],['KER-ZE','🕯️'],['BURG','🏯'],['WURM','🪱'],['ROB-BE','🦭'],['FLA-MIN-GO','🦩'],['KO-A-LA','🐨'],
+  ['AN-KER','⚓'],['EN-GEL','👼'],['KER-ZE','🕯️'],['BURG','🏰'],['WURM','🪱'],['ROB-BE','🦭'],['FLA-MIN-GO','🦩'],['KO-A-LA','🐨'],
   ['GO-RIL-LA','🦍'],['NIL-PFERD','🦛'],['BI-BER','🦫'],
   ['KUH','🐮',4],['ZIE-GE','🐐',4],['PA-PA-GEI','🦜',4],['BEIN','🦵',4],['ZAHN','🦷',4],['GEIST','👻',4],['BIE-NE','🐝',4]
 ].map(([w,e,m])=>({syl:w.split('-'),word:w.replace(/-/g,''),emoji:e,min:m||0}));
@@ -912,41 +931,99 @@ function drawMeadow(){ const P=$('pasture'); P.innerHTML='';
 $('btnMeadow').onclick=()=>{ stopAll(); drawMeadow(); show('meadow'); say('g_herde'); };
 $('btnMeadowHome').onclick=goHome;
 document.querySelectorAll('.funkel-slot').forEach(d=>d.outerHTML=funkel());
-/* ================= JOURNEYS: pick a unicorn, pick a place, ride there ================= */
+/* ================= JOURNEYS: pick a unicorn, pick a place, ride there, live a little adventure ================= */
+/* every place has two adventures: someone needs help, she fetches three things by reading/hearing the word, and gets a keepsake */
 const TRIPS=[
  {id:'wald',   name:'Zauberwald',    icon:'🌲', bg:'linear-gradient(180deg,#081a24 0%,#123d3a 55%,#1d6a4c 100%)', far:['🌲','🌳','🌲','🏔️'], mid:['🍄','🌿','🌲','🦋','🌳','🍄'], catchE:['✨','🌟'], fire:true,
-  things:[['🦔','IGEL'],['🦊','FUCHS'],['🍄','PILZ'],['🦉','UHU'],['🐰','HASE'],['🌳','BAUM']]},
+  things:[['🦔','IGEL'],['🦊','FUCHS'],['🍄','PILZ'],['🐰','HASE'],['🌳','BAUM'],['🌰','NUSS'],['🍃','BLATT']],
+  adv:[{who:'🦉', need:['IGEL','FUCHS','HASE'], gift:'🪶', giftName:'Zauberfeder',
+        tin:'Die kleine Eule hat heute Geburtstag! Sie möchte ein Fest feiern. Aber ihre Freunde sind noch nicht da. Holst du sie?',
+        tout:'Alle Freunde sind da! Die Eule freut sich riesig. Zum Dank schenkt sie dir eine Zauberfeder.'},
+       {who:'🧚', need:['PILZ','NUSS','BLATT'], gift:'🍀', giftName:'Glücksklee',
+        tin:'Die Waldfee kocht eine Zaubersuppe. Dafür braucht sie drei Dinge aus dem Wald. Hilfst du ihr?',
+        tout:'Mmmh! Die Zaubersuppe glitzert und duftet. Die Waldfee schenkt dir einen Glücksklee.'}]},
  {id:'meer',   name:'Glitzermeer',   icon:'🌊', bg:'linear-gradient(180deg,#0a1a3f 0%,#1b4f8f 50%,#2d9fcf 100%)', far:['🏝️','⛵','🌊','🏝️'], mid:['🐚','🫧','🪸','🌊','🐠'], catchE:['🫧','✨'],
-  things:[['🐟','FISCH'],['🐳','WAL'],['🐬','DELFIN'],['🦭','ROBBE'],['⛵','BOOT'],['⚓','ANKER']]},
+  things:[['🐟','FISCH'],['🐳','WAL'],['🐬','DELFIN'],['🦭','ROBBE'],['⛵','BOOT'],['⚓','ANKER'],['🗺️','KARTE']],
+  adv:[{who:'🧜‍♀️', need:['FISCH','DELFIN','ROBBE'], gift:'🐚', giftName:'Zaubermuschel',
+        tin:'Die kleine Meerjungfrau spielt Verstecken. Aber sie findet ihre Freunde nicht mehr! Hilfst du suchen?',
+        tout:'Gefunden! Alle lachen und planschen. Die Meerjungfrau schenkt dir eine Zaubermuschel.'},
+       {who:'🦜', need:['BOOT','ANKER','KARTE'], gift:'💎', giftName:'Edelstein',
+        tin:'Der Papagei Polly will zur Schatzinsel segeln. Aber es fehlt noch so viel! Hilfst du ihm packen?',
+        tout:'Leinen los! Auf der Insel findet Polly einen Schatz. Er teilt ihn mit dir und schenkt dir einen Edelstein.'}]},
  {id:'wiese',  name:'Blumenwiese',   icon:'🌸', bg:'linear-gradient(180deg,#6fbfff 0%,#bfe6ff 50%,#8fdc7f 100%)', far:['🌳','⛰️','🌳','🏡'], mid:['🌸','🌼','🌷','🦋','🌻','🌷'], catchE:['🦋','🌼'],
-  things:[['🌹','ROSE'],['🐝','BIENE'],['🐴','PFERD'],['🐮','KUH'],['🐐','ZIEGE'],['🍃','BLATT']]},
+  things:[['🌹','ROSE'],['🐝','BIENE'],['🐴','PFERD'],['🐮','KUH'],['🐐','ZIEGE'],['🍃','BLATT'],['🦆','ENTE']],
+  adv:[{who:'🐞', need:['KUH','ZIEGE','PFERD'], gift:'💐', giftName:'Blumenkranz',
+        tin:'Der kleine Marienkäfer macht ein Picknick. Er möchte die großen Tiere einladen. Holst du sie?',
+        tout:'Was für ein lustiges Picknick! Der Marienkäfer flicht dir zum Dank einen Blumenkranz.'},
+       {who:'🦋', need:['ROSE','BIENE','ENTE'], gift:'🌈', giftName:'Regenbogenband',
+        tin:'Der Schmetterling hat sich verflogen. Er sucht den Weg zum Teich. Wer kann ihm helfen?',
+        tout:'Da ist der Teich! Der Schmetterling tanzt vor Freude. Er schenkt dir ein Regenbogenband.'}]},
  {id:'schloss',name:'Wolkenschloss', icon:'🏰', bg:'linear-gradient(180deg,#a996ff 0%,#f0c2ff 55%,#ffe3f3 100%)', far:['☁️','🏰','☁️','🌈'], mid:['☁️','✨','☁️','🎀'], catchE:['💖','✨'],
-  things:[['👑','KRONE'],['🏯','BURG'],['💍','RING'],['❤️','HERZ'],['👼','ENGEL'],['🕯️','KERZE']]},
+  things:[['👑','KRONE'],['🏰','BURG'],['💍','RING'],['❤️','HERZ'],['👼','ENGEL'],['🕯️','KERZE'],['🏮','LATERNE']],
+  adv:[{who:'👸', need:['KRONE','RING','HERZ'], gift:'🎀', giftName:'Glitzerschleife',
+        tin:'Die Wolkenprinzessin will zum Ball. Aber oje, sie hat ihren Schmuck verlegt! Hilfst du suchen?',
+        tout:'Wie schön die Prinzessin aussieht! Jetzt kann der Ball beginnen. Sie schenkt dir eine Glitzerschleife.'},
+       {who:'🐉', need:['KERZE','LATERNE','ENGEL'], gift:'🔮', giftName:'Zauberkugel',
+        tin:'Der kleine Drache kann nicht schlafen. Es ist so dunkel im Schloss! Machst du es hell für ihn?',
+        tout:'Jetzt ist es hell und gemütlich. Der kleine Drache schläft ein und träumt süß. Er schenkt dir eine Zauberkugel.'}]},
  {id:'zucker', name:'Zuckerland',    icon:'🍭', bg:'linear-gradient(180deg,#ff8acb 0%,#ffc4e6 55%,#fff0c4 100%)', far:['🍭','🧁','🍰','🍭'], mid:['🍬','🍭','🍩','🧁','🍓'], catchE:['🍬','🍭'],
-  things:[['🍦','EIS'],['🍪','KEKS'],['🍬','BONBON'],['🎂','TORTE'],['🧃','SAFT'],['🍌','BANANE']]},
+  things:[['🍦','EIS'],['🍪','KEKS'],['🍬','BONBON'],['🎂','TORTE'],['🧃','SAFT'],['🍌','BANANE']],
+  adv:[{who:'🐻', need:['BANANE','KEKS','SAFT'], gift:'🍭', giftName:'Zuckerstange',
+        tin:'Der Bäcker-Bär backt eine Torte für alle Einhörner. Aber ihm fehlen noch Zutaten! Holst du sie?',
+        tout:'Fertig ist die Einhorntorte! Jeder bekommt ein Stück. Du auch! Und eine Zuckerstange dazu.'},
+       {who:'🐭', need:['EIS','BONBON','TORTE'], gift:'🧁', giftName:'Glitzerkuchen',
+        tin:'Die kleine Maus feiert ein Naschfest. Sie wünscht sich drei leckere Sachen. Bringst du sie ihr?',
+        tout:'Die Maus ist satt und glücklich. Sie tanzt um den Tisch und schenkt dir einen Glitzerkuchen.'}]},
  {id:'sterne', name:'Sternenreise',  icon:'🌙', bg:'linear-gradient(180deg,#03021a 0%,#150c42 60%,#2a1b6e 100%)', far:['🪐','🌙','⭐','🌍'], mid:['⭐','✨','🌟','☄️'], catchE:['⭐','🌟'],
-  things:[['🌙','MOND'],['🚀','RAKETE'],['🪐','PLANET'],['🤖','ROBOTER'],['🏮','LATERNE'],['🦉','UHU']]}
+  things:[['🌙','MOND'],['🚀','RAKETE'],['🪐','PLANET'],['🤖','ROBOTER'],['🏮','LATERNE'],['⭐','STERN']],
+  adv:[{who:'👩‍🚀', need:['RAKETE','ROBOTER','LATERNE'], gift:'🌕', giftName:'Mondstein',
+        tin:'Die Astronautin Mia möchte nach Hause fliegen. Aber sie hat noch nicht alles beisammen. Hilfst du ihr?',
+        tout:'Drei, zwei, eins, los! Mia winkt dir zu. Zum Abschied schenkt sie dir einen Mondstein.'},
+       {who:'🌠', need:['MOND','PLANET','STERN'], gift:'✨', giftName:'Sternenstaub',
+        tin:'Ein kleines Sternchen ist vom Himmel gepurzelt. Es will zurück zu seinen Freunden. Zeigst du ihm den Weg?',
+        tout:'Das Sternchen leuchtet wieder hoch am Himmel. Es schickt dir glitzernden Sternenstaub.'}]}
 ];
-const LANDPOS=[[30,62],[47,76],[64,58],[81,74],[56,30],[86,34]];
-let trip=null;
+/* voice lines for the adventures */
+reg('q_such','Such für mich:',null,'Ansagen');
+reg('r_schatz','Das ist deine Schatzkiste. Hier liegen alle Geschenke von deinen Reisen.',null,'Ansagen');
+reg('r_alle','Du hast alle Abenteuer bestanden! Du bist eine echte Einhornreiterin!',null,'Ansagen');
+reg('r_nochmal','Schau dich ruhig noch um. Tippe alles an!',null,'Ansagen');
+TRIPS.forEach(d=>{ d.things.forEach(([e,w])=>reg('wort_'+keyOf(w),cap(w),null,'Wörter'));
+  d.adv.forEach((a,i)=>{ a.id=d.id+(i+1); reg('a_'+a.id+'_in',a.tin,null,'Abenteuer'); reg('a_'+a.id+'_out',a.tout,null,'Abenteuer'); reg('s_'+a.id,a.giftName,null,'Abenteuer'); }); });
+const ALLADV=TRIPS.flatMap(d=>d.adv);
+if(!S.loot||typeof S.loot!=='object') S.loot={};
+if(!S.tn||typeof S.tn!=='object') S.tn={};
+
+const LANDPOS=[[34,68],[50,82],[66,66],[82,80],[44,44],[62,40],[86,46]];
+let trip=null, Q=null;
+const landOn=()=>$('land').classList.contains('on');
 function wordHTML(W){ const w=WORDS.find(x=>x.word===W);
   return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
-function tripPick(){ stopAll(); stopScene();
+function hideWord(){ $('bigWord').className=''; }
+function tripChrome(mode){ $('btnChest').textContent=mode==='chest'?'🗺️':'🎁'; $('btnChest').style.visibility=mode==='pick'?'hidden':'visible'; $('btnChest').dataset.m=mode; }
+function tripPick(){ stopAll(); stopScene(); hideWord(); Q=null;
   if(S.herd===0){ trip={uni:0}; return tripMap(); }
-  trip={uni:null}; const T=$('tripBody'); T.className='pickgrid'; T.innerHTML='';
+  trip={uni:null}; tripChrome('pick'); const T=$('tripBody'); T.className='pickgrid'; T.innerHTML='';
   HERD.slice(0,S.herd+1).forEach((u,i)=>{ const b=el('button','pen');
     b.innerHTML='<div class="cl"></div>'+uniSVG(u,{cls:'uni'+(i%2?' flip':''),attr:`style="animation-delay:${-i*.4}s"`});
     b.onclick=()=>{ if(trip.uni!=null) return; trip.uni=i; const v=b.querySelector('.uni'); v.classList.add('happy');
       chime([988,1318]); glitterBurst(...centerOf(v),26,20); say('u_'+keyOf(u.name)); later(tripMap,1400); };
     T.appendChild(b); });
   show('trip'); say('r_wer'); }
-function tripMap(){ stopScene(); const T=$('tripBody'); T.className='mapgrid'; T.innerHTML='';
+function tripMap(){ stopScene(); hideWord(); if(!trip) trip={uni:0}; trip.dest=null; tripChrome('map');
+  const T=$('tripBody'); T.className='mapgrid'; T.innerHTML='';
   TRIPS.forEach(d=>{ const b=el('button','place');
-    b.innerHTML=`<div class="pic" style="background:${d.bg}">${d.icon}</div><div class="pn">${d.name}</div>`;
+    b.innerHTML=`<div class="pic" style="background:${d.bg}">${d.icon}</div><div class="pn">${d.name}</div>
+      <div class="badges">${d.adv.map(a=>`<span class="${S.loot[a.id]?'':'no'}">${S.loot[a.id]?a.gift:'✧'}</span>`).join('')}</div>`;
     b.onclick=()=>{ if(trip.dest) return; trip.dest=d; b.classList.add('chosen'); chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22);
       say('d_'+d.id+'_los'); later(()=>startRide(d),1300); };
     T.appendChild(b); });
   show('trip'); say('r_wohin'); }
+function tripChest(){ stopAll(); stopScene(); tripChrome('chest'); const T=$('tripBody'); T.className='chestgrid'; T.innerHTML='';
+  ALLADV.forEach((a,i)=>{ const got=!!S.loot[a.id], b=el('button','slot'+(got?'':' no'),got?a.gift:'?'); b.style.animationDelay=(-i*.3)+'s';
+    if(got) b.onclick=()=>{ b.classList.remove('boing2'); void b.offsetWidth; b.classList.add('boing2'); chime([1175,1568]); glitterBurst(...centerOf(b),22,16); say('s_'+a.id); };
+    T.appendChild(b); });
+  show('trip'); say('r_schatz'); }
 function layer(items,n,cls,dur,yr,size){ const L=el('div','layer '+cls); L.style.animationDuration=dur+'s';
   let h=''; for(let k=0;k<n;k++){ const x=(k+Math.random()*.6)/n*100, y=yr[0]+Math.random()*(yr[1]-yr[0]), e=rnd(items), z=size*(.7+Math.random()*.6);
     const sp=`style="top:${y}vh;font-size:${z}vh;left:%Lvw"`; h+=`<span ${sp.replace('%L',x)}>${e}</span><span ${sp.replace('%L',x+100)}>${e}</span>`; }
@@ -954,7 +1031,7 @@ function layer(items,n,cls,dur,yr,size){ const L=el('div','layer '+cls); L.style
 function startRide(d){
   stopScene(); const R=$('rideWorld'); R.innerHTML=''; R.style.background=d.bg; trip.caught=0; $('rideCount').textContent='0';
   R.append(layer(d.far,6,'far',38,[18,48],13), layer(d.mid,9,'mid',15,[58,80],10));
-  const g=el('div','ground'); R.appendChild(g);
+  R.appendChild(el('div','ground'));
   if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${20+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; R.appendChild(f); }
   const rider=el('div','rider'); rider.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni flying'}); R.appendChild(rider);
   show('ride'); later(()=>trail(rider,15000),200); later(()=>say('r_fang'),2600);
@@ -964,25 +1041,68 @@ function startRide(d){
       {transform:`translateX(-${w*.1}px) translateY(0)`}],{duration:dur,easing:'linear'}); a.onfinish=()=>c.remove();
     c.onpointerdown=()=>{ trip.caught++; $('rideCount').textContent=trip.caught; chime([rnd([1047,1175,1318,1568,1760])]); glitterBurst(...centerOf(c),16,12); c.remove(); }; };
   const iv=setInterval(spawn,850); sceneT.push(iv);
-  later(()=>{ const fl=el('div','whoosh'); R.appendChild(fl); },14300);
+  /* halfway: whoever needs help waves from afar */
+  const adv=pickAdv(d); trip.adv=adv;
+  later(()=>{ const h=el('div','herald',adv.who); R.appendChild(h); },7000);
+  later(()=>{ R.appendChild(el('div','whoosh')); },14300);
   later(()=>arrive(d),15000); }
+function pickAdv(d){ const open=d.adv.filter(a=>!S.loot[a.id]); if(open.length) return open[0];
+  S.tn[d.id]=(S.tn[d.id]|0)+1; save(); return d.adv[S.tn[d.id]%d.adv.length]; }
+function boing(b){ b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('boing'); }
 function arrive(d){
-  stopScene(); const L=$('landWorld'); L.innerHTML=''; L.style.background=d.bg;
+  stopScene(); hideWord(); const L=$('landWorld'); L.innerHTML=''; L.style.background=d.bg; const tk=trip, adv=trip.adv||pickAdv(d);
   L.appendChild(el('div','ground'));
   if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${15+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; L.appendChild(f); }
   const u=el('button','landuni'); u.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni'}); L.appendChild(u);
-  u.onclick=()=>{ const v=u.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); glitterBurst(...centerOf(v),22,16); say('u_'+keyOf(HERD[trip.uni].name)); };
+  u.onclick=()=>{ const v=u.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); glitterBurst(...centerOf(v),22,16);
+    if(!Q) say('u_'+keyOf(HERD[trip.uni].name)); };
+  const who=el('button','resident',adv.who); L.appendChild(who);
+  who.onclick=()=>{ boing2(who); if(Q&&Q.active) ask(); };
+  Q={adv,step:-1,active:false,intro:true,who,els:{}};
   d.things.forEach(([e,w],k)=>{ const b=el('button','thing',e); const [x,y]=LANDPOS[k];
-    b.style.left=x+'%'; b.style.top=y+'%'; b.style.animationDelay=(-k*.5)+'s';
-    b.onclick=()=>{ b.classList.remove('boing'); void b.offsetWidth; b.classList.add('boing'); chime([1175,1568]); glitterBurst(...centerOf(b),22,16);
-      const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.classList.remove('show'); void bw.offsetWidth; bw.classList.add('show'); say('wort_'+keyOf(w)); };
+    b.style.left=x+'%'; b.style.top=y+'%'; b.style.animationDelay=(-k*.5)+'s'; Q.els[w]=b;
+    b.onclick=()=>tapThing(b,w,tk);
     L.appendChild(b); });
-  if(trip.caught>0){ const c=el('div','caughtBadge',`${d.catchE[0]} ${trip.caught}`); L.appendChild(c); }
-  show('land'); later(()=>glitterBurst(innerWidth/2,innerHeight*.45,40,40),200); chime([523,659,784,1047]); say('d_'+d.id+'_an'); }
+  if(trip.caught>0) L.appendChild(el('div','caughtBadge',`${d.catchE[0]} ${trip.caught}`));
+  show('land'); later(()=>glitterBurst(innerWidth/2,innerHeight*.45,40,40),200); chime([523,659,784,1047]);
+  (async()=>{ await say('d_'+d.id+'_an','a_'+adv.id+'_in'); if(trip!==tk||!landOn()||!Q) return; Q.intro=false; nextAsk(tk); })(); }
+function boing2(b){ b.classList.remove('boing2'); void b.offsetWidth; b.classList.add('boing2'); }
+function ask(){ if(!Q) return; const w=Q.adv.need[Q.step]; const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className='hold'; say('q_such','wort_'+keyOf(w)); }
+function nextAsk(tk){ if(!Q||trip!==tk||!landOn()) return; Q.step++;
+  if(Q.step>=Q.adv.need.length) return endQuest(tk);
+  Q.active=true; boing2(Q.who); ask(); }
+async function tapThing(b,w,tk){
+  if(Q&&Q.intro){ boing(b); return; }
+  if(Q&&Q.active){ const target=Q.adv.need[Q.step];
+    if(w===target){ Q.active=false; boing(b); chime(); glitterBurst(...centerOf(b),26,18);
+      /* the thing hops over to whoever asked for it */
+      try{ const a=centerOf(b), c=centerOf(Q.who); b.style.animation='none';
+        b.animate([{transform:'translate(-50%,-50%) scale(1)'},{transform:`translate(calc(-50% + ${(c[0]-a[0])*.5}px),calc(-50% + ${(c[1]-a[1])*.5-innerHeight*.12}px)) scale(1.2)`,offset:.5},
+          {transform:`translate(calc(-50% + ${c[0]-a[0]+innerWidth*.07*(Q.step+1)}px),calc(-50% + ${c[1]-a[1]+innerHeight*.02}px)) scale(.55)`}],{duration:900,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+      b.style.pointerEvents='none'; hearts(...centerOf(Q.who),4);
+      await say(rnd(['p_lob1','p_lob2','p_lob3','p_lob4','g_lob1'])); await wait(250); nextAsk(tk); }
+    else { b.classList.remove('boing','wobt'); void b.offsetWidth; b.classList.add('wobt'); say('wort_'+keyOf(w),'q_such','wort_'+keyOf(target)); }
+    return; }
+  /* free play */
+  boing(b); chime([1175,1568]); glitterBurst(...centerOf(b),22,16);
+  const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.className=''; void bw.offsetWidth; bw.className='show'; say('wort_'+keyOf(w)); }
+async function endQuest(tk){
+  const adv=Q.adv, who=Q.who, els=Q.els; hideWord(); Q.active=false; Q.intro=true;
+  who.classList.add('party'); chime([523,659,784,1047,1318]); hearts(...centerOf(who),10); glitterBurst(...centerOf(who),40,30); rainDown(['✦','✧','★','💖'],2500,36);
+  await say('a_'+adv.id+'_out'); if(trip!==tk||!landOn()) return;
+  const first=!S.loot[adv.id]; S.loot[adv.id]=true; save();
+  const g=el('div','gift',adv.gift); $('landWorld').appendChild(g); chime([784,988,1175,1568]); later(()=>glitterBurst(innerWidth/2,innerHeight/2,50,34),350);
+  await say('s_'+adv.id); await wait(900); if(trip!==tk||!landOn()) return;
+  g.classList.add('away'); setTimeout(()=>g.remove(),900);
+  /* everything comes back for free play */
+  Object.values(els).forEach(b=>{ try{ b.getAnimations().forEach(a=>a.cancel()); }catch(e){} b.style.animation=''; b.style.pointerEvents=''; });
+  Q=null;
+  if(first && ALLADV.every(a=>S.loot[a.id])) await say('r_alle'); else await say('r_nochmal'); }
 $('btnTrip').onclick=tripPick;
-$('btnTripHome').onclick=goHome;
-$('btnRideHome').onclick=goHome;
-$('btnLandHome').onclick=()=>{ say('r_heim'); later(goHome,2600); };
+$('btnTripHome').onclick=()=>{ trip=null; goHome(); };
+$('btnRideHome').onclick=()=>{ trip=null; goHome(); };
+$('btnChest').onclick=()=>{ $('btnChest').dataset.m==='chest' ? tripMap() : tripChest(); };
+$('btnLandHome').onclick=()=>{ hideWord(); Q=null; stopScene(); say('r_heim'); const tk=trip; later(()=>{ if(trip===tk){ trip=null; goHome(); } },2600); };
 $('btnLandAgain').onclick=tripPick;
 
 
@@ -1036,7 +1156,7 @@ function openParent(){
 
   <h2>Aufnahmen anhören und prüfen</h2>
   <div class="box">
-    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
+    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen','Einhörner','Abenteuer'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
     <p>▶ antippen zum Anhören, ✗ für falsche Aufnahmen. Die markierten Namen unten kopieren und bei der GitHub-Aktion in „Nur diese Aufnahmen“ einfügen.</p>
     <div id="pChk"></div>
     <textarea id="pBad" readonly style="height:70px"></textarea>
@@ -1052,7 +1172,7 @@ function openParent(){
     <p>Die Einleitung und die vier Orte werden beim nächsten Start wieder vorgestellt.</p></div>
 
   <h2>Zurücksetzen</h2>
-  <div class="box"><button class="btn warn" id="pReset">Sterne, Stufe und Einhörner zurücksetzen</button> <span id="pResetMsg"></span></div>`;
+  <div class="box"><button class="btn warn" id="pReset">Sterne, Stufe, Einhörner und Reise-Geschenke zurücksetzen</button> <span id="pResetMsg"></span></div>`;
 
   const lv=$('pLevel');
   SETS.forEach((s,i)=>{ const b=el('button',i===S.level?'sel':'', (i+1)+' · +'+s.split('').join(' ')); b.onclick=()=>{S.level=i;S.streak=0;save();openParent()}; lv.appendChild(b); });
@@ -1088,7 +1208,7 @@ function openParent(){
   $('pBadClear').onclick=()=>{ BAD.clear(); saveBad(); drawChk(document.querySelector('#pChkGrp .sel').dataset.v); showBad(); };
   $('pHerd').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.herd=+v; save(); openParent(); };
   $('pStory').onclick=()=>{ S.seen={}; save(); $('pStoryMsg').textContent='Wird beim nächsten Start erzählt.'; };
-  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
+  $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;S.loot={};S.tn={};save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
 }
 </script>
 </body>
