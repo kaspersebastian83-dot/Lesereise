@@ -3482,6 +3482,29 @@
      "say": "Kuchen"
     }
    ]
+  },
+  {
+   "id": "w_x032_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Drache. Nebel. Eule. Nest.",
+   "items": [
+    {
+     "key": "wort_drache",
+     "say": "Drache"
+    },
+    {
+     "key": "wort_nebel",
+     "say": "Nebel"
+    },
+    {
+     "key": "wort_eule",
+     "say": "Eule"
+    },
+    {
+     "key": "wort_nest",
+     "say": "Nest"
+    }
+   ]
   }
  ]
 }
