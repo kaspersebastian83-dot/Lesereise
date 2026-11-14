@@ -199,14 +199,20 @@ const STATIONS = [
 
 /* ================= CLIP REGISTRY ================= */
 const CLIPS = {};           // key -> {text (for ElevenLabs), tts (device fallback), group}
+/* Text sent to ElevenLabs. Bare syllables like "Me", "Hi", "We" get read as English words,
+   so open syllables are written the German long-vowel way: Meh, Hie, Weh, Muh, Mah, Moh. */
+const cap = s => s[0].toUpperCase()+s.slice(1).toLowerCase();
+const LONG = {A:'ah',E:'eh',I:'ie',O:'oh',U:'uh'};
+function sylVoice(s){ const v=s[s.length-1]; if(LONG[v] && (s.length===1 || (s.length===2 && !LONG[s[0]]))) return cap(s.slice(0,-1)+LONG[s[s.length-1]]); return cap(s); }
+const WORD_VOICE = {WAL:'Wahl'};
 const keyOf = s => s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
 function reg(key,text,tts,group){ if(!CLIPS[key]) CLIPS[key]={text,tts:tts||text,group}; }
 Object.entries(PROMPTS).forEach(([k,t])=>reg(k,t,t,'Ansagen'));
 SETS.join('').split('').forEach(L=>reg('laut_'+keyOf(L),SOUND_TEXT[L],SOUND_TTS[L],'Laute'));
 SETS.join('').split('').filter(L=>!VOW.includes(L)).forEach(C=>VOW.split('').forEach(V=>{
-  const s=C+V; reg('silbe_'+keyOf(s), s[0]+s.slice(1).toLowerCase(), s.toLowerCase(), 'Silben'); }));
-WORDS.forEach(w=>{ w.syl.forEach(s=>reg('silbe_'+keyOf(s), s[0]+s.slice(1).toLowerCase(), s.toLowerCase(),'Silben'));
-  reg('wort_'+keyOf(w.word), w.word[0]+w.word.slice(1).toLowerCase(), null, 'Wörter'); });
+  const s=C+V; reg('silbe_'+keyOf(s), sylVoice(s), s.toLowerCase(), 'Silben'); }));
+WORDS.forEach(w=>{ w.syl.forEach(s=>reg('silbe_'+keyOf(s), sylVoice(s), s.toLowerCase(),'Silben'));
+  reg('wort_'+keyOf(w.word), WORD_VOICE[w.word]||cap(w.word), null, 'Wörter'); });
 Object.values(ANLAUT).flat().forEach(([w])=>reg('wort_'+keyOf(w), w, null, 'Wörter'));
 
 /* ================= STATE ================= */
@@ -410,6 +416,8 @@ gear.oncontextmenu=e=>e.preventDefault();
 function clipList(onlyMissing){
   return Object.entries(CLIPS).filter(([k])=>!onlyMissing||!clipUrl[k]).map(([k,c])=>k+'.mp3\t'+c.text).join('\n');
 }
+const BAD=new Set(); try{ JSON.parse(localStorage.getItem(LS+'.bad')||'[]').forEach(k=>BAD.add(k)); }catch(e){}
+const saveBad=()=>{ try{ localStorage.setItem(LS+'.bad',JSON.stringify([...BAD])); }catch(e){} };
 function openParent(){
   stopAll(); show('parent');
   const total=Object.keys(CLIPS).length, have=Object.keys(clipUrl).length,
@@ -445,6 +453,15 @@ function openParent(){
     <p><button class="btn warn" id="pDelClips">Alle Aufnahmen entfernen</button></p>
   </div>
 
+  <h2>Aufnahmen anhören und prüfen</h2>
+  <div class="box">
+    <div class="seg" id="pChkGrp">${['Laute','Silben','Wörter','Ansagen'].map(g=>`<button data-v="${g}">${g}</button>`).join('')}</div>
+    <p>▶ antippen zum Anhören, ✗ für falsche Aufnahmen. Die markierten Namen unten kopieren und bei der GitHub-Aktion in „Nur diese Aufnahmen“ einfügen.</p>
+    <div id="pChk"></div>
+    <textarea id="pBad" readonly style="height:70px"></textarea>
+    <div class="seg"><button class="btn pri" id="pBadCopy">Markierte kopieren</button><button class="btn" id="pBadClear">Markierungen löschen</button></div>
+  </div>
+
   <h2>Zurücksetzen</h2>
   <div class="box"><button class="btn warn" id="pReset">Sterne und Stufe zurücksetzen</button> <span id="pResetMsg"></span></div>`;
 
@@ -463,6 +480,23 @@ function openParent(){
       if(CLIPS[k]){ setClip(k,f); await dbPut(k,f); ok++; } else bad.push(f.name); }
     openParent(); $('pMsg').textContent=ok+' Aufnahme(n) übernommen.'+(bad.length?' Nicht erkannt: '+bad.slice(0,8).join(', ')+(bad.length>8?' …':''):''); };
   $('pDelClips').onclick=async()=>{ Object.keys(clipUrl).forEach(k=>{URL.revokeObjectURL(clipUrl[k]);delete clipUrl[k]}); await dbClear(); openParent(); };
+  const showBad=()=>{ $('pBad').value=[...BAD].join(','); };
+  const drawChk=g=>{ document.querySelectorAll('#pChkGrp button').forEach(b=>b.classList.toggle('sel',b.dataset.v===g));
+    const box=$('pChk'); box.innerHTML='';
+    Object.entries(CLIPS).filter(([,c])=>c.group===g).forEach(([k,c])=>{
+      const row=el('div','',''); row.style.cssText='display:flex;align-items:center;gap:10px;padding:5px 0;border-bottom:1px solid #eee';
+      const pl=el('button','btn','▶'), x=el('button','btn'+(BAD.has(k)?' warn':''),'✗');
+      const src=clipUrl[k]?'gerät':repoClips.has(k)?'repo':'–';
+      row.append(pl, el('span','',`<b>${c.text}</b> <span style="color:#8b84a3;font-size:13px">${k} · ${src}</span>`), x);
+      row.lastChild.style.marginLeft='auto';
+      pl.onclick=()=>say(k);
+      x.onclick=()=>{ BAD.has(k)?BAD.delete(k):BAD.add(k); x.classList.toggle('warn',BAD.has(k)); saveBad(); showBad(); };
+      box.appendChild(row); }); };
+  $('pChkGrp').onclick=e=>{ if(e.target.dataset.v) drawChk(e.target.dataset.v); };
+  drawChk('Laute'); showBad();
+  $('pBadCopy').onclick=async()=>{ try{ await navigator.clipboard.writeText($('pBad').value); $('pBadCopy').textContent='Kopiert ✓'; }
+    catch(e){ $('pBad').focus(); $('pBad').select(); } };
+  $('pBadClear').onclick=()=>{ BAD.clear(); saveBad(); drawChk(document.querySelector('#pChkGrp .sel').dataset.v); showBad(); };
   $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
 }
 </script>
