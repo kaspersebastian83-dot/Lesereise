@@ -51,6 +51,7 @@ name = "facebook/wav2vec2-lv-60-espeak-cv-ft"
 proc = Wav2Vec2Processor.from_pretrained(name)
 model = Wav2Vec2ForCTC.from_pretrained(name).eval()
 
+REF_A = load(os.path.join(ROOT, os.environ.get("REF_A", "audio/laut_a.mp3"))) if os.path.exists(os.path.join(ROOT, os.environ.get("REF_A", "audio/laut_a.mp3"))) else None
 files = []
 for f in FOLDERS:
     files += sorted(glob.glob(os.path.join(ROOT, f, "*.mp3")))
@@ -64,6 +65,9 @@ for path in files:
     wav = load(path)
     if len(wav) < 1600:
         print(f"CHK\t{fn}\t{key}\t{exp}\t(leer)\t9\tbad"); n_bad += 1; continue
+    if key.startswith("laut_") and key[5:] not in "aeiou" and REF_A is not None:
+        # single consonants are tested as the game uses them: sound, then "aa" -> must be heard as e.g. "m a"
+        wav = np.concatenate([wav, np.zeros(480, np.float32), REF_A]); exp = exp + " aː"
     wav = np.pad(wav, (3200, 3200))
     x = proc(wav, sampling_rate=16000, return_tensors="pt").input_values
     with torch.no_grad():

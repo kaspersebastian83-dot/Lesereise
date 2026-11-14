@@ -1833,6 +1833,711 @@
      "say": "Bie"
     }
    ]
+  },
+  {
+   "id": "syl_00_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Oh. Ah. Nas. Son. Maus. Au. Tor. Tas.",
+   "items": [
+    {
+     "key": "silbe_o",
+     "say": "Oh"
+    },
+    {
+     "key": "silbe_a",
+     "say": "Ah"
+    },
+    {
+     "key": "silbe_nas",
+     "say": "Nas"
+    },
+    {
+     "key": "silbe_son",
+     "say": "Son"
+    },
+    {
+     "key": "silbe_maus",
+     "say": "Maus"
+    },
+    {
+     "key": "silbe_au",
+     "say": "Au"
+    },
+    {
+     "key": "silbe_tor",
+     "say": "Tor"
+    },
+    {
+     "key": "silbe_tas",
+     "say": "Tas"
+    }
+   ]
+  },
+  {
+   "id": "syl_01_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Nuss. Hut. Hund. Del. Fon. Mond. Haus. Mel.",
+   "items": [
+    {
+     "key": "silbe_nuss",
+     "say": "Nuss"
+    },
+    {
+     "key": "silbe_hut",
+     "say": "Hut"
+    },
+    {
+     "key": "silbe_hund",
+     "say": "Hund"
+    },
+    {
+     "key": "silbe_del",
+     "say": "Del"
+    },
+    {
+     "key": "silbe_fon",
+     "say": "Fon"
+    },
+    {
+     "key": "silbe_mond",
+     "say": "Mond"
+    },
+    {
+     "key": "silbe_haus",
+     "say": "Haus"
+    },
+    {
+     "key": "silbe_mel",
+     "say": "Mel"
+    }
+   ]
+  },
+  {
+   "id": "syl_02_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Wal. Ger. Bus. Bel. Bra. Wol. En. In.",
+   "items": [
+    {
+     "key": "silbe_wal",
+     "say": "Wal"
+    },
+    {
+     "key": "silbe_ger",
+     "say": "Ger"
+    },
+    {
+     "key": "silbe_bus",
+     "say": "Bus"
+    },
+    {
+     "key": "silbe_bel",
+     "say": "Bel"
+    },
+    {
+     "key": "silbe_bra",
+     "say": "Bra"
+    },
+    {
+     "key": "silbe_wol",
+     "say": "Wol"
+    },
+    {
+     "key": "silbe_en",
+     "say": "En"
+    },
+    {
+     "key": "silbe_in",
+     "say": "In"
+    }
+   ]
+  },
+  {
+   "id": "syl_03_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Sel. Lat. Eh. Fant. Af. Er. Rad. Rol.",
+   "items": [
+    {
+     "key": "silbe_sel",
+     "say": "Sel"
+    },
+    {
+     "key": "silbe_lat",
+     "say": "Lat"
+    },
+    {
+     "key": "silbe_e",
+     "say": "Eh"
+    },
+    {
+     "key": "silbe_fant",
+     "say": "Fant"
+    },
+    {
+     "key": "silbe_af",
+     "say": "Af"
+    },
+    {
+     "key": "silbe_er",
+     "say": "Er"
+    },
+    {
+     "key": "silbe_rad",
+     "say": "Rad"
+    },
+    {
+     "key": "silbe_rol",
+     "say": "Rol"
+    }
+   ]
+  },
+  {
+   "id": "syl_04_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ler. Man. Tel. Ter. Heft. Lam. Uh. Hemd.",
+   "items": [
+    {
+     "key": "silbe_ler",
+     "say": "Ler"
+    },
+    {
+     "key": "silbe_man",
+     "say": "Man"
+    },
+    {
+     "key": "silbe_tel",
+     "say": "Tel"
+    },
+    {
+     "key": "silbe_ter",
+     "say": "Ter"
+    },
+    {
+     "key": "silbe_heft",
+     "say": "Heft"
+    },
+    {
+     "key": "silbe_lam",
+     "say": "Lam"
+    },
+    {
+     "key": "silbe_u",
+     "say": "Uh"
+    },
+    {
+     "key": "silbe_hemd",
+     "say": "Hemd"
+    }
+   ]
+  },
+  {
+   "id": "syl_05_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hand. Arm. Mund. Der. Ham. Mer. Saft. Rat.",
+   "items": [
+    {
+     "key": "silbe_hand",
+     "say": "Hand"
+    },
+    {
+     "key": "silbe_arm",
+     "say": "Arm"
+    },
+    {
+     "key": "silbe_mund",
+     "say": "Mund"
+    },
+    {
+     "key": "silbe_der",
+     "say": "Der"
+    },
+    {
+     "key": "silbe_ham",
+     "say": "Ham"
+    },
+    {
+     "key": "silbe_mer",
+     "say": "Mer"
+    },
+    {
+     "key": "silbe_saft",
+     "say": "Saft"
+    },
+    {
+     "key": "silbe_rat",
+     "say": "Rat"
+    }
+   ]
+  },
+  {
+   "id": "syl_06_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pin. Pan. Mam. Mut. Fin. Hum. Pla. Net.",
+   "items": [
+    {
+     "key": "silbe_pin",
+     "say": "Pin"
+    },
+    {
+     "key": "silbe_pan",
+     "say": "Pan"
+    },
+    {
+     "key": "silbe_mam",
+     "say": "Mam"
+    },
+    {
+     "key": "silbe_mut",
+     "say": "Mut"
+    },
+    {
+     "key": "silbe_fin",
+     "say": "Fin"
+    },
+    {
+     "key": "silbe_hum",
+     "say": "Hum"
+    },
+    {
+     "key": "silbe_pla",
+     "say": "Pla"
+    },
+    {
+     "key": "silbe_net",
+     "say": "Net"
+    }
+   ]
+  },
+  {
+   "id": "syl_07_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ei. Eis. Uhr. Ohr. Sei. Lei. Mais. Ball.",
+   "items": [
+    {
+     "key": "silbe_ei",
+     "say": "Ei"
+    },
+    {
+     "key": "silbe_eis",
+     "say": "Eis"
+    },
+    {
+     "key": "silbe_uhr",
+     "say": "Uhr"
+    },
+    {
+     "key": "silbe_ohr",
+     "say": "Ohr"
+    },
+    {
+     "key": "silbe_sei",
+     "say": "Sei"
+    },
+    {
+     "key": "silbe_lei",
+     "say": "Lei"
+    },
+    {
+     "key": "silbe_mais",
+     "say": "Mais"
+    },
+    {
+     "key": "silbe_ball",
+     "say": "Ball"
+    }
+   ]
+  },
+  {
+   "id": "syl_08_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Brot. Kind. Ie. Gel. Kar. Baum. Gen. Pilz.",
+   "items": [
+    {
+     "key": "silbe_brot",
+     "say": "Brot"
+    },
+    {
+     "key": "silbe_kind",
+     "say": "Kind"
+    },
+    {
+     "key": "silbe_i",
+     "say": "Ie"
+    },
+    {
+     "key": "silbe_gel",
+     "say": "Gel"
+    },
+    {
+     "key": "silbe_kar",
+     "say": "Kar"
+    },
+    {
+     "key": "silbe_baum",
+     "say": "Baum"
+    },
+    {
+     "key": "silbe_gen",
+     "say": "Gen"
+    },
+    {
+     "key": "silbe_pilz",
+     "say": "Pilz"
+    }
+   ]
+  },
+  {
+   "id": "syl_09_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bir. Trau. But. Bett. Boot. Zug. Trak. Zelt.",
+   "items": [
+    {
+     "key": "silbe_bir",
+     "say": "Bir"
+    },
+    {
+     "key": "silbe_trau",
+     "say": "Trau"
+    },
+    {
+     "key": "silbe_but",
+     "say": "But"
+    },
+    {
+     "key": "silbe_bett",
+     "say": "Bett"
+    },
+    {
+     "key": "silbe_boot",
+     "say": "Boot"
+    },
+    {
+     "key": "silbe_zug",
+     "say": "Zug"
+    },
+    {
+     "key": "silbe_trak",
+     "say": "Trak"
+    },
+    {
+     "key": "silbe_zelt",
+     "say": "Zelt"
+    }
+   ]
+  },
+  {
+   "id": "syl_10_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Blatt. Pferd. Kro. Dil. Raf. Kat. Tar. Trom.",
+   "items": [
+    {
+     "key": "silbe_blatt",
+     "say": "Blatt"
+    },
+    {
+     "key": "silbe_pferd",
+     "say": "Pferd"
+    },
+    {
+     "key": "silbe_kro",
+     "say": "Kro"
+    },
+    {
+     "key": "silbe_dil",
+     "say": "Dil"
+    },
+    {
+     "key": "silbe_raf",
+     "say": "Raf"
+    },
+    {
+     "key": "silbe_kat",
+     "say": "Kat"
+    },
+    {
+     "key": "silbe_tar",
+     "say": "Tar"
+    },
+    {
+     "key": "silbe_trom",
+     "say": "Trom"
+    }
+   ]
+  },
+  {
+   "id": "syl_11_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bril. Ring. Herz. Sen. Keks. Bon. Tro. Rot.",
+   "items": [
+    {
+     "key": "silbe_bril",
+     "say": "Bril"
+    },
+    {
+     "key": "silbe_ring",
+     "say": "Ring"
+    },
+    {
+     "key": "silbe_herz",
+     "say": "Herz"
+    },
+    {
+     "key": "silbe_sen",
+     "say": "Sen"
+    },
+    {
+     "key": "silbe_keks",
+     "say": "Keks"
+    },
+    {
+     "key": "silbe_bon",
+     "say": "Bon"
+    },
+    {
+     "key": "silbe_tro",
+     "say": "Tro"
+    },
+    {
+     "key": "silbe_rot",
+     "say": "Rot"
+    }
+   ]
+  },
+  {
+   "id": "syl_12_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Tof. Fel. An. Ker. Burg. Wurm. Rob. Fla.",
+   "items": [
+    {
+     "key": "silbe_tof",
+     "say": "Tof"
+    },
+    {
+     "key": "silbe_fel",
+     "say": "Fel"
+    },
+    {
+     "key": "silbe_an",
+     "say": "An"
+    },
+    {
+     "key": "silbe_ker",
+     "say": "Ker"
+    },
+    {
+     "key": "silbe_burg",
+     "say": "Burg"
+    },
+    {
+     "key": "silbe_wurm",
+     "say": "Wurm"
+    },
+    {
+     "key": "silbe_rob",
+     "say": "Rob"
+    },
+    {
+     "key": "silbe_fla",
+     "say": "Fla"
+    }
+   ]
+  },
+  {
+   "id": "syl_13_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Min. Ril. Nil. Ber. Kuh. Zie. Gei. Bein.",
+   "items": [
+    {
+     "key": "silbe_min",
+     "say": "Min"
+    },
+    {
+     "key": "silbe_ril",
+     "say": "Ril"
+    },
+    {
+     "key": "silbe_nil",
+     "say": "Nil"
+    },
+    {
+     "key": "silbe_ber",
+     "say": "Ber"
+    },
+    {
+     "key": "silbe_kuh",
+     "say": "Kuh"
+    },
+    {
+     "key": "silbe_zie",
+     "say": "Zie"
+    },
+    {
+     "key": "silbe_gei",
+     "say": "Gei"
+    },
+    {
+     "key": "silbe_bein",
+     "say": "Bein"
+    }
+   ]
+  },
+  {
+   "id": "syl_14_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zahn. Geist. Bie.",
+   "items": [
+    {
+     "key": "silbe_zahn",
+     "say": "Zahn"
+    },
+    {
+     "key": "silbe_geist",
+     "say": "Geist"
+    },
+    {
+     "key": "silbe_bie",
+     "say": "Bie"
+    }
+   ]
+  },
+  {
+   "id": "cv_b_v3S",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bah. Beh. Bie. Boh. Buh.",
+   "items": [
+    {
+     "key": "silbe_ba",
+     "say": "Bah"
+    },
+    {
+     "key": "silbe_be",
+     "say": "Beh"
+    },
+    {
+     "key": "silbe_bi",
+     "say": "Bie"
+    },
+    {
+     "key": "silbe_bo",
+     "say": "Boh"
+    },
+    {
+     "key": "silbe_bu",
+     "say": "Buh"
+    }
+   ],
+   "seed": 777
+  },
+  {
+   "id": "cv_h_v3S",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hah. Heh. Hie. Hoh. Huh.",
+   "items": [
+    {
+     "key": "silbe_ha",
+     "say": "Hah"
+    },
+    {
+     "key": "silbe_he",
+     "say": "Heh"
+    },
+    {
+     "key": "silbe_hi",
+     "say": "Hie"
+    },
+    {
+     "key": "silbe_ho",
+     "say": "Hoh"
+    },
+    {
+     "key": "silbe_hu",
+     "say": "Huh"
+    }
+   ],
+   "seed": 777
+  },
+  {
+   "id": "cv_r_v3S",
+   "model": "eleven_v3",
+   "text": "Lies mit: Rah. Reh. Rie. Roh. Ruh.",
+   "items": [
+    {
+     "key": "silbe_ra",
+     "say": "Rah"
+    },
+    {
+     "key": "silbe_re",
+     "say": "Reh"
+    },
+    {
+     "key": "silbe_ri",
+     "say": "Rie"
+    },
+    {
+     "key": "silbe_ro",
+     "say": "Roh"
+    },
+    {
+     "key": "silbe_ru",
+     "say": "Ruh"
+    }
+   ],
+   "seed": 777
+  },
+  {
+   "id": "cv_s_v3S",
+   "model": "eleven_v3",
+   "text": "Lies mit: Sah. Seh. Sie. Soh. Suh.",
+   "items": [
+    {
+     "key": "silbe_sa",
+     "say": "Sah"
+    },
+    {
+     "key": "silbe_se",
+     "say": "Seh"
+    },
+    {
+     "key": "silbe_si",
+     "say": "Sie"
+    },
+    {
+     "key": "silbe_so",
+     "say": "Soh"
+    },
+    {
+     "key": "silbe_su",
+     "say": "Suh"
+    }
+   ],
+   "seed": 777
+  },
+  {
+   "id": "cv_g_v3S",
+   "model": "eleven_v3",
+   "text": "Lies mit: Gah. Geh. Gie. Goh. Guh.",
+   "items": [
+    {
+     "key": "silbe_ga",
+     "say": "Gah"
+    },
+    {
+     "key": "silbe_ge",
+     "say": "Geh"
+    },
+    {
+     "key": "silbe_gi",
+     "say": "Gie"
+    },
+    {
+     "key": "silbe_go",
+     "say": "Goh"
+    },
+    {
+     "key": "silbe_gu",
+     "say": "Guh"
+    }
+   ],
+   "seed": 777
   }
  ]
 }

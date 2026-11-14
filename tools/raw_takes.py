@@ -19,9 +19,9 @@ os.makedirs(RAW, exist_ok=True)
 plan = json.load(open(os.path.join(ROOT, PLAN), encoding="utf-8"))
 lang_off = set()
 
-def call(text, model, use_lang):
+def call(text, model, use_lang, seed=4242):
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE}/with-timestamps?output_format=mp3_44100_128"
-    p = {"text": text, "model_id": model, "seed": 4242,
+    p = {"text": text, "model_id": model, "seed": seed,
          "voice_settings": {"stability": 0.6, "similarity_boost": 0.8, "style": 0.1, "speed": 0.85}}
     if model.startswith("eleven_v3"):
         p["voice_settings"] = {"stability": 0.5, "similarity_boost": 0.8}
@@ -41,7 +41,7 @@ for t in plan["takes"]:
         continue
     for attempt in range(3):
         try:
-            res = call(t["text"], t["model"], t["model"] not in lang_off)
+            res = call(t["text"], t["model"], t["model"] not in lang_off, t.get("seed", 4242))
             break
         except urllib.error.HTTPError as e:
             msg = e.read()[:300].decode("utf-8", "replace")
