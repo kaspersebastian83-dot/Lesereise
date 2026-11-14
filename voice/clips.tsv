@@ -594,10 +594,43 @@ t_schneeflocke_5	Die Schneeflocke staunte. So bunt! So schön! Doch ihr wurde ga
 t_schneeflocke_6	Da geschah ein kleines Wunder. Die Schneeflocke wurde zu einem Tautropfen. Er glitzerte in der Sonne wie ein Diamant. Tippe den Tautropfen an!
 t_schneeflocke_7	Nun konnte sie den ganzen Frühling sehen. Und wenn der Winter wiederkommt, steigt sie hinauf in die Wolken und tanzt als Schneeflocke herab. So geht es Jahr für Jahr. Ende.
 t_drache_titel	Der kleine Drache und der Glitzer.
-t_drache_1	Es war einmal ein kleiner Drache. Alle Drachen konnten Feuer spucken. Nur er nicht. Wenn er es versuchte, kam nur Glitzer heraus. Tippe den kleinen Drachen an!
-t_drache_2	Die großen Drachen lachten: Glitzer! Wozu soll das gut sein? Da wurde der kleine Drache traurig und flog davon. Dein Einhorn flog hinterher. Hinter welcher Wolke versteckt er sich? Tippe die Wolken an!
-t_drache_3	Dein Einhorn sagte: Ich finde Glitzer wunderschön! Komm, wir üben zusammen. Eins, zwei, drei: Hatschi! Tippe dreimal auf den Drachen!
-t_drache_4	In dieser Nacht kam ein großer Sturm. Er blies alle Lichter im Schloss aus. Die Kerze, die Laterne, sogar den Mond deckte er zu. Es war stockdunkel. Welches Licht versuchen wir? Du darfst wählen.
-t_drache_5	Aber es wollte einfach nicht brennen. Alle im Schloss hatten Angst. Da holte der kleine Drache ganz tief Luft. Hilf ihm! Tippe auf den Drachen!
-t_drache_6	Hatschi! Tausend Glitzerfunken flogen durch die Nacht. Sie setzten sich auf die Türme, auf die Bäume und auf die Wolken. Das ganze Schloss funkelte! Fang alle Funken!
-t_drache_7	Nun lachte niemand mehr über den kleinen Drachen. Der König machte ihn zum Lichtmeister im Schloss. Jeden Abend pustet er die Sterne an den Himmel. Denn das, was an dir anders ist, ist oft dein größter Schatz. Ende.
+t2_drache_1	Es war einmal ein kleiner Drache. Er wohnte mit den großen Drachen auf dem Drachenberg, gleich beim Schloss des Königs. Heute war Lichterfest! Die großen Drachen zündeten mit ihrem Feuer die Laternen an. Fauch! Da wollte der kleine Drache auch helfen. Er rief: Eins, zwei, drei – und Feuer fliegt herbei! Hilf ihm pusten! Wisch von seinem Mund schnell nach oben!
+t2_drache_1h	Wisch vom Mund des kleinen Drachen schnell nach oben!
+t2_drache_1d1	Doch statt Feuer kam nur Glitzer heraus. Er rieselte herab, und die Laterne blieb dunkel.
+t2_drache_1d2	Da lachten die großen Drachen: Hoho! Glitzer! Damit macht man doch kein Licht!
+t2_drache_1d3	Der kleine Drache wurde ganz traurig. Ich will echtes Feuer, schluchzte er, und flog davon, in den Nebelwald.
+t2_drache_1w2	Pff! Nur ein bisschen Glitzer. Noch einmal, ganz fest!
+wort_drache	Drache
+t2_drache_2	Dein Einhorn flog ihm hinterher, bis in den Nebelwald. Dort war alles grau und dicht. Wo hat sich der kleine Drache nur versteckt? Wisch den Nebel weg!
+t2_drache_2h	Wisch mit dem Finger über den Nebel, hin und her!
+t2_drache_2d1	Da saß er, hinter einem Busch, und weinte leise.
+t2_drache_2d2	Weine nicht, sagte dein Einhorn. Die alte Eule weiß alles. Sie weiß bestimmt, wie man Feuer bekommt. Komm mit!
+wort_nebel	Nebel
+t2_drache_3	Die alte Eule wohnte in einer Eiche. Sie hielt eine Karte und blinzelte. Huhu, es ist so dunkel, ich kann meine Karte nicht lesen! Soll ich Feuer machen? fragte der kleine Drache. Oh nein, rief die Eule, Feuer verbrennt doch meine Karte! Da kitzelte es den kleinen Drachen in der Nase. Tippe dreimal auf seine Nase!
+t2_drache_3h	Tippe auf die Nase vom kleinen Drachen, dreimal!
+t2_drache_3d1	Drei! Hatschi! Eine Wolke aus Glitzer flog auf die Karte, und die Karte leuchtete hell.
+t2_drache_3d2	Huhu, jetzt sehe ich alles! rief die Eule. Eins, zwei, drei – und Glitzer fliegt herbei! Das ist ja viel besser als Feuer!
+t2_drache_3d3	Der kleine Drache wurde ein bisschen rot. Wo finde ich denn Feuer? fragte er. Frag die Sterne, sagte die Eule.
+t2_drache_3w1	Eins! Die Nase kribbelt.
+t2_drache_3w2	Zwei! Sie kribbelt noch mehr!
+wort_eule	Eule
+t2_drache_4	Dein Einhorn flog mit dem kleinen Drachen hinauf, bis zu den Sternen. Aber der Wind hatte das Sternenbild durcheinandergepustet. Verbinde die Sterne! Fahr mit dem Finger von Stern zu Stern.
+t2_drache_4h	Fahr mit dem Finger zu dem Stern, der blinkt!
+t2_drache_4d1	Da leuchtete das Sternenbild auf, und es wurde ein Drache! Ein Drache aus Glitzer, genau wie der kleine Drache.
+t2_drache_4d2	Der Sternendrache zwinkerte: Ich habe auch kein Feuer. Ich bin aus Glitzer, und ich leuchte jede Nacht für alle.
+t2_drache_4d3	Da lächelte der kleine Drache, ein ganz kleines bisschen.
+t2_drache_5	Auf dem Heimweg blies der Wind immer stärker. Huiii! Er hatte drei kleine Vögel aus ihren Nestern gepustet. Der kleine Drache pustete ein bisschen Glitzer, da leuchteten die Nester bunt. Bring jeden Vogel in das Nest mit seiner Farbe!
+t2_drache_5h	Zieh jeden Vogel in das Nest mit der gleichen Farbe!
+t2_drache_5d1	Piep, piep, danke! Alle kleinen Vögel waren wieder zu Hause.
+t2_drache_5d2	Doch dann piepsten sie: Schnell! Der Sturm fliegt zum Schloss!
+wort_nest	Nest
+t2_drache_6	Am Schloss heulte der Sturm. Huuuh! Er pustete ein Licht nach dem anderen aus. Die großen Drachen fauchten Feuer, aber der Wind blies es sofort wieder aus. Alle hatten Angst im Dunkeln. Da sagte der kleine Drache: Ich versuche es! Leg den Finger auf ihn, dann holt er ganz tief Luft. Und dann wisch schnell nach oben!
+t2_drache_6h	Halte den Finger auf den kleinen Drachen. Und dann wisch schnell nach oben!
+t2_drache_6d1	Eins, zwei, drei – und Glitzer fliegt herbei! Ein Glitzersturm flog über das Schloss, und alle Lichter gingen auf einmal an.
+t2_drache_6d2	Der Wind pustete und pustete. Aber Glitzer kann man nicht auspusten!
+t2_drache_6c	Jetzt! Wisch schnell nach oben!
+t2_drache_7	Da wurde der Sturm ganz still. Die großen Drachen verbeugten sich vor dem kleinen Drachen. Es tut uns leid, dass wir gelacht haben. Dein Glitzer ist wunderbar! Und der König sagte: Ab heute bist du mein Lichtmeister. Setz ihm die Krone auf!
+t2_drache_7h	Nimm die Krone und zieh sie auf den Kopf vom kleinen Drachen!
+t2_drache_7d1	Da war der kleine Drache so stolz wie noch nie. Er wünschte sich kein Feuer mehr. Denn was an ihm anders war, das war sein Schatz.
+t2_drache_7d2	Und alle sangen: Eins, zwei, drei – und Glitzer fliegt herbei! Eins, zwei, drei – und Glitzer fliegt herbei!
+t2_drache_7d3	Seitdem leuchtet jeden Abend Glitzer über dem Schloss. Ende.
