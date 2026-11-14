@@ -3459,6 +3459,29 @@
      "say": "Glocke"
     }
    ]
+  },
+  {
+   "id": "w_x031_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Honig. Milch. Teig. Kuchen.",
+   "items": [
+    {
+     "key": "wort_honig",
+     "say": "Honig"
+    },
+    {
+     "key": "wort_milch",
+     "say": "Milch"
+    },
+    {
+     "key": "wort_teig",
+     "say": "Teig"
+    },
+    {
+     "key": "wort_kuchen",
+     "say": "Kuchen"
+    }
+   ]
   }
  ]
 }
