@@ -542,13 +542,42 @@ t_welle_5	Nun kam der Delfin. Er sprang in hohen Bögen über das Wasser und rie
 t_welle_6	Endlich! Da war der Strand. Im warmen Sand lag ein kleines Boot. Und daneben spielte ein Kind. Die Welle rollte ganz sanft heran. Tippe auf das Boot!
 t_welle_7	Die kleine Welle legte ihr Geschenk in den Sand, genau vor die Füße des Kindes. Das Kind lachte vor Freude. Dann rollte die Welle glücklich zurück ins Meer. Und jeden Abend kommt sie wieder und bringt etwas Schönes mit. Ende.
 t_mondkuchen_titel	Der Bär, der einen Mond backen wollte.
-t_mondkuchen_1	Es war einmal ein kleiner Bär. Er war Bäcker im Zuckerland. Seine Freundin, die Maus, fürchtete sich im Dunkeln. Da hatte der Bär eine Idee: Ich backe ihr einen Mond! Tippe den Bären an!
-t_mondkuchen_2	Für einen Mondkuchen braucht man drei Dinge: ein Ei, Butter und eine Banane. Hilfst du dem Bären? Tippe alle Zutaten an!
-t_mondkuchen_3	Der Bär rührte und rührte. Dann schob er den Kuchen in den Ofen. Jetzt heißt es warten. Zähl mit bis drei: Tippe auf die Sterne!
-t_mondkuchen_4	Pling! Der Kuchen war fertig. Rund und gelb wie der Mond. Aber er sah noch so leer aus. Womit schmücken wir ihn? Du darfst wählen.
-t_mondkuchen_5	Wunderschön! Vorsichtig trug der Bär den Mondkuchen durch die Nacht. Dein Einhorn leuchtete ihm den Weg. Wo wohnt die Maus? Tippe auf das Haus!
-t_mondkuchen_6	Die Maus machte große Augen. Ein Mond? Nur für mich? Sie stellte ihn ans Fenster. Und wirklich: Er leuchtete ein kleines bisschen. Tippe die Maus an!
-t_mondkuchen_7	Seit dieser Nacht hat die Maus keine Angst mehr. Denn sie weiß: Wer einen Freund hat, der ihm einen Mond backt, der ist niemals allein. Und ein Stückchen Kuchen gab es auch noch. Ende.
+t2_mondkuchen_1	Es war einmal ein Bär, der war Bäcker im Zuckerland. Oben unter seinem Dach wohnte die kleine Maus. Eines Nachts saß sie am Fenster und zitterte: Piep, es ist so dunkel! Wo ist denn der Mond? Dicke Wolken hatten ihn versteckt. Wisch die Wolken weg!
+t2_mondkuchen_1h	Wisch die Wolke mit dem Finger weg, ganz schnell!
+t2_mondkuchen_1d1	Da war der Mond! Aber nur ein ganz dünnes Stückchen. Er hatte seine Schlafmütze auf und schlief tief und fest.
+t2_mondkuchen_1d2	Da hatte der Bär eine Idee: Dann backe ich dir einen Mond! Rund und golden, warm und hell, kleiner Mond, nun leuchte schnell!
+t2_mondkuchen_1d3	Die Maus hüpfte auf seine Bäckermütze. Und los ging es!
+t2_mondkuchen_1w2	Da kommt noch eine Wolke!
+t2_mondkuchen_2	Für einen Mondkuchen braucht man ein Ei. Also gingen sie zur Henne auf dem Zuckerberg. Gack, gack! rief die Henne. Mein Ei kullert weg! Fang das Ei! Tippe es an, wenn es vorbeikullert.
+t2_mondkuchen_2h	Tippe auf das Ei, ganz schnell!
+t2_mondkuchen_2d1	Gefangen! Gack, danke! sagte die Henne. Wer mir hilft, dem helfe ich auch. Nimm das Ei für deinen Mondkuchen.
+t2_mondkuchen_3	Dann kamen sie zu den Bienen. Die wollten dem Bären Honig schenken. Aber das Honigglas war viel zu schwer für sie. Summ, summ! Zieh das Glas über die Schüssel und halt es dort, bis der Honig hineinläuft!
+t2_mondkuchen_3h	Zieh das Honigglas über die Schüssel und halt es still!
+t2_mondkuchen_3d1	Der goldene Honig tropfte in die Schüssel. Summ, summ, danke! sangen die Bienen.
+t2_mondkuchen_3d2	Wer uns hilft, dem helfen wir auch. Kommt, wir zeigen euch den Weg zur Kuh!
+wort_honig	Honig
+t2_mondkuchen_4	Die Kuh stand auf der Wiese und schlief tief und fest. Schnarch, schnarch! Aber der Bär brauchte doch noch Milch. Läute die Glocke! Zieh das Seil nach unten und lass los.
+t2_mondkuchen_4h	Zieh das Seil nach unten und lass es los!
+t2_mondkuchen_4d1	Bumm! Da wachte die Kuh auf und gähnte: Muuuh! Was, ein Mondkuchen für die kleine Maus? Da gebe ich gern meine Milch.
+t2_mondkuchen_4w2	Bimm! Die Kuh brummt im Schlaf. Noch mal!
+t2_mondkuchen_4w3	Bamm! Sie blinzelt schon. Noch einmal, ganz doll!
+wort_milch	Milch
+t2_mondkuchen_5	Zu Hause in der Backstube machte der Bär Licht. Ei, Honig und Milch waren in der Schüssel. Jetzt wird gerührt! Rühr mit dem Finger, immer rundherum!
+t2_mondkuchen_5h	Rühr mit dem Finger in der Schüssel, immer im Kreis!
+t2_mondkuchen_5d1	Der Bär rührte mit und sang: Rund und golden, warm und hell, kleiner Mond, nun leuchte schnell!
+t2_mondkuchen_5d2	Da wurde der Teig ganz golden. Und draußen am Fenster drängten sich die Sterne und hörten zu.
+wort_teig	Teig
+t2_mondkuchen_6	Der Bär schob den Teig in den Ofen. Aber der Ofen blieb kalt. Oje! Da klopften die Sterne ans Fenster und schickten dir Sternenstaub. Streu ihn über den Ofen! Wackel mit dem Finger ganz schnell hin und her.
+t2_mondkuchen_6h	Wackel mit dem Finger über dem Ofen, hin und her, hin und her!
+t2_mondkuchen_6d1	Da glühte der Ofen warm und rot. Und drinnen ging der Kuchen auf, rund und immer runder.
+t2_mondkuchen_6d2	Pling! Fertig war der Mondkuchen. Er leuchtete wie ein echter kleiner Mond.
+t2_mondkuchen_7	Ganz vorsichtig trug der Bär den Mondkuchen zum Fenster der kleinen Maus. Halte deinen Finger auf den Kuchen, bis er ganz hell leuchtet!
+t2_mondkuchen_7h	Leg deinen Finger auf den Kuchen und halt ihn ganz still!
+t2_mondkuchen_7d1	Mmh, wie das duftete! Der süße Duft stieg hinauf, bis zum Mond.
+t2_mondkuchen_7d2	Der Mond schnupperte. Er blinzelte und machte die Augen auf.
+t2_mondkuchen_7d3	Dann wurde er rund und hell, und er sang: Rund und golden, warm und hell, kleine Maus, ich leuchte schnell!
+t2_mondkuchen_7d4	Die kleine Maus lächelte und gähnte. Sie hatte keine Angst mehr. Und bald schlief sie ein, mit einem Mond am Himmel und einem an ihrem Fenster. Ende.
+wort_kuchen	Kuchen
 t_schneeflocke_titel	Die Schneeflocke und der Frühling.
 t_schneeflocke_1	Es war einmal eine kleine Schneeflocke. Sie tanzte vom Himmel herab und landete genau auf der Nase von deinem Einhorn. Hatschi! Tippe die Schneeflocke an!
 t_schneeflocke_2	Die Schneeflocke sagte: Alle erzählen vom Frühling. Von Blumen und von Bienen. Den möchte ich so gerne sehen! Aber der Frühling schlief noch tief unter dem Schnee. Wecke alle Blumen auf!
