@@ -42,6 +42,8 @@ def tts(text):
 
 made, failed = 0, []
 for k, t in clips:
+    if k.startswith(("silbe_", "laut_")):
+        continue  # syllables and letter sounds come from list takes (tools/syllable_pipeline.py)
     if ONLY_KEYS and k not in ONLY_KEYS:
         continue
     path = os.path.join(AUDIO, k + ".mp3")

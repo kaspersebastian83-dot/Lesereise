@@ -47,6 +47,12 @@ def load(path):
                          capture_output=True).stdout
     return np.frombuffer(raw, dtype=np.float32)
 
+def trim(x, rel=-45.0):
+    f = 160; n = len(x) // f
+    db = 20 * np.log10(np.sqrt((x[:n * f].reshape(n, f) ** 2).mean(1)) + 1e-9)
+    on = np.where(db > db.max() + rel)[0]
+    return x[on[0] * f:(on[-1] + 1) * f] if len(on) else x
+
 name = "facebook/wav2vec2-lv-60-espeak-cv-ft"
 proc = Wav2Vec2Processor.from_pretrained(name)
 model = Wav2Vec2ForCTC.from_pretrained(name).eval()
@@ -67,7 +73,9 @@ for path in files:
         print(f"CHK\t{fn}\t{key}\t{exp}\t(leer)\t9\tbad"); n_bad += 1; continue
     if key.startswith("laut_") and key[5:] not in "aeiou" and REF_A is not None:
         # single consonants are tested as the game uses them: sound, then "aa" -> must be heard as e.g. "m a"
-        wav = np.concatenate([wav, np.zeros(480, np.float32), REF_A]); exp = exp + " aː"
+        wav = trim(wav); ref = trim(REF_A); xf = 160  # 10 ms crossfade straight into the vowel ("mmmaaa")
+        w = np.linspace(0, 1, xf, dtype=np.float32)
+        wav = np.concatenate([wav[:-xf], wav[-xf:] * (1 - w) + ref[:xf] * w, ref[xf:]]); exp = exp + " aː"
     wav = np.pad(wav, (3200, 3200))
     x = proc(wav, sampling_rate=16000, return_tensors="pt").input_values
     with torch.no_grad():

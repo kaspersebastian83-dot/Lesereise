@@ -8,7 +8,7 @@ on:
         type: boolean
         default: true
       only_keys:
-        description: "Nur diese Aufnahmen neu (z. B. laut_t,laut_p) – leer = alle"
+        description: "Nur diese Aufnahmen neu (z. B. wort_hund,silbe_me,laut_m) – leer = alle"
         required: false
         default: ""
       voice_id:
@@ -16,7 +16,7 @@ on:
         required: false
         default: "hSzY2zmYNQPukJaIll7k"
       model_id:
-        description: "ElevenLabs Modell"
+        description: "ElevenLabs Modell für Ansagen und Wörter"
         required: false
         default: "eleven_multilingual_v2"
 
@@ -32,19 +32,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Aufnahmen erzeugen
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Werkzeuge installieren
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          ffmpeg -hide_banner -filters | grep -q rubberband || (echo "ffmpeg ohne rubberband" && exit 1)
+          pip install -q numpy scipy
+      - name: Silben und Laute (als Liste vorgelesen, dann geschnitten)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          VOICE_ID: ${{ inputs.voice_id }}
+          REDO: ${{ inputs.only_keys }}
+          ONLY_MISSING: "true"
+        run: |
+          python tools/syllable_pipeline.py plan
+          python tools/raw_takes.py
+          python tools/cut_takes.py
+          python tools/syllable_pipeline.py install
+      - name: Ansagen und Wörter
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           VOICE_ID: ${{ inputs.voice_id }}
           MODEL_ID: ${{ inputs.model_id }}
           ONLY_MISSING: ${{ inputs.only_missing }}
           ONLY_KEYS: ${{ inputs.only_keys }}
-        run: python3 tools/make_voices.py
+        run: python tools/make_voices.py
       - name: Ins Repo übernehmen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add audio
+          git add audio voice/raw voice/takes_plan.json voice/auswahl.json
           git diff --cached --quiet && echo "Keine Änderungen." && exit 0
           git commit -m "Stimmen aktualisiert"
-          git push
+          git pull --rebase -q && git push

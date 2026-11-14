@@ -210,6 +210,8 @@ def main():
             else:
                 continue
             encode(pad(y), os.path.join(OUT, f"laut_{C}__{tid}-{V}.mp3")); made += 1
+            if C in HELD and dur >= 0.04 and os.environ.get("RAWCONS"):  # diagnosis: unstretched consonant
+                encode(pad(fade(level(cons), 0.004, 0.02)), os.path.join(OUT, f"laut_{C}__{tid}-{V}~kurz.mp3")); made += 1
     open(os.path.join(OUT, "_diag.tsv"), "w").write("\n".join(DIAG))
     print(made, "Dateien geschrieben nach", OUT)
 
