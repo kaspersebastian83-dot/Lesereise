@@ -3436,6 +3436,29 @@
      "say": "Wind"
     }
    ]
+  },
+  {
+   "id": "w_x030_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Blase. Vogel. Lachen. Glocke.",
+   "items": [
+    {
+     "key": "wort_blase",
+     "say": "Blase"
+    },
+    {
+     "key": "wort_vogel",
+     "say": "Vogel"
+    },
+    {
+     "key": "wort_lachen",
+     "say": "Lachen"
+    },
+    {
+     "key": "wort_glocke",
+     "say": "Glocke"
+    }
+   ]
   }
  ]
 }
