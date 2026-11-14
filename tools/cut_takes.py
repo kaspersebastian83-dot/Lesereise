@@ -56,6 +56,46 @@ def stretch(x, tempo, voiced=True):
         x = y
     return x
 
+def grain_noise(x, target, grain=0.04, seed=1):
+    """extend a noise-like sound (s, f, h, r) by overlap-adding Hann-windowed grains from random places"""
+    rng = np.random.default_rng(seed)
+    g = int(SR * grain); hop = g // 2; n = int(SR * target)
+    src = x[int(len(x) * 0.15):int(len(x) * 0.85)]
+    if len(src) < g + 1: src = x
+    if len(src) < g + 1: return x
+    w = np.hanning(g).astype(np.float32); out = np.zeros(n + g, np.float32)
+    for pos in range(0, n, hop):
+        st = rng.integers(0, len(src) - g); out[pos:pos + g] += src[st:st + g] * w
+    rms_src = np.sqrt((src ** 2).mean()); rms_out = np.sqrt((out[:n] ** 2).mean()) + 1e-9
+    return out[:n] * (rms_src / rms_out)
+
+def psola_hold(x, target):
+    """extend a voiced steady sound (m, n, l, w) by repeating whole pitch periods (TD-PSOLA, same pitch)"""
+    mid = x[int(len(x) * 0.2):int(len(x) * 0.8)]
+    if len(mid) < int(SR * 0.02): return stretch(x, max(0.1, len(x) / SR / target), True)
+    seg = mid - mid.mean()
+    ac = np.correlate(seg, seg, "full")[len(seg) - 1:]
+    lo, hi = int(SR / 400), int(SR / 120)
+    P = lo + int(np.argmax(ac[lo:hi]))
+    if ac[P] < 0.3 * ac[0]: return stretch(x, max(0.1, len(x) / SR / target), True)
+    # pitch marks: peaks spaced by ~P inside the middle part
+    marks = []; i = int(np.argmax(np.abs(mid[:P])))
+    while i + P < len(mid):
+        j = i + P; a, b = max(0, j - P // 4), min(len(mid), j + P // 4)
+        j = a + int(np.argmax(mid[a:b])) if b > a else j
+        marks.append(i); i = j
+    if len(marks) < 3: return stretch(x, max(0.1, len(x) / SR / target), True)
+    n = int(SR * target); out = np.zeros(n + 2 * P, np.float32); w = np.hanning(2 * P).astype(np.float32)
+    seq = marks + marks[-2:0:-1]  # ping-pong through the periods
+    k = 0
+    for pos in range(P, n, P):
+        m = seq[k % len(seq)]; k += 1
+        a = m - P; b = m + P
+        if a < 0 or b > len(mid): continue
+        out[pos - P:pos + P] += mid[a:b] * w
+    out = out[:n]
+    return out * (np.sqrt((mid ** 2).mean()) / (np.sqrt((out[int(SR*0.02):] ** 2).mean()) + 1e-9))
+
 def env_db(x):
     n = len(x) // HOP
     f = x[:n * HOP].reshape(n, HOP)
@@ -145,10 +185,13 @@ def vowel_onset(seg, c_end_hint, C):
     """sample index where the vowel starts inside a CV syllable segment.
     Nasals/liquids are judged by the 1-4 kHz band (vowel formants), the rest by the voicing band (<900 Hz).
     The search stays within -40/+60 ms of the aligner's estimate."""
-    e = env_db(band(seg, 1000, 4000) if C in "mnlwr" else lowband(seg))
+    # voiced/nasal consonants (m n l w r) and the voiced German s/z: vowel formant band; voiceless: voicing band
+    e = env_db(band(seg, 700, 2500) if C in "mnlwrsz" else lowband(seg))
     top = e.max()
     hint = int(c_end_hint / 0.005)
     lo, hi = max(0, hint - 8), min(len(e) - 1, hint + 12)
+    if not (0.02 <= c_end_hint <= 0.35):  # aligner is off (happens with v3): search by signal only
+        lo, hi = 2, min(len(e) - 1, 70)
     for k in range(lo, hi + 1):
         if e[k] > top - 10:
             return k * HOP
@@ -194,15 +237,17 @@ def main():
             on = vowel_onset(seg, max(0.0, c_end), C)
             cons = seg[:max(on - int(SR * 0.012), int(SR * 0.01))]
             dur = len(cons) / SR
+            if C == "h" and V == "a" and tid.endswith("v3L"):
+                encode(fade(level(seg[on:]), 0.002, 0.05), os.path.join(OUT, "_ref_a.mp3"))
             DIAG.append(f"{tid}\t{say}\tseg={len(seg)/SR:.3f}\thint={c_end:.3f}\tonset={on/SR:.3f}\tcons={dur:.3f}")
             if C in HELD and dur >= 0.04:
-                if C == "z":   # keep the t-burst, stretch the s
-                    k = int(SR * 0.03); y = np.concatenate([cons[:k], stretch(cons[k:], max(0.12, (dur - 0.03) / 0.45), False)])
-                elif C in "sfh":
-                    y = stretch(cons, max(0.08, dur / (0.45 if C == "h" else 0.6)), False)
+                if C == "z":   # keep the t-burst, extend the s
+                    k = int(SR * 0.035); y = np.concatenate([cons[:k], grain_noise(cons[k:], 0.42)])
+                elif C in "sfhr":
+                    y = np.concatenate([cons[:int(SR * 0.02)], grain_noise(cons, 0.42 if C == "h" else 0.55)])
                 else:
-                    y = stretch(cons, max(0.08, dur / 0.6), True)
-                y = fade(level(y), 0.02, 0.12)
+                    y = np.concatenate([cons[:int(SR * 0.03)], psola_hold(cons, 0.55)])
+                y = fade(level(y), 0.03, 0.12)
             elif C in VOICELESS_STOP:
                 y = fade(level(seg[:on + int(SR * 0.008)]), 0.002, 0.02)
             elif C in VOICED_STOP:
