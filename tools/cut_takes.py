@@ -221,7 +221,7 @@ def main():
             encode(pad(fade(level(seg), 0.004, 0.04)), os.path.join(OUT, f"{key}__{tid}.mp3")); made += 1
             # letter sounds from CV syllables
             syl = key[6:]
-            if not (len(syl) == 2 and syl[1] in "aeiou" and syl[0] not in "aeiou"):
+            if not key.startswith("silbe_") or not (len(syl) == 2 and syl[1] in "aeiou" and syl[0] not in "aeiou"):
                 continue
             C, V = syl[0], syl[1]
             # aligned consonant end = start of 2nd char of the item

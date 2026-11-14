@@ -12,6 +12,7 @@ PLAN = os.path.join(ROOT, "voice", "takes_plan.json")
 PICK = os.path.join(ROOT, "voice", "auswahl.json")
 CAND = os.path.join(ROOT, "voice", "kandidaten")
 AUDIO = os.path.join(ROOT, "audio")
+WORDS = ("wort_", "u_", "s_")
 LONG = {"a": "ah", "e": "eh", "i": "ie", "o": "oh", "u": "uh"}
 
 def clips():
@@ -36,6 +37,12 @@ def plan():
     n = sum(1 for t in T if t["id"].startswith("syl_x"))
     for i in range(0, len(missing), 8):
         T.append(take(f"syl_x{n:03d}_v3", missing[i:i + 8])); n += 1
+    # single words (reading words, unicorn names, gift names) are read as lists too: alone they often come out English
+    mw = [{"key": k, "say": t} for k, t in C.items() if k.startswith(WORDS) and k not in covered]
+    n = sum(1 for t in T if t["id"].startswith("w_x"))
+    for i in range(0, len(mw), 6):
+        T.append(take(f"w_x{n:03d}_v3", mw[i:i + 6])); n += 1
+    missing = missing + mw
     redo = [k.strip() for k in os.environ.get("REDO", "").split(",") if k.strip()]
     pick = json.load(open(PICK, encoding="utf-8")) if os.path.exists(PICK) else {}
     done = set()
@@ -67,7 +74,7 @@ def install():
     os.makedirs(AUDIO, exist_ok=True)
     n = 0
     for k in C:
-        if not k.startswith(("silbe_", "laut_")): continue
+        if not k.startswith(("silbe_", "laut_") + WORDS): continue
         if pick.get(k) == "alt" and os.path.exists(os.path.join(AUDIO, k + ".mp3")):
             continue  # the earlier single recording was judged better – keep it
         cands = [os.path.basename(f)[:-4] for f in glob.glob(os.path.join(CAND, k + "__*.mp3")) if "~" not in f]
