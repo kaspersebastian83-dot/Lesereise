@@ -41,6 +41,22 @@ c_15	Hüpf, hüpf, von Wolke zu Wolke. Himmelblau kommt dich besuchen! Jetzt sin
 f_1	Alle deine Einhörner tanzen im Mondlicht. Was für ein Fest!
 f_2	Die Einhörner fliegen eine Runde über den Sternenhimmel. Wuiii!
 f_3	Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!
+r_wer	Mit welchem Einhorn möchtest du reiten?
+r_wohin	Wohin reiten wir heute? Such dir einen zauberhaften Ort aus!
+r_fang	Fang unterwegs den Glitzer!
+r_heim	Was für eine zauberhafte Reise! Komm, wir reiten nach Hause.
+d_wald_los	Auf in den Zauberwald! Halt dich gut fest!
+d_meer_los	Auf zum Glitzermeer! Halt dich gut fest!
+d_wiese_los	Auf zur Blumenwiese! Halt dich gut fest!
+d_schloss_los	Auf zum Wolkenschloss! Halt dich gut fest!
+d_zucker_los	Auf ins Zuckerland! Halt dich gut fest!
+d_sterne_los	Wir fliegen zu den Sternen! Halt dich gut fest!
+d_wald_an	Wir sind im Zauberwald. Hier leuchten die Glühwürmchen. Tippe auf die Tiere!
+d_meer_an	Wir sind am Glitzermeer. Die Wellen glitzern. Wer schwimmt denn da?
+d_wiese_an	Wir sind auf der Blumenwiese. Hier duftet es so gut! Tippe auf die Blumen und Tiere.
+d_schloss_an	Wir sind am Wolkenschloss. Hier wohnt die Wolkenkönigin. Schau mal, was es hier alles gibt!
+d_zucker_an	Wir sind im Zuckerland. Hier ist alles aus Zucker. Mmmh, lecker!
+d_sterne_an	Wir sind bei den Sternen. Da ist der Mond! Und da fliegt eine Rakete!
 u_funkel	Funkel
 u_glitzer	Glitzer
 u_sternchen	Sternchen

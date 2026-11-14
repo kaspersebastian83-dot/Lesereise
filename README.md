@@ -15,6 +15,11 @@ Funkel und 15 Einhorn-Freundinnen. Nach jeder geschafften Runde kommt eine neue 
 Geschichte und Animation (aus der Wolke, vom Regenbogen, hinter dem Mond …). Auf der Einhornwiese (🦄-Knopf) wohnen alle;
 antippen = Name hören. Nach jeder richtigen Antwort fliegt ein Einhorn mit Glitzerspur vorbei.
 
+## Zauberreise (🗺️)
+Einhorn aussuchen → Ort aussuchen (Zauberwald, Glitzermeer, Blumenwiese, Wolkenschloss, Zuckerland, Sternenreise) →
+Ritt durch die Landschaft, unterwegs Glitzer fangen → am Ziel Dinge antippen: sie hüpfen, sagen ihr Wort und zeigen es
+groß in Silbenfarben.
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 

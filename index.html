@@ -202,6 +202,47 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 .dance{position:absolute;left:0;right:0;bottom:24%;display:flex;justify-content:center;gap:.5vw;flex-wrap:wrap}
 .dance .uni{width:min(17vw,23vh)}
 
+/* journeys */
+#btnTrip{width:calc(var(--u)*11);height:calc(var(--u)*11);font-size:calc(var(--u)*6);margin-left:1.2vw}
+#trip,#ride,#land{padding:0;justify-content:flex-start}
+#trip{padding-top:2vh}
+#trip .bar,#land .bar,#ride .bar{position:absolute;top:2vh;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 2vw;z-index:6}
+.pickgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2vh 2vw;width:94vw;margin-top:12vh}
+.mapgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4vh 4vw;width:88vw;margin-top:13vh}
+.place{display:flex;flex-direction:column;align-items:center;gap:1.2vh;transition:transform .3s}
+.place .pic{width:min(24vw,30vh);aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:min(13vw,16vh);
+  border:.5vh solid rgba(255,225,160,.7);box-shadow:0 0 5vh rgba(255,217,138,.45),inset 0 0 4vh rgba(255,255,255,.25);animation:float 3.4s ease-in-out infinite}
+.place:nth-child(2n) .pic{animation-delay:-1.2s} .place:nth-child(3n) .pic{animation-delay:-2.1s}
+.place .pn{font-size:calc(var(--u)*4);font-weight:800;color:var(--light);text-shadow:0 0 1.5vh rgba(0,0,0,.7)}
+.place.chosen{transform:scale(1.15)} .place.chosen .pic{box-shadow:0 0 0 .8vh var(--gold),0 0 9vh 3vh rgba(255,201,77,.8)}
+#rideWorld,#landWorld{position:absolute;inset:0;overflow:hidden}
+.layer{position:absolute;left:0;top:0;width:200vw;height:100%;animation:scroll linear infinite;pointer-events:none}
+.layer span{position:absolute;line-height:1}
+.layer.far{opacity:.55;filter:blur(.3px)} .layer.mid{filter:drop-shadow(0 0 1.5vh rgba(255,255,255,.35))}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-100vw)}}
+.ground{position:absolute;left:0;right:0;bottom:0;height:16vh;background:linear-gradient(180deg,rgba(255,255,255,.0),rgba(255,255,255,.18));
+  border-top-left-radius:50% 30%;border-top-right-radius:50% 30%;pointer-events:none}
+.rider{position:absolute;left:12%;top:30%;width:min(30vw,40vh);z-index:3;animation:ride 1.4s ease-in-out infinite;pointer-events:none}
+@keyframes ride{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-3.5vh) rotate(3deg)}}
+.catch{position:absolute;left:0;font-size:min(8vw,11vh);line-height:1;z-index:4;filter:drop-shadow(0 0 2vh rgba(255,240,180,.9));padding:1.5vh}
+#ride .count{font-size:calc(var(--u)*5.5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.9)}
+.whoosh{position:absolute;inset:0;z-index:7;background:radial-gradient(circle,#fff,rgba(255,255,255,0) 70%);animation:whoosh .7s forwards;pointer-events:none}
+@keyframes whoosh{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(2.2)}}
+i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a0;box-shadow:0 0 2vh 1vh rgba(255,240,120,.7);animation:firefly 4s ease-in-out infinite;pointer-events:none}
+@keyframes firefly{0%,100%{opacity:.2;transform:translate(0,0)}50%{opacity:1;transform:translate(3vw,-3vh)}}
+.landuni{position:absolute;left:2%;bottom:6%;width:min(28vw,38vh);z-index:3}
+.thing{position:absolute;transform:translate(-50%,-50%);font-size:min(12vw,15vh);line-height:1;z-index:3;padding:1vh;
+  filter:drop-shadow(0 0 2.5vh rgba(255,245,210,.8));animation:float 3.2s ease-in-out infinite}
+.thing.boing{animation:boing .7s ease-out}
+@keyframes boing{0%{transform:translate(-50%,-50%) scale(1)}30%{transform:translate(-50%,-62%) scale(1.35) rotate(-10deg)}60%{transform:translate(-50%,-48%) scale(.92) rotate(8deg)}100%{transform:translate(-50%,-50%) scale(1)}}
+#bigWord{position:fixed;left:50%;top:14vh;transform:translate(-50%,0) scale(.5);z-index:8;opacity:0;pointer-events:none;
+  background:var(--stone);border-radius:calc(var(--u)*3);padding:1vh calc(var(--u)*3);font-size:calc(var(--u)*11);font-weight:800;letter-spacing:.03em;
+  box-shadow:0 0 0 .7vh var(--gold),0 0 7vh 2vh rgba(255,201,77,.6)}
+#bigWord.show{animation:bigword 2.4s ease-out forwards}
+@keyframes bigword{0%{opacity:0;transform:translate(-50%,0) scale(.4)}15%{opacity:1;transform:translate(-50%,0) scale(1.08)}25%{transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-2vh) scale(1)}}
+.caughtBadge{position:absolute;right:3vw;top:3vh;font-size:calc(var(--u)*5.5);font-weight:800;color:var(--gold);text-shadow:0 0 2vh rgba(255,201,77,.9);z-index:6}
+#land .bar{justify-content:flex-start;gap:2vw}
+
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -243,7 +284,8 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
 <section id="home" class="screen">
   <div class="top">
     <div class="stars"><b>★</b><span id="starCount">0</span>
-      <button class="round orb" id="btnMeadow" aria-label="Einhornwiese" style="margin-left:2vw">🦄<b id="herdCount">1</b></button></div>
+      <button class="round orb" id="btnMeadow" aria-label="Einhornwiese" style="margin-left:2vw">🦄<b id="herdCount">1</b></button>
+      <button class="round orb" id="btnTrip" aria-label="Reise">🗺️</button></div>
     <button class="round gear" id="btnGear" aria-label="Elternbereich (lange drücken)">⚙</button>
   </div>
   <div id="drift"></div>
@@ -275,6 +317,22 @@ button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:poin
   </div>
   <div class="pasture" id="pasture"></div>
 </section>
+
+<section id="trip" class="screen">
+  <div class="bar"><button class="round hb" id="btnTripHome" aria-label="Zurück">🏠</button></div>
+  <div id="tripBody"></div>
+</section>
+
+<section id="ride" class="screen">
+  <div id="rideWorld"></div>
+  <div class="bar"><button class="round hb" id="btnRideHome" aria-label="Zurück">🏠</button><div class="count">✨ <span id="rideCount">0</span></div></div>
+</section>
+
+<section id="land" class="screen">
+  <div id="landWorld"></div>
+  <div class="bar"><button class="round hb" id="btnLandHome" aria-label="Nach Hause">🏠</button><button class="round hb" id="btnLandAgain" aria-label="Neue Reise">🗺️</button></div>
+</section>
+<div id="bigWord"></div>
 
 <section id="parent" class="screen"><div class="wrap" id="parentWrap"></div></section>
 
@@ -464,7 +522,23 @@ const PROMPTS = {
   c_15:'Hüpf, hüpf, von Wolke zu Wolke. Himmelblau kommt dich besuchen! Jetzt sind alle Einhörner da!',
   f_1:'Alle deine Einhörner tanzen im Mondlicht. Was für ein Fest!',
   f_2:'Die Einhörner fliegen eine Runde über den Sternenhimmel. Wuiii!',
-  f_3:'Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!'
+  f_3:'Die Einhörner flüstern dir etwas zu: Du kannst schon so toll lesen!',
+  r_wer:'Mit welchem Einhorn möchtest du reiten?',
+  r_wohin:'Wohin reiten wir heute? Such dir einen zauberhaften Ort aus!',
+  r_fang:'Fang unterwegs den Glitzer!',
+  r_heim:'Was für eine zauberhafte Reise! Komm, wir reiten nach Hause.',
+  d_wald_los:'Auf in den Zauberwald! Halt dich gut fest!',
+  d_meer_los:'Auf zum Glitzermeer! Halt dich gut fest!',
+  d_wiese_los:'Auf zur Blumenwiese! Halt dich gut fest!',
+  d_schloss_los:'Auf zum Wolkenschloss! Halt dich gut fest!',
+  d_zucker_los:'Auf ins Zuckerland! Halt dich gut fest!',
+  d_sterne_los:'Wir fliegen zu den Sternen! Halt dich gut fest!',
+  d_wald_an:'Wir sind im Zauberwald. Hier leuchten die Glühwürmchen. Tippe auf die Tiere!',
+  d_meer_an:'Wir sind am Glitzermeer. Die Wellen glitzern. Wer schwimmt denn da?',
+  d_wiese_an:'Wir sind auf der Blumenwiese. Hier duftet es so gut! Tippe auf die Blumen und Tiere.',
+  d_schloss_an:'Wir sind am Wolkenschloss. Hier wohnt die Wolkenkönigin. Schau mal, was es hier alles gibt!',
+  d_zucker_an:'Wir sind im Zuckerland. Hier ist alles aus Zucker. Mmmh, lecker!',
+  d_sterne_an:'Wir sind bei den Sternen. Da ist der Mond! Und da fliegt eine Rakete!'
 };
 const STATIONS = [
   {id:'laute', icon:'🌲', lbl:'M',    tale:'g_wald',    art:'<span class="emo">🌲</span><span class="emo sm">✨</span><span class="emo">🌳</span>'},
@@ -838,6 +912,79 @@ function drawMeadow(){ const P=$('pasture'); P.innerHTML='';
 $('btnMeadow').onclick=()=>{ stopAll(); drawMeadow(); show('meadow'); say('g_herde'); };
 $('btnMeadowHome').onclick=goHome;
 document.querySelectorAll('.funkel-slot').forEach(d=>d.outerHTML=funkel());
+/* ================= JOURNEYS: pick a unicorn, pick a place, ride there ================= */
+const TRIPS=[
+ {id:'wald',   name:'Zauberwald',    icon:'🌲', bg:'linear-gradient(180deg,#081a24 0%,#123d3a 55%,#1d6a4c 100%)', far:['🌲','🌳','🌲','🏔️'], mid:['🍄','🌿','🌲','🦋','🌳','🍄'], catchE:['✨','🌟'], fire:true,
+  things:[['🦔','IGEL'],['🦊','FUCHS'],['🍄','PILZ'],['🦉','UHU'],['🐰','HASE'],['🌳','BAUM']]},
+ {id:'meer',   name:'Glitzermeer',   icon:'🌊', bg:'linear-gradient(180deg,#0a1a3f 0%,#1b4f8f 50%,#2d9fcf 100%)', far:['🏝️','⛵','🌊','🏝️'], mid:['🐚','🫧','🪸','🌊','🐠'], catchE:['🫧','✨'],
+  things:[['🐟','FISCH'],['🐳','WAL'],['🐬','DELFIN'],['🦭','ROBBE'],['⛵','BOOT'],['⚓','ANKER']]},
+ {id:'wiese',  name:'Blumenwiese',   icon:'🌸', bg:'linear-gradient(180deg,#6fbfff 0%,#bfe6ff 50%,#8fdc7f 100%)', far:['🌳','⛰️','🌳','🏡'], mid:['🌸','🌼','🌷','🦋','🌻','🌷'], catchE:['🦋','🌼'],
+  things:[['🌹','ROSE'],['🐝','BIENE'],['🐴','PFERD'],['🐮','KUH'],['🐐','ZIEGE'],['🍃','BLATT']]},
+ {id:'schloss',name:'Wolkenschloss', icon:'🏰', bg:'linear-gradient(180deg,#a996ff 0%,#f0c2ff 55%,#ffe3f3 100%)', far:['☁️','🏰','☁️','🌈'], mid:['☁️','✨','☁️','🎀'], catchE:['💖','✨'],
+  things:[['👑','KRONE'],['🏯','BURG'],['💍','RING'],['❤️','HERZ'],['👼','ENGEL'],['🕯️','KERZE']]},
+ {id:'zucker', name:'Zuckerland',    icon:'🍭', bg:'linear-gradient(180deg,#ff8acb 0%,#ffc4e6 55%,#fff0c4 100%)', far:['🍭','🧁','🍰','🍭'], mid:['🍬','🍭','🍩','🧁','🍓'], catchE:['🍬','🍭'],
+  things:[['🍦','EIS'],['🍪','KEKS'],['🍬','BONBON'],['🎂','TORTE'],['🧃','SAFT'],['🍌','BANANE']]},
+ {id:'sterne', name:'Sternenreise',  icon:'🌙', bg:'linear-gradient(180deg,#03021a 0%,#150c42 60%,#2a1b6e 100%)', far:['🪐','🌙','⭐','🌍'], mid:['⭐','✨','🌟','☄️'], catchE:['⭐','🌟'],
+  things:[['🌙','MOND'],['🚀','RAKETE'],['🪐','PLANET'],['🤖','ROBOTER'],['🏮','LATERNE'],['🦉','UHU']]}
+];
+const LANDPOS=[[30,62],[47,76],[64,58],[81,74],[56,30],[86,34]];
+let trip=null;
+function wordHTML(W){ const w=WORDS.find(x=>x.word===W);
+  return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
+function tripPick(){ stopAll(); stopScene();
+  if(S.herd===0){ trip={uni:0}; return tripMap(); }
+  trip={uni:null}; const T=$('tripBody'); T.className='pickgrid'; T.innerHTML='';
+  HERD.slice(0,S.herd+1).forEach((u,i)=>{ const b=el('button','pen');
+    b.innerHTML='<div class="cl"></div>'+uniSVG(u,{cls:'uni'+(i%2?' flip':''),attr:`style="animation-delay:${-i*.4}s"`});
+    b.onclick=()=>{ if(trip.uni!=null) return; trip.uni=i; const v=b.querySelector('.uni'); v.classList.add('happy');
+      chime([988,1318]); glitterBurst(...centerOf(v),26,20); say('u_'+keyOf(u.name)); later(tripMap,1400); };
+    T.appendChild(b); });
+  show('trip'); say('r_wer'); }
+function tripMap(){ stopScene(); const T=$('tripBody'); T.className='mapgrid'; T.innerHTML='';
+  TRIPS.forEach(d=>{ const b=el('button','place');
+    b.innerHTML=`<div class="pic" style="background:${d.bg}">${d.icon}</div><div class="pn">${d.name}</div>`;
+    b.onclick=()=>{ if(trip.dest) return; trip.dest=d; b.classList.add('chosen'); chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22);
+      say('d_'+d.id+'_los'); later(()=>startRide(d),1300); };
+    T.appendChild(b); });
+  show('trip'); say('r_wohin'); }
+function layer(items,n,cls,dur,yr,size){ const L=el('div','layer '+cls); L.style.animationDuration=dur+'s';
+  let h=''; for(let k=0;k<n;k++){ const x=(k+Math.random()*.6)/n*100, y=yr[0]+Math.random()*(yr[1]-yr[0]), e=rnd(items), z=size*(.7+Math.random()*.6);
+    const sp=`style="top:${y}vh;font-size:${z}vh;left:%Lvw"`; h+=`<span ${sp.replace('%L',x)}>${e}</span><span ${sp.replace('%L',x+100)}>${e}</span>`; }
+  L.innerHTML=h; return L; }
+function startRide(d){
+  stopScene(); const R=$('rideWorld'); R.innerHTML=''; R.style.background=d.bg; trip.caught=0; $('rideCount').textContent='0';
+  R.append(layer(d.far,6,'far',38,[18,48],13), layer(d.mid,9,'mid',15,[58,80],10));
+  const g=el('div','ground'); R.appendChild(g);
+  if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${20+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; R.appendChild(f); }
+  const rider=el('div','rider'); rider.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni flying'}); R.appendChild(rider);
+  show('ride'); later(()=>trail(rider,15000),200); later(()=>say('r_fang'),2600);
+  const spawn=()=>{ if(!$('ride').classList.contains('on')) return; const c=el('button','catch',rnd(d.catchE)); const y=12+Math.random()*58;
+    c.style.top=y+'vh'; R.appendChild(c); const w=innerWidth, dur=4800+Math.random()*1500, amp=(Math.random()*6+3);
+    const a=c.animate([{transform:`translateX(${w*1.05}px) translateY(0)`},{transform:`translateX(${w*.7}px) translateY(-${amp}vh)`},{transform:`translateX(${w*.35}px) translateY(${amp}vh)`},
+      {transform:`translateX(-${w*.1}px) translateY(0)`}],{duration:dur,easing:'linear'}); a.onfinish=()=>c.remove();
+    c.onpointerdown=()=>{ trip.caught++; $('rideCount').textContent=trip.caught; chime([rnd([1047,1175,1318,1568,1760])]); glitterBurst(...centerOf(c),16,12); c.remove(); }; };
+  const iv=setInterval(spawn,850); sceneT.push(iv);
+  later(()=>{ const fl=el('div','whoosh'); R.appendChild(fl); },14300);
+  later(()=>arrive(d),15000); }
+function arrive(d){
+  stopScene(); const L=$('landWorld'); L.innerHTML=''; L.style.background=d.bg;
+  L.appendChild(el('div','ground'));
+  if(d.fire) for(let k=0;k<18;k++){ const f=el('i','fly'); f.style.cssText=`left:${Math.random()*100}vw;top:${15+Math.random()*60}vh;animation-delay:${-Math.random()*4}s`; L.appendChild(f); }
+  const u=el('button','landuni'); u.innerHTML=uniSVG(HERD[trip.uni],{cls:'uni'}); L.appendChild(u);
+  u.onclick=()=>{ const v=u.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); glitterBurst(...centerOf(v),22,16); say('u_'+keyOf(HERD[trip.uni].name)); };
+  d.things.forEach(([e,w],k)=>{ const b=el('button','thing',e); const [x,y]=LANDPOS[k];
+    b.style.left=x+'%'; b.style.top=y+'%'; b.style.animationDelay=(-k*.5)+'s';
+    b.onclick=()=>{ b.classList.remove('boing'); void b.offsetWidth; b.classList.add('boing'); chime([1175,1568]); glitterBurst(...centerOf(b),22,16);
+      const bw=$('bigWord'); bw.innerHTML=wordHTML(w); bw.classList.remove('show'); void bw.offsetWidth; bw.classList.add('show'); say('wort_'+keyOf(w)); };
+    L.appendChild(b); });
+  if(trip.caught>0){ const c=el('div','caughtBadge',`${d.catchE[0]} ${trip.caught}`); L.appendChild(c); }
+  show('land'); later(()=>glitterBurst(innerWidth/2,innerHeight*.45,40,40),200); chime([523,659,784,1047]); say('d_'+d.id+'_an'); }
+$('btnTrip').onclick=tripPick;
+$('btnTripHome').onclick=goHome;
+$('btnRideHome').onclick=goHome;
+$('btnLandHome').onclick=()=>{ say('r_heim'); later(goHome,2600); };
+$('btnLandAgain').onclick=tripPick;
+
 
 /* parent gate: hold the gear for 1.5 s */
 let gearT=null;
