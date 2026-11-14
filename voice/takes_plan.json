@@ -3421,6 +3421,21 @@
      "say": "Sternenstaub"
     }
    ]
+  },
+  {
+   "id": "w_x029_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Licht. Wind.",
+   "items": [
+    {
+     "key": "wort_licht",
+     "say": "Licht"
+    },
+    {
+     "key": "wort_wind",
+     "say": "Wind"
+    }
+   ]
   }
  ]
 }
