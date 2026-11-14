@@ -465,6 +465,13 @@ s_sterne1	Mondstein
 a_sterne2_in	Ein kleines Sternchen ist vom Himmel gepurzelt. Es will zurück zu seinen Freunden. Zeigst du ihm den Weg?
 a_sterne2_out	Das Sternchen leuchtet wieder hoch am Himmel. Es schickt dir glitzernden Sternenstaub.
 s_sterne2	Sternenstaub
+b_hallo1	Hallo, du! Wie schön, dass du da bist. Ich bin Ulla, die Erzähl-Eule. Ich habe dir ein Zauberbuch mitgebracht. Darin wohnen Märchen, Einhörner und Buchstaben, die gelesen werden wollen. Du kannst schon so viel, und jeden Tag lernst du etwas Neues dazu. Komm, wir machen das Buch zusammen auf!
+b_hallo2	Hallo, da bist du ja wieder! Ich habe mich schon so auf dich gefreut. Komm, wir machen das Zauberbuch auf!
+b_hallo3	Huhu! Schön, dass du da bist. Heute erleben wir bestimmt wieder etwas Wunderbares. Komm, wir schauen ins Buch!
+b_auf	Mit dem Finger kannst du blättern, wie in einem richtigen Buch. Und wenn dir eine Seite gefällt, dann tippe auf das Bild!
+b_lesen	Lesen lernen mit Funkel.
+b_tipp	Zieh die Seite mit dem Finger zur Seite, dann blätterst du um. Oder tippe auf das Bild!
+b_weiter	Wohin blättern wir jetzt?
 m_buch	Das ist dein Märchenbuch. Welches Märchen möchtest du hören?
 m_hilf	Tippe auf das, was leuchtet!
 m_ende	Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.

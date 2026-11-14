@@ -443,6 +443,62 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
   display:flex;align-items:center;justify-content:center;font-size:20vh;border:.6vh solid rgba(255,225,160,.85);border-left-width:2.2vh;
   box-shadow:0 0 6vh rgba(255,217,138,.5),inset 0 0 5vh rgba(255,255,255,.25)}
 
+/* the storybook: the hub with the owl storyteller */
+#bookScr{padding:0;touch-action:none}
+#bookWrap{position:absolute;left:57%;top:52%;width:min(70vw,112vh);aspect-ratio:1.6;translate:-50% -50%;perspective:2400px;z-index:2}
+#bk{position:absolute;inset:0;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.3,.8,.3,1),scale .5s ease-in}
+#bookWrap.closed #bk{transform:translateX(-25%)} #bookWrap.go #bk{scale:1.25;opacity:0;transition:transform 1s,scale .55s ease-in,opacity .55s ease-in}
+#bk .pg{position:absolute;top:0;width:50%;height:100%;overflow:hidden;background:linear-gradient(180deg,#fffaf0,#fbefd6)}
+#bk .pgL{left:0;border-radius:2vh 0 0 2vh;box-shadow:inset -3vh 0 3vh -2vh rgba(120,80,40,.35),-.5vh .5vh 0 #e8d6b0,-1vh 1vh 0 #d4bd92,0 2vh 5vh rgba(0,0,0,.5)}
+#bk .pgR{left:50%;border-radius:0 2vh 2vh 0;box-shadow:inset 3vh 0 3vh -2vh rgba(120,80,40,.35),.5vh .5vh 0 #e8d6b0,1vh 1vh 0 #d4bd92,0 2vh 5vh rgba(0,0,0,.5)}
+#bookWrap.closed .pgL{visibility:hidden}
+.leaf{position:absolute;left:50%;top:0;width:50%;height:100%;transform-origin:0 50%;transform-style:preserve-3d;z-index:5;--sh:0}
+.leaf.anim{transition:transform .75s cubic-bezier(.4,.1,.3,1)}
+.leaf>div{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:linear-gradient(180deg,#fffaf0,#fbefd6)}
+.leaf .lf{border-radius:0 2vh 2vh 0} .leaf .lb{transform:rotateY(180deg);border-radius:2vh 0 0 2vh}
+.leaf>div::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(80,50,20,.35),rgba(80,50,20,0) 60%);opacity:var(--sh)}
+.leaf .lb::after{background:linear-gradient(270deg,rgba(80,50,20,.35),rgba(80,50,20,0) 60%)}
+.bcover{position:absolute;inset:0;border-radius:0 2vh 2vh 0;background:radial-gradient(circle at 40% 35%,#6a4ab0,#3a2470 70%,#2a1858);
+  box-shadow:inset 0 0 0 1.2vh #3a2470,inset 0 0 0 1.6vh #ffd86a,inset 0 0 6vh rgba(255,216,106,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2vh;color:#ffe9a8}
+.bcover .bt{font:700 5.2vh/1.05 Georgia,"Times New Roman",serif;text-align:center;text-shadow:0 0 2vh rgba(255,216,106,.8);letter-spacing:.02em}
+.bcover .uni{width:58%} .bcover .st{position:absolute;font-size:3vh;animation:twinkle 2.4s ease-in-out infinite}
+.ill{position:absolute;inset:7% 7% 7% 9%;border-radius:2vh;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 4vh rgba(0,0,0,.25),0 0 0 .5vh #fff,0 0 0 .9vh #e6c98a}
+.ill .art{position:relative;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 3vh rgba(255,240,200,.55));animation:float 3.4s ease-in-out infinite}
+.ill .art svg{width:100%;display:block;overflow:visible}
+.ill .tw{position:absolute;color:#fff6c0;font-size:2.6vh;animation:twinkle 2.6s ease-in-out infinite;text-shadow:0 0 1.5vh #ffd86a}
+.ill .emo{font-size:22vh;line-height:1}
+.ill .lt{position:absolute;font:800 4vh/1 ui-rounded,system-ui,sans-serif;color:#ffe27a;text-shadow:0 0 2vh rgba(255,216,106,.9);animation:float 3s ease-in-out infinite}
+.pt{position:absolute;inset:8% 9% 8% 7%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6vh;text-align:center}
+.pt .ttl{font:700 4.6vh/1.15 Georgia,"Times New Roman",serif;color:#5a2e6e}
+.pt .orn{color:#d8a83a;font-size:2.6vh;letter-spacing:1.2vh}
+.pt .play{width:13vh;height:13vh;font-size:5.5vh;animation:pulse 1.8s ease-in-out infinite;pointer-events:none}
+.pt .play svg{width:42%;fill:var(--ink);margin-left:8%}
+.pt .done{position:absolute;right:0;top:0;font-size:6vh;filter:drop-shadow(0 0 1.6vh rgba(255,210,90,.95))}
+.pt .pn{position:absolute;bottom:-3%;color:#b89a6a;font:600 2.2vh Georgia,serif}
+.pt .chips{display:flex;flex-wrap:wrap;gap:.8vh;justify-content:center;max-width:90%}
+.pt .chips b{font:800 3vh/1 ui-rounded,system-ui,sans-serif;color:#7a4a10;background:#ffe9a8;border-radius:1vh;padding:.5vh 1vh;box-shadow:0 .3vh 0 #e6c070}
+.corner{position:absolute;bottom:-2%;width:11vh;height:11vh;z-index:6;pointer-events:none;display:flex;align-items:center;justify-content:center;font-size:5vh;color:#7a4a10;
+  background:radial-gradient(circle at 35% 30%,#fff6d6,#ffd98a 55%,#e9a93a);border-radius:50%;box-shadow:0 0 3vh rgba(255,217,138,.7);transition:opacity .4s}
+.corner.cR{right:-4%} .corner.cL{left:-4%} .corner.off,#bookWrap.closed .corner{opacity:0}
+.corner.nudge{animation:hintp .8s ease-in-out infinite}
+#bkDots{position:absolute;left:57%;bottom:2.5vh;translate:-50% 0;display:flex;gap:1.4vh;z-index:2;transition:opacity .5s}
+#bkDots i{width:2vh;height:2vh;border-radius:50%;background:rgba(255,255,255,.3)} #bkDots i.on{background:#ffd86a;box-shadow:0 0 1.5vh #ffd86a}
+#bookScr.closedS #bkDots{opacity:0}
+#owl{position:absolute;left:1.5%;bottom:3vh;width:min(23vw,33vh);z-index:3;pointer-events:none;transition:transform .8s cubic-bezier(.3,1.3,.5,1)}
+#owl svg{width:100%;display:block;overflow:visible}
+#owl .obd{transform-box:view-box;transform-origin:60px 128px;animation:owlsw 4s ease-in-out infinite} @keyframes owlsw{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+#owl .oe{transform-box:fill-box;transform-origin:center;animation:blink 4.2s infinite}
+#owl .oj{display:none} #owl.joy .oj{display:inline} #owl.joy .oe{display:none}
+#owl .bkL{transform-box:view-box;transform-origin:60px 70px;transition:transform .1s}
+#owl.talk .bkL{animation:beak .17s ease-in-out infinite alternate} @keyframes beak{to{transform:translateY(5px) scaleY(1.3)}}
+#owl .wl{transform-box:view-box;transform-origin:30px 74px} #owl .wr{transform-box:view-box;transform-origin:90px 74px}
+#owl.wave .wr{animation:wave .32s ease-in-out 6 alternate} @keyframes wave{to{transform:rotate(-48deg)}}
+#owl.flap .wl{animation:flapl .16s ease-in-out 8 alternate} #owl.flap .wr{animation:flapr .16s ease-in-out 8 alternate}
+@keyframes flapl{to{transform:rotate(40deg)}} @keyframes flapr{to{transform:rotate(-40deg)}}
+#owl.talk .obd{animation:owltalk .9s ease-in-out infinite} @keyframes owltalk{0%,100%{transform:rotate(-2deg) scale(1)}50%{transform:rotate(3deg) scale(1.02,.98)}}
+#btnGear2{position:absolute;right:3vw;top:2vh;z-index:6}
+#bkFinger{position:absolute;left:0;top:0;z-index:8;font-size:9vh;pointer-events:none;opacity:0;filter:drop-shadow(0 0 2vh rgba(255,255,255,.9))}
+
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -519,6 +575,11 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
   <div class="pasture" id="pasture"></div>
 </section>
 
+<section id="bookScr" class="screen">
+  <div id="bookWrap"><div id="bk"><div class="pg pgL"></div><div class="pg pgR"></div></div><div class="corner cL">◀</div><div class="corner cR">▶</div></div>
+  <div id="bkDots"></div><div id="owl"></div><div id="bkFinger">👆</div>
+  <button class="round gear" id="btnGear2" aria-label="Elternbereich (lange drücken)">⚙</button>
+</section>
 <section id="trip" class="screen">
   <div class="bar"><button class="round hb" id="btnTripHome" aria-label="Zurück">🏠</button><button class="round orb hb" id="btnChest" aria-label="Schatzkiste">🎁</button></div>
   <div id="tripBody"></div>
@@ -1118,9 +1179,7 @@ STATIONS.forEach(st=>{
   b.onclick=()=>{ startRound(st.id); };
   $('stations').appendChild(b);
 });
-$('btnStart').onclick=()=>{ chime();
-  if(!S.seen.intro){ S.seen.intro=true; save(); story(INTRO, ()=>{ goHome(); say('g_wohin'); }); }
-  else { goHome(); say('p_start','g_wohin'); } };
+$('btnStart').onclick=()=>{ chime(); openBook(null,'start'); };
 $('btnStory').onclick=storyNext;
 $('btnHome').onclick=goHome;
 $('btnDone').onclick=()=>{ const c=nextChapter; nextChapter=null;
@@ -1135,6 +1194,7 @@ function drawMeadow(){ const P=$('pasture'); P.innerHTML='';
 $('btnMeadow').onclick=()=>{ stopAll(); drawMeadow(); show('meadow'); say('g_herde'); };
 $('btnMeadowHome').onclick=goHome;
 document.querySelectorAll('.funkel-slot').forEach(d=>d.outerHTML=funkel());
+$('owl').innerHTML=owlSVG();
 /* ================= JOURNEYS: pick a unicorn, pick a place, ride there, live a little adventure ================= */
 /* every place has two adventures: someone needs help, she fetches three things by reading/hearing the word, and gets a keepsake */
 const TRIPS=[
@@ -1310,7 +1370,7 @@ async function endQuest(tk){
   Q=null;
   if(first && ALLADV.every(a=>S.loot[a.id])) await say('r_alle'); else await say('r_nochmal'); }
 $('btnTrip').onclick=()=>tripPick();
-$('btnTripHome').onclick=()=>{ trip=null; goHome(); };
+$('btnTripHome').onclick=()=>{ const b=trip&&trip.book; trip=null; if(b) openBook(null,'back'); else goHome(); };
 $('btnRideHome').onclick=()=>{ trip=null; goHome(); };
 $('btnChest').onclick=()=>{ $('btnChest').dataset.m==='chest' ? tripMap() : tripChest(); };
 $('btnLandHome').onclick=()=>{ hideWord(); qClear(); Q=null; stopScene(); say('r_heim'); const tk=trip; later(()=>{ if(trip===tk){ trip=null; goHome(); } },2600); };
@@ -2536,6 +2596,132 @@ const TALES=[
   {bg:'nacht', p:[['burg','🏰',76,40,40,'glow'],['drache','🐉',52,62,26,'party'],['krone','👑',53,44,10],['koenig','🤴',34,50,17]], a:{t:'none'}, fx:'glit',
    s:'Nun lachte niemand mehr über den kleinen Drachen. Der König machte ihn zum Lichtmeister im Schloss. Jeden Abend pustet er die Sterne an den Himmel. Denn das, was an dir anders ist, ist oft dein größter Schatz. Ende.'}]}
 ];
+
+/* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
+function owlSVG(){ return `<svg viewBox="0 0 120 152">
+  <rect x="14" y="128" width="92" height="12" rx="3" fill="#ff9ac0" stroke="#9a4a6a" stroke-width="2.5"/><rect x="20" y="139" width="82" height="12" rx="3" fill="#8fc0ff" stroke="#3a5a9a" stroke-width="2.5"/>
+  <path d="M18 132 H100 M24 143 H98" stroke="#fff" stroke-width="2" opacity=".7"/>
+  <g class="obd">
+   <path d="M48 124 l-4 6 M52 124 v7 M56 124 l4 6 M66 124 l-4 6 M70 124 v7 M74 124 l4 6" stroke="#f0a020" stroke-width="3.2" stroke-linecap="round"/>
+   <ellipse cx="60" cy="92" rx="38" ry="36" fill="#9c7cc4" stroke="#4a3a6a" stroke-width="3"/>
+   <ellipse cx="60" cy="100" rx="24" ry="25" fill="#f4e6ff"/>
+   <g fill="none" stroke="#c9b0e6" stroke-width="2.2" stroke-linecap="round"><path d="M48 92 q4 4 8 0 M58 92 q4 4 8 0 M44 102 q4 4 8 0 M54 102 q4 4 8 0 M64 102 q4 4 8 0 M50 112 q4 4 8 0 M60 112 q4 4 8 0"/></g>
+   <g class="wing wl"><path d="M30 72 Q8 96 22 122 Q38 110 38 80Z" fill="#7d5ea8" stroke="#4a3a6a" stroke-width="3" stroke-linejoin="round"/></g>
+   <g class="wing wr"><path d="M90 72 Q112 96 98 122 Q82 110 82 80Z" fill="#7d5ea8" stroke="#4a3a6a" stroke-width="3" stroke-linejoin="round"/></g>
+   <path d="M30 38 L22 12 L44 30Z M90 38 L98 12 L76 30Z" fill="#9c7cc4" stroke="#4a3a6a" stroke-width="3" stroke-linejoin="round"/>
+   <circle cx="60" cy="54" r="33" fill="#ab8dd2" stroke="#4a3a6a" stroke-width="3"/>
+   <circle cx="45" cy="54" r="15" fill="#fff6e8"/><circle cx="75" cy="54" r="15" fill="#fff6e8"/>
+   <g class="oe"><circle cx="45" cy="55" r="7.5" fill="#2a1a3a"/><circle cx="75" cy="55" r="7.5" fill="#2a1a3a"/><circle cx="47.5" cy="52.5" r="2.6" fill="#fff"/><circle cx="77.5" cy="52.5" r="2.6" fill="#fff"/></g>
+   <g class="oj" fill="none" stroke="#2a1a3a" stroke-width="3.2" stroke-linecap="round"><path d="M38 57 q7 -8 14 0"/><path d="M68 57 q7 -8 14 0"/></g>
+   <g fill="none" stroke="#e0a830" stroke-width="2.6"><circle cx="45" cy="54" r="13"/><circle cx="75" cy="54" r="13"/><path d="M58 52 q2 -3 4 0"/></g>
+   <ellipse cx="36" cy="68" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".7"/><ellipse cx="84" cy="68" rx="4.5" ry="2.6" fill="#ff9ac0" opacity=".7"/>
+   <path class="bkL" d="M55 70 L65 70 L60 77Z" fill="#d07a10"/><path d="M53 64 L67 64 L60 74Z" fill="#ffb23a" stroke="#b86a10" stroke-width="1.6" stroke-linejoin="round"/>
+   <path d="M30 80 Q60 92 90 80 L88 88 Q60 100 32 88Z" fill="#ff7aa8" stroke="#9a3a6a" stroke-width="2"/><path d="M80 88 l6 16 l6 -4 l-4 -14Z" fill="#ff7aa8" stroke="#9a3a6a" stroke-width="2" stroke-linejoin="round"/>
+  </g></svg>`; }
+const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
+const bItems=()=>[{k:'lesen'},...TALES.map(t=>({k:'tale',t}))];
+function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
+  if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
+    L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
+  const t=it.t, id=t.id;
+  if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
+  if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
+  if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
+    `<div class="art" style="position:absolute;right:8%;top:8%;width:22%">${cakeSVG()}</div>`+tw;
+  return `<div class="art"><span class="emo">${t.icon}</span></div>`+tw; }
+function bPageL(i){ const it=bItems()[i]; return `<div class="ill" style="background:${it.k==='lesen'?TBG.nacht:it.t.cover}">${bArt(it)}</div>`; }
+function bPageR(i){ const it=bItems()[i], done=it.k==='tale'&&S.tales[it.t.id];
+  const ttl=it.k==='lesen'?'Lesen lernen mit Funkel':it.t.title;
+  const extra=it.k==='lesen'?`<div class="chips">${letters().map(l=>`<b>${dLetter(l)}</b>`).join('')}</div><div class="orn">★ ${S.stars}</div>`:'<div class="orn">✦ ✦ ✦</div>';
+  return `<div class="pt"><div class="ttl">${ttl}</div>${extra}<div class="round orb play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg></div>${done?'<div class="done">⭐</div>':''}<div class="pn">${i+1}</div></div>`; }
+function bCover(){ return `<div class="bcover"><span class="st" style="left:12%;top:10%">✦</span><span class="st" style="right:14%;top:16%;animation-delay:-1s">★</span><span class="st" style="left:18%;bottom:14%;animation-delay:-.6s">✧</span><span class="st" style="right:12%;bottom:20%;animation-delay:-1.6s">✦</span>
+  ${uniSVG(HERD[0],{cls:'uni'})}<div class="bt">Funkels<br>Zauberbuch</div></div>`; }
+function bSet(side,i){ $('bk').querySelector('.pg'+side).innerHTML=side==='L'?bPageL(i):bPageR(i); }
+function bDots(){ const n=bItems().length; $('bkDots').innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===BOOK.i?'on':''}"></i>`).join('');
+  $('bookWrap').querySelector('.cL').classList.toggle('off',BOOK.i===0); $('bookWrap').querySelector('.cR').classList.toggle('off',BOOK.i>=n-1); }
+async function owlSay(...k){ const o=$('owl'); o.classList.add('talk'); const r=await say(...k); o.classList.remove('talk'); return r; }
+function owlDo(c,ms){ const o=$('owl'); o.classList.remove(c); void o.offsetWidth; o.classList.add(c); setTimeout(()=>o.classList.remove(c),ms||2200); }
+const bLive=run=>BOOK.run===run&&$('bookScr').classList.contains('on');
+function bTitle(i){ const it=bItems()[i]; return owlSay(it.k==='lesen'?'b_lesen':'t_'+it.t.id+'_titel'); }
+function bIdle(){ clearTimeout(BOOK.idle); const run=BOOK.run; if(BOOK.hints>=2) return;
+  BOOK.idle=setTimeout(()=>{ if(!bLive(run)||!BOOK.open||BOOK.busy||BOOK.drag) return; BOOK.hints++; bHint(); owlSay('b_tipp'); bIdle(); },BOOK.hints?26000:13000); }
+/* show the gesture: a finger lifts the page corner a little, then lets it fall back */
+function bHint(){ const w=$('bookWrap'), n=bItems().length, dir=BOOK.i<n-1?1:-1, c=w.querySelector(dir>0?'.cR':'.cL'); c.classList.add('nudge'); setTimeout(()=>c.classList.remove('nudge'),3000);
+  const r=w.getBoundingClientRect(), f=$('bkFinger'), x0=dir>0?r.right-r.width*.08:r.left+r.width*.08, y=r.top+r.height*.62, x1=x0-dir*r.width*.28;
+  try{ f.animate([{transform:`translate(${x0}px,${y+40}px)`,opacity:0},{transform:`translate(${x0}px,${y}px)`,opacity:1,offset:.2},{transform:`translate(${x1}px,${y-10}px)`,opacity:1,offset:.75},{transform:`translate(${x1}px,${y-10}px)`,opacity:0}],{duration:1900,easing:'ease-in-out'}); }catch(e){}
+  if(BOOK.busy) return; const L=bLeafMake(dir); if(!L) return; BOOK.busy=true; L.classList.add('anim');
+  setTimeout(()=>bLeafAngle(dir>0?55:125),380); setTimeout(()=>bLeafAngle(dir>0?0:180),1500); setTimeout(()=>{ bLeafEnd(false); },2300); }
+function bLeafMake(dir){ const n=bItems().length, i=BOOK.i, j=i+dir; if(j<0||j>=n) return null;
+  const L=el('div','leaf',`<div class="lf"></div><div class="lb"></div>`); L.dataset.dir=dir;
+  if(dir>0){ L.querySelector('.lf').innerHTML=bPageR(i); L.querySelector('.lb').innerHTML=bPageL(j); bSet('R',j); L.style.transform='rotateY(0deg)'; }
+  else { L.querySelector('.lf').innerHTML=bPageR(j); L.querySelector('.lb').innerHTML=bPageL(i); bSet('L',j); L.style.transform='rotateY(-180deg)'; L.dataset.a=180; }
+  $('bk').appendChild(L); BOOK.leaf=L; return L; }
+function bLeafAngle(a){ const L=BOOK.leaf; if(!L) return; L.dataset.a=a; L.style.transform=`rotateY(${-a}deg)`; L.style.setProperty('--sh',Math.sin(a*Math.PI/180).toFixed(2)); }
+function bLeafEnd(ok){ const L=BOOK.leaf; if(!L) return; const dir=+L.dataset.dir, i=BOOK.i, j=i+dir;
+  if(ok){ BOOK.i=j; S.bookPage=j; save(); bSet(dir>0?'L':'R',j); chime([dir>0?988:880,dir>0?1318:1175]); }
+  else bSet(dir>0?'R':'L',i);
+  L.remove(); BOOK.leaf=null; BOOK.busy=false; bDots(); if(ok){ owlDo('joy',900); bTitle(BOOK.i); } bIdle(); }
+function bTurn(dir,from){ if(BOOK.busy||!BOOK.open) return; const L=BOOK.leaf||bLeafMake(dir);
+  if(!L){ const b=$('bk'); b.classList.remove('wig'); void b.offsetWidth; b.classList.add('wig'); chime([330]); return; }
+  BOOK.busy=true; stopAll(); L.classList.add('anim'); requestAnimationFrame(()=>bLeafAngle(dir>0?180:0)); setTimeout(()=>bLeafEnd(true),780); }
+/* open the cover: the owl flutters over and lifts it */
+function bOpen(){ if(BOOK.open||BOOK.opening) return Promise.resolve(); BOOK.opening=true; const w=$('bookWrap'), o=$('owl'), run=BOOK.run;
+  owlDo('flap',1400); o.style.transform='translate(9vw,-14vh) rotate(8deg)'; setTimeout(()=>{ o.style.transform=''; },900);
+  return new Promise(res=>setTimeout(()=>{ if(!bLive(run)) return res();
+    const L=el('div','leaf anim',`<div class="lf">${bCover()}</div><div class="lb">${bPageL(BOOK.i)}</div>`); L.style.transform='rotateY(0deg)'; $('bk').appendChild(L);
+    w.classList.remove('closed'); $('bookScr').classList.remove('closedS'); L.style.transition='transform 1.2s cubic-bezier(.4,.1,.3,1)';
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{ L.style.transform='rotateY(-180deg)'; L.style.setProperty('--sh',0); }));
+    chime([523,659,784,1047,1318]); const r=w.getBoundingClientRect(); glitterBurst(r.left+r.width/2,r.top+r.height/2,50,34);
+    setTimeout(()=>{ bSet('L',BOOK.i); L.remove(); BOOK.open=true; BOOK.opening=false; bDots(); res(); },1250); },700)); }
+/* mode 'start': closed book, greeting; 'back': open at page i */
+function openBook(i,mode){ stopAll(); stopScene(); try{ qClear(); tClear(); fxStop(); ghostOff(); }catch(e){} tale=null; TA=null; TB=null; G=null; storyQ=null; hideWord();
+  const run=++BOOK.run, n=bItems().length; BOOK.i=Math.max(0,Math.min(n-1,i!=null?i:(S.bookPage|0))); BOOK.busy=false; BOOK.drag=null; BOOK.leaf=null; BOOK.hints=0; BOOK.opening=false; clearTimeout(BOOK.idle);
+  const w=$('bookWrap'), bk=$('bk'); w.classList.remove('go'); bk.querySelectorAll('.leaf').forEach(l=>l.remove()); $('owl').className=''; $('owl').style.transform='';
+  bSet('R',BOOK.i); bSet('L',BOOK.i); bDots(); show('bookScr');
+  if(mode==='start'){ BOOK.open=false; w.classList.add('closed'); $('bookScr').classList.add('closedS');
+    const L=el('div','leaf',`<div class="lf">${bCover()}</div><div class="lb"></div>`); L.classList.add('cov'); bk.appendChild(L);
+    const first=!S.seen.book; S.seen.book=true; save();
+    (async()=>{ await wait(500); if(!bLive(run)) return; owlDo('wave',2200);
+      await owlSay(first?'b_hallo1':rnd(['b_hallo2','b_hallo3'])); if(!bLive(run)) return;
+      L.remove(); await bOpen(); if(!bLive(run)) return;
+      if(first){ await wait(300); if(!bLive(run)) return; await owlSay('b_auf'); if(!bLive(run)) return; }
+      await bTitle(BOOK.i); if(bLive(run)) bIdle(); })(); }
+  else { BOOK.open=true; w.classList.remove('closed'); $('bookScr').classList.remove('closedS');
+    (async()=>{ await wait(350); if(!bLive(run)) return; owlDo('wave',1400); await owlSay('b_weiter'); if(bLive(run)) bIdle(); })(); } }
+/* start what is on the page */
+function bGo(){ if(!BOOK.open||BOOK.busy) return; const it=bItems()[BOOK.i], w=$('bookWrap'); BOOK.busy=true; BOOK.run++; clearTimeout(BOOK.idle); stopAll();
+  chime([784,1047,1318]); const r=w.getBoundingClientRect(); glitterBurst(r.left+r.width*.5,r.top+r.height*.5,40,30); w.classList.add('go');
+  setTimeout(()=>{ w.classList.remove('go'); BOOK.busy=false;
+    if(it.k==='lesen'){ if(!S.seen.intro){ S.seen.intro=true; save(); story(INTRO,()=>{ goHome(); say('g_wohin'); }); } else { goHome(); say('p_start','g_wohin'); } }
+    else { const t=it.t; if(S.herd===0){ trip={uni:0}; startTale(t); } else { tripPick(()=>startTale(t)); trip.book=true; } } },600); }
+/* one finger: drag a page to turn it (it follows the finger), tap the corner to turn, tap anywhere else to open the page */
+(function(){ const w=$('bookWrap');
+  w.addEventListener('pointerdown',e=>{ if(BOOK.drag) return; e.preventDefault(); try{ w.setPointerCapture(e.pointerId); }catch(_){}
+    BOOK.drag={id:e.pointerId,x:e.clientX,y:e.clientY,t:now(),dir:0,moved:0}; clearTimeout(BOOK.idle); });
+  w.addEventListener('pointermove',e=>{ const d=BOOK.drag; if(!d||d.id!==e.pointerId||!BOOK.open) return; const dx=e.clientX-d.x; d.moved=Math.max(d.moved,Math.abs(dx),Math.abs(e.clientY-d.y));
+    if(!d.dir&&Math.abs(dx)>14&&!BOOK.busy){ d.dir=dx<0?1:-1; if(!bLeafMake(d.dir)){ d.dir=0; d.none=true; return; } stopAll(); }
+    if(d.dir&&BOOK.leaf){ const pw=w.getBoundingClientRect().width/2; let a=d.dir>0? Math.min(180,Math.max(0,-dx/pw*180)) : 180-Math.min(180,Math.max(0,dx/pw*180)); bLeafAngle(a); } });
+  const up=e=>{ const d=BOOK.drag; if(!d||d.id!==e.pointerId) return; BOOK.drag=null;
+    if(d.dir&&BOOK.leaf){ const a=+BOOK.leaf.dataset.a||0, v=(e.clientX-d.x)/Math.max(1,now()-d.t), ok=d.dir>0?(a>55||v<-.5):(a<125||v>.5);
+      BOOK.busy=true; BOOK.leaf.classList.add('anim'); bLeafAngle(ok?(d.dir>0?180:0):(d.dir>0?0:180)); setTimeout(()=>bLeafEnd(ok),780); return; }
+    if(d.none){ bTurn(-Math.sign(e.clientX-d.x)||1); bIdle(); return; }
+    if(d.moved>20){ bIdle(); return; }
+    if(!BOOK.open){ const c=$('bookWrap').querySelector('.cov'); if(c) c.remove(); bOpen(); return; }
+    const r=w.getBoundingClientRect(), fx=(e.clientX-r.left)/r.width, fy=(e.clientY-r.top)/r.height;
+    if(fy>.72&&fx>.86) return bTurn(1); if(fy>.72&&fx<.14) return bTurn(-1); bGo(); };
+  w.addEventListener('pointerup',up); w.addEventListener('pointercancel',e=>{ BOOK.drag=null; if(BOOK.leaf&&!BOOK.busy){ BOOK.busy=true; BOOK.leaf.classList.add('anim'); bLeafAngle(+BOOK.leaf.dataset.dir>0?0:180); setTimeout(()=>bLeafEnd(false),780); } });
+  /* the owl answers a tap */
+  $('bookScr').addEventListener('pointerdown',e=>{ const o=$('owl'); if(e.target.closest('#bookWrap')||!nearEl(o,e.clientX,e.clientY,0)) return; owlDo('flap',1300); owlDo('joy',1200); chime([660,494]);
+    bubble(rnd(['huhu!','hu-hu!','hihi']),e.clientX,e.clientY-vu()*6,4.4,'#e6d2ff'); });
+})();
+reg('b_hallo1','Hallo, du! Wie schön, dass du da bist. Ich bin Ulla, die Erzähl-Eule. Ich habe dir ein Zauberbuch mitgebracht. Darin wohnen Märchen, Einhörner und Buchstaben, die gelesen werden wollen. Du kannst schon so viel, und jeden Tag lernst du etwas Neues dazu. Komm, wir machen das Buch zusammen auf!',null,'Märchen');
+reg('b_hallo2','Hallo, da bist du ja wieder! Ich habe mich schon so auf dich gefreut. Komm, wir machen das Zauberbuch auf!',null,'Märchen');
+reg('b_hallo3','Huhu! Schön, dass du da bist. Heute erleben wir bestimmt wieder etwas Wunderbares. Komm, wir schauen ins Buch!',null,'Märchen');
+reg('b_auf','Mit dem Finger kannst du blättern, wie in einem richtigen Buch. Und wenn dir eine Seite gefällt, dann tippe auf das Bild!',null,'Märchen');
+reg('b_lesen','Lesen lernen mit Funkel.',null,'Märchen');
+reg('b_tipp','Zieh die Seite mit dem Finger zur Seite, dann blätterst du um. Oder tippe auf das Bild!',null,'Märchen');
+reg('b_weiter','Wohin blättern wir jetzt?',null,'Märchen');
+
 reg('m_buch','Das ist dein Märchenbuch. Welches Märchen möchtest du hören?',null,'Märchen');
 reg('m_hilf','Tippe auf das, was leuchtet!',null,'Märchen');
 reg('m_ende','Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.',null,'Märchen');
@@ -2545,14 +2731,7 @@ let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
 function tLater(fn,ms){ taleT.push(setTimeout(fn,ms)); }
 function tClear(){ taleT.forEach(clearTimeout); taleT=[]; }
-function taleShelf(){ stopAll(); stopScene(); tClear(); hideWord(); fxStop(); ghostOff(); tale=null; TA=null; TB=null; tripChrome('pick');
-  const T=$('tripBody'); T.className='shelf'; T.innerHTML='';
-  TALES.forEach((t,i)=>{ const b=el('button','book');
-    b.innerHTML=`<div class="cover" style="background:${t.cover}">${t.icon}${S.tales[t.id]?'<b>⭐</b>':''}</div><div class="pn">${t.title}</div>`;
-    b.style.animationDelay=(-i*.5)+'s';
-    b.onclick=()=>{ if(tale) return; chime([784,1047,1318]); glitterBurst(...centerOf(b),30,22); b.classList.add('chosen'); tale={pending:true}; setTimeout(()=>startTale(t),700); };
-    T.appendChild(b); });
-  show('trip'); say('m_buch'); }
+function taleShelf(){ const k=tale&&tale.t?bItems().findIndex(x=>x.t===tale.t):-1; openBook(k>=0?k:null,'back'); }
 function startTale(t){ if(!trip) trip={uni:0}; if(t.v2) return startTale2(t); fxStop(); TB=null; $('taleWorld').className=''; tale={t,i:-1,pick:null,run:++taleRun}; show('tale'); nextScene(); }
 function tEl(id){ return TA&&TA.els[id]; }
 function nextScene(){
@@ -2620,18 +2799,19 @@ function sceneDone(){ if(!TA||TA.done) return; TA.done=true; TA.live=false; tCle
 async function endTale(){ const t=tale.t, run=tale.run; tClear(); hideWord(); S.tales[t.id]=true; save();
   const g=el('div','gift','⭐'); $('taleWorld').appendChild(g); chime([523,659,784,1047,1318]); glitterBurst(innerWidth/2,innerHeight/2,60,40); rainDown(['✦','✧','★','💖'],3000,40);
   await say('m_ende'); await wait(1200); if(!tale||tale.run!==run||!taleOn()) return; taleShelf(); }
-$('btnTale').onclick=()=>{ stopAll(); if(S.herd===0){ trip={uni:0}; taleShelf(); } else tripPick(taleShelf); };
-$('btnTaleHome').onclick=()=>{ tClear(); fxStop(); ghostOff(); tale=null; TA=null; TB=null; trip=null; hideWord(); goHome(); };
+$('btnTale').onclick=()=>{ trip=null; openBook(null,'back'); };
+$('btnTaleHome').onclick=()=>{ taleShelf(); trip=null; };
 $('btnTaleShelf').onclick=taleShelf;
 
 
 
 /* parent gate: hold the gear for 1.5 s */
 let gearT=null;
-const gear=$('btnGear');
-gear.onpointerdown=()=>{ gearT=setTimeout(openParent,1500); };
-gear.onpointerup=gear.onpointerleave=gear.onpointercancel=()=>clearTimeout(gearT);
-gear.oncontextmenu=e=>e.preventDefault();
+let parentFrom='home';
+[$('btnGear'),$('btnGear2')].forEach(gear=>{
+  gear.onpointerdown=e=>{ e.stopPropagation(); parentFrom=document.querySelector('.screen.on').id; gearT=setTimeout(openParent,1500); };
+  gear.onpointerup=gear.onpointerleave=gear.onpointercancel=()=>clearTimeout(gearT);
+  gear.oncontextmenu=e=>e.preventDefault(); });
 
 /* ================= PARENT AREA ================= */
 function clipList(onlyMissing){
@@ -2698,7 +2878,7 @@ function openParent(){
   SETS.forEach((s,i)=>{ const b=el('button',i===S.level?'sel':'', (i+1)+' · +'+s.split('').join(' ')); b.onclick=()=>{S.level=i;S.streak=0;save();openParent()}; lv.appendChild(b); });
   $('pCase').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.mixed=v==='1'; save(); openParent(); };
   $('pLen').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.roundLen=+v; save(); openParent(); };
-  $('pClose').onclick=()=>{ if(!S.seen.intro) show('start'); else goHome(); };
+  $('pClose').onclick=()=>{ if(parentFrom==='bookScr') openBook(null,'back'); else if(parentFrom==='start') show('start'); else goHome(); };
   const ta=$('pList'); ta.value=clipList(false);
   $('pAll').onclick=()=>ta.value=clipList(false);
   $('pMiss').onclick=()=>ta.value=clipList(true);

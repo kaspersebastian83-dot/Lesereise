@@ -2,6 +2,12 @@
 
 Lesen-lern-Spiel für Kinder ab ca. 3 Jahren – eine einzige HTML-Datei, offline nutzbar, keine Abhängigkeiten.
 
+## Das Zauberbuch (Start)
+Nach dem Start-Knopf begrüßt Ulla, die Erzähl-Eule, das Kind und macht ein großes Buch auf. Jede Doppelseite ist eine Titelseite:
+Seite 1 ist das Lesespiel mit Funkel (die Stationen unten), danach kommt je ein Märchen. Blättern wie in einem echten Buch: die Seite mit
+dem Finger ziehen (sie folgt dem Finger) oder die runden Ecken antippen; antippen sonst irgendwo öffnet die Seite. Ulla liest beim
+Blättern den Titel vor und zeigt nach einer Weile, wie man blättert. Nach einem Märchen geht es zurück auf dieselbe Seite.
+
 ## Stationen
 1. **Flüsterwald (Laute hören)** – Laut hören, Buchstaben finden
 2. **Mondwiese (Anlaut)** – Womit fängt das Wort an?
