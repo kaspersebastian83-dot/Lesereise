@@ -3627,6 +3627,17 @@
      "say": "Blume"
     }
    ]
+  },
+  {
+   "id": "w_x039_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bach.",
+   "items": [
+    {
+     "key": "wort_bach",
+     "say": "Bach"
+    }
+   ]
   }
  ]
 }
