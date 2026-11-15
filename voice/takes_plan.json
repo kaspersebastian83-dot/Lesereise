@@ -3539,6 +3539,37 @@
      "say": "Flocke"
     }
    ]
+  },
+  {
+   "id": "w_x035_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Esel. Sack. Stiefel. Schlitten. Fenster. Himmel.",
+   "items": [
+    {
+     "key": "wort_esel",
+     "say": "Esel"
+    },
+    {
+     "key": "wort_sack",
+     "say": "Sack"
+    },
+    {
+     "key": "wort_stiefel",
+     "say": "Stiefel"
+    },
+    {
+     "key": "wort_schlitten",
+     "say": "Schlitten"
+    },
+    {
+     "key": "wort_fenster",
+     "say": "Fenster"
+    },
+    {
+     "key": "wort_himmel",
+     "say": "Himmel"
+    }
+   ]
   }
  ]
 }
