@@ -48,6 +48,21 @@ gedrückt halten zum Luftholen), Nebel wegrubbeln, bis ein Bild darunter auftauc
 (spätestens nach 45 s). Was das Kind tut, löst das Nächste aus; die Erzählung danach ist in Stücke geteilt, damit Bild und
 Stimme genau zusammenpassen. Aufnahmen: `t2_<märchen>_<szene>` (Erzählung), `…h` (Hinweis), `…d1, d2 …` (was passiert ist).
 
+## Funkels Adventskalender
+Gleich nach dem Lesespiel kommt im Zauberbuch der Adventskalender: ein Lebkuchenhaus mit 24 Fenstertürchen. Die Türchen
+gehen nach dem Datum des Geräts auf (1.–24. Dezember): das Türchen von heute leuchtet, verpasste dürfen nachgeholt werden,
+offene noch einmal gespielt, künftige schlafen (ein kleiner Stern mit geschlossenen Augen, „Noch ein bisschen warten!“).
+Außerhalb des Dezembers wartet der Kalender. Ulla sagt, welcher Tag heute ist. Ein Türchen schwingt auf, Licht fällt heraus,
+die Kamera fliegt hinein – dann eine kleine Szene auf der Märchenbühne (eine Geste, ein Wort in Silbenfarben). Danach kommt
+ein Andenken ins Fenster, das Sternchen auf dem Dach leuchtet heller, und alle singen das Sternchenlied. Der Adventskranz
+im Giebel brennt an jedem Adventssonntag eine Kerze mehr.
+Die Geschichte: Mit dem ersten Schnee fällt ein Sternchen vom Himmel und will bis Heiligabend wieder hinauf; jeden Tag
+bekommt es ein Licht. Am 6. Dezember wird daraus das Märchen „Der Nikolaus und das Sternchen“ (7 Szenen, danach auch als
+eigene Seite im Buch). Neue Gesten: Stiefel putzen, Loch im Sack zunähen, Schlittenfahrt mit dem Finger, Kerzen anzünden
+(der Funke sitzt auf dem Finger), Eisblumen vom Fenster wischen.
+Testen: Adresse mit `?advtag=5` (1–24; 0 = Ende November, 25 = nach Weihnachten) oder Elternbereich (Test-Datum,
+alle Türchen freischalten, Türchen wieder schließen).
+
 ## Elternbereich
 Zahnrad auf dem Startbildschirm 1,5 Sekunden gedrückt halten: Stufe, Schrift (GROSS / Groß-klein), Rundenlänge, Stimme.
 

@@ -691,3 +691,89 @@ t2_drache_7h	Nimm die Krone und zieh sie auf den Kopf vom kleinen Drachen!
 t2_drache_7d1	Da war der kleine Drache so stolz wie noch nie. Er wünschte sich kein Feuer mehr. Denn was an ihm anders war, das war sein Schatz.
 t2_drache_7d2	Und alle sangen: Eins, zwei, drei – und Glitzer fliegt herbei! Eins, zwei, drei – und Glitzer fliegt herbei!
 t2_drache_7d3	Seitdem leuchtet jeden Abend Glitzer über dem Schloss. Ende.
+adv_titel	Funkels Adventskalender.
+adv_hallo	Huhu! Schau mal, das ist dein Adventskalender. Jeden Tag im Dezember darfst du ein Türchen aufmachen, bis Weihnachten. Hinter jedem Türchen wartet eine kleine Geschichte.
+adv_t1	Heute ist der erste Dezember.
+adv_t2	Heute ist der zweite Dezember.
+adv_t3	Heute ist der dritte Dezember.
+adv_t4	Heute ist der vierte Dezember.
+adv_t5	Heute ist der fünfte Dezember.
+adv_t6	Heute ist der sechste Dezember. Heute ist Nikolaustag!
+adv_t7	Heute ist der siebte Dezember.
+adv_t8	Heute ist der achte Dezember.
+adv_t9	Heute ist der neunte Dezember.
+adv_t10	Heute ist der zehnte Dezember.
+adv_t11	Heute ist der elfte Dezember.
+adv_t12	Heute ist der zwölfte Dezember.
+adv_t13	Heute ist der dreizehnte Dezember.
+adv_t14	Heute ist der vierzehnte Dezember.
+adv_t15	Heute ist der fünfzehnte Dezember.
+adv_t16	Heute ist der sechzehnte Dezember.
+adv_t17	Heute ist der siebzehnte Dezember.
+adv_t18	Heute ist der achtzehnte Dezember.
+adv_t19	Heute ist der neunzehnte Dezember.
+adv_t20	Heute ist der zwanzigste Dezember.
+adv_t21	Heute ist der einundzwanzigste Dezember.
+adv_t22	Heute ist der zweiundzwanzigste Dezember.
+adv_t23	Heute ist der dreiundzwanzigste Dezember.
+adv_t24	Heute ist der vierundzwanzigste Dezember. Heute ist Heiligabend!
+adv_tipp	Welches Türchen leuchtet? Tippe darauf!
+adv_nach	Ein paar Türchen von den letzten Tagen sind noch zu. Die darfst du auch aufmachen!
+adv_morgen	Das Türchen von heute hast du schon aufgemacht. Morgen wartet das nächste!
+adv_warte	Noch ein bisschen warten! Hinter diesem Türchen schläft noch ein Sternchen.
+adv_schlaeft	Der Adventskalender schläft noch. Im Dezember wachen die Türchen auf!
+adv_weihn	Frohe Weihnachten! Alle Türchen sind offen. Du kannst jede Geschichte noch einmal anschauen.
+adv_kerze	Und heute ist Sonntag! Am Adventskranz brennt eine neue Kerze.
+adv_neu	Schau mal, ein neues Licht in deinem Kalender! Komm, wir singen unser Sternchenlied:
+adv_vers1	Sternchen, Sternchen, klein und fein, heute kommt ein Licht hinein! Nikolaus, bald ist es so weit, wir helfen dir, wir sind bereit!
+adv_vers2	Sternchen, Sternchen, klein und fein, heute kommt ein Licht hinein! Silberfaden, glitzerfein, bald wirst du am Himmel sein!
+adv_bald	Hinter diesem Türchen wird gerade noch gemalt. Bald ist die Geschichte fertig!
+t2_tuer1_1	Es war die erste Nacht im Dezember. Leise fiel der Schnee, und eine kleine Schneeflocke tanzte auf die Nase von deinem Einhorn. Kennst du sie noch? Da sauste etwas Helles vom Himmel, plumps, mitten in den Schnee! Was leuchtet da? Wisch den Schnee weg, mit deinem Finger!
+t2_tuer1_1h	Wisch mit dem Finger über den Schnee, hin und her!
+t2_tuer1_1d1	Da lag ein kleines Sternchen im Schnee und blinzelte.
+t2_tuer1_1d2	Ich bin vom Himmel gefallen, flüsterte es. Bis Weihnachten möchte ich wieder oben sein. Aber mein Licht ist so schwach. Wir helfen dir, sagte dein Einhorn. Jeden Tag ein kleines Licht!
+t2_tuer2_1	Am nächsten Abend trug dein Einhorn das Sternchen durch den Winterwald. Da leuchtete etwas zwischen den Bäumen: die kleine Laterne! Oh, ein Sternchen, rief sie. Du bist ja ganz blass. Nimm einen Funken von meinem Licht! Zieh den Funken mit dem Finger zum Sternchen.
+t2_tuer2_1h	Zieh den Funken zum Sternchen!
+t2_tuer2_1d1	Der Funke hüpfte zum Sternchen, und es leuchtete ein bisschen heller.
+t2_tuer2_1d2	Weißt du, wer den Weg zum Himmel kennt? fragte die Laterne. Der Nikolaus! Er wohnt hinter dem Winterwald.
+t2_tuer3_1	Am Morgen suchten sie den Weg zum Nikolaus. Da flatterte das Rotkehlchen herbei. Piep, piep! Schaut mal, Spuren im Schnee! Wer war das wohl? Fahr mit deinem Finger den Spuren nach!
+t2_tuer3_1h	Fahr mit dem Finger den Spuren nach!
+t2_tuer3_1d1	Hinter dem Schneehügel saß ein kleiner Esel und zitterte. I-aah, schniefte er. Ich habe mich verlaufen!
+t2_tuer3_1d2	Ich bin der Esel vom Nikolaus. Komm mit, sagte dein Einhorn. Wir bringen dich nach Hause!
+wort_esel	Esel
+t2_tuer4_1	Hinter dem Winterwald stand ein kleines Haus mit hellen Fenstern. Da kam der Nikolaus heraus! Mein Esel! rief er. Danke, dass ihr ihn heimgebracht habt. Aber schaut, mein Sack hat ein Loch, und alle Nüsse sind herausgekullert. Übermorgen ist doch Nikolaustag! Näh das Loch zu! Fahr mit dem Finger von Punkt zu Punkt.
+t2_tuer4_1h	Fahr mit dem Finger von Punkt zu Punkt!
+t2_tuer4_1d1	Stich für Stich wurde das Loch kleiner, bis es ganz zu war.
+t2_tuer4_1d2	Wunderbar! lachte der Nikolaus, und die Nüsse hüpften zurück in den Sack.
+wort_sack	Sack
+t2_tuer5_1	Morgen ist Nikolaustag! Im Dorf standen schon die Stiefel der Kinder vor den Türen. Aber oje, wie schmutzig die sind! Putz den Stiefel, bis er glänzt! Reib mit dem Finger darüber, immer rundherum.
+t2_tuer5_1h	Reib mit dem Finger über den Stiefel, rundherum!
+t2_tuer5_1d1	Da glänzte der Stiefel wie neu! Und das Sternchen funkelte, bis alle Stiefel glänzten.
+t2_tuer5_1d2	Danke! sagte der Nikolaus. Morgen Nacht leuchtest du mir den Weg, kleines Sternchen. Und du, stell heute Abend auch deinen Stiefel vor die Tür!
+wort_stiefel	Stiefel
+t_nikolaus_titel	Der Nikolaus und das Sternchen.
+t2_nikolaus_1	Heute ist Nikolaustag! Vor seinem kleinen Haus packte der Nikolaus den großen Sack, den mit der neuen Naht. Da stapfte der Bär aus dem Zuckerland heran. Ich habe Lebkuchen gebacken, brummte er, für die Kinder! Pack alles in den Sack! Zieh den Apfel, die Nuss und den Lebkuchen hinein.
+t2_nikolaus_1h	Zieh alles in den Sack!
+t2_nikolaus_1d1	Der Sack war voll. Da kam der Esel mit dem Schlitten, und das Sternchen setzte sich ganz vorne drauf.
+t2_nikolaus_2	Durch den dunklen Winterwald ging die Fahrt, über die Hügel und um die Tannen herum. Ganz vorne am Schlitten leuchtete das Sternchen. Fahr den Schlitten mit deinem Finger bis ins Dorf!
+t2_nikolaus_2h	Leg den Finger auf den Schlitten und fahr den Weg entlang!
+t2_nikolaus_2d1	Klingeling, machten die Glöckchen. Da lag schon das Dorf vor ihnen, still und verschneit.
+wort_schlitten	Schlitten
+t2_nikolaus_3	Im Dorf war alles still. Die Fenster waren voller Eisblumen, weiß und glitzernd. Ob die Kinder schon schlafen? Wisch die Eisblumen weg, dann kannst du hineinschauen!
+t2_nikolaus_3h	Wisch mit dem Finger über das Fenster, hin und her!
+t2_nikolaus_3d1	Da lagen die Kinder in ihren Betten und schliefen tief und fest. Pssst, flüsterte der Nikolaus.
+wort_fenster	Fenster
+t2_nikolaus_4	Vor jeder Tür stand ein Stiefel, und wie die glänzten! Die hast du doch geputzt! freute sich der Nikolaus. Tippe auf jeden Stiefel, dann kommt etwas hinein.
+t2_nikolaus_4h	Tippe auf die Stiefel!
+t2_nikolaus_4d1	In jeden Stiefel kam ein Apfel, eine Nuss und ein Lebkuchen.
+t2_nikolaus_5	Da flog der kleine Drache herbei, der Lichtmeister vom Schloss. In jedes Fenster stellen wir eine Kerze, sagte er, dann sehen die Kinder morgen früh ein Licht. Ich gebe dir meinen Funken. Zünde die Kerzen an, eine nach der anderen!
+t2_nikolaus_5h	Fahr mit dem Finger zu jeder Kerze!
+t2_nikolaus_5d1	Nun leuchtete das ganze Dorf, warm und hell.
+t2_nikolaus_6	Ganz am Ende vom Dorf stand noch ein kleiner Stiefel. Weißt du, wem der gehört? Dir! Der Nikolaus lächelte. Hilf mir, sagte er. Halte den Sack über deinen Stiefel!
+t2_nikolaus_6h	Zieh den Sack über den Stiefel und halt ihn dort!
+t2_nikolaus_6d1	Ganz voll wurde der Stiefel. Pssst, sagte der Nikolaus und zwinkerte. Das ist unser Geheimnis!
+t2_nikolaus_7	Als der Morgen kam, war der Sack leer, und der Nikolaus war froh. Danke, kleines Sternchen, sagte er. Du hast mir den Weg geleuchtet. Darum schenke ich dir einen Silberfaden. Für jedes Licht, das du verschenkst, wächst ein Stern daran, bis er an Heiligabend bis zum Himmel reicht. Leg deinen Finger auf das Sternchen!
+t2_nikolaus_7h	Leg den Finger auf das Sternchen und lass ihn liegen!
+t2_nikolaus_7d1	Da glitzerte der Silberfaden, und das Sternchen leuchtete so hell wie noch nie.
+t2_nikolaus_7d2	Auf Wiedersehen! rief der Nikolaus und stapfte mit seinem Esel nach Hause. Und alle sangen: Sternchen, Sternchen, klein und fein, heute kommt ein Licht hinein! Silberfaden, glitzerfein, bald wirst du am Himmel sein!
+wort_himmel	Himmel
