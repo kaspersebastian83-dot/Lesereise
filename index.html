@@ -1151,6 +1151,12 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .st3.pic8{overflow:hidden;border-radius:1.4vh;box-shadow:0 2vh 5vh rgba(80,50,20,.45),0 0 0 .8vh #fffaf0}
 .cv8{position:absolute;inset:0;z-index:6;transform-origin:0 50%;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 8vh rgba(0,0,0,.35),inset 1.4vh 0 0 rgba(255,255,255,.18)}
 .cv8 span{font-size:28vh;line-height:1;filter:drop-shadow(0 1vh 2vh rgba(0,0,0,.3))}
+/* the microphone badge and the parents' level meter */
+#micB{position:absolute;right:3vh;top:12vh;width:6.5vh;height:6.5vh;z-index:8;pointer-events:none;opacity:0;transition:opacity .4s;--lv:0}
+#micB.on{opacity:.85} #micB svg{width:100%;height:100%;display:block;overflow:visible}
+#micB .mr{fill:rgba(255,120,170,.55);transform-box:fill-box;transform-origin:center;transform:scale(calc(.85 + var(--lv)*.55));filter:drop-shadow(0 0 calc(var(--lv)*2.5vh) #fff6c0);transition:transform .08s}
+.mict{height:2.2vh;border-radius:1.1vh;background:rgba(0,0,0,.12);overflow:hidden;margin-top:1vh;opacity:.4} .mict.on{opacity:1}
+.mict i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7ad87a,#ffd84a,#ff7a7a);border-radius:1.1vh}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -6509,14 +6515,20 @@ function mboxStop(){ if(!MBOX.on) return; MBOX.on=false; clearInterval(MBOX.iv);
 
 /* ---------- the microphone: blowing ---------- */
 const MIC={st:null,src:null,an:null,buf:null,fq:null,lvl:0,floor:.01,on:false,t0:0,cal:[],busy:false};
-async function micStart(){ if(MIC.on||MIC.busy||!S.mic) return MIC.on; if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia) return false; MIC.busy=true;
-  try{ if(navigator.permissions&&navigator.permissions.query){ const p=await navigator.permissions.query({name:'microphone'}); if(p.state!=='granted'){ MIC.busy=false; return false; } } }catch(e){}
-  try{ const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:false,autoGainControl:false}});
-    if(!flxOn()){ st.getTracks().forEach(t=>t.stop()); MIC.busy=false; return false; }
-    if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume();
+/* raw microphone: no echo cancellation – on the iPad that switches on voice processing, which filters a steady breath out as noise */
+const MIC_OPT={audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}};
+async function micOpen(){ if(MIC.on) return true; if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){ MIC.why='kein Mikrofon im Browser'; return false; } MIC.busy=true;
+  try{ const st=await navigator.mediaDevices.getUserMedia(MIC_OPT);
+    if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state!=='running') try{ AC.resume(); }catch(e){}
     MIC.st=st; MIC.src=AC.createMediaStreamSource(st); MIC.an=AC.createAnalyser(); MIC.an.fftSize=1024; MIC.src.connect(MIC.an);
-    MIC.buf=new Float32Array(1024); MIC.fq=new Uint8Array(512); MIC.on=true; MIC.t0=now(); MIC.cal=[]; MIC.floor=.01; MIC.lvl=0; MIC.busy=false; return true; }
-  catch(e){ MIC.busy=false; return false; } }
+    MIC.buf=new Float32Array(1024); MIC.fq=new Uint8Array(512); MIC.on=true; MIC.t0=now(); MIC.cal=[]; MIC.floor=.01; MIC.lvl=0; MIC.busy=false; MIC.why=''; return true; }
+  catch(e){ MIC.busy=false; MIC.why=(e&&e.name)||'Fehler'; return false; } }
+/* during a blowing gesture: only if a parent switched it on; a permission that is merely "ask" (Safari's default) still tries – only "denied" stops it */
+async function micStart(){ if(MIC.on||MIC.busy||!S.mic) return MIC.on;
+  try{ if(navigator.permissions&&navigator.permissions.query){ const p=await navigator.permissions.query({name:'microphone'}); MIC.perm=p.state; if(p.state==='denied'){ MIC.why='denied'; return false; } } }catch(e){}
+  const ok=await micOpen(); if(ok&&!flxOn()){ micStop(); return false; } return ok; }
+/* iOS may suspend or interrupt the audio context when the microphone starts: the next touch wakes it */
+document.addEventListener('pointerdown',()=>{ try{ if(AC&&AC.state!=='running'&&AC.state!=='closed') AC.resume(); }catch(e){} },{capture:true,passive:true});
 function micStop(){ try{ if(MIC.st) MIC.st.getTracks().forEach(t=>t.stop()); if(MIC.src) MIC.src.disconnect(); }catch(e){} MIC.st=MIC.src=MIC.an=null; MIC.on=false; MIC.lvl=0; }
 /* 0..1: a blow is loud, noisy and strong in the low band; while the tablet itself speaks we don't listen */
 function micLevel(dt){ if(!MIC.on||!MIC.an) return 0; MIC.an.getFloatTimeDomainData(MIC.buf); let s=0; for(let i=0;i<MIC.buf.length;i++) s+=MIC.buf[i]*MIC.buf[i];
@@ -6525,7 +6537,7 @@ function micLevel(dt){ if(!MIC.on||!MIC.an) return 0; MIC.an.getFloatTimeDomainD
   const spk=talkingNow(); if(rms<MIC.floor*1.5&&!spk) MIC.floor+=(rms-MIC.floor)*Math.min(1,dt*.4);
   let v=spk?0:Math.max(0,Math.min(1,(rms-MIC.floor*2.6-.008)/.07)); if(lo<70) v*=.35;
   MIC.lvl+=(v-MIC.lvl)*Math.min(1,dt*(v>MIC.lvl?16:4)); return MIC.lvl; }
-async function micAsk(){ try{ const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:false,autoGainControl:false}}); st.getTracks().forEach(t=>t.stop()); return true; }catch(e){ return false; } }
+async function micAsk(){ try{ const st=await navigator.mediaDevices.getUserMedia(MIC_OPT); st.getTracks().forEach(t=>t.stop()); return true; }catch(e){ MIC.why=(e&&e.name)||'Fehler'; return false; } }
 
 /* ---------- lit characters ---------- */
 /* light and shade over the unicorn, masked by its own outline; turned towards fn() (a screen point) every frame */
@@ -6765,8 +6777,12 @@ function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); rainSnd
 function flxLoop(){ if(!FLX.on) return; if(!flxOn()){ flxStop(); return; } requestAnimationFrame(flxLoop);
   const tn=now(), dt=Math.min(.05,(tn-FLX.t)/1000), t=tn/1000; FLX.t=tn;
   if(!(TB&&TB.bwOn)){ WIND.blow+=(0-WIND.blow)*Math.min(1,dt*2); } WIND.hint+=(0-WIND.hint)*Math.min(1,dt*1.5); WIND.g+=(0-WIND.g)*Math.min(1,dt*.7);
+  micBadge();
   if(TB){ speechStep(); maneStep(dt,t); (TB.lits||[]).forEach(litStep); if(TB.sc&&TB.sc.frame) try{ TB.sc.frame(dt,t); }catch(e){} }
   try{ glxFrame(dt,t); }catch(e){ GLX.err=String(e); } }
+/* a little microphone that glows with her breath while the tablet listens (also shows parents that the microphone is on) */
+function micBadge(){ let b=$('micB'); const on=MIC.on&&TB&&TB.live; if(!b){ if(!on) return; b=el('div','',`<svg viewBox="0 0 40 40"><circle class="mr" cx="20" cy="20" r="18"/><rect x="14" y="6" width="12" height="20" rx="6" fill="#fff"/><path d="M10 19 a10 10 0 0 0 20 0 M20 29 v5 M14 34 h12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`); b.id='micB'; $('tale').appendChild(b); }
+  b.classList.toggle('on',!!on); b.style.setProperty('--lv',(on?MIC.lvl:0).toFixed(2)); }
 /* a gust that sweeps over everything */
 function gust(k){ WIND.g=Math.max(WIND.g,k==null?1:k); }
 
@@ -8027,10 +8043,11 @@ function openParent(){
       (auch per Adresse: <code>?advtag=5</code>)</p>
     <div class="seg"><button class="btn${S.advAll?' pri':''}" id="pAdvAll">${S.advAll?'Alle Türchen offen ✓':'Alle Türchen freischalten'}</button><button class="btn warn" id="pAdvReset">Türchen wieder schließen</button></div></div>
 
-  <h2>Flaumis weite Reise (neu, in Arbeit)</h2>
-  <div class="box"><p>Das neue Märchen mit Licht, Wind und Pusten. Solange es noch nicht fertig ist, steht es nur im Buch, wenn es hier eingeschaltet ist (oder mit <code>?flaumi=1</code>).</p>
-    <div class="seg"><button class="btn${S.flaumiOn?' pri':''}" id="pFlOn">${S.flaumiOn?'Steht im Buch ✓':'Im Buch zeigen'}</button><button class="btn${S.mic?' pri':''}" id="pMic">${S.mic?'Pusten ins Mikrofon ✓':'Pusten ins Mikrofon erlauben'}</button><button class="btn${S.tilt?' pri':''}" id="pTilt">${S.tilt?'Neigen ✓':'Neigen erlauben'}</button></div>
-    <p id="pMicMsg">Ohne Mikrofon und Neigen geht alles auch mit dem Finger. Mit Mikrofon pustet sie wirklich (Apple: in Safari „Mikrofon: Erlauben“ für diese Seite einstellen, sonst fragt das iPad jedes Mal).</p></div>
+  <h2>Flaumis weite Reise: Pusten und Neigen</h2>
+  <div class="box"><p>Das Märchen mit Licht, Wind und Pusten. Beim Pusten zeigt ein kleines Mikrofon oben rechts, dass das iPad zuhört; es leuchtet auf, wenn es den Atem hört.</p>
+    <div class="seg"><button class="btn" id="pMicT">Mikrofon testen</button><button class="btn${S.mic?' pri':''}" id="pMic">${S.mic?'Pusten ins Mikrofon ✓':'Pusten ins Mikrofon erlauben'}</button><button class="btn${S.tilt?' pri':''}" id="pTilt">${S.tilt?'Neigen ✓':'Neigen erlauben'}</button></div>
+    <p id="pMicMsg">Ohne Mikrofon und Neigen geht alles auch mit dem Finger. Mit Mikrofon pustet sie wirklich (iPad: in Safari links in der Adresszeile auf „aA“ → Website-Einstellungen → Mikrofon → „Erlauben“, sonst fragt das iPad beim ersten Pusten).</p>
+    <div class="mict" id="pMicM"><i></i></div></div>
 
   <h2>Einhörner</h2>
   <div class="box"><p>${S.herd+1} von ${HERD.length} Einhörnern gefunden. Nach jeder geschafften Runde kommt ein neues dazu.</p>
@@ -8080,7 +8097,15 @@ function openParent(){
     sel.onchange=()=>{ const v=sel.value; S.advOv=v===''?'':v==='NOV'?y+'-11-30':v==='AFTER'?y+'-12-26':y+'-12-'+String(v).padStart(2,'0'); save(); openParent(); };
     $('pAdvAll').onclick=()=>{ S.advAll=!S.advAll; save(); openParent(); };
     $('pAdvReset').onclick=()=>{ S.adv={y:advInfo().y,open:{},done:{}}; save(); openParent(); }; }
-  $('pFlOn').onclick=()=>{ S.flaumiOn=!S.flaumiOn; save(); openParent(); };
+  $('pMicT').onclick=async()=>{ const msg=$('pMicMsg'), M=$('pMicM'), bar=M.querySelector('i'); let perm='?';
+    try{ if(navigator.permissions&&navigator.permissions.query) perm=(await navigator.permissions.query({name:'microphone'})).state; }catch(e){}
+    msg.textContent='Mikrofon wird geöffnet … (Erlaubnis: '+perm+')'; micStop(); const ok=await micOpen();
+    if(!ok){ msg.textContent='Kein Zugriff aufs Mikrofon ('+MIC.why+', Erlaubnis: '+perm+'). In Safari: „aA“ → Website-Einstellungen → Mikrofon → „Erlauben“.'; return; }
+    M.classList.add('on'); msg.textContent='Jetzt ins iPad pusten! (Erlaubnis: '+perm+', Audio: '+(AC&&AC.state)+')'; let t0=now(), last=now(), seen=0, peak=0;
+    const step=()=>{ const tn=now(), dt=Math.min(.05,(tn-last)/1000); last=tn; const v=micLevel(dt); peak=Math.max(peak,v); bar.style.width=(v*100).toFixed(0)+'%'; if(v>.3) seen++;
+      if(seen>8) msg.textContent='Pusten erkannt ✓ (Stärke '+Math.round(peak*100)+' %)'; if(tn-t0<12000&&$('parent').classList.contains('on')) requestAnimationFrame(step);
+      else { micStop(); M.classList.remove('on'); if(!seen) msg.textContent='Nichts gehört (Audio: '+(AC&&AC.state)+'). Bitte noch einmal testen und kräftig pusten.'; if(seen&&!S.mic){ S.mic=true; save(); } } };
+    requestAnimationFrame(step); };
   $('pTilt').onclick=async()=>{ if(S.tilt){ S.tilt=false; save(); return openParent(); } const ok=await tiltAsk(); S.tilt=ok; save(); openParent();
     $('pMicMsg').textContent=ok?'Neigen erlaubt. Das iPad fragt beim Start des Märchens vielleicht noch einmal – dann bitte „Erlauben“ tippen.':'Neigen wurde nicht erlaubt – Ziehen mit dem Finger geht trotzdem.'; };
   $('pMic').onclick=async()=>{ if(S.mic){ S.mic=false; save(); return openParent(); } $('pMicMsg').textContent='Bitte das Mikrofon erlauben …';
