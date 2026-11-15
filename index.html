@@ -8450,7 +8450,7 @@ reg('m_hilf','Tippe auf das, was leuchtet!',null,'Märchen');
 reg('m_ende','Das war ein schönes Märchen! Dafür bekommst du einen Märchenstern.',null,'Märchen');
 TALES.forEach(t=>{ if(t.v2) return regTale2(t); reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen'); t.sc.forEach((s,i)=>reg('t_'+t.id+'_'+(i+1),s.s,null,'Märchen')); });
 /* the Advent calendar: after everything else, so the older lines keep their order in voice/clips.tsv */
-reg('adv_titel','Funkels Adventskalender.',null,'Märchen');
+reg('adv_titel','Das ist Funkels Adventskalender.',null,'Märchen');
 reg('adv_hallo','Huhu! Schau mal, das ist dein Adventskalender. Jeden Tag im Dezember darfst du ein Türchen aufmachen, bis Weihnachten. Hinter jedem Türchen wartet eine kleine Geschichte.',null,'Märchen');
 for(let d=1;d<=24;d++) reg('adv_t'+d,'Heute ist der '+ADVORD[d]+' Dezember.'+(d===6?' Heute ist Nikolaustag!':d===24?' Heute ist Heiligabend!':''),null,'Märchen');
 reg('adv_tipp','Welches Türchen leuchtet? Tippe darauf!',null,'Märchen');
