@@ -3505,6 +3505,25 @@
      "say": "Nest"
     }
    ]
+  },
+  {
+   "id": "w_x033_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Welle. Perle. Turm.",
+   "items": [
+    {
+     "key": "wort_welle",
+     "say": "Welle"
+    },
+    {
+     "key": "wort_perle",
+     "say": "Perle"
+    },
+    {
+     "key": "wort_turm",
+     "say": "Turm"
+    }
+   ]
   }
  ]
 }
