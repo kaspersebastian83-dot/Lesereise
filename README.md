@@ -32,6 +32,11 @@ Zum Dank gibt es ein Geschenk für die Schatzkiste (🎁, 12 Geschenke, 2 Abente
 Sechs eigene Märchen, jedes in sieben Szenen interaktiv erzählt (antippen, alles einsammeln, wählen, suchen):
 Die kleine Laterne · Die Prinzessin, die nicht lachen konnte · Die kleine Welle · Der Bär, der einen Mond backen wollte ·
 Die Schneeflocke und der Frühling · Der kleine Drache und der Glitzer. Das gewählte Einhorn ist immer dabei.
+Dazu „Flaumis weite Reise“ und „Eefje und der Zauberhut“: die kleine Hexe Eefje (gesprochen „Ehfje“) und ihr Kater Socke
+jagen mit dem Einhorn ihrem Zauberhut hinterher (Teich, Apfelbaum, Wolken, Berg) und merken am Ende, dass der Zauber gar nicht im Hut
+steckt. Neue Gesten dort: Laub vom Besen fegen (hin und her wischen) und mit dem Besen durch glitzernde Ringe fliegen (der Besen
+folgt dem Finger, egal wo er aufgesetzt wird). Zum Schluss malt sie einen Glitzerkreis um den Mond, und die Flügel des Einhorns
+schimmern in allen Farben.
 Niemand bleibt hängen: nach 7 s leuchtet das Richtige und die Bitte wird wiederholt, nach 2 falschen Tipps leuchtet es sofort,
 nach 22 s löst sich die Szene selbst und das Märchen geht weiter. Dasselbe gilt für die Abenteuer auf den Reisen.
 
