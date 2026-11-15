@@ -1084,6 +1084,32 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.astl,.tp2.astr{z-index:1;filter:drop-shadow(0 0 1vh rgba(0,0,10,.5))} .tp2.astl svg{transform:rotate(28deg)} .tp2.astr svg{transform:rotate(-24deg)}
 .dawn3{position:absolute;left:55%;right:-10%;bottom:30%;height:40%;background:radial-gradient(ellipse at 80% 100%,rgba(255,170,140,.55),rgba(255,140,160,.2) 45%,rgba(255,140,160,0) 70%);animation:dawn3 4s ease-in both;pointer-events:none}
 @keyframes dawn3{from{opacity:0}}
+/* scene 6: dawn, rain on the umbrella, the rainbow */
+#taleWorld .grade[data-g=dawn]{background:radial-gradient(ellipse 80% 70% at 80% 70%,rgba(255,170,150,.3) 0,rgba(200,120,170,.12) 50%,rgba(40,30,90,.3) 100%);mix-blend-mode:soft-light}
+.sky6{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.sky6>*{position:absolute}
+.dawn6{inset:0;background:linear-gradient(180deg,#34428e 0%,#7a6cb8 20%,#d886b0 44%,#ff9e86 60%,#ffcf96 75%,#ffeac6 100%);opacity:0;transition:opacity 9s ease-in-out}
+.sky6.dawn .dawn6{opacity:1}
+.sun6{left:80%;top:74%;width:15vh;height:15vh;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,#fffdf2 0,#fff0c4 40%,#ffcf8a 70%,#ffa070 100%);
+  box-shadow:0 0 6vh 3vh rgba(255,200,150,.6),0 0 18vh 9vh rgba(255,150,120,.3);opacity:0;transition:top 7s cubic-bezier(.3,.6,.3,1),opacity 3s,filter 3s}
+.sky6.dawn .sun6{opacity:.9;top:61%}
+.sky6.rain .sun6{opacity:.55;top:62%;filter:blur(.5vh)}
+.sky6.clear .sun6{opacity:1;top:46%;filter:none}
+.rc6{border-radius:50%;background:radial-gradient(ellipse at 50% 60%,rgba(184,170,204,.95) 0,rgba(158,144,188,.8) 40%,rgba(130,120,170,0) 72%);filter:blur(1.2vh);opacity:0;transform:translateY(-6vh);transition:opacity 3s,transform 4s ease-out}
+.sky6.rain .rc6{opacity:1;transform:none}
+.sky6.clear .rc6{opacity:0;transition:opacity 4s,transform 6s ease-in}
+.sky6.clear .rc6:nth-child(odd){transform:translateX(-34vw)} .sky6.clear .rc6:nth-child(even){transform:translateX(34vw)}
+.bow6{inset:0;width:100%;height:100%;opacity:.7}
+.bow6 .bb6{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 3.4s cubic-bezier(.4,.1,.3,1)}
+.bow6.on .bb6{stroke-dashoffset:0}
+.bow6 .b2,.bow6 .bin6{opacity:0;transition:opacity 3s 2.4s} .bow6.on .b2{opacity:.3} .bow6.on .bin6{opacity:1}
+.bow6 .bb6.pl{animation:bwpl .9s ease-out} @keyframes bwpl{30%{stroke-width:32px}}
+.st3.mw6>.l-far{transition:filter 9s ease-in-out} .st3.mwd>.l-far{filter:brightness(1.6) saturate(.9)} .st3.mwd.sun6on>.l-far{filter:brightness(2.1) saturate(.85)}
+.st3.mw6>.l-mid{transition:filter 9s ease-in-out} .st3.mwd>.l-mid{filter:brightness(1.3)} .st3.mwd.sun6on>.l-mid{filter:brightness(1.6)}
+.moon2.pale6{opacity:.2;transition:opacity 5s}
+.rd6 .rdi{transform-box:fill-box;transform-origin:50% 0;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1)} .rd6.on .rdi{transform:scale(1)} .rd6.gone{display:none}
+.vogel6{position:absolute;left:0;top:0;pointer-events:none;z-index:6;fill:#3a2848} .vogel6 svg{width:100%;display:block;overflow:visible} .vogel6.rev svg{transform:scaleX(-1)}
+.vogel6 .vw{transform-box:view-box;transform-origin:30px 20px;animation:vflap .3s ease-in-out infinite alternate} @keyframes vflap{to{transform:scaleY(-.55)}}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -6694,7 +6720,7 @@ function tiltVal(dt){ if(!tiltOn()) return null; if(TILT.base==null){ TILT.cal.p
   let d=TILT.raw-TILT.base; d=Math.abs(d)<.05?0:d-Math.sign(d)*.05; const v=Math.max(-1,Math.min(1,d/.32)); TILT.v+=(v-TILT.v)*Math.min(1,dt*10); return TILT.v; }
 const FLX={on:false,t:0};
 function flxStart(){ tiltListen(true); if(FLX.on) return; FLX.on=true; FLX.t=now(); requestAnimationFrame(flxLoop); }
-function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); tiltListen(false); GLX.cfg=null; GLX.pan=null; WIND.blow=WIND.g=WIND.hint=0; const g=$('taleWorld').querySelector('.grade'); if(g) g.remove(); }
+function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); rainSnd(0); tiltListen(false); GLX.cfg=null; GLX.pan=null; WIND.blow=WIND.g=WIND.hint=0; const g=$('taleWorld').querySelector('.grade'); if(g) g.remove(); }
 function flxLoop(){ if(!FLX.on) return; if(!flxOn()){ flxStop(); return; } requestAnimationFrame(flxLoop);
   const tn=now(), dt=Math.min(.05,(tn-FLX.t)/1000), t=tn/1000; FLX.t=tn;
   if(!(TB&&TB.bwOn)){ WIND.blow+=(0-WIND.blow)*Math.min(1,dt*2); } WIND.hint+=(0-WIND.hint)*Math.min(1,dt*1.5); WIND.g+=(0-WIND.g)*Math.min(1,dt*.7);
@@ -6753,7 +6779,7 @@ function flaumiSVG(){ const id='fl'+(++UID); let pp='';
     <ellipse class="m m-oh" cx="50" cy="127" rx="3.2" ry="4" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/>
     <path class="m m-sad" d="M45 128 q5 -4 10 0" fill="none" stroke="#3a2414" stroke-width="2.2" stroke-linecap="round"/>
     <g class="mo"><ellipse cx="50" cy="126.5" rx="4.6" ry="4.2" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/><ellipse cx="50" cy="129" rx="2.6" ry="1.4" fill="#ff8a9a"/></g></g></svg>`; }
-SVGP.PUSTE=[pusteSVG,.476]; TSYL.BLUME='BLU-ME'; TSYL.BACH='BACH'; TSYL.NETZ='NETZ';
+SVGP.PUSTE=[pusteSVG,.476]; TSYL.BLUME='BLU-ME'; TSYL.BACH='BACH'; TSYL.NETZ='NETZ'; TSYL.BOGEN='BO-GEN';
 
 /* ---------- backdrop: the golden evening meadow ---------- */
 SETS2.abendwiese={sky:'linear-gradient(180deg,#27306e 0%,#5a4c96 26%,#b8689a 46%,#f0946a 60%,#ffc47a 72%,#ffe2a2 84%,#fff0c8 100%)', stars:6, clean:1,
@@ -7055,6 +7081,117 @@ Object.assign(G2,{
    finish(){ const g=TB.pk; if(g.done) return; g.done=true; if(TB.web) TB.web.glow=1; chime([784,988,1175,1568]); if(TB.sc.freed) TB.sc.freed(); done2(); } }
 });
 
+/* ---------- dawn: a soft shower on Flaumi's umbrella; she shakes it off; the sun and a rainbow ---------- */
+SETS2.morgenwiese={sky:'linear-gradient(180deg,#0a1034 0%,#18235a 45%,#33377a 80%,#4e4688 100%)', stars:40, dcol:'30,20,64', moon:[44,36.5],
+  far:sil(hills(97,150,40,'#3c2e62')+pines(99,30,70,'#33285a',196)+hills(101,186,30,'#2c2450'),68),
+  mid:[['OAK',14,52,22],['PINE',86,48,22],['PINE',93,51,17]],
+  gnd:'linear-gradient(180deg,#3e4a3a 0%,#2c3a2e 40%,#1a2620 100%)'};
+/* the dawn sky in screen space, between the sky and the far hills: the dawn colours, the sun, rain clouds and the rainbow */
+function flSky6(){ const L=el('div','sky6'), id='bw'+(++UID), bands=['#ff5a6a','#ff9e4a','#ffe25a','#6ad87a','#5ab4ff','#6a74ff','#a46af0'], cx=500, cy=660, R0=505, bw=16;
+  const arc=r=>`M${cx-r} ${cy} A${r} ${r} 0 0 1 ${cx+r} ${cy}`, ri=R0-bands.length*bw+bw/2;
+  const p=bands.map((c,i)=>`<path class="bb6" d="${arc(R0-i*bw)}" pathLength="1" stroke="${c}" stroke-width="${bw+3}"/>`).join(''),
+        p2=bands.slice().reverse().map((c,i)=>`<path d="${arc(R0+64+i*7)}" stroke="${c}" stroke-width="7"/>`).join('');
+  L.innerHTML=`<div class="dawn6"></div><div class="sun6"></div>
+   <svg class="bow6" viewBox="0 0 1000 625" preserveAspectRatio="xMidYMax slice"><defs><filter id="${id}f" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="4"/></filter>
+     <radialGradient id="${id}g" cx="${cx}" cy="${cy}" r="${ri}" gradientUnits="userSpaceOnUse"><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fffbe8" stop-opacity=".32"/></radialGradient></defs>
+    <path class="bin6" d="${arc(ri)} Z" fill="url(#${id}g)"/><g class="b2" fill="none" filter="url(#${id}f)">${p2}</g><g fill="none" filter="url(#${id}f)">${p}</g></svg>
+   ${[[10,10,40,22],[42,3,42,24],[70,11,44,24],[26,21,32,15],[58,22,30,14]].map(([x,y,w,h])=>`<div class="rc6" style="left:${x}%;top:${y}%;width:${w}%;height:${h}%"></div>`).join('')}`;
+  TB.st.insertBefore(L,TB.st.querySelector('.l-far')); TB.sky6=L; TB.els.sonne=L.querySelector('.sun6'); return L; }
+/* a point on the rainbow (a: 0 = left foot … 1 = right foot, band i) in screen px */
+function bowPt(a,i){ const sv=TB.sky6&&TB.sky6.querySelector('.bow6'); if(!sv) return [innerWidth/2,innerHeight/3]; const r=505-(i||3)*16, an=Math.PI*(1-a), m=sv.getScreenCTM();
+  const q=new DOMPoint(500+Math.cos(an)*r,660-Math.sin(an)*r).matrixTransform(m); return [q.x,q.y]; }
+function bowGrow(){ const B=TB.sky6.querySelector('.bow6'); B.querySelectorAll('.bb6').forEach((p,i)=>{ p.style.transitionDelay=(i*.09)+'s'; }); B.classList.add('on');
+  for(let k=0;k<=14;k++) bLater(()=>{ const [x,y]=bowPt(k/14,3); glSpark(x,y,6,[1,.95,.8],7); if(k%2===0) chimeAt([[784,880,988,1175,1318,1568,1760,2093][k/2]],x); },200+k*215); }
+function bowPulse(i){ const p=TB.sky6&&TB.sky6.querySelectorAll('.bb6')[i]; if(!p) return; p.classList.remove('pl'); void p.getBoundingClientRect(); p.classList.add('pl');
+  for(let k=0;k<6;k++){ const [x,y]=bowPt(.12+k*.15,i); glSpark(x,y,4,[1,.95,.85],6); } chimeAt([[1047,1175,1318,1568,1760,1976,2093][i]],innerWidth/2); }
+/* Flaumi's place: she drifts to a target, and the drops on her umbrella pull her down */
+function flWeight(){ const D=TB.drops; return D&&D.length?D.filter(d=>d.on&&!d.gone).length/D.length:0; }
+function flPlace(dt){ const F=TB.els.flaumi, P=TB.fp; if(!F||!P) return; const W=innerWidth, H=innerHeight, w=flWeight(), yT=P.yT+P.sink*w;
+  P.x+=(P.xT-P.x)*Math.min(1,dt*P.k); P.y+=(yT-P.y)*Math.min(1,dt*(yT>P.y?.9:1.5)); putAt(F,P.x*W+Math.sin(now()/900)*vu()*1.2,P.y*H);
+  const u=F.querySelector('.ump'); if(u) u.style.scale=`${(1+w*.05).toFixed(3)} ${(1-w*.16).toFixed(3)}`; }
+/* raindrops on the umbrella: they hang under the tips of the fluff; .on shows one */
+function flDrops(){ const F=TB.els.flaumi, sv=F.querySelector('svg'), ump=sv.querySelector('.ump'), id='dr'+(++UID);
+  sv.querySelector('defs').insertAdjacentHTML('beforeend',`<radialGradient id="${id}" cx="35%" cy="40%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".45" stop-color="#d4ecff" stop-opacity=".78"/><stop offset="1" stop-color="#7ab4f4" stop-opacity=".9"/></radialGradient>`);
+  let s=''; [0,1,3,4,6,7,9,10,12,13,15,16].forEach((i,k)=>{ const a=-Math.PI*(.04+.92*i/16), L=36+((i*5)%4)*1.5, x=50+Math.cos(a)*L, y=44+Math.sin(a)*L*.82+4, z=1.3+((k*7)%5)*.1;
+    s+=`<g class="rd6" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${z.toFixed(2)})"><g class="rdi"><path d="M0 -6.5 Q4.6 -1 4.6 2 A4.6 4.6 0 1 1 -4.6 2 Q-4.6 -1 0 -6.5Z" fill="url(#${id})" stroke="#fff" stroke-width=".8" stroke-opacity=".85"/><circle cx="-1.6" cy="1" r="1.3" fill="#fff"/></g></g>`; });
+  ump.insertAdjacentHTML('beforeend',`<g class="rdrops">${s}</g>`); TB.drops=[...ump.querySelectorAll('.rd6')].map(e=>({e,on:false,gone:false})); }
+function dropOn(d){ if(!d||d.on) return; d.on=true; d.e.classList.add('on'); const [x]=ctr(TB.els.flaumi); chimeAt([1760+Math.random()*700],x); }
+/* a drop flies off the umbrella, sparkles and lands in the grass */
+function flingDrop(d,dir){ if(d.gone) return; const r=d.e.getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2, u=vu(); d.gone=true; d.e.classList.add('gone');
+  TB.rain.fl.push({x,y,vx:dir*u*(12+Math.random()*24)+(Math.random()-.5)*u*8,vy:-u*(10+Math.random()*18),yE:innerHeight*(.8+Math.random()*.14)}); glSpark(x,y,3,[.85,.95,1],5); }
+/* the rain: thin slanted streaks, tiny rings where they land, and the drops she flings off (drawn on the light canvas) */
+function rainMake(){ const R=TB.rain={rate:0,rT:0,acc:0,P:[],sp:[],fl:[]}; FX.dr.push((tn,dt)=>{ if(!TB||TB.rain!==R) return false; rainDraw(R,dt||.016); return true; }); }
+function rainDraw(R,dt){ const cx=FX.cx, W=innerWidth, H=innerHeight, u=vu(); R.rate+=(R.rT-R.rate)*Math.min(1,dt*1.2); R.acc+=R.rate*dt;
+  while(R.acc>=1){ R.acc--; const v=H*(1.05+Math.random()*.3); R.P.push({x:Math.random()*W*1.15,y:-u*4,vx:-v*.14,vy:v,yE:H*(.68+Math.random()*.32),z:.6+Math.random()*.6}); }
+  cx.save(); cx.globalCompositeOperation='source-over'; cx.lineCap='round';
+  for(let i=R.P.length-1;i>=0;i--){ const p=R.P[i]; p.x+=p.vx*dt; p.y+=p.vy*dt; if(p.y>=p.yE){ R.P.splice(i,1); if(Math.random()<.5) R.sp.push({x:p.x,y:p.yE,t:0,z:p.z}); continue; }
+    const L=u*2.6*p.z; cx.strokeStyle=`rgba(232,238,255,${(.46*p.z).toFixed(2)})`; cx.lineWidth=Math.max(1,u*.13*p.z); cx.beginPath(); cx.moveTo(p.x,p.y); cx.lineTo(p.x+.14*L,p.y-L); cx.stroke(); }
+  for(let i=R.sp.length-1;i>=0;i--){ const s=R.sp[i]; s.t+=dt; if(s.t>.34){ R.sp.splice(i,1); continue; } if(s.t<0) continue; const f=s.t/.34;
+    cx.strokeStyle=`rgba(232,240,255,${(.5*(1-f)*Math.min(1,s.z)).toFixed(2)})`; cx.lineWidth=Math.max(1,u*.09); cx.beginPath(); cx.ellipse(s.x,s.y,u*(.3+f*1.1)*s.z,u*(.1+f*.32)*s.z,0,0,6.283); cx.stroke(); }
+  cx.globalCompositeOperation='lighter';
+  for(let i=R.fl.length-1;i>=0;i--){ const p=R.fl[i]; p.vy+=u*110*dt; p.x+=p.vx*dt; p.y+=p.vy*dt;
+    if(p.vy>0&&p.y>=p.yE){ R.fl.splice(i,1); R.sp.push({x:p.x,y:p.yE,t:0,z:1.7},{x:p.x,y:p.yE,t:-.1,z:1.2}); glSpark(p.x,p.yE,5,[.8,.9,1],6); if(Math.random()<.45) chimeAt([2349+Math.random()*700],p.x); continue; }
+    const z=u*1.1; cx.globalAlpha=.85; cx.drawImage(fxSprite('rgba(170,215,255,.9)'),p.x-z*2.4,p.y-z*2.4,z*4.8,z*4.8); cx.globalAlpha=1;
+    cx.fillStyle='rgba(255,255,255,.95)'; cx.beginPath(); cx.arc(p.x,p.y,z*.42,0,6.283); cx.fill(); }
+  cx.restore(); }
+/* the sound of soft rain: filtered noise */
+const RAINS={n:null,g:null};
+function rainSnd(v){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume();
+  if(!RAINS.n){ if(!v) return; const len=AC.sampleRate*2, b=AC.createBuffer(1,len,AC.sampleRate), d=b.getChannelData(0); for(let i=0;i<len;i++) d[i]=Math.random()*2-1;
+    const n=AC.createBufferSource(), f=AC.createBiquadFilter(), h=AC.createBiquadFilter(), g=AC.createGain(); n.buffer=b; n.loop=true; f.type='bandpass'; f.frequency.value=2600; f.Q.value=.6; h.type='highpass'; h.frequency.value=900; g.gain.value=0;
+    n.connect(f); f.connect(h); h.connect(g); g.connect(AC.destination); n.start(); RAINS.n=n; RAINS.g=g; }
+  RAINS.g.gain.setTargetAtTime(v*.05,AC.currentTime,.6);
+  if(!v){ const n=RAINS.n, g=RAINS.g; RAINS.n=RAINS.g=null; setTimeout(()=>{ try{ n.stop(); g.disconnect(); }catch(e){} },2600); } }catch(e){} }
+/* little birds wake up: they fly over the sky and chirp */
+function vogelSVG(){ return `<svg viewBox="0 0 60 40"><g class="vw"><path d="M30 20 Q18 4 3 11 Q16 14 26 22Z"/><path d="M30 20 Q42 4 57 11 Q44 14 34 22Z"/></g><ellipse cx="30" cy="22" rx="7.5" ry="4.6"/><circle cx="37.5" cy="19.5" r="3.6"/><path d="M40.5 19 l4.5 1.2 l-4.5 1.2Z" fill="#f0a848"/></svg>`; }
+function chirp(x){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); const pn=AC.createStereoPanner?AC.createStereoPanner():null;
+  if(pn){ pn.pan.value=Math.max(-.9,Math.min(.9,((x||innerWidth/2)/innerWidth-.5)*1.8)); pn.connect(AC.destination); } const b=2500+Math.random()*700;
+  [0,.11,.3].forEach((d,i)=>{ const t=AC.currentTime+d, o=AC.createOscillator(), g=AC.createGain(); o.type='sine'; o.frequency.setValueAtTime(b*(i===2?1.1:1),t); o.frequency.exponentialRampToValueAtTime(b*(i===2?.8:1.45),t+.07);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.045,t+.01); g.gain.exponentialRampToValueAtTime(.001,t+.09); o.connect(g); g.connect(pn||AC.destination); o.start(t); o.stop(t+.1); }); }catch(e){} }
+function birdFly(y0,y1,ms,rev,z){ if(!TB) return; const W=innerWidth, H=innerHeight, b=el('div','vogel6'+(rev?' rev':''),vogelSVG()); b.style.width=(z||4.6)+'vh'; TB.st.appendChild(b);
+  const x0=rev?W*1.08:-W*.08, x1=rev?-W*.08:W*1.08, kf=[]; for(let i=0;i<=8;i++){ const f=i/8; kf.push({transform:`translate(${x0+(x1-x0)*f}px,${H*(y0+(y1-y0)*f)+Math.sin(f*9)*vu()*2}px)`}); }
+  try{ b.animate(kf,{duration:ms,easing:'linear',fill:'forwards'}); }catch(e){} chirp(rev?W*.9:W*.1); bLater(()=>chirp(W*.5),ms*.45); setTimeout(()=>b.remove(),ms+100); }
+
+/* shed: Flaumi shakes the raindrops off her umbrella. Tilt the iPad from one side to the other, or wipe across Flaumi and back, or tap her:
+   every shake flings drops off and she rises a little. a:{n (shakes that are enough)} */
+Object.assign(G2,{
+ shed:{ setup(){ TB.sh={n:TST.shn||0,need:TB.a.n||5,done:false,auto:false,at:0,last:0,side:0,sw:null,ad:1,rot:0,hT:0}; tiltStart(); g2loop(dt=>this.step(dt)); },
+   left(){ return TB.drops.filter(d=>d.on&&!d.gone); },
+   step(dt){ const g=TB.sh; if(g.done) return; const T=tiltVal(dt);
+     if(T!=null){ g.rot=T*22; if(Math.abs(T)>.3){ const s=Math.sign(T); if(s!==g.side){ g.side=s; this.shake(s); } } }
+     else g.rot*=Math.exp(-dt*3);
+     if(g.auto&&now()-g.at>640){ g.at=now(); g.ad=-g.ad; this.shake(g.ad); }
+     /* the hint only wobbles the picture: no drop comes off */
+     const ht=(now()-g.hT)/1000, hw=ht<2.4?Math.sin(ht*Math.PI*2/1.2)*10*Math.sin(Math.PI*ht/2.4):0;
+     const b=TB.els.flaumi&&TB.els.flaumi.querySelector('.bb'); if(b) b.style.rotate=(g.rot+hw).toFixed(1)+'deg'; },
+   shake(dir){ const g=TB.sh; if(g.done) return; const tn=now(); if(tn-g.last<330) return; g.last=tn; g.n++; TST.shn=g.n; poke2();
+     const F=TB.els.flaumi, b=F.querySelector('.bb'), L=this.left(), k=g.n>=g.need?L.length:Math.ceil(L.length/Math.max(1,g.need-g.n+1));
+     shuffle(L).slice(0,k).forEach(d=>flingDrop(d,dir));
+     try{ b.animate([{rotate:'0deg'},{rotate:`${dir*26}deg`,offset:.3},{rotate:`${-dir*12}deg`,offset:.65},{rotate:'0deg'}],{duration:620,easing:'ease-out',composite:'add'}); }catch(e){}
+     jelly('flaumi',.45); const m=FLMEL[(TB.hi=(TB.hi||0))%FLMEL.length][0]+12; TB.hi++; harp(m,ctr(F)[0]);
+     if(TB.sc.shaken) TB.sc.shaken(g.n,g.need); if(g.n>=g.need) this.finish(); },
+   band(y){ const [,fy]=ctr(TB.els.flaumi); return Math.abs(y-fy)<vu()*26; },
+   near(x,y){ const [fx,fy]=ctr(TB.els.flaumi); return Math.hypot(x-fx,y-fy)<vu()*12; },
+   down(x,y){ const g=TB.sh; if(g.done) return; g.sw={x0:x,lx:x,dir:0,cnt:0}; },
+   move(x,y){ const g=TB.sh, s=g.sw; if(!s||g.done) return; const u=vu(), dx=x-s.lx; if(Math.abs(dx)<u*.4) return; const d=Math.sign(dx); s.lx=x;
+     g.rot=Math.max(-26,Math.min(26,g.rot+dx/u*1.4));
+     if(s.dir&&d!==s.dir){ if(Math.abs(x-s.x0)>=u*4.5&&this.band(y)){ s.cnt++; this.shake(s.dir); } s.x0=x; }
+     else if(Math.abs(x-s.x0)>=u*16&&this.band(y)){ s.cnt++; this.shake(d); s.x0=x; }
+     s.dir=d; },
+   up(x,y,pd){ const g=TB.sh, s=g.sw; g.sw=null; if(g.done||!s) return; const u=vu();
+     if(pd&&Math.hypot(x-pd.x,y-pd.y)<u*2&&now()-pd.t<450){ if(this.near(x,y)) this.shake(Math.random()<.5?-1:1); else miss2(); return; }
+     if(!s.cnt&&Math.abs(x-s.x0)>=u*5&&this.band(y)) this.shake(Math.sign(x-s.x0)); },
+   hint(){ const g=TB.sh; if(g.done) return; const [x,y]=ctr(TB.els.flaumi), u=vu(); g.hT=now();
+     ghost([[x-u*15,y+u*7,1,0],[x-u*13,y+u*5,.9,1],[x+u*13,y+u*5,.9,1],[x-u*13,y+u*5,.9,1],[x+u*13,y+u*5,.9,1],[x+u*15,y+u*7,1,0]],2400); if(tiltOn()) tiltIcon(); },
+   auto(){ const g=TB.sh; if(g.done||g.auto) return; this.hint(); g.auto=true; },
+   finish(){ const g=TB.sh; if(g.done) return; g.done=true; this.left().forEach((d,i)=>flingDrop(d,i%2?1:-1)); mood('flaumi','happy'); glSpark(...ctr(TB.els.flaumi),20,[.85,.95,1],12); done2(); } }
+});
+/* the sun breaks through: the rain stops, the clouds part, the light turns gold, the rainbow grows */
+function flBreak(){ const L=TB.sky6; L.classList.remove('rain'); L.classList.add('clear'); TB.rain.rT=0; rainSnd(0); FX.darkT=0; TB.st.classList.add('sun6on');
+  const g=$('taleWorld').querySelector('.grade'); if(g) g.dataset.g='gold'; TB.fp.sink=0; TB.fp.yT=.44;
+  if(GLX.cfg) GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:1.3,hz:.55,hk:.2,col:[1,.78,.5]},gcol:{b:[.06,.1,.05],t:[.45,.55,.22],l:[1,.75,.42]}});
+  bLater(()=>{ const [sx,sy]=ctr(TB.els.sonne); glSpark(sx,sy,30,[1,.85,.5],16); chime([523,659,784,1047]); uniHop(); },700); bLater(bowGrow,900); }
+
 /* ================= the tale ================= */
 const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
 const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
@@ -7232,6 +7369,43 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
        talk('flaumi','Wie schön','sagte Flaumi','d2'); talk('flaumi','Schau',null,'d2'); onPh('Wie schön',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); },'d2');
        onPh('Schau',()=>{ mood('flaumi','curious'); const sk=TB.st.querySelector('.l-sky'), g=el('div','dawn3'); sk.appendChild(g); },'d2'); },
      'Die Tautropfen glitzerten wie kleine Sterne. Wie schön! sagte Flaumi. Schau, da hinten wird der Himmel schon hell.', 1400]},
+ /* 6 – dawn: the sky turns pink and gold, birds wake; a soft shower weighs Flaumi down; she shakes the drops off (tilt, wipe or tap); the sun breaks through and a rainbow grows */
+ {set:'morgenwiese', dark:.42, dcol:'30,20,64', u:[21,56,26], pan:{ms:3600}, music:1, grade:'dawn', st:{flm:'happy',shn:0},
+  fl:[70,30,13], shadows:[],
+  lit:{lc:'#ffb4c4',lc2:'#ffeedd',sc:'#2a1850'}, litFn:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.6],
+  gl:{keep:1,grass:'keep',grow:.62,gcut:[2,2],gcol:{b:[.1,.11,.13],t:[.46,.46,.36],l:[1,.68,.72]},rays:{k:.45,hz:.62,hk:.14,col:[1,.6,.66]},motes:50,mc:[1,.82,.88],flies:0,vig:[[.08,.03,.14],.6],
+      sun:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.6]},
+  frame(dt){ jellyStep(dt); flPlace(dt); },
+  enter(){ TST.flm='happy'; TB.hi=0; panUni(); TB.st.classList.add('mw6'); flSky6(); flDrops(); rainMake(); const F=TB.els.flaumi; F.classList.add('hover'); mood('flaumi','happy');
+    TB.fp={x:.7,y:.3,xT:.7,yT:.3,sink:0,k:.5};
+    /* the old Flaumi goes, this one flies along with the camera */
+    $('taleWorld').querySelectorAll('.st3').forEach(s=>{ if(s!==TB.st) s.querySelectorAll('.flm').forEach(e=>e.style.visibility='hidden'); });
+    if(TB.panMs) try{ F.animate([{transform:'translateX(-100vw)'},{transform:'none'}],{duration:TB.panMs,easing:`cubic-bezier(${PANEZ.join(',')})`}); }catch(e){}
+    onPh('Und dann kam',()=>{ TB.sky6.classList.add('dawn'); TB.st.classList.add('mwd'); FX.darkT=.2; TB.fp.xT=.56; TB.fp.yT=.42; mood('flaumi','curious');
+      if(GLX.cfg) GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:.8,hz:.62,hk:.2,col:[1,.66,.6]}}); });
+    onPh('rosa und golden',()=>{ bLater(()=>{ const [x,y]=ctr(TB.els.sonne); glSpark(x,y,16,[1,.8,.6],10); chimeAt([784,1047],x); },900); });
+    onPh('ganz blass',()=>{ const m=TB.st.querySelector('.l-sky>.moon2'); if(m) m.classList.add('pale6'); });
+    onPh('Piep, piep',()=>{ birdFly(.2,.26,7000,false); bLater(()=>birdFly(.3,.22,6200,true,3.8),700); mood('flaumi','happy'); });
+    onPh('leise an zu regnen',()=>{ TB.sky6.classList.add('rain'); TB.rain.rT=40; rainSnd(1); FX.darkT=.26; FX.dc='54,46,92'; mood('flaumi','oh');
+      if(GLX.cfg) GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:.3,hz:.62,hk:.1,col:[.8,.6,.75]}}); });
+    onPh('Tropf, tropf',()=>{ TB.rain.rT=70; TB.fp.sink=.2; TB.drops.slice(0,9).forEach((d,i)=>bLater(()=>dropOn(d),i*280)); });
+    talk('flaumi','Oh, ich werde','rief Flaumi'); onPh('Oh, ich werde',()=>{ mood('flaumi','worried'); TB.drops.forEach((d,i)=>bLater(()=>dropOn(d),i*90)); });
+    onPh('sank hinunter',()=>{ jelly('flaumi',.6); TB.fp.sink=.22; }); },
+  ready(){ const L=TB.sky6; L.classList.add('dawn','rain'); TB.st.classList.add('mwd'); const m=TB.st.querySelector('.l-sky>.moon2'); if(m) m.classList.add('pale6');
+    TB.drops.forEach(d=>{ if(!d.gone) dropOn(d); }); TB.fp.xT=.56; TB.fp.yT=.42; TB.fp.sink=.22; TB.rain.rT=70; rainSnd(1); FX.darkT=.26; FX.dc='54,46,92'; mood('flaumi','worried');
+    const k=TB.n(tiltOn()?'t':'f'); bLater(()=>{ if(TB&&TB.live&&!TST.shn) say(k); },2600); },
+  a:{t:'shed',n:5,w:'BOGEN'},
+  s:'Und dann kam der Morgen. Der Himmel wurde rosa und golden, und der Mond wurde ganz blass. Piep, piep, die ersten Vögel wachten auf. Da fing es leise an zu regnen. Tropf, tropf, machte es auf Flaumis Schirmchen. Oh, ich werde so schwer! rief Flaumi und sank hinunter. Hilf Flaumi, die Tropfen abzuschütteln!',
+  x:[['t','Wackel dein Tablet hin und her!'],['f','Wisch mit dem Finger über Flaumi, hin und her!']],
+  h:'Wackel das Tablet hin und her, oder wisch mit dem Finger über Flaumi!',
+  shaken(n,N){ mood('flaumi',n>=2?'happy':'oh'); TB.rain.rT=10+60*(1-n/N); FX.darkT=Math.max(.08,.26-.18*n/N); },
+  done(){ mood('flaumi','happy'); flBreak(); kara('BOGEN'); },
+  d:[()=>{ ['rot','gelb','grün','blau'].forEach((c,i)=>onPh(c,()=>bowPulse([0,2,3,4][i]),'d1')); },
+     'Der Regen hörte auf, und die Sonne kam heraus. Am Himmel leuchtete ein großer Regenbogen: rot, gelb, grün und blau!',
+     ()=>{ talk('flaumi','Oh, ein Bogen','rief Flaumi','d2'); talk('flaumi','So bunt',null,'d2'); onPh('Oh, ein Bogen',()=>{ mood('flaumi','oh'); },'d2');
+       onPh('aus Licht',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); TB.fp.yT=.4; },'d2');
+       onPh('So bunt',()=>{ birdFly(.3,.18,5200,true,4); bLater(()=>birdFly(.36,.2,5600,true,3.4),500); const [x,y]=ctr(TB.els.flaumi); glSpark(x,y,16,[1,.9,.7],10); },'d2'); },
+     'Oh, ein Bogen aus Licht! rief Flaumi. So bunt!', 1400]},
  ]};
 /*<FLAUMI*/
 
