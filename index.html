@@ -1080,6 +1080,10 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.pilz{filter:none} .pilz .cap{transition:filter 1s} .tp2.pilz{opacity:.55;transition:opacity 1s,filter 1s}
 .tp2.pilz.on{opacity:1;filter:drop-shadow(0 0 1.5vh #bff0ff) drop-shadow(0 0 4vh rgba(120,210,255,.8))}
 .moon2.rise3{animation:rise3 3.4s cubic-bezier(.3,.7,.3,1) both} @keyframes rise3{from{transform:translateY(14vh);opacity:0}}
+.tp2.netzph{width:54vh;height:54vh;filter:none;pointer-events:none}
+.tp2.astl,.tp2.astr{z-index:1;filter:drop-shadow(0 0 1vh rgba(0,0,10,.5))} .tp2.astl svg{transform:rotate(28deg)} .tp2.astr svg{transform:rotate(-24deg)}
+.dawn3{position:absolute;left:55%;right:-10%;bottom:30%;height:40%;background:radial-gradient(ellipse at 80% 100%,rgba(255,170,140,.55),rgba(255,140,160,.2) 45%,rgba(255,140,160,0) 70%);animation:dawn3 4s ease-in both;pointer-events:none}
+@keyframes dawn3{from{opacity:0}}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -6749,7 +6753,7 @@ function flaumiSVG(){ const id='fl'+(++UID); let pp='';
     <ellipse class="m m-oh" cx="50" cy="127" rx="3.2" ry="4" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/>
     <path class="m m-sad" d="M45 128 q5 -4 10 0" fill="none" stroke="#3a2414" stroke-width="2.2" stroke-linecap="round"/>
     <g class="mo"><ellipse cx="50" cy="126.5" rx="4.6" ry="4.2" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/><ellipse cx="50" cy="129" rx="2.6" ry="1.4" fill="#ff8a9a"/></g></g></svg>`; }
-SVGP.PUSTE=[pusteSVG,.476]; TSYL.BLUME='BLU-ME'; TSYL.BACH='BACH';
+SVGP.PUSTE=[pusteSVG,.476]; TSYL.BLUME='BLU-ME'; TSYL.BACH='BACH'; TSYL.NETZ='NETZ';
 
 /* ---------- backdrop: the golden evening meadow ---------- */
 SETS2.abendwiese={sky:'linear-gradient(180deg,#27306e 0%,#5a4c96 26%,#b8689a 46%,#f0946a 60%,#ffc47a 72%,#ffe2a2 84%,#fff0c8 100%)', stars:6, clean:1,
@@ -6770,6 +6774,10 @@ SETS2.nachtwiese={sky:'linear-gradient(180deg,#04061c 0%,#0c1238 45%,#1c2456 80%
   far:sil(hills(71,160,40,'#10183a')+pines(73,30,80,'#0c1430',190),68),
   mid:[['PINE',20,48,24],['OAK',78,50,22]],
   gnd:'linear-gradient(180deg,#14223a 0%,#0e1a2c 40%,#081220 100%)'};
+SETS2.netzbusch={sky:'linear-gradient(180deg,#05081e 0%,#0e1640 45%,#1e2a5a 80%,#2c3466 100%)', stars:60, dcol:'6,10,36', moon:[44,36.5],
+  far:sil(hills(81,170,36,'#121a3c')+pines(83,28,70,'#0e1634',200),66),
+  mid:[['PINE',86,50,22],['OAK',16,52,20]],
+  gnd:'linear-gradient(180deg,#16243c 0%,#0e1a2e 40%,#081222 100%)'};
 /* the wind gesture: blow on the dandelion (microphone) or wipe upwards with the finger; taps on the head blow a little too.
    a:{id, head:[fx,fy] of the head in the prop, pct (default .66)}. Seeds come off one by one; Flaumi (a kid) stays. */
 Object.assign(G2,{
@@ -6819,6 +6827,7 @@ function camPan(old,st,sc){ const ms=(sc.pan&&sc.pan.ms)||3600, ez=`cubic-bezier
     try{ if(o) o.animate([{translate:'0 0'},{translate:`${-k*100}vw 0`}],{duration:ms,easing:ez,fill:'forwards'}); if(n) n.animate([{translate:`${k*100}vw 0`},{translate:'0 0'}],{duration:ms,easing:ez}); }catch(e){} });
   /* the unicorn flies along: the old one goes, the new one stays where she is (it rides against the play layer) */
   const ou=old.querySelector('.u2'); if(ou) ou.style.visibility='hidden';
+  const nm=st.querySelector('.l-sky>.moon2'); if(nm){ old.querySelectorAll('.moon2').forEach(e=>e.style.visibility='hidden'); try{ nm.animate([{transform:'translateX(-22vw)'},{transform:'none'}],{duration:ms,easing:ez}); }catch(e){} }
   TB.panMs=ms; glPan(ms); setTimeout(()=>old.remove(),ms+60); }
 function panUni(){ const U=TB.els.uni, ms=TB.panMs; if(!U||!ms) return; const ez=`cubic-bezier(${PANEZ.join(',')})`;
   try{ U.animate([{transform:'translateX(-100vw)'},{transform:'none'}],{duration:ms,easing:ez}); }catch(e){}
@@ -6990,6 +6999,62 @@ function shadowStep(){ if(!TB||!TB.shd) return; const L=TB.shd.fn&&TB.shd.fn(); 
   TB.shd.ids.forEach(id=>{ const E=TB.els[id], s=TB.els[id+'Sh']; if(!E||!s) return; const r=E.getBoundingClientRect(), cx=r.left+r.width/2, dx=cx-L[0], dy=r.bottom-L[1], d=Math.hypot(dx,dy)||1;
     const k=Math.max(-1,Math.min(1,dx/(innerWidth*.35))); s.style.transform=`translateX(${(k*42).toFixed(1)}%) scaleX(${(1.2+Math.abs(k)*.9).toFixed(2)}) skewX(${(-k*24).toFixed(1)}deg)`; s.style.opacity=Math.max(.15,Math.min(1,innerHeight*.5/d)).toFixed(2); }); }
 
+/* ---------- the web of dew: threads to pluck like a harp; every pluck plays the next note of Flaumi's melody ---------- */
+function harp(m,x){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); const f=440*Math.pow(2,(m-69)/12), t=AC.currentTime;
+  const pn=AC.createStereoPanner?AC.createStereoPanner():null; if(pn){ pn.pan.value=Math.max(-.9,Math.min(.9,((x||innerWidth/2)/innerWidth-.5)*1.6)); pn.connect(AC.destination); }
+  const lp=AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.setValueAtTime(5200,t); lp.frequency.exponentialRampToValueAtTime(1100,t+1.2); lp.connect(pn||AC.destination);
+  [[1,'triangle',.22,1.8],[2,'sine',.06,.9],[3.01,'sine',.025,.4]].forEach(([k,ty,a,d])=>{ const o=AC.createOscillator(), g=AC.createGain(); o.type=ty; o.frequency.value=f*k;
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(a,t+.004); g.gain.exponentialRampToValueAtTime(.0008,t+d); o.connect(g); g.connect(lp); o.start(t); o.stop(t+d+.05); }); }catch(e){} }
+/* the web lives in a placeholder box (.netz, in the play layer, so it slides in with the camera); it is drawn on the light canvas */
+function netzMake(id){ const E=TB.els[id], r=seeded(5), N=12, sp=[]; for(let i=0;i<N;i++){ const a=i/N*6.283+.13+(r()-.5)*.18; sp.push({a,len:.82+r()*.2,amp:0,t0:0,ph:r()*6}); }
+  const rings=[.16,.28,.4,.52,.64,.76,.88], drops=[]; rings.forEach((f,k)=>{ for(let i=0;i<N;i++){ if(r()<.55) drops.push({i,k,f,u:.2+r()*.6,z:1.2+r()*1.8,ph:r()*6,gone:false}); } });
+  const W={E,sp,rings,drops,N,glow:0,moor:[[0,'ast2',.5,.3],[6,'ast1',.5,.3],[9,'ast1',.62,.08],[11,'ast2',.42,.12],[3,null,0,.92],[4,null,-.12,.92]]}; TB.web=W;
+  FX.dr.push(tn=>{ if(!TB||TB.web!==W) return false; netzDraw(W,tn); return true; }); return W; }
+function netzGeo(W){ const r=W.E.getBoundingClientRect(), C=[r.left+r.width/2,r.top+r.height/2], R=r.width/2; return {C,R}; }
+/* a point on spoke i at fraction s, with the string's vibration */
+function netzPt(W,i,s,tn,G){ const S=W.sp[i], {C,R}=G, dx=Math.cos(S.a), dy=Math.sin(S.a)*.86, L=R*S.len, age=(tn-S.t0)/1000, v=S.amp*Math.exp(-age*2.2)*Math.sin(age*34)*Math.sin(Math.PI*Math.min(1,s));
+  return [C[0]+dx*L*s-dy*v, C[1]+dy*L*s+dx*v]; }
+function netzDraw(W,tn){ const cx=FX.cx, G=netzGeo(W), u=vu(), N=W.N; if(!G.R) return; cx.save(); cx.globalCompositeOperation='lighter'; cx.lineCap='round';
+  const al=.4+W.glow*.35; cx.strokeStyle=`rgba(210,228,255,${(al*.8).toFixed(2)})`; cx.lineWidth=Math.max(1,u*.14);
+  W.moor.forEach(([i,id,fx,fy])=>{ const a=netzPt(W,i,1.02,tn,G), E=id&&TB.els[id]; const b=E?relEl(E,[fx,fy]):[a[0]+fx*innerWidth,innerHeight*fy]; cx.beginPath(); cx.moveTo(a[0],a[1]); cx.quadraticCurveTo((a[0]+b[0])/2,(a[1]+b[1])/2+u*1.5,b[0],b[1]); cx.stroke(); });
+  for(let i=0;i<N;i++){ const S=W.sp[i], age=(tn-S.t0)/1000, hot=S.amp>0?Math.exp(-age*2.2):0; cx.strokeStyle=`rgba(${(210+hot*45)|0},${(228+hot*27)|0},255,${Math.min(1,al+hot*.5).toFixed(2)})`; cx.lineWidth=Math.max(1,u*(.16+hot*.12));
+    cx.beginPath(); for(let k=0;k<=10;k++){ const p=netzPt(W,i,k/10*1.04,tn,G); k?cx.lineTo(p[0],p[1]):cx.moveTo(p[0],p[1]); } cx.stroke(); }
+  cx.strokeStyle=`rgba(210,228,255,${(al*.85).toFixed(2)})`; cx.lineWidth=Math.max(1,u*.13);
+  W.rings.forEach(f=>{ cx.beginPath(); for(let i=0;i<=N;i++){ const a=netzPt(W,i%N,f,tn,G); if(!i){ cx.moveTo(a[0],a[1]); continue; } const b=netzPt(W,(i-1)%N,f,tn,G), m=[(a[0]+b[0])/2,(a[1]+b[1])/2], q=[m[0]+(G.C[0]-m[0])*.07,m[1]+(G.C[1]-m[1])*.07]; cx.quadraticCurveTo(q[0],q[1],a[0],a[1]); } cx.stroke(); });
+  W.drops.forEach(d=>{ if(d.gone) return; const a=netzPt(W,d.i,d.f,tn,G), b=netzPt(W,(d.i+1)%N,d.f,tn,G), x=a[0]+(b[0]-a[0])*d.u, y=a[1]+(b[1]-a[1])*d.u+u*.2, tw=.55+.45*Math.sin(tn/300+d.ph*5), z=u*d.z*.32*(1+W.glow*.3);
+    cx.globalAlpha=.5+.5*tw; cx.drawImage(fxSprite(rnd2(d)),x-z*2.6,y-z*2.6,z*5.2,z*5.2); cx.globalAlpha=1; cx.fillStyle='rgba(255,255,255,.95)'; cx.beginPath(); cx.arc(x,y,z*.55,0,6.283); cx.fill(); });
+  cx.restore(); }
+const DROPC=['rgba(190,225,255,.9)','rgba(255,255,255,.9)','rgba(230,200,255,.9)','rgba(200,255,230,.9)'];
+function rnd2(d){ return DROPC[Math.floor(d.ph*10)%DROPC.length]; }
+/* which spoke does a stroke from a to b cross (or a tap touch)? */
+function netzHit(W,a,b){ const G=netzGeo(W), tn=now(), u=vu(); const cross=(p,q,r,s)=>{ const d=(q[0]-p[0])*(s[1]-r[1])-(q[1]-p[1])*(s[0]-r[0]); if(Math.abs(d)<1e-6) return false;
+    const t=((r[0]-p[0])*(s[1]-r[1])-(r[1]-p[1])*(s[0]-r[0]))/d, v=((r[0]-p[0])*(q[1]-p[1])-(r[1]-p[1])*(q[0]-p[0]))/d; return t>=0&&t<=1&&v>=0&&v<=1; };
+  for(let i=0;i<W.N;i++){ const P=netzPt(W,i,.12,tn,G), Q=netzPt(W,i,1,tn,G);
+    if(a&&cross(a,b,P,Q)) return i;
+    if(!a){ const vx=Q[0]-P[0], vy=Q[1]-P[1], l=vx*vx+vy*vy, t=Math.max(0,Math.min(1,((b[0]-P[0])*vx+(b[1]-P[1])*vy)/l)), dx=P[0]+vx*t-b[0], dy=P[1]+vy*t-b[1]; if(Math.hypot(dx,dy)<u*3.5) return i; } }
+  return -1; }
+function netzPluck(W,i,x){ const S=W.sp[i]; S.amp=vu()*(2.4+Math.random()*1.2); S.t0=now(); const m=FLMEL[(TB.hi=(TB.hi||0))%FLMEL.length][0]+12; TB.hi++; harp(m,x);
+  W.glow=Math.min(1,W.glow+.15); const G=netzGeo(W); W.drops.filter(d=>!d.gone&&(d.i===i||(d.i+1)%W.N===i)).slice(0,2).forEach(d=>{ if(Math.random()<.6){ d.gone=true;
+    const p=netzPt(W,d.i,d.f,now(),G); fxAdd({k:'fall',x:p[0],y:p[1],vx:(Math.random()-.5)*8*vu(),vy:0,g:60*vu(),yEnd:innerHeight*(.86+Math.random()*.08),life:2.4,s:.9,ph:Math.random()*6,c:'rgba(210,235,255,.95)'}); } });
+  const [px,py]=netzPt(W,i,.6,now(),G); glSpark(px,py,6,[.8,.9,1],6); }
+
+/* pluck: stroke across the threads (or tap one); n plucks free Flaumi. a:{n} */
+Object.assign(G2,{
+ pluck:{ setup(){ TB.pk={n:0,done:false,auto:false,last:null,ai:0,at:0}; g2loop(dt=>this.step(dt)); },
+   step(dt){ const g=TB.pk; if(g.done) return; if(TB.web) TB.web.glow=Math.max(0,TB.web.glow-dt*.15);
+     if(g.auto&&now()-g.at>520){ g.at=now(); const i=(g.ai+=5)%TB.web.N, G=netzGeo(TB.web), p=netzPt(TB.web,i,.6,now(),G); this.hit(i,p[0]); } },
+   hit(i,x){ const g=TB.pk; if(g.done) return; netzPluck(TB.web,i,x); g.n++; poke2(); const F=TB.els.flaumi; if(F){ jelly('flaumi',.5); }
+     if(TB.sc.plucked) TB.sc.plucked(g.n); if(g.n>=(TB.a.n||6)) this.finish(); },
+   down(x,y){ const g=TB.pk; if(g.done) return; g.last=[x,y]; g.lt={}; const i=netzHit(TB.web,null,[x,y]); if(i>=0){ g.lt[i]=now(); this.hit(i,x); } },
+   move(x,y){ const g=TB.pk; if(g.done||!g.last) return; const i=netzHit(TB.web,g.last,[x,y]); g.last=[x,y];
+     if(i>=0&&!(g.lt[i]&&now()-g.lt[i]<350)){ g.lt[i]=now(); this.hit(i,x); } },
+   up(x,y,pd){ const g=TB.pk; if(g.done) return; g.last=null; if(pd&&Math.hypot(x-pd.x,y-pd.y)<vu()*2&&netzHit(TB.web,null,[x,y])<0) miss2(); },
+   hint(){ const g=TB.pk; if(g.done) return; const G=netzGeo(TB.web), u=vu(), y=G.C[1]+G.R*.35, x0=G.C[0]-G.R*.7, x1=G.C[0]+G.R*.7;
+     ghost([[x0,y+u*8,1,0],[x0,y,.9,1],[x1,y-u*4,.9,1],[x1,y-u*4,1,0]],1700,2); },
+   auto(){ const g=TB.pk; if(g.done||g.auto) return; this.hint(); g.auto=true; },
+   finish(){ const g=TB.pk; if(g.done) return; g.done=true; if(TB.web) TB.web.glow=1; chime([784,988,1175,1568]); if(TB.sc.freed) TB.sc.freed(); done2(); } }
+});
+
 /* ================= the tale ================= */
 const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
 const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
@@ -7133,9 +7198,40 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
      'Da wurde es ganz hell um Flaumi herum. Danke, sagte Flaumi. Jetzt habe ich keine Angst mehr!',
      ()=>{ onPh('flogen voraus',()=>{ ['pz1','pz2','pz3','pz4'].forEach((id,i)=>bLater(()=>{ const P=TB.els[id]; FF.c=relEl(P,[.5,.1]); P.classList.add('on'); light({el:P,oy:.35,r0:3,rT:9,k0:.3,kT:.8});
            chimeAt([880+i*175,1318+i*175],ctr(P)[0]); glSpark(...ctr(P),10,[.7,.95,1],8); jelly(id,.6); },i*650)); },'d2');
-       onPh('ging der Mond auf',()=>{ const sk=TB.st.querySelector('.l-sky'), m=el('div','moon2 rise3'); m.style.left='59%'; m.style.top='35%'; sk.appendChild(m);
+       onPh('ging der Mond auf',()=>{ const sk=TB.st.querySelector('.l-sky'), m=el('div','moon2 rise3'); m.style.left='44%'; m.style.top='36.5%'; sk.appendChild(m);
            light({fn:()=>ctr(m),r0:10,rT:30,k0:.2,kT:.6}); FX.darkT=.45; chime([523,659,784,1047]); },'d2'); },
      'Die Glühwürmchen flogen voraus und zeigten den Weg. Und am Himmel ging der Mond auf.', 1400]},
+ /* 5 – the web of dew in the moonlight: the wind blows Flaumi into it; she plucks the threads like a harp – each pluck is the next note of Flaumi's song – and Flaumi is free */
+ {set:'netzbusch', dark:.5, dcol:'6,10,36', u:[20,48,24], pan:{ms:3600}, music:1, grade:'night', st:{flm:'happy'},
+  fl:[76,36,11], shadows:[],
+  p:[['ast1','STAMM',35,60,74,'astl'],['ast2','STAMM',80,60,74,'astr'],['netz','',57,45,1,'netzph']],
+  lit:{lc:'#b8d8ff',lc2:'#eef6ff',sc:'#0a0c30'}, litFn:()=>{ const m=TB&&TB.st.querySelector('.moon2'); return m?ctr(m):[innerWidth*.7,innerHeight*.18]; },
+  gl:{keep:1,grass:'keep',grow:.6,gcut:[2,2],gcol:{b:[.02,.04,.07],t:[.12,.18,.24],l:[.7,.8,1]},rays:{k:.35,hz:.5,hk:.08,col:[.6,.72,1]},motes:60,mc:[.7,.8,1],flies:4,vig:[[.02,.02,.1],.7],
+      sun:()=>{ const m=TB&&TB.st.querySelector('.moon2'); return m?ctr(m):[innerWidth*.7,innerHeight*.18]; }},
+  frame(dt){ jellyStep(dt); const F=TB.els.flaumi; if(F&&TST.stuck&&TB.web){ const G=netzGeo(TB.web), p=netzPt(TB.web,8,.52,now(),G); putAt(F,p[0],p[1]-vu()*2); } },
+  enter(){ TST.flm='happy'; TST.stuck=0; TB.hi=0; panUni(); netzMake('netz');
+    const m=TB.st.querySelector('.moon2'); if(m) light({fn:()=>ctr(m),r0:24,rT:30,k0:.5,kT:.6});
+    onPh('großes Netz',()=>{ TB.web.glow=.8; const G=netzGeo(TB.web); glSpark(G.C[0],G.C[1],14,[.8,.9,1],10); chimeAt([1568,2093,2637],G.C[0]); });
+    onPh('Hui, machte',()=>{ gust(1.2); const F=TB.els.flaumi, G=netzGeo(TB.web), p=netzPt(TB.web,8,.52,now(),G), [x0,y0]=ctr(F);
+      try{ F.animate([{transform:'none'},{transform:`translate(${(p[0]-x0)*.5}px,${(p[1]-y0)*.5-vu()*10}px) rotate(-30deg)`},{transform:`translate(${p[0]-x0}px,${p[1]-y0-vu()*2}px)`}],{duration:1500,easing:'ease-in-out'}); }catch(e){}
+      bLater(()=>{ TST.stuck=1; TB.els.flaumi.classList.add('cling'); TB.web.sp[8].amp=vu()*3; TB.web.sp[8].t0=now(); harp(55,p[0]); mood('flaumi','oh'); },1500); });
+    talk('flaumi','Oh nein','rief Flaumi'); talk('flaumi','ich hänge fest','Zupf'); onPh('Oh nein',()=>mood('flaumi','worried'));
+    onPh('wie an einer Harfe',()=>{ [2,5,8,11].forEach((i,k)=>bLater(()=>{ TB.web.sp[i].amp=vu()*2; TB.web.sp[i].t0=now(); harp([67,71,74,79][k],innerWidth*.6); },k*230)); }); },
+  ready(){ TST.stuck=1; const F=TB.els.flaumi; F.getAnimations().forEach(q=>q.cancel()); F.classList.add('cling'); mood('flaumi','worried'); },
+  a:{t:'pluck',n:7,w:'NETZ'},
+  s:'Die Glühwürmchen führten Flaumi zu einem Busch. Zwischen zwei Zweigen hing ein großes Netz, wie aus Silber gesponnen, voller Tautropfen, die im Mondlicht glitzerten. Hui, machte der Wind, und Flaumi flog mitten hinein. Oh nein, rief Flaumi, ich hänge fest! Zupf an den Fäden, wie an einer Harfe. Dann wird Flaumi wieder frei!',
+  h:'Fahr mit deinem Finger über die Fäden, dann klingen sie!',
+  plucked(n){ if(n===3){ mood('flaumi','oh'); TB.els.flaumi.classList.remove('cling'); } if(n===5) mood('flaumi','happy'); },
+  freed(){ TST.stuck=0; const F=TB.els.flaumi; F.classList.remove('cling'); mood('flaumi','happy'); const [x,y]=ctr(F); glSpark(x,y,22,[.85,.95,1],12);
+    try{ F.animate([{transform:'none'},{transform:`translate(${vu()*6}px,${-vu()*12}px)`}],{duration:1600,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'}); }catch(e){}
+    bLater(()=>{ F.getAnimations().forEach(q=>q.cancel()); putAt(F,x+vu()*6,y-vu()*12); F.classList.add('hover'); },1600); },
+  done(){ kara('NETZ'); },
+  d:[()=>{ onPh('Pling',()=>{ FLMEL.slice(0,6).forEach(([m],k)=>bLater(()=>{ const i=(k*5)%12; TB.web.sp[i].amp=vu()*2; TB.web.sp[i].t0=now(); harp(m+12,innerWidth*(.4+k*.05)); },k*300)); },'d1'); },
+     'Pling, plong! Das Netz sang ein Lied, und Flaumi war wieder frei.',
+     ()=>{ onPh('glitzerten wie kleine Sterne',()=>{ TB.web.glow=1; TB.web.drops.forEach(d=>{ if(Math.random()<.3) d.z*=1.4; }); },'d2');
+       talk('flaumi','Wie schön','sagte Flaumi','d2'); talk('flaumi','Schau',null,'d2'); onPh('Wie schön',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); },'d2');
+       onPh('Schau',()=>{ mood('flaumi','curious'); const sk=TB.st.querySelector('.l-sky'), g=el('div','dawn3'); sk.appendChild(g); },'d2'); },
+     'Die Tautropfen glitzerten wie kleine Sterne. Wie schön! sagte Flaumi. Schau, da hinten wird der Himmel schon hell.', 1400]},
  ]};
 /*<FLAUMI*/
 
