@@ -3649,6 +3649,17 @@
      "say": "Netz"
     }
    ]
+  },
+  {
+   "id": "w_x041_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bogen.",
+   "items": [
+    {
+     "key": "wort_bogen",
+     "say": "Bogen"
+    }
+   ]
   }
  ]
 }
