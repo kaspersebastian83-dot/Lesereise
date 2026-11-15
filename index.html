@@ -1186,8 +1186,8 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .bsn[data-mood=tickle] .ey-sq,.bsn[data-mood=tickle] .m-s{display:inline} .bsn[data-mood=awake] .ey-o,.bsn[data-mood=awake] .m-s{display:inline}
 .bsn[data-mood=sneeze] .ey-sq,.bsn[data-mood=sneeze] .m-o{display:inline}
 .bsn .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
-.lf{position:absolute;translate:-50% -50%;line-height:1;pointer-events:none;filter:drop-shadow(0 .2vh .2vh rgba(0,0,0,.25))}
-.lf.lfw{animation:lfw .45s ease-in-out 2} @keyframes lfw{50%{translate:-50% -80%}}
+.efl{position:absolute;translate:-50% -50%;line-height:1;pointer-events:none;filter:drop-shadow(0 .2vh .2vh rgba(0,0,0,.25))}
+.efl.lfw{animation:lfw .45s ease-in-out 2} @keyframes lfw{50%{translate:-50% -80%}}
 .fring{position:absolute;translate:-50% -50%;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .6s,scale .5s;
   background:conic-gradient(#ff5f8a,#ffb347,#ffe66b,#6bdc8a,#5fb8ff,#a57bff,#ff5f8a);
   -webkit-mask:radial-gradient(circle,transparent 57%,#000 60%,#000 71%,transparent 74%);mask:radial-gradient(circle,transparent 57%,#000 60%,#000 71%,transparent 74%)}
@@ -1205,6 +1205,92 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.apfb{transform-origin:50% 96%} .tp2.krone{filter:none}
 .ill .eart .eef>.bb,.ill .eart .sck>.bb{animation:none}
 /*<EEFJECSS*/
+/*OLDBOOKCSS>*/
+/* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
+   pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
+#bookWrap::before{content:"";position:absolute;inset:-18% -14%;z-index:-1;pointer-events:none;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 55%,rgba(255,200,120,.26),rgba(255,170,90,.08) 45%,transparent 68%);animation:bkglow 5s ease-in-out infinite}
+@keyframes bkglow{50%{opacity:.6}}
+#bk .bd{position:absolute;top:-3.6%;bottom:-3.6%;pointer-events:none;
+  background:var(--texL) 0 0/256px 256px,radial-gradient(ellipse at 30% 25%,rgba(255,190,140,.14),transparent 50%),linear-gradient(135deg,#6e2c22,#4a1914 55%,#30100c);
+  box-shadow:0 2.6vh 6vh rgba(0,0,0,.6),inset 0 0 3vh rgba(0,0,0,.6),inset 0 0 0 .4vh rgba(255,210,160,.1)}
+#bk .bdL{left:-3.6%;right:50%;border-radius:1.4vh 0 0 1.4vh} #bk .bdR{left:50%;right:-3.6%;border-radius:0 1.4vh 1.4vh 0}
+#bk .spn{position:absolute;left:48.4%;width:3.2%;top:-3.6%;bottom:-3.6%;pointer-events:none;
+  background:repeating-linear-gradient(180deg,transparent 0 22%,rgba(0,0,0,.35) 22% 23.5%,rgba(255,200,150,.12) 23.5% 24.5%,transparent 24.5% 25%),linear-gradient(90deg,#2a0c08,#5a2018 50%,#2a0c08)}
+#bookWrap.closed .bdL,#bookWrap.closed .spn,#bookWrap.closed .gut{visibility:hidden}
+#bookWrap.opening .pgL,#bookWrap.opening .bdL,#bookWrap.opening .spn,#bookWrap.opening .gut{visibility:hidden}
+#bk .rbn{position:absolute;left:50.4%;top:93%;width:2.1%;height:16%;pointer-events:none;transform-origin:50% 0;animation:rbsw 5.5s ease-in-out infinite;
+  background:linear-gradient(90deg,#6a0812,#c21e34 38%,#ee6a78 50%,#b81a2e 62%,#5a0610);clip-path:polygon(0 0,100% 0,100% 100%,50% 84%,0 100%);filter:drop-shadow(0 .4vh .4vh rgba(0,0,0,.5))}
+@keyframes rbsw{0%,100%{rotate:-4deg}50%{rotate:5deg}}
+#bookWrap.closed .rbn{left:49%}
+#bk .pg,.leaf>div{background-color:#efdcb2;
+  background-image:radial-gradient(ellipse at 16% 10%,rgba(150,95,35,.17),transparent 22%),radial-gradient(ellipse at 86% 90%,rgba(150,95,35,.2),transparent 28%),
+    radial-gradient(circle at 74% 16%,rgba(160,100,40,.13),transparent 5%),radial-gradient(circle at 22% 82%,rgba(160,100,40,.1),transparent 4%),
+    radial-gradient(ellipse at 50% 45%,rgba(255,248,225,.7),transparent 70%),var(--texP),linear-gradient(180deg,#f3e3bf,#e3cb96);
+  background-size:auto,auto,auto,auto,auto,256px 256px,auto}
+#bk .pgL{border-radius:.9vh 0 0 .9vh} #bk .pgR{border-radius:0 .9vh .9vh 0}
+.leaf .lf{border-radius:0 .9vh .9vh 0;box-shadow:inset 0 0 6vh rgba(120,70,20,.3),inset 4.5vh 0 4vh -2.4vh rgba(70,40,12,.45)}
+.leaf .lb{border-radius:.9vh 0 0 .9vh;box-shadow:inset 0 0 6vh rgba(120,70,20,.3),inset -4.5vh 0 4vh -2.4vh rgba(70,40,12,.45)}
+.leaf>.lf>.bcover{border-radius:.5vh 1.4vh 1.4vh .5vh}
+.leaf.blank{z-index:4}
+#bk .pg::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:var(--ts,0);transition:opacity .2s}
+#bk .pgL::after{background:linear-gradient(90deg,transparent 35%,rgba(40,20,5,.38))} #bk .pgR::after{background:linear-gradient(270deg,transparent 35%,rgba(40,20,5,.38))}
+#bk .gut{position:absolute;left:45%;width:10%;top:0;height:100%;z-index:3;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(90,55,20,.18) 30%,rgba(50,25,5,.5) 49%,rgba(255,240,210,.25) 50.5%,rgba(50,25,5,.42) 52%,rgba(90,55,20,.16) 70%,transparent)}
+/* cover */
+.bcover{display:block;border-radius:.5vh 1.4vh 1.4vh .5vh;color:#f3cf6e;
+  background:var(--texL) 0 0/256px 256px,radial-gradient(ellipse at 35% 28%,rgba(255,190,140,.18),transparent 55%),radial-gradient(ellipse at 82% 88%,rgba(0,0,0,.35),transparent 50%),linear-gradient(135deg,#7a3026,#521c16 55%,#34120d);
+  box-shadow:inset 0 0 0 .35vh rgba(255,215,170,.12),inset 0 0 4vh rgba(0,0,0,.65),inset 1.6vh 0 1.2vh -.6vh rgba(0,0,0,.65)}
+.bcover::before{content:"";position:absolute;left:5.5%;top:0;bottom:0;width:.5vh;background:rgba(0,0,0,.4);box-shadow:.3vh 0 0 rgba(255,210,160,.12)}
+.bcover .bcg{position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(.15vh .2vh 0 rgba(0,0,0,.6)) drop-shadow(0 0 .8vh rgba(255,210,100,.3));animation:bglow 4s ease-in-out infinite}
+@keyframes bglow{50%{filter:drop-shadow(.15vh .2vh 0 rgba(0,0,0,.6)) drop-shadow(0 0 1.8vh rgba(255,220,120,.7))}}
+.bcover .cst{animation:cstw 2.8s ease-in-out infinite} @keyframes cstw{0%,100%{opacity:.35}50%{opacity:1}}
+.bcover .bmed{position:absolute;left:52%;top:51.5%;width:35%;translate:-50% -50%;filter:grayscale(1) sepia(1) saturate(2.4) brightness(1.12) contrast(1.15) drop-shadow(.15vh .25vh 0 rgba(0,0,0,.7)) drop-shadow(0 0 1vh rgba(255,200,90,.35))}
+.bcover .bmed .uni{width:100%}
+.bcover .bt{position:absolute;left:5%;right:0;top:8.6%;text-align:center;font:700 4.4vh/1 "Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;color:#f6d47a;letter-spacing:.05em;
+  text-shadow:0 .2vh 0 #3a1a08,0 0 1.6vh rgba(255,200,90,.55)}
+.bcover .bt span{display:block;font-size:.58em;letter-spacing:.32em;margin-bottom:.6vh;font-style:italic}
+.bcover .bst{position:absolute;left:5%;right:0;bottom:7.6%;text-align:center;font:600 1.55vh/1 "Palatino Linotype",Palatino,Georgia,serif;letter-spacing:.2em;color:#e8c060;text-shadow:0 .15vh 0 #3a1a08}
+.bcover .clasp{position:absolute;right:0;top:45.5%;width:17%;height:9%}
+.bcover .cstrap{position:absolute;top:16%;bottom:16%;left:22%;right:0;border-radius:.4vh 0 0 .4vh;
+  background:var(--texL) 0 0/128px 128px,linear-gradient(180deg,#5a1c14,#3a100c);box-shadow:0 .3vh .5vh rgba(0,0,0,.6);outline:.15vh dashed rgba(240,200,120,.55);outline-offset:-.6vh;transition:transform .5s ease-in}
+.bcover .cplate{position:absolute;left:0;top:0;width:44%;height:100%;border-radius:.7vh;background:linear-gradient(135deg,#fbe6a0,#c8962e 45%,#7a5016 80%,#e0b44a);
+  box-shadow:0 .3vh .6vh rgba(0,0,0,.7),inset 0 0 0 .2vh rgba(255,240,190,.55);transition:transform .5s cubic-bezier(.5,-.4,.6,1.3)}
+.bcover .cplate i{position:absolute;left:50%;top:50%;width:36%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb0c8,#c2185b 55%,#5a0a2a);box-shadow:0 0 1vh rgba(255,100,160,.7)}
+.unclasp .bcover .cplate{transform:translateX(190%) rotate(30deg)} .unclasp .bcover .cstrap{transform:translateX(105%)}
+/* pictures: printed into the page, in a gold frame with flourishes */
+.ill{inset:8.5% 8% 8.5% 10%;border-radius:.6vh;box-shadow:inset 0 0 3.4vh rgba(60,30,5,.5),0 0 0 .35vh #f2e2bb,0 0 0 .62vh #b8862e,0 0 0 1.15vh #efdcb2,0 0 0 1.3vh #7a4e22}
+.ill::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--texP) 0 0/256px 256px;mix-blend-mode:multiply;opacity:.55;box-shadow:inset 0 0 6vh rgba(110,60,15,.45)}
+.frm{position:absolute;inset:8.5% 8% 8.5% 10%;pointer-events:none}
+.frm .oc{position:absolute;width:6.2vh;height:6.2vh} .frm .oc svg{width:100%;height:100%;display:block;overflow:visible}
+.frm .o1{left:-2.2vh;top:-2.2vh} .frm .o2{right:-2.2vh;top:-2.2vh;transform:scaleX(-1)} .frm .o3{left:-2.2vh;bottom:-2.2vh;transform:scaleY(-1)} .frm .o4{right:-2.2vh;bottom:-2.2vh;transform:scale(-1)}
+/* the title page */
+.pt{gap:2.2vh}
+.pt .ttl{font:700 4.3vh/1.12 "Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;color:#4a2412;max-width:94%}
+.pt .ini{display:inline-block;font-size:1.8em;line-height:.8;color:#a3181e;-webkit-text-stroke:.12vh #c8962e;text-shadow:.2vh .25vh 0 rgba(90,40,10,.3);margin-right:.03em;vertical-align:-.08em}
+.pt .orn2{width:60%;height:auto;display:block;margin:-1vh 0}
+.pt .exc{font:italic 2.25vh/1.45 "Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;color:#5a3a1e;opacity:.78;max-width:86%}
+.pt .seal{width:14vh;height:14vh;animation:pulse 1.8s ease-in-out infinite;filter:drop-shadow(0 .6vh .6vh rgba(60,10,5,.45));pointer-events:none}
+.pt .seal svg{width:100%;height:100%;display:block}
+.pt .pn{bottom:-4%;font:italic 600 2.1vh "Palatino Linotype",Palatino,Georgia,serif;color:#8a6a3a;letter-spacing:.2em}
+.pt .orn{color:#a0782e}
+.pt .chips b{background:#f6e6b8;color:#5a2e10;box-shadow:0 .3vh 0 #c8a060,inset 0 0 0 .15vh #c8a060;font-family:"Palatino Linotype",Palatino,Georgia,serif}
+.pt .done{right:2%;top:2%}
+/* folded page corners instead of buttons: they lift a little now and then */
+.corner{bottom:0;width:7.5vh;height:7.5vh;border-radius:0;font-size:0;color:transparent;background:none;box-shadow:none}
+.corner.cR{right:0} .corner.cL{left:0}
+.corner::before{content:"";position:absolute;inset:0;transform-origin:100% 100%;animation:peel 4.5s ease-in-out infinite;filter:drop-shadow(-.4vh -.4vh .5vh rgba(60,30,10,.45));
+  background:linear-gradient(315deg,rgba(0,0,0,0) 49%,rgba(70,40,10,.45) 50%,#faf0d8 52%,#e8d0a0 74%,#c8a46a 100%)}
+.corner.cL::before{transform-origin:0 100%;filter:drop-shadow(.4vh -.4vh .5vh rgba(60,30,10,.45));background:linear-gradient(45deg,rgba(0,0,0,0) 49%,rgba(70,40,10,.45) 50%,#faf0d8 52%,#e8d0a0 74%,#c8a46a 100%)}
+.corner.cL::before{animation-delay:-2.2s}
+@keyframes peel{0%,72%,100%{transform:scale(1)}84%{transform:scale(1.45)}}
+.corner.nudge{animation:none} .corner.nudge::before{animation:peel2 .9s ease-in-out infinite} @keyframes peel2{50%{transform:scale(1.7)}}
+#bkDots{gap:1.6vh} #bkDots i{width:1.4vh;height:1.4vh;border-radius:.2vh;rotate:45deg;background:rgba(255,220,150,.28)} #bkDots i.on{background:#f0c860;box-shadow:0 0 1.4vh #f0c860}
+/* golden motes drifting up out of the open book */
+.mote{position:absolute;width:.7vh;height:.7vh;border-radius:50%;background:#ffe9a0;box-shadow:0 0 1.2vh #ffd86a,0 0 .4vh #fff;pointer-events:none;z-index:3;opacity:0;animation:mote 7s linear infinite}
+@keyframes mote{0%{transform:translate(0,0);opacity:0}15%{opacity:.9}100%{transform:translate(var(--mx),-38vh);opacity:0}}
+#bookScr.closedS .mote{display:none}
+/*<OLDBOOKCSS*/
 </style>
 </head>
 <body>
@@ -1268,7 +1354,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 </section>
 
 <section id="bookScr" class="screen">
-  <div id="bookWrap"><div id="bk"><div class="pg pgL"></div><div class="pg pgR"></div></div><div class="corner cL">◀</div><div class="corner cR">▶</div></div>
+  <div id="bookWrap"><div id="bk"><div class="bd bdL"></div><div class="bd bdR"></div><div class="spn"></div><div class="rbn"></div><div class="pg pgL"></div><div class="pg pgR"></div><div class="gut"></div></div><div class="corner cL">◀</div><div class="corner cR">▶</div></div>
   <div id="bkDots"></div><div id="owl"></div><div id="bkFinger">👆</div>
   <button class="round gear" id="btnGear2" aria-label="Elternbereich (lange drücken)">⚙</button>
 </section>
@@ -7869,8 +7955,8 @@ Object.assign(SETS2,{
 /* ---------- two new gestures: fegen (sweep), fliegen (fly a broom) ---------- */
 Object.assign(G2,{
  /* fegen: sweep the leaves off something – wipe back and forth over it; every turn of direction sweeps a few leaves off that way,
-    plain wiping counts a little. The leaves (.lf, put on by efLeaves) fly off. a:{id, n (strokes)}; hook sweeping(p) */
- fegen:{ setup(){ const T=TB.els[TB.a.id]; TB.fg={p:0,q:0,dir:0,seg:0,lx:null,ly:null,auto:false,mv:0,gain:0,lv:[...T.querySelectorAll('.lf')]}; TB.fg.n0=TB.fg.lv.length; },
+    plain wiping counts a little. The leaves (.efl, put on by efLeaves) fly off. a:{id, n (strokes)}; hook sweeping(p) */
+ fegen:{ setup(){ const T=TB.els[TB.a.id]; TB.fg={p:0,q:0,dir:0,seg:0,lx:null,ly:null,auto:false,mv:0,gain:0,lv:[...T.querySelectorAll('.efl')]}; TB.fg.n0=TB.fg.lv.length; },
    zone(){ const r=TB.els[TB.a.id].getBoundingClientRect(), u=vu(); return {l:r.left-u*9,r:r.right+u*9,t:r.top-u*4,b:r.bottom+u*4}; },
    down(x,y){ const f=TB.fg; f.lx=null; f.mv=0; f.gain=0; this.move(x,y); },
    move(x,y){ const f=TB.fg; if(!TB.pd||TB.done||f.auto) return; const z=this.zone(); if(x<z.l||x>z.r||y<z.t||y>z.b){ f.lx=null; return; }
@@ -7924,7 +8010,7 @@ Object.assign(G2,{
 const EEF={on:false};
 /* speech-synced cues and the talking mouth need speechStep every frame (in the showcase tale the WebGL loop does it) */
 function efLoop(){ if(EEF.on) return; EEF.on=true; const step=()=>{ if(!tale||!tale.t||!tale.t.eef||!taleOn()){ EEF.on=false; return; } try{ speechStep(); }catch(e){} requestAnimationFrame(step); }; requestAnimationFrame(step); }
-function efLeaves(T,n){ const r=seeded(n*13+7); for(let i=0;i<n;i++){ const L=el('span','lf',rnd(['🍂','🍁','🍂','🍃'])); const y=50+r()*44, x=18+r()*64;
+function efLeaves(T,n){ const r=seeded(n*13+7); for(let i=0;i<n;i++){ const L=el('span','efl',rnd(['🍂','🍁','🍂','🍃'])); const y=50+r()*44, x=18+r()*64;
   L.style.cssText=`left:${x}%;top:${y}%;font-size:${3+r()*1.4}vh;transform:rotate(${(r()*360)|0}deg)`; T.appendChild(L); } }
 function efRings(rs,r){ TB.rings=rs.map(([x,y],i)=>{ const R=el('div','fring'); R.style.cssText=`left:${x}%;top:${y}%;width:${2*(r||9)}vh;height:${2*(r||9)}vh`; TB.act.appendChild(R); return R; }); }
 function efHead(){ const E=TB.els.hexe; return E?relEl(E.querySelector('.bb'),[.5,.3]):[innerWidth/2,innerHeight/2]; }
@@ -8201,15 +8287,73 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="art" style="position:absolute;right:8%;bottom:8%;width:19%;animation-delay:-.9s"><div class="chr rkh flip" data-mood="sing" style="position:relative;width:100%">${robinSVG()}</div></div>`+
     [[14,14,5],[30,30,3.4],[78,14,4.2],[88,40,3],[64,8,3],[20,52,3.6]].map(([x,y,z],k)=>`<span class="mfl" style="left:${x}%;top:${y}%;width:${z}vh;animation-delay:${-k*.7}s">${miniFlakeSVG()}</span>`).join('')+tw; }
   return `<div class="art"><span class="emo">${t.icon}</span></div>`+tw; }
-function bPageL(i){ const it=bItems()[i]; return `<div class="ill" style="background:${it.k==='lesen'?TBG.nacht:it.k==='advent'?'linear-gradient(180deg,#060a24 0%,#15205a 55%,#3a5090 100%)':it.t.cover}">${bArt(it)}</div>`; }
+function bPageL(i){ const it=bItems()[i]; return `<div class="ill" style="background:${it.k==='lesen'?TBG.nacht:it.k==='advent'?'linear-gradient(180deg,#060a24 0%,#15205a 55%,#3a5090 100%)':it.t.cover}">${bArt(it)}</div>`+bFrame(); }
+/* gold flourishes at the corners of the picture frame */
+const BFC=`<svg viewBox="0 0 40 40"><defs><linearGradient id="bfcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4d27a"/><stop offset=".5" stop-color="#b07a22"/><stop offset="1" stop-color="#e0b450"/></linearGradient></defs>
+  <g fill="none" stroke="url(#bfcg)" stroke-linecap="round"><path d="M3 30 C3 12 12 3 30 3" stroke-width="2.2"/><path d="M8 26 C8 15 15 8 26 8" stroke-width="1"/>
+  <path d="M14 14 C20 13 22 19 18 21 C15 22.5 13 19 15.5 18" stroke-width="1.6"/><path d="M3 30 C1 34 4 38 7 36 M30 3 C34 1 38 4 36 7" stroke-width="1.4"/></g>
+  <circle cx="3.5" cy="3.5" r="2.6" fill="url(#bfcg)"/><path d="M11 5 l1.5 -2.5 1.5 2.5 -1.5 2.5Z M5 11 l-2.5 1.5 2.5 1.5 2.5 -1.5Z" fill="url(#bfcg)"/></svg>`;
+function bFrame(){ return `<div class="frm">${[1,2,3,4].map(k=>`<i class="oc o${k}">${BFC}</i>`).join('')}</div>`; }
+const BORN=`<svg class="orn2" viewBox="0 0 200 24"><g fill="none" stroke="#a87a2e" stroke-linecap="round"><path d="M8 12 H78 M122 12 H192" stroke-width="1.4"/>
+  <path d="M78 12 C84 4 92 4 94 10 C95 14 90 15 89 12 M122 12 C116 4 108 4 106 10 C105 14 110 15 111 12" stroke-width="1.6"/>
+  <path d="M78 12 C84 20 92 20 94 14 M122 12 C116 20 108 20 106 14" stroke-width="1.2"/></g><path d="M100 4 L106 12 L100 20 L94 12Z" fill="#b8862e"/><circle cx="8" cy="12" r="2" fill="#b8862e"/><circle cx="192" cy="12" r="2" fill="#b8862e"/></svg>`;
+/* the play button is a red wax seal */
+const BSEAL=`<svg viewBox="0 0 100 100"><defs><radialGradient id="sealg" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#e65a4c"/><stop offset=".55" stop-color="#a81e22"/><stop offset="1" stop-color="#640a10"/></radialGradient></defs>
+  <path d="M50 3 C60 4 63 9 71 9 C80 10 84 17 88 24 C93 31 97 38 96 48 C96 58 99 64 94 72 C89 80 83 84 76 90 C68 95 60 97 50 97 C40 98 32 95 25 90 C17 85 11 80 7 71 C3 63 4 56 4 48 C3 39 6 32 11 25 C16 17 22 12 30 8 C37 5 42 2 50 3Z" fill="url(#sealg)"/>
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#5a080e" stroke-width="3.4" opacity=".75"/><circle cx="49" cy="49" r="33" fill="none" stroke="#f59080" stroke-width="1.2" opacity=".45"/>
+  <path d="M42 33 L68 50 L42 67Z" fill="#f6d06a" stroke="#7a4a0a" stroke-width="2.6" stroke-linejoin="round"/><path d="M45 38 L60 48" stroke="#fff3c0" stroke-width="2" stroke-linecap="round" opacity=".7"/></svg>`;
+function bExcerpt(t){ let s=((t.sc&&t.sc[0]&&t.sc[0].s)||'').replace(/Ehfje/g,'Eefje'); const m=s.match(/^[^.!?]*[.!?](\s[^.!?]*[.!?])?/); let e=m?m[0]:s;
+  if(e.length>118){ e=e.slice(0,e.lastIndexOf(' ',112))+' …'; } return e; }
 function bPageR(i){ const it=bItems()[i], done=it.k==='tale'&&S.tales[it.t.id];
   const ttl=it.k==='lesen'?'Lesen lernen mit Funkel':it.k==='advent'?'Funkels Adventskalender':it.t.title;
-  const extra=it.k==='lesen'?`<div class="chips">${letters().map(l=>`<b>${dLetter(l)}</b>`).join('')}</div><div class="orn">★ ${S.stars}</div>`:'<div class="orn">✦ ✦ ✦</div>';
-  return `<div class="pt"><div class="ttl">${ttl}</div>${extra}<div class="round orb play"><svg viewBox="0 0 24 24"><path d="M5 3l16 9-16 9z"/></svg></div>${done?'<div class="done">⭐</div>':''}<div class="pn">${i+1}</div></div>`; }
-function bCover(){ return `<div class="bcover"><span class="st" style="left:12%;top:10%">✦</span><span class="st" style="right:14%;top:16%;animation-delay:-1s">★</span><span class="st" style="left:18%;bottom:14%;animation-delay:-.6s">✧</span><span class="st" style="right:12%;bottom:20%;animation-delay:-1.6s">✦</span>
-  ${uniSVG(HERD[0],{cls:'uni'})}<div class="bt">Funkels<br>Zauberbuch</div></div>`; }
+  const extra=it.k==='lesen'?`<div class="chips">${letters().map(l=>`<b>${dLetter(l)}</b>`).join('')}</div><div class="orn">★ ${S.stars}</div>`
+    :`<div class="exc">${it.k==='advent'?'Vierundzwanzig Türchen, vierundzwanzig kleine Geschichten bis Weihnachten …':bExcerpt(it.t)}</div>`;
+  return `<div class="pt"><div class="ttl"><span class="ini">${ttl[0]}</span>${ttl.slice(1)}</div>${BORN}${extra}<div class="seal">${BSEAL}</div>${done?'<div class="done">⭐</div>':''}<div class="pn">${i+1}</div></div>`; }
+function bCover(){ const id='bc'+(++LANC), G=`url(#${id}g)`;
+  const fl=`<path d="M0 0 C6 0 9 3 9 8 C9 11 6.5 12.5 4.5 11 C3 10 3.4 7.6 5.4 7.8 M0 0 C0 6 3 9 8 9 C11 9 12.5 6.5 11 4.5 C10 3 7.6 3.4 7.8 5.4 M3 3 L13 13" fill="none" stroke="${G}" stroke-width=".9" stroke-linecap="round"/><circle cx="14.5" cy="14.5" r="1.3" fill="${G}"/>`;
+  const corner=(x,y,sx,sy)=>`<g transform="translate(${x} ${y}) scale(${sx} ${sy})">${fl}</g>`;
+  const star=(x,y,sz)=>`<path transform="translate(${x} ${y}) scale(${sz})" d="M0 -4 L1 -1 L4 0 L1 1 L0 4 L-1 1 L-4 0 L-1 -1Z" fill="${G}"/>`;
+  return `<div class="bcover"><svg class="bcg" viewBox="0 0 100 125"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2b8"/><stop offset=".35" stop-color="#e8b84a"/><stop offset=".6" stop-color="#b07a22"/><stop offset=".8" stop-color="#f0cc6a"/><stop offset="1" stop-color="#9a6416"/></linearGradient>
+    <linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc90"/><stop offset=".5" stop-color="#b8862e"/><stop offset="1" stop-color="#6a4410"/></linearGradient></defs>
+   <rect x="10" y="5" width="85" height="115" rx="1.5" fill="none" stroke="${G}" stroke-width="1.1"/>
+   <rect x="12.5" y="7.5" width="80" height="110" fill="none" stroke="${G}" stroke-width=".45"/>
+   <rect x="14.5" y="9.5" width="76" height="106" fill="none" stroke="${G}" stroke-width=".55" stroke-dasharray=".1 1.6" stroke-linecap="round"/>
+   ${corner(15.5,10.5,1,1)}${corner(89.5,10.5,-1,1)}${corner(15.5,114.5,1,-1)}${corner(89.5,114.5,-1,-1)}
+   <ellipse cx="52.5" cy="64" rx="24" ry="28" fill="rgba(25,6,4,.35)" stroke="${G}" stroke-width="1"/><ellipse cx="52.5" cy="64" rx="21.5" ry="25.5" fill="none" stroke="${G}" stroke-width=".5" stroke-dasharray=".1 1.5" stroke-linecap="round"/>
+   ${star(52.5,33,1.1)}${star(52.5,95,1.1)}${star(27,64,.8)}${star(78,64,.8)}
+   <path d="M32 28 h41 M32 101 h41" stroke="${G}" stroke-width=".45"/>
+   ${[[21,42],[84,44],[22,88],[83,90],[19,64],[86,66]].map(([x,y],k)=>`<g class="cst" style="animation-delay:${-k*.7}s">${star(x,y,.55)}</g>`).join('')}
+   <path d="M100 0 V22 L78 0Z" fill="url(#${id}b)" stroke="#4a2a08" stroke-width=".5"/><path d="M100 125 V103 L78 125Z" fill="url(#${id}b)" stroke="#4a2a08" stroke-width=".5"/>
+   <g fill="#fff0b0" stroke="#4a2a08" stroke-width=".25"><circle cx="94.5" cy="5.5" r="1.2"/><circle cx="88" cy="3.6" r=".8"/><circle cx="96.6" cy="12" r=".8"/><circle cx="94.5" cy="119.5" r="1.2"/><circle cx="88" cy="121.4" r=".8"/><circle cx="96.6" cy="113" r=".8"/></g>
+  </svg><div class="bmed">${uniSVG(HERD[0],{cls:'uni'})}</div><div class="bt"><span>Funkels</span>Zauberbuch</div><div class="bst">Märchen · Geschichten · Buchstaben</div>
+  <div class="clasp"><div class="cstrap"></div><div class="cplate"><i></i></div></div></div>`; }
+/* parchment and leather grain, drawn once */
+function bookTex(){ if(bookTex.done) return; bookTex.done=1; try{
+  const R=seeded(77), mk=(w,h,fn)=>{ const c=document.createElement('canvas'); c.width=w; c.height=h; fn(c.getContext('2d'),w,h); return c.toDataURL('image/png'); };
+  const paper=mk(256,256,(g,w,h)=>{ for(let i=0;i<2600;i++){ g.fillStyle=`rgba(${110+R()*40|0},${70+R()*30|0},30,${(R()*.07).toFixed(3)})`; g.fillRect(R()*w,R()*h,1+R()*1.5,1+R()*1.5); }
+    g.lineCap='round'; g.lineWidth=.6; for(let i=0;i<170;i++){ const x=R()*w,y=R()*h,an=R()*6.28,l=3+R()*9; g.strokeStyle=`rgba(120,80,40,${(R()*.07).toFixed(3)})`; g.beginPath(); g.moveTo(x,y); g.lineTo(x+Math.cos(an)*l,y+Math.sin(an)*l); g.stroke(); } });
+  const leather=mk(256,256,(g,w,h)=>{ for(let i=0;i<5200;i++){ const d=R()<.55; g.fillStyle=d?`rgba(0,0,0,${(R()*.22).toFixed(3)})`:`rgba(255,220,180,${(R()*.07).toFixed(3)})`; g.beginPath(); g.arc(R()*w,R()*h,.5+R()*1.4,0,6.283); g.fill(); }
+    g.lineWidth=.7; for(let i=0;i<40;i++){ let x=R()*w,y=R()*h; g.strokeStyle=`rgba(0,0,0,${(.08+R()*.12).toFixed(3)})`; g.beginPath(); g.moveTo(x,y); for(let k=0;k<5;k++){ x+=(R()-.5)*22; y+=(R()-.5)*22; g.lineTo(x,y); } g.stroke(); } });
+  const r=document.documentElement.style; r.setProperty('--texP',`url(${paper})`); r.setProperty('--texL',`url(${leather})`); }catch(e){} }
+bookTex();
+/* the page block: the more she has read, the thicker the stack on the left */
+function bStack(){ const bk=$('bk'); if(!bk) return; const n=bItems().length, f=n>1?BOOK.i/(n-1):0, closed=$('bookWrap').classList.contains('closed');
+  const lay=(cnt,sx)=>{ const a=[]; for(let k=1;k<=cnt;k++) a.push(`${(sx*k*.17).toFixed(2)}vh ${(k*.11).toFixed(2)}vh 0 ${k===cnt?'#6a4620':k%2?'#ead2a0':'#c9a258'}`); return a.join(','); };
+  const nl=3+Math.round(f*9), nr=closed?13:3+Math.round((1-f)*9);
+  bk.querySelector('.pgL').style.boxShadow=`inset -4.5vh 0 4vh -2.4vh rgba(70,40,12,.55),inset 0 0 6vh rgba(120,70,20,.32),${lay(nl,-1)},0 2.4vh 4vh rgba(0,0,0,.45)`;
+  bk.querySelector('.pgR').style.boxShadow=`inset 4.5vh 0 4vh -2.4vh rgba(70,40,12,.55),inset 0 0 6vh rgba(120,70,20,.32),${lay(nr,1)},0 2.4vh 4vh rgba(0,0,0,.45)`; }
+/* a soft paper rustle when a page turns (filtered noise) */
+let PGNZ=null;
+function pageSnd(v){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume();
+  if(!PGNZ){ const n=AC.sampleRate*.7|0, b=AC.createBuffer(1,n,AC.sampleRate), d=b.getChannelData(0); let l=0; for(let i=0;i<n;i++){ const w=Math.random()*2-1; l=l*.6+w*.4; d[i]=(Math.random()<.02?w*2:l)*(1-i/n); } PGNZ=b; }
+  const s=AC.createBufferSource(), f=AC.createBiquadFilter(), g=AC.createGain(), t=AC.currentTime; s.buffer=PGNZ; s.playbackRate.value=.85+Math.random()*.3;
+  f.type='bandpass'; f.Q.value=.7; f.frequency.setValueAtTime(700,t); f.frequency.exponentialRampToValueAtTime(3400,t+.32);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.22*(v||1),t+.05); g.gain.exponentialRampToValueAtTime(.001,t+.55);
+  s.connect(f); f.connect(g); g.connect(AC.destination); s.start(t); s.stop(t+.6); }catch(e){} }
+function bMotes(){ const scr=$('bookScr'); if(scr.querySelector('.mote')) return; const r=seeded(31);
+  for(let k=0;k<14;k++){ const m=el('i','mote'); m.style.cssText=`left:${45+r()*24}%;top:${46+r()*20}%;animation-delay:${(-r()*7).toFixed(2)}s;animation-duration:${(6+r()*4).toFixed(1)}s;--mx:${((r()-.5)*14).toFixed(1)}vh`; scr.appendChild(m); } }
 function bSet(side,i){ $('bk').querySelector('.pg'+side).innerHTML=side==='L'?bPageL(i):bPageR(i); }
-function bDots(){ const n=bItems().length; $('bkDots').innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===BOOK.i?'on':''}"></i>`).join('');
+function bDots(){ bStack(); const n=bItems().length; $('bkDots').innerHTML=Array.from({length:n},(_,k)=>`<i class="${k===BOOK.i?'on':''}"></i>`).join('');
   $('bookWrap').querySelector('.cL').classList.toggle('off',BOOK.i===0); $('bookWrap').querySelector('.cR').classList.toggle('off',BOOK.i>=n-1); }
 function owlSay(...k){ return say(...k); }
 /* the beak moves exactly while something is spoken in the book */
@@ -8231,20 +8375,22 @@ function bLeafMake(dir){ const n=bItems().length, i=BOOK.i, j=i+dir; if(j<0||j>=
   if(dir>0){ L.querySelector('.lf').innerHTML=bPageR(i); L.querySelector('.lb').innerHTML=bPageL(j); bSet('R',j); L.style.transform='rotateY(0deg)'; }
   else { L.querySelector('.lf').innerHTML=bPageR(j); L.querySelector('.lb').innerHTML=bPageL(i); bSet('L',j); L.style.transform='rotateY(-180deg)'; L.dataset.a=180; }
   $('bk').appendChild(L); BOOK.leaf=L; return L; }
-function bLeafAngle(a){ const L=BOOK.leaf; if(!L) return; L.dataset.a=a; L.style.transform=`rotateY(${-a}deg)`; L.style.setProperty('--sh',Math.sin(a*Math.PI/180).toFixed(2)); }
+function bLeafAngle(a){ const L=BOOK.leaf; if(!L) return; L.dataset.a=a; L.style.transform=`rotateY(${-a}deg)`; const sh=Math.sin(a*Math.PI/180); L.style.setProperty('--sh',sh.toFixed(2)); $('bk').style.setProperty('--ts',(sh*.9).toFixed(2)); }
 function bLeafEnd(ok){ const L=BOOK.leaf; if(!L) return; const dir=+L.dataset.dir, i=BOOK.i, j=i+dir;
-  if(ok){ BOOK.flow=(BOOK.flow||0)+1; BOOK.i=j; S.bookPage=j; save(); bSet(dir>0?'L':'R',j); chime([dir>0?988:880,dir>0?1318:1175]); }
+  if(ok){ BOOK.flow=(BOOK.flow||0)+1; BOOK.i=j; S.bookPage=j; save(); bSet(dir>0?'L':'R',j); pageSnd(.45); chime([dir>0?988:880,dir>0?1318:1175]); }
   else bSet(dir>0?'R':'L',i);
-  L.remove(); BOOK.leaf=null; BOOK.busy=false; bDots(); if(ok){ owlDo('joy',900); bTitle(BOOK.i); } bIdle(); }
+  L.remove(); BOOK.leaf=null; BOOK.busy=false; $('bk').style.setProperty('--ts',0); bDots(); if(ok){ owlDo('joy',900); bTitle(BOOK.i); } bIdle(); }
 function bTurn(dir,from){ if(BOOK.busy||!BOOK.open) return; const L=BOOK.leaf||bLeafMake(dir);
   if(!L){ const b=$('bk'); b.classList.remove('wig'); void b.offsetWidth; b.classList.add('wig'); chime([330]); return; }
-  BOOK.busy=true; stopAll(); L.classList.add('anim'); requestAnimationFrame(()=>bLeafAngle(dir>0?180:0)); setTimeout(()=>bLeafEnd(true),780); }
+  BOOK.busy=true; stopAll(); pageSnd(); L.classList.add('anim'); requestAnimationFrame(()=>bLeafAngle(dir>0?180:0)); setTimeout(()=>bLeafEnd(true),780); }
 /* open the cover: the owl flutters over and lifts it */
 function bOpen(){ if(BOOK.open||BOOK.opening) return Promise.resolve(); BOOK.opening=true; const w=$('bookWrap'), o=$('owl'), run=BOOK.run;
   owlDo('flap',1400); o.style.transform='translate(9vw,-14vh) rotate(8deg)'; setTimeout(()=>{ o.style.transform=''; },900);
   return new Promise(res=>setTimeout(()=>{ if(!bLive(run)) return res();
-    const L=el('div','leaf anim',`<div class="lf">${bCover()}</div><div class="lb">${bPageL(BOOK.i)}</div>`); L.style.transform='rotateY(0deg)'; $('bk').appendChild(L);
-    w.classList.remove('closed'); $('bookScr').classList.remove('closedS'); L.style.transition='transform 1.2s cubic-bezier(.4,.1,.3,1)';
+    const L=el('div','leaf anim unclasp',`<div class="lf">${bCover()}</div><div class="lb">${bPageL(BOOK.i)}</div>`); L.style.transform='rotateY(0deg)'; $('bk').querySelectorAll('.leaf.cov').forEach(x=>x.remove()); $('bk').appendChild(L);
+    w.classList.remove('closed'); w.classList.add('opening'); setTimeout(()=>w.classList.remove('opening'),620); $('bookScr').classList.remove('closedS'); bStack(); L.style.transition='transform 1.2s cubic-bezier(.4,.1,.3,1)'; pageSnd(1.2);
+    [0,1,2].forEach(k=>setTimeout(()=>{ if(!bLive(run)) return; const P=el('div','leaf blank','<div class="lf"></div><div class="lb"></div>'); P.style.transform='rotateY(0deg)'; P.style.transition=`transform ${.75-k*.1}s cubic-bezier(.4,.1,.3,1)`;
+      $('bk').appendChild(P); requestAnimationFrame(()=>requestAnimationFrame(()=>{ P.style.transform='rotateY(-180deg)'; })); pageSnd(.5); setTimeout(()=>P.remove(),800-k*100); },450+k*150));
     requestAnimationFrame(()=>requestAnimationFrame(()=>{ L.style.transform='rotateY(-180deg)'; L.style.setProperty('--sh',0); }));
     chime([523,659,784,1047,1318]); const r=w.getBoundingClientRect(); glitterBurst(r.left+r.width/2,r.top+r.height/2,50,34);
     setTimeout(()=>{ bSet('L',BOOK.i); L.remove(); BOOK.open=true; BOOK.opening=false; bDots(); res(); },1250); },700)); }
@@ -8253,12 +8399,13 @@ function openBook(i,mode){ stopAll(); stopScene(); try{ qClear(); tClear(); fxSt
   const run=++BOOK.run, n=bItems().length; BOOK.i=Math.max(0,Math.min(n-1,i!=null?i:(S.bookPage|0))); BOOK.busy=false; BOOK.drag=null; BOOK.leaf=null; BOOK.hints=0; BOOK.opening=false; clearTimeout(BOOK.idle);
   const w=$('bookWrap'), bk=$('bk'); w.classList.remove('go'); bk.querySelectorAll('.leaf').forEach(l=>l.remove()); $('owl').className=''; $('owl').style.transform='';
   $('bookScr').insertBefore($('owl'),$('bkFinger')); bSet('R',BOOK.i); bSet('L',BOOK.i); bDots(); show('bookScr');
-  if(mode==='start'){ BOOK.open=false; w.classList.add('closed'); $('bookScr').classList.add('closedS');
-    const L=el('div','leaf',`<div class="lf">${bCover()}</div><div class="lb"></div>`); L.classList.add('cov'); bk.appendChild(L);
+  bMotes();
+  if(mode==='start'){ BOOK.open=false; w.classList.add('closed'); $('bookScr').classList.add('closedS'); bStack();
+    const L=el('div','leaf',`<div class="lf">${bCover()}</div><div class="lb"></div>`); L.classList.add('cov'); L.style.transform='rotateY(0deg)'; bk.appendChild(L);
     const first=!S.seen.book; S.seen.book=true; save();
     (async()=>{ await wait(500); if(!bLive(run)) return; owlDo('wave',2200);
       await owlSay(first?'b_hallo1':rnd(['b_hallo2','b_hallo3'])); if(!bLive(run)) return;
-      L.remove(); await bOpen(); const fl=BOOK.flow||0; if(!bLive(run,fl)) return;
+      L.classList.add('unclasp'); chime([392,523]); await wait(550); if(!bLive(run)) return; await bOpen(); const fl=BOOK.flow||0; if(!bLive(run,fl)) return;
       if(first){ await wait(300); if(!bLive(run,fl)) return; await owlSay('b_auf'); if(!bLive(run,fl)) return; }
       await bTitle(BOOK.i); if(bLive(run,fl)) bIdle(); })(); }
   else { BOOK.open=true; w.classList.remove('closed'); $('bookScr').classList.remove('closedS');
@@ -8275,14 +8422,14 @@ function bGo(){ if(!BOOK.open||BOOK.busy) return; const it=bItems()[BOOK.i], w=$
   w.addEventListener('pointerdown',e=>{ if(BOOK.drag) return; e.preventDefault(); try{ w.setPointerCapture(e.pointerId); }catch(_){}
     BOOK.drag={id:e.pointerId,x:e.clientX,y:e.clientY,t:now(),dir:0,moved:0}; clearTimeout(BOOK.idle); });
   w.addEventListener('pointermove',e=>{ const d=BOOK.drag; if(!d||d.id!==e.pointerId||!BOOK.open) return; const dx=e.clientX-d.x; d.moved=Math.max(d.moved,Math.abs(dx),Math.abs(e.clientY-d.y));
-    if(!d.dir&&Math.abs(dx)>14&&!BOOK.busy){ d.dir=dx<0?1:-1; if(!bLeafMake(d.dir)){ d.dir=0; d.none=true; return; } stopAll(); }
+    if(!d.dir&&Math.abs(dx)>14&&!BOOK.busy){ d.dir=dx<0?1:-1; if(!bLeafMake(d.dir)){ d.dir=0; d.none=true; return; } stopAll(); pageSnd(.7); }
     if(d.dir&&BOOK.leaf){ const pw=w.getBoundingClientRect().width/2; let a=d.dir>0? Math.min(180,Math.max(0,-dx/pw*180)) : 180-Math.min(180,Math.max(0,dx/pw*180)); bLeafAngle(a); } });
   const up=e=>{ const d=BOOK.drag; if(!d||d.id!==e.pointerId) return; BOOK.drag=null;
     if(d.dir&&BOOK.leaf){ const a=+BOOK.leaf.dataset.a||0, v=(e.clientX-d.x)/Math.max(1,now()-d.t), ok=d.dir>0?(a>55||v<-.5):(a<125||v>.5);
       BOOK.busy=true; BOOK.leaf.classList.add('anim'); bLeafAngle(ok?(d.dir>0?180:0):(d.dir>0?0:180)); setTimeout(()=>bLeafEnd(ok),780); return; }
     if(d.none){ bTurn(-Math.sign(e.clientX-d.x)||1); bIdle(); return; }
     if(d.moved>20){ bIdle(); return; }
-    if(!BOOK.open){ const c=$('bookWrap').querySelector('.cov'); if(c) c.remove(); bOpen(); return; }
+    if(!BOOK.open){ const c=$('bookWrap').querySelector('.cov'); if(c&&!c.classList.contains('unclasp')){ c.classList.add('unclasp'); chime([392,523]); setTimeout(()=>bOpen(),500); } else if(!c) bOpen(); return; }
     const r=w.getBoundingClientRect(), fx=(e.clientX-r.left)/r.width, fy=(e.clientY-r.top)/r.height;
     if(fy>.72&&fx>.86) return bTurn(1); if(fy>.72&&fx<.14) return bTurn(-1); bGo(); };
   w.addEventListener('pointerup',up); w.addEventListener('pointercancel',e=>{ BOOK.drag=null; if(BOOK.leaf&&!BOOK.busy){ BOOK.busy=true; BOOK.leaf.classList.add('anim'); bLeafAngle(+BOOK.leaf.dataset.dir>0?0:180); setTimeout(()=>bLeafEnd(false),780); } });
