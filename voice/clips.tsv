@@ -616,13 +616,40 @@ t2_mondkuchen_7d3	Dann wurde er rund und hell, und er sang: Rund und golden, war
 t2_mondkuchen_7d4	Die kleine Maus lächelte und gähnte. Sie hatte keine Angst mehr. Und bald schlief sie ein, mit einem Mond am Himmel und einem an ihrem Fenster. Ende.
 wort_kuchen	Kuchen
 t_schneeflocke_titel	Die Schneeflocke und der Frühling.
-t_schneeflocke_1	Es war einmal eine kleine Schneeflocke. Sie tanzte vom Himmel herab und landete genau auf der Nase von deinem Einhorn. Hatschi! Tippe die Schneeflocke an!
-t_schneeflocke_2	Die Schneeflocke sagte: Alle erzählen vom Frühling. Von Blumen und von Bienen. Den möchte ich so gerne sehen! Aber der Frühling schlief noch tief unter dem Schnee. Wecke alle Blumen auf!
-t_schneeflocke_3	Die ersten Blumen streckten sich. Aber brrr, es war noch viel zu kalt. Wer kann es warm machen? Ruf die Sonne!
-t_schneeflocke_4	Die Sonne lachte und schickte ihre wärmsten Strahlen. Der Schnee schmolz, und die Tiere kamen aus ihren Verstecken. Wer kommt zuerst heraus? Du darfst wählen.
-t_schneeflocke_5	Die Schneeflocke staunte. So bunt! So schön! Doch ihr wurde ganz warm. Sie wurde kleiner und kleiner. Hab keine Angst, sagte dein Einhorn. Setz dich auf die Rose! Tippe auf die Rose!
-t_schneeflocke_6	Da geschah ein kleines Wunder. Die Schneeflocke wurde zu einem Tautropfen. Er glitzerte in der Sonne wie ein Diamant. Tippe den Tautropfen an!
-t_schneeflocke_7	Nun konnte sie den ganzen Frühling sehen. Und wenn der Winter wiederkommt, steigt sie hinauf in die Wolken und tanzt als Schneeflocke herab. So geht es Jahr für Jahr. Ende.
+t2_schneeflocke_1	Es war einmal eine kleine Schneeflocke. In einer stillen Winternacht tanzte sie vom Himmel herab. Die anderen Flocken flüsterten: Bald kommt der Frühling! Was ist das wohl, der Frühling? dachte die kleine Schneeflocke, und sie sang: Flöckchen, Flöckchen, weiß und klein – wo mag wohl der Frühling sein? Unten im Schnee stand dein Einhorn. Halte deinen Finger unter die Schneeflocke, und bring sie zu seiner Nase!
+t2_schneeflocke_1h	Halte deinen Finger unter die Schneeflocke. Sie schwebt zu deinem Finger!
+t2_schneeflocke_1d1	Sie landete genau auf der Nase von deinem Einhorn. Das kitzelte!
+t2_schneeflocke_1d2	Ha… ha… hatschi!
+t2_schneeflocke_1d3	Hui! Die Schneeflocke flog hoch hinauf, bis zum Zweig von einem Rotkehlchen. Der Frühling? piepste das Rotkehlchen. Der ist bunt und warm! Aber er schläft noch tief unter dem Schnee. Komm, wir wecken ihn!
+wort_schnee	Schnee
+t2_schneeflocke_2	Am Morgen war alles still und weiß. Das Rotkehlchen hüpfte durch den Schnee und horchte. Hier unten schläft ein Schneeglöckchen, piepste es. Es steckt fest! Zieh es mit deinem Finger nach oben, ganz sanft.
+t2_schneeflocke_2h	Leg den Finger auf die kleine Knospe und zieh sie nach oben!
+t2_schneeflocke_2d1	Da wuchs das Schneeglöckchen aus dem Schnee, und seine Glöckchen gingen auf.
+t2_schneeflocke_2d2	Kling, kling, kling! Da wachten noch mehr Schneeglöckchen auf. Hörst du? Der Frühling wird wach!
+t2_schneeflocke_3	Die Glöckchen läuteten so hell, dass die Sonne aufwachte. Aber dicke graue Wolken lagen vor ihr, und die ganze Welt war grau. Mal die Welt wieder bunt! Fahr mit deinem Finger über das graue Bild.
+t2_schneeflocke_3h	Fahr mit dem Finger hin und her über das Bild, dann wird es bunt!
+t2_schneeflocke_3d1	Da wurde die Wiese bunt, und die grauen Wolken schoben sich zur Seite.
+t2_schneeflocke_3d2	Die Sonne lachte und schickte ihre warmen Strahlen. Der Schnee schmolz, und überall wurde es grün.
+t2_schneeflocke_4	Nun war die Wiese grün. Nur die Tiere schliefen noch: der Igel unter den Blättern und die Bienen in ihrem Haus. Da kam der Specht und klopfte an den Baum: tock, tock, tock. Klopf mit! Tippe im Takt, so wie der Specht.
+t2_schneeflocke_4h	Tippe mit dem Finger im Takt: tock, tock, tock!
+t2_schneeflocke_4d1	Da wachten alle auf: der Igel, die Bienen und der Schmetterling.
+t2_schneeflocke_4d2	Guten Morgen, Frühling! riefen sie.
+t2_schneeflocke_5	Die kleine Schneeflocke staunte. So bunt! So schön! Aber die Sonne war warm, und die Schneeflocke wurde kleiner und kleiner. Oh je, flüsterte sie. Hab keine Angst, sagte dein Einhorn. Setz dich in die Rose. Leg deinen Finger auf die Rose, dann geht sie auf.
+t2_schneeflocke_5h	Leg den Finger auf die Rose und lass ihn liegen!
+t2_schneeflocke_5d1	Langsam ging die Rose auf, und die Schneeflocke setzte sich hinein, ganz weich.
+t2_schneeflocke_5d2	Da geschah ein kleines Wunder: Die Schneeflocke wurde ein glitzernder Tautropfen!
+t2_schneeflocke_5d3	Schau, sagte sie. Ich bin noch da. Nur ein bisschen anders!
+t2_schneeflocke_6	Von ihrem Rosenblatt aus sah sie den ganzen Frühling: bunte Blumen, Bienen und Schmetterlinge. Wie schön! Die Sonne schien warm auf den kleinen Tautropfen, und er wurde ganz leicht. Leg deinen Finger auf den Tautropfen und lass ihn liegen. Dann schwebt er hinauf!
+t2_schneeflocke_6h	Leg den Finger auf den Tautropfen und lass ihn liegen!
+t2_schneeflocke_6d1	Ganz leise stieg er hinauf, als feiner Nebel, höher und höher, bis in die weiche weiße Wolke.
+t2_schneeflocke_6d2	Willkommen! sagte die Wolke. Ruh dich bei mir aus, bis der Winter wiederkommt.
+t2_schneeflocke_7	Der Sommer kam, und der Herbst. Dann wurde es wieder kalt. In einer stillen Winternacht schüttelte sich die Wolke, und heraus tanzte eine kleine Schneeflocke. Kennst du sie? Bring sie noch einmal zur Nase von deinem Einhorn!
+t2_schneeflocke_7h	Halte deinen Finger unter die Schneeflocke!
+t2_schneeflocke_7d1	Sie landete wieder auf der Nase von deinem Einhorn. Ha… ha… hatschi!
+t2_schneeflocke_7d2	Da lachte die kleine Schneeflocke: Jetzt kenne ich den Frühling! Er schläft nur unter dem Schnee, und er kommt bestimmt wieder.
+t2_schneeflocke_7d3	Und alle sangen: Flöckchen, Flöckchen, weiß und klein – bald wird wieder Frühling sein! Flöckchen, Flöckchen, weiß und klein – bald wird wieder Frühling sein!
+t2_schneeflocke_7d4	Und so geht es immer weiter, Jahr für Jahr: Schnee und Tau und Wolke, und wieder Schnee. Ende.
+wort_flocke	Flocke
 t_drache_titel	Der kleine Drache und der Glitzer.
 t2_drache_1	Es war einmal ein kleiner Drache. Er wohnte mit den großen Drachen auf dem Drachenberg, gleich beim Schloss des Königs. Heute war Lichterfest! Die großen Drachen zündeten mit ihrem Feuer die Laternen an. Fauch! Da wollte der kleine Drache auch helfen. Er rief: Eins, zwei, drei – und Feuer fliegt herbei! Hilf ihm pusten! Wisch von seinem Mund schnell nach oben!
 t2_drache_1h	Wisch vom Mund des kleinen Drachen schnell nach oben!

@@ -547,6 +547,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .ill .tw{position:absolute;color:#fff6c0;font-size:2.6vh;animation:twinkle 2.6s ease-in-out infinite;text-shadow:0 0 1.5vh #ffd86a}
 .ill .emo{font-size:22vh;line-height:1}
 .ill .bub3{position:absolute;border-radius:50%;border:.3vh solid rgba(230,250,255,.85);background:radial-gradient(circle at 32% 30%,rgba(255,255,255,.9) 0,rgba(255,255,255,0) 30%);animation:float 2.6s ease-in-out infinite}
+.ill .mfl{position:absolute;filter:drop-shadow(0 0 1vh #cfe8ff);animation:mflk 5s ease-in-out infinite} .ill .mfl svg{width:100%;display:block} @keyframes mflk{50%{transform:translateY(1.6vh) rotate(40deg);opacity:.7}}
 .ill .lt{position:absolute;font:800 4vh/1 ui-rounded,system-ui,sans-serif;color:#ffe27a;text-shadow:0 0 2vh rgba(255,216,106,.9);animation:float 3s ease-in-out infinite}
 .pt{position:absolute;inset:8% 9% 8% 7%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.6vh;text-align:center}
 .pt .ttl{font:700 4.6vh/1.15 Georgia,"Times New Roman",serif;color:#5a2e6e}
@@ -723,6 +724,96 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .swdot{position:absolute;width:2.2vh;height:2.2vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:4;opacity:0;
   background:radial-gradient(circle,#fff 0,#dff8ff 45%,rgba(160,230,255,0) 72%);box-shadow:0 0 1.6vh rgba(170,235,255,.9)}
 
+/* the snowflake and the spring */
+.moon2.frost{background:radial-gradient(circle at 36% 34%,#ffffff,#e8f2ff 55%,#b4cdf0);box-shadow:0 0 8vh 3vh rgba(190,220,255,.42),0 0 2vh rgba(255,255,255,.8)}
+.flk>.bb{transform-origin:50% 50%;scale:var(--fz,1);transition:scale 4s cubic-bezier(.4,0,.3,1),opacity .6s;animation:fkbob 3.2s ease-in-out infinite}
+@keyframes fkbob{0%,100%{transform:none}50%{transform:translateY(-6%) rotate(6deg)}}
+.flk .arms{transform-box:view-box;transform-origin:60px 60px;animation:spin 28s linear infinite}
+.flk .armw{transform-box:view-box;transform-origin:60px 60px;transition:transform 1.4s cubic-bezier(.4,0,.3,1),opacity 1.2s}
+.flk .drp{opacity:0;transform-box:view-box;transform-origin:60px 72px;transform:scale(.4);transition:transform 1.4s cubic-bezier(.3,1.4,.5,1),opacity 1s}
+.flk .dsk{transition:opacity 1s} .flk .face,.flk .glint{transform-box:view-box;transition:transform 1.2s}
+.flk.drop .armw{transform:scale(.2) rotate(60deg);opacity:0} .flk.drop .drp{opacity:1;transform:none} .flk.drop .dsk{opacity:0}
+.flk.drop .face{transform:translateY(10px)} .flk.drop .glint{transform:translate(-4px,10px)}
+.flk .ey,.flk .m,.flk .blush{display:none}
+.flk[data-mood=curious] .ey-up,.flk[data-mood=curious] .m-s{display:inline}
+.flk[data-mood=smile] .ey-o,.flk[data-mood=smile] .m-s{display:inline}
+.flk[data-mood=oh] .ey-o,.flk[data-mood=oh] .m-o{display:inline}
+.flk[data-mood=worried] .ey-w,.flk[data-mood=worried] .m-w{display:inline}
+.flk[data-mood=happy] .ey-j,.flk[data-mood=happy] .m-big,.flk[data-mood=happy] .blush,
+.flk[data-mood=glow] .ey-j,.flk[data-mood=glow] .m-big,.flk[data-mood=glow] .blush{display:inline}
+.flk[data-mood=sing] .ey-j,.flk[data-mood=sing] .m-o,.flk[data-mood=sing] .blush{display:inline}
+.flk[data-mood=sing] .m-o{transform-box:fill-box;transform-origin:center;animation:sing .42s ease-in-out infinite alternate}
+.flk .ey-o,.flk .ey-up,.flk .ey-w{transform-box:fill-box;transform-origin:center;animation:blink 4.6s infinite}
+.flk .glint{animation:twinkle 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.tp2.flk{filter:drop-shadow(0 0 1.2vh rgba(210,238,255,.95)) drop-shadow(0 0 3vh rgba(150,205,255,.6))}
+.tp2.flk[data-mood=glow]{filter:drop-shadow(0 0 2vh #fff) drop-shadow(0 0 5vh rgba(170,225,255,.95))}
+.flk.melt>.bb{animation:fkbob 3.2s ease-in-out infinite,fkmelt 2.2s ease-in-out infinite} @keyframes fkmelt{50%{filter:brightness(1.1) saturate(1.3)}}
+.chr.flk.sing>.bb{animation:hop .9s ease-in-out infinite!important}
+.rkh>.bb{animation:rbob 2.4s ease-in-out infinite} @keyframes rbob{0%,100%{transform:none}50%{transform:translateY(-2%) rotate(-2deg)}}
+.rkh.flip svg{scale:-1 1}
+.rkh .tl{transform-box:view-box;transform-origin:30px 46px;animation:rtail 2.2s ease-in-out infinite} @keyframes rtail{0%,78%,100%{transform:none}86%{transform:rotate(-16deg)}}
+.rkh .ey,.rkh .bk,.rkh .blush{display:none}
+.rkh[data-mood=smile] .ey-o,.rkh[data-mood=smile] .bk-c{display:inline}
+.rkh[data-mood=oh] .ey-o,.rkh[data-mood=oh] .bk-o{display:inline}
+.rkh[data-mood=sing] .ey-j,.rkh[data-mood=sing] .bk-o,.rkh[data-mood=sing] .blush{display:inline}
+.rkh[data-mood=happy] .ey-j,.rkh[data-mood=happy] .bk-c,.rkh[data-mood=happy] .blush{display:inline}
+.rkh[data-mood=sing] .lb{transform-box:fill-box;transform-origin:0 0;animation:rsing .26s ease-in-out infinite alternate} @keyframes rsing{to{transform:rotate(14deg)}}
+.rkh .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 4s infinite}
+.rkh.hop>.bb{animation:hop .5s ease-in-out 2}
+.tp2.rkh{filter:drop-shadow(0 .5vh 1vh rgba(0,0,0,.25))}
+.sonf .srays{transform-box:view-box;transform-origin:60px 60px;animation:spin 40s linear infinite}
+.sonf>.bb{animation:breathe 3.6s ease-in-out infinite}
+.sonf .ey,.sonf .m,.sonf .blush{display:none}
+.sonf[data-mood=sleepy] .ey-z,.sonf[data-mood=sleepy] .m-s{display:inline}
+.sonf[data-mood=peek] .ey-p,.sonf[data-mood=peek] .m-s{display:inline}
+.sonf[data-mood=smile] .ey-o,.sonf[data-mood=smile] .m-s,.sonf[data-mood=smile] .blush{display:inline}
+.sonf[data-mood=laugh] .ey-j,.sonf[data-mood=laugh] .m-l,.sonf[data-mood=laugh] .blush{display:inline}
+.sonf .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+.tp2.sonf{filter:drop-shadow(0 0 3vh rgba(255,220,120,.85)) drop-shadow(0 0 7vh rgba(255,190,80,.5))}
+.wlk>.bb{animation:wlkf 6s ease-in-out infinite} @keyframes wlkf{50%{transform:translateY(-4%) scale(1.02,.98)}}
+.wlk .ey,.wlk .m,.wlk .blush{display:none}
+.wlk[data-mood=smile] .ey-o,.wlk[data-mood=smile] .m-s{display:inline}
+.wlk[data-mood=happy] .ey-j,.wlk[data-mood=happy] .m-s,.wlk[data-mood=happy] .blush{display:inline}
+.wlk[data-mood=sing] .ey-j,.wlk[data-mood=sing] .m-o,.wlk[data-mood=sing] .blush{display:inline}
+.wlk[data-mood=sleepy] .ey-z,.wlk[data-mood=sleepy] .m-s{display:inline}
+.wlk .m-o{transform-box:fill-box;transform-origin:center;animation:sing .42s ease-in-out infinite alternate}
+.wlk .ey-o{transform-box:fill-box;transform-origin:center;animation:blink 5.2s infinite}
+.tp2.wlk{filter:drop-shadow(0 .6vh 1.4vh rgba(60,80,140,.25))}
+.tp2.wlk.grau{transition:left 2.4s cubic-bezier(.4,0,.3,1),filter 2.4s;filter:drop-shadow(0 .6vh 1.6vh rgba(40,40,60,.3))}
+.tp2.wlk.grau.white{filter:brightness(1.55) saturate(.4) drop-shadow(0 .6vh 1.4vh rgba(60,80,140,.2))}
+.tp2.wlk.lit{filter:drop-shadow(0 0 2vh #fff) drop-shadow(0 0 5vh rgba(255,240,210,.8))}
+.igl>.bb{animation:breathe 3s ease-in-out infinite} .igl[data-mood=asleep]>.bb{animation:breathe 4.6s ease-in-out infinite}
+.igl .ey,.igl .m,.igl .blush{display:none}
+.igl[data-mood=asleep] .ey-z,.igl[data-mood=asleep] .m-s{display:inline}
+.igl[data-mood=blink] .ey-b,.igl[data-mood=blink] .m-s{display:inline}
+.igl[data-mood=awake] .ey-o,.igl[data-mood=awake] .m-o{display:inline}
+.igl[data-mood=happy] .ey-j,.igl[data-mood=happy] .m-s,.igl[data-mood=happy] .blush{display:inline}
+.igl .nose{transform-box:fill-box;transform-origin:center} .igl.sniff .nose{animation:nsniff .3s ease-in-out 4} @keyframes nsniff{50%{transform:scale(1.3)}}
+.tp2.igl{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.25))}
+.spc .hd{transform-box:view-box;transform-origin:42px 36px} .spc.peck .hd{animation:peck .2s ease-out} @keyframes peck{45%{transform:rotate(-16deg) translate(-3px,1px)}}
+.spc .ey-j{display:none} .spc[data-mood=happy] .ey-j{display:inline} .spc[data-mood=happy] .ey-o{display:none}
+.tp2.spc{filter:drop-shadow(0 .4vh .8vh rgba(0,0,0,.35))}
+.glk .bell{transform-box:fill-box;transform-origin:50% 0} .glk.ring .bell{animation:gring .5s ease-in-out 4} @keyframes gring{25%{transform:rotate(18deg)}75%{transform:rotate(-18deg)}}
+.glk .cap{transition:opacity .5s} .tp2.glk{filter:drop-shadow(0 0 1vh rgba(255,255,255,.55))}
+.tp2.glk.opn{filter:drop-shadow(0 0 1.4vh rgba(255,255,255,.9)) drop-shadow(0 0 3vh rgba(230,255,220,.6))}
+.rose2{--op:0}
+.rose2 .pt{transform-box:view-box;transform-origin:60px 76px}
+.rose2 .pb1{transform:rotate(calc(-12deg - var(--op)*52deg))} .rose2 .pb2{transform:rotate(calc(12deg + var(--op)*52deg))}
+.rose2 .pm1{transform:rotate(calc(-5deg - var(--op)*28deg))} .rose2 .pm2{transform:rotate(calc(5deg + var(--op)*28deg))}
+.rose2 .pf{transform:translateY(calc(var(--op)*6px)) scale(calc(1 + var(--op)*.12),calc(1 - var(--op)*.42))}
+.rose2 .blm{transform-box:view-box;transform-origin:60px 74px;transform:scale(calc(1.05 + var(--op)*.3))}
+.rose2 .core{transform-box:view-box;transform-origin:60px 70px;transform:scale(calc(.8 + var(--op)*.22))}
+.tp2.rose2{filter:drop-shadow(0 .6vh 1.2vh rgba(120,20,60,.25))} .tp2.rose2.lit{filter:drop-shadow(0 0 2vh rgba(255,210,225,.95)) drop-shadow(0 0 5vh rgba(255,150,190,.6))}
+.u2.sniff .ub{animation:usniff .5s ease-in-out 2} @keyframes usniff{50%{transform:translateY(-1vh) rotate(-4deg)}}
+.u2.sneeze .ub{animation:usneeze .8s cubic-bezier(.3,1.4,.5,1)} @keyframes usneeze{0%{transform:none}30%{transform:rotate(-8deg) translateY(-1.5vh)}50%{transform:rotate(7deg) translate(1.5vh,.5vh) scale(1.04,.96)}100%{transform:none}}
+.skyw{position:absolute;inset:0;opacity:0;transition:opacity 3s} .lyr .gw,.lyr .cw{position:absolute;inset:0} .lyr .cw{opacity:0;transition:opacity 3s} .st3.spring .cw{opacity:1} .st3.spring .gw{opacity:0;transition:opacity 3s}
+.tp2.bild{filter:none} .tp2.paint2{-webkit-mask-image:radial-gradient(ellipse calc(var(--rx) * var(--mr)) calc(var(--ry) * var(--mr)) at var(--cx) var(--cy),#000 62%,rgba(0,0,0,0) 100%);
+  mask-image:radial-gradient(ellipse calc(var(--rx) * var(--mr)) calc(var(--ry) * var(--mr)) at var(--cx) var(--cy),#000 62%,rgba(0,0,0,0) 100%)}
+.paint2 .pcv{position:absolute;left:0;top:0;width:100%;height:100%;transition:opacity 1.8s} .paint2>svg{opacity:0} .paint2.ready>svg{opacity:1}
+.tp2.gone2{opacity:0} .tp2.gone2,.tp2.buzz,.tp2.bfly{transition:opacity .6s}
+.bfly{animation:bfly 3.4s ease-in-out infinite} @keyframes bfly{0%,100%{transform:translate(0,0) scaleX(1)}25%{transform:translate(4vh,-7vh) scaleX(.6)}50%{transform:translate(9vh,-3vh) scaleX(1)}75%{transform:translate(3vh,-10vh) scaleX(.6)}}
+.tp2.bfly2{animation:bfly2 7s ease-in-out infinite} @keyframes bfly2{0%,100%{transform:translate(0,0) scaleX(1)}20%{transform:translate(6vh,-5vh) scaleX(.55)}40%{transform:translate(12vh,1vh) scaleX(1)}60%{transform:translate(6vh,5vh) scaleX(.55)}80%{transform:translate(-3vh,-2vh) scaleX(1)}}
+.fspot.bt{width:9vh;height:9vh;animation:none;border-color:rgba(255,236,170,.7)} .fspot.bt.beat{animation:fbeat .45s ease-out} @keyframes fbeat{0%{scale:1.45;border-color:#ffe27a;box-shadow:0 0 4vh #ffd25a}100%{scale:1}}
 /* parent area */
 #parent{justify-content:flex-start;align-items:stretch;background:#f6f4fa;color:#3b3350;overflow:auto;user-select:text;-webkit-user-select:text;padding:20px;touch-action:auto;z-index:5}
 #parent *{user-select:text;-webkit-user-select:text}
@@ -1490,7 +1581,7 @@ function qArm(tk){ qClear(); const step=Q?Q.step:-1;
   const hint=()=>{ if(!ok()) return; const b=Q.els[Q.adv.need[Q.step]]; if(b) b.classList.add('hint'); ask(); };
   questT.push(setTimeout(hint,8000), setTimeout(hint,17000), setTimeout(()=>{ if(!ok()) return; const w=Q.adv.need[Q.step]; tapThing(Q.els[w],w,tk); },26000)); }
 const landOn=()=>$('land').classList.contains('on');
-const TSYL={BLASE:'BLA-SE',VOGEL:'VO-GEL',LACHEN:'LA-CHEN',GLOCKE:'GLO-CKE',HONIG:'HO-NIG',KUCHEN:'KU-CHEN',MILCH:'MILCH',TEIG:'TEIG',STERN:'STERN',DRACHE:'DRA-CHE',NEBEL:'NE-BEL',EULE:'EU-LE',WELLE:'WEL-LE',PERLE:'PER-LE',LICHT:'LICHT',TURM:'TURM'};
+const TSYL={BLASE:'BLA-SE',VOGEL:'VO-GEL',LACHEN:'LA-CHEN',GLOCKE:'GLO-CKE',HONIG:'HO-NIG',KUCHEN:'KU-CHEN',MILCH:'MILCH',TEIG:'TEIG',STERN:'STERN',DRACHE:'DRA-CHE',NEBEL:'NE-BEL',EULE:'EU-LE',WELLE:'WEL-LE',PERLE:'PER-LE',LICHT:'LICHT',TURM:'TURM',SCHNEE:'SCHNEE',FLOCKE:'FLO-CKE'};
 function wordHTML(W){ const w=WORDS.find(x=>x.word===W)||(TSYL[W]&&{syl:TSYL[W].split('-')});
   return w ? w.syl.map((s,i)=>`<span class="${i%2?'cB':'cA'}">${dSyl(s,i===0)}</span>`).join('') : `<span class="cA">${S.mixed?cap(W):W}</span>`; }
 function hideWord(){ $('bigWord').className=''; }
@@ -1683,7 +1774,7 @@ function buildStage(sc){
   const sky=el('div','lyr l-sky'); sky.style.background=B.sky;
   for(let i=0;i<(B.stars||0);i++){ const d=document.createElement('i'), z=1+Math.random()*2.4;
     d.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*55}%;width:${z}px;height:${z}px;animation-duration:${2+Math.random()*4}s;animation-delay:${-Math.random()*5}s`; sky.appendChild(d); }
-  if(B.moon){ const m=el('div','moon2'); m.style.left=B.moon[0]+'%'; m.style.top=B.moon[1]+'%'; sky.appendChild(m); }
+  if(B.moon){ const m=el('div','moon2'+(B.moonc?' '+B.moonc:'')); m.style.left=B.moon[0]+'%'; m.style.top=B.moon[1]+'%'; sky.appendChild(m); }
   if(B.sun){ const m=el('div','sun2'); m.style.left=B.sun[0]+'%'; m.style.top=B.sun[1]+'%'; sky.appendChild(m); }
   const far=el('div','lyr l-far',B.far||''), mid=el('div','lyr l-mid'), act=el('div','lyr l-act'), fore=el('div','lyr l-fore');
   const deco=(L,arr)=>(arr||[]).forEach(([e,x,y,z])=>L.appendChild(prop(e,x,y,z,'m-e')));
@@ -1700,8 +1791,8 @@ function buildStage(sc){
 /* ---------- light and particles (one canvas over the stage) ---------- */
 const FX={cv:null,cx:null,P:[],L:[],em:[],dr:[],dark:0,darkT:0,on:false,t:0,att:null,spr:{}};
 /* clean:1 sets (bright daylight) fade the sprite to transparent colour instead of transparent black, so sparks don't grey the picture */
-function fxSprite(col){ const key=(FX.clean?'c':'')+col; if(FX.spr[key]) return FX.spr[key]; const c=document.createElement('canvas'); c.width=c.height=64;
-  const g=c.getContext('2d'), r=g.createRadialGradient(32,32,0,32,32,32); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.2,col); r.addColorStop(1,FX.clean?col.replace(/[\d.]+\)\s*$/,'0)'):'rgba(0,0,0,0)');
+function fxSprite(col){ const cl=FX.clean||FX.cs, key=(cl?'c':'')+col; if(FX.spr[key]) return FX.spr[key]; const c=document.createElement('canvas'); c.width=c.height=64;
+  const g=c.getContext('2d'), r=g.createRadialGradient(32,32,0,32,32,32); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.2,col); r.addColorStop(1,cl?col.replace(/[\d.]+\)\s*$/,'0)'):'rgba(0,0,0,0)');
   g.fillStyle=r; g.fillRect(0,0,64,64); return FX.spr[key]=c; }
 function fxStart(){ if(!FX.cv){ const c=document.createElement('canvas'); c.id='taleFx'; $('tale').insertBefore(c,$('tale').querySelector('.bar')); FX.cv=c; FX.cx=c.getContext('2d'); }
   FX.cv.style.display='block'; FX.P=[]; FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.dark=FX.darkT=0;
@@ -1770,6 +1861,9 @@ function fxLoop(){ if(!FX.on) return; if(!taleOn()){ fxStop(); return; } request
       const st=p.g?Math.min(.75,Math.hypot(p.vx,p.vy)/(80*u)):0; cx.globalCompositeOperation='source-over'; cx.globalAlpha=Math.max(0,Math.min(1,(1-f)*2.5))*.92; cx.fillStyle='#fff';
       cx.save(); cx.translate(p.x,p.y); if(p.sp) cx.scale(1.6,.5); else { cx.rotate(Math.atan2(p.vy,p.vx)); cx.scale(1+st,1-st*.45); } cx.beginPath(); cx.arc(0,0,sz*1.05,0,6.283); cx.fill(); cx.restore();
       cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
+    else if(p.k==='snow'){ p.y+=p.vy*dt; p.x+=(p.vx||0)*dt+Math.sin(tn/800+p.ph)*u*4*dt; if(p.y>H+u*4) p.life=0;
+      a=Math.min(1,p.age*2)*(p.gl?.5+.5*Math.sin(tn/110+p.ph*7):.85); sz*=1.5;
+      if(FX.clean){ cx.globalCompositeOperation='source-over'; cx.globalAlpha=Math.max(0,a)*.9; cx.fillStyle='#fff'; cx.beginPath(); cx.arc(p.x,p.y,sz*.5,0,6.283); cx.fill(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; } }
     else if(p.k==='bub'){ p.y+=p.vy*dt; p.x+=Math.sin(tn/300+p.ph)*u*4*dt; cx.globalCompositeOperation='source-over'; cx.globalAlpha=Math.max(0,Math.min(1,(1-f)*3))*.85;
       cx.strokeStyle='rgba(225,248,255,.95)'; cx.lineWidth=Math.max(1,u*.22); cx.beginPath(); cx.arc(p.x,p.y,sz*1.2,0,6.283); cx.stroke();
       cx.fillStyle='rgba(255,255,255,.9)'; cx.beginPath(); cx.arc(p.x-sz*.45,p.y-sz*.45,sz*.3,0,6.283); cx.fill(); cx.globalAlpha=1; cx.globalCompositeOperation='lighter'; continue; }
@@ -1827,10 +1921,12 @@ function nextScene2(){
   try{ st.animate(same?[{opacity:0},{opacity:1}]:[{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0},{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0,offset:.15},{transform:'none',opacity:1}],
     {duration:same?700:1500,easing:'cubic-bezier(.2,.7,.3,1)'}); }catch(e){}
   /* light */
-  FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0; FX.dc=sc.dcol||SETS2[sc.set].dcol||null; FX.clean=!!SETS2[sc.set].clean;
+  FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0; FX.dc=sc.dcol||SETS2[sc.set].dcol||null; FX.clean=!!SETS2[sc.set].clean; FX.cs=!!SETS2[sc.set].cs;
   const fx=sc.fx||{}; if(fx.flies) fxFlies(fx.flies,true,false);
   if(fx.leaves) FX.em.push({rate:fx.leaves,fn:()=>{ const u=vu(); fxAdd({k:'leaf',e:rnd(['🍃','🍂','🍃']),x:innerWidth*1.05,y:innerHeight*(.2+Math.random()*.6),vx:-(40+Math.random()*40)*u,vy:(Math.random()-.3)*8*u,rot:0,vr:(Math.random()-.5)*6,s:3+Math.random()*2,ph:Math.random()*6,life:4}); }});
   if(fx.glit) FX.em.push({rate:fx.glit,fn:()=>fxAdd({k:'glit',x:Math.random()*innerWidth,y:-10,vy:(9+Math.random()*8)*vu(),ph:Math.random()*6,s:.8+Math.random(),life:7,c:rnd(['rgba(255,226,122,.9)','rgba(255,255,255,.9)','rgba(255,182,225,.9)'])})});
+  if(fx.snow){ FX.em.push({rate:fx.snow,fn:()=>snowFlake()}); for(let i=0;i<fx.snow*7;i++) snowFlake(true); }
+  if(fx.frost) FX.em.push({rate:fx.frost,fn:()=>frostSpark(fx.fy||.78,.2)});
   /* the unicorn, always there */
   const u=sc.u||[20,68,38], ue=el('div','u2'); ue.style.cssText=`left:${u[0]}%;top:${u[1]}%;width:${u[2]}vh`;
   ue.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; TB.act.appendChild(ue); TB.els.uni=ue;
@@ -2802,7 +2898,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -3654,7 +3750,7 @@ Object.assign(G2,{
     by itself. a:{id, ms}; hook opening(p) */
  open:{ setup(){ const T=TB.els[TB.a.id], rr=T.getBoundingClientRect(); TB.op=TST.op||0; TB.oHold=false; TB.oAuto=false; TB.oq=0; TB.oTap=0;
      const R=el('div','',`<svg class="ring2" viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44" pathLength="1"/></svg>`).firstChild;
-     R.style.width=R.style.height=Math.max(rr.width,rr.height)*1.35+'px'; T.appendChild(R); TB.ring=R;
+     R.style.width=R.style.height=(TB.a.rs?vu()*TB.a.rs:Math.max(rr.width,rr.height)*1.35)+'px'; if(TB.a.rc){ R.style.left=TB.a.rc[0]*100+'%'; R.style.top=TB.a.rc[1]*100+'%'; } T.appendChild(R); TB.ring=R;
      g2loop(dt=>{ if(!(TB.oHold||TB.oAuto)||TB.op>=1) return; TB.op=Math.min(1,TB.op+dt/((TB.oAuto?1.6:(TB.a.ms||2600))/1000)); this.set();
        if(Math.random()<.45){ const r=T.getBoundingClientRect(), u=vu(); fxAdd({k:'warm',x:r.left+r.width*(.3+Math.random()*.4),y:r.top+r.height*.52,vy:-(6+Math.random()*8)*u,ph:Math.random()*6,s:.8+Math.random()*.7,life:1.3,c:rnd(['rgba(255,220,250,.9)','rgba(255,250,220,.9)'])}); }
        if(TB.op>=1) this.finish(); }); this.set(); },
@@ -3666,9 +3762,10 @@ Object.assign(G2,{
    up(){ if(!TB.oHold) return; TB.oHold=false; TB.els[TB.a.id].classList.remove('pressed');
      if(TB.op>=.7){ TB.oAuto=true; return; } if(TB.op-TB.oP0<.04){ if(++TB.oTap>=2){ TB.oTap=0; hint2(false); } } },
    finish(){ if(TB.done) return; TB.oHold=false; TB.ring.style.opacity=0; const T=TB.els[TB.a.id]; T.classList.remove('pressed'); const [x,y]=ctr(T); fxBurst(x,y,30,GLCOL); glitterBurst(x,y,24,18); done2(); },
-   hint(){ if(TB.oAuto) return; const [x,y]=ctr(TB.els[TB.a.id]), u=vu(); TB.ring.classList.add('pulse'); ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],2600);
+   pt(){ return TB.a.rc? relPx(TB.a.id,TB.a.rc) : ctr(TB.els[TB.a.id]); },
+   hint(){ if(TB.oAuto) return; const [x,y]=this.pt(), u=vu(); TB.ring.classList.add('pulse'); ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],2600);
      bLater(()=>TB.ring&&TB.ring.classList.remove('pulse'),2700); },
-   auto(){ if(TB.oAuto||TB.op>=1) return; const [x,y]=ctr(TB.els[TB.a.id]); ghost([[x,y+vu()*10,1,0],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1]],2000); TB.oAuto=true; } },
+   auto(){ if(TB.oAuto||TB.op>=1) return; const [x,y]=this.pt(); ghost([[x,y+vu()*10,1,0],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1]],2000); TB.oAuto=true; } },
 
  /* dial: turn something by circling around it – it turns towards her finger (never faster than a hand turns a wheel), so going
     round in a circle turns it, and so does pointing. Reaching the mark is enough (or one full turn with full:1).
@@ -3754,7 +3851,7 @@ Object.assign(G2,{
 const WVERS='Wellchen, Wellchen, hin und her – ich bring dir was vom großen Meer!';
 /* real clip lengths in s, filled in after the voice job; timed enter() animations use the position of a phrase × the length */
 const WDUR={t2_welle_1:31.90,t2_welle_1d1:4.26,t2_welle_1d2:8.78,t2_welle_1d3:7.65,t2_welle_1h:5.46,t2_welle_2:26.04,t2_welle_2d1:6.50,t2_welle_2d2:9.98,t2_welle_2h:3.66,t2_welle_3:23.72,t2_welle_3d1:3.37,t2_welle_3d2:5.28,t2_welle_3d3:11.00,t2_welle_3h:2.17,t2_welle_4:22.28,t2_welle_4d1:8.78,t2_welle_4d2:6.45,t2_welle_4h:4.18,t2_welle_5:23.72,t2_welle_5d1:6.30,t2_welle_5d2:5.98,t2_welle_5h:5.20,t2_welle_6:22.60,t2_welle_6d1:8.80,t2_welle_6d2:6.35,t2_welle_6h:4.41,t2_welle_6w2:3.47,t2_welle_6w3:3.84,t2_welle_7:21.73,t2_welle_7d1:10.58,t2_welle_7d2:8.31,t2_welle_7d3:13.27,t2_welle_7d4:11.23,t2_welle_7h:5.33};
-function atPh(ph,sfx){ const k=TB.n(sfx||''), c=CLIPS[k]; if(!c) return 0; const i=Math.max(0,c.text.indexOf(ph)); return Math.round(i/c.text.length*(WDUR[k]||c.text.length/12.6)*1000); }
+function atPh(ph,sfx){ const k=TB.n(sfx||''), c=CLIPS[k]; if(!c) return 0; const i=Math.max(0,c.text.indexOf(ph)); return Math.round(i/c.text.length*(WDUR[k]||SDUR[k]||c.text.length/12.6)*1000); }
 function tide(top){ TST.tide=top; if(TB&&TB.sea) TB.sea.style.setProperty('--sea',top+'%'); }
 function behindSea(ids){ if(!TB.sea) return; ids.forEach(id=>{ const e=TB.els[id]; if(e&&e.parentNode===TB.act) TB.act.insertBefore(e,TB.sea); }); }
 function toAct(e){ const r=e.getBoundingClientRect(); e.getAnimations().forEach(q=>q.cancel()); e.classList.remove('onkr'); e.style.cssText=''; TB.act.appendChild(e);
@@ -3991,6 +4088,592 @@ const WELLE2={id:'welle', v2:true, title:'Die kleine Welle', icon:'🌊', cover:
      'Seitdem kommt die kleine Welle jeden Morgen und jeden Abend wieder, hin und her. Und das Kind wartet schon auf sie. Ende.']}
 ]};
 
+/* ================= Die Schneeflocke und der Frühling: drawn cast and set pieces ================= */
+/* the snowflake: a six-armed crystal with a face; .drop turns her into a dewdrop (same face), --fz makes her smaller */
+function flockeSVG(){ const id='fk'+(++LANC), E='#2a3a5e';
+  const arm=`<path d="M60 40 V9 M60 31 L51 23 M60 31 L69 23 M60 20 L54 14 M60 20 L66 14"/>`, A=[0,60,120,180,240,300], arms=A.map(a=>`<g transform="rotate(${a} 60 60)">${arm}</g>`).join('');
+  return `<svg viewBox="0 0 120 120"><defs>
+   <radialGradient id="${id}d" cx="40%" cy="34%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#eef9ff"/><stop offset="1" stop-color="#cfeaff"/></radialGradient>
+   <linearGradient id="${id}t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2fcff"/><stop offset=".45" stop-color="#a8e2ff"/><stop offset="1" stop-color="#5ab4ec"/></linearGradient></defs>
+  <g class="armw"><g class="arms"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><g stroke="#8ccaf0" stroke-width="7">${arms}</g><g stroke="#ffffff" stroke-width="3.4">${arms}</g></g>
+   <g fill="#fff" stroke="#8ccaf0" stroke-width="1.5">${A.map(a=>`<circle cx="60" cy="8" r="3.4" transform="rotate(${a} 60 60)"/>`).join('')}</g></g></g>
+  <g class="drp"><path d="M60 8 C67 26 94 44 94 72 A34 34 0 0 1 26 72 C26 44 53 26 60 8Z" fill="url(#${id}t)" stroke="#4a9ad8" stroke-width="2.6" stroke-linejoin="round"/>
+   <path d="M38 70 Q38 52 51 41" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".85"/><circle cx="80" cy="88" r="3" fill="#fff" opacity=".8"/></g>
+  <circle class="dsk" cx="60" cy="60" r="23" fill="url(#${id}d)" stroke="#8ccaf0" stroke-width="2.4"/>
+  <g class="face">
+   <g class="blush"><ellipse cx="46" cy="66" rx="3.8" ry="2.3" fill="#ff9ac8" opacity=".8"/><ellipse cx="74" cy="66" rx="3.8" ry="2.3" fill="#ff9ac8" opacity=".8"/></g>
+   <g class="ey ey-o"><ellipse cx="51.5" cy="58" rx="3.3" ry="4.2" fill="${E}"/><ellipse cx="68.5" cy="58" rx="3.3" ry="4.2" fill="${E}"/><circle cx="52.8" cy="56.4" r="1.3" fill="#fff"/><circle cx="69.8" cy="56.4" r="1.3" fill="#fff"/></g>
+   <g class="ey ey-up"><ellipse cx="52" cy="56.5" rx="3.3" ry="4.2" fill="${E}"/><ellipse cx="69" cy="56.5" rx="3.3" ry="4.2" fill="${E}"/><circle cx="53.3" cy="54.6" r="1.4" fill="#fff"/><circle cx="70.3" cy="54.6" r="1.4" fill="#fff"/>
+    <path d="M46.5 49 q5 -3 9.5 -.8 M64 48.2 q5 -2.2 9.5 .8" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round" opacity=".75"/></g>
+   <g class="ey ey-w"><ellipse cx="51.5" cy="59" rx="3" ry="3.6" fill="${E}"/><ellipse cx="68.5" cy="59" rx="3" ry="3.6" fill="${E}"/><circle cx="52.5" cy="57.8" r="1.1" fill="#fff"/><circle cx="69.5" cy="57.8" r="1.1" fill="#fff"/>
+    <path d="M45.5 53.5 Q50.5 53 55 49.5 M74.5 53.5 Q69.5 53 65 49.5" fill="none" stroke="${E}" stroke-width="2" stroke-linecap="round"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M47 59.5 q4.5 -5.5 9 0"/><path d="M64 59.5 q4.5 -5.5 9 0"/></g>
+   <path class="m m-s" d="M55.5 66 q4.5 4 9 0" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round"/>
+   <path class="m m-w" d="M54.5 68.5 q2.75 -2 5.5 0 q2.75 2 5.5 0" fill="none" stroke="${E}" stroke-width="2" stroke-linecap="round"/>
+   <ellipse class="m m-o" cx="60" cy="67.5" rx="2.8" ry="3.4" fill="#8a3a5a" stroke="${E}" stroke-width="1.4"/>
+   <g class="m m-big"><path d="M53 65 q7 9.5 14 0Z" fill="#8a3a5a" stroke="${E}" stroke-width="1.8" stroke-linejoin="round"/><path d="M56.5 69.5 q3.5 2.2 7 0" fill="#ff8aa8"/></g></g>
+  <path class="glint" d="M44 42 l1.6 4 4 1.6 -4 1.6 -1.6 4 -1.6 -4 -4 -1.6 4 -1.6Z" fill="#fff"/></svg>`; }
+/* a plain little flake (book page, decoration) */
+function miniFlakeSVG(){ const arm=`<path d="M20 20 V3 M20 9 L16 5 M20 9 L24 5"/>`;
+  return `<svg viewBox="0 0 40 40"><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round">${[0,60,120,180,240,300].map(a=>`<g transform="rotate(${a} 20 20)">${arm}</g>`).join('')}</g><circle cx="20" cy="20" r="3" fill="#fff"/></svg>`; }
+/* the robin, the one who knows the spring */
+function robinSVG(){ const B='#8a6444', BS='#4e3826', O='#ff8a3c', E='#1e1612';
+  return `<svg viewBox="0 0 100 92">
+  <g class="tl"><path d="M26 50 Q10 44 2 30 Q14 32 22 38 Q16 26 18 18 Q28 32 34 44Z" fill="#7a563a" stroke="${BS}" stroke-width="2.6" stroke-linejoin="round"/></g>
+  <g stroke="#6a4a30" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M44 74 L41 88 M36 88 H46 M56 74 L58 88 M53 88 H63"/></g>
+  <ellipse cx="50" cy="54" rx="29" ry="23" fill="${B}" stroke="${BS}" stroke-width="3"/>
+  <path d="M58 24 Q84 18 86 38 Q88 58 74 70 Q60 78 44 72 Q58 56 58 38Z" fill="${O}" stroke="#c85a20" stroke-width="2"/>
+  <ellipse cx="54" cy="70" rx="15" ry="7" fill="#fff3e2"/>
+  <circle cx="68" cy="32" r="18" fill="${B}" stroke="${BS}" stroke-width="3"/>
+  <path d="M66 24 Q84 20 86 38 Q84 46 74 50 Q64 50 62 40 Q60 30 66 24Z" fill="${O}"/>
+  <g class="wg"><path d="M30 46 Q44 34 62 46 Q58 64 40 66 Q28 62 30 46Z" fill="#6e4e34" stroke="${BS}" stroke-width="2.4" stroke-linejoin="round"/><path d="M36 52 Q46 48 56 52 M36 58 Q46 55 54 58" fill="none" stroke="#a07a54" stroke-width="2" stroke-linecap="round"/></g>
+  <g class="bk bk-c"><path d="M84 31 L96 34 L84 38Z" fill="#3a2a1c" stroke="#3a2a1c" stroke-width="1.4" stroke-linejoin="round"/></g>
+  <g class="bk bk-o"><path d="M84 30 L96 28 L85 34Z" fill="#3a2a1c" stroke="#3a2a1c" stroke-width="1.4" stroke-linejoin="round"/><path class="lb" d="M85 35 L95 40 L84 39Z" fill="#3a2a1c" stroke="#3a2a1c" stroke-width="1.4" stroke-linejoin="round"/></g>
+  <g class="blush"><ellipse cx="78" cy="44" rx="4" ry="2.4" fill="#ff5a7a" opacity=".55"/></g>
+  <g class="ey ey-o"><circle cx="75" cy="29" r="3.6" fill="${E}"/><circle cx="76.2" cy="27.8" r="1.3" fill="#fff"/></g>
+  <path class="ey ey-j" d="M71 30 q4 -5 8 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/></svg>`; }
+/* the sun with a face */
+function sunfSVG(){ const id='sf'+(++LANC), E='#8a4a10';
+  const rays=Array.from({length:12},(_,i)=>`<path d="M60 4 L66 18 L54 18Z" transform="rotate(${i*30} 60 60)"/>`).join('');
+  return `<svg viewBox="0 0 120 120"><defs><radialGradient id="${id}" cx="42%" cy="38%" r="65%"><stop offset="0" stop-color="#fffbe0"/><stop offset=".55" stop-color="#ffe066"/><stop offset="1" stop-color="#ffb84d"/></radialGradient></defs>
+  <g class="srays" fill="#ffd24a" stroke="#f0a020" stroke-width="2" stroke-linejoin="round">${rays}</g>
+  <circle cx="60" cy="60" r="38" fill="url(#${id})" stroke="#f0a020" stroke-width="2.6"/>
+  <g class="blush"><ellipse cx="40" cy="70" rx="6" ry="3.4" fill="#ff8a6a" opacity=".6"/><ellipse cx="80" cy="70" rx="6" ry="3.4" fill="#ff8a6a" opacity=".6"/></g>
+  <g class="ey ey-z" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"><path d="M41 56 q6 5 12 0"/><path d="M67 56 q6 5 12 0"/></g>
+  <g class="ey ey-p"><path d="M41 56 q6 5 12 0" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/><ellipse cx="73" cy="55" rx="4.4" ry="5.4" fill="${E}"/><circle cx="74.6" cy="53" r="1.7" fill="#fff"/></g>
+  <g class="ey ey-o"><ellipse cx="47" cy="55" rx="4.4" ry="5.4" fill="${E}"/><ellipse cx="73" cy="55" rx="4.4" ry="5.4" fill="${E}"/><circle cx="48.6" cy="53" r="1.7" fill="#fff"/><circle cx="74.6" cy="53" r="1.7" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="3.2" stroke-linecap="round"><path d="M41 57 q6 -7 12 0"/><path d="M67 57 q6 -7 12 0"/></g>
+  <path class="m m-s" d="M52 72 q8 7 16 0" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"/>
+  <g class="m m-l"><path d="M49 69 q11 15 22 0Z" fill="#a8402a" stroke="${E}" stroke-width="2.2" stroke-linejoin="round"/><path d="M54 75 q6 3.6 12 0" fill="#ff8a7a"/></g></svg>`; }
+/* a puffy cloud: with a face (the kind cloud), or grey without one */
+function wolkeSVG(face,grey){ const F=grey?'#a4a8bc':'#ffffff', S=grey?'#7a7e96':'#a8c4e8', H=grey?'#bcc0d2':'#eef6ff', E='#3a4a6e';
+  const C=[[38,64,24],[64,48,30],[96,44,32],[124,60,24],[80,70,26],[50,74,18],[112,74,18]];
+  return `<svg viewBox="0 0 160 100"><g fill="${S}">${C.map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r+3}"/>`).join('')}</g>
+  <g fill="${F}">${C.map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>
+  <g fill="${H}" opacity=".9"><circle cx="58" cy="40" r="12"/><circle cx="92" cy="34" r="13"/></g>
+  ${face?`<g class="blush"><ellipse cx="62" cy="74" rx="6" ry="3.2" fill="#ff9ac8" opacity=".7"/><ellipse cx="106" cy="74" rx="6" ry="3.2" fill="#ff9ac8" opacity=".7"/></g>
+  <g class="ey ey-o"><ellipse cx="72" cy="62" rx="4" ry="5" fill="${E}"/><ellipse cx="96" cy="62" rx="4" ry="5" fill="${E}"/><circle cx="73.5" cy="60.2" r="1.6" fill="#fff"/><circle cx="97.5" cy="60.2" r="1.6" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"><path d="M67 63 q5 -6 10 0"/><path d="M91 63 q5 -6 10 0"/></g>
+  <g class="ey ey-z" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M67 61 q5 4 10 0"/><path d="M91 61 q5 4 10 0"/></g>
+  <path class="m m-s" d="M78 72 q6 5 12 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="84" cy="74" rx="3.6" ry="4.4" fill="#8a3a5a" stroke="${E}" stroke-width="1.6"/>`:''}</svg>`; }
+/* the hedgehog */
+function igelSVG(){ const E='#2a1a10', cx=56, cy=64, R=40, N=15, a0=Math.PI*.98, a1=Math.PI*1.86; let d='';
+  for(let i=0;i<=N;i++){ const a=a0+(a1-a0)*i/N; d+=(i?' L':'M')+(cx+Math.cos(a)*R).toFixed(1)+' '+(cy+Math.sin(a)*R).toFixed(1);
+    if(i<N){ const m=a+(a1-a0)/N/2, s=R+12+(i%2)*3; d+=` L${(cx+Math.cos(m)*s).toFixed(1)} ${(cy+Math.sin(m)*s).toFixed(1)}`; } }
+  d+=` Q${cx+R*.7} ${cy+R*.6} ${cx} ${cy+R*.5} Q${cx-R*.9} ${cy+R*.5} ${(cx+Math.cos(a0)*R).toFixed(1)} ${(cy+Math.sin(a0)*R).toFixed(1)}Z`;
+  return `<svg viewBox="0 0 130 98"><path d="${d}" fill="#6e4c2e" stroke="#3e2a18" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="none" stroke="#9a7650" stroke-width="2" stroke-linecap="round" opacity=".8"><path d="M30 44 l-6 -8 M44 34 l-3 -10 M60 30 l1 -11 M76 34 l5 -9 M38 56 l-7 -5 M54 46 l-2 -8 M70 46 l4 -7"/></g>
+  <ellipse cx="50" cy="86" rx="10" ry="4.6" fill="#a07a4a"/><ellipse cx="84" cy="86" rx="10" ry="4.6" fill="#a07a4a"/>
+  <path d="M76 44 Q98 48 112 60 Q121 66 116 73 Q104 84 82 82 Q66 80 64 66 Q66 50 76 44Z" fill="#e8c08a" stroke="#a07a4a" stroke-width="2.4" stroke-linejoin="round"/>
+  <circle cx="82" cy="47" r="5.6" fill="#d8a870" stroke="#a07a4a" stroke-width="2"/>
+  <g class="nose"><circle cx="117" cy="68" r="4.4" fill="#2a1a10"/><circle cx="116" cy="66.6" r="1.3" fill="#fff" opacity=".7"/></g>
+  <g class="blush"><ellipse cx="100" cy="72" rx="5" ry="3" fill="#ff8aa0" opacity=".65"/></g>
+  <path class="ey ey-z" d="M91 60 q4.5 3.6 9 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+  <g class="ey ey-b"><path d="M91 60 q4.5 2.4 9 0Z" fill="${E}"/><path d="M91 60 q4.5 2.6 9 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/></g>
+  <g class="ey ey-o"><ellipse cx="96" cy="59" rx="3.4" ry="4.2" fill="${E}"/><circle cx="97.2" cy="57.4" r="1.3" fill="#fff"/></g>
+  <path class="ey ey-j" d="M91 61 q4.5 -5 9 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+  <path class="m m-s" d="M103 76 q4 3 8 -1" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="106" cy="77" rx="3" ry="3.8" fill="#8a3a3a"/></svg>`; }
+/* the woodpecker, clinging to a trunk on its left; .peck knocks */
+function spechtSVG(){ const K='#26262e', E='#111';
+  return `<svg viewBox="0 0 70 100">
+  <path d="M46 78 L52 98 L40 98 L40 80Z" fill="${K}" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="44" cy="58" rx="15" ry="25" fill="${K}" stroke="#111" stroke-width="2.4"/>
+  <path d="M36 44 Q44 40 50 46 Q46 60 38 62Z" fill="#fff"/><path d="M46 66 Q54 68 56 76 Q50 84 44 80Z" fill="#fff" opacity=".9"/>
+  <ellipse cx="48" cy="80" rx="6" ry="5" fill="#e83a3a"/>
+  <path d="M31 56 l-8 2 M31 60 l-8 5 M33 70 l-9 1 M33 74 l-8 5" stroke="#5a5a66" stroke-width="2.4" stroke-linecap="round"/>
+  <g class="hd"><circle cx="40" cy="26" r="13" fill="${K}" stroke="#111" stroke-width="2.4"/>
+   <path d="M30 28 Q36 38 48 34 Q44 30 40 30Z" fill="#fff"/><path d="M44 14 Q54 16 53 26 Q48 22 44 20Z" fill="#e83a3a"/>
+   <path d="M28 24 L6 27 L28 31Z" fill="#6a6a78" stroke="#3a3a44" stroke-width="1.6" stroke-linejoin="round"/>
+   <circle cx="34" cy="23" r="3.8" fill="#fff"/><circle class="ey ey-o" cx="33.4" cy="23" r="2.3" fill="${E}"/><path class="ey ey-j" d="M31 24 q2.6 -3 5.2 0" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round"/></g></svg>`; }
+/* the snowdrop: a bud under a little snow mound; glockeSet(el,h,lean) grows the stem (h 0..1), the bells open near the top */
+function glockeSVG(){ const P='M13 3 C6 8 6 20 13 26 C20 20 20 8 13 3Z';
+  return `<svg viewBox="0 0 100 200">
+  <g class="lvs"><path d="M50 194 Q34 160 38 120 Q46 156 54 194Z" fill="#5aa84a" stroke="#2e6a2a" stroke-width="2.4" stroke-linejoin="round"/>
+   <path d="M50 194 Q68 166 64 128 Q56 162 46 194Z" fill="#6cbc58" stroke="#2e6a2a" stroke-width="2.4" stroke-linejoin="round"/></g>
+  <path class="stem" d="M50 194 Q50 180 50 176" fill="none" stroke="#3e8a34" stroke-width="5" stroke-linecap="round"/>
+  <g class="hd"><path d="M0 0 Q7 -8 13 -1" fill="none" stroke="#3e8a34" stroke-width="4" stroke-linecap="round"/>
+   <g class="bell"><path class="pi" d="M13 3 C9 8 9 15 13 18 C17 15 17 8 13 3Z" fill="#f4fff0" stroke="#7ab070" stroke-width="1.2"/><path d="M11 16 q2 2 4 0" fill="none" stroke="#6cbc58" stroke-width="1.6"/>
+    <path class="p1" d="${P}" fill="#ffffff" stroke="#b8c8d8" stroke-width="1.6"/><path class="p3" d="${P}" fill="#ffffff" stroke="#b8c8d8" stroke-width="1.6"/><path class="p2" d="${P}" fill="#fafcff" stroke="#b8c8d8" stroke-width="1.6"/>
+    <ellipse cx="13" cy="2" rx="3.6" ry="3" fill="#6cbc58" stroke="#2e6a2a" stroke-width="1.4"/></g>
+   <path class="cap" d="M1 2 Q13 -12 27 2 Q27 10 13 10 Q1 10 1 2Z" fill="#fff" stroke="#c8d8ee" stroke-width="1.4"/></g>
+  <path d="M4 200 Q8 180 30 177 Q50 171 70 177 Q94 181 96 200Z" fill="#f4f9ff" stroke="#c8d8ee" stroke-width="2.4"/>
+  <path d="M18 188 Q30 182 42 185 M60 184 Q72 182 84 188" fill="none" stroke="#dce8f6" stroke-width="2.4" stroke-linecap="round"/></svg>`; }
+function glockeSet(E,h,lean){ const S=E.querySelector('.stem'); if(!S) return; lean=lean||0; const L=18+h*140, tx=50+lean*12, ty=194-L, b=Math.max(0,Math.min(1,(h-.72)/.28));
+  S.setAttribute('d',`M50 194 Q${(50+lean*4).toFixed(1)} ${(194-L*.55).toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`);
+  E.querySelector('.hd').setAttribute('transform',`translate(${(tx-1).toFixed(1)} ${ty.toFixed(1)}) rotate(${(lean*8).toFixed(1)})`);
+  const lf=Math.min(1,h*1.4+.12); E.querySelector('.lvs').setAttribute('transform',`translate(50 194) scale(${(.6+.4*lf).toFixed(2)} ${lf.toFixed(2)}) translate(-50 -194)`);
+  E.querySelector('.p1').setAttribute('transform',`rotate(${(b*40).toFixed(1)} 13 3)`); E.querySelector('.p3').setAttribute('transform',`rotate(${(-b*40).toFixed(1)} 13 3)`);
+  E.querySelector('.cap').style.opacity=h>.06?0:1; E.classList.toggle('opn',b>.9); E.dataset.h=h; }
+/* the rose: --op opens it */
+function roseSVG(){ const P='M60 76 C46 72 40 54 46 42 C52 36 68 36 74 42 C80 54 74 72 60 76Z', pt=(c,f,d)=>`<g class="pt ${c}"><path d="${d||P}" fill="${f}" stroke="#b02a4a" stroke-width="2" stroke-linejoin="round"/></g>`;
+  return `<svg viewBox="0 0 120 160">
+  <path d="M60 158 Q56 124 60 80" fill="none" stroke="#3e8a34" stroke-width="5" stroke-linecap="round"/>
+  <path d="M58 128 Q36 116 30 100 Q48 102 58 120Z" fill="#5aa84a" stroke="#2e6a2a" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M60 114 Q84 104 98 88 Q76 87 61 106Z" fill="#6cbc58" stroke="#2e6a2a" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M61 107 Q78 96 92 90 M58 122 Q46 112 36 104" fill="none" stroke="#2e6a2a" stroke-width="1.4" opacity=".6"/>
+  <path d="M60 104 L65 98 M57 138 l-5 -4" stroke="#2e6a2a" stroke-width="2.2" stroke-linecap="round"/>
+  <g class="blm"><path d="M60 80 Q46 81 41 70 Q52 72 58 76Z M60 80 Q74 81 79 70 Q68 72 62 76Z" fill="#5aa84a" stroke="#2e6a2a" stroke-width="2" stroke-linejoin="round"/>
+   ${pt('pb1','#d8345a')}${pt('pb2','#d8345a')}${pt('pm1','#ff5a7a')}${pt('pm2','#ff5a7a')}
+   <g class="core"><path d="M60 72 C52 70 50 58 54 50 C57 46 63 46 66 50 C70 58 68 70 60 72Z" fill="#ff7a94" stroke="#b02a4a" stroke-width="2"/>
+    <path d="M56 57 Q60 50 64 57 Q60 63 56 57" fill="none" stroke="#b02a4a" stroke-width="1.8" stroke-linecap="round"/></g>
+   ${pt('pf','#ff8aa0','M60 77 C48 74 44 62 48 54 C54 58 66 58 72 54 C76 62 72 74 60 77Z')}</g></svg>`; }
+function spineSVG(){ return `<svg viewBox="0 0 100 160"><rect x="44" y="128" width="12" height="32" rx="3" fill="#3a2e2a"/>
+  <path d="M50 2 L86 58 L14 58Z M50 30 L94 98 L6 98Z M50 62 L100 138 L0 138Z" fill="#1e4048" stroke="#122a32" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#f4faff" stroke="#c8dcf0" stroke-width="2" stroke-linejoin="round"><path d="M50 2 L66 27 Q58 33 50 28 Q42 33 34 27Z"/>
+   <path d="M26 58 Q38 50 50 54 Q62 50 74 58 Q62 65 50 60 Q38 65 26 58Z"/><path d="M14 98 Q32 88 50 93 Q68 88 86 98 Q68 105 50 99 Q32 105 14 98Z"/><path d="M4 138 Q28 128 50 133 Q72 128 96 138 Q72 146 50 139 Q28 146 4 138Z"/></g></svg>`; }
+function astSVG(snow){ return `<svg viewBox="0 0 220 70"><path d="M220 30 Q160 34 110 40 Q60 46 6 40" fill="none" stroke="#4a3424" stroke-width="10" stroke-linecap="round"/>
+  <path d="M150 36 Q140 20 128 12 M96 42 Q86 56 70 62 M60 44 Q48 30 36 26" fill="none" stroke="#4a3424" stroke-width="5" stroke-linecap="round"/>
+  ${snow?`<g fill="#f4faff" stroke="#c8dcf0" stroke-width="1.6" stroke-linejoin="round"><path d="M218 24 Q160 26 110 33 Q60 38 8 34 Q30 28 60 30 Q110 24 160 20 Q200 18 218 24Z"/><path d="M140 17 Q131 8 123 8 Q129 14 136 21Z"/><path d="M50 31 Q42 22 33 21 Q39 27 46 33Z"/></g>`
+   :`<g fill="#7cc864" stroke="#3e8a34" stroke-width="1.4">${[[128,12],[70,62],[36,26],[180,30],[20,38]].map(([x,y])=>`<path d="M${x} ${y} q8 -10 16 -2 q-8 8 -16 2Z"/>`).join('')}</g>`}</svg>`; }
+function smoundSVG(){ return `<svg viewBox="0 0 100 40"><path d="M0 40 Q6 14 30 12 Q44 2 60 10 Q86 8 100 40Z" fill="#f4f9ff" stroke="#c8d8ee" stroke-width="2"/><path d="M20 26 Q34 18 48 22" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>`; }
+/* the meadow picture for painting: g=1 is its grey winter twin (img=1: standalone, to draw it on a canvas) */
+function wieseSVG(g,img){ const c=(a,b)=>g?b:a;
+  const fl=[[34,124,0],[66,136,1],[92,118,2],[124,132,3],[158,122,4],[196,138,0],[228,126,2],[262,140,1],[296,130,3],[334,142,0],[366,128,2],[52,158,1],[106,166,0],[172,160,2],[244,170,3],[318,166,1],[150,186,4],[214,190,0],[284,192,2],[26,182,3],[380,182,0],[136,146,1],[270,154,4],[350,156,3]];
+  const FC=[['#ff5f86','#ffd84a'],['#ffd84a','#ff9a3a'],['#ffffff','#ffd84a'],['#a77bff','#fff3a0'],['#ff8a3c','#fff3a0']];
+  const flower=([x,y,k])=>{ const [p,m]=FC[k]; return `<g transform="translate(${x} ${y})"><path d="M0 1 V10" stroke="#3e8a34" stroke-width="1.6"/>${[0,72,144,216,288].map(a=>`<circle cx="0" cy="-3.6" r="2.9" fill="${p}" stroke="rgba(0,0,0,.18)" stroke-width=".6" transform="rotate(${a})"/>`).join('')}<circle r="2.2" fill="${m}"/></g>`; };
+  const lump=([x,y])=>`<ellipse cx="${x}" cy="${y+6}" rx="${7+(x%5)}" ry="3.4" fill="#fbfdff" stroke="#d8e0ee" stroke-width="1"/>`;
+  const bush=(x,y,r)=>g? `<circle cx="${x}" cy="${y}" r="${r}" fill="#b4bac8"/><circle cx="${x+r*.8}" cy="${y+2}" r="${r*.75}" fill="#a8aebe"/><path d="M${x-r} ${y-r*.2} Q${x} ${y-r*1.3} ${x+r*1.5} ${y-r*.3} Q${x+r*.3} ${y-r*.6} ${x-r} ${y-r*.2}Z" fill="#fbfdff"/>`
+    : `<circle cx="${x}" cy="${y}" r="${r}" fill="#4ea640"/><circle cx="${x+r*.8}" cy="${y+2}" r="${r*.75}" fill="#5cb84a"/><g fill="#ff8ac0"><circle cx="${x-r*.3}" cy="${y-r*.4}" r="2"/><circle cx="${x+r*.6}" cy="${y-r*.1}" r="2"/><circle cx="${x+r*.2}" cy="${y+r*.4}" r="2"/></g>`;
+  const tree=g? `<g fill="#e8ecf4"><circle cx="300" cy="56" r="15"/><circle cx="340" cy="52" r="16"/><circle cx="320" cy="38" r="18"/></g><g fill="#fbfdff"><circle cx="314" cy="32" r="10"/><circle cx="336" cy="44" r="8"/><circle cx="296" cy="50" r="7"/></g><g fill="none" stroke="#7a7e8e" stroke-linecap="round"><path d="M318 100 Q316 76 320 54" stroke-width="7"/><path d="M319 76 Q306 64 296 60 M320 68 Q334 56 344 54 M320 58 Q318 44 324 36" stroke-width="3.4"/></g><g fill="#fbfdff"><path d="M295 58 Q306 58 313 67 Q304 63 295 61Z"/><path d="M331 56 Q340 51 347 52 Q340 57 331 59Z"/><path d="M320 40 Q323 33 327 34 Q324 38 322 42Z"/></g>`
+    : `<path d="M318 100 Q316 76 320 54" fill="none" stroke="#7a5236" stroke-width="7" stroke-linecap="round"/><g fill="#7cc864"><circle cx="300" cy="56" r="14"/><circle cx="340" cy="52" r="15"/><circle cx="320" cy="38" r="17"/></g><g fill="#ffc0dc"><circle cx="306" cy="50" r="9"/><circle cx="334" cy="44" r="10"/><circle cx="320" cy="30" r="9"/><circle cx="344" cy="58" r="7"/><circle cx="296" cy="62" r="6"/></g><g fill="#fff"><circle cx="310" cy="44" r="2"/><circle cx="330" cy="36" r="2"/><circle cx="340" cy="50" r="2"/><circle cx="300" cy="58" r="1.6"/></g>`;
+  const grass=g?'':[[20,140],[84,150],[140,128],[204,152],[300,150],[360,140],[60,190],[250,186],[330,190]].map(([x,y])=>`<path d="M${x} ${y} l-3 -7 M${x} ${y} l0 -8 M${x} ${y} l3 -7" stroke="#4ea640" stroke-width="1.6" stroke-linecap="round" fill="none"/>`).join('');
+  return `<svg ${img?'xmlns="http://www.w3.org/2000/svg" width="1200" height="600" ':''}viewBox="0 0 400 200">
+  <path d="M0 76 Q90 46 190 64 Q300 84 400 54 V200 H0Z" fill="${c('#a6dc72','#d2d7e4')}"/>
+  <path d="M0 86 Q90 60 190 76 Q300 94 400 66" fill="none" stroke="${c('#c8ec98','#eef1f7')}" stroke-width="4" opacity=".7"/>
+  ${tree}${bush(70,98,11)}${bush(246,104,12)}
+  <path d="M0 110 Q110 86 210 102 Q310 118 400 94 V200 H0Z" fill="${c('#72c44e','#e6e9f1')}"/>
+  <path d="M0 150 Q110 128 210 144 Q310 160 400 136 V200 H0Z" fill="${c('#62b442','#dde1ea')}" opacity=".55"/>
+  <path d="M170 200 Q182 160 212 128 Q226 112 238 104" fill="none" stroke="${c('#f2dca0','#f6f8fc')}" stroke-width="14" stroke-linecap="round"/>
+  ${g? fl.filter((_,i)=>i%2===0).map(lump).join('')+fl.filter((_,i)=>i%3===1).map(([x,y])=>`<path d="M${x} ${y+8} v-7 M${x} ${y+3} l-3 -3" stroke="#a0a6b6" stroke-width="1.4" fill="none" stroke-linecap="round"/>`).join('') : fl.map(flower).join('')}${grass}</svg>`; }
+Object.assign(SVGP,{SPINE:[spineSVG,.62],AST:[()=>astSVG(1),3.14],ASTG:[()=>astSVG(0),3.14],SMOUND:[smoundSVG,2.5],WIESE:[()=>wieseSVG(0),2],WIESEG:[()=>wieseSVG(1,1),2]});
+/* grey twins for the paint gesture, drawn on a canvas: loaded once */
+const PAINTIMG={};
+function paintImg(k){ if(PAINTIMG[k]) return PAINTIMG[k]; const im=new Image(); im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(SVGP[k][0]()); return PAINTIMG[k]=im; }
+paintImg('WIESEG');
+Object.assign(SETS2,{
+  winternacht:{sky:'linear-gradient(180deg,#060a24 0%,#121c4c 45%,#283a74 80%,#3a5090 100%)', moon:[36.5,44.5], moonc:'frost', stars:80, dcol:'6,10,34', cs:1,
+    far:sil(hills(101,236,70,'#5a74aa')+hills(103,282,50,'#7a94c8'),58), gnd:'linear-gradient(180deg,#f2f8ff 0%,#d4e4f8 40%,#a8c0e4 100%)',
+    mid:[['SPINE',18,50,30],['SPINE',26,56,20],['SPINE',75,53,24],['SPINE',84,48,34]], fore:[['SMOUND',4,98,12],['SMOUND',96,99,12]]},
+  schneemorgen:{clean:1, sky:'linear-gradient(180deg,#8fb4ea 0%,#bcd2f2 40%,#f2d8ea 72%,#ffe6d6 100%)',
+    far:sil(hills(121,240,60,'#c4d6f2')+hills(123,286,46,'#dce8fa'),58), gnd:'linear-gradient(180deg,#ffffff 0%,#e6f0fc 45%,#c8dcf4 100%)',
+    mid:[['SPINE',18,52,28],['SPINE',25,57,18],['SPINE',82,50,30]], fore:[['SMOUND',4,98,12],['SMOUND',97,99,11]]},
+  grautag:{sky:'linear-gradient(180deg,#7c8298 0%,#9ca2b6 50%,#c4c8d4 100%)', dcol:'60,64,86', cs:1,
+    far:`<div class="gw">${sil(hills(131,238,60,'#9aa0b4')+hills(133,284,44,'#b4b9c8'),58)}</div><div class="cw">${sil(hills(131,238,60,'#8acb68')+hills(133,284,44,'#6ab854'),58)}</div>`,
+    gnd:'linear-gradient(180deg,#e4e8f0 0%,#c8ccd8 60%,#a8aec0 100%)', fore:[]},
+  fruehwiese:{clean:1, sky:'linear-gradient(180deg,#5ab0f0 0%,#9ad4fa 50%,#dff4ff 100%)',
+    far:sil(hills(111,246,70,'#8acb68')+hills(113,290,50,'#6ab854'),58), gnd:'linear-gradient(180deg,#86cc5c 0%,#5aa840 55%,#3e8a34 100%)',
+    mid:[['🌳',18,54,15],['🌳',27,58,10]], act:[['eiche','OAK',74,42,78,'big']], fore:[['🌷',3,97,10],['🌼',97,98,10],['🌱',40,103,8]]},
+  rosengarten:{clean:1, sky:'linear-gradient(180deg,#5aaef0 0%,#9cd6fa 45%,#eaf8ff 80%,#fff4dc 100%)',
+    far:sil(hills(141,250,60,'#9ad472')+hills(143,292,40,'#7cc45a'),55), gnd:'linear-gradient(180deg,#8ad062 0%,#62b448 55%,#468e38 100%)',
+    mid:[['🌳',17,55,14],['🌳',84,53,16]], fore:[['🌷',3,97,10],['🌼',50,104,8],['🌸',97,97,10]]}
+});
+
+/* ---------- little helpers of this tale ---------- */
+function relEl(e,f){ const r=e.getBoundingClientRect(); return [r.left+r.width*f[0], r.top+r.height*f[1]]; }
+/* a gesture target: a prop (or the unicorn: its floating body) and a point in it */
+function tgtOf(a){ const T=TB.els[a.to]; if(!T) return [innerWidth/2,innerHeight/2]; const e=(a.to==='uni'&&T.querySelector('.ub'))||T; return a.at? relEl(e,a.at) : ctr(e); }
+/* put something onto something else (it then moves with it) and take it off again */
+function stickTo(e,par,fx,fy){ e.getAnimations().forEach(q=>q.cancel()); const pr=par.getBoundingClientRect(), r=e.getBoundingClientRect(); e.style.transition='none'; e.style.rotate='';
+  e.classList.add('kid'); par.appendChild(e); e.style.left=(fx*100).toFixed(2)+'%'; e.style.top=(fy*100).toFixed(2)+'%'; e.style.width=(r.width/pr.width*100).toFixed(2)+'%'; return e; }
+function unstick(e){ e.getAnimations().forEach(q=>q.cancel()); const r=e.getBoundingClientRect(); e.classList.remove('kid'); e.style.transition='none'; TB.act.appendChild(e);
+  putAt(e,r.left+r.width/2,r.top+r.height/2); e.style.width=(r.width/innerHeight*100).toFixed(2)+'vh'; return e; }
+function flyStick(e,par,fx,fy,ms,lift,cb){ ms=ms||1100; const [x0,y0]=ctr(e), pr=par.getBoundingClientRect(), x1=pr.left+pr.width*fx, y1=pr.top+pr.height*fy, u=vu(); unstick(e);
+  const mx=(x0+x1)/2, my=Math.min(y0,y1)-u*(lift==null?14:lift);
+  try{ e.animate([{transform:'none'},{transform:`translate(${mx-x0}px,${my-y0}px) rotate(160deg) scale(1.15)`},{transform:`translate(${x1-x0}px,${y1-y0}px) rotate(360deg)`}],{duration:ms,easing:'ease-in-out'}); }catch(err){}
+  trail(e,ms); bLater(()=>{ stickTo(e,par,fx,fy); sqs(e); if(cb) cb(); },ms-30); }
+function uniHop(){ const v=TB.els.uni.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); }
+function noseXY(){ return relEl(TB.els.uni.querySelector('.ub'),[.95,.4]); }
+/* the unicorn sneezes (the snowflake tickles): a white puff from the nose */
+function sneeze(after){ const U=TB.els.uni; U.classList.remove('sniff','sneeze'); void U.offsetWidth; U.classList.add('sneeze'); bLater(()=>U.classList.remove('sneeze'),900);
+  bLater(()=>{ const [x,y]=noseXY(), u=vu(); for(let i=0;i<11;i++) fxAdd({k:'steam',x:x+u*2,y,vx:(18+Math.random()*36)*u,vy:-(4+Math.random()*16)*u,ph:Math.random()*6,s:.8+Math.random()*.6,life:1.1,c:'rgba(255,255,255,.95)'});
+    fxBurst(x,y,24,['rgba(255,255,255,.95)','rgba(200,232,255,.95)','rgba(255,240,200,.9)'],38); bubble('hatschi!',x+u*7,y-u*6,5.2,'#e8f6ff'); chime([1318,880,587]); if(after) after(); },300); }
+function sniff(){ const U=TB.els.uni, [x,y]=noseXY(), u=vu(); U.classList.remove('sniff'); void U.offsetWidth; U.classList.add('sniff');
+  bubble('ha…',x+u*5,y-u*7,3.6,'#e8f6ff'); bLater(()=>{ const [x,y]=noseXY(); bubble('haa…',x+u*7,y-u*9,4.2,'#e8f6ff'); },650); bLater(()=>U.classList.remove('sniff'),1100); }
+/* falling snow on the light canvas: soft flakes, some of them glitter */
+function snowFlake(any){ const u=vu(); fxAdd({k:'snow',x:Math.random()*innerWidth*1.1-innerWidth*.05,y:any?Math.random()*innerHeight:-u*2,vy:(3.5+Math.random()*4.5)*u,vx:(Math.random()-.4)*3*u,ph:Math.random()*6,s:.4+Math.random()*.75,gl:Math.random()<.4,life:40,amb:1,c:'rgba(235,245,255,.95)'}); }
+function frostSpark(y0,h){ const u=vu(); fxAdd({k:'dust',x:Math.random()*innerWidth,y:innerHeight*(y0+Math.random()*h),vx:0,vy:0,life:.8+Math.random()*.9,s:.3+Math.random()*.45,c:rnd(['rgba(230,245,255,.95)','rgba(255,255,255,.95)','rgba(200,225,255,.9)'])}); }
+/* warm rays from the sun, slowly turning (low alpha, many thin wedges) */
+function sunRays(P,K){ const sc=TB.sc; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const p=P(), k=K(); if(!p||k<.02) return; const u=vu(), cx=FX.cx, L=u*95;
+  cx.save(); cx.translate(p[0],p[1]); cx.rotate(tn/9000); cx.globalCompositeOperation='lighter';
+  for(let i=0;i<12;i++){ const a=i/12*6.283, w=.06+.03*Math.sin(tn/700+i*1.9), g=cx.createRadialGradient(0,0,u*7,0,0,L); g.addColorStop(0,`rgba(255,236,170,${(.24*k).toFixed(3)})`); g.addColorStop(1,'rgba(255,220,140,0)');
+    cx.fillStyle=g; cx.beginPath(); cx.moveTo(0,0); cx.arc(0,0,L,a-w,a+w); cx.closePath(); cx.fill(); }
+  cx.restore(); cx.globalCompositeOperation='source-over'; }); }
+/* a sunbeam through the dewdrop, split into the colours of the rainbow */
+function prismFx(S,D){ const t0=now(), sc=TB.sc; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const s=S(), d=D(); if(!s||!d) return; const u=vu(), cx=FX.cx, k=Math.min(1,(tn-t0)/900);
+  cx.lineCap='round'; cx.globalCompositeOperation='lighter'; const g=cx.createLinearGradient(s[0],s[1],d[0],d[1]); g.addColorStop(0,'rgba(255,250,220,0)'); g.addColorStop(1,`rgba(255,250,225,${(.55*k).toFixed(3)})`);
+  cx.strokeStyle=g; cx.lineWidth=u*.7; cx.beginPath(); cx.moveTo(s[0],s[1]); cx.lineTo(d[0],d[1]); cx.stroke(); cx.globalCompositeOperation='source-over';
+  const a0=Math.atan2(d[1]-s[1],d[0]-s[0]); ['255,80,110','255,160,50','255,226,60','90,210,120','80,160,255','160,110,255'].forEach((c,i)=>{ const a=a0+(i-2.5)*.075, L=u*(15+3*Math.sin(tn/380+i)), x1=d[0]+Math.cos(a)*L, y1=d[1]+Math.sin(a)*L;
+    const q=cx.createLinearGradient(d[0],d[1],x1,y1); q.addColorStop(0,`rgba(${c},${(.8*k).toFixed(3)})`); q.addColorStop(1,`rgba(${c},0)`); cx.strokeStyle=q; cx.lineWidth=u*.75; cx.beginPath(); cx.moveTo(d[0],d[1]); cx.lineTo(x1,y1); cx.stroke(); }); }); }
+function peck(){ const S=TB&&TB.els.specht; if(!S) return; S.classList.remove('peck'); void S.offsetWidth; S.classList.add('peck'); tock(false); const [x,y]=relEl(S,[.1,.27]), u=vu();
+  for(let i=0;i<3;i++) fxAdd({k:'spark',x,y,vx:(Math.random()-.8)*14*u,vy:-(4+Math.random()*6)*u,life:.5,s:.7,c:'rgba(200,150,90,.9)'}); }
+function growTo(id,h1,ms){ const E=TB.els[id]; if(!E) return; const h0=+(E.dataset.h||0), t0=now(), sc=TB.sc;
+  const st=()=>{ if(!TB||TB.sc!==sc) return; const f=Math.min(1,(now()-t0)/ms), e=1-Math.pow(1-f,3); glockeSet(E,h0+(h1-h0)*e,Math.sin(f*7)*(1-f)*.35); if(f<1) requestAnimationFrame(st); else TST[id+'h']=h1; }; requestAnimationFrame(st); }
+function ringBells(id){ const E=TB.els[id]; if(!E) return; E.classList.remove('ring'); void E.offsetWidth; E.classList.add('ring'); const [x,y]=relEl(E,[.6,.22]), u=vu();
+  dingRing(x,y,u*12,'#ffffff'); bubble('kling!',x+u*3,y-u*5,3.6,'#ffffff'); chime([1568,1318,1760]); }
+/* glitter falling in waves, on the beat of the song; the singers bob along */
+function snowSong(ms,ids){ const sc=TB.sc; let i=0; const tick=()=>{ if(!TB||TB.sc!==sc) return; const u=vu(); i++;
+    for(let k=0;k<8;k++) fxAdd({k:'glit',x:Math.random()*innerWidth,y:innerHeight*Math.random()*.2-u*2,vy:(11+Math.random()*8)*u,ph:Math.random()*6,s:.45+Math.random()*.6,life:4,c:rnd(GLCOL)});
+    for(let k=0;k<5;k++) snowFlake(); ids.forEach((id,j)=>{ const e=TB.els[id]; if(e&&(i+j)%2===0) sqs(e); }); if(i%2===0) chime([[1047],[1175],[1318],[1568]][(i/2)%4]);
+    tLater(tick,ms); }; tick(); }
+/* a wooden knock (the woodpecker): short triangle tone with a falling pitch */
+function tock(on){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); const t=AC.currentTime, o=AC.createOscillator(), g=AC.createGain();
+  o.type='triangle'; o.frequency.setValueAtTime(on?1250:950,t); o.frequency.exponentialRampToValueAtTime(on?520:420,t+.06);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(on?.24:.15,t+.004); g.gain.exponentialRampToValueAtTime(.001,t+.13); o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+.15); }catch(e){} }
+function igZ(col){ FX.em.push({rate:.6,fn:()=>{ const e=TB&&TB.els.igel; if(!e||!e.isConnected||TST.igm!=='asleep') return; const [x,y]=relEl(e,[.78,.3]), u=vu();
+  particle('z',x,y,u*(2+Math.random()*1.2),col||'#dfe4ff',(x,y)=>[{transform:`translate(${x}px,${y}px) scale(.5)`,opacity:0},{transform:`translate(${x+u*3}px,${y-u*4}px) scale(1)`,opacity:.95,offset:.3},{transform:`translate(${x+u*7}px,${y-u*11}px) scale(1.2) rotate(15deg)`,opacity:0}],2400); }}); }
+const RING2='<svg class="ring2" viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="44"/><circle class="fg" cx="50" cy="50" r="44" pathLength="1"/></svg>';
+
+/* ---------- five more gestures (one finger): drift, grow, paint, beat, rise ---------- */
+Object.assign(G2,{
+ /* drift: something floats down (a snowflake); it sways toward her finger held under or beside it and slows down near it. Landing
+    anywhere near the target counts; a miss blows it back up and the next fall is slower. The ghost finger only makes it lean.
+    a:{id, to (prop, or 'uni') + at:[fx,fy], v (vh/s), tol (vh), wait}; hooks drifting(x,y), landed(x,y) */
+ drift:{ setup(){ const a=TB.a, E=TB.els[a.id]; if(E.classList.contains('kid')) unstick(E); E.getAnimations().forEach(q=>q.cancel()); E.style.transition='none';
+     TB.dfP=ctr(E); TB.dfH=TB.dfP.slice(); TB.dfVx=0; TB.dfS=1; TB.dfUp=false; TB.dfAuto=false; TB.dfDone=false; TB.dfGh=false; TB.dfLean=0; TB.dfTap=0; TB.dfT=0; TB.dfTouch=false;
+     TB.dfSp=fspot(); TB.dfSp.classList.add('on');
+     g2loop(dt=>{ const E=TB.els[a.id], u=vu(), T=tgtOf(a); putAt(TB.dfSp,...T); if(TB.dfDone) return; TB.dfT+=dt; let [x,y]=TB.dfP;
+       if(TB.dfUp){ const [hx,hy]=TB.dfH, k=Math.min(1,dt*2.2); x+=(hx-x)*k; y+=(hy-y)*k; if(Math.hypot(hx-x,hy-y)<u*1.5){ TB.dfUp=false; TB.dfTouch=false; } }
+       else if(TB.dfAuto){ const dx=T[0]-x, dy=T[1]-y, d=Math.hypot(dx,dy)||1, s=Math.min(d,u*16*dt); x+=dx/d*s; y+=dy/d*s; }
+       else { let slow=1;
+         if(TB.pd){ TB.dfTouch=true; if(Math.hypot(TB.pd.cx-x,TB.pd.cy-y)<u*22) slow=.75; if(Math.abs(x-T[0])<u*9) slow*=1.8; TB.dfVx+=((TB.pd.cx-x)*5-TB.dfVx*2.2)*dt; TB.dfVx=Math.max(-u*45,Math.min(u*45,TB.dfVx)); }
+         else TB.dfVx+=(Math.sin(TB.dfT*1.3)*u*5-TB.dfVx)*dt*1.5;
+         x+=TB.dfVx*dt; y+=u*(a.v||5.5)*TB.dfS*slow*dt; }
+       x=Math.max(u*4,Math.min(innerWidth-u*4,x)); TB.dfP=[x,y];
+       let lean=0; if(TB.dfGh){ const g=ghostXY(); if(g) lean=Math.max(-1,Math.min(1,(g[0]-x)/(u*14))); } TB.dfLean+=(lean-TB.dfLean)*Math.min(1,dt*5);
+       putAt(E,x+TB.dfLean*u*2.5,y+Math.sin(TB.dfT*2.1)*u*.6); E.style.rotate=((TB.dfVx/u)*.6+TB.dfLean*10+Math.sin(TB.dfT*1.7)*6).toFixed(1)+'deg';
+       if(TB.pd&&!TB.dfUp&&Math.random()<.3) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*4,y:y+u*3,vx:(Math.random()-.5)*6*u,vy:3*u,life:.9,s:.6+Math.random()*.6,c:'rgba(220,240,255,.9)'});
+       if(TB.sc.drifting) TB.sc.drifting(x,y); if(TB.dfUp) return;
+       if(Math.hypot(x-T[0],y-T[1])<u*(a.tol||12)) return this.land();
+       if(y>T[1]+u*9||y>innerHeight*.97) this.miss(); }); },
+   miss(){ const u=vu(), [x,y]=TB.dfP; TB.dfUp=true; TB.dfVx=0; TB.dfS=Math.max(.5,TB.dfS*.8);
+     for(let i=0;i<10;i++) fxAdd({k:'streak',x:x+(Math.random()-.5)*u*10,y:y+u*4,vx:(Math.random()-.5)*8*u,vy:-(50+Math.random()*40)*u,len:u*(2+Math.random()*3),life:.7});
+     chime([523,659,784]); if(TB.dfTouch&&!TB.dfAuto) miss2(); },
+   land(){ if(TB.dfDone||TB.done) return; TB.dfDone=true; const E=TB.els[TB.a.id], T=tgtOf(TB.a); TB.dfSp.classList.remove('on'); E.classList.remove('g2hint'); E.style.rotate='0deg'; putAt(E,...T);
+     fxBurst(T[0],T[1],22,['rgba(255,255,255,.95)','rgba(190,230,255,.95)']); glitterBurst(T[0],T[1],16,12); chime([988,1318,1568]); sqs(E); poke2();
+     if(TB.sc.landed) TB.sc.landed(...T); bLater(()=>done2(),TB.a.wait||500); },
+   down(x,y){ TB.dfD=[x,y]; TB.dfMv=0; poke2(); },
+   move(x,y){ if(TB.dfD) TB.dfMv=Math.max(TB.dfMv,Math.hypot(x-TB.dfD[0],y-TB.dfD[1])); },
+   up(){ if(TB.dfDone) return; if((TB.dfMv||0)<vu()*2&&++TB.dfTap>=3){ TB.dfTap=0; hint2(false); } },
+   path(){ const [x,y]=TB.dfP, T=tgtOf(TB.a), u=vu(), gy=y+u*12, f=[[x,gy+u*6,1,0],[x,gy,.85,1]];
+     for(let i=1;i<=4;i++){ const s=i/4; f.push([x+(T[0]-x)*s, gy+(T[1]+u*10-gy)*s,.85,1]); } f.push([T[0],T[1]+u*10,1,0]); return f; },
+   hint(){ if(TB.dfDone||TB.dfAuto) return; TB.dfGh=true; ghost(this.path(),2600); const S=TB.dfSp; S.classList.remove('on'); void S.offsetWidth; S.classList.add('on');
+     const E=TB.els[TB.a.id]; E.classList.add('g2hint'); bLater(()=>{ if(TB){ TB.dfGh=false; E.classList.remove('g2hint'); } },2650); },
+   auto(){ if(TB.dfDone||TB.dfAuto) return; TB.dfAuto=true; TB.dfUp=false; const [x,y]=TB.dfP, T=tgtOf(TB.a), u=vu();
+     ghost([[x,y+u*10,.85,1],[T[0],T[1]+u*10,.85,1],[T[0],T[1]+u*10,1,0]],Math.max(900,Math.hypot(T[0]-x,T[1]-y)/(u*16)*1000)); } },
+
+ /* grow: pull a sprout up out of the snow. The stem follows her finger upward (and leans with it), the bud opens at the top.
+    Progress stays when she lets go; after a short pull (a third) it grows on by itself. a:{id (a glockeSVG prop), ms}; hook growing(h) */
+ grow:{ setup(){ const a=TB.a, E=TB.els[a.id]; TB.gh=+(E.dataset.h||0); TB.ghT=TB.gh; TB.gLean=0; TB.gAuto=false; TB.gDone=false; TB.gq=Math.floor(TB.gh*5); TB.gTap=0; TB.gg=null;
+     TB.gsp=fspot(); TB.gsp.classList.add('on');
+     g2loop(dt=>{ const E=TB.els[a.id]; if(TB.gAuto) TB.ghT=Math.min(1,TB.ghT+dt/((a.ms||1400)/1000));
+       const was=TB.gh; TB.gh+=(TB.ghT-TB.gh)*Math.min(1,dt*9); if(TB.ghT-TB.gh<.002) TB.gh=TB.ghT;
+       let lt=0; if(TB.gg&&TB.pd){ const [bx]=this.base(); lt=Math.max(-1,Math.min(1,(TB.pd.cx-bx)/(vu()*16))); } TB.gLean+=(lt-TB.gLean)*Math.min(1,dt*(TB.gg?6:2.5));
+       glockeSet(E,TB.gh,TB.gLean); putAt(TB.gsp,...this.tip());
+       if(TB.gh>was+.0005){ if(Math.random()<.45) this.puff(); if(TB.sc.growing) TB.sc.growing(TB.gh); }
+       const q=Math.floor(TB.gh*5); if(q>TB.gq){ TB.gq=q; chime([523+q*110]); poke2(); }
+       if(TB.gh>=.995&&!TB.gDone) this.finish(); }); },
+   base(){ return relEl(TB.els[TB.a.id],[.5,.97]); },
+   tip(){ const r=TB.els[TB.a.id].getBoundingClientRect(), L=18+TB.gh*140; return [r.left+r.width*(.56+TB.gLean*.12), r.top+r.height*((194-L)/200+.05)]; },
+   top(){ const r=TB.els[TB.a.id].getBoundingClientRect(); return [r.left+r.width*.56, r.top+r.height*.24]; },
+   puff(){ const [bx,by]=this.base(), u=vu(); fxAdd({k:'fall',x:bx+(Math.random()-.5)*u*8,y:by-u*3,vx:(Math.random()-.5)*30*u,vy:-(10+Math.random()*16)*u,g:60*u,yEnd:by+u,life:1.3,s:.8+Math.random()*.6,ph:Math.random()*6,c:'rgba(255,255,255,.95)'}); },
+   down(x,y){ if(TB.gAuto||TB.gDone) return; const [tx,ty]=this.tip(), [bx,by]=this.base(), u=vu();
+     if(Math.hypot(x-tx,y-ty)>u*13&&!(Math.abs(x-bx)<u*10&&y>ty-u*6&&y<by+u*4)){ fxBurst(x,y,5,['rgba(255,255,255,.8)']); return miss2(); }
+     TB.gg={y0:y,h0:TB.ghT,mv:0,sy:y}; TB.gsp.classList.remove('on'); TB.els[TB.a.id].classList.remove('g2hint'); chime([660]); poke2(); },
+   move(x,y){ const g=TB.gg; if(!g) return; const u=vu(); g.mv=Math.max(g.mv,Math.abs(y-g.sy)); const h=g.h0+(g.y0-y)/(u*30); if(h>TB.ghT) TB.ghT=Math.min(1,h);
+     if(Math.random()<.3) fxAdd({k:'spark',x,y,vx:0,vy:-6*u,life:.5,s:1.1,c:'rgba(220,255,200,.9)'}); },
+   up(){ const g=TB.gg; if(!g) return; TB.gg=null; if(TB.gDone) return; TB.gsp.classList.add('on');
+     if(TB.ghT>=.33){ TB.gAuto=true; return; } if(TB.ghT>g.h0+.03) return; if(g.mv<vu()*2){ if(++TB.gTap>=2){ TB.gTap=0; hint2(false); } } else miss2(); },
+   frames(){ const [tx,ty]=this.tip(), u=vu(), ey=Math.max(this.top()[1],ty-u*22); return [[tx+u*4,ty+u*12,1,0],[tx,ty,1,1],[tx,ty,.82,1],[tx,ey,.82,1],[tx,ey,1,0]]; },
+   hint(){ if(TB.gAuto||TB.gDone) return; const E=TB.els[TB.a.id]; E.classList.add('g2hint'); bLater(()=>E.classList.remove('g2hint'),2400); ghost(this.frames(),2400); },
+   auto(){ if(TB.gAuto||TB.gDone) return; ghost(this.frames(),1600); TB.gAuto=true; },
+   finish(){ if(TB.gDone) return; TB.gDone=true; TB.gsp.classList.remove('on'); const E=TB.els[TB.a.id]; TB.gh=TB.ghT=1; TB.gLean=0; glockeSet(E,1,0); TST[TB.a.id+'h']=1; const [x,y]=this.tip();
+     fxBurst(x,y,26,['rgba(255,255,255,.95)','rgba(220,255,200,.9)']); glitterBurst(x,y,20,16); chime([1318,1568,2093]); done2(); } },
+
+ /* paint: brush the colour back into a grey winter picture. The colourful picture (prop a.id) lies under a canvas with its grey twin
+    (SVGP key a.grey); her finger wipes the grey away with a soft brush and leaves paint sparkles. ~60 % is enough, then the colour
+    spreads over everything. a:{id, grey, box:[cx,cy,rx,ry] (fractions of the picture: the part that counts), pct, r (brush vh)};
+    hook painting(p). The scene's cast calls G2.paint.prep() so the grey shows from the start. */
+ paint:{ prep(){ const a=TB.sc.a, E=TB.els[a.id]; if(!E||E._pc) return; const [cx,cy,rx,ry]=a.box||[.5,.6,.28,.4]; E.classList.add('paint2');
+     E.style.setProperty('--cx',cx*100+'%'); E.style.setProperty('--cy',cy*100+'%'); E.style.setProperty('--rx',rx*125+'%'); E.style.setProperty('--ry',ry*125+'%'); E.style.setProperty('--mr',1);
+     const c=document.createElement('canvas'); c.className='pcv'; E.appendChild(c); E._pc=c;
+     const draw=()=>{ if(!E.isConnected) return; const W=c.width=Math.max(8,Math.round(E.offsetWidth)), H=c.height=Math.max(8,Math.round(E.offsetHeight)), g=c.getContext('2d'), im=PAINTIMG[a.grey];
+       g.clearRect(0,0,W,H); if(im&&im.complete&&im.naturalWidth) g.drawImage(im,0,0,W,H); else { g.fillStyle='#dde1ea'; g.fillRect(0,0,W,H); } E.classList.add('ready'); };
+     const im=paintImg(a.grey); if(im.complete&&im.naturalWidth) draw(); else { draw(); im.addEventListener('load',draw,{once:true}); } },
+   setup(){ const a=TB.a, E=TB.els[a.id]; this.prep(); const c=E._pc, [cx,cy,rx,ry]=a.box||[.5,.6,.28,.4]; TB.pcv=c; TB.pcx=c.getContext('2d');
+     const W=c.width, H=c.height, NX=20, NY=12; TB.pgr=[];
+     for(let j=0;j<NY;j++) for(let i=0;i<NX;i++){ const fx=cx-rx+(i+.5)/NX*2*rx, fy=cy-ry+(j+.5)/NY*2*ry; if(((fx-cx)/rx)**2+((fy-cy)/ry)**2<1) TB.pgr.push({x:fx*W,y:fy*H,on:true}); }
+     TB.pN=TB.pgr.length; TB.pp=0; TB.pq=0; TB.pLast=null; TB.pAuto=false; TB.pTap=0; TB.pDone=false; TB.pG=0; TB.pMv=0; },
+   rad(){ return vu()*(TB.a.r||11); },
+   wipe(x,y,rad){ const c=TB.pcv; if(!c||TB.pDone) return 0; const r=c.getBoundingClientRect(), k=c.width/r.width, cx=(x-r.left)*k, cy=(y-r.top)*k, R=rad*k, g=TB.pcx;
+     if(cx<-R||cy<-R||cx>c.width+R||cy>c.height+R) return 0;
+     g.globalCompositeOperation='destination-out'; const gr=g.createRadialGradient(cx,cy,0,cx,cy,R); gr.addColorStop(0,'rgba(0,0,0,1)'); gr.addColorStop(.55,'rgba(0,0,0,.9)'); gr.addColorStop(1,'rgba(0,0,0,0)');
+     g.fillStyle=gr; g.fillRect(cx-R,cy-R,R*2,R*2); g.globalCompositeOperation='source-over';
+     let hit=0; const R2=(R*.85)**2; TB.pgr.forEach(s=>{ if(s.on&&(s.x-cx)**2+(s.y-cy)**2<R2){ s.on=false; hit++; } });
+     if(hit){ TB.pp=1-TB.pgr.filter(s=>s.on).length/TB.pN; if(TB.sc.painting) TB.sc.painting(TB.pp);
+       const q=Math.floor(TB.pp*10); if(q>TB.pq){ TB.pq=q; chime([660+q*70]); poke2(); }
+       if(TB.pp>=(TB.a.pct||.6)) this.finish(); }
+     return hit; },
+   dabs(x,y){ const u=vu(); for(let i=0;i<2;i++) fxAdd({k:'spark',x:x+(Math.random()-.5)*u*6,y:y+(Math.random()-.5)*u*6,vx:(Math.random()-.5)*16*u,vy:-(4+Math.random()*10)*u,life:.6+Math.random()*.4,s:.7+Math.random()*.6,
+     c:rnd(['rgba(255,110,150,.95)','rgba(255,214,80,.95)','rgba(120,220,110,.95)','rgba(110,180,255,.95)','rgba(190,130,255,.95)'])}); },
+   stroke(x,y,rad){ let n=0; const L=TB.pLast; if(L){ const d=Math.hypot(x-L[0],y-L[1]), st=Math.max(1,Math.ceil(d/(rad*.4))); for(let i=1;i<=st;i++) n+=this.wipe(L[0]+(x-L[0])*i/st, L[1]+(y-L[1])*i/st, rad); }
+     else n+=this.wipe(x,y,rad); TB.pLast=[x,y]; if(Math.random()<.7) this.dabs(x,y); return n; },
+   down(x,y){ TB.pLast=null; TB.pG=0; TB.pMv=0; TB.p0=[x,y]; this.move(x,y); },
+   move(x,y){ if(!TB.pd||TB.pDone||TB.pAuto) return; if(TB.p0) TB.pMv=Math.max(TB.pMv,Math.hypot(x-TB.p0[0],y-TB.p0[1])); TB.pG+=this.stroke(x,y,this.rad()); },
+   up(){ if(TB.pDone) return; TB.pLast=null; if(TB.pMv<vu()*2){ if(++TB.pTap>=2){ TB.pTap=0; hint2(false); } } else if(!TB.pG) miss2(); },
+   zig(){ const E=TB.els[TB.a.id], r=E.getBoundingClientRect(), [cx,cy,rx,ry]=TB.a.box||[.5,.6,.28,.4], f=[];
+     for(let i=0;i<7;i++) f.push([r.left+r.width*(cx+(i%2?.7:-.7)*rx), r.top+r.height*(cy-ry*.6+i*ry*.2),.85,i?1:0]); f.push([r.left+r.width*cx,r.top+r.height*(cy+ry*.7),1,0]); return f; },
+   hint(){ if(TB.pAuto||TB.pDone) return; ghost(this.zig(),2800); ghostTrail(2800,(x,y)=>this.dabs(x,y)); },
+   auto(){ if(TB.pAuto||TB.pDone) return; TB.pAuto=true; ghost(this.zig(),3200); const sc=TB.sc, t0=now(); let L=null;
+     const iv=setInterval(()=>{ if(!TB||TB.sc!==sc||TB.pDone||now()-t0>3200){ clearInterval(iv); return; } const g=ghostXY(); if(!g){ L=null; return; } TB.pLast=L; this.stroke(g[0],g[1],this.rad()*1.2); L=g; },40); taleT.push(iv);
+     bLater(()=>this.finish(),3300); },
+   finish(){ if(TB.pDone) return; TB.pDone=true; const E=TB.els[TB.a.id], c=TB.pcv, r=E.getBoundingClientRect(), u=vu(); c.style.opacity=0; bLater(()=>c.remove(),1800);
+     const t0=now(), step=()=>{ if(!E.isConnected) return; const f=Math.min(1,(now()-t0)/2600), e=1-Math.pow(1-f,3); E.style.setProperty('--mr',(1+2.4*e).toFixed(3)); if(f<1) requestAnimationFrame(step); }; requestAnimationFrame(step);
+     const [cx,cy]=[r.left+r.width*(TB.a.box||[.5,.6])[0], r.top+r.height*(TB.a.box||[.5,.6])[1]];
+     for(let i=0;i<5;i++) bLater(()=>{ for(let j=0;j<14;j++){ const a=Math.random()*6.283, d=u*(10+i*14); this.dabs(cx+Math.cos(a)*d*1.6,cy+Math.sin(a)*d*.8); } },i*260);
+     chime([784,988,1175,1568]); done2(); } },
+
+ /* beat: tap along to a steady beat (a woodpecker knocking). Every tap counts, anywhere – taps close to the beat light up gold and
+    ring brighter, uneven ones still count. a:{n, ms (beat), win (ms), at:[id,fx,fy] (where the beat shows), wait}; hooks beat(i) on
+    every beat, beatStep(k,onBeat,x,y) after tap k */
+ beat:{ setup(){ TB.bk=0; TB.bT0=now()+300; TB.bI=-1; TB.bAuto=false; TB.bDone=false; TB.bPT=0; TB.bsp=fspot(); TB.bsp.classList.add('on','bt');
+     g2loop(()=>{ const P=TB.a.ms||760, t=now(); putAt(TB.bsp,...this.spot()); if(t<TB.bT0) return; const i=Math.floor((t-TB.bT0)/P); if(i>TB.bI){ TB.bI=i; this.tick(i); } }); },
+   spot(){ const a=TB.a; return a.at&&TB.els[a.at[0]]? relEl(TB.els[a.at[0]],[a.at[1],a.at[2]]) : [innerWidth/2,innerHeight/2]; },
+   tick(i){ const [x,y]=this.spot(), u=vu(); if(TB.bDone) return; const S=TB.bsp; S.classList.remove('beat'); void S.offsetWidth; S.classList.add('beat');
+     if(TB.sc.beat) TB.sc.beat(i); else tock(false);
+     if(TB.bAuto){ ghost([[x,y+u*6,1,0],[x,y,.75,1],[x,y,1,0]],320); bLater(()=>this.tap(x,y,true),90); } },
+   phase(t){ const P=TB.a.ms||760, r=((t-TB.bT0)%P+P)%P; return Math.min(r,P-r); },
+   down(x,y){ if(TB.bDone||TB.bAuto) return; this.tap(x,y,false); },
+   tap(x,y,auto){ const t=now(); if(t-TB.bPT<220||TB.bDone||TB.done) return; TB.bPT=t; const a=TB.a, n=a.n||5, on=auto||this.phase(t)<(a.win||180), k=++TB.bk, u=vu();
+     dingRing(x,y,(on?17:10)*u,on?'#ffe27a':'#ffffff'); fxBurst(x,y,on?18:8,on?['rgba(255,226,122,.95)','rgba(255,255,255,.95)']:['rgba(255,255,255,.85)']);
+     if(on){ const [sx,sy]=this.spot(); dingRing(sx,sy,14*u,'#ffe27a'); glitterBurst(x,y,8,8); }
+     tock(true); chime([[659,784,880,988,1175,1318][Math.min(5,k-1)]*(on?1:.75)]); poke2();
+     if(TB.sc.beatStep) TB.sc.beatStep(k,on,x,y);
+     if(k>=n){ TB.bDone=true; TB.bsp.classList.remove('on'); bLater(()=>done2(),a.wait||700); } },
+   hint(){ if(TB.bDone||TB.bAuto) return; const [x,y]=this.spot(), u=vu(), P=TB.a.ms||760, t=now(), next=P-(((t-TB.bT0)%P+P)%P);
+     const f=[[x+u*5,y+u*12,1,0]]; for(let i=0;i<3;i++) f.push([x,y,1,1],[x,y,.75,1]); f.push([x,y,1,1],[x,y,1,0]);
+     bLater(()=>{ if(TB&&TB.live&&!TB.bAuto) ghost(f,P/2*(f.length-1)); },next); },
+   auto(){ if(TB.bDone||TB.bAuto) return; TB.bAuto=true; } },
+
+ /* rise: lay the finger on it and keep it there; it floats up as mist along a soft curve into its target (a cloud), getting smaller
+    and fainter. Progress stays when she lets go; after 60 % it rises on by itself. a:{id, to + at:[fx,fy], ms}; hooks rising(p), risen() */
+ rise:{ setup(){ const a=TB.a; let E=TB.els[a.id]; if(E.classList.contains('kid')) E=unstick(E); TB.rp=TST.rp||0; TB.riHold=false; TB.riAuto=false; TB.rq=Math.floor(TB.rp*5); TB.riTap=0; TB.riDone=false; TB.riP=0;
+     TB.riP0=ctr(E); const rr=E.getBoundingClientRect(), R=el('div','',RING2).firstChild; R.style.width=R.style.height=Math.max(rr.width,rr.height)*2.2+'px'; E.appendChild(R); TB.ring=R;
+     g2loop(dt=>{ if(TB.riDone) return; if(TB.riHold||TB.riAuto) TB.rp=Math.min(1,TB.rp+dt/(TB.riAuto?2.2:(a.ms||3000)/1000)); this.place(); if(TB.rp>=1) this.finish(); }); },
+   pos(p){ const [x0,y0]=TB.riP0, [x1,y1]=tgtOf(TB.a), u=vu(), mx=x0+(x1-x0)*.2+u*10, my=y0+(y1-y0)*.55, q=1-p;
+     return [q*q*x0+2*q*p*mx+p*p*x1+Math.sin(p*10)*u*2.2*(1-p), q*q*y0+2*q*p*my+p*p*y1]; },
+   place(){ const E=TB.els[TB.a.id], p=TB.rp, [x,y]=this.pos(p), bb=E.querySelector('.bb')||E, u=vu(); putAt(E,x,y); bb.style.scale=(1-p*.5).toFixed(3); bb.style.opacity=(1-p*.6).toFixed(2);
+     TB.ring.querySelector('.fg').style.strokeDashoffset=(1-p).toFixed(3); TST.rp=p;
+     if((TB.riHold||TB.riAuto)&&p<1&&Math.random()<.6){ fxAdd({k:'steam',x:x+(Math.random()-.5)*u*5,y:y+u*2,vy:-(5+Math.random()*6)*u,vx:(Math.random()-.5)*5*u,ph:Math.random()*6,s:1.8+Math.random()*1.4,life:2.2,c:'rgba(255,255,255,.95)'});
+       if(Math.random()<.5) fxAdd({k:'spark',x:x+(Math.random()-.5)*u*6,y:y+(Math.random()-.5)*u*6,vx:(Math.random()-.5)*6*u,vy:-6*u,life:.7,s:.6,c:rnd(['rgba(200,235,255,.95)','rgba(255,255,255,.95)'])}); }
+     if(TB.sc.rising) TB.sc.rising(p); const q=Math.floor(p*5); if(q>TB.rq){ TB.rq=q; chime([660+q*110]); poke2(); } },
+   down(x,y){ if(TB.riAuto||TB.riDone) return; const [ex,ey]=ctr(TB.els[TB.a.id]), u=vu();
+     if(Math.hypot(x-ex,y-ey)>u*13&&Math.hypot(x-TB.riP0[0],y-TB.riP0[1])>u*13){ fxBurst(x,y,5,['rgba(255,255,255,.8)']); return miss2(); }
+     TB.riHold=true; TB.riP=TB.rp; TB.els[TB.a.id].classList.add('pressed'); TB.ring.classList.remove('pulse'); poke2(); },
+   up(){ if(!TB.riHold) return; TB.riHold=false; TB.els[TB.a.id].classList.remove('pressed'); if(TB.riDone) return;
+     if(TB.rp>=.6){ TB.riAuto=true; return; } if(TB.rp-TB.riP<.03){ if(++TB.riTap>=2){ TB.riTap=0; hint2(false); } } },
+   hint(){ if(TB.riAuto||TB.riDone) return; const [x,y]=ctr(TB.els[TB.a.id]), u=vu(); TB.ring.classList.add('pulse'); bLater(()=>TB.ring&&TB.ring.classList.remove('pulse'),2700);
+     ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.82,1],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],2600); },
+   auto(){ if(TB.riAuto||TB.riDone) return; const [x,y]=ctr(TB.els[TB.a.id]); ghost([[x,y+vu()*10,1,0],[x,y,.82,1],[x,y,.82,1],[x,y,1,0]],1800); TB.riAuto=true; },
+   finish(){ if(TB.riDone) return; TB.riDone=true; TB.riHold=TB.riAuto=false; TB.rp=1; this.place(); TB.ring.style.opacity=0; const [x,y]=tgtOf(TB.a);
+     fxBurst(x,y,26,['rgba(255,255,255,.95)','rgba(200,235,255,.95)']); glitterBurst(x,y,20,16); chime([784,988,1175,1568]); if(TB.sc.risen) TB.sc.risen(); done2(); } }
+});
+
+/* ================= Die Schneeflocke und der Frühling ================= */
+/* motif: her verse – sung as the wish (1) and, turned into its answer, by everyone at the end (7); the unicorn's sneeze opens (1) and
+   closes (7) the tale. Rule of three: the bells, the sun and the animals wake the spring, and three times she changes – snow, dew,
+   cloud – and comes back as snow. Her face: curious – worried – glowing happy, also as a dewdrop. */
+const SVERS='Flöckchen, Flöckchen, weiß und klein – wo mag wohl der Frühling sein?', SVERS2='Flöckchen, Flöckchen, weiß und klein – bald wird wieder Frühling sein!';
+/* real clip lengths in s, filled in after the voice job (until then atPh estimates 12.6 characters per second) */
+const SDUR={};
+const SCHNEE2={id:'schneeflocke', v2:true, title:'Die Schneeflocke und der Frühling', icon:'❄️', cover:'linear-gradient(180deg,#0e1640 0%,#24387a 55%,#6a8ad0 100%)',
+ cast(sc){ if(sc.st) Object.assign(TST,sc.st); const A=TB.act, mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
+     const P=par&&TB.els[par]; if(P){ e.classList.add('kid'); (P.querySelector(':scope>.ub')||P.querySelector(':scope>.bb')||P).appendChild(e); } else A.appendChild(e); TB.els[id]=e; return e; };
+  if(sc.sun){ const [x,y,z]=sc.sun; mk('sonne','sonf',sunfSVG(),x,y,z).dataset.mood=TST.sum||'sleepy'; }
+  (sc.wk||[]).forEach(([id,x,y,z,face])=>{ const w=mk(id,'wlk'+(face?'':' grau'),wolkeSVG(face,!face),x,y,z); if(face) w.dataset.mood=TST.wom||'smile'; });
+  if(sc.ig){ const [x,y,z]=sc.ig; mk('igel','igl',igelSVG(),x,y,z).dataset.mood=TST.igm||'asleep'; }
+  if(sc.sp){ const [x,y,z,par]=sc.sp; mk('specht','spc',spechtSVG(),x,y,z,par).dataset.mood='smile'; }
+  (sc.gl||[]).forEach(([id,x,y,z,h])=>{ const g=mk(id,'glk',glockeSVG(),x,y,z); glockeSet(g,h!=null?h:(TST[id+'h']||0)); });
+  if(sc.ro){ const [x,y,z]=sc.ro; mk('rose','rose2',roseSVG(),x,y,z).style.setProperty('--op',TST.op||0); }
+  if(sc.rk){ const [x,y,z,par,flip]=sc.rk, r=mk('rotkehlchen','rkh'+(flip?' flip':''),robinSVG(),x,y,z,par); r.dataset.mood=TST.rkm||'smile'; }
+  if(sc.fk){ const [x,y,z,par]=sc.fk, f=mk('flocke','flk'+(TST.drop?' drop':''),flockeSVG(),x,y,z,par); f.dataset.mood=TST.flm||'curious'; f.style.setProperty('--fz',TST.fz||1); }
+  if(sc.a&&sc.a.t==='paint') G2.paint.prep(); },
+ /* little reactions when she taps someone between the tasks */
+ react(id,b,x,y){ const u=vu();
+  if(id==='flocke'){ sqs(b); bubble(rnd(TST.drop?['hihi!','plitsch!','glitzer!']:['hihi!','hui!','brr, schön kalt!']),x,y-u*5,3.6,'#e8f6ff'); fxBurst(x,y,12,['rgba(255,255,255,.95)','rgba(190,230,255,.95)']); chime([1568,2093]); return true; }
+  if(id==='rotkehlchen'){ sqs(b); bubble(rnd(['piep!','tirili!','piep, piep!']),x,y-u*5,3.6,'#ffd8c0'); chime([1760,2093,1760]); return true; }
+  if(id==='sonne'){ sqs(b); bubble(rnd(TST.sum==='sleepy'?['gähn…','hm?']:['hallo!','hihi!']),x,y-u*6,4,'#fff3b0'); chime([784,988]); return true; }
+  if(id==='igel'){ sqs(b); bubble(TST.igm==='asleep'?'schnarch…':rnd(['schnüff!','hallo!']),x,y-u*5,3.6,'#f0dcc0'); chime([523,659]); return true; }
+  if(id==='specht'){ peck(); bubble('tock!',x,y-u*5,3.6,'#ffe0e0'); return true; }
+  if(id==='wolke'){ sqs(b); bubble(rnd(['huhu!','hallo!']),x,y-u*5,4,'#eef6ff'); chime([659,880]); return true; }
+  if(/^wk\d$/.test(id)){ sqs(b); chime([392]); return true; }
+  if(/^(glocke|gl\d|gs\d)$/.test(id)){ if(+(b.dataset.h||0)>.6) ringBells(id); else { sqs(b); chime([1318]); } return true; }
+  if(id==='rose'){ sqs(b); hearts(x,y,2); chime([1175]); return true; }
+  if(id==='bild'){ fxBurst(x,y,8); chime([1175]); return true; }
+  if(/^(b\d|sf|bl\d+)$/.test(id)){ sqs(b); chime([1318]); return true; }
+  return false; },
+ sc:[
+ /* 1 – the wish: a winter night; the snowflake dances down, she guides it onto the unicorn's nose – hatschi! – up to the robin */
+ {set:'winternacht', dark:.5, u:[30,72,34], fk:[79,39,9], st:{drop:false,fz:1}, p:[['ast','AST',90,30,10]], rk:[50,8,10,'ast',1], fx:{snow:5,frost:4,fy:.74},
+  lights:[{id:'flocke',r0:9,rT:9,k0:.85,kT:.85},{id:'uni',r0:15,rT:15,k0:.5,kT:.5},{name:'moonL',fn:()=>{ const m=TB&&TB.st.querySelector('.moon2'); return m?ctr(m):null; },r0:26,rT:26,k0:.7,kT:.7},{id:'rotkehlchen',r0:7,rT:7,k0:.5,kT:.5}],
+  enter(){ TST.flm='curious'; TST.rkm='smile'; TST.fz=1; TST.drop=false; mood('flocke','curious');
+    const F=TB.els.flocke; try{ F.animate([{transform:'translate(-12vh,-34vh) rotate(-40deg)',opacity:0},{transform:'translate(6vh,-22vh) rotate(20deg)',opacity:1,offset:.3},{transform:'translate(-5vh,-10vh) rotate(-15deg)',offset:.65},{transform:'none'}],{duration:5600,easing:'ease-in-out'}); }catch(e){}
+    bLater(()=>{ if(TB.done) return; mood('flocke','oh'); const u=vu(); [[.2,.18],[.8,.12],[.44,.3]].forEach(([fx,fy],i)=>bLater(()=>bubble('bald…',innerWidth*fx,innerHeight*fy,3,'#dfefff'),i*450)); },atPh('flüsterten'));
+    bLater(()=>{ if(!TB.done) mood('flocke','curious'); },atPh('Was ist das'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','sing'); notes(TB.els.flocke,5); },atPh('und sie sang'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','curious'); uniHop(); },atPh('Unten im Schnee')); },
+  ready(){ mood('flocke','curious'); },
+  a:{t:'drift',id:'flocke',to:'uni',at:[.93,.38],v:4.6,tol:12,w:'SCHNEE'},
+  s:'Es war einmal eine kleine Schneeflocke. In einer stillen Winternacht tanzte sie vom Himmel herab. Die anderen Flocken flüsterten: Bald kommt der Frühling! Was ist das wohl, der Frühling? dachte die kleine Schneeflocke, und sie sang: '+SVERS+' Unten im Schnee stand dein Einhorn. Halte deinen Finger unter die Schneeflocke, und bring sie zu seiner Nase!',
+  h:'Halte deinen Finger unter die Schneeflocke. Sie schwebt zu deinem Finger!',
+  landed(){ const F=TB.els.flocke; stickTo(F,TB.els.uni.querySelector('.ub'),.93,.36); mood('flocke','happy'); },
+  d:['Sie landete genau auf der Nase von deinem Einhorn. Das kitzelte!',
+     ()=>{ sniff(); bLater(()=>sneeze(()=>{ const F=TB.els.flocke; mood('flocke','oh'); flyStick(F,TB.els.ast,.32,.1,1300,20,()=>mood('flocke','curious')); }),atPh('hatschi','d2')); },
+     'Ha… ha… hatschi!',
+     ()=>{ const R=TB.els.rotkehlchen; mood('rotkehlchen','oh'); sqs(R);
+       bLater(()=>{ if(!TB) return; mood('rotkehlchen','sing'); notes(R,3); },atPh('piepste','d3'));
+       bLater(()=>{ mood('flocke','happy'); mood('rotkehlchen','smile'); },atPh('bunt und warm','d3'));
+       bLater(()=>{ mood('flocke','curious'); },atPh('Aber er','d3'));
+       bLater(()=>{ mood('rotkehlchen','happy'); sqs(R); R.classList.add('hop'); mood('flocke','happy'); },atPh('Komm','d3')); },
+     'Hui! Die Schneeflocke flog hoch hinauf, bis zum Zweig von einem Rotkehlchen. Der Frühling? piepste das Rotkehlchen. Der ist bunt und warm! Aber er schläft noch tief unter dem Schnee. Komm, wir wecken ihn!', 1000]},
+ /* 2 – helper 1: under the snow a snowdrop sleeps; she pulls it up, its bells ring, more snowdrops wake */
+ {set:'schneemorgen', dark:0, u:[15,64,28], fk:[31,45,8], st:{drop:false,fz:1}, rk:[37,80,9], gl:[['glocke',61,66,22],['gl2',77,75,14],['gl3',47,79,12]], fx:{snow:1.2},
+  lights:[{id:'flocke',r0:7,rT:7,k0:.5,kT:.5,warm:.15}],
+  enter(){ TST.flm='curious'; TST.rkm='smile'; mood('flocke','curious');
+    const R=TB.els.rotkehlchen; try{ R.animate([{transform:'translate(-26vh,0)'},{transform:'translate(-17vh,-5vh)'},{transform:'translate(-9vh,0)'},{transform:'translate(-5vh,-3vh)'},{transform:'none'}],{duration:2400,easing:'ease-out'}); }catch(e){}
+    bLater(()=>{ if(TB.done) return; R.classList.remove('hop'); void R.offsetWidth; R.classList.add('hop'); },atPh('hüpfte'));
+    bLater(()=>{ if(TB.done) return; mood('rotkehlchen','oh'); sqs(TB.els.glocke); const [x,y]=relEl(TB.els.glocke,[.62,.86]); bubble('chrr…',x,y-vu()*4,3.2,'#ffffff'); },atPh('Hier unten'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','oh'); sqs(TB.els.glocke); },atPh('Es steckt fest'));
+    bLater(()=>{ if(!TB.done){ mood('flocke','smile'); mood('rotkehlchen','smile'); } },atPh('Zieh es')); },
+  ready(){ mood('flocke','smile'); mood('rotkehlchen','smile'); },
+  a:{t:'grow',id:'glocke',ms:1400,w:'GLOCKE'},
+  s:'Am Morgen war alles still und weiß. Das Rotkehlchen hüpfte durch den Schnee und horchte. Hier unten schläft ein Schneeglöckchen, piepste es. Es steckt fest! Zieh es mit deinem Finger nach oben, ganz sanft.',
+  h:'Leg den Finger auf die kleine Knospe und zieh sie nach oben!',
+  growing(h){ if(h>.5&&TST.flm!=='happy'){ TST.flm='happy'; mood('flocke','happy'); } },
+  done(){ ringBells('glocke'); mood('rotkehlchen','happy'); },
+  d:['Da wuchs das Schneeglöckchen aus dem Schnee, und seine Glöckchen gingen auf.',
+     ()=>{ growTo('gl2',1,1500); bLater(()=>growTo('gl3',1,1500),500); bLater(()=>{ ringBells('gl2'); ringBells('glocke'); },1600); bLater(()=>ringBells('gl3'),2100);
+       bLater(()=>{ mood('flocke','sing'); notes(TB.els.flocke,3); mood('rotkehlchen','sing'); notes(TB.els.rotkehlchen,3); },atPh('Hörst du','d2')); },
+     'Kling, kling, kling! Da wachten noch mehr Schneeglöckchen auf. Hörst du? Der Frühling wird wach!', 900]},
+ /* 3 – helper 2: the bells woke the sun, but grey clouds lie before it; she paints the grey world colourful, the clouds part */
+ {set:'grautag', dark:.2, u:[12,61,25], fk:[26,40,7], st:{drop:false,fz:1}, rk:[50,25,8,'uni'], sun:[72,20,18], wk:[['wk3',46,23,22],['wk1',64,21,28],['wk2',82,18,26]],
+  p:[['bild','WIESE',50,66,85,'bild']],
+  lights:[{id:'sonne',name:'sunL',r0:7,rT:7,k0:.35,kT:.35,warm:.3},{id:'flocke',r0:7,rT:7,k0:.5,kT:.5}],
+  enter(){ TST.flm='curious'; TST.sum='sleepy'; TST.rkm='smile'; mood('sonne','sleepy');
+    const sk=TB.st.querySelector('.l-sky'), o=el('div','skyw'); o.style.background='linear-gradient(180deg,#4aa6ee 0%,#8acdf8 50%,#d8f2ff 100%)'; sk.appendChild(o); TB.skyw=o;
+    bLater(()=>{ if(TB.done) return; mood('sonne','peek'); sqs(TB.els.sonne); bLater(()=>{ if(!TB.done&&TST.sum!=='smile') mood('sonne','sleepy'); },2200); },atPh('dass die Sonne'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','oh'); ['wk1','wk2','wk3'].forEach(id=>sqs(TB.els[id])); },atPh('dicke graue'));
+    bLater(()=>{ if(!TB.done) mood('flocke','smile'); },atPh('Mal die Welt')); },
+  ready(){ mood('flocke','smile'); },
+  a:{t:'paint',id:'bild',grey:'WIESEG',box:[.5,.6,.27,.38],pct:.6,r:11,w:'SONNE'},
+  s:'Die Glöckchen läuteten so hell, dass die Sonne aufwachte. Aber dicke graue Wolken lagen vor ihr, und die ganze Welt war grau. Mal die Welt wieder bunt! Fahr mit deinem Finger über das graue Bild.',
+  h:'Fahr mit dem Finger hin und her über das Bild, dann wird es bunt!',
+  painting(p){ const W=TB.els; W.wk1.style.left=(64-p*14)+'%'; W.wk2.style.left=(82+p*10)+'%'; W.wk3.style.left=(46-p*16)+'%'; TB.skyw.style.opacity=(p*.35).toFixed(2); FX.darkT=.2*(1-p*.6);
+    TB.sunL.rT=7+p*12; TB.sunL.kT=.35+p*.4; if(p>.3&&TST.sum==='sleepy') mood('sonne','peek'); if(p>.25&&TST.flm!=='happy') mood('flocke','happy'); },
+  done(){ const W=TB.els; TB.st.classList.add('spring'); TB.skyw.style.opacity=1; FX.darkT=0; FX.clean=true; W.wk1.style.left='40%'; W.wk2.style.left='115%'; W.wk3.style.left='-16%';
+    ['wk1','wk2','wk3'].forEach(id=>W[id].classList.add('white')); mood('sonne','smile'); TB.sunL.rT=34; TB.sunL.kT=1; TB.sunL.warm=1; mood('rotkehlchen','happy'); },
+  d:['Da wurde die Wiese bunt, und die grauen Wolken schoben sich zur Seite.',
+     ()=>{ const S=TB.els.sonne; mood('sonne','laugh'); sqs(S); sunRays(()=>ctr(S),()=>1); hearts(...ctr(S),3);
+       const sc=TB.sc, t0=now(); FX.em.push({rate:6,fn:()=>{ if(!TB||TB.sc!==sc||now()-t0>5000) return; const u=vu(); fxAdd({k:'steam',x:Math.random()*innerWidth,y:innerHeight*(.62+Math.random()*.3),vy:-(5+Math.random()*6)*u,vx:(Math.random()-.5)*3*u,ph:Math.random()*6,s:2.4,life:2.6,c:'rgba(255,255,255,.9)'}); }});
+       bLater(()=>{ mood('flocke','sing'); notes(TB.els.flocke,3); },atPh('Der Schnee','d2')); },
+     'Die Sonne lachte und schickte ihre warmen Strahlen. Der Schnee schmolz, und überall wurde es grün.', 1000]},
+ /* 4 – helper 3: the animals still sleep; she taps along with the woodpecker's beat, they wake one after the other */
+ {set:'fruehwiese', dark:0, u:[14,64,25], fk:[27,44,7], st:{drop:false,fz:1}, rk:[33,80,9], sun:[9,30,13], ig:[51,83,17], sp:[60,66,9,'eiche'],
+  p:[['stock','HIVE',90,74,17],['laub','🍂',47,90,6],['laub2','🍁',55,91,5],['b1','🐝',88,64,4.5,'gone2'],['b2','🐝',91,67,4,'gone2'],['sf','🦋',70,86,5,'gone2'],['bl1','🌷',70,90,5],['bl2','🌼',62,93,4]],
+  lights:[{id:'sonne',r0:14,rT:14,k0:.6,kT:.6,warm:.6}],
+  enter(){ TST.flm='happy'; TST.sum='smile'; TST.igm='asleep'; mood('igel','asleep'); mood('sonne','smile'); igZ('#fff6e0');
+    bLater(()=>{ if(TB.done) return; mood('flocke','oh'); sqs(TB.els.igel); },atPh('der Igel'));
+    bLater(()=>{ if(TB.done) return; sqs(TB.els.stock); bubble('zzz…',...relEl(TB.els.stock,[.5,.2]),3.2,'#fff3b0'); },atPh('die Bienen'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','smile'); [0,1,2].forEach(i=>bLater(()=>{ if(!TB.done) peck(); },i*700)); },atPh('klopfte'));
+    bLater(()=>{ if(TB.done) return; [0,1,2].forEach(i=>bLater(()=>{ if(!TB.done) peck(); },i*700)); },atPh('Tippe im Takt')); },
+  ready(){ mood('flocke','smile'); },
+  a:{t:'beat',n:5,ms:760,win:190,at:['specht',.1,.27],w:'IGEL'},
+  s:'Nun war die Wiese grün. Nur die Tiere schliefen noch: der Igel unter den Blättern und die Bienen in ihrem Haus. Da kam der Specht und klopfte an den Baum: tock, tock, tock. Klopf mit! Tippe im Takt, so wie der Specht.',
+  h:'Tippe mit dem Finger im Takt: tock, tock, tock!',
+  beat(){ peck(); },
+  beatStep(k){ const I=TB.els.igel, u=vu();
+    if(k===1){ mood('igel','blink'); I.classList.remove('sniff'); void I.offsetWidth; I.classList.add('sniff'); bubble('schnüff?',...relEl(I,[.85,.2]),3.4,'#f0dcc0'); }
+    if(k===2){ mood('igel','awake'); sqs(I); ['laub','laub2'].forEach((id,i)=>{ const L=TB.els[id]; if(L) flyOff(L,i?16:-14,-34,1500); }); bLater(()=>mood('igel','happy'),1100); }
+    if(k===3){ ['b1','b2'].forEach((id,i)=>bLater(()=>{ const b=TB.els[id]; b.classList.remove('gone2'); b.classList.add('buzz'); },i*260)); sqs(TB.els.stock); bubble('summ!',...relEl(TB.els.stock,[.5,.1]),3.6,'#fff3b0'); }
+    if(k===4){ const s=TB.els.sf; s.classList.remove('gone2'); s.classList.add('bfly'); mood('flocke','happy'); }
+    if(k===5){ mood('rotkehlchen','sing'); notes(TB.els.rotkehlchen,4); } },
+  done(){ mood('igel','happy'); mood('rotkehlchen','happy'); mood('flocke','happy'); },
+  d:['Da wachten alle auf: der Igel, die Bienen und der Schmetterling.',
+     ()=>{ ['igel','rotkehlchen','flocke'].forEach((id,i)=>bLater(()=>{ const e=TB.els[id]; e.classList.add('sing'); notes(e,3); },i*160)); TB.els.uni.classList.add('sing'); chime([523,659,784,1047]); },
+     'Guten Morgen, Frühling! riefen sie.', 900]},
+ /* 5 – changing: she grows warm and smaller; don't be afraid – the rose opens under her finger, she sits in it and becomes a dewdrop */
+ {set:'rosengarten', dark:0, u:[14,64,25], fk:[35,46,8], st:{drop:false,fz:1,op:0}, rk:[27,80,8.5], sun:[9,30,13], ro:[62,61,34],
+  lights:[{id:'sonne',r0:14,rT:14,k0:.6,kT:.6,warm:.7},{id:'rose',name:'roL',oy:.38,r0:6,rT:6,k0:.4,kT:.4,warm:.3}],
+  enter(){ TST.flm='happy'; TST.op=0; TST.fz=1; mood('flocke','happy'); mood('sonne','smile');
+    bLater(()=>{ if(TB.done) return; mood('flocke','oh'); },atPh('staunte'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','happy'); sqs(TB.els.flocke); },atPh('So bunt'));
+    bLater(()=>{ if(TB.done) return; mood('flocke','worried'); TST.fz=.72; TB.els.flocke.style.setProperty('--fz',.72); TB.els.flocke.classList.add('melt');
+      const sc=TB.sc; FX.em.push({rate:1.4,fn:()=>{ const F=TB&&TB.sc===sc&&TB.els.flocke; if(!F||TST.drop) return; const [x,y]=relEl(F,[.5,.72]), u=vu(); fxAdd({k:'drop',x:x+(Math.random()-.5)*u*2,y,vy:22*u,len:u*1.6,life:.7}); }}); },atPh('kleiner und kleiner'));
+    bLater(()=>{ if(TB.done) return; uniHop(); },atPh('Hab keine Angst'));
+    bLater(()=>{ if(!TB.done) mood('flocke','smile'); },atPh('Setz dich')); },
+  ready(){ mood('flocke','smile'); TB.els.flocke.style.setProperty('--fz',.72); },
+  a:{t:'open',id:'rose',ms:2600,rc:[.5,.36],rs:30,w:'ROSE'},
+  s:'Die kleine Schneeflocke staunte. So bunt! So schön! Aber die Sonne war warm, und die Schneeflocke wurde kleiner und kleiner. Oh je, flüsterte sie. Hab keine Angst, sagte dein Einhorn. Setz dich in die Rose. Leg deinen Finger auf die Rose, dann geht sie auf.',
+  h:'Leg den Finger auf die Rose und lass ihn liegen!',
+  opening(p){ TB.roL.rT=6+p*14; TB.roL.kT=.4+p*.5; if(p>.3&&TST.flm!=='oh'&&p<.9){ mood('flocke','oh'); } },
+  done(){ TB.els.rose.classList.add('lit'); TB.roL.rT=22; TB.roL.kT=.9; mood('flocke','happy'); },
+  d:[()=>{ bLater(()=>{ const F=TB.els.flocke, R=TB.els.rose; flyStick(F,R.querySelector('.bb'),.5,.34,1200,12,()=>{ mood('flocke','smile'); F.classList.remove('melt'); }); },atPh('setzte sich','d1')); },
+     'Langsam ging die Rose auf, und die Schneeflocke setzte sich hinein, ganz weich.',
+     ()=>{ bLater(()=>{ const F=TB.els.flocke, [x,y]=ctr(F); F.classList.add('drop'); TST.drop=true; TST.fz=1; F.style.setProperty('--fz',.95); mood('flocke','glow'); TST.flm='glow';
+         glitterBurst(x,y,24,14); fxBurst(x,y,26,['rgba(255,255,255,.95)','rgba(170,225,255,.95)']); chime([1047,1318,1568,2093]); dingRing(x,y,vu()*18,'#dff6ff'); },atPh('Wunder','d2')); },
+     'Da geschah ein kleines Wunder: Die Schneeflocke wurde ein glitzernder Tautropfen!',
+     ()=>{ prismFx(()=>ctr(TB.els.sonne),()=>ctr(TB.els.flocke)); sqs(TB.els.flocke); mood('rotkehlchen','oh'); bLater(()=>mood('rotkehlchen','happy'),1500); },
+     'Schau, sagte sie. Ich bin noch da. Nur ein bisschen anders!', 1100]},
+ /* 6 – the whole spring; the sun warms the dewdrop, she holds it and it rises as mist into a soft cloud */
+ {set:'rosengarten', dark:0, u:[14,64,25], rk:[27,80,8.5], sun:[9,30,13], ro:[62,61,34], fk:[70,54,6,'rose'], st:{drop:true,fz:1,op:1,flm:'glow',rp:0}, wk:[['wolke',76,29,24,1]],
+  lights:[{id:'sonne',r0:14,rT:14,k0:.6,kT:.6,warm:.7},{id:'flocke',name:'dL',r0:5,rT:5,k0:.6,kT:.6,warm:.2}],
+  enter(){ TST.flm='glow'; TST.wom='smile'; TST.drop=true; mood('flocke','glow'); TB.els.rose.classList.add('lit');
+    const fl=[['🌷',31,86,5],['🌼',40,91,4.5],['🌸',47,84,4],['🌻',79,84,6],['🌷',86,90,5],['🌼',92,81,4],['🌸',22,93,4],['🌺',73,93,5],['🌼',55,95,4],['🌷',7,88,5],['🌸',95,93,4.5],['🌼',35,79,3.6]];
+    fl.forEach(([e,x,y,z],i)=>bLater(()=>{ const f=prop(e,x,y,z,'tp2 bloom'); TB.act.appendChild(f); TB.els['bl'+i]=f; fxBurst(...ctr(f),6,GLCOL); if(i%3===0) chime([880+i*60]); },600+i*240));
+    [[34,48,0],[78,40,-2.4],[58,30,-4.8]].forEach(([x,y,d],i)=>{ const b=el('div','tp2 bfly2','🦋'); b.style.cssText=`left:${x}%;top:${y}%;font-size:4.4vh;animation-delay:${d}s`; TB.act.appendChild(b); TB.els['b'+i]=b; });
+    bLater(()=>{ if(TB.done) return; mood('flocke','happy'); sqs(TB.els.flocke); },atPh('Wie schön'));
+    bLater(()=>{ if(TB.done) return; mood('sonne','laugh'); sqs(TB.els.sonne); TB.dL.rT=9; TB.dL.kT=.9; prismFx(()=>ctr(TB.els.sonne),()=>ctr(TB.els.flocke)); bLater(()=>mood('sonne','smile'),2400); },atPh('Die Sonne schien'));
+    bLater(()=>{ if(!TB.done){ mood('flocke','glow'); mood('wolke','smile'); sqs(TB.els.wolke); } },atPh('ganz leicht')); },
+  ready(){ mood('flocke','glow'); },
+  a:{t:'rise',id:'flocke',to:'wolke',at:[.52,.72],ms:3000,w:'WOLKE'},
+  s:'Von ihrem Rosenblatt aus sah sie den ganzen Frühling: bunte Blumen, Bienen und Schmetterlinge. Wie schön! Die Sonne schien warm auf den kleinen Tautropfen, und er wurde ganz leicht. Leg deinen Finger auf den Tautropfen und lass ihn liegen. Dann schwebt er hinauf!',
+  h:'Leg den Finger auf den Tautropfen und lass ihn liegen!',
+  rising(p){ if(p>.5&&TST.wom!=='happy'){ mood('wolke','happy'); } },
+  risen(){ const W=TB.els.wolke, F=TB.els.flocke; F.style.transition='opacity .6s'; F.style.opacity=0; W.classList.add('lit'); sqs(W); mood('wolke','sing'); light({el:W,r0:8,rT:20,k0:.7,kT:.7,warm:.4}); },
+  d:['Ganz leise stieg er hinauf, als feiner Nebel, höher und höher, bis in die weiche weiße Wolke.',
+     ()=>{ const W=TB.els.wolke, [x]=ctr(W); rainbow(x/innerWidth*100,30,40); mood('wolke','happy'); hearts(...ctr(W),3); mood('rotkehlchen','sing'); notes(TB.els.rotkehlchen,3); },
+     'Willkommen! sagte die Wolke. Ruh dich bei mir aus, bis der Winter wiederkommt.', 1100]},
+ /* 7 – the ending pays off the beginning: winter again, out of the cloud she dances down onto the unicorn's nose – everyone sings */
+ {set:'winternacht', dark:.5, u:[30,72,34], wk:[['wolke',69,21,26,1]], fk:[78,40,9], st:{drop:false,fz:1,op:1}, p:[['ast','AST',90,30,10],['laub','🍂',70,92,6],['laub2','🍂',77,93,5]], rk:[50,8,10,'ast',1],
+  ig:[73,88,11], gl:[['gs1',50,84,9,0],['gs2',58,87,7,0]], fx:{snow:5,frost:4,fy:.74},
+  lights:[{id:'flocke',r0:9,rT:9,k0:.85,kT:.85},{id:'uni',r0:15,rT:15,k0:.5,kT:.5},{fn:()=>{ const m=TB&&TB.st.querySelector('.moon2'); return m?ctr(m):null; },r0:26,rT:26,k0:.7,kT:.7},{id:'wolke',r0:14,rT:14,k0:.6,kT:.6},{id:'rotkehlchen',r0:7,rT:7,k0:.5,kT:.5}],
+  enter(){ TST.drop=false; TST.fz=1; TST.flm='happy'; TST.wom='sleepy'; TST.igm='asleep'; TST.rp=0; mood('wolke','sleepy'); mood('igel','asleep'); igZ('#dfe8ff');
+    const F=TB.els.flocke; F.style.opacity=0;
+    bLater(()=>{ if(TB.done) return; mood('wolke','smile'); sqs(TB.els.wolke); },atPh('wieder kalt'));
+    bLater(()=>{ if(TB.done) return; const W=TB.els.wolke; W.classList.remove('wob2'); void W.offsetWidth; W.classList.add('wob2'); mood('wolke','sing'); },atPh('schüttelte'));
+    bLater(()=>{ if(TB.done) return; const W=TB.els.wolke, [x0,y0]=ctr(W), [x1,y1]=ctr(F); F.style.opacity=1; mood('flocke','happy');
+      try{ F.animate([{transform:`translate(${x0-x1}px,${y0-y1}px) scale(.2) rotate(-90deg)`,opacity:0},{transform:'none',opacity:1}],{duration:1500,easing:'cubic-bezier(.2,.8,.3,1.2)'}); }catch(e){}
+      bLater(()=>{ glitterBurst(x1,y1,16,12); chime([1318,1568,2093]); mood('wolke','happy'); },900); },atPh('und heraus'));
+    bLater(()=>{ if(TB.done) return; sqs(F); bubble('hihi!',...relEl(F,[.5,-.1]),3.4,'#e8f6ff'); },atPh('Kennst du sie'));
+    bLater(()=>{ if(TB.done) return; uniHop(); },atPh('Bring sie')); },
+  ready(){ const F=TB.els.flocke; F.style.opacity=''; mood('flocke','happy'); mood('wolke','happy'); },
+  a:{t:'drift',id:'flocke',to:'uni',at:[.93,.38],v:4.6,tol:12,w:'FLOCKE'},
+  s:'Der Sommer kam, und der Herbst. Dann wurde es wieder kalt. In einer stillen Winternacht schüttelte sich die Wolke, und heraus tanzte eine kleine Schneeflocke. Kennst du sie? Bring sie noch einmal zur Nase von deinem Einhorn!',
+  h:'Halte deinen Finger unter die Schneeflocke!',
+  landed(){ const F=TB.els.flocke; stickTo(F,TB.els.uni.querySelector('.ub'),.93,.36); mood('flocke','happy'); },
+  d:[()=>{ bLater(()=>sniff(),atPh('Ha…','d1')); bLater(()=>sneeze(()=>{ const F=TB.els.flocke; mood('flocke','oh'); flyStick(F,TB.els.uni.querySelector('.ub'),.69,.06,1100,18,()=>mood('flocke','glow')); }),atPh('hatschi','d1')); },
+     'Sie landete wieder auf der Nase von deinem Einhorn. Ha… ha… hatschi!',
+     ()=>{ bLater(()=>{ mood('flocke','happy'); sqs(TB.els.flocke); },atPh('Jetzt kenne','d2')); bLater(()=>{ TB.els.gs1&&sqs(TB.els.gs1); TB.els.gs2&&sqs(TB.els.gs2); },atPh('Er schläft','d2'));
+       bLater(()=>{ mood('flocke','glow'); mood('rotkehlchen','happy'); },atPh('kommt bestimmt','d2')); },
+     'Da lachte die kleine Schneeflocke: Jetzt kenne ich den Frühling! Er schläft nur unter dem Schnee, und er kommt bestimmt wieder.',
+     ()=>{ mood('flocke','sing'); mood('wolke','sing'); mood('rotkehlchen','sing'); ['flocke','wolke','rotkehlchen'].forEach((id,i)=>bLater(()=>{ const e=TB.els[id]; e.classList.add('sing'); notes(e,5); },i*130));
+       TB.els.uni.classList.add('sing'); snowSong(900,['wolke','igel','gs1','gs2']); chime([523,659,784,1047]); },
+     'Und alle sangen: '+SVERS2+' '+SVERS2,
+     ()=>{ mood('flocke','glow'); ['flocke','rotkehlchen','wolke'].forEach(c=>notes(TB.els[c],3)); const F=TB.els.flocke; glitterBurst(...ctr(F),22,16); },
+     'Und so geht es immer weiter, Jahr für Jahr: Schnee und Tau und Wolke, und wieder Schnee. Ende.']}
+]};
+
 function regTale2(t){ reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
   t.sc.forEach((s,i)=>{ const k='t2_'+t.id+'_'+(i+1); reg(k,s.s,null,'Märchen'); if(s.h) reg(k+'h',s.h,null,'Märchen'); if(typeof s.d==='string') reg(k+'d',s.d,null,'Märchen');
     if(Array.isArray(s.d)) s.d.filter(x=>typeof x==='string').forEach((x,j)=>reg(k+'d'+(j+1),x,null,'Märchen'));
@@ -4003,21 +4686,7 @@ const TALES=[
  PRINZ2,
  WELLE2,
  BAER2,
- {id:'schneeflocke', title:'Die Schneeflocke und der Frühling', icon:'❄️', cover:TBG.winter, sc:[
-  {bg:'winter',fx:'snow', u:[34,64,46], p:[['flocke','❄️',53,40,13,'tw']], a:{t:'tap',id:'flocke'},
-   s:'Es war einmal eine kleine Schneeflocke. Sie tanzte vom Himmel herab und landete genau auf der Nase von deinem Einhorn. Hatschi! Tippe die Schneeflocke an!'},
-  {bg:'winter',fx:'snow', p:[['flocke','❄️',52,28,12,'tw'],['m1','⚪',42,80,13],['m2','⚪',60,82,13],['m3','⚪',78,80,13]], a:{t:'all',ids:['m1','m2','m3'],m:'morph',to:{m1:'🌷',m2:'🌼',m3:'🌸'}},
-   s:'Die Schneeflocke sagte: Alle erzählen vom Frühling. Von Blumen und von Bienen. Den möchte ich so gerne sehen! Aber der Frühling schlief noch tief unter dem Schnee. Wecke alle Blumen auf!'},
-  {bg:'winter', p:[['sonne','☀️',40,50,22],['mond','🌙',62,48,18],['wolke','☁️',84,50,20],['b1','🌷',46,84,10],['b2','🌼',62,86,10],['b3','🌸',78,84,10]], a:{t:'tap',id:'sonne',w:'SONNE'},
-   s:'Die ersten Blumen streckten sich. Aber brrr, es war noch viel zu kalt. Wer kann es warm machen? Ruf die Sonne!'},
-  {bg:'wiese', p:[['biene','🐝',44,58,19],['hase','🐰',61,58,19],['ente','🦆',78,58,19]], a:{t:'choose',ids:['biene','hase','ente'],w:{biene:'BIENE',hase:'HASE',ente:'ENTE'}},
-   s:'Die Sonne lachte und schickte ihre wärmsten Strahlen. Der Schnee schmolz, und die Tiere kamen aus ihren Verstecken. Wer kommt zuerst heraus? Du darfst wählen.'},
-  {bg:'wiese', p:[['flocke','❄️',44,34,8,'tw'],['rose','🌹',66,62,28],['blatt','🍃',86,72,14],['pick','$',50,82,13]], a:{t:'tap',id:'rose',w:'ROSE'},
-   s:'Die Schneeflocke staunte. So bunt! So schön! Doch ihr wurde ganz warm. Sie wurde kleiner und kleiner. Hab keine Angst, sagte dein Einhorn. Setz dich auf die Rose! Tippe auf die Rose!'},
-  {bg:'wiese', p:[['rose','🌹',60,62,40],['tropfen','💧',62,42,13,'glow tw']], a:{t:'tap',id:'tropfen'},
-   s:'Da geschah ein kleines Wunder. Die Schneeflocke wurde zu einem Tautropfen. Er glitzerte in der Sonne wie ein Diamant. Tippe den Tautropfen an!'},
-  {bg:'wiese', p:[['bogen','🌈',62,26,40],['rose','🌹',58,68,26],['tropfen','💧',59,54,9,'glow tw'],['pick','$',80,80,13,'party']], a:{t:'none'}, fx:'glit',
-   s:'Nun konnte sie den ganzen Frühling sehen. Und wenn der Winter wiederkommt, steigt sie hinauf in die Wolken und tanzt als Schneeflocke herab. So geht es Jahr für Jahr. Ende.'}]},
+ SCHNEE2,
  DRACHE2
 ];
 
@@ -4058,6 +4727,11 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
   if(id==='welle') return `<div class="art" style="width:46%;margin-top:6%"><div class="chr wel" data-mood="glow" style="position:relative;width:100%;filter:drop-shadow(0 0 2vh #c8f6ff) drop-shadow(0 0 5vh rgba(120,220,255,.8))"><div class="bb">${welleSVG()}<div class="perl2">${perlSVG()}</div></div></div></div>`+
     `<div class="art" style="position:absolute;left:9%;bottom:12%;width:15%;animation-delay:-1.2s">${fishSVG('#ffd84a','#b8862e')}</div><div class="art" style="position:absolute;right:8%;top:12%;width:11%;animation-delay:-.6s;transform:scaleX(-1)">${fishSVG('#ff8fc8','#b04a86')}</div>`+
     [[16,24,3.2],[26,40,2.2],[80,62,2.8],[72,80,2],[88,34,2.4]].map(([x,y,z],k)=>`<span class="bub3" style="left:${x}%;top:${y}%;width:${z}vh;height:${z}vh;animation-delay:${-k*.5}s"></span>`).join('')+tw;
+  if(id==='schneeflocke'){ const g=el('div','',glockeSVG()); glockeSet(g,1,.15); const g2=el('div','',glockeSVG()); glockeSet(g2,.8,-.2);
+    return `<div class="art" style="width:44%;margin-top:-4%"><div class="chr flk" data-mood="glow" style="position:relative;width:100%;filter:drop-shadow(0 0 2vh #fff) drop-shadow(0 0 5vh rgba(170,225,255,.95))"><div class="bb">${flockeSVG()}</div></div></div>`+
+    `<div class="art" style="position:absolute;left:7%;bottom:3%;width:15%;animation-delay:-1.4s">${g.innerHTML}</div><div class="art" style="position:absolute;left:20%;bottom:2%;width:11%;animation-delay:-.7s">${g2.innerHTML}</div>`+
+    `<div class="art" style="position:absolute;right:8%;bottom:8%;width:19%;animation-delay:-.9s"><div class="chr rkh flip" data-mood="sing" style="position:relative;width:100%">${robinSVG()}</div></div>`+
+    [[14,14,5],[30,30,3.4],[78,14,4.2],[88,40,3],[64,8,3],[20,52,3.6]].map(([x,y,z],k)=>`<span class="mfl" style="left:${x}%;top:${y}%;width:${z}vh;animation-delay:${-k*.7}s">${miniFlakeSVG()}</span>`).join('')+tw; }
   return `<div class="art"><span class="emo">${t.icon}</span></div>`+tw; }
 function bPageL(i){ const it=bItems()[i]; return `<div class="ill" style="background:${it.k==='lesen'?TBG.nacht:it.t.cover}">${bArt(it)}</div>`; }
 function bPageR(i){ const it=bItems()[i], done=it.k==='tale'&&S.tales[it.t.id];

@@ -35,7 +35,7 @@ Die Schneeflocke und der Frühling · Der kleine Drache und der Glitzer. Das gew
 Niemand bleibt hängen: nach 7 s leuchtet das Richtige und die Bitte wird wiederholt, nach 2 falschen Tipps leuchtet es sofort,
 nach 22 s löst sich die Szene selbst und das Märchen geht weiter. Dasselbe gilt für die Abenteuer auf den Reisen.
 
-**Neue Märchenbühne (bisher: Die kleine Laterne, Die Prinzessin, die nicht lachen konnte, Der Bär, der einen Mond backen wollte, Der kleine Drache und der Glitzer).** Jede Szene ist eine Bühne mit Tiefenebenen (Himmel, Ferne, Mitte, Spielebene,
+**Neue Märchenbühne (inzwischen alle sechs: Die kleine Laterne, Die Prinzessin, die nicht lachen konnte, Die kleine Welle, Der Bär, der einen Mond backen wollte, Die Schneeflocke und der Frühling, Der kleine Drache und der Glitzer).** Jede Szene ist eine Bühne mit Tiefenebenen (Himmel, Ferne, Mitte, Spielebene,
 Vordergrund) in CSS-3D: Das Buch klappt auf, die Kamera fliegt von Ort zu Ort, die Ebenen bewegen sich leicht mit dem Finger.
 Eine Zeichenfläche darüber macht Licht und Dunkelheit (die Laterne leuchtet wirklich), Glühwürmchen, Wind, Blätter und Glitzer.
 Alles ohne Bibliotheken, offline. Gesten (ein Finger): Staub wegreiben, gedrückt halten, ziehen und ablegen, einem Weg nachfahren,
@@ -43,7 +43,7 @@ wegwischen, antippen – und seit dem Bären-Märchen auch: etwas Rollendes fang
 Daneben-Tippen langsamer), ein Glas über eine Schüssel halten und ausgießen, an einem Seil ziehen und loslassen, im Kreis rühren
 und Glitzer streuen (Finger schnell hin und her). Seit dem Drachen-Märchen: schnell nach oben wischen (pusten, auf Wunsch erst
 gedrückt halten zum Luftholen), Nebel wegrubbeln, bis ein Bild darunter auftaucht (etwa 60 % reichen), mehrmals auf etwas tippen
-(jedes Mal größer), Sterne der Reihe nach verbinden (der nächste blinkt) und Dinge in das passende Nest sortieren (falsch = sanft zurück). Fortschritt bleibt erhalten, ab etwa zwei Dritteln macht es den Rest von selbst. Sicherheitsnetz für jede Geste: Beim Start zeigt ein Geisterfinger 👆 einmal die Bewegung; nach 7 s und
+(jedes Mal größer), Sterne der Reihe nach verbinden (der nächste blinkt) und Dinge in das passende Nest sortieren (falsch = sanft zurück). Seit dem Schneeflocken-Märchen: etwas Fallendes mit dem Finger lenken (die Flocke schwebt zum Finger und wird in seiner Nähe langsamer; landet sie daneben, pustet der Wind sie wieder hoch), einen Spross nach oben ziehen (der Stängel folgt dem Finger, oben gehen die Glöckchen auf; ein kurzes Ziehen reicht), ein graues Winterbild bunt malen (etwa 60 % reichen, dann breitet sich die Farbe aus), im Takt tippen (ein Specht klopft vor; Tipper nah am Takt leuchten golden, ungleichmäßige zählen auch, fünf reichen) und einen Tautropfen gedrückt halten, bis er als Nebel in eine Wolke steigt. Fortschritt bleibt erhalten, ab etwa zwei Dritteln macht es den Rest von selbst. Sicherheitsnetz für jede Geste: Beim Start zeigt ein Geisterfinger 👆 einmal die Bewegung; nach 7 s und
 14,5 s zeigt er sie wieder und der Hinweis wird gesprochen; nach 2 Fehlversuchen sofort; nach 22 s macht die Szene es selbst
 (spätestens nach 45 s). Was das Kind tut, löst das Nächste aus; die Erzählung danach ist in Stücke geteilt, damit Bild und
 Stimme genau zusammenpassen. Aufnahmen: `t2_<märchen>_<szene>` (Erzählung), `…h` (Hinweis), `…d1, d2 …` (was passiert ist).
