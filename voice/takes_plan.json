@@ -3616,6 +3616,17 @@
      "say": "Brief"
     }
    ]
+  },
+  {
+   "id": "w_x038_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Blume.",
+   "items": [
+    {
+     "key": "wort_blume",
+     "say": "Blume"
+    }
+   ]
   }
  ]
 }
