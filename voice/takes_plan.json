@@ -3570,6 +3570,52 @@
      "say": "Himmel"
     }
    ]
+  },
+  {
+   "id": "w_x036_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ofen. Stroh. Kranz. Paket. Schal. Kugel.",
+   "items": [
+    {
+     "key": "wort_ofen",
+     "say": "Ofen"
+    },
+    {
+     "key": "wort_stroh",
+     "say": "Stroh"
+    },
+    {
+     "key": "wort_kranz",
+     "say": "Kranz"
+    },
+    {
+     "key": "wort_paket",
+     "say": "Paket"
+    },
+    {
+     "key": "wort_schal",
+     "say": "Schal"
+    },
+    {
+     "key": "wort_kugel",
+     "say": "Kugel"
+    }
+   ]
+  },
+  {
+   "id": "w_x037_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Nacht. Brief.",
+   "items": [
+    {
+     "key": "wort_nacht",
+     "say": "Nacht"
+    },
+    {
+     "key": "wort_brief",
+     "say": "Brief"
+    }
+   ]
   }
  ]
 }
