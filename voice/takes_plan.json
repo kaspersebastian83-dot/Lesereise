@@ -3638,6 +3638,17 @@
      "say": "Bach"
     }
    ]
+  },
+  {
+   "id": "w_x040_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Netz.",
+   "items": [
+    {
+     "key": "wort_netz",
+     "say": "Netz"
+    }
+   ]
   }
  ]
 }
