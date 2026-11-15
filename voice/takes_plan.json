@@ -3671,6 +3671,17 @@
      "say": "Samen"
     }
    ]
+  },
+  {
+   "id": "w_x043_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Fee.",
+   "items": [
+    {
+     "key": "wort_fee",
+     "say": "Fee"
+    }
+   ]
   }
  ]
 }
