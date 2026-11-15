@@ -777,3 +777,93 @@ t2_nikolaus_7h	Leg den Finger auf das Sternchen und lass ihn liegen!
 t2_nikolaus_7d1	Da glitzerte der Silberfaden, und das Sternchen leuchtete so hell wie noch nie.
 t2_nikolaus_7d2	Auf Wiedersehen! rief der Nikolaus und stapfte mit seinem Esel nach Hause. Und alle sangen: Sternchen, Sternchen, klein und fein, heute kommt ein Licht hinein! Silberfaden, glitzerfein, bald wirst du am Himmel sein!
 wort_himmel	Himmel
+adv_vers3	Sternchen, Sternchen, klein und fein, heute kommt ein Licht hinein! Kerzen leuchten, eins, zwei, drei, alle Freunde sind dabei!
+adv_vers4	Sternchen, Sternchen, hell und rein, heute kommt das letzte Licht hinein! Silberfaden, lang und fein, nun wirst du wieder oben sein!
+adv_neu24	Schau mal! Das Sternchen ist wieder oben am Himmel. Komm, wir singen unser Sternchenlied ein letztes Mal:
+t2_tuer7_1	Nach dem Nikolaustag war alles tief verschneit. Auf dem Vogelhaus saß das Rotkehlchen und plusterte sich auf. Piep, ich habe solchen Hunger! Alle Körner sind unter dem Schnee. Halte den Beutel über das Vogelhaus, dann rieseln die Körner hinein!
+t2_tuer7_1h	Zieh den Beutel über das Vogelhaus und halt ihn dort!
+t2_tuer7_1d1	Die Körner rieselten ins Vogelhaus, und das Rotkehlchen pickte und pickte. Piep, wie lecker!
+t2_tuer7_1d2	Danke! zwitscherte es. Weißt du was? Der Bär will Plätzchen backen, für alle Freunde. Aber das schafft er nicht allein!
+t2_tuer8_1	Im Zuckerland stand der Bär in seiner Backstube, die Nase voller Mehl. Oh, ihr kommt mir helfen! brummte er. Ich backe Sternplätzchen für alle Freunde. Der Teig ist schon fertig. Roll ihn aus, mit dem Nudelholz! Immer hin und her.
+t2_tuer8_1h	Fahr mit dem Nudelholz über den Teig, hin und her!
+t2_tuer8_1d1	Der Teig wurde groß und flach und glatt. So ist er richtig! lachte der Bär.
+t2_tuer8_1d2	Morgen stechen wir Sterne aus, einen für jeden Freund!
+t2_tuer9_1	Am nächsten Tag lag der Teig schön glatt auf dem Tisch. Der Bär gab dir eine Sternform. Drück die Form in den Teig, dann springt ein Stern heraus! Vier Sterne brauchen wir. Tipp auf den Teig!
+t2_tuer9_1h	Tipp auf den Teig, dann sticht die Form einen Stern aus!
+t2_tuer9_1d1	Vier Sterne lagen auf dem Blech. Und der goldene ist für dich, kleines Sternchen! sagte der Bär.
+t2_tuer9_1d2	Doch als er den Ofen aufmachte, brummte er: Oje, der Ofen ist ja ganz kalt!
+t2_tuer10_1	Wer macht den Ofen warm? Da klopfte es ans Fenster: Es war der kleine Drache! Er zitterte vor Kälte. Brr, mein Feuer ist ganz klein, flüsterte er. Kitzel ihn am Bauch, dann muss er lachen! Tipp auf seinen Bauch.
+t2_tuer10_1h	Tipp dem Drachen auf den Bauch!
+t2_tuer10_1d1	Hihi, lachte der Drache, und bei jedem Lachen kam ein Feuerchen heraus. Der Ofen wurde warm, und bald duftete es nach Plätzchen.
+t2_tuer10_1d2	Kommt mit in mein Schloss, sagte der Drache. Dort fehlt noch der Weihnachtsschmuck!
+wort_ofen	Ofen
+t2_tuer11_1	Im Schloss vom kleinen Drachen roch es nach Plätzchen. Wir basteln Strohsterne, sagte der Drache, für jedes Fenster einen! Leg die Strohhalme zu einem Stern. Fahr mit dem Finger den Punkten nach!
+t2_tuer11_1h	Fahr mit dem Finger den Punkten nach, Zacke für Zacke!
+t2_tuer11_1d1	Was für ein schöner Strohstern! Der Drache hängte ihn ins Fenster, und er glänzte golden.
+t2_tuer11_1d2	Da rief das Sternchen: Schaut, da unten am Meer! Die kleine Welle ist festgefroren!
+wort_stroh	Stroh
+t2_tuer12_1	Am Strand war es bitterkalt. Die kleine Welle steckte im Eis fest und konnte nicht mehr tanzen. Hilfst du mir? flüsterte sie. Leg deinen warmen Finger auf das Eis und lass ihn liegen!
+t2_tuer12_1h	Leg den Finger auf das Eis und lass ihn liegen!
+t2_tuer12_1d1	Knack! machte das Eis, und die kleine Welle hüpfte heraus und kicherte.
+t2_tuer12_1d2	Danke! Nimm meine Leuchtperle mit, sagte sie. Morgen ist Adventssonntag. Ihr Licht gehört an den Adventskranz!
+t2_tuer13_1	Heute ist der dritte Advent! Auf dem Dorfplatz stand ein großer Adventskranz. Aber oje, der Wind hatte alle Kerzen ausgepustet. Da glitzerte die Leuchtperle. Nimm ihr Licht auf deinen Finger und zünde drei Kerzen an!
+t2_tuer13_1h	Fahr mit dem Finger von der Perle zu den Kerzen!
+t2_tuer13_1d1	Eins, zwei, drei! Drei Kerzen leuchteten am Kranz.
+t2_tuer13_1d2	Da kam die Prinzessin über den Platz. Morgen packen wir Geschenke für die Waldtiere, sagte sie. Kommt ihr mit ins Schloss?
+wort_kranz	Kranz
+t2_tuer14_1	Im Schloss lagen die Geschenke für die Waldtiere: Nüsse für das Eichhörnchen, eine Möhre für den Hasen und rote Wolle für den kleinen Igel. Hilf der Prinzessin beim Einpacken! Klapp das Papier über das Päckchen.
+t2_tuer14_1h	Zieh das Papier über das Päckchen, dann mal die Schleife!
+t2_tuer14_1d1	Fertig war das Päckchen, mit einer roten Schleife! Die Prinzessin klatschte in die Hände.
+t2_tuer14_1d2	Bringt ihr es morgen in den Wald? Der kleine Igel freut sich bestimmt!
+t2_tuer14_1w1	Und jetzt die Schleife! Fahr von Punkt zu Punkt, rundherum.
+wort_paket	Paket
+t2_tuer15_1	Im Winterwald wartete schon die kleine Schneeflocke. Juhu, so viel Schnee! rief sie. Wir bauen einen Schneemann, der passt auf die Päckchen auf! Roll die Schneekugel durch den Schnee, dann wird sie groß!
+t2_tuer15_1h	Leg den Finger auf die Kugel und roll sie durch den Schnee!
+t2_tuer15_1d1	Kugel auf Kugel, zwei Augen, eine Möhre als Nase. Fertig war der Schneemann!
+t2_tuer15_1d2	Da nieste es hinter dem Schneemann: Hatschi! Wer war denn das?
+t2_tuer16_1	Hatschi! Unter dem Busch saß der kleine Igel und zitterte. Mir ist so kalt, schniefte er. Im Päckchen war doch rote Wolle! Strick dem Igel einen Schal. Fahr mit dem Finger hin und her, immer im Zickzack!
+t2_tuer16_1h	Fahr mit dem Finger hin und her, im Zickzack!
+t2_tuer16_1d1	Reihe für Reihe wurde der Schal länger. Der Igel wickelte ihn um den Hals und lächelte.
+t2_tuer16_1d2	Schön warm! Danke! sagte der Igel. Ulla, die Eule, sucht euch. Sie hat etwas am Himmel gesehen!
+wort_schal	Schal
+t2_tuer17_1	In der Nacht saß Ulla, die Eule, auf einem Ast und schaute in die Sterne. Huhu! Schaut mal, da oben ist ein Bild aus Sternen. Verbinde die Sterne mit dem Finger, einen nach dem anderen!
+t2_tuer17_1h	Fahr von Stern zu Stern!
+t2_tuer17_1d1	Ein Einhorn aus Sternen! Und in der Mitte war eine kleine Lücke. Da gehörst du hin, Sternchen, sagte Ulla.
+t2_tuer17_1d2	Nur noch ein paar Lichter, dann bist du hell genug. Und das Dorf braucht noch einen Weihnachtsbaum!
+t2_tuer18_1	Am Waldrand stand eine kleine Tanne. Sie hatte so viel Schnee auf den Zweigen, dass sie sich ganz krumm bog. Schüttel den Schnee ab! Wackel mit dem Finger hin und her, über dem Bäumchen.
+t2_tuer18_1h	Wackel mit dem Finger schnell hin und her über der Tanne!
+t2_tuer18_1d1	Der Schnee rieselte herunter, und die kleine Tanne richtete sich auf. Sie war wunderschön.
+t2_tuer18_1d2	Da stapfte der Bär heran. Er grub das Bäumchen ganz vorsichtig aus, mit allen Wurzeln, und trug es auf den Dorfplatz.
+t2_tuer19_1	Auf dem Dorfplatz stand nun die kleine Tanne. Ein Kind brachte einen Korb mit bunten Kugeln. Häng die Kugeln an den Baum! Zieh jede Kugel an einen leuchtenden Zweig.
+t2_tuer19_1h	Zieh eine Kugel an einen leuchtenden Zweig!
+t2_tuer19_1d1	Rot, blau, gold und silber glänzten die Kugeln am Baum, und ganz oben leuchtete ein Stern.
+t2_tuer19_1d2	Morgen ist der vierte Advent, rief das Kind. Dann singen wir alle zusammen!
+wort_kugel	Kugel
+t2_tuer20_1	Heute ist der vierte Advent! Am Kranz brannten alle vier Kerzen, und die Kinder vom Dorf standen als kleine Engel um den Baum. Sie sangen das Sternchenlied. Sing mit! Tipp immer dann, wenn der Stern leuchtet.
+t2_tuer20_1h	Tipp mit, immer wenn der Stern leuchtet!
+t2_tuer20_1d1	So schön klang das Lied, dass das Sternchen ganz hell wurde.
+t2_tuer20_1d2	Morgen kommt die längste Nacht im ganzen Jahr. Da braucht das Sternchen alle seine Freunde.
+t2_tuer21_1	Dann kam die längste Nacht im ganzen Jahr, so dunkel, dass das Sternchen sich fürchtete. Da kamen alle Freunde durch den Schnee, und jeder brachte ein Licht mit! Tipp auf jeden Freund, dann fliegt sein Licht zum Sternchen.
+t2_tuer21_1h	Tipp auf die Freunde mit den Lichtern!
+t2_tuer21_1d1	Ein Licht nach dem anderen hüpfte zum Sternchen. Jetzt war die Nacht gar nicht mehr dunkel.
+t2_tuer21_1d2	Aber dann pfiff der Wind, huuui, immer stärker.
+wort_nacht	Nacht
+t2_tuer22_1	Am nächsten Morgen lagen auf jedem Fensterbrett Wunschzettel für Weihnachten. Doch der Wind pustete sie fort, hui! Fang die Wunschzettel! Tipp schnell drauf.
+t2_tuer22_1h	Tipp auf die fliegenden Briefe!
+t2_tuer22_1d1	Alle Wunschzettel waren wieder da. Ich nehme sie mit in den Himmel, sagte das Sternchen.
+t2_tuer22_1d2	Doch der Wind hatte dicke Wolken vor den Himmel geschoben. Kein einziger Stern war mehr zu sehen.
+wort_brief	Brief
+t2_tuer23_1	Am Abend vor Heiligabend war der Himmel voller dicker Wolken. Da rief die kleine Schneeflocke: Liebe Wolke, mach doch bitte Platz! Hilf mit! Schieb die Wolken mit dem Finger zur Seite.
+t2_tuer23_1h	Wisch die Wolken zur Seite!
+t2_tuer23_1d1	Die Wolken zogen weiter, und da war es wieder: das Einhorn aus Sternen, mit der kleinen Lücke in der Mitte.
+t2_tuer23_1d2	Morgen ist Heiligabend, flüsterte das Sternchen. Morgen fliege ich nach Hause.
+t2_tuer24_1	Heute ist Heiligabend! Auf dem Dorfplatz leuchtete der Weihnachtsbaum, und alle Freunde waren da. Der Silberfaden war voller Sterne, bis hinauf zum Himmel. Es ist Zeit, flüsterte das Sternchen. Leg deinen Finger auf das Sternchen und lass ihn liegen!
+t2_tuer24_1h	Leg den Finger auf das Sternchen und lass ihn liegen!
+t2_tuer24_1d1	Höher und höher stieg das Sternchen am Silberfaden hinauf. Danke für alle Lichter! rief es. Danke!
+t2_tuer24_2	Hoch oben am Himmel wartete das Einhorn aus Sternen. Und genau in der Mitte, in der kleinen Lücke, war Platz für das Sternchen. Tipp auf das Sternchen, dann leuchtet es!
+t2_tuer24_2h	Tipp auf das Sternchen!
+t2_tuer24_2d1	Da leuchtete das Sternchen so hell wie noch nie, mitten im Einhorn aus Sternen, genau über deinem Einhorn.
+t2_tuer24_3	Unten im Schnee schaute dein Einhorn zum Himmel hinauf. Da tanzte eine kleine Schneeflocke herab, genau wie am ersten Dezember. Halte deinen Finger unter die Flocke, damit sie auf der Nase landet!
+t2_tuer24_3h	Halte deinen Finger unter die Schneeflocke!
+t2_tuer24_3d1	Hallo, kleine Schneeflocke! Mit dir hat alles angefangen.
+t2_tuer24_3d2	Und das Sternchen leuchtete vom Himmel herab, auf dein Einhorn, auf das Dorf und auf alle Freunde. Frohe Weihnachten!
