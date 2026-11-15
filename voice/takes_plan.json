@@ -3660,6 +3660,17 @@
      "say": "Bogen"
     }
    ]
+  },
+  {
+   "id": "w_x042_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Samen.",
+   "items": [
+    {
+     "key": "wort_samen",
+     "say": "Samen"
+    }
+   ]
   }
  ]
 }
