@@ -3682,6 +3682,17 @@
      "say": "Fee"
     }
    ]
+  },
+  {
+   "id": "w_x044_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Öl.",
+   "items": [
+    {
+     "key": "wort_oel",
+     "say": "Öl"
+    }
+   ]
   }
  ]
 }
