@@ -1016,6 +1016,49 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .ahouse.mini .astn.high{left:12%;top:-8%}
 .astn.fly{transition:left 3s cubic-bezier(.4,0,.3,1),top 3s cubic-bezier(.4,-.4,.3,1),width 3s}
 /*<ADV7CSS*/
+/*FLAUMICSS>*/
+/* ===== Flaumis weite Reise: WebGL layers, paper pop-up, evening light, the dandelion and Flaumi ===== */
+.glc{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5;display:none}
+.glc.gll{mix-blend-mode:screen}
+#taleWorld .grade{position:absolute;inset:0;pointer-events:none;z-index:2}
+#taleWorld .grade[data-g=gold]{background:radial-gradient(ellipse 70% 80% at 66% 48%,rgba(255,190,100,.34) 0,rgba(255,150,90,.12) 45%,rgba(70,30,90,.22) 100%);mix-blend-mode:soft-light}
+#taleWorld.paperW{background:#eadcb8}
+.papr{position:absolute;inset:0;z-index:3;pointer-events:none;-webkit-backdrop-filter:sepia(.65) saturate(.55) brightness(1.05) contrast(.92);backdrop-filter:sepia(.65) saturate(.55) brightness(1.05) contrast(.92);transition:opacity 1.3s ease-in}
+.papr::after{content:'';position:absolute;inset:0;mix-blend-mode:multiply;opacity:.85;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,250,235,0) 55%,rgba(150,110,60,.35) 100%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .88 0 0 0 0 .78 0 0 0 .55 .45'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E"),#f6ecd4}
+.papr.alive{opacity:0}
+.popc{filter:drop-shadow(.28vh 0 0 #fffaf0) drop-shadow(-.28vh 0 0 #fffaf0) drop-shadow(0 -.28vh 0 #fffaf0) drop-shadow(0 .9vh .7vh rgba(70,45,20,.38))!important;transform-origin:50% 100%}
+.sun3{position:absolute;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,#fffdf0 0,#fff2c0 38%,#ffd88a 68%,#ffb468 100%);
+  box-shadow:0 0 5vh 2.5vh rgba(255,214,140,.7),0 0 14vh 7vh rgba(255,170,100,.38)}
+.cl3{position:absolute;translate:-50% -50%;border-radius:50%;pointer-events:none;filter:blur(.5vh);
+  background:radial-gradient(ellipse at 50% 72%,rgba(255,206,160,.95) 0,rgba(255,160,170,.6) 42%,rgba(255,140,170,0) 72%);animation:cldrift 46s ease-in-out infinite alternate}
+@keyframes cldrift{to{transform:translateX(3vw)}}
+.gsh{position:absolute;translate:-50% -50%;height:3.6vh;border-radius:50%;pointer-events:none;background:radial-gradient(closest-side,rgba(50,24,60,.42),rgba(50,24,60,.18) 60%,rgba(50,24,60,0))}
+.uni .litL{mix-blend-mode:screen} .uni .litS{mix-blend-mode:multiply}
+.tp2 .sd{transition:opacity .3s} .tp2 .sd.gone{opacity:0!important}
+.tp2 .pglow{transition:opacity .3s}
+.bwh{position:absolute;width:0;height:0}
+.bwh .ring2.bwr{width:auto;height:auto}
+.flm{filter:drop-shadow(0 0 1vh rgba(255,244,210,.95)) drop-shadow(0 0 3vh rgba(255,200,120,.55));z-index:4}
+.flm .ey,.flm .m,.flm .brow,.flm .mo{display:none}
+.flm[data-mood=curious] .ey-o,.flm[data-mood=curious] .m-smile{display:inline}
+.flm[data-mood=happy] .ey-c,.flm[data-mood=happy] .m-big{display:inline}
+.flm[data-mood=oh] .ey-o,.flm[data-mood=oh] .m-oh{display:inline}
+.flm[data-mood=worried] .ey-o,.flm[data-mood=worried] .m-sad,.flm[data-mood=worried] .brow{display:inline}
+.flm.talking .m{display:none!important}
+.flm.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 25%;transform:scaleY(calc(.18 + var(--mo,0)*1.05))}
+.flm .ump{transform-box:view-box;transform-origin:50px 44px;animation:ump 2.8s ease-in-out infinite} @keyframes ump{50%{transform:rotate(5deg) scale(1.04,.96)}}
+.flm.cling>.bb{animation:shiver .13s linear infinite}
+.flm.hover>.bb{animation:float 2.4s ease-in-out infinite}
+#bigWord span.kl{display:inline-block;animation:kpop .55s cubic-bezier(.2,1.6,.4,1);text-shadow:0 0 2vh #fff,0 0 4vh var(--gold)}
+@keyframes kpop{40%{transform:scale(1.28) translateY(-6%)}}
+/* the book page */
+.flart .pbb{position:absolute;left:30%;bottom:-6%;width:34%} .flart .pbb svg{width:100%;display:block}
+.flart .fla{position:absolute;left:54%;top:8%;width:20%;animation:float 2.6s ease-in-out infinite;filter:drop-shadow(0 0 1.5vh #fff4d0)}
+.flart .fsd{position:absolute;width:5%;opacity:.9;animation:fsd 7s linear infinite} .flart .fsd svg{width:100%}
+@keyframes fsd{0%{transform:translate(0,0) rotate(-10deg);opacity:0}15%{opacity:.9}100%{transform:translate(18vh,-16vh) rotate(14deg);opacity:0}}
+/*<FLAUMICSS*/
 </style>
 </head>
 <body>
@@ -1380,9 +1423,9 @@ function playOne(key){
   return new Promise(res=>{
     let done=false, failed=false; const tm=[];
     const fin=()=>{ if(!done){ done=true; tm.forEach(clearTimeout); if(curRes===fin)curRes=null; res(); } };
-    curRes=fin;
+    curRes=fin; PLAYK={key,t0:now(),tts:false};
     /* device voice: if it never starts (no German voice, blocked), go on after a moment instead of waiting in silence */
-    const speak=()=>{ if(done)return;
+    const speak=()=>{ if(done)return; PLAYK={key,t0:now(),tts:true};
       const text=(CLIPS[key]&&CLIPS[key].tts)||key;
       try{ let started=false; const u=new SpeechSynthesisUtterance(text); u.lang='de-DE'; u.rate=.8; u.pitch=1.15; if(deVoice)u.voice=deVoice;
         u.onstart=()=>{ if(started) return; started=true; tm.push(setTimeout(fin,2500+text.length*130)); };
@@ -2088,7 +2131,7 @@ let TST={};
 function startTale2(t,opt){ tale={t,i:-1,pick:null,run:++taleRun,v2:true,adv:(opt&&opt.adv)||0}; TB=null; LST=Object.assign({awake:false,cand:false,lit:false},t.lst||{}); TST={};
   const W=$('taleWorld'); W.innerHTML=''; W.className='v2'; W.style.background=''; show('tale'); fxStart();
   $('taleDots').innerHTML=t.sc.map(()=>'<i></i>').join('');
-  if(t.door){ FX.darkT=0; const run=tale.run; setTimeout(()=>{ if(tale&&tale.run===run&&taleOn()) nextScene2(); },150); return; }
+  if(t.door||t.nobook){ FX.darkT=0; const run=tale.run; setTimeout(()=>{ if(tale&&tale.run===run&&taleOn()) nextScene2(); },150); return; }
   /* the book opens in 3D, then we fly into its first page */
   const run=tale.run, bk=el('div','book3d',`<div class="pg">✨</div><div class="cv" style="background:${t.cover}">${t.icon}</div>`); W.appendChild(bk);
   FX.darkT=0; fxFlies(10,true,false);
@@ -2111,7 +2154,7 @@ function nextScene2(){
   if(old){ old.style.pointerEvents='none';
     try{ old.animate(same?[{opacity:1},{opacity:0}]:[{transform:'none',opacity:1},{transform:'translateZ(520px)',opacity:0}],{duration:same?700:1000,easing:'ease-in',fill:'forwards'}); }catch(e){}
     setTimeout(()=>old.remove(),same?750:1050); }
-  try{ st.animate(same?[{opacity:0},{opacity:1}]:[{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0},{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0,offset:.15},{transform:'none',opacity:1}],
+  if(!sc.nofly) try{ st.animate(same?[{opacity:0},{opacity:1}]:[{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0},{transform:'translateZ(-700px) rotateY(-7deg)',opacity:0,offset:.15},{transform:'none',opacity:1}],
     {duration:same?700:1500,easing:'cubic-bezier(.2,.7,.3,1)'}); }catch(e){}
   /* light */
   FX.L=[]; FX.em=[]; FX.dr=[]; FX.att=null; FX.P=FX.P.filter(p=>!p.amb); FX.darkT=sc.dark||0; FX.dc=sc.dcol||SETS2[sc.set].dcol||null; FX.clean=!!SETS2[sc.set].clean; FX.cs=!!SETS2[sc.set].cs;
@@ -2123,7 +2166,7 @@ function nextScene2(){
   /* the unicorn, always there */
   const u=sc.u||[20,68,38], ue=el('div','u2'); ue.style.cssText=`left:${u[0]}%;top:${u[1]}%;width:${u[2]}vh`;
   ue.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; TB.act.appendChild(ue); TB.els.uni=ue;
-  if(!same){ try{ ue.animate([{transform:'translateX(-70vw)'},{transform:'translateX(-70vw)',offset:.2},{transform:'none'}],{duration:2200,easing:'cubic-bezier(.25,.8,.3,1)'}); }catch(e){} later(()=>trail(ue,1800),300); }
+  if(!same&&!sc.nofly){ try{ ue.animate([{transform:'translateX(-70vw)'},{transform:'translateX(-70vw)',offset:.2},{transform:'none'}],{duration:2200,easing:'cubic-bezier(.25,.8,.3,1)'}); }catch(e){} later(()=>trail(ue,1800),300); }
   /* props of the set and of the scene */
   const B=SETS2[sc.set]; [...(B.act||[]),...(sc.p||[])].forEach(([id,e,x,y,z,cls,par])=>{ const b=prop(e,x,y,z,'tp2 '+(cls||'')+(par?' kid':'')); (par&&TB.els[par]||TB.act).appendChild(b); TB.els[id]=b;
     if(e==='OAKH'){ const h=el('div','hole'); h.style.left='50%'; h.style.top='80%'; b.appendChild(h); TB.els.hoehle=h; } });
@@ -2136,7 +2179,7 @@ function nextScene2(){
   (sc.lights||[]).forEach(l=>{ const o=Object.assign({},l); if(o.id){ o.el=TB.els[o.id]; if(!o.el) return; } TB[(l.name||('L'+Math.random()))]=light(o); });
   if(sc.enter) sc.enter();
   chime([659,880]);
-  (async()=>{ await Promise.all([say(TB.n()), wait(same?900:2500)]); if(!okRun(run,sc)) return; ready2(); })(); }
+  (async()=>{ if(sc.pre){ await sc.pre(); if(!okRun(run,sc)) return; } await Promise.all([say(TB.n()), wait(same?900:2500)]); if(!okRun(run,sc)) return; ready2(); })(); }
 
 function ready2(){ if(!TB||TB.done) return; TB.live=true; TB.t0=now(); const a=TB.a;
   if(typeof a.w==='string'){ holdWord(a.w); bLater(()=>{ const bw=$('bigWord'); if(bw.className==='hold') bw.className='mini'; },2400); }
@@ -6307,6 +6350,435 @@ $('btnAdvBook').onclick=()=>{ const k=bItems().findIndex(x=>x.k==='advent'); tri
 /* the Nikolaus tale gets its own page once Nikolaus has come (or it was played) */
 const nikoPage=()=>{ const I=advInfo(); return !!(S.tales.nikolaus||S.adv.done[6]||S.advAll||I.mode==='after'||(I.mode==='dec'&&I.day>=6)); };
 
+/*FLAUMI>*/
+/* ================= Flaumis weite Reise: the showcase tale ================= */
+/* New on this stage (only used by tales with flx:1, so the older tales stay exactly as they were):
+   - GLX: two WebGL2 layers over the stage. GLS (normal blend, under the darkness): instanced grass that sways, bends in gusts and
+     away from her breath, and drifting seeds. GLL (screen blend, over the darkness): sun shafts, haze, glowing motes, sparkles, fireflies.
+     No WebGL2 → the tale still runs, just without those layers.
+   - WIND: one wind for everything (grass, seeds, the unicorn's mane and tail, which swing on springs).
+   - lit characters: a light and a shade gradient laid over the unicorn, masked by its own outline, turned towards a light source;
+     long evening shadows on the ground.
+   - MIC: blowing into the microphone (only when a parent allowed it); always also works with the finger.
+   - speech sync: cues and lip-sync run on the playing clip's real time (AUD.currentTime); with audio/align/<key>.json (character times
+     and a loudness envelope from the voice job) they land on the exact word, without it on the clip's real length.
+   - MBOX: a music-box melody, ducked under the narration and silent while she blows. Chimes can come from a side (stereo).
+   - pop-up opening: the first scene folds up out of a paper page and then comes alive. */
+const WIND={v:.12,g:0,blow:0,hint:0,dir:1};
+let ALIGN={}, PLAYK={key:null,t0:0,tts:false};
+const flxOn=()=>!!(tale&&tale.t&&tale.t.flx&&taleOn());
+
+/* ---------- speech sync ---------- */
+function talkingNow(){ try{ return !!((curAudio&&!curAudio.paused&&!curAudio.ended)||speechSynthesis.speaking); }catch(e){ return false; } }
+function clipT(k){ if(PLAYK.key!==k) return -1; if(!PLAYK.tts&&curAudio===AUD){ return AUD.ended?1e6:(AUD.currentTime||0); } return (now()-PLAYK.t0)/1000; }
+function clipDur(k){ const c=CLIPS[k]; if(PLAYK.key===k&&!PLAYK.tts&&curAudio===AUD&&isFinite(AUD.duration)&&AUD.duration>0) return AUD.duration;
+  const A=ALIGN[k]; if(A&&A.d) return A.d; return c?c.text.length/(PLAYK.tts?11:12.6):1; }
+function phT(k,ph){ const c=CLIPS[k]; if(!c) return 0; const i=ph?Math.max(0,c.text.indexOf(ph)):0, A=ALIGN[k];
+  if(A&&A.cs&&A.cs.length===c.text.length&&!(PLAYK.key===k&&PLAYK.tts)) return A.cs[i]/100;
+  return i/c.text.length*clipDur(k); }
+function alignLoad(keys){ keys.forEach(k=>{ if(ALIGN[k]!==undefined) return; ALIGN[k]=null;
+  try{ fetch('audio/align/'+k+'.json').then(r=>r.ok?r.json():null).then(j=>{ if(j){ if(typeof j.e==='string') j.ev=Uint8Array.from(j.e,ch=>ch.charCodeAt(0)-48); ALIGN[k]=j; } }).catch(()=>{}); }catch(e){} }); }
+/* run fn when the narration reaches a phrase (in this scene's clip, or its sfx clip: 'd2', 'h' …) */
+function onPh(ph,fn,sfx){ if(!TB) return; (TB.cues=TB.cues||[]).push({k:TB.n(sfx||''),ph,fn}); }
+/* a character talks while the narration speaks its words: from phrase a to phrase b (null = to the end) */
+function talk(id,a,b,sfx){ if(!TB) return; (TB.talks=TB.talks||[]).push({k:TB.n(sfx||''),id,a,b}); }
+function speechStep(){ if(!TB) return; const sc=TB.sc;
+  (TB.cues||[]).forEach(c=>{ if(c.done) return; const t=clipT(c.k); if(t>=0&&t>=phT(c.k,c.ph)-.04){ c.done=true; try{ if(TB&&TB.sc===sc) c.fn(); }catch(e){} } });
+  (TB.talks||[]).forEach(q=>{ const e=TB.els[q.id]; if(!e) return; const t=clipT(q.k), t0=phT(q.k,q.a), t1=q.b?phT(q.k,q.b):clipDur(q.k)+.2, on=t>=t0&&t<t1;
+    if(on){ const A=ALIGN[q.k]; let m; if(A&&A.ev&&!PLAYK.tts){ const i=Math.floor(t*50); m=((A.ev[i]||0)+(A.ev[i+1]||0))/18; } else m=Math.max(0,.45+.55*Math.sin(t*21))*(.55+.45*Math.sin(t*5.3+1));
+      q.on=true; e.classList.add('talking'); e.style.setProperty('--mo',m.toFixed(2)); }
+    else if(q.on){ q.on=false; e.classList.remove('talking'); e.style.setProperty('--mo',0); } });
+  if(TB.kara){ const K=TB.kara, t=clipT(K.k); if(t>=0){ const sp=$('bigWord').querySelectorAll('span'), d=clipDur(K.k);
+      sp.forEach((s,i)=>{ if(t>=i/sp.length*d*.82+.05&&!s.classList.contains('kl')){ s.classList.add('kl'); chimeAt([1047+i*262],innerWidth/2+(i-.5)*innerWidth*.12); } }); } } }
+/* the target word, read with its syllables lighting up one after the other */
+function kara(w){ if(TB) TB.kara={k:'wort_'+keyOf(w)}; }
+
+/* ---------- sound: chimes from a side, a music box ---------- */
+function chimeAt(notes,x){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume();
+  const pn=AC.createStereoPanner?AC.createStereoPanner():null; if(pn){ pn.pan.value=Math.max(-.9,Math.min(.9,(x/innerWidth-.5)*1.8)); pn.connect(AC.destination); }
+  notes.forEach((f,i)=>{ const o=AC.createOscillator(), g=AC.createGain(), t=AC.currentTime+i*.09; o.type='sine'; o.frequency.value=f;
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.1,t+.02); g.gain.exponentialRampToValueAtTime(.001,t+.9); o.connect(g); g.connect(pn||AC.destination); o.start(t); o.stop(t+1); }); }catch(e){} }
+/* Flaumi's melody (3/4, G major); every scene may add a voice to it later */
+const FLMEL=[[67,1],[71,1],[74,1],[71,1],[69,1],[67,1],[69,1],[71,1],[72,1],[71,2],[69,1],[67,1],[71,1],[74,1],[76,1],[74,1],[71,1],[72,1],[71,1],[69,1],[67,3]];
+const MBOX={on:false,g:null,iv:null,i:0,t:0,vol:.055,quiet:false};
+function mboxStart(){ if(MBOX.on) return; try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); }catch(e){ return; }
+  const g=AC.createGain(); g.gain.value=0; const dl=AC.createDelay(1), fb=AC.createGain(), wet=AC.createGain(), lp=AC.createBiquadFilter();
+  dl.delayTime.value=.39; fb.gain.value=.3; wet.gain.value=.32; lp.type='lowpass'; lp.frequency.value=2400;
+  g.connect(AC.destination); g.connect(dl); dl.connect(lp); lp.connect(fb); fb.connect(dl); lp.connect(wet); wet.connect(AC.destination);
+  MBOX.g=g; MBOX.on=true; MBOX.i=0; MBOX.t=AC.currentTime+.4; g.gain.linearRampToValueAtTime(MBOX.vol,AC.currentTime+2);
+  const beat=.6, note=(m,t)=>{ const f=440*Math.pow(2,(m-69)/12); [[1,.5,1.8],[3.01,.12,.5],[5.4,.05,.25]].forEach(([k,a,d])=>{ const o=AC.createOscillator(), e=AC.createGain();
+      o.type='sine'; o.frequency.value=f*k; e.gain.setValueAtTime(0,t); e.gain.linearRampToValueAtTime(a,t+.006); e.gain.exponentialRampToValueAtTime(.0008,t+d); o.connect(e); e.connect(g); o.start(t); o.stop(t+d+.05); }); };
+  MBOX.iv=setInterval(()=>{ if(!flxOn()){ mboxStop(); return; } const T=AC.currentTime;
+    const v=MBOX.quiet?0:talkingNow()?MBOX.vol*.33:MBOX.vol; g.gain.setTargetAtTime(v,T,.25);
+    while(MBOX.t<T+.5){ const [m,b]=FLMEL[MBOX.i%FLMEL.length]; note(m,MBOX.t); if(MBOX.i%3===0) note(m-24,MBOX.t); MBOX.t+=b*beat; MBOX.i++; if(MBOX.i%FLMEL.length===0) MBOX.t+=beat; } },120); }
+function mboxStop(){ if(!MBOX.on) return; MBOX.on=false; clearInterval(MBOX.iv); try{ const g=MBOX.g; g.gain.setTargetAtTime(0,AC.currentTime,.3); setTimeout(()=>{ try{ g.disconnect(); }catch(e){} },1500); }catch(e){} }
+
+/* ---------- the microphone: blowing ---------- */
+const MIC={st:null,src:null,an:null,buf:null,fq:null,lvl:0,floor:.01,on:false,t0:0,cal:[],busy:false};
+async function micStart(){ if(MIC.on||MIC.busy||!S.mic) return MIC.on; if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia) return false; MIC.busy=true;
+  try{ if(navigator.permissions&&navigator.permissions.query){ const p=await navigator.permissions.query({name:'microphone'}); if(p.state!=='granted'){ MIC.busy=false; return false; } } }catch(e){}
+  try{ const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:false,autoGainControl:false}});
+    if(!flxOn()){ st.getTracks().forEach(t=>t.stop()); MIC.busy=false; return false; }
+    if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume();
+    MIC.st=st; MIC.src=AC.createMediaStreamSource(st); MIC.an=AC.createAnalyser(); MIC.an.fftSize=1024; MIC.src.connect(MIC.an);
+    MIC.buf=new Float32Array(1024); MIC.fq=new Uint8Array(512); MIC.on=true; MIC.t0=now(); MIC.cal=[]; MIC.floor=.01; MIC.lvl=0; MIC.busy=false; return true; }
+  catch(e){ MIC.busy=false; return false; } }
+function micStop(){ try{ if(MIC.st) MIC.st.getTracks().forEach(t=>t.stop()); if(MIC.src) MIC.src.disconnect(); }catch(e){} MIC.st=MIC.src=MIC.an=null; MIC.on=false; MIC.lvl=0; }
+/* 0..1: a blow is loud, noisy and strong in the low band; while the tablet itself speaks we don't listen */
+function micLevel(dt){ if(!MIC.on||!MIC.an) return 0; MIC.an.getFloatTimeDomainData(MIC.buf); let s=0; for(let i=0;i<MIC.buf.length;i++) s+=MIC.buf[i]*MIC.buf[i];
+  const rms=Math.sqrt(s/MIC.buf.length); MIC.an.getByteFrequencyData(MIC.fq); let lo=0; for(let i=1;i<22;i++) lo+=MIC.fq[i]; lo/=21;
+  if(now()-MIC.t0<600){ MIC.cal.push(rms); MIC.floor=Math.max(.003,MIC.cal.reduce((a,b)=>a+b,0)/MIC.cal.length); return 0; }
+  const spk=talkingNow(); if(rms<MIC.floor*1.5&&!spk) MIC.floor+=(rms-MIC.floor)*Math.min(1,dt*.4);
+  let v=spk?0:Math.max(0,Math.min(1,(rms-MIC.floor*2.6-.008)/.07)); if(lo<70) v*=.35;
+  MIC.lvl+=(v-MIC.lvl)*Math.min(1,dt*(v>MIC.lvl?16:4)); return MIC.lvl; }
+async function micAsk(){ try{ const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:false,autoGainControl:false}}); st.getTracks().forEach(t=>t.stop()); return true; }catch(e){ return false; } }
+
+/* ---------- lit characters ---------- */
+/* light and shade over the unicorn, masked by its own outline; turned towards fn() (a screen point) every frame */
+function litUni(ue,fn,o){ o=o||{}; const sv=ue.querySelector('svg'); if(!sv) return; const NS='http://www.w3.org/2000/svg', id='lt'+(++UID);
+  const mk=(t,a)=>{ const e=document.createElementNS(NS,t); Object.entries(a||{}).forEach(([k,v])=>e.setAttribute(k,v)); return e; };
+  const defs=sv.querySelector('defs')||sv.insertBefore(mk('defs'),sv.firstChild);
+  const m=mk('mask',{id:id+'m',maskUnits:'userSpaceOnUse',x:-20,y:-20,width:300,height:250});
+  sv.querySelectorAll(':scope>g[stroke-width="10"]').forEach(g=>{ const c=g.cloneNode(true); c.setAttribute('stroke','#fff'); if(c.getAttribute('fill')!=='none') c.setAttribute('fill','#fff');
+    c.querySelectorAll('[stroke]').forEach(p=>{ if(p.getAttribute('stroke')!=='none') p.setAttribute('stroke','#fff'); }); m.appendChild(c); });
+  const gr=(n,stops)=>{ const g=mk('linearGradient',{id:id+n,gradientUnits:'userSpaceOnUse',x1:0,y1:0,x2:1,y2:0}); stops.forEach(([of,c,a])=>g.appendChild(mk('stop',{offset:of,'stop-color':c,'stop-opacity':a}))); defs.appendChild(g); return g; };
+  const gl=gr('l',[[0,o.lc||'#ffb868',0],[.45,o.lc||'#ffb868',0],[.8,o.lc||'#ffc27a',.45],[1,o.lc2||'#ffe2a8',.95]]), gs=gr('s',[[0,o.sc||'#3a2060',.62],[.42,o.sc||'#3a2060',0],[1,o.sc||'#3a2060',0]]);
+  defs.appendChild(m);
+  const r1=mk('rect',{x:-20,y:-20,width:300,height:250,fill:`url(#${id}s)`,mask:`url(#${id}m)`,class:'litS'}), r2=mk('rect',{x:-20,y:-20,width:300,height:250,fill:`url(#${id}l)`,mask:`url(#${id}m)`,class:'litL'});
+  const gp=sv.querySelector(':scope>.glitter'); sv.insertBefore(r1,gp); sv.insertBefore(r2,gp);
+  const L={sv,gl,gs,fn,k:o.k==null?1:o.k,r1,r2}; (TB.lits=TB.lits||[]).push(L); litStep(L); return L; }
+function litStep(L){ const q=L.fn&&L.fn(); if(!q||!L.sv.isConnected) return; const r=L.sv.getBoundingClientRect(); if(!r.width) return; const vb=L.sv.viewBox.baseVal;
+  const lx=vb.x+(q[0]-r.left)/r.width*vb.width, ly=vb.y+(q[1]-r.top)/r.height*vb.height, cx=120, cy=112; let dx=lx-cx, dy=ly-cy; const d=Math.hypot(dx,dy)||1; dx/=d; dy/=d;
+  [L.gl,L.gs].forEach(g=>{ g.setAttribute('x1',(cx-dx*125).toFixed(1)); g.setAttribute('y1',(cy-dy*110).toFixed(1)); g.setAttribute('x2',(cx+dx*125).toFixed(1)); g.setAttribute('y2',(cy+dy*110).toFixed(1)); });
+  L.r1.style.opacity=L.r2.style.opacity=L.k.toFixed(2); }
+/* a long soft shadow on the ground, away from the light */
+function gShadow(id,fx,fy,w,lx){ const E=TB.els[id]; if(!E) return; const s=el('div','gsh'); TB.act.insertBefore(s,TB.act.firstChild.nextSibling);
+  const r=E.getBoundingClientRect(), [px,py]=wpos(r.left+r.width*fx,r.top+r.height*fy); s.style.cssText=`left:${px}%;top:${py}%;width:${w}vh`;
+  const side=(lx!=null?lx:innerWidth)>r.left+r.width/2?-1:1; s.style.transform=`translateX(${side*38}%) scaleX(1.9) skewX(${side*-18}deg)`; TB.els[id+'Sh']=s; return s; }
+
+/* ---------- the unicorn's mane and tail swing in the wind (springs) ---------- */
+const UNI_STR=[['M64 120 C30 108 14 140 28 170',1],['M64 128 C42 130 30 156 44 182',1],['M62 116 C38 94 18 102 10 126',1],
+  ['M184 40 C160 36 148 58 154 80',0],['M178 50 C154 56 142 80 150 102',0],['M170 64 C148 76 140 100 146 122',0],['M164 80 C146 96 142 116 150 134',0]];
+function windUni(ue){ const sv=ue.querySelector('svg'); if(!sv) return; const S2=[];
+  UNI_STR.forEach(([d,tl],i)=>{ const els=[...sv.querySelectorAll('path')].filter(p=>p.getAttribute('d')===d); if(!els.length) return;
+    S2.push({n:d.match(/-?\d+(\.\d+)?/g).map(Number),els,tl,i,dx:0,dy:0,vx:0,vy:0}); });
+  TB.manes=S2; }
+function maneStep(dt,t){ (TB.manes||[]).forEach(s=>{ const w=WIND.v+WIND.g*1.4+WIND.blow*1.6+WIND.hint*.6, fl=Math.sin(t*(6.5+s.i*.7)+s.i*1.3)*(1.5+w*5)+Math.sin(t*1.7+s.i)*1.2;
+    const tx=WIND.dir*w*(s.tl?16:11)+fl*.6, ty=-w*(s.tl?7:4)+fl*.35; s.vx+=((tx-s.dx)*55-s.vx*7)*dt; s.vy+=((ty-s.dy)*55-s.vy*7)*dt; s.dx+=s.vx*dt; s.dy+=s.vy*dt;
+    const n=s.n, k=[0,0,.3,.3,.66,.66,1,1], q=n.map((v,j)=>j<2?v:v+(j%2?s.dy:s.dx)*k[j]);
+    const d=`M${q[0]} ${q[1]} C${q[2].toFixed(1)} ${q[3].toFixed(1)} ${q[4].toFixed(1)} ${q[5].toFixed(1)} ${q[6].toFixed(1)} ${q[7].toFixed(1)}`; s.els.forEach(e=>e.setAttribute('d',d)); }); }
+
+/* ---------- WebGL: two layers ---------- */
+const GLX={ok:null,S:null,L:null,q:1,cfg:null,grass:null,nG:0,P:[],PL:[],slow:0,fade:1,fadeT:1,grow:1,growT:1,sun:null,t0:0,ft:[]};
+function glProg(gl,vs,fs){ const sh=(t,s)=>{ const o=gl.createShader(t); gl.shaderSource(o,s); gl.compileShader(o); if(!gl.getShaderParameter(o,gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(o)); return o; };
+  const p=gl.createProgram(); gl.attachShader(p,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs)); gl.linkProgram(p);
+  if(!gl.getProgramParameter(p,gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p));
+  const U={}, n=gl.getProgramParameter(p,gl.ACTIVE_UNIFORMS); for(let i=0;i<n;i++){ const a=gl.getActiveUniform(p,i); U[a.name.replace(/\[0\]$/,'')]=gl.getUniformLocation(p,a.name); } return {p,U}; }
+/* sprites: 0 seed with its little umbrella, 1 soft dot, 2 sparkle, 3 glow */
+function glAtlas(){ const c=document.createElement('canvas'); c.width=256; c.height=64; const g=c.getContext('2d');
+  g.save(); g.translate(32,0); const rg=g.createRadialGradient(0,20,0,0,20,20); rg.addColorStop(0,'rgba(255,255,255,.35)'); rg.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=rg; g.fillRect(-32,0,64,44);
+  g.strokeStyle='rgba(255,255,255,.95)'; g.lineWidth=1.3; g.beginPath(); g.moveTo(0,22); g.lineTo(0,50); g.stroke();
+  for(let i=0;i<15;i++){ const a=-Math.PI*(.06+.88*i/14), L=15+((i*7)%5); g.lineWidth=.9; g.beginPath(); g.moveTo(0,22); g.lineTo(Math.cos(a)*L,22+Math.sin(a)*L*.9); g.stroke();
+    g.fillStyle='rgba(255,255,255,.9)'; g.beginPath(); g.arc(Math.cos(a)*L,22+Math.sin(a)*L*.9,1.1,0,6.283); g.fill(); }
+  g.fillStyle='#c09060'; g.beginPath(); g.ellipse(0,54,2.4,4.6,0,0,6.283); g.fill(); g.restore();
+  let r=g.createRadialGradient(96,32,0,96,32,30); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.35,'rgba(255,255,255,.55)'); r.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=r; g.fillRect(64,0,64,64);
+  g.save(); g.translate(160,32); r=g.createRadialGradient(0,0,0,0,0,14); r.addColorStop(0,'rgba(255,255,255,.9)'); r.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=r; g.fillRect(-32,-32,64,64);
+  g.fillStyle='#fff'; [[0],[Math.PI/2]].forEach(([a])=>{ g.save(); g.rotate(a); g.beginPath(); g.ellipse(0,0,2.2,28,0,0,6.283); g.fill(); g.restore(); }); g.restore();
+  r=g.createRadialGradient(224,32,0,224,32,31); r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.12,'rgba(255,255,255,.9)'); r.addColorStop(.4,'rgba(255,255,255,.25)'); r.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=r; g.fillRect(192,0,64,64);
+  return c; }
+const GLSRC={
+ fsv:`#version 300 es
+layout(location=0) in vec2 p; out vec2 v; void main(){ v=p*.5+.5; gl_Position=vec4(p,0,1); }`,
+ rays:`#version 300 es
+precision highp float; in vec2 v; out vec4 o; uniform vec2 res, sun; uniform float t, k, hz, hk; uniform vec3 col;
+float h(float n){ return fract(sin(n)*43758.5453); } float n1(float x){ float i=floor(x), f=fract(x); f=f*f*(3.-2.*f); return mix(h(i),h(i+1.),f); }
+void main(){ vec2 px=v*res, d=px-sun; float r=length(d)/res.y, a=atan(d.y,d.x);
+ float s=n1(a*7.+t*.05)*.55+n1(a*19.-t*.07)*.3+n1(a*47.+t*.1)*.15; s=pow(s,2.4);
+ float shaft=s*exp(-r*1.25)*smoothstep(0.,.07,r);
+ float glow=exp(-r*9.)*.85+exp(-r*2.4)*.22;
+ float haze=exp(-pow((v.y-hz)*4.2,2.))*hk;
+ o=vec4(col*(shaft*.6+glow+haze)*k,1.); }`,
+ grassV:`#version 300 es
+layout(location=0) in vec2 q; layout(location=1) in vec4 ia; layout(location=2) in vec4 ib;
+uniform vec2 res, blowP, lp; uniform float t, vh, wind, gust, blow, grow, dir;
+out float vs; out float vsh; out float vside; out float vlit;
+void main(){ float s=q.y, H=ia.z*vh*grow, W=ia.w*vh*(1.-s*.88); vec2 base=vec2(ia.x*res.x, ia.y*res.y);
+ float sway=sin(t*(1.1+ib.z*.7)+ib.y+ia.x*6.)*.16+sin(t*.63+ia.x*2.3+ib.y)*.08;
+ float g=gust*(.55+.45*sin(t*2.3-ia.x*8.+ib.y*.3));
+ float bd=distance(base,blowP)/res.y, bl=blow*exp(-bd*bd*3.)*(.75+.25*sin(t*11.+ib.y*3.));
+ float b=(sway+(wind+g)*dir)*(1.-ib.z*.35)+ib.w+bl*sign(base.x-blowP.x+.001)*1.2;
+ float an=b*s*s*1.15; vec2 tip=vec2(sin(an),-cos(an))*H*s, nr=vec2(cos(an),sin(an));
+ vec2 P=base+tip+nr*q.x*W*.5, cl=P/res*2.-1.; gl_Position=vec4(cl.x,-cl.y,0,1);
+ vs=s; vsh=ib.x; vside=q.x*sign(lp.x-base.x); vlit=clamp(1.-distance(P,lp)/res.x*1.1,0.,1.); }`,
+ grassF:`#version 300 es
+precision mediump float; in float vs, vsh, vside, vlit; uniform vec3 cB, cT, cL; uniform float a; out vec4 o;
+void main(){ vec3 c=mix(cB,cT,vs*vs)*(.72+vsh*.5); c+=cL*pow(vs,2.2)*(.25+vlit*.95)*(.55+.45*vside); o=vec4(c*a,a); }`,
+ spV:`#version 300 es
+layout(location=0) in vec2 q; layout(location=1) in vec4 ia; layout(location=2) in vec2 ib; layout(location=3) in vec3 ic;
+uniform vec2 res; out vec2 uv; out float va; out vec3 vc;
+void main(){ float c=cos(ia.w), s=sin(ia.w); vec2 off=mat2(c,s,-s,c)*q*ia.z, P=ia.xy+off, cl=P/res*2.-1.; gl_Position=vec4(cl.x,-cl.y,0,1);
+ uv=vec2((q.x*.5+.5+ib.y)*.25, q.y*.5+.5); va=ib.x; vc=ic; }`,
+ spF:`#version 300 es
+precision mediump float; in vec2 uv; in float va; in vec3 vc; uniform sampler2D T; uniform float add; out vec4 o;
+void main(){ vec4 x=texture(T,uv); o=add>.5? vec4(vc*x.rgb*va,1.) : vec4(vc*x.rgb,x.a)*va; }`,
+ vigF:`#version 300 es
+precision mediump float; in vec2 v; uniform vec3 col; uniform float k; out vec4 o;
+void main(){ vec2 d=v-.5; float a=smoothstep(.32,.95,length(d*vec2(1.25,1.)))*k; o=vec4(col*a,a); }`};
+function glCtx(c,opt){ const gl=c.getContext('webgl2',opt); if(!gl) return null;
+  const quad=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,quad); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+  const tri=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,tri); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  const tex=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D,tex); gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL,true);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,GLX.atlas||(GLX.atlas=glAtlas())); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  const sp=glProg(gl,GLSRC.spV,GLSRC.spF), spVao=gl.createVertexArray(), spBuf=gl.createBuffer(); gl.bindVertexArray(spVao);
+  gl.bindBuffer(gl.ARRAY_BUFFER,quad); gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+  gl.bindBuffer(gl.ARRAY_BUFFER,spBuf); gl.bufferData(gl.ARRAY_BUFFER,1600*9*4,gl.DYNAMIC_DRAW);
+  [[1,4,0],[2,2,16],[3,3,24]].forEach(([l,n,o])=>{ gl.enableVertexAttribArray(l); gl.vertexAttribPointer(l,n,gl.FLOAT,false,36,o); gl.vertexAttribDivisor(l,1); }); gl.bindVertexArray(null);
+  return {gl,c,quad,tri,tex,sp,spVao,spBuf,spArr:new Float32Array(1600*9)}; }
+function glxInit(){ if(GLX.ok!==null) return GLX.ok; GLX.ok=false;
+  try{ const host=$('tale'), fxc=$('taleFx');
+    const cs=document.createElement('canvas'); cs.id='taleGLs'; cs.className='glc'; host.insertBefore(cs,fxc||host.querySelector('.bar'));
+    const cl=document.createElement('canvas'); cl.id='taleGLl'; cl.className='glc gll'; host.insertBefore(cl,host.querySelector('.bar'));
+    const S2=glCtx(cs,{alpha:true,premultipliedAlpha:true,antialias:true,depth:false,stencil:false}), L2=S2&&glCtx(cl,{alpha:false,antialias:false,depth:false,stencil:false});
+    if(!S2||!L2){ cs.remove(); cl.remove(); return false; }
+    const gS=S2.gl; S2.grass=glProg(gS,GLSRC.grassV,GLSRC.grassF); S2.vig=glProg(gS,GLSRC.fsv,GLSRC.vigF);
+    S2.gVao=gS.createVertexArray(); gS.bindVertexArray(S2.gVao); const N=7, st=[]; for(let i=0;i<=N;i++){ st.push(-1,i/N,1,i/N); }
+    const sb=gS.createBuffer(); gS.bindBuffer(gS.ARRAY_BUFFER,sb); gS.bufferData(gS.ARRAY_BUFFER,new Float32Array(st),gS.STATIC_DRAW); gS.enableVertexAttribArray(0); gS.vertexAttribPointer(0,2,gS.FLOAT,false,0,0);
+    S2.gBuf=gS.createBuffer(); gS.bindBuffer(gS.ARRAY_BUFFER,S2.gBuf); [[1,0],[2,16]].forEach(([l,o])=>{ gS.enableVertexAttribArray(l); gS.vertexAttribPointer(l,4,gS.FLOAT,false,32,o); gS.vertexAttribDivisor(l,1); });
+    gS.bindVertexArray(null); S2.gVerts=(N+1)*2;
+    const gL=L2.gl; L2.rays=glProg(gL,GLSRC.fsv,GLSRC.rays); L2.tVao=gL.createVertexArray(); gL.bindVertexArray(L2.tVao); gL.bindBuffer(gL.ARRAY_BUFFER,L2.tri); gL.enableVertexAttribArray(0); gL.vertexAttribPointer(0,2,gL.FLOAT,false,0,0); gL.bindVertexArray(null);
+    S2.tVao=gS.createVertexArray(); gS.bindVertexArray(S2.tVao); gS.bindBuffer(gS.ARRAY_BUFFER,S2.tri); gS.enableVertexAttribArray(0); gS.vertexAttribPointer(0,2,gS.FLOAT,false,0,0); gS.bindVertexArray(null);
+    GLX.S=S2; GLX.L=L2; GLX.ok=true; }catch(e){ GLX.err=String(e); GLX.ok=false; try{ $('taleGLs')&&$('taleGLs').remove(); $('taleGLl')&&$('taleGLl').remove(); }catch(_){} }
+  return GLX.ok; }
+/* grass rows: [y0,y1 (screen fractions), count, h0,h1 (vh), w0,w1 (vh), shade]; x0/x1 optional */
+function glGrass(rows){ if(!GLX.ok) return; const r=seeded(31), A=[]; rows.forEach(([y0,y1,n,h0,h1,w0,w1,sh,x0,x1])=>{ for(let i=0;i<n;i++){ const y=y0+(y1-y0)*r();
+    A.push((x0||0)-.02+((x1||1)-(x0||0)+.04)*r(), y, h0+(h1-h0)*r(), w0+(w1-w0)*r(), sh*(.75+r()*.5), r()*6.283, r(), (r()-.5)*.25); } });
+  /* far rows first, so the near blades are drawn over them */
+  const B=[]; for(let i=0;i<A.length;i+=8) B.push(A.slice(i,i+8)); B.sort((a,b)=>a[1]-b[1]); const F=new Float32Array(B.flat());
+  const gl=GLX.S.gl; gl.bindBuffer(gl.ARRAY_BUFFER,GLX.S.gBuf); gl.bufferData(gl.ARRAY_BUFFER,F,gl.STATIC_DRAW); GLX.nG=B.length; }
+function glxScene(cfg){ GLX.cfg=cfg||null; GLX.P=GLX.P.filter(p=>!p.amb); GLX.PL=GLX.PL.filter(p=>!p.amb); if(!cfg){ glxShow(false); return; }
+  if(!glxInit()) return; glxShow(true); glGrass(cfg.grass||[]); if(!cfg.grass) GLX.nG=0; GLX.sun=cfg.sun||null;
+  for(let i=0;i<(cfg.motes||0);i++) glMote(true); }
+function glxShow(on){ ['taleGLs','taleGLl'].forEach(id=>{ const c=$(id); if(c) c.style.display=on?'block':'none'; }); }
+function glMote(first){ const u=vu(), W=innerWidth, H=innerHeight, c=GLX.cfg&&GLX.cfg.mc||[1,.85,.55];
+  GLX.PL.push({k:'mote',amb:1,x:Math.random()*W,y:H*(.15+Math.random()*.7),vx:(Math.random()-.5)*u*.8,vy:-(Math.random()*.6+.1)*u,s:u*(.25+Math.random()*.45),
+    ph:Math.random()*6.283,age:first?Math.random()*8:0,life:7+Math.random()*7,c,cell:1,a:.55}); }
+/* a seed that flies: x,y screen px, initial velocity in vh/s */
+function glSeed(x,y,vx,vy,o){ o=o||{}; const u=vu(); if(GLX.P.length>1400) GLX.P.shift();
+  GLX.P.push({k:'seed',x,y,vx:vx*u,vy:vy*u,s:u*(o.s||(1.8+Math.random()*1.4)),rot:(Math.random()-.5)*.5,vr:0,ph:Math.random()*6.283,age:0,life:o.life||(7+Math.random()*5),c:[1,1,1],cell:0,a:1,buoy:.5+Math.random()*.6}); }
+function glSpark(x,y,n,col,spd){ const u=vu(); for(let i=0;i<n;i++){ const a=Math.random()*6.283, v=(spd||12)*u*(.3+Math.random()); if(GLX.PL.length>1400) GLX.PL.shift();
+  GLX.PL.push({k:'spark',x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-3*u,s:u*(.6+Math.random()*.9),rot:Math.random()*3,ph:0,age:0,life:.7+Math.random()*.9,c:col||[1,.9,.6],cell:Math.random()<.5?2:1,a:1}); } }
+function glxFrame(dt,t){ if(!GLX.ok||!GLX.cfg) return; const W=innerWidth, H=innerHeight, u=vu(), cfg=GLX.cfg, dpr=Math.min(1.5,devicePixelRatio||1);
+  GLX.fade+=(GLX.fadeT-GLX.fade)*Math.min(1,dt*1.5); GLX.grow+=(GLX.growT-GLX.grow)*Math.min(1,dt*1.4);
+  const sun=GLX.sun&&GLX.sun()||[W*.8,H*.4];
+  /* simulate */
+  const wv=(WIND.v+WIND.g*2.2)*WIND.dir;
+  for(let i=GLX.P.length-1;i>=0;i--){ const p=GLX.P[i]; p.age+=dt; if(p.age>p.life||p.x<-u*20||p.x>W+u*20||p.y<-u*20){ GLX.P.splice(i,1); continue; }
+    const ax=wv*9*u+WIND.blow*4*u+Math.sin(t*.9+p.ph)*1.5*u, ay=-p.buoy*u*(2+WIND.blow*6)+Math.sin(t*1.7+p.ph*2)*1.2*u;
+    p.vx+=(ax-p.vx)*Math.min(1,dt*.8); p.vy+=(ay-p.vy)*Math.min(1,dt*.8); p.x+=p.vx*dt; p.y+=p.vy*dt; p.rot=Math.sin(t*1.3+p.ph)*.35+Math.max(-.7,Math.min(.7,p.vx/(30*u))); }
+  for(let i=GLX.PL.length-1;i>=0;i--){ const p=GLX.PL[i]; p.age+=dt; if(p.age>p.life){ if(p.k==='mote'&&GLX.cfg&&GLX.cfg.motes) { GLX.PL.splice(i,1); glMote(); } else GLX.PL.splice(i,1); continue; }
+    if(p.k==='mote'){ p.x+=(p.vx+wv*3*u+Math.sin(t*.5+p.ph)*.6*u)*dt; p.y+=(p.vy+Math.cos(t*.4+p.ph)*.4*u)*dt; if(p.x<-20) p.x=W+10; if(p.x>W+20) p.x=-10; }
+    else if(p.k==='spark'){ p.vy+=8*u*dt; p.vx*=.98; p.x+=p.vx*dt; p.y+=p.vy*dt; } }
+  /* quality: if frames are slow for a while, draw smaller */
+  GLX.ft.push(dt); if(GLX.ft.length>90){ const m=GLX.ft.reduce((a,b)=>a+b,0)/GLX.ft.length; GLX.ft=[]; if(m>.03&&GLX.q>.55) GLX.q=Math.max(.55,GLX.q*.8); }
+  /* the solid layer: grass, seeds, vignette */
+  { const S2=GLX.S, gl=S2.gl, c=S2.c, q=dpr*GLX.q, cw=Math.round(W*q), ch=Math.round(H*q); if(c.width!==cw||c.height!==ch){ c.width=cw; c.height=ch; }
+    gl.viewport(0,0,cw,ch); gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA);
+    const gc=cfg.gcol||{};
+    if(GLX.nG){ const P=S2.grass; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform1f(P.U.t,t); gl.uniform1f(P.U.vh,u); gl.uniform1f(P.U.wind,WIND.v); gl.uniform1f(P.U.gust,WIND.g+WIND.hint*.4);
+      gl.uniform1f(P.U.blow,WIND.blow); gl.uniform2f(P.U.blowP,...(cfg.blowP&&TB?cfg.blowP():[W*.6,H*.6])); gl.uniform2f(P.U.lp,sun[0],sun[1]); gl.uniform1f(P.U.grow,GLX.grow); gl.uniform1f(P.U.dir,WIND.dir);
+      gl.uniform3fv(P.U.cB,gc.b||[.07,.14,.06]); gl.uniform3fv(P.U.cT,gc.t||[.5,.6,.2]); gl.uniform3fv(P.U.cL,gc.l||[1,.72,.32]); gl.uniform1f(P.U.a,GLX.fade);
+      gl.bindVertexArray(S2.gVao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,S2.gVerts,GLX.nG); }
+    if(GLX.P.length) glDrawSp(S2,GLX.P,W,H,false);
+    if(cfg.vig){ const P=S2.vig; gl.useProgram(P.p); gl.uniform3fv(P.U.col,cfg.vig[0]); gl.uniform1f(P.U.k,cfg.vig[1]*GLX.fade); gl.bindVertexArray(S2.tVao); gl.drawArrays(gl.TRIANGLES,0,3); }
+    gl.bindVertexArray(null); }
+  /* the light layer: shafts, haze, motes, sparkles (screen blend) */
+  { const L2=GLX.L, gl=L2.gl, c=L2.c, q=dpr*GLX.q*.5, cw=Math.round(W*q), ch=Math.round(H*q); if(c.width!==cw||c.height!==ch){ c.width=cw; c.height=ch; }
+    gl.viewport(0,0,cw,ch); gl.clearColor(0,0,0,1); gl.clear(gl.COLOR_BUFFER_BIT); gl.enable(gl.BLEND); gl.blendFunc(gl.ONE,gl.ONE);
+    if(cfg.rays){ const P=L2.rays, r=cfg.rays; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform2f(P.U.sun,sun[0],H-sun[1]); gl.uniform1f(P.U.t,t);
+      gl.uniform1f(P.U.k,(r.k||1)*GLX.fade); gl.uniform1f(P.U.hz,r.hz||.42); gl.uniform1f(P.U.hk,r.hk==null?.16:r.hk); gl.uniform3fv(P.U.col,r.col||[1,.78,.45]);
+      gl.bindVertexArray(L2.tVao); gl.drawArrays(gl.TRIANGLES,0,3); }
+    if(GLX.PL.length) glDrawSp(L2,GLX.PL,W,H,true,t);
+    gl.bindVertexArray(null); } }
+function glDrawSp(C,arr,W,H,add,t){ const gl=C.gl, A=C.spArr; let n=0;
+  for(const p of arr){ if(n>=1600) break; const f=p.age/p.life; let a=p.a*Math.min(1,p.age*3)*Math.min(1,(1-f)*3), s=p.s;
+    if(p.k==='mote') a*=.45+.55*Math.sin(t*2.1+p.ph*5); if(p.k==='spark') s*=1.4-f*.6; a*=GLX.fade; if(a<=.005) continue;
+    const o=n*9; A[o]=p.x; A[o+1]=p.y; A[o+2]=s; A[o+3]=p.rot||0; A[o+4]=a; A[o+5]=p.cell; A[o+6]=p.c[0]; A[o+7]=p.c[1]; A[o+8]=p.c[2]; n++; }
+  if(!n) return; const P=C.sp; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform1f(P.U.add,add?1:0); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,C.tex); gl.uniform1i(P.U.T,0);
+  gl.bindVertexArray(C.spVao); gl.bindBuffer(gl.ARRAY_BUFFER,C.spBuf); gl.bufferSubData(gl.ARRAY_BUFFER,0,A.subarray(0,n*9)); gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,n); }
+
+/* ---------- the loop of this stage (runs while a flx tale is on) ---------- */
+const FLX={on:false,t:0};
+function flxStart(){ if(FLX.on) return; FLX.on=true; FLX.t=now(); requestAnimationFrame(flxLoop); }
+function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); WIND.blow=WIND.g=WIND.hint=0; const g=$('taleWorld').querySelector('.grade'); if(g) g.remove(); }
+function flxLoop(){ if(!FLX.on) return; if(!flxOn()){ flxStop(); return; } requestAnimationFrame(flxLoop);
+  const tn=now(), dt=Math.min(.05,(tn-FLX.t)/1000), t=tn/1000; FLX.t=tn;
+  if(!(TB&&TB.bwOn)){ WIND.blow+=(0-WIND.blow)*Math.min(1,dt*2); } WIND.hint+=(0-WIND.hint)*Math.min(1,dt*1.5); WIND.g+=(0-WIND.g)*Math.min(1,dt*.7);
+  if(TB){ speechStep(); maneStep(dt,t); (TB.lits||[]).forEach(litStep); if(TB.sc&&TB.sc.frame) try{ TB.sc.frame(dt,t); }catch(e){} }
+  try{ glxFrame(dt,t); }catch(e){ GLX.err=String(e); } }
+/* a gust that sweeps over everything */
+function gust(k){ WIND.g=Math.max(WIND.g,k==null?1:k); }
+
+/* ---------- the pop-up opening: the first scene folds up out of a paper page, then it comes alive ---------- */
+function flPopup(){ const st=TB.st, W=$('taleWorld'), sc=TB.sc, run=tale.run; W.classList.add('paperW');
+  const pap=el('div','papr'); W.appendChild(pap); GLX.fadeT=GLX.fade=0; GLX.growT=GLX.grow=0; MBOX.quiet=true;
+  try{ st.animate([{transform:'translateY(14%) rotateX(62deg) scale(.78)'},{transform:'translateY(14%) rotateX(62deg) scale(.78)',offset:.18},{transform:'none'}],{duration:3600,easing:'cubic-bezier(.35,.1,.25,1)'}); }catch(e){}
+  const items=[...st.querySelectorAll('.l-far>.sil,.l-far>.m-e,.l-mid>.m-e,.l-act>.tp2:not(.kid),.l-act>.u2,.l-fore>.m-e')];
+  items.forEach((e,i)=>{ e.classList.add('popc'); const d=500+i*(1900/Math.max(1,items.length)); e.style.opacity=0;
+    tLater(()=>{ if(!okRun(run,sc)) return; e.style.opacity=''; try{ e.animate([{transform:'perspective(70vh) rotateX(-88deg)',opacity:0},{transform:'perspective(70vh) rotateX(12deg)',opacity:1,offset:.7},{transform:'none',opacity:1}],{duration:900,easing:'cubic-bezier(.3,.8,.4,1)'}); }catch(err){}
+      const [x,y]=relEl(e,[.5,1]); chimeAt([880+((i*5)%7)*90],x); },d); });
+  chime([523,659,784,1047]);
+  return (async()=>{ await Promise.all([say('t_'+tale.t.id+'_titel'),wait(3400)]); if(!okRun(run,sc)) return;
+    /* it comes alive: the paper fades, the light and the grass come up */
+    pap.classList.add('alive'); W.classList.remove('paperW'); items.forEach(e=>e.classList.remove('popc')); GLX.fadeT=1; GLX.growT=1; MBOX.quiet=false; gust(.8);
+    const [sx,sy]=GLX.sun?GLX.sun():[innerWidth*.8,innerHeight*.4]; glSpark(sx,sy,26,[1,.85,.5],16); chime([784,988,1175,1568,2093]);
+    await wait(1300); pap.remove(); })(); }
+
+/* ---------- drawn cast ---------- */
+/* the dandelion clock: 72 seeds on a ball (Fibonacci sphere, the near ones look short), backlit; Flaumi sits on top as a kid */
+function pusteSVG(){ const id='pb'+(++UID), cx=100, cy=118, R=54; let sd='';
+  for(let i=0;i<72;i++){ const y=1-(i+.5)/72*2, rr=Math.sqrt(1-y*y), th=i*2.39996, x=Math.cos(th)*rr, z=Math.sin(th)*rr;
+    if(Math.abs(y)<.08&&x<0&&z>.9) continue; const px=cx+x*R, py=cy-y*R, dep=.55+.45*(1-z)*.5, tuft=6+dep*4;
+    let tl=''; for(let k=0;k<8;k++){ const a=k/8*6.283+i; tl+=`M${px.toFixed(1)} ${py.toFixed(1)} l${(Math.cos(a)*tuft).toFixed(1)} ${(Math.sin(a)*tuft*.85).toFixed(1)} `; }
+    sd+=`<g class="sd" data-i="${i}" style="opacity:${(.55+.45*dep).toFixed(2)}"><path d="M${cx} ${cy} L${px.toFixed(1)} ${py.toFixed(1)}" stroke="rgba(255,250,235,.55)" stroke-width=".9"/><path d="${tl}" stroke="#fffdf4" stroke-width="1.05" stroke-linecap="round"/><circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="1.6" fill="#fff"/></g>`; }
+  return `<svg viewBox="0 0 200 420"><defs><radialGradient id="${id}g"><stop offset="0" stop-color="#fff8e0" stop-opacity=".9"/><stop offset=".55" stop-color="#ffe9b8" stop-opacity=".35"/><stop offset="1" stop-color="#ffd890" stop-opacity="0"/></radialGradient>
+    <linearGradient id="${id}s" x1="0" x2="1"><stop offset="0" stop-color="#3f6a2a"/><stop offset=".6" stop-color="#7aa848"/><stop offset="1" stop-color="#c8d878"/></linearGradient></defs>
+   <path d="M98 420 C92 360 108 300 100 240 C96 200 100 160 100 124" fill="none" stroke="#2c4a1c" stroke-width="8.5" stroke-linecap="round"/>
+   <path d="M98 420 C92 360 108 300 100 240 C96 200 100 160 100 124" fill="none" stroke="url(#${id}s)" stroke-width="6" stroke-linecap="round"/>
+   <path d="M92 420 C70 400 46 404 26 384 L40 382 L30 372 L48 372 L42 360 C64 372 80 390 96 410Z M104 420 C126 396 150 400 172 376 L158 376 L168 364 L150 366 L156 354 C134 368 118 388 104 412Z" fill="#4e8a34" stroke="#2c4a1c" stroke-width="2.5" stroke-linejoin="round"/>
+   <circle class="pglow" cx="${cx}" cy="${cy}" r="${R+26}" fill="url(#${id}g)"/>
+   <circle cx="${cx}" cy="${cy}" r="6.5" fill="#d8c090" stroke="#9a8050" stroke-width="1.5"/>
+   <g class="seeds">${sd}</g></svg>`; }
+/* Flaumi: a little seed with a face under a fluffy umbrella; .mo is the talking mouth (--mo 0..1) */
+function flaumiSVG(){ const id='fl'+(++UID); let pp='';
+  for(let i=0;i<17;i++){ const a=-Math.PI*(.04+.92*i/16), L=36+((i*5)%4)*1.5, x=50+Math.cos(a)*L, y=44+Math.sin(a)*L*.82;
+    pp+=`<path d="M50 44 Q${(50+Math.cos(a)*L*.5).toFixed(1)} ${(44+Math.sin(a)*L*.5-3).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}" fill="none" stroke="#fffdf6" stroke-width="1.7" stroke-linecap="round"/>`;
+    for(let k=-1;k<=1;k++){ const b=a+k*.28; pp+=`<path d="M${x.toFixed(1)} ${y.toFixed(1)} l${(Math.cos(b)*7).toFixed(1)} ${(Math.sin(b)*6).toFixed(1)}" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".85"/>`; } }
+  return `<svg viewBox="0 0 100 160"><defs><radialGradient id="${id}b" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f8dca0"/><stop offset=".6" stop-color="#d8a860"/><stop offset="1" stop-color="#a87838"/></radialGradient>
+    <radialGradient id="${id}h"><stop offset="0" stop-color="#fffbe8" stop-opacity=".85"/><stop offset="1" stop-color="#fff4d0" stop-opacity="0"/></radialGradient></defs>
+   <g class="ump"><ellipse cx="50" cy="26" rx="46" ry="30" fill="url(#${id}h)"/>${pp}<circle cx="50" cy="44" r="2.6" fill="#fff"/></g>
+   <path d="M50 44 C49 60 51 74 50 88" fill="none" stroke="#fff6e0" stroke-width="2.6" stroke-linecap="round"/>
+   <g class="fbody" transform="translate(50 118) scale(1.18) translate(-50 -118)"><ellipse cx="50" cy="118" rx="19" ry="27" fill="url(#${id}b)" stroke="#8a5a28" stroke-width="2.4"/>
+    <path d="M40 98 Q38 118 42 140 M50 92 V146 M60 98 Q62 118 58 140" fill="none" stroke="#b88848" stroke-width="1.2" opacity=".55"/>
+    <ellipse cx="38" cy="124" rx="4.5" ry="2.8" fill="#ff9ab0" opacity=".75"/><ellipse cx="62" cy="124" rx="4.5" ry="2.8" fill="#ff9ab0" opacity=".75"/>
+    <g class="ey ey-o"><ellipse cx="42.5" cy="113" rx="3.6" ry="4.8" fill="#3a2414"/><ellipse cx="57.5" cy="113" rx="3.6" ry="4.8" fill="#3a2414"/><circle cx="43.8" cy="111.2" r="1.5" fill="#fff"/><circle cx="58.8" cy="111.2" r="1.5" fill="#fff"/></g>
+    <g class="ey ey-c" fill="none" stroke="#3a2414" stroke-width="2.2" stroke-linecap="round"><path d="M38.5 114 q4 -4.5 8 0"/><path d="M53.5 114 q4 -4.5 8 0"/></g>
+    <g class="brow" fill="none" stroke="#5a3a1a" stroke-width="1.8" stroke-linecap="round"><path d="M38 105 l7 2"/><path d="M62 105 l-7 2"/></g>
+    <path class="m m-smile" d="M44.5 125 q5.5 5 11 0" fill="none" stroke="#3a2414" stroke-width="2.2" stroke-linecap="round"/>
+    <path class="m m-big" d="M43 124 q7 9 14 0 Z" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.8" stroke-linejoin="round"/>
+    <ellipse class="m m-oh" cx="50" cy="127" rx="3.2" ry="4" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/>
+    <path class="m m-sad" d="M45 128 q5 -4 10 0" fill="none" stroke="#3a2414" stroke-width="2.2" stroke-linecap="round"/>
+    <g class="mo"><ellipse cx="50" cy="126.5" rx="4.6" ry="4.2" fill="#8a2a2a" stroke="#3a2414" stroke-width="1.6"/><ellipse cx="50" cy="129" rx="2.6" ry="1.4" fill="#ff8a9a"/></g></g></svg>`; }
+SVGP.PUSTE=[pusteSVG,.476]; TSYL.BLUME='BLU-ME';
+
+/* ---------- backdrop: the golden evening meadow ---------- */
+SETS2.abendwiese={sky:'linear-gradient(180deg,#27306e 0%,#5a4c96 26%,#b8689a 46%,#f0946a 60%,#ffc47a 72%,#ffe2a2 84%,#fff0c8 100%)', stars:6, clean:1,
+  far:sil(pines(47,46,44,'#8a5c86',226)+hills(41,128,44,'#9a6690')+hills(43,168,40,'#76507e'),62),
+  gnd:'linear-gradient(180deg,#b0a850 0%,#7e9a3a 22%,#4e7a2c 55%,#2c4a1e 100%)',
+  mid:[['OAK',19,57,30],['OAK',83,55,24],['PINE',89,53,24]]};
+
+/* the wind gesture: blow on the dandelion (microphone) or wipe upwards with the finger; taps on the head blow a little too.
+   a:{id, head:[fx,fy] of the head in the prop, pct (default .66)}. Seeds come off one by one; Flaumi (a kid) stays. */
+Object.assign(G2,{
+ blow:{ setup(){ const a=TB.a, P=TB.els[a.id]; TB.bwOn=true;
+     TB.bw={n:0,imp:0,acc:0,done:false,auto:false,q:0,mic:false,sw:null,tap:0};
+     TB.bwSeeds=shuffle([...P.querySelectorAll('.sd')].filter(s=>!s.classList.contains('gone'))); TB.bw.tot=TB.bwSeeds.length+(TST.bwn||0); TB.bw.n=TST.bwn||0;
+     const R=el('div','',RING2).firstChild, rr=P.getBoundingClientRect(); R.style.width=R.style.height=rr.width*1.5+'px'; R.classList.add('bwr'); TB.ring=R;
+     const hd=el('div','bwh'); hd.appendChild(R); P.appendChild(hd); hd.style.left=(a.head[0]*100)+'%'; hd.style.top=(a.head[1]*100)+'%'; TB.bwHead=hd; this.prog();
+     MBOX.quiet=true; micStart().then(ok=>{ if(TB&&TB.bw) TB.bw.mic=ok; });
+     g2loop(dt=>this.step(dt)); },
+   headXY(){ return relPx(TB.a.id,TB.a.head); },
+   step(dt){ const b=TB.bw; if(b.done) return; const m=micLevel(dt); let s=m>.06?m:0; if(m>.3) poke2();
+     b.imp=Math.max(0,b.imp-dt*1.5); s=Math.max(s,b.imp); if(b.auto) s=Math.max(s,.8);
+     WIND.blow+=(Math.max(s,WIND.hint*.5)-WIND.blow)*Math.min(1,dt*7);
+     if(s>.1){ b.acc+=dt*s*b.tot*.6; let k=0; while(b.acc>=1&&k<6){ b.acc--; k++; if(!this.release()) break; } }
+     const pb=TB.els[TB.a.id].querySelector('.pglow'); if(pb) pb.style.opacity=(.75+s*.5).toFixed(2); },
+   release(){ const b=TB.bw, sd=TB.bwSeeds.shift(); if(!sd||b.done) return false; const r=sd.querySelector('circle').getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2, [hx,hy]=this.headXY();
+     sd.classList.add('gone'); const dx=x-hx, dy=y-hy, d=Math.hypot(dx,dy)||1;
+     for(let i=0;i<(GLX.ok?3:1);i++){ if(GLX.ok) glSeed(x+(Math.random()-.5)*6,y+(Math.random()-.5)*6,dx/d*(5+Math.random()*7)+3,dy/d*5-(4+Math.random()*6),{s:i?1.4+Math.random():2.4});
+       else fxAdd({k:'glit',x,y,vy:-(10+Math.random()*10)*vu(),ph:Math.random()*6,s:1.2,life:4,c:'rgba(255,255,255,.95)'}); }
+     if(Math.random()<.35) glSpark(x,y,2,[1,.92,.7],5);
+     b.n++; TST.bwn=b.n; this.prog(); const q=Math.floor(b.n/b.tot*6); if(q>b.q){ b.q=q; chimeAt([784+q*98,1175+q*98],x); }
+     if(TB.sc.blowing) TB.sc.blowing(b.n/b.tot); if(b.n/b.tot>=(TB.a.pct||.66)) this.finish(); return true; },
+   prog(){ const b=TB.bw; if(TB.ring) TB.ring.querySelector('.fg').style.strokeDashoffset=(1-Math.min(1,b.n/b.tot/(TB.a.pct||.66))).toFixed(3); },
+   down(x,y){ const b=TB.bw; if(b.done) return; b.sw={x,y,t:now()}; const [hx,hy]=this.headXY(), u=vu();
+     if(Math.hypot(x-hx,y-hy)<u*16){ b.tap++; b.imp=Math.max(b.imp,.55); poke2(); WIND.blow=Math.max(WIND.blow,.4); } },
+   move(x,y){ const b=TB.bw, s=b.sw; if(!s||b.done) return; const u=vu(), t=now(), dy=s.y-y, dtm=Math.max(16,t-s.t), v=dy/dtm;
+     if(dy>u*2&&v>.12){ b.imp=Math.min(1,Math.max(b.imp,.35+v*1.1)); poke2(); } if(dy<-u*3||t-s.t>220){ s.x=x; s.y=y; s.t=t; } },
+   up(x,y,pd){ const b=TB.bw; if(b.done) return; b.sw=null; const u=vu(); if(pd&&Math.hypot(x-pd.x,y-pd.y)<u*2&&now()-pd.t<400){ const [hx,hy]=this.headXY(); if(Math.hypot(x-hx,y-hy)>=u*16) miss2(); } },
+   hint(){ const b=TB.bw; if(b.done||b.auto) return; const [hx,hy]=this.headXY(), u=vu(); TB.ring.classList.add('pulse'); bLater(()=>TB.ring&&TB.ring.classList.remove('pulse'),2600);
+     ghost([[hx-u*4,hy+u*30,1,0],[hx-u*4,hy+u*26,.9,1],[hx,hy-u*2,.9,1],[hx+u*3,hy-u*18,1,0],[hx-u*4,hy+u*26,.9,0],[hx-u*4,hy+u*26,.9,1],[hx,hy-u*2,.9,1],[hx+u*3,hy-u*18,1,0]],2400);
+     /* only the picture of a breath: the grass and the mane move, no seed comes off */
+     const t0=now(), sc=TB.sc; const iv=setInterval(()=>{ if(!TB||TB.sc!==sc||now()-t0>1900){ clearInterval(iv); return; } WIND.hint=Math.max(WIND.hint,.8);
+       const k=Math.random(); fxAdd({k:'streak',x:hx-u*(16+k*10),y:hy+u*(14-k*20),vx:u*30,vy:-u*14,len:u*(5+k*4),life:.7}); },60); taleT.push(iv); },
+   auto(){ const b=TB.bw; if(b.done||b.auto) return; this.hint(); b.auto=true; },
+   finish(){ const b=TB.bw; if(b.done) return; b.done=true; TB.bwOn=false; const [hx,hy]=this.headXY(); WIND.blow=1;
+     while(TB.bwSeeds.length){ const sd=TB.bwSeeds.shift(), r=sd.querySelector('circle').getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2; sd.classList.add('gone');
+       if(GLX.ok) for(let i=0;i<3;i++) glSeed(x,y,(x-hx)/vu()*.25+4+Math.random()*8,(y-hy)/vu()*.2-(5+Math.random()*7)); }
+     if(GLX.ok){ for(let i=0;i<140;i++) glSeed(hx+(Math.random()-.5)*vu()*12,hy+(Math.random()-.5)*vu()*12,(Math.random()-.3)*16,-(4+Math.random()*12),{s:1.2+Math.random()*1.6}); glSpark(hx,hy,30,[1,.9,.6],18); }
+     else glitterBurst(hx,hy,40,30);
+     if(TB.ring) TB.ring.style.opacity=0; micStop(); MBOX.quiet=false; gust(1.2); chime([784,988,1175,1568]); done2(); } }
+});
+
+/* ================= the tale ================= */
+const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
+const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
+ cast(sc){ if(sc.st) Object.assign(TST,sc.st); const A=TB.act, mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
+     const P=par&&TB.els[par]; if(P){ e.classList.add('kid'); (P.querySelector(':scope>.bb')||P).appendChild(e); } else A.appendChild(e); TB.els[id]=e; return e; };
+  flxStart(); const W=$('taleWorld'); let g=W.querySelector('.grade'); if(!g){ g=el('div','grade'); W.appendChild(g); } g.dataset.g=sc.grade||'';
+  /* the sun, low in the sky behind the hills */
+  if(sc.sun3){ const [x,y,z]=sc.sun3, s=el('div','sun3'); s.style.cssText=`left:${x}%;top:${y}%;width:${z}vh;height:${z}vh`; TB.st.querySelector('.l-sky').appendChild(s); TB.els.sonne=s;
+    (sc.clouds||[]).forEach(([x,y,w,h],i)=>{ const c=el('div','cl3'); c.style.cssText=`left:${x}%;top:${y}%;width:${w}%;height:${h}vh;animation-delay:${-i*7}s`; TB.st.querySelector('.l-sky').appendChild(c); }); }
+  if(sc.fl){ const [x,y,z,par]=sc.fl, f=mk('flaumi','flm',flaumiSVG(),x,y,z,par); f.dataset.mood=TST.flm||'curious'; }
+  const sunF=()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4];
+  litUni(TB.els.uni,sunF,{k:sc.litK==null?1:sc.litK}); windUni(TB.els.uni);
+  (sc.shadows||[]).forEach(([id,fx,fy,w])=>gShadow(id,fx,fy,w,sunF()[0]));
+  glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
+  if(sc.music) mboxStart();
+  alignLoad(Object.keys(CLIPS).filter(k=>k.startsWith('t2_'+tale.t.id+'_')||(sc.a&&sc.a.w&&k==='wort_'+keyOf(sc.a.w)))); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='flaumi'){ sqs(b); bubble(rnd(['hihi!','huiii!','kitzel!']),x,y-u*6,3.6,'#fff6e0'); glSpark(x,y,10,[1,.95,.8],8); chimeAt([1568,2093],x); return true; }
+  if(id==='pb'){ sqs(b); gust(.4); chimeAt([1175,1397],x); return true; }
+  if(id==='sonne'){ glSpark(x,y,16,[1,.85,.5],12); chimeAt([784,1047],x); return true; }
+  return false; },
+ sc:[
+ /* 1 – the golden evening: the page folds up, the light comes; she blows the dandelion clock, hundreds of seeds fly; Flaumi lets go last */
+ {set:'abendwiese', dark:0, u:[23,67,33], nofly:1, music:1, grade:'gold', st:{flm:'curious',bwn:0},
+  sun3:[63,50,8], clouds:[[18,16,26,4],[50,10,22,3.4],[74,20,30,4.4]],
+  p:[['pb','PUSTE',66,55,50]], fl:[50,3,13,'pb'], shadows:[['uni',.55,.93,30],['pb',.5,.99,9]],
+  gl:{rays:{k:1.05,hz:.43,hk:.17,col:[1,.76,.42]}, motes:150, vig:[[.16,.05,.12],.5], blowP:()=>relPx('pb',[.5,.3]),
+      grass:[[.71,.79,560,1.8,3.6,.3,.55,.55],[.79,.9,520,3.2,6.5,.5,.9,.75],[.9,1.05,340,6.5,12,.9,1.5,1]]},
+  pre(){ return flPopup(); },
+  enter(){ TST.flm='curious'; const F=TB.els.flaumi; F.style.opacity=0;
+    onPh('Dein Einhorn',()=>{ uniHop(); });
+    onPh('Mitten auf der Wiese',()=>{ sqs(TB.els.pb); const [x,y]=relPx('pb',[.5,.28]); glSpark(x,y,14,[1,.95,.85],8); });
+    onPh('Ganz oben',()=>{ F.style.opacity=''; try{ F.animate([{transform:'translateY(40%) scale(.3)',opacity:0},{transform:'none',opacity:1}],{duration:900,easing:'cubic-bezier(.2,1.5,.4,1)'}); }catch(e){} chimeAt([1318,1568],ctr(F)[0]); });
+    onPh('Das war Flaumi',()=>{ mood('flaumi','happy'); sqs(F); });
+    talk('flaumi','Ich möchte','flüsterte'); onPh('Ich möchte',()=>mood('flaumi','curious'));
+    onPh('Puste die',()=>{ mood('flaumi','happy'); }); },
+  ready(){ const F=TB.els.flaumi; F.style.opacity=''; mood('flaumi','happy'); },
+  a:{t:'blow',id:'pb',head:[.5,.28],pct:.66,w:'BLUME'},
+  s:'Es war einmal ein Sommerabend, so golden und still, als hätte jemand die ganze Wiese in Honig getaucht. Dein Einhorn graste im warmen Licht. Mitten auf der Wiese stand eine Pusteblume, rund und weiß wie ein kleiner Mond. Ganz oben saß ein winziges Samenkind mit einem flauschigen Schirmchen. Das war Flaumi. Ich möchte so gern fliegen, flüsterte Flaumi. Puste die Pusteblume an! Puste ganz fest!',
+  h:'Puste ganz fest auf die Pusteblume! Du kannst auch mit dem Finger nach oben wischen.',
+  blowing(p){ if(p>.3&&TST.flm!=='oh'){ mood('flaumi','oh'); TST.flm='oh'; } },
+  done(){ mood('flaumi','happy'); kara('BLUME'); },
+  d:['Hui! Da flogen die Samenkinder in die Luft, hunderte, wie kleine Schirmchen im Abendlicht.',
+     ()=>{ onPh('Nur Flaumi',()=>{ const F=TB.els.flaumi; F.classList.add('cling'); mood('flaumi','oh'); },'d2');
+       onPh('warmer Windstoß',()=>{ gust(1.4); },'d2');
+       onPh('flog Flaumi',()=>{ const F=TB.els.flaumi; F.classList.remove('cling'); mood('flaumi','happy'); const E=unstick(F), u=vu(), [x0,y0]=ctr(E);
+         const [x1,y1]=[innerWidth*.8,innerHeight*.2];
+         try{ E.animate([{transform:'none'},{transform:`translate(${(x1-x0)*.35}px,${(y1-y0)*.6-u*6}px) rotate(-14deg)`},{transform:`translate(${(x1-x0)*.7}px,${(y1-y0)*.85}px) rotate(10deg)`},{transform:`translate(${x1-x0}px,${y1-y0}px) rotate(-4deg)`}],{duration:2600,easing:'ease-in-out',fill:'forwards'}); }catch(e){}
+         bLater(()=>{ E.getAnimations().forEach(q=>q.cancel()); putAt(E,x1,y1); E.classList.add('hover'); },2600); const [sx,sy]=ctr(E); glSpark(sx,sy,14,[1,.95,.8],10); chimeAt([1175,1568,2093],sx); },'d2');
+       talk('flaumi','Juhu','rief Flaumi','d2'); onPh('Juhu',()=>{ mood('flaumi','happy'); },'d2');
+       talk('flaumi','Aber wo',null,'d2'); onPh('Aber wo',()=>{ mood('flaumi','worried'); },'d2'); },
+     'Nur Flaumi hielt sich noch fest. Da kam ein warmer Windstoß, und hui, flog Flaumi davon, hoch über die Wiese! Juhu! rief Flaumi. Aber wo soll ich nur wachsen?',
+     ()=>{ onPh('Komm',()=>{ uniHop(); mood('flaumi','curious'); },'d3'); onPh('Wir fliegen',()=>{ mood('flaumi','happy'); const F=TB.els.flaumi; gust(.9);
+         try{ F.animate([{transform:'none'},{transform:'translate(26vw,-4vh) rotate(12deg)'}],{duration:3000,easing:'ease-in',fill:'forwards'}); }catch(e){}
+         const U=TB.els.uni; try{ U.animate([{transform:'none'},{transform:'translate(8vw,-3vh)'}],{duration:2600,easing:'ease-in-out',fill:'forwards'}); }catch(e){} trail(U,2200); },'d3'); },
+     'Komm, sagte dein Einhorn. Wir fliegen hinterher!', 1400]}
+ ]};
+/*<FLAUMI*/
+
 function regTale2(t){ if(!t.door) reg('t_'+t.id+'_titel',t.title+'.',null,'Märchen');
   t.sc.forEach((s,i)=>{ const k='t2_'+t.id+'_'+(i+1); reg(k,s.s,null,'Märchen'); if(s.h) reg(k+'h',s.h,null,'Märchen'); if(typeof s.d==='string') reg(k+'d',s.d,null,'Märchen');
     if(Array.isArray(s.d)) s.d.filter(x=>typeof x==='string').forEach((x,j)=>reg(k+'d'+(j+1),x,null,'Märchen'));
@@ -6345,7 +6817,8 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
    <path d="M30 80 Q60 92 90 80 L88 88 Q60 100 32 88Z" fill="#ff7aa8" stroke="#9a3a6a" stroke-width="2"/><path d="M80 88 l6 16 l6 -4 l-4 -14Z" fill="#ff7aa8" stroke="#9a3a6a" stroke-width="2" stroke-linejoin="round"/>
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
-const bItems=()=>[{k:'lesen'},{k:'advent'},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
+const bItems=()=>[{k:'lesen'},{k:'advent'},...(flaumiOn()?[{k:'tale',t:FLAUMI2}]:[]),...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -6354,6 +6827,8 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
   if(id==='nikolaus') return `<div class="art" style="width:44%;margin-top:6%"><div class="chr nko" data-mood="happy" style="position:relative;width:100%"><div class="bb">${nikoSVG()}</div></div></div>`+
     `<div class="art" style="position:absolute;left:8%;bottom:6%;width:30%;animation-delay:-1.2s"><div class="chr esl decke" data-mood="happy" style="position:relative;width:100%"><div class="bb">${eselSVG()}</div></div></div>`+
     `<div class="art" style="position:absolute;right:10%;top:9%;width:17%;animation-delay:-.6s"><div class="chr stn" data-mood="happy" style="position:relative;width:100%;--sg:.7"><div class="bb">${sternSVG()}</div></div></div>`+tw;
+  if(id==='flaumi') return `<div class="flart" style="position:absolute;inset:0"><div class="pbb">${pusteSVG()}</div><div class="fla"><div class="chr flm" data-mood="happy" style="position:relative;width:100%"><div class="bb">${flaumiSVG()}</div></div></div>`+
+    [[22,52,0],[40,40,-2.3],[66,58,-4.6],[30,30,-1.2],[72,34,-5.8]].map(([x,y,d])=>`<span class="fsd" style="left:${x}%;top:${y}%;animation-delay:${d}s">${flaumiSVG()}</span>`).join('')+`</div>`+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
   if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
@@ -6536,6 +7011,8 @@ reg('adv_vers3',AVERS0+' Kerzen leuchten, eins, zwei, drei, alle Freunde sind da
 reg('adv_vers4','Sternchen, Sternchen, hell und rein, heute kommt das letzte Licht hinein! Silberfaden, lang und fein, nun wirst du wieder oben sein!',null,'Märchen');
 reg('adv_neu24','Schau mal! Das Sternchen ist wieder oben am Himmel. Komm, wir singen unser Sternchenlied ein letztes Mal:',null,'Märchen');
 for(let d=7;d<=24;d++) regTale2(ADVD[d]);
+/* Flaumis weite Reise: after the calendar, so the older lines keep their order in voice/clips.tsv */
+regTale2(FLAUMI2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
@@ -6606,7 +7083,7 @@ function sceneDone(){ if(!TA||TA.done) return; TA.done=true; TA.live=false; tCle
   if(a.fin==='glit'||a.fin==='light') glitterBurst(innerWidth*.6,innerHeight*.5,70,46);
   chime([784,988,1175,1568]); hearts(...centerOf(TA.els.uni),4);
   tLater(nextScene, a.t==='choose'||(a.t==='all'&&a.w) ? 2300 : 1800); }
-async function endTale(){ const t=tale.t, run=tale.run; tClear(); hideWord(); if(!t.door) S.tales[t.id]=true; save();
+async function endTale(){ const t=tale.t, run=tale.run; tClear(); hideWord(); if(!t.door&&!t.wip) S.tales[t.id]=true; save();
   if(tale.adv){ const d=tale.adv; S.adv.open[d]=true; save(); await wait(600); if(!tale||tale.run!==run||!taleOn()) return; return openAdv({back:d,fin:1}); }
   const g=el('div','gift','⭐'); $('taleWorld').appendChild(g); chime([523,659,784,1047,1318]); glitterBurst(innerWidth/2,innerHeight/2,60,40); rainDown(['✦','✧','★','💖'],3000,40);
   await say('m_ende'); await wait(1200); if(!tale||tale.run!==run||!taleOn()) return; taleShelf(); }
@@ -6680,6 +7157,11 @@ function openParent(){
       (auch per Adresse: <code>?advtag=5</code>)</p>
     <div class="seg"><button class="btn${S.advAll?' pri':''}" id="pAdvAll">${S.advAll?'Alle Türchen offen ✓':'Alle Türchen freischalten'}</button><button class="btn warn" id="pAdvReset">Türchen wieder schließen</button></div></div>
 
+  <h2>Flaumis weite Reise (neu, in Arbeit)</h2>
+  <div class="box"><p>Das neue Märchen mit Licht, Wind und Pusten. Solange es noch nicht fertig ist, steht es nur im Buch, wenn es hier eingeschaltet ist (oder mit <code>?flaumi=1</code>).</p>
+    <div class="seg"><button class="btn${S.flaumiOn?' pri':''}" id="pFlOn">${S.flaumiOn?'Steht im Buch ✓':'Im Buch zeigen'}</button><button class="btn${S.mic?' pri':''}" id="pMic">${S.mic?'Pusten ins Mikrofon ✓':'Pusten ins Mikrofon erlauben'}</button></div>
+    <p id="pMicMsg">Ohne Mikrofon wischt sie mit dem Finger nach oben – das geht immer. Mit Mikrofon pustet sie wirklich (Apple: in Safari „Mikrofon: Erlauben“ für diese Seite einstellen, sonst fragt das iPad jedes Mal).</p></div>
+
   <h2>Einhörner</h2>
   <div class="box"><p>${S.herd+1} von ${HERD.length} Einhörnern gefunden. Nach jeder geschafften Runde kommt ein neues dazu.</p>
     <div class="seg" id="pHerd"><button data-v="0">Nur Funkel</button><button data-v="${HERD.length-1}">Alle zeigen</button></div></div>
@@ -6728,6 +7210,9 @@ function openParent(){
     sel.onchange=()=>{ const v=sel.value; S.advOv=v===''?'':v==='NOV'?y+'-11-30':v==='AFTER'?y+'-12-26':y+'-12-'+String(v).padStart(2,'0'); save(); openParent(); };
     $('pAdvAll').onclick=()=>{ S.advAll=!S.advAll; save(); openParent(); };
     $('pAdvReset').onclick=()=>{ S.adv={y:advInfo().y,open:{},done:{}}; save(); openParent(); }; }
+  $('pFlOn').onclick=()=>{ S.flaumiOn=!S.flaumiOn; save(); openParent(); };
+  $('pMic').onclick=async()=>{ if(S.mic){ S.mic=false; save(); return openParent(); } $('pMicMsg').textContent='Bitte das Mikrofon erlauben …';
+    const ok=await micAsk(); S.mic=ok; save(); openParent(); $('pMicMsg').textContent=ok?'Mikrofon erlaubt. Beim Pusten hört Flaumi zu.':'Das Mikrofon wurde nicht erlaubt – Wischen mit dem Finger geht trotzdem.'; };
   $('pHerd').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.herd=+v; save(); openParent(); };
   $('pStory').onclick=()=>{ S.seen={}; save(); $('pStoryMsg').textContent='Wird beim nächsten Start erzählt.'; };
   $('pReset').onclick=()=>{ S.stars=0;S.level=0;S.streak=0;S.herd=0;S.loot={};S.tn={};S.tales={};save();openParent(); $('pResetMsg').textContent='Zurückgesetzt.'; };
