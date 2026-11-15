@@ -3753,7 +3753,7 @@ Object.assign(G2,{
    to laughing. */
 const WVERS='Wellchen, Wellchen, hin und her – ich bring dir was vom großen Meer!';
 /* real clip lengths in s, filled in after the voice job; timed enter() animations use the position of a phrase × the length */
-const WDUR={};
+const WDUR={t2_welle_1:31.90,t2_welle_1d1:4.26,t2_welle_1d2:8.78,t2_welle_1d3:7.65,t2_welle_1h:5.46,t2_welle_2:26.04,t2_welle_2d1:6.50,t2_welle_2d2:9.98,t2_welle_2h:3.66,t2_welle_3:23.72,t2_welle_3d1:3.37,t2_welle_3d2:5.28,t2_welle_3d3:11.00,t2_welle_3h:2.17,t2_welle_4:22.28,t2_welle_4d1:8.78,t2_welle_4d2:6.45,t2_welle_4h:4.18,t2_welle_5:23.72,t2_welle_5d1:6.30,t2_welle_5d2:5.98,t2_welle_5h:5.20,t2_welle_6:22.60,t2_welle_6d1:8.80,t2_welle_6d2:6.35,t2_welle_6h:4.41,t2_welle_6w2:3.47,t2_welle_6w3:3.84,t2_welle_7:21.73,t2_welle_7d1:10.58,t2_welle_7d2:8.31,t2_welle_7d3:13.27,t2_welle_7d4:11.23,t2_welle_7h:5.33};
 function atPh(ph,sfx){ const k=TB.n(sfx||''), c=CLIPS[k]; if(!c) return 0; const i=Math.max(0,c.text.indexOf(ph)); return Math.round(i/c.text.length*(WDUR[k]||c.text.length/12.6)*1000); }
 function tide(top){ TST.tide=top; if(TB&&TB.sea) TB.sea.style.setProperty('--sea',top+'%'); }
 function behindSea(ids){ if(!TB.sea) return; ids.forEach(id=>{ const e=TB.els[id]; if(e&&e.parentNode===TB.act) TB.act.insertBefore(e,TB.sea); }); }
