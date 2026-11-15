@@ -3524,6 +3524,21 @@
      "say": "Turm"
     }
    ]
+  },
+  {
+   "id": "w_x034_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Schnee. Flocke.",
+   "items": [
+    {
+     "key": "wort_schnee",
+     "say": "Schnee"
+    },
+    {
+     "key": "wort_flocke",
+     "say": "Flocke"
+    }
+   ]
   }
  ]
 }
