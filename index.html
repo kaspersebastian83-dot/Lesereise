@@ -1076,6 +1076,10 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .frog .bb{transform-origin:50% 100%}
 .fstar{position:absolute;translate:-50% -50%;font-size:3vh;color:#fff8d0;text-shadow:0 0 1.5vh #fff,0 0 4vh #ffe27a;animation:fstar 2.4s ease-out both,twinkle 2.6s 2.4s ease-in-out infinite}
 @keyframes fstar{from{opacity:0;transform:scale(.2) rotate(-90deg)}to{opacity:1}}
+#taleWorld .grade[data-g=night]{background:radial-gradient(ellipse 90% 80% at 50% 30%,rgba(60,80,160,.18) 0,rgba(10,14,50,.35) 100%);mix-blend-mode:soft-light}
+.tp2.pilz{filter:none} .pilz .cap{transition:filter 1s} .tp2.pilz{opacity:.55;transition:opacity 1s,filter 1s}
+.tp2.pilz.on{opacity:1;filter:drop-shadow(0 0 1.5vh #bff0ff) drop-shadow(0 0 4vh rgba(120,210,255,.8))}
+.moon2.rise3{animation:rise3 3.4s cubic-bezier(.3,.7,.3,1) both} @keyframes rise3{from{transform:translateY(14vh);opacity:0}}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -3172,7 +3176,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -6472,7 +6476,10 @@ function litStep(L){ const q=L.fn&&L.fn(); if(!q||!L.sv.isConnected) return; con
   L.r1.style.opacity=L.r2.style.opacity=L.k.toFixed(2); }
 /* a long soft shadow on the ground, away from the light */
 function gShadow(id,fx,fy,w,lx){ const E=TB.els[id]; if(!E) return; const s=el('div','gsh'); TB.act.insertBefore(s,TB.act.firstChild.nextSibling);
-  const r=E.getBoundingClientRect(), [px,py]=wpos(r.left+r.width*fx,r.top+r.height*fy); s.style.cssText=`left:${px}%;top:${py}%;width:${w}vh`;
+  const r=E.getBoundingClientRect(), WR=TB.W.getBoundingClientRect(); let px, py;
+  /* from the element's own place in the play layer (not its box on screen: the layer may still be sliding in) */
+  if(E.parentElement===TB.act&&E.style.left.endsWith('%')){ px=parseFloat(E.style.left)+(fx-.5)*r.width/WR.width*100; py=parseFloat(E.style.top)+(fy-.5)*r.height/WR.height*100; } else [px,py]=wpos(r.left+r.width*fx,r.top+r.height*fy);
+  s.style.cssText=`left:${px}%;top:${py}%;width:${w}vh`;
   const side=(lx!=null?lx:innerWidth)>r.left+r.width/2?-1:1; s.style.transform=`translateX(${side*38}%) scaleX(1.9) skewX(${side*-18}deg)`; TB.els[id+'Sh']=s; return s; }
 
 /* ---------- the unicorn's mane and tail swing in the wind (springs) ---------- */
@@ -6596,7 +6603,7 @@ function glGrass(rows){ if(!GLX.ok) return; const r=seeded(31), A=[]; rows.forEa
 function glxScene(cfg){ const keep=cfg&&cfg.keep&&GLX.cfg; GLX.cfg=cfg||null; if(!keep){ GLX.P=GLX.P.filter(p=>!p.amb); GLX.PL=GLX.PL.filter(p=>!p.amb); } if(!cfg){ glxShow(false); return; }
   if(!glxInit()) return; glxShow(true); if(cfg.grass!=='keep'){ glGrass(cfg.grass||[]); if(!cfg.grass) GLX.nG=0; } GLX.sun=cfg.sun||null; GLX.growT=cfg.grow==null?1:cfg.grow;
   if(!keep){ GLX.sunS=null; GLX.gc=null; } const nm=GLX.PL.filter(p=>p.k==='mote').length; for(let i=nm;i<(cfg.motes||0);i++) glMote(!keep);
-  GLX.PL=GLX.PL.filter(p=>p.k!=='ffly'); for(let i=0;i<(cfg.flies||0);i++) glFly(); }
+  GLX.PL=GLX.PL.filter(p=>p.k!=='ffly'&&p.k!=='ffx'&&p.k!=='halo'); for(let i=0;i<(cfg.flies||0);i++) glFly(); }
 /* fireflies: wander, glow, pulse */
 function glFly(x,y){ const u=vu(), W=innerWidth, H=innerHeight; GLX.PL.push({k:'ffly',amb:1,x:x!=null?x:W*(.08+Math.random()*.84),y:y!=null?y:H*(.3+Math.random()*.55),vx:0,vy:0,s:u*(1.1+Math.random()*.7),ph:Math.random()*6.283,age:Math.random()*2,life:1e9,c:[.85,1,.45],cell:3,a:.9}); }
 /* the camera moves sideways: the grass field scrolls with the play layer, particles slide along */
@@ -6665,7 +6672,7 @@ function glWater(C,w,W,H,t,sun){ const gl=C.gl, P=C.water, tn=now(); gl.useProgr
 function holeOf(e,fx,fy,fw,fh){ if(!e||!e.isConnected) return null; const r=e.getBoundingClientRect(); return [r.left+r.width*fx,r.top+r.height*fy,r.width*fw,r.height*fh]; }
 function glDrawSp(C,arr,W,H,add,t){ const gl=C.gl, A=C.spArr; let n=0;
   for(const p of arr){ if(n>=1600) break; const f=p.age/p.life; let a=p.a*Math.min(1,p.age*3)*Math.min(1,(1-f)*3), s=p.s;
-    if(p.k==='mote') a*=.45+.55*Math.sin(t*2.1+p.ph*5); if(p.k==='spark') s*=1.4-f*.6; if(p.k==='ffly'){ const b=.5+.5*Math.sin(t*2.6+p.ph*4); a=p.a*(.25+.75*b*b); s*=.8+.4*b; } a*=GLX.fade; if(a<=.005) continue;
+    if(p.k==='mote') a*=.45+.55*Math.sin(t*2.1+p.ph*5); if(p.k==='spark') s*=1.4-f*.6; if(p.k==='ffly'||p.k==='ffx'){ const b=.5+.5*Math.sin(t*2.6+p.ph*4); a=p.a*(.25+.75*b*b); s*=.8+.4*b; } a*=GLX.fade; if(a<=.005) continue;
     const o=n*9; A[o]=p.x; A[o+1]=p.y; A[o+2]=s; A[o+3]=p.rot||0; A[o+4]=a; A[o+5]=p.cell; A[o+6]=p.c[0]; A[o+7]=p.c[1]; A[o+8]=p.c[2]; n++; }
   if(!n) return; const P=C.sp; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform1f(P.U.add,add?1:0); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,C.tex); gl.uniform1i(P.U.T,0);
   gl.bindVertexArray(C.spVao); gl.bindBuffer(gl.ARRAY_BUFFER,C.spBuf); gl.bufferSubData(gl.ARRAY_BUFFER,0,A.subarray(0,n*9)); gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,n); }
@@ -6759,6 +6766,10 @@ SETS2.bach={sky:'linear-gradient(180deg,#141446 0%,#34286e 28%,#7a4482 52%,#d06a
   far:sil(hills(61,150,40,'#4a3466')+pines(63,34,70,'#3a2a58',200)+hills(65,190,30,'#33264e'),70),
   mid:[['OAK',22,50,24],['PINE',74,46,22],['PINE',82,48,18]],
   gnd:'linear-gradient(180deg,#3a4a2a 0%,#2a3a24 30%,#1a2a1a 100%)'};
+SETS2.nachtwiese={sky:'linear-gradient(180deg,#04061c 0%,#0c1238 45%,#1c2456 80%,#2a3060 100%)', stars:70, dcol:'6,8,30',
+  far:sil(hills(71,160,40,'#10183a')+pines(73,30,80,'#0c1430',190),68),
+  mid:[['PINE',20,48,24],['OAK',78,50,22]],
+  gnd:'linear-gradient(180deg,#14223a 0%,#0e1a2c 40%,#081220 100%)'};
 /* the wind gesture: blow on the dandelion (microphone) or wipe upwards with the finger; taps on the head blow a little too.
    a:{id, head:[fx,fy] of the head in the prop, pct (default .66)}. Seeds come off one by one; Flaumi (a kid) stays. */
 Object.assign(G2,{
@@ -6930,6 +6941,55 @@ function frogJump(toId){ const F=TB.els.frosch, T=TB.els[toId]; if(!F||!T) retur
   bLater(()=>{ putAt(F,x1,ty); jelly('frosch',1.2); glRipple(x1,y1+u*2,1.2); glRipple(x1+u*3,y1+u*3,.6); quak(x1);
     for(let i=0;i<10;i++){ const a=-Math.PI*(.15+.7*Math.random()); fxAdd({k:'foam',x:x1+(Math.random()-.5)*u*6,y:y1,vx:Math.cos(a)*u*22,vy:Math.sin(a)*u*30,g:u*90,yEnd:y1+u*2,s:.7+Math.random()*.5,life:1.2}); } },1320); }
 
+/* ---------- night: fireflies she gathers with her finger; their light falls on everyone ---------- */
+function pilzSVG(){ const id='pz'+(++UID); return `<svg viewBox="0 0 80 90"><defs><radialGradient id="${id}" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#fff6c0"/><stop offset=".6" stop-color="#9ae8ff"/><stop offset="1" stop-color="#5aa8e0"/></radialGradient></defs>
+  <path d="M32 50 Q30 74 26 88 L54 88 Q50 74 48 50Z" fill="#e8e4f4" stroke="#8a84a8" stroke-width="2.5"/>
+  <path class="cap" d="M6 52 Q8 14 40 10 Q72 14 74 52 Q40 60 6 52Z" fill="url(#${id})" stroke="#3a6a9a" stroke-width="2.5"/>
+  <g fill="#fff" opacity=".85"><circle cx="24" cy="32" r="4"/><circle cx="44" cy="22" r="3.4"/><circle cx="58" cy="38" r="4.4"/><circle cx="36" cy="42" r="2.6"/></g></svg>`; }
+function buschSVG(){ return `<svg viewBox="0 0 200 110"><g fill="#16243a"><circle cx="40" cy="70" r="40"/><circle cx="90" cy="54" r="50"/><circle cx="148" cy="66" r="44"/><rect x="0" y="70" width="200" height="40"/></g>
+  <g fill="#1e3048"><circle cx="76" cy="40" r="22"/><circle cx="140" cy="50" r="18"/></g></svg>`; }
+Object.assign(SVGP,{PILZ:[pilzSVG,.89],BUSCH:[buschSVG,1.82]});
+/* the swarm: each firefly {x,y,hx,hy,join,ph}; light at the swarm's centre */
+const FF={c:null};
+function ffDraw(){ /* without WebGL the fireflies are drawn on the light canvas */ FX.dr.push(tn=>{ if(!TB||!TB.ff||GLX.ok) return !!(TB&&TB.ff); const cx=FX.cx, u=vu(); cx.globalCompositeOperation='lighter';
+  TB.ff.forEach(f=>{ if(!f.on) return; const b=.5+.5*Math.sin(tn/380+f.ph*4), z=u*(2.4+b*1.6); cx.globalAlpha=.35+.65*b; cx.drawImage(fxSprite('rgba(220,255,130,.95)'),f.x-z,f.y-z,z*2,z*2); }); cx.globalAlpha=1; return true; }); }
+function ffMake(list){ const W=innerWidth, H=innerHeight; TB.ff=list.map(([x,y],i)=>({x:x*W,y:y*H,hx:x*W,hy:y*H,join:false,on:false,ph:i*1.7+Math.random(),vx:0,vy:0,
+    gp:GLX.ok?(GLX.PL.push({k:'ffx',x:x*W,y:y*H,s:vu()*3.2,ph:i*1.7,age:0,life:1e9,c:[.9,1,.55],cell:3,a:0}),GLX.PL[GLX.PL.length-1]):null,
+    L:light({fn:null,r0:0,rT:0,k0:0,kT:0})}));
+  TB.ff.forEach(f=>{ f.L.fn=()=>f.on?[f.x,f.y]:null; }); ffDraw(); }
+function ffShow(f){ if(f.on) return; f.on=true; f.L.r=0; f.L.rT=10; f.L.kT=.85; if(f.gp) f.gp.a=.95; chimeAt([1568+Math.random()*400],f.x); glSpark(f.x,f.y,5,[.85,1,.6],4); }
+function ffStep(dt){ if(!TB||!TB.ff) return; const u=vu(), t=now()/1000, S=FF.c; let n=0, cx=0, cy=0;
+  TB.ff.forEach((f,i)=>{ let tx, ty;
+    if(f.join&&S){ const r=u*(3.5+(i%4)*1.6), a=t*(1.1+(i%3)*.35)+f.ph; tx=S[0]+Math.cos(a)*r; ty=S[1]+Math.sin(a*1.3)*r*.7; n++; cx+=f.x; cy+=f.y; }
+    else { tx=f.hx+Math.sin(t*.7+f.ph*3)*u*5; ty=f.hy+Math.cos(t*.9+f.ph*2)*u*3.5; const P=TB.pd&&TB.live?[TB.pd.cx,TB.pd.cy]:null;
+      if(P&&f.on&&Math.hypot(P[0]-f.x,P[1]-f.y)<u*26){ tx=P[0]; ty=P[1]; } }
+    const k=f.join?4:2.2; f.vx+=((tx-f.x)*k-f.vx*2)*dt; f.vy+=((ty-f.y)*k-f.vy*2)*dt; f.x+=f.vx*dt; f.y+=f.vy*dt; if(f.gp){ f.gp.x=f.x; f.gp.y=f.y; } });
+  FF.n=n; if(n&&FF.L){ FF.L.rT=12+n*3.6; FF.L.kT=Math.min(1,.62+n*.08); } if(FF.halo){ const C=FF.c||[-999,-999]; FF.halo.x+=(C[0]-FF.halo.x)*Math.min(1,dt*5); FF.halo.y+=(C[1]-FF.halo.y)*Math.min(1,dt*5); FF.halo.a=Math.min(.5,n*.06); FF.halo.s=u*(9+n*1.6); } }
+
+/* gather: touch the fireflies (or move the finger near them): they join and follow the finger as one glowing swarm. a:{n (how many are enough)} */
+Object.assign(G2,{
+ gather:{ setup(){ const a=TB.a; TB.ga={done:false,auto:false,last:0}; TB.ff.forEach(ffShow); g2loop(dt=>this.step(dt)); },
+   step(dt){ const g=TB.ga; if(g.done) return; const u=vu(), P=TB.pd?[TB.pd.cx,TB.pd.cy]:null; if(P) FF.c=[P[0],P[1]];
+     if(P) TB.ff.forEach(f=>{ if(!f.join&&Math.hypot(P[0]-f.x,P[1]-f.y)<u*10) this.join(f); });
+     if(g.auto&&now()-g.last>450){ g.last=now(); const f=this.nearest(); if(f){ if(!FF.c) FF.c=this.home(); this.join(f); } } },
+   home(){ return relEl(TB.els.flaumi,[.5,-.2]); },
+   nearest(){ const C=FF.c||this.home(); let b=null, d=1e9; TB.ff.forEach(f=>{ if(f.join) return; const q=Math.hypot(f.x-C[0],f.y-C[1]); if(q<d){ d=q; b=f; } }); return b; },
+   join(f){ if(f.join) return; f.join=true; f.L.rT=4; const n=TB.ff.filter(q=>q.join).length; chimeAt([784+n*98,1175+n*98],f.x); glSpark(f.x,f.y,8,[.85,1,.6],8); poke2();
+     if(!FF.L){ FF.L=light({fn:()=>FF.c&&FF.n?FF.c:null,r0:6,rT:12,k0:.5,kT:.6,warm:.45}); if(GLX.ok){ const C=FF.c||[f.x,f.y]; GLX.PL.push(FF.halo={k:'halo',x:C[0],y:C[1],s:vu()*9,ph:0,age:0,life:1e9,c:[.75,1,.45],cell:1,a:0}); } }
+     if(TB.sc.gathered) TB.sc.gathered(n); if(n>=(TB.a.n||7)) this.finish(); },
+   down(x,y){ if(TB.ga.done) return; FF.c=[x,y]; poke2(); }, move(x,y){ if(!TB.ga.done) FF.c=[x,y]; },
+   up(x,y,pd){ if(TB.ga.done) return; const u=vu(); if(pd&&Math.hypot(x-pd.x,y-pd.y)<u*2&&!TB.ff.some(f=>!f.join&&Math.hypot(f.x-x,f.y-y)<u*26)) miss2(); },
+   hint(){ const g=TB.ga; if(g.done) return; const f=this.nearest(); if(!f) return; const C=FF.c||this.home(), u=vu(), fs=TB.ff.filter(q=>!q.join).slice(0,3);
+     const fr=[[f.x,f.y+u*10,1,0],[f.x,f.y,.9,1]]; fs.forEach(q=>fr.push([q.x,q.y,.9,1])); fr.push([fs[fs.length-1].x,fs[fs.length-1].y,1,0]); ghost(fr,2400); },
+   auto(){ const g=TB.ga; if(g.done||g.auto) return; this.hint(); g.auto=true; },
+   finish(){ const g=TB.ga; if(g.done) return; g.done=true; FF.c=this.home(); TB.ff.forEach(f=>{ f.join=true; }); if(FF.L){ FF.L.rT=46; FF.L.kT=1; } FX.darkT=Math.max(.5,FX.darkT-.2);
+     chime([784,988,1175,1568]); glSpark(...FF.c,26,[.9,1,.6],14); done2(); } }
+});
+/* long shadows that turn away from a moving light (the swarm, the moon) */
+function shadowStep(){ if(!TB||!TB.shd) return; const L=TB.shd.fn&&TB.shd.fn(); if(!L) return;
+  TB.shd.ids.forEach(id=>{ const E=TB.els[id], s=TB.els[id+'Sh']; if(!E||!s) return; const r=E.getBoundingClientRect(), cx=r.left+r.width/2, dx=cx-L[0], dy=r.bottom-L[1], d=Math.hypot(dx,dy)||1;
+    const k=Math.max(-1,Math.min(1,dx/(innerWidth*.35))); s.style.transform=`translateX(${(k*42).toFixed(1)}%) scaleX(${(1.2+Math.abs(k)*.9).toFixed(2)}) skewX(${(-k*24).toFixed(1)}deg)`; s.style.opacity=Math.max(.15,Math.min(1,innerHeight*.5/d)).toFixed(2); }); }
+
 /* ================= the tale ================= */
 const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
 const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
@@ -6944,7 +7004,7 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
     const fb=el('div','bachb'); fb.style.cssText=`top:${w.y0*100-6}%;height:7%;background:linear-gradient(180deg,rgba(40,50,30,0),#2e3a26 70%,#3a4a2c)`; TB.act.insertBefore(fb,b); }
   if(sc.fl){ const [x,y,z,par]=sc.fl, f=mk('flaumi','flm',flaumiSVG(),x,y,z,par); f.dataset.mood=TST.flm||'curious'; }
   const sunF=()=>GLX.sunS?GLX.sunS:TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4];
-  litUni(TB.els.uni,sunF,{k:sc.litK==null?1:sc.litK}); windUni(TB.els.uni);
+  litUni(TB.els.uni,sc.litFn||sunF,Object.assign({k:sc.litK==null?1:sc.litK},sc.lit||{})); windUni(TB.els.uni);
   (sc.shadows||[]).forEach(([id,fx,fy,w])=>gShadow(id,fx,fy,w,sunF()[0]));
   glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
   if(sc.music) mboxStart();
@@ -7045,8 +7105,37 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
        onPh('Quak, quak',()=>{ jelly('frosch',1); quak(ctr(TB.els.frosch)[0]); mood('frosch','smile'); },'d2'); onPh('Gute Reise',()=>{ jelly('frosch',.6); },'d2'); },
      'Quak, quak! rief der Frosch. Gute Reise, kleines Samenkind!',
      ()=>{ onPh('ging die Sonne unter',()=>{ FX.darkT=.48; if(GLX.cfg){ GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:.25,hz:.62,hk:.12,col:[.9,.45,.5]},sun:()=>[innerWidth*.86,innerHeight*.72]}); } },'d3');
-       onPh('der erste Stern',()=>{ const sk=TB.st.querySelector('.l-sky'), s=el('div','fstar','✦'); s.style.cssText='left:66%;top:16%'; sk.appendChild(s); chimeAt([1568,2093],innerWidth*.8); mood('flaumi','curious'); },'d3'); },
+       onPh('der erste Stern',()=>{ const sk=TB.st.querySelector('.l-sky'), s=el('div','fstar','✦'); s.style.cssText='left:62%;top:34%'; sk.appendChild(s); chimeAt([1568,2093],innerWidth*.8); mood('flaumi','curious'); },'d3'); },
      'Da ging die Sonne unter, und am Himmel blinkte der erste Stern.', 1400]},
+ /* 4 – night: it is dark and Flaumi is afraid; she gathers the fireflies, their light moves over everyone, then they show the way */
+ {set:'nachtwiese', dark:.6, dcol:'6,8,30', u:[24,52,26], pan:{ms:3600}, music:1, grade:'night', st:{flm:'worried'},
+  fl:[44,76,12], shadows:[['uni',.5,1.75,24],['flaumi',.5,.97,8]],
+  p:[['b1','BUSCH',12,76,26],['b2','BUSCH',88,74,30],['pz1','PILZ',58,84,8,'pilz'],['pz2','PILZ',68,78,7,'pilz'],['pz3','PILZ',77,73,6,'pilz'],['pz4','PILZ',85,69,5,'pilz']],
+  lit:{lc:'#d8ff7a',lc2:'#fffbd0',sc:'#0a0c30'}, litFn:()=>FF.c&&FF.n?FF.c:[innerWidth*.7,innerHeight*.18],
+  gl:{keep:1,grass:'keep',grow:.55,gcut:[2,2],gcol:{b:[.02,.04,.06],t:[.1,.16,.18],l:[.7,1,.45]},rays:null,motes:0,flies:0,vig:[[.02,.02,.08],.75],
+      sun:()=>FF.c&&FF.n?FF.c:[innerWidth*.7,innerHeight*.18]},
+  frame(dt){ ffStep(dt); shadowStep(); jellyStep(dt); },
+  enter(){ TST.flm='worried'; FF.c=null; FF.n=0; FF.L=null; FF.halo=null; panUni(); mood('flaumi','happy');
+    ffMake([[.62,.5],[.78,.42],[.86,.56],[.3,.62],[.14,.44],[.52,.64],[.92,.36],[.7,.62],[.38,.46],[.18,.6]]);
+    TB.shd={fn:()=>FF.c&&FF.n?FF.c:[innerWidth*.7,innerHeight*.1],ids:['uni','flaumi']};
+    onPh('so dunkel',()=>{ FX.darkT=.8; mood('flaumi','worried'); });
+    talk('flaumi','Ich hab ein bisschen Angst','flüsterte'); onPh('Ich hab',()=>{ const F=TB.els.flaumi; F.classList.add('cling'); bLater(()=>F.classList.remove('cling'),1800); });
+    ['eins','zwei','drei'].forEach((w,i)=>onPh(w,()=>ffShow(TB.ff[i])));
+    onPh('viele kleine',()=>{ TB.ff.forEach((f,i)=>bLater(()=>ffShow(f),i*140)); mood('flaumi','oh'); });
+    onPh('Sammle',()=>{ mood('flaumi','curious'); }); },
+  ready(){ mood('flaumi','curious'); TB.ff.forEach(ffShow); },
+  a:{t:'gather',n:7,w:'LICHT'},
+  s:'Nun war es Nacht. Flaumi sprang ans Ufer, aber dort war es so dunkel, dass man kaum etwas sehen konnte. Ich hab ein bisschen Angst, flüsterte Flaumi. Da blinkte es im Gras: eins, zwei, drei, viele kleine Glühwürmchen! Sammle die Glühwürmchen mit deinem Finger ein. Dann wird es hell!',
+  h:'Fahr mit deinem Finger zu den Glühwürmchen, dann fliegen sie mit!',
+  gathered(n){ if(n===3){ mood('flaumi','happy'); } },
+  done(){ mood('flaumi','happy'); jelly('flaumi',.6); kara('LICHT'); },
+  d:[()=>{ talk('flaumi','Danke','sagte Flaumi','d1'); talk('flaumi','Jetzt habe',null,'d1'); onPh('Danke',()=>{ mood('flaumi','happy'); sqs(TB.els.flaumi); },'d1'); },
+     'Da wurde es ganz hell um Flaumi herum. Danke, sagte Flaumi. Jetzt habe ich keine Angst mehr!',
+     ()=>{ onPh('flogen voraus',()=>{ ['pz1','pz2','pz3','pz4'].forEach((id,i)=>bLater(()=>{ const P=TB.els[id]; FF.c=relEl(P,[.5,.1]); P.classList.add('on'); light({el:P,oy:.35,r0:3,rT:9,k0:.3,kT:.8});
+           chimeAt([880+i*175,1318+i*175],ctr(P)[0]); glSpark(...ctr(P),10,[.7,.95,1],8); jelly(id,.6); },i*650)); },'d2');
+       onPh('ging der Mond auf',()=>{ const sk=TB.st.querySelector('.l-sky'), m=el('div','moon2 rise3'); m.style.left='59%'; m.style.top='35%'; sk.appendChild(m);
+           light({fn:()=>ctr(m),r0:10,rT:30,k0:.2,kT:.6}); FX.darkT=.45; chime([523,659,784,1047]); },'d2'); },
+     'Die Glühwürmchen flogen voraus und zeigten den Weg. Und am Himmel ging der Mond auf.', 1400]},
  ]};
 /*<FLAUMI*/
 
