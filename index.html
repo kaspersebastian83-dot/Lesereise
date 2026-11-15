@@ -1053,6 +1053,7 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .flm.hover>.bb{animation:float 2.4s ease-in-out infinite}
 #bigWord span.kl{display:inline-block;animation:kpop .55s cubic-bezier(.2,1.6,.4,1);text-shadow:0 0 2vh #fff,0 0 4vh var(--gold)}
 @keyframes kpop{40%{transform:scale(1.28) translateY(-6%)}}
+.flart .frbw{position:absolute;left:-6%;top:26%;width:112%;opacity:.42;filter:blur(.3vh);-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 98%);mask-image:linear-gradient(180deg,#000 55%,transparent 98%)} .flart .fstall{position:absolute;left:3%;bottom:2%;width:34%} .flart .fstall svg{width:100%;display:block}
 /* the book page */
 .flart .pbb{position:absolute;left:30%;bottom:-6%;width:34%} .flart .pbb svg{width:100%;display:block}
 .flart .fla{position:absolute;left:54%;top:8%;width:20%;animation:float 2.6s ease-in-out infinite;filter:drop-shadow(0 0 1.5vh #fff4d0)}
@@ -1129,6 +1130,27 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .luke7>svg{position:absolute;inset:0;width:100%;height:100%}
 .luke7.open{opacity:1} .luke7 .lk{position:absolute;left:54%;top:50%;width:4.6vh;translate:-50% -50%} .luke7 .lk svg{width:100%;display:block}
 .wisp7{position:absolute;top:-200%;pointer-events:none;border-radius:50%;translate:0 -50%;filter:blur(1.2vh);background:radial-gradient(ellipse at 50% 50%,rgba(255,250,246,.85) 0,rgba(255,236,236,.5) 45%,rgba(255,236,236,0) 70%)}
+/* scene 8: homecoming, the new dandelion, the book closes */
+.tp2.erde8{width:15vh;height:4.6vh;border-radius:50% 50% 46% 46%/80% 80% 20% 20%;background:radial-gradient(ellipse at 50% 25%,#b08058 0,#8a5c3a 50%,#62402a 100%);box-shadow:0 .5vh .8vh rgba(40,30,10,.35);filter:none}
+.erde8.pat8{animation:pat8 .35s ease-out} @keyframes pat8{40%{scale:1.08 .82}}
+.erde8.glow8{animation:glow8 2.4s ease-in-out} @keyframes glow8{30%,70%{box-shadow:0 0 2.4vh 1vh rgba(255,240,180,.85)}}
+.pfl8 .st8{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s cubic-bezier(.3,.7,.3,1)}
+.pfl8.s1 .st8{stroke-dashoffset:.72} .pfl8.s2 .st8{stroke-dashoffset:.45} .pfl8.s3 .st8{stroke-dashoffset:0}
+.pfl8 .lv8{transform-box:view-box;transform-origin:100px 420px;transform:scale(0);transition:transform 1s cubic-bezier(.3,1.5,.5,1)} .pfl8.s1 .lv8{transform:scale(.45)} .pfl8.s2 .lv8{transform:none}
+.pfl8 .bud8{transform-box:view-box;transform-origin:100px 132px;transform:scale(0);transition:transform .8s cubic-bezier(.3,1.6,.5,1) .5s} .pfl8.s3 .bud8{transform:scale(.7)} .pfl8.s4 .bud8{transform:none}
+.pfl8.s5 .bud8{transform:scale(0);transition-delay:0s}
+.pfl8 .fl8{transform-box:view-box;transform-origin:100px 118px;transform:scale(0) rotate(-40deg);transition:transform 1.1s cubic-bezier(.3,1.5,.5,1) .2s} .pfl8.s5 .fl8{transform:none}
+.tp2.pfl8{transition:opacity 1.6s} .tp2.pfl8.s6{opacity:0} .pfl8.inst8 *{transition:none!important}
+.tp2.neu8{opacity:0;scale:.94;transition:opacity 1.6s,scale 1.6s} .tp2.neu8.on{opacity:1;scale:1}
+.tp2.alt8{filter:drop-shadow(0 0 1vh rgba(255,245,210,.35))}
+.flm.in8>.bb{transform:translateY(32%) scale(.4);opacity:0;transition:transform 1.3s cubic-bezier(.5,0,.7,.4),opacity 1s ease-in .4s}
+.kid8{position:absolute;left:50%;top:3%;width:7vh;translate:-50% -50%;animation:kid8 .9s cubic-bezier(.3,1.6,.5,1) both} @keyframes kid8{from{transform:scale(0) translateY(30%);opacity:0}}
+.map8{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,#f8eed8 35%,#e6d4ac 100%)} .map8 svg{width:100%;height:100%;display:block}
+.map8 .pt8{stroke-dasharray:.006 .01;opacity:0;transition:opacity 2.6s ease-in .4s} .map8.on .pt8{opacity:.9}
+.map8 .vg8{transform:scale(0);opacity:0;transition:transform .7s cubic-bezier(.3,1.6,.5,1),opacity .4s} .map8.on .vg8{transform:none;opacity:1}
+.st3.pic8{overflow:hidden;border-radius:1.4vh;box-shadow:0 2vh 5vh rgba(80,50,20,.45),0 0 0 .8vh #fffaf0}
+.cv8{position:absolute;inset:0;z-index:6;transform-origin:0 50%;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 8vh rgba(0,0,0,.35),inset 1.4vh 0 0 rgba(255,255,255,.18)}
+.cv8 span{font-size:28vh;line-height:1;filter:drop-shadow(0 1vh 2vh rgba(0,0,0,.3))}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -6575,7 +6597,7 @@ void main(){ vec2 px=v*res, d=px-sun; float r=length(d)/res.y, a=atan(d.y,d.x);
  o=vec4(col*(shaft*.6+glow+haze)*k,1.); }`,
  grassV:`#version 300 es
 layout(location=0) in vec2 q; layout(location=1) in vec4 ia; layout(location=2) in vec4 ib;
-uniform vec2 res, blowP, lp, gcut; uniform float t, vh, wind, gust, blow, grow, dir, scroll, scrollY;
+uniform vec2 res, blowP, lp, gcut; uniform vec4 ghole; uniform float t, vh, wind, gust, blow, grow, dir, scroll, scrollY;
 out float vs; out float vsh; out float vside; out float vlit;
 void main(){ float s=q.y, H=ia.z*vh*grow, W=ia.w*vh*(1.-s*.88); vec2 base=vec2((mod(ia.x+.03+scroll,1.06)-.03)*res.x, (ia.y+scrollY)*res.y);
  float sway=sin(t*(1.1+ib.z*.7)+ib.y+ia.x*6.)*.16+sin(t*.63+ia.x*2.3+ib.y)*.08;
@@ -6583,7 +6605,7 @@ void main(){ float s=q.y, H=ia.z*vh*grow, W=ia.w*vh*(1.-s*.88); vec2 base=vec2((
  float bd=distance(base,blowP)/res.y, bl=blow*exp(-bd*bd*3.)*(.75+.25*sin(t*11.+ib.y*3.));
  float b=(sway+(wind+g)*dir)*(1.-ib.z*.35)+ib.w+bl*sign(base.x-blowP.x+.001)*1.2;
  float an=b*s*s*1.15; vec2 tip=vec2(sin(an),-cos(an))*H*s, nr=vec2(cos(an),sin(an));
- vec2 P=base+tip+nr*q.x*W*.5, cl=P/res*2.-1.; gl_Position=(ia.y>gcut.x&&ia.y<gcut.y)?vec4(2.,2.,2.,1.):vec4(cl.x,-cl.y,0,1);
+ vec2 P=base+tip+nr*q.x*W*.5, cl=P/res*2.-1., hq=(vec2(base.x/res.x,ia.y)-ghole.xy)/max(ghole.zw,vec2(1e-4)); bool cut=(ia.y>gcut.x&&ia.y<gcut.y)||(ghole.z>0.&&dot(hq,hq)<1.); gl_Position=cut?vec4(2.,2.,2.,1.):vec4(cl.x,-cl.y,0,1);
  vs=s; vsh=ib.x; vside=q.x*sign(lp.x-base.x); vlit=clamp(1.-distance(P,lp)/res.x*1.1,0.,1.); }`,
  grassF:`#version 300 es
 precision mediump float; in float vs, vsh, vside, vlit; uniform vec3 cB, cT, cL; uniform float a; out vec4 o;
@@ -6695,7 +6717,7 @@ function glxFrame(dt,t){ if(!GLX.ok||!GLX.cfg) return; const W=innerWidth, H=inn
     const gc=cfg.gcol||{};
     if(cfg.water) glWater(S2,cfg.water,W,H,t,sun);
     if(GLX.nG){ const P=S2.grass; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform1f(P.U.t,t); gl.uniform1f(P.U.vh,u); gl.uniform1f(P.U.wind,WIND.v); gl.uniform1f(P.U.gust,WIND.g+WIND.hint*.4);
-      gl.uniform1f(P.U.blow,WIND.blow); gl.uniform2f(P.U.blowP,...(cfg.blowP&&TB?cfg.blowP():[W*.6,H*.6])); gl.uniform2f(P.U.lp,sun[0],sun[1]); gl.uniform1f(P.U.grow,GLX.grow); gl.uniform1f(P.U.dir,WIND.dir); gl.uniform1f(P.U.scroll,GLX.scroll); gl.uniform1f(P.U.scrollY,GLX.scrollY||0); gl.uniform2fv(P.U.gcut,cfg.gcut||[2,2]);
+      gl.uniform1f(P.U.blow,WIND.blow); gl.uniform2f(P.U.blowP,...(cfg.blowP&&TB?cfg.blowP():[W*.6,H*.6])); gl.uniform2f(P.U.lp,sun[0],sun[1]); gl.uniform1f(P.U.grow,GLX.grow); gl.uniform1f(P.U.dir,WIND.dir); gl.uniform1f(P.U.scroll,GLX.scroll); gl.uniform1f(P.U.scrollY,GLX.scrollY||0); gl.uniform2fv(P.U.gcut,cfg.gcut||[2,2]); gl.uniform4fv(P.U.ghole,cfg.ghole||[0,0,0,0]);
       gl.uniform3fv(P.U.cB,GLX.gc.b); gl.uniform3fv(P.U.cT,GLX.gc.t); gl.uniform3fv(P.U.cL,GLX.gc.l); gl.uniform1f(P.U.a,GLX.fade);
       gl.bindVertexArray(S2.gVao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,S2.gVerts,GLX.nG); }
     if(GLX.P.length) glDrawSp(S2,GLX.P,W,H,false);
@@ -7244,7 +7266,7 @@ function flRise(h){ if(!TB||!TB.st) return; const H=innerHeight, st=TB.st, y=k=>
   [['.l-far',.5],['.l-mid',.75],['.l-act',1],['.l-fore',1.3]].forEach(([q,k])=>{ const e=st.querySelector(':scope>'+q); if(e) e.style.translate=y(k); });
   const B=TB.sky6&&TB.sky6.querySelector('.bow6'); if(B) B.style.translate=y(.42);
   TB.camPx=h*H; GLX.scrollY=h;
-  if(TB.sky7) TB.sky7.style.opacity=Math.max(0,Math.min(1,(h-.45)/.8)).toFixed(3);
+  if(TB.sky7) TB.sky7.style.opacity=TB.sky7keep?1:Math.max(0,Math.min(1,(h-.45)/.8)).toFixed(3);
   if(TB.sea7) TB.sea7.style.top=((-1.57+h*1.4)*100).toFixed(2)+'%';
   (TB.wisp||[]).forEach(w=>{ w.e.style.top=((-.4+(h-w.c)*2.4)*100).toFixed(2)+'%'; });
   const U=TB.els.uni, q=Math.min(1,h/1.2), [dx,dy]=TB.uOff||[0,0]; if(U) U.style.transform=`translate(${(dx*q*innerWidth).toFixed(1)}px,${(-h*H+dy*q*H).toFixed(1)}px)`; }
@@ -7275,9 +7297,77 @@ Object.assign(G2,{
      const F=TB.els.flaumi; if(F) glSpark(...ctr(F),24,[1,.92,.7],14); done2(); } }
 });
 
+/* ---------- homecoming: back on the meadow by the stable; she pats the earth, Flaumi grows into a new dandelion; the world folds back into the book ---------- */
+SETS2.heimwiese={sky:'linear-gradient(180deg,#4f86de 0%,#86b4f0 30%,#c8d8f4 50%,#ffdcb4 68%,#fff0d8 100%)', stars:0, clean:1,
+  far:sil(pines(47,46,44,'#7c9ac4',226)+hills(41,128,44,'#8eb0d4')+hills(43,168,40,'#6e98bc'),62),
+  gnd:'linear-gradient(180deg,#a6c864 0%,#74a844 28%,#4a8432 62%,#2e5e22 100%)',
+  mid:[['OAK',19,57,30],['OAK',83,55,24],['PINE',89,53,24]]};
+/* the new plant, in the same frame as the dandelion clock (so it can turn into one): leaves, a stem that grows, a bud, a yellow flower */
+function pfl8SVG(){ const id='pf'+(++UID); let pet=''; for(let i=0;i<22;i++){ const a=i/22*6.283, x=100+Math.cos(a)*15, y=118+Math.sin(a)*15;
+    pet+=`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="11.5" ry="3.8" transform="rotate(${(a*57.3).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})" fill="${i%2?'#ffd42a':'#ffc61e'}" stroke="#e09a10" stroke-width=".8"/>`; }
+  const stem='M98 420 C92 360 108 300 100 240 C96 200 100 160 100 124';
+  return `<svg viewBox="0 0 200 420"><defs><linearGradient id="${id}s" x1="0" x2="1"><stop offset="0" stop-color="#3f6a2a"/><stop offset=".6" stop-color="#7aa848"/><stop offset="1" stop-color="#c8d878"/></linearGradient></defs>
+   <path class="st8" d="${stem}" pathLength="1" fill="none" stroke="#2c4a1c" stroke-width="8.5" stroke-linecap="round"/><path class="st8" d="${stem}" pathLength="1" fill="none" stroke="url(#${id}s)" stroke-width="6" stroke-linecap="round"/>
+   <path class="lv8" d="M92 420 C70 400 46 404 26 384 L40 382 L30 372 L48 372 L42 360 C64 372 80 390 96 410Z M104 420 C126 396 150 400 172 376 L158 376 L168 364 L150 366 L156 354 C134 368 118 388 104 412Z" fill="#4e8a34" stroke="#2c4a1c" stroke-width="2.5" stroke-linejoin="round"/>
+   <g class="bud8"><ellipse cx="100" cy="120" rx="9.5" ry="14" fill="#5a9a3a" stroke="#2c4a1c" stroke-width="2.5"/><path d="M91 126 q9 -16 18 0" fill="#7ab84a"/><path d="M100 106 v-5" stroke="#ffd42a" stroke-width="3" stroke-linecap="round"/></g>
+   <g class="fl8">${pet}<circle cx="100" cy="118" r="10" fill="#ffb400" stroke="#e08a00" stroke-width="1.2"/></g></svg>`; }
+SVGP.PFL8=[pfl8SVG,.476]; TSYL.SAMEN='SA-MEN';
+/* a soft pat on the earth */
+function patSnd(x){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); const t=AC.currentTime, o=AC.createOscillator(), g=AC.createGain(), pn=AC.createStereoPanner?AC.createStereoPanner():null;
+  if(pn){ pn.pan.value=Math.max(-.9,Math.min(.9,((x||innerWidth/2)/innerWidth-.5)*1.6)); pn.connect(AC.destination); }
+  o.type='sine'; o.frequency.setValueAtTime(150,t); o.frequency.exponentialRampToValueAtTime(70,t+.14); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.22,t+.01); g.gain.exponentialRampToValueAtTime(.001,t+.2);
+  o.connect(g); g.connect(pn||AC.destination); o.start(t); o.stop(t+.22); }catch(e){} }
+function earthPuff(x,y){ const u=vu(); for(let i=0;i<7;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*8,y:y-u*1,vx:(Math.random()-.5)*16*u,vy:-(4+Math.random()*8)*u,s:.9+Math.random()*.8,life:1.1,c:'rgba(150,110,70,.55)'}); }
+/* plant: pat the earth (tap it, or rub over it); every pat makes it grow a step: Flaumi snuggles in, a sprout, leaves, a bud, the flower. a:{id (the earth), n} */
+Object.assign(G2,{
+ plant:{ setup(){ TB.pl={n:TST.pln||0,done:false,auto:false,at:0,last:0,rub:null}; this.show(TB.pl.n,true); g2loop(dt=>this.step(dt)); },
+   spot(){ return relPx(TB.a.id,[.5,.4]); },
+   near(x,y){ const [ex,ey]=this.spot(), u=vu(); return Math.abs(x-ex)<u*17&&y>ey-u*30&&y<ey+u*12; },
+   show(n,inst){ const P=TB.els.pfl, F=TB.els.flaumi; if(!P) return; if(inst) P.classList.add('inst8');
+     ['s1','s2','s3','s4'].forEach((c,i)=>P.classList.toggle(c,n>=i+2)); if(n>=1&&F&&!F.classList.contains('in8')){ F.classList.add('in8'); }
+     if(inst) requestAnimationFrame(()=>requestAnimationFrame(()=>P.classList.remove('inst8'))); },
+   step(dt){ const g=TB.pl; if(g.done) return; if(g.auto&&now()-g.at>720){ g.at=now(); this.pat(); } },
+   pat(x){ const g=TB.pl; if(g.done) return; const tn=now(); if(tn-g.last<340) return; g.last=tn; g.n++; TST.pln=g.n; poke2();
+     const [ex,ey]=this.spot(); patSnd(ex); earthPuff(ex,ey); jelly(TB.a.id,.5); const E=TB.els[TB.a.id]; E.classList.remove('pat8'); void E.offsetWidth; E.classList.add('pat8');
+     this.show(g.n); chimeAt([523+g.n*131,784+g.n*131],ex); glSpark(ex,ey-vu()*4,6+g.n*2,[.9,1,.6],6+g.n);
+     if(TB.sc.patted) TB.sc.patted(g.n); if(g.n>=(TB.a.n||5)) this.finish(); },
+   down(x,y){ const g=TB.pl; if(g.done) return; g.rub=this.near(x,y)?{x,y,d:0}:null; if(g.rub) this.pat(x); },
+   move(x,y){ const g=TB.pl, r=g.rub; if(!r||g.done) return; r.d+=Math.hypot(x-r.x,y-r.y); r.x=x; r.y=y; if(r.d>vu()*7&&this.near(x,y)){ r.d=0; this.pat(x); } },
+   up(x,y,pd){ const g=TB.pl; if(g.done) return; g.rub=null; if(pd&&Math.hypot(x-pd.x,y-pd.y)<vu()*2&&!this.near(x,y)) miss2(); },
+   hint(){ const g=TB.pl; if(g.done) return; const [x,y]=this.spot(), u=vu(), E=TB.els[TB.a.id]; E.classList.remove('glow8'); void E.offsetWidth; E.classList.add('glow8');
+     ghost([[x,y-u*10,1,0],[x,y-u*3,.9,1],[x,y,.75,1],[x,y-u*4,.9,1],[x,y,.75,1],[x,y-u*4,.9,1],[x,y,.75,1],[x,y-u*10,1,0]],2400); },
+   auto(){ const g=TB.pl; if(g.done||g.auto) return; this.hint(); g.auto=true; },
+   finish(){ const g=TB.pl; if(g.done) return; g.done=true; const P=TB.els.pfl; this.show(5); P.classList.add('s5'); const [x,y]=relPx('pfl',[.5,.28]);
+     glSpark(x,y,26,[1,.9,.4],14); chime([784,988,1175,1568]); done2(); } }
+});
+/* the whole journey as a little map on the paper page, around the picture */
+function mapSVG(){ const V=[
+   [140,820,'<path d="M0 46 C-2 20 2 0 0 -14" stroke="#4a7a2c" stroke-width="4" fill="none"/><circle cy="-28" r="20" fill="#fffaf0" stroke="#c8b898" stroke-width="2"/>'+[0,1,2,3,4,5,6,7].map(i=>`<path d="M0 -28 l${(Math.cos(i*.785)*17).toFixed(1)} ${(Math.sin(i*.785)*17).toFixed(1)}" stroke="#d8ccb0" stroke-width="1.5"/>`).join('')],
+   [120,520,'<path d="M-40 40 L-24 -10 L-8 40Z M-14 40 L4 -24 L22 40Z M14 40 L30 0 L46 40Z" fill="#6a9a4a" stroke="#3e6a2a" stroke-width="2.5" stroke-linejoin="round"/>'],
+   [190,290,'<path d="M-50 14 q12 -10 25 0 t25 0 t25 0 t25 0" stroke="#5aa8e0" stroke-width="5" fill="none"/><path d="M-26 0 Q0 18 26 0 Q0 6 -26 0Z" fill="#7ab84a" stroke="#3e6a2a" stroke-width="2"/>'],
+   [520,100,'<circle r="34" fill="#2a3266"/><path d="M8 -20 a20 20 0 1 0 6 36 a16 16 0 1 1 -6 -36Z" fill="#ffe9a8"/><circle cx="-18" cy="10" r="3" fill="#dfff7a"/><circle cx="-6" cy="22" r="2.5" fill="#dfff7a"/><circle cx="-22" cy="-12" r="2.5" fill="#dfff7a"/>'],
+   [960,95,'<g stroke="#8aa0c8" stroke-width="2" fill="none">'+[0,1,2,3,4,5,6,7].map(i=>`<path d="M0 0 L${(Math.cos(i*.785)*34).toFixed(1)} ${(Math.sin(i*.785)*34).toFixed(1)}"/>`).join('')+'<circle r="12"/><circle r="22"/><circle r="32"/></g><circle cx="12" cy="6" r="3" fill="#bfe0ff"/><circle cx="-18" cy="14" r="2.5" fill="#bfe0ff"/>'],
+   [1420,260,['#ff5a6a','#ffb04a','#ffe25a','#6ad87a','#5ab4ff','#a46af0'].map((c,i)=>`<path d="M${-44+i*5} 26 A${44-i*5} ${44-i*5} 0 0 1 ${44-i*5} 26" stroke="${c}" stroke-width="5" fill="none"/>`).join('')],
+   [1460,570,'<g fill="#fffaf2" stroke="#e8c898" stroke-width="2"><circle cx="-22" cy="6" r="16"/><circle cx="0" cy="-6" r="22"/><circle cx="24" cy="6" r="15"/><rect x="-36" y="4" width="72" height="16" rx="8" stroke="none"/></g>']];
+  const path='M140 820 C100 700 110 620 120 520 C130 420 140 360 190 290 C260 190 380 120 520 100 C660 80 820 90 960 95 C1140 100 1340 150 1420 260 C1490 350 1490 470 1460 570 C1430 670 1340 730 1220 760';
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet"><path class="pt8" d="${path}" pathLength="1" fill="none" stroke="#b08a60" stroke-width="4" stroke-linecap="round"/>
+   ${V.map(([x,y,g],i)=>`<g class="vg8" style="transform-origin:${x}px ${y}px;transition-delay:${(1+i*.33).toFixed(2)}s"><g transform="translate(${x} ${y})"><circle r="52" fill="#fdf6e6" stroke="#d4bc94" stroke-width="3"/>${g}</g></g>`).join('')}</svg>`; }
+/* the camera pulls back: the picture becomes a page with the map of the journey, it turns to paper, everything folds flat, the book closes */
+function flFold(){ const W=$('taleWorld'), st=TB.st, ez='cubic-bezier(.45,.05,.3,1)', S0='translateY(-3%) scale(.56)';
+  GLX.fadeT=0; ['taleGLs','taleGLl'].forEach(id=>{ const c=$(id); if(c){ c.style.transition='opacity 1.4s'; c.style.opacity=0; } }); const map=el('div','map8',mapSVG()); W.insertBefore(map,W.firstChild); W.classList.add('paperW'); st.classList.add('pic8');
+  try{ st.animate([{transform:'none'},{transform:S0}],{duration:3200,easing:ez,fill:'forwards'}); }catch(e){}
+  requestAnimationFrame(()=>map.classList.add('on'));
+  [0,1,2,3,4,5,6].forEach(i=>bLater(()=>chimeAt([[523,587,659,784,880,988,1047][i]],innerWidth*(.1+i*.13)),1000+i*330));
+  bLater(()=>{ st.appendChild(el('div','papr')); const items=[...st.querySelectorAll('.l-far>.sil,.l-mid>.m-e,.l-act>.tp2:not(.kid),.l-act>.u2,.l-fore>.m-e')];
+    items.forEach(e=>e.classList.add('popc')); chime([1047,880,784]);
+    items.reverse().forEach((e,i)=>bLater(()=>{ try{ e.animate([{transform:'none',opacity:1},{transform:'perspective(70vh) rotateX(-88deg)',opacity:0}],{duration:650,easing:'ease-in',fill:'forwards'}); }catch(err){} },300+i*(1300/Math.max(1,items.length)))); },3400);
+  bLater(()=>{ const cv=el('div','cv8',`<span>${tale.t.icon}</span>`); cv.style.background=tale.t.cover; W.appendChild(cv);
+    try{ cv.animate([{transform:'perspective(140vh) rotateY(-170deg)'},{transform:'perspective(140vh) rotateY(0)'}],{duration:1600,easing:'cubic-bezier(.4,0,.3,1)',fill:'forwards'}); }catch(e){}
+    chime([784,659,523,392]); },5300); }
+
 /* ================= the tale ================= */
 const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
-const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
+const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
  cast(sc){ if(sc.st) Object.assign(TST,sc.st); const A=TB.act, mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
      const P=par&&TB.els[par]; if(P){ e.classList.add('kid'); (P.querySelector(':scope>.bb')||P).appendChild(e); } else A.appendChild(e); TB.els[id]=e; return e; };
   flxStart(); const W=$('taleWorld'); if(!sc.pre){ W.querySelectorAll('.papr').forEach(e=>e.remove()); W.classList.remove('paperW'); TB.st.querySelectorAll('.popc').forEach(e=>{ e.classList.remove('popc'); e.style.opacity=''; }); GLX.fadeT=1; GLX.fade=Math.max(GLX.fade,.6); MBOX.quiet=false; }
@@ -7291,7 +7381,7 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
   const sunF=()=>GLX.sunS?GLX.sunS:TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4];
   litUni(TB.els.uni,sc.litFn||sunF,Object.assign({k:sc.litK==null?1:sc.litK},sc.lit||{})); windUni(TB.els.uni);
   (sc.shadows||[]).forEach(([id,fx,fy,w])=>gShadow(id,fx,fy,w,sunF()[0]));
-  GLX.scrollY=0; glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
+  GLX.scrollY=0; ['taleGLs','taleGLl'].forEach(id=>{ const c=$(id); if(c){ c.style.transition=''; c.style.opacity=''; } }); glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
   if(sc.music) mboxStart();
   alignLoad(Object.keys(CLIPS).filter(k=>k.startsWith('t2_'+tale.t.id+'_')||(sc.a&&sc.a.w&&k==='wort_'+keyOf(sc.a.w)))); },
  react(id,b,x,y){ const u=vu();
@@ -7522,6 +7612,40 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
        onPh('Jetzt weiß',()=>{ mood('flaumi','happy'); jelly('flaumi',.7); },'d3');
        onPh('Gleich neben',()=>{ const [x,y]=ctr(TB.els.flaumi); glSpark(x,y,20,[1,.9,.7],12); hearts(x,y-vu()*10,3); chimeAt([784,988,1175,1568],x); },'d3'); },
      'Jetzt weiß ich, wo ich wachsen möchte! rief Flaumi. Gleich neben deinem Stall!', 1400]},
+ /* 8 – homecoming: down through the clouds to the meadow of the beginning, by the stable; she pats the earth over Flaumi, a new dandelion grows;
+    the camera pulls back over the whole journey and everything folds back into the book */
+ {set:'heimwiese', dark:0, u:[20,68,26], nofly:1, music:1, grade:'gold', st:{flm:'happy',pln:0},
+  fl:[62,36,13], shadows:[],
+  p:[['stall','STALL',38,58,28,'stall8'],['alt','PUSTE',86,57,40,'alt8'],['erde','',62,86,1,'erde8'],['pfl','PFL8',62,66,36,'pfl8'],['neu','PUSTE',62,66,36,'neu8']],
+  lit:{lc:'#ffd090',lc2:'#fff4dc',sc:'#3a2a60'}, litFn:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.3],
+  gl:{keep:1,grass:'keep',grow:.85,gcut:[2,2],ghole:[.62,.84,.065,.07],gcol:{b:[.08,.16,.06],t:[.5,.66,.24],l:[1,.86,.5]},rays:{k:1.15,hz:.6,hk:.2,col:[1,.84,.6]},motes:90,mc:[1,.9,.7],flies:0,vig:[[.1,.06,.1],.35],
+      sun:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.3]},
+  frame(dt){ jellyStep(dt); TB.cam+=(TB.camT-TB.cam)*Math.min(1,dt*(TB.camK||.6)); flRise(TB.cam); flPlace(dt); },
+  enter(){ TST.flm='happy'; TB.cam=TB.camT=1.6; TB.camK=.6; TB.uOff=[.1,-.2]; TB.sky7keep=1; flSea7(); const lk=TB.sea7.querySelector('.luke7'); lk.style.transition='none'; lk.classList.add('open');
+    TB.els.sonne=TB.sky7.querySelector('.sun7'); flRise(1.6); TB.fp={x:.62,y:.36,xT:.62,yT:.36,sink:0,k:.5};
+    const F=TB.els.flaumi; F.classList.add('hover'); TB.els.uni.querySelector('.uni').classList.add('flying'); mood('flaumi','happy');
+    TB.els.alt.querySelectorAll('.sd').forEach((e,i)=>{ if(i%3) e.classList.add('gone'); }); const pg=TB.els.alt.querySelector('.pglow'); if(pg) pg.style.opacity=.35;
+    onPh('Langsam schwebten',()=>{ TB.camT=0; TB.fp.yT=.5; });
+    onPh('bis auf die Wiese',()=>{ TB.els.uni.querySelector('.uni').classList.remove('flying'); });
+    onPh('Da stand der Stall',()=>{ sqs(TB.els.stall); const [x,y]=relPx('stall',[.5,.3]); glSpark(x,y,14,[1,.9,.7],10); chimeAt([784,1047],x); uniHop(); });
+    onPh('die alte Pusteblume',()=>{ jelly('alt',.5); const [x,y]=relPx('alt',[.5,.28]); glSpark(x,y,10,[1,.95,.85],8); mood('flaumi','oh'); });
+    talk('flaumi','Hier will ich wachsen','sagte Flaumi'); onPh('Hier will ich',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); });
+    onPh('kuschelte sich',()=>{ const F=TB.els.flaumi; F.classList.remove('hover'); TB.fp.xT=.62; TB.fp.yT=.78; TB.fp.k=.9; });
+    onPh('Klopf die Erde',()=>{ const E=TB.els.erde; E.classList.add('glow8'); mood('flaumi','curious'); }); },
+  ready(){ TB.camT=0; TB.cam=Math.min(TB.cam,.05); const F=TB.els.flaumi; F.classList.remove('hover'); TB.fp.xT=.62; TB.fp.yT=.78; TB.fp.k=.9; TB.els.uni.querySelector('.uni').classList.remove('flying'); mood('flaumi','curious'); },
+  a:{t:'plant',id:'erde',n:5,w:'SAMEN'},
+  s:'Langsam schwebten sie wieder hinunter, durch die Wolken, bis auf die Wiese. Da stand der Stall, und daneben die alte Pusteblume, auf der Flaumi einmal gesessen hatte. Hier will ich wachsen! sagte Flaumi und kuschelte sich in die weiche Erde. Klopf die Erde ganz sanft fest!',
+  h:'Klopf ganz sanft auf die Erde, immer wieder!',
+  patted(n){ if(n===1) mood('flaumi','happy'); },
+  done(){ kara('SAMEN'); },
+  d:[()=>{ onPh('wurde eine neue Pusteblume',()=>{ TB.els.pfl.classList.add('s6'); TB.els.neu.classList.add('on'); const [x,y]=relPx('neu',[.5,.28]); glSpark(x,y,30,[1,1,.95],14); chime([659,784,988,1319]); },'d1');
+       onPh('kleiner Samenkinder',()=>{ const k=el('div','chr flm kid8',`<div class="bb">${flaumiSVG()}</div>`); k.dataset.mood='happy'; TB.els.neu.appendChild(k); TB.els.kind=k; const [x,y]=relPx('neu',[.5,.08]); glSpark(x,y,12,[1,.95,.8],8); chimeAt([1568,2093],x); },'d1'); },
+     'Und aus der gelben Blume wurde eine neue Pusteblume, rund und weiß wie ein kleiner Mond, voller kleiner Samenkinder.',
+     ()=>{ onPh('Dein Einhorn legte sich',()=>{ const U=TB.els.uni; U.style.transition='left 2.6s ease-in-out,top 2.6s ease-in-out'; U.style.left='47%'; U.style.top='73%'; },'d2');
+       onPh('passte gut auf sie auf',()=>{ const [x,y]=ctr(TB.els.uni); hearts(x,y-vu()*8,4); uniHop(); },'d2'); },
+     'Dein Einhorn legte sich ins warme Gras, ganz nah neben die Pusteblume, und passte gut auf sie auf.',
+     ()=>{ onPh('Und wenn sie',()=>flFold(),'d3'); },
+     'Und wenn sie nicht verweht ist, dann blüht sie dort noch heute.', 3000]},
  ]};
 /*<FLAUMI*/
 
@@ -7564,7 +7688,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...(flaumiOn()?[{k:'tale',t:FLAUMI2}]:[]),...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -7573,7 +7697,7 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
   if(id==='nikolaus') return `<div class="art" style="width:44%;margin-top:6%"><div class="chr nko" data-mood="happy" style="position:relative;width:100%"><div class="bb">${nikoSVG()}</div></div></div>`+
     `<div class="art" style="position:absolute;left:8%;bottom:6%;width:30%;animation-delay:-1.2s"><div class="chr esl decke" data-mood="happy" style="position:relative;width:100%"><div class="bb">${eselSVG()}</div></div></div>`+
     `<div class="art" style="position:absolute;right:10%;top:9%;width:17%;animation-delay:-.6s"><div class="chr stn" data-mood="happy" style="position:relative;width:100%;--sg:.7"><div class="bb">${sternSVG()}</div></div></div>`+tw;
-  if(id==='flaumi') return `<div class="flart" style="position:absolute;inset:0"><div class="pbb">${pusteSVG()}</div><div class="fla"><div class="chr flm" data-mood="happy" style="position:relative;width:100%"><div class="bb">${flaumiSVG()}</div></div></div>`+
+  if(id==='flaumi') return `<div class="flart" style="position:absolute;inset:0">${S.tales&&S.tales.flaumi?`<svg class="frbw" viewBox="0 0 200 100">${['#ff5a6a','#ffb04a','#ffe25a','#6ad87a','#5ab4ff','#a46af0'].map((c,i)=>`<path d="M${16+i*6} 100 A${84-i*6} ${84-i*6} 0 0 1 ${184-i*6} 100" stroke="${c}" stroke-width="6" fill="none"/>`).join('')}</svg><div class="fstall">${stallSVG()}</div>`:''}<div class="pbb">${pusteSVG()}</div><div class="fla"><div class="chr flm" data-mood="happy" style="position:relative;width:100%"><div class="bb">${flaumiSVG()}</div></div></div>`+
     [[22,52,0],[40,40,-2.3],[66,58,-4.6],[30,30,-1.2],[72,34,-5.8]].map(([x,y,d])=>`<span class="fsd" style="left:${x}%;top:${y}%;animation-delay:${d}s">${flaumiSVG()}</span>`).join('')+`</div>`+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
