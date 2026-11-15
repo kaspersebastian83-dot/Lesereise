@@ -1205,6 +1205,78 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.apfb{transform-origin:50% 96%} .tp2.krone{filter:none}
 .ill .eart .eef>.bb,.ill .eart .sck>.bb{animation:none}
 /*<EEFJECSS*/
+/*FEENCSS>*/
+/* Eefje und das Feenfest (all classes start with "fee"; .sitb = Eefje sitting without her broom) */
+.eef.sitb .sit{display:inline} .eef.sitb .st{display:none}
+.tp2.feefe{filter:drop-shadow(0 0 .9vh rgba(255,240,190,.95)) drop-shadow(0 0 2.4vh rgba(255,170,230,.7))}
+.feefe>.bb{position:relative;animation:feeb 2.2s ease-in-out infinite} @keyframes feeb{50%{transform:translateY(-7%)}}
+.feefe .wl{transform-box:view-box;transform-origin:48px 64px;animation:feewl .3s ease-in-out infinite alternate}
+.feefe .wr{transform-box:view-box;transform-origin:52px 64px;animation:feewr .3s ease-in-out infinite alternate}
+@keyframes feewl{to{transform:rotate(16deg) scaleX(.84)}} @keyframes feewr{to{transform:rotate(-16deg) scaleX(.84)}}
+.feefe.wet>.bb{animation:none}
+.feefe.wet .wl{animation:none;transform:rotate(calc((1 - var(--dry,0)) * -60deg));transition:transform .5s}
+.feefe.wet .wr{animation:none;transform:rotate(calc((1 - var(--dry,0)) * 60deg));transition:transform .5s}
+.feefe.wet .wgp{opacity:calc(.5 + var(--dry,0) * .5)} .feefe.wet .hal{opacity:calc(.12 + var(--dry,0) * .88)}
+.tp2.feefe.wet{filter:drop-shadow(0 0 .5vh rgba(200,220,255,.7))}
+.efl.feedrop{aspect-ratio:3/4;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(circle at 35% 30%,#fff 0,#d8f0ff 30%,#7ac0f4 75%);box-shadow:0 0 .5vh rgba(170,220,255,.95);border:.12vh solid rgba(255,255,255,.8)}
+.feefe .ey,.feefe .m,.feefe .mo,.feefe .blush,.feefe .arm{display:none}
+.feefe[data-arm=dn] .arm-dn,.feefe[data-arm=up] .arm-up{display:inline}
+.feefe[data-mood=smile] .ey-o,.feefe[data-mood=smile] .m-s{display:inline}
+.feefe[data-mood=happy] .ey-j,.feefe[data-mood=happy] .m-s,.feefe[data-mood=happy] .blush{display:inline}
+.feefe[data-mood=worry] .ey-w,.feefe[data-mood=worry] .m-w{display:inline}
+.feefe[data-mood=oh] .ey-o,.feefe[data-mood=oh] .m-o{display:inline}
+.feefe.talking .m{display:none!important} .feefe.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.1))}
+.feefe.feedn{animation:feedn 6.4s linear infinite}
+@keyframes feedn{0%{transform:translate(15vh,0)}12.5%{transform:translate(10.6vh,2.6vh) scale(1.08)}25%{transform:translate(0,3.8vh) scale(1.14)}37.5%{transform:translate(-10.6vh,2.6vh) scale(1.08)}
+  50%{transform:translate(-15vh,0)}62.5%{transform:translate(-10.6vh,-2.6vh) scale(.92)}75%{transform:translate(0,-3.8vh) scale(.86)}87.5%{transform:translate(10.6vh,-2.6vh) scale(.92)}100%{transform:translate(15vh,0)}}
+.tp2.feeq{filter:drop-shadow(0 0 1.4vh #fff) drop-shadow(0 0 4vh rgba(220,200,255,.95));transition:opacity 1.6s,translate 2.2s cubic-bezier(.3,.7,.3,1)}
+.tp2.feeq.away{opacity:0;translate:-50% -170%} .tp2.feeq.come{opacity:1;translate:-50% -50%}
+.tp2.feebee{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.3))}
+.feebee>.bb{position:relative;animation:feebb 1.6s ease-in-out infinite} @keyframes feebb{50%{transform:translateY(-4%) rotate(-2deg)}}
+.feebee .bw1{transform-box:fill-box;transform-origin:80% 95%;animation:feebw .08s linear infinite alternate}
+.feebee .bw2{transform-box:fill-box;transform-origin:15% 95%;animation:feebw .08s linear infinite alternate-reverse} @keyframes feebw{to{transform:scaleY(.45)}}
+.feebee[data-mood=sleepy] .bw1,.feebee[data-mood=sleepy] .bw2{animation:none} .feebee[data-mood=sleepy]>.bb{animation-duration:3.4s}
+.feebee .ey,.feebee .m,.feebee .mo{display:none}
+.feebee[data-mood=smile] .ey-o,.feebee[data-mood=smile] .m-s,.feebee[data-mood=happy] .ey-j,.feebee[data-mood=happy] .m-s{display:inline}
+.feebee[data-mood=sleepy] .ey-c,.feebee[data-mood=sleepy] .m-s,.feebee[data-mood=oh] .ey-w,.feebee[data-mood=oh] .m-o{display:inline}
+.feebee.talking .m{display:none!important} .feebee.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.1))}
+.tp2.feewm{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.45))} .feewm.flip svg{scale:-1 1}
+.feewm>.bb{animation:feewmb 2.2s ease-in-out infinite} @keyframes feewmb{50%{transform:scale(1.04,.95)}}
+.feewm .ey,.feewm .m{display:none} .feewm[data-mood=asleep] .ey-c{display:inline}
+.feewm[data-mood=awake] .ey-o,.feewm[data-mood=awake] .m-s,.feewm[data-mood=happy] .ey-o,.feewm[data-mood=happy] .m-s{display:inline}
+.feewm .gt{opacity:.5;transition:opacity .6s} .feewm.found .gt{opacity:1}
+.tp2.feewm.found{filter:drop-shadow(0 0 1.2vh rgba(230,255,140,.95)) drop-shadow(0 0 3.6vh rgba(190,255,110,.75))}
+.tp2.feebl{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.5))}
+.tp2.feepz{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.45))} .feepz .capo{opacity:0;transition:opacity .5s} .feepz.on .capo{opacity:1}
+.tp2.feepz.on{filter:drop-shadow(0 0 1.2vh rgba(255,210,230,.95)) drop-shadow(0 0 3.6vh rgba(255,120,170,.65))}
+.tp2.feepz.nx{animation:feenx 1s ease-in-out infinite} @keyframes feenx{50%{filter:drop-shadow(0 0 1.8vh #fff) drop-shadow(0 0 4.5vh #ffb0d8);scale:1.1}}
+.tp2.feegate{border-radius:50% 50% 8% 8%/100% 100% 8% 8%;filter:none;transition:opacity 1.4s,scale 1.6s,translate 1.6s;
+  background:radial-gradient(ellipse at 50% 100%,rgba(255,230,250,.5),rgba(220,190,255,.28) 45%,rgba(200,170,255,0) 72%),
+  repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 2.2vh,rgba(255,240,255,.22) 2.2vh 2.5vh);
+  -webkit-mask:linear-gradient(0deg,#000 40%,transparent);mask:linear-gradient(0deg,#000 40%,transparent);animation:feegt 2.6s ease-in-out infinite}
+@keyframes feegt{50%{opacity:.6}} .tp2.feegate.open{animation:none;opacity:0;scale:1.5 2;translate:-50% -70%}
+.tp2.feeriese{filter:drop-shadow(0 0 3vh rgba(0,0,0,.55));transition:translate 2.4s cubic-bezier(.3,.7,.3,1),opacity 1.4s}
+.tp2.feeriese.hidden{translate:-50% 12%;opacity:0} .tp2.feeriese.rise{translate:-50% -50%;opacity:1}
+.tp2.feeriese.down{translate:-50% -8%;opacity:0;transition:translate 2.6s ease-in-out,opacity 1.8s .7s}
+.feeriese .lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(var(--lid,0));transition:transform .4s}
+.feeriese[data-mood=happy] .lids{display:none}
+.feeriese.purr>.bb{animation:feepurr .11s linear 9,breathe 2.6s ease-in-out infinite} @keyframes feepurr{50%{transform:translate(.12%,.18%)}}
+.tp2.feelg{opacity:0;transition:opacity 2.2s;filter:drop-shadow(0 0 3vh rgba(0,0,0,.5))} .tp2.feelg.in{opacity:1}
+.feelg>.bb{transform-origin:50% 100%;animation:feelgb 3.2s ease-in-out infinite} @keyframes feelgb{50%{transform:scaleY(1.025)}}
+.feelg .tl2{transform-box:view-box;transform-origin:66px 154px;animation:feetl 4s ease-in-out infinite} @keyframes feetl{50%{transform:rotate(-2.5deg)}}
+.tp2.feegl{filter:drop-shadow(0 0 .8vh #fff) drop-shadow(0 0 2.2vh rgba(200,220,255,.95))}
+.feegl .bsw{transform-box:view-box;transform-origin:20px 6px;animation:feeglsw 2s ease-in-out infinite} @keyframes feeglsw{25%{transform:rotate(12deg)}75%{transform:rotate(-12deg)}}
+.tp2.feezone{filter:none}
+.tp2.feenz{border-radius:50%;filter:none} .tp2.feenz.g2hint{background:radial-gradient(ellipse,rgba(255,240,255,.5),rgba(255,220,250,0) 70%)}
+.fring.feearch{background:none;-webkit-mask:none;mask:none} .fring.feearch svg{width:100%;height:100%;display:block}
+.u2.feehop .ub{animation:feeuh .8s ease-in-out infinite} @keyframes feeuh{50%{transform:translateY(-8%) rotate(-4deg)}}
+.feehome{position:absolute;inset:0;z-index:20;pointer-events:none;opacity:0} .feehome>svg{width:100%;height:100%;display:block}
+.feehome .hbs{transform-box:fill-box;transform-origin:50% 0} .feehome .hbs.ring{animation:feering 1.3s ease-in-out}
+@keyframes feering{20%{transform:rotate(18deg)}45%{transform:rotate(-13deg)}70%{transform:rotate(7deg)}}
+.feevis{position:absolute;width:1.8vh;height:1.8vh;margin:-.9vh 0 0 -.9vh;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffe0f8 35%,rgba(255,180,230,0) 70%);box-shadow:0 0 2vh 1vh rgba(255,200,240,.55)}
+.feeflash{position:absolute;inset:0;z-index:30;pointer-events:none;opacity:0;background:radial-gradient(circle at 35% 70%,#fff 0,#fff6ff 40%,#ffd8f4 100%)}
+.ill .fart .feefe>.bb,.ill .fart .eef>.bb{animation:none}
+/*<FEENCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -3386,7 +3458,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -7963,7 +8035,7 @@ Object.assign(G2,{
      if(f.lx==null){ f.lx=x; f.ly=y; return; } const u=vu(), dx=x-f.lx, dy=y-f.ly, m=Math.hypot(dx,dy); f.lx=x; f.ly=y; f.mv+=m;
      let g=m/(u*700); const d=Math.abs(dx)>=Math.abs(dy)*.6?Math.sign(dx):Math.sign(dy)*2;
      if(d&&d!==f.dir&&m>u*.15){ if(f.seg>u*3) g+=1/(TB.a.n||6); f.dir=d; f.seg=0; } f.seg+=m;
-     if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:dx*3,vy:-(4+Math.random()*6)*u,s:.9+Math.random(),life:.9,c:'rgba(240,220,170,.7)'});
+     if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:dx*3,vy:-(4+Math.random()*6)*u,s:.9+Math.random(),life:.9,c:TB.a.drops?'rgba(190,230,255,.75)':'rgba(240,220,170,.7)'});
      this.add(g,dx); },
    add(g,dx){ const f=TB.fg; f.p=Math.min(1,f.p+g); f.gain+=g; if(TB.sc.sweeping) TB.sc.sweeping(f.p);
      const gone=Math.min(f.n0,Math.ceil(f.p*f.n0*1.15)); while(f.n0-f.lv.length<gone&&f.lv.length) this.fly(f.lv.shift(),dx||rnd([-1,1]));
@@ -7971,6 +8043,7 @@ Object.assign(G2,{
      if(f.p>=1) this.finish(); },
    fly(L,dx){ const u=vu(), s=Math.sign(dx)||1, [x,y]=ctr(L); L.getAnimations().forEach(q=>q.cancel());
      try{ L.animate([{transform:L.style.transform||'none',opacity:1},{transform:`translate(${s*(14+Math.random()*16)}vh,${-(6+Math.random()*10)}vh) rotate(${s*(160+Math.random()*200)}deg) scale(.8)`,opacity:0}],{duration:900+Math.random()*400,easing:'cubic-bezier(.2,.7,.4,1)',fill:'forwards'}); }catch(e){}
+     if(TB.a.drops){ for(let i=0;i<5;i++) fxAdd({k:'spark',x,y,vx:s*(14+Math.random()*30)*u,vy:-(6+Math.random()*16)*u,life:.8+Math.random()*.5,s:.5+Math.random()*.6,c:rnd(['rgba(170,225,255,.95)','rgba(255,255,255,.95)','rgba(120,190,255,.9)'])}); return; }
      fxAdd({k:'leaf',e:rnd(['🍂','🍁','🍃']),x,y,vx:s*(30+Math.random()*40)*u,vy:-(8+Math.random()*10)*u,rot:0,vr:(Math.random()-.5)*8,s:2.6+Math.random()*1.4,ph:Math.random()*6,life:2.2}); },
    finish(){ if(TB.done) return; const f=TB.fg; f.lv.forEach(L=>this.fly(L,rnd([-1,1]))); f.lv=[]; const [x,y]=ctr(TB.els[TB.a.id]); fxBurst(x,y,26,['rgba(255,226,122,.95)','rgba(255,255,255,.9)']); glitterBurst(x,y,20,16); done2(); },
    up(){ const f=TB.fg; if(f.mv>vu()*4&&f.gain<.03) miss2(); },
@@ -8042,20 +8115,15 @@ function appleDrop(i,toEl,cb){ const B=TB.els.baum; if(!B) return; const g=B.que
   try{ const an=A.animate([{transform:'none'},{transform:`translate(${(x1-x0)*.5}px,${(y1-y0)*.25}px) rotate(80deg)`,offset:.35},{transform:`translate(${x1-x0}px,${y1-y0}px) rotate(200deg)`,offset:.8},{transform:`translate(${x1-x0}px,${y1-y0-u*3}px) rotate(220deg)`,offset:.9},{transform:`translate(${x1-x0}px,${y1-y0}px) rotate(230deg)`}],{duration:900,easing:'ease-in',fill:'forwards'});
     an.onfinish=()=>{ if(cb) cb(A); }; }catch(e){ if(cb) cb(A); } chime([523+Math.random()*200]); }
 
-/* ================= Eefje und der Zauberhut ================= */
-/* motif: Eefje believes her magic is in her pointed hat. Rule of three: the wind takes the hat three times (pond – apple tree –
-   clouds), and three times she gets help without magic. Her spell is said with the hat (1) and, at the turn, without it (6) – and it
-   works. The ending pays off the beginning: she flies her broom home without wobbling, and gives the unicorn glittering wings. */
-const EVERS='Kribbel, krabbel, Funkelschein – kleiner Zauber, komm herein!';
-const EDUR={};
-const EEFJE2={id:'eefje', v2:true, eef:1, dur:EDUR, title:'Eefje und der Zauberhut', vtitle:'Ehfje und der Zauberhut', icon:'🧹', cover:'linear-gradient(180deg,#2a2a7a 0%,#6a4ab4 45%,#ff9ac0 80%,#ffd89a 100%)',
- cast(sc){ if(sc.st) Object.assign(TST,sc.st); efLoop(); try{ alignLoad(['','h','d1','d2','d3'].map(s=>TB.n(s))); }catch(e){}
-  const A=TB.act, mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
+/* the Eefje cast, shared by both Eefje tales: sc options ef:[x,y,z,'st'|'ride'|'sitb',par], hut, kk, sk, wo, ns, rk, vg, sp, mn, krone, bs, flyU.
+   Returns mk(id,cls,svg,x,y,w,par) (also TB.mk) so a tale can add its own characters the same way. */
+function efCast(sc){ if(sc.st) Object.assign(TST,sc.st); efLoop(); try{ alignLoad(['','h','d1','d2','d3'].map(s=>TB.n(s))); }catch(e){}
+  const A=TB.act, mk=TB.mk=(id,cls,svg,x,y,w,par)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`;
      const P=par&&TB.els[par]; if(P){ e.classList.add('kid'); (P.querySelector(':scope>.ub')||P.querySelector(':scope>.bb')||P).appendChild(e); } else A.appendChild(e); TB.els[id]=e; return e; };
   if(sc.krone){ const B=TB.els.baum, K=el('div','tp2 kid krone'); K.style.cssText='left:50%;top:52%;width:62%;height:24%'; B.appendChild(K); TB.els.krone=K; }
   if(sc.mn){ const [x,y,z]=sc.mn, m=el('div','tp2 luna',moonSVG()); m.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; m.dataset.mood='awake'; A.appendChild(m); TB.els.mond=m; moonPhase(1); }
   if(sc.bs){ const [x,y,z]=sc.bs, b=mk('besen','bsn',besenSVG(),x,y,z); b.dataset.mood=TST.bsm||'asleep'; efLeaves(b.querySelector('.bb'),12); }
-  if(sc.ef){ const [x,y,z,pose]=sc.ef, E=mk('hexe','eef'+(pose==='ride'?' ride':''),eefjeSVG(),x,y,z); E.dataset.mood=TST.efm||'smile'; E.dataset.arm=TST.efa||(pose==='ride'?'fwd':'dn');
+  if(sc.ef){ const [x,y,z,pose,par]=sc.ef, E=mk('hexe','eef'+(pose==='ride'?' ride':pose==='sitb'?' sitb':''),eefjeSVG(),x,y,z,par); if(par) E.style.width=z+'%'; E.dataset.mood=TST.efm||'smile'; E.dataset.arm=TST.efa||(pose==='ride'?'fwd':'dn');
     if(sc.hut==='head'){ const H=mk('hut','hutk',hutSVG(),50,-6,0,'hexe'); H.style.width='58%'; } }
   if(sc.hut&&sc.hut!=='head'){ const [x,y,z,par]=sc.hut, H=mk('hut','hutk',hutSVG(),x,y,z,par); if(par) H.style.width=z+'%'; }
   (sc.kk||[]).forEach(([id,x,y,z,par,flip])=>{ const K=mk(id,'kkn'+(flip?' flip':''),kuekenSVG(),x,y,z,par); if(par) K.style.width=z+'%'; });
@@ -8065,8 +8133,9 @@ const EEFJE2={id:'eefje', v2:true, eef:1, dur:EDUR, title:'Eefje und der Zauberh
   if(sc.rk){ const [x,y,z,par,flip]=sc.rk, R=mk('rotkehlchen','rkh'+(flip?' flip':''),robinSVG(),x,y,z,par); if(par) R.style.width=z+'%'; R.dataset.mood=TST.rkm||'smile'; }
   if(sc.vg){ const [x,y,z,par,flip]=sc.vg, R=mk('vogel','rkh baby'+(flip?' flip':''),robinSVG(),x,y,z,par); if(par) R.style.width=z+'%'; R.dataset.mood=TST.vgm||'oh'; }
   (sc.sp||[]).forEach(([id,x,y,z])=>mk(id,'fpt',funkelSVG(),x,y,z));
-  if(sc.flyU) uniFly(true); },
- react(id,b,x,y){ const u=vu();
+  if(sc.flyU) uniFly(true); return mk; }
+/* taps on the Eefje cast when no gesture is running */
+function efReact(id,b,x,y){ const u=vu();
   if(id==='hexe'){ sqs(b); bubble(rnd(['hihi!','hallo!','kribbel!']),x,y-u*7,3.8,'#e8d8ff'); efSpell(6); chime([988,1318]); return true; }
   if(id==='socke'){ sqs(b); bubble(rnd(['miau!','mau!','schnurr…']),x,y-u*4,3.4,'#e0e0f0'); chime([784,659]); return true; }
   if(id==='besen'){ sqs(b); bubble(TST.bsm==='asleep'?'schnarch…':rnd(['hui!','hihi!']),x,y-u*6,3.4,'#ffe8b0'); chime([523,659]); return true; }
@@ -8078,7 +8147,16 @@ const EEFJE2={id:'eefje', v2:true, eef:1, dur:EDUR, title:'Eefje und der Zauberh
   if(id==='haus'){ const w=b.querySelector('.win'); fxBurst(x,y,10); chime([880,1175]); return true; }
   if(id==='baum'||id==='krone'){ wiggle(TB.els.baum); chime([392,523]); return true; }
   if(/^sp\d$/.test(id)){ sqs(b); chime([1568]); return true; }
-  return false; },
+  return false; }
+/* ================= Eefje und der Zauberhut ================= */
+/* motif: Eefje believes her magic is in her pointed hat. Rule of three: the wind takes the hat three times (pond – apple tree –
+   clouds), and three times she gets help without magic. Her spell is said with the hat (1) and, at the turn, without it (6) – and it
+   works. The ending pays off the beginning: she flies her broom home without wobbling, and gives the unicorn glittering wings. */
+const EVERS='Kribbel, krabbel, Funkelschein – kleiner Zauber, komm herein!';
+const EDUR={};
+const EEFJE2={id:'eefje', v2:true, eef:1, dur:EDUR, title:'Eefje und der Zauberhut', vtitle:'Ehfje und der Zauberhut', icon:'🧹', cover:'linear-gradient(180deg,#2a2a7a 0%,#6a4ab4 45%,#ff9ac0 80%,#ffd89a 100%)',
+ cast(sc){ efCast(sc); },
+ react(id,b,x,y){ return efReact(id,b,x,y); },
  sc:[
  /* 1 – morning at the crooked little house: the broom is still asleep under the leaves; she sweeps it awake; the spell (with the hat) */
  {set:'hexenmorgen', dark:0, u:[12,72,24], p:[['haus','HEXHAUS',73,45,60,'big']], ef:[32,66,34,'st'], hut:'head', bs:[50,69,13], sk:[57,85,11],
@@ -8234,6 +8312,480 @@ const EEFJE2={id:'eefje', v2:true, eef:1, dur:EDUR, title:'Eefje und der Zauberh
      'Und wenn sie nicht gelandet sind, dann fliegen sie noch heute.', 600]}
  ]};
 /*<EEFJE*/
+/*FEEN>*/
+/* ================= Eefje und das Feenfest: drawn cast and set pieces ================= */
+/* a fairy (Lilli, the other fairies, and with o.queen the fairy queen): see-through wings (.wl/.wr, they flap; .wet makes them droop,
+   --dry 0..1 lifts them again), a glow (.hal). Moods smile, happy, worry, oh; .talking + --mo opens the mouth; data-arm dn | up. */
+function feeSVG(o){ o=o||{}; const id='fe'+(++LANC), K='#ffe8d6', KS='#e2a88a', D=o.dress||'#ff8ac8', DS=o.dress2||'#c0447e', H=o.hair||'#ffe07a', HS=o.hairS||'#c8962a', E='#2a1a3a', q=!!o.queen;
+  const wing=(d1,d2,v)=>`<path d="${d1}" fill="url(#${id}w)" stroke="#fff" stroke-width="1.6" stroke-opacity=".85"/><path d="${d2}" fill="url(#${id}w)" stroke="#fff" stroke-width="1.4" stroke-opacity=".8"/><path d="${v}" stroke="#fff" stroke-width=".9" fill="none" opacity=".7"/>`;
+  return `<svg viewBox="0 0 100 120"><defs>
+  <radialGradient id="${id}h"><stop offset="0" stop-color="#fffbe0" stop-opacity=".95"/><stop offset=".45" stop-color="${o.glow||'#ffc8f0'}" stop-opacity=".42"/><stop offset="1" stop-color="#ffc8f0" stop-opacity="0"/></radialGradient>
+  <linearGradient id="${id}w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0fdff" stop-opacity=".8"/><stop offset=".5" stop-color="${o.wing||'#a8e4ff'}" stop-opacity=".5"/><stop offset="1" stop-color="#ffc0ee" stop-opacity=".6"/></linearGradient></defs>
+  <circle class="hal" cx="50" cy="62" r="${q?58:50}" fill="url(#${id}h)"/>
+  <g class="wgp"><g class="wl">${wing(q?'M47 62 C26 18 -4 22 2 46 C6 64 30 68 47 65Z':'M48 62 C30 28 6 30 8 48 C10 62 30 66 48 64Z',q?'M47 67 C30 74 14 92 22 102 C32 110 44 84 47 70Z':'M48 66 C34 70 20 84 26 92 C34 98 44 80 48 68Z','M46 62 Q28 44 14 44 M46 67 Q34 80 28 88')}</g>
+   <g class="wr">${wing(q?'M53 62 C74 18 104 22 98 46 C94 64 70 68 53 65Z':'M52 62 C70 28 94 30 92 48 C90 62 70 66 52 64Z',q?'M53 67 C70 74 86 92 78 102 C68 110 56 84 53 70Z':'M52 66 C66 70 80 84 74 92 C66 98 56 80 52 68Z','M54 62 Q72 44 86 44 M54 67 Q66 80 72 88')}</g></g>
+  ${q?`<path d="M37 34 Q26 58 30 80 Q36 70 40 52Z M63 34 Q74 58 70 80 Q64 70 60 52Z" fill="${H}" stroke="${HS}" stroke-width="1.6" stroke-linejoin="round"/>`:''}
+  ${q?'':`<path d="M45 98 L43 111 M55 98 L57 111" stroke="${K}" stroke-width="3.2" stroke-linecap="round"/><ellipse cx="42.5" cy="112" rx="3.4" ry="2" fill="${DS}"/><ellipse cx="57.5" cy="112" rx="3.4" ry="2" fill="${DS}"/>`}
+  ${q?`<path d="M40 64 Q50 60 60 64 L78 112 Q50 121 22 112Z" fill="${D}" stroke="${DS}" stroke-width="2.2" stroke-linejoin="round"/><path d="M34 100 Q50 106 66 100 M30 108 Q50 114 70 108" stroke="#fff" stroke-width="1.2" fill="none" opacity=".7"/>`
+     :`<path d="M40 64 Q50 60 60 64 L72 96 Q66 91 61 99 Q55 91 50 100 Q45 91 39 99 Q34 91 28 96Z" fill="${D}" stroke="${DS}" stroke-width="2.2" stroke-linejoin="round"/><path d="M50 66 L50 96 M44 67 L36 94 M56 67 L64 94" stroke="${DS}" stroke-width="1" opacity=".5"/>`}
+  <path d="M42 57 Q50 53 58 57 L60 68 Q50 72 40 68Z" fill="${D}" stroke="${DS}" stroke-width="2" stroke-linejoin="round"/>
+  <g class="arm arm-dn"><path d="M42 60 Q36 66 34 74 M58 60 Q64 66 66 74" stroke="${K}" stroke-width="3.6" fill="none" stroke-linecap="round"/><circle cx="34" cy="75" r="2.6" fill="${K}"/><circle cx="66" cy="75" r="2.6" fill="${K}"/></g>
+  <g class="arm arm-up"><path d="M42 60 Q36 66 34 74 M58 59 Q66 54 70 44" stroke="${K}" stroke-width="3.6" fill="none" stroke-linecap="round"/><circle cx="34" cy="75" r="2.6" fill="${K}"/><circle cx="70" cy="43" r="2.6" fill="${K}"/></g>
+  ${q?'':`<circle cx="50" cy="23" r="8" fill="${H}" stroke="${HS}" stroke-width="1.8"/>`}
+  <circle cx="50" cy="40" r="15" fill="${K}" stroke="${KS}" stroke-width="2"/>
+  <path d="M35 41 Q33 24 50 24 Q67 24 65 41 Q61 31 54 33 Q50 28 45 33 Q39 31 35 41Z" fill="${H}" stroke="${HS}" stroke-width="1.8" stroke-linejoin="round"/>
+  ${q?`<path d="M38 27 L40 14 L45 21 L50 10 L55 21 L60 14 L62 27Z" fill="#ffe27a" stroke="#b8862e" stroke-width="1.8" stroke-linejoin="round"/><circle cx="50" cy="17" r="2.2" fill="#ff7ab8"/><circle cx="41" cy="20" r="1.4" fill="#8ad8ff"/><circle cx="59" cy="20" r="1.4" fill="#8ad8ff"/>`
+     :`<g transform="translate(62 27)"><circle r="3" cx="-3" fill="${o.flower||'#ff6aa8'}"/><circle r="3" cx="3" fill="${o.flower||'#ff6aa8'}"/><circle r="3" cy="-3" fill="${o.flower||'#ff6aa8'}"/><circle r="3" cy="3" fill="${o.flower||'#ff6aa8'}"/><circle r="2" fill="#ffe27a"/></g>`}
+  <g class="blush"><ellipse cx="42" cy="46" rx="3.2" ry="2" fill="#ff8aa8" opacity=".6"/><ellipse cx="58" cy="46" rx="3.2" ry="2" fill="#ff8aa8" opacity=".6"/></g>
+  <g class="ey ey-o"><ellipse cx="44.5" cy="41" rx="2.3" ry="3" fill="${E}"/><ellipse cx="55.5" cy="41" rx="2.3" ry="3" fill="${E}"/><circle cx="45.4" cy="39.8" r=".9" fill="#fff"/><circle cx="56.4" cy="39.8" r=".9" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round"><path d="M41.5 42 q3 -3.6 6 0"/><path d="M52.5 42 q3 -3.6 6 0"/></g>
+  <g class="ey ey-w"><ellipse cx="44.5" cy="42" rx="2.3" ry="2.8" fill="${E}"/><ellipse cx="55.5" cy="42" rx="2.3" ry="2.8" fill="${E}"/><circle cx="45.3" cy="41" r=".8" fill="#fff"/><circle cx="56.3" cy="41" r=".8" fill="#fff"/>
+   <path d="M41 36.5 L47 35 M59 36.5 L53 35" stroke="${HS}" stroke-width="1.4" stroke-linecap="round"/></g>
+  <path class="m m-s" d="M46.5 47.5 q3.5 3 7 0" fill="none" stroke="${E}" stroke-width="1.6" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="50" cy="48.5" rx="1.8" ry="2.3" fill="#8a2a3a"/>
+  <path class="m m-w" d="M47 49.5 q3 -2.4 6 0" fill="none" stroke="${E}" stroke-width="1.6" stroke-linecap="round"/>
+  <ellipse class="mo" cx="50" cy="48" rx="2.4" ry="2.2" fill="#8a2a3a"/></svg>`; }
+const lilliSVG=()=>feeSVG({dress:'#ff8ac8',dress2:'#c0447e',hair:'#ffe07a',hairS:'#c8962a',flower:'#ff6aa8'});
+const FEECOL=[{dress:'#8ad8ff',dress2:'#3a8ac0',hair:'#ff9a5a',hairS:'#b8582a',flower:'#ffe27a',glow:'#c8f0ff'},{dress:'#b8f08a',dress2:'#4a9a3a',hair:'#8a5a3a',hairS:'#5a3a1a',flower:'#ff8ac8',glow:'#e0ffc8'},
+  {dress:'#c8a8ff',dress2:'#6a4ac0',hair:'#ffe07a',hairS:'#c8962a',flower:'#8ad8ff',glow:'#e8d8ff'},{dress:'#ffd06a',dress2:'#c0862a',hair:'#3a2a4a',hairS:'#1e142a',flower:'#ff6a8a',glow:'#fff0c0'},
+  {dress:'#ff9a8a',dress2:'#c04a3a',hair:'#f4f0ff',hairS:'#a8a0c8',flower:'#b8f08a',glow:'#ffd8d0'}];
+const queenSVG=()=>feeSVG({queen:1,dress:'#e8e0ff',dress2:'#8a7ac8',hair:'#f8f4ff',hairS:'#a8a0d8',wing:'#d8c8ff',glow:'#fff0ff'});
+/* Brummi, the bumblebee: faces right; moods smile, happy, sleepy, oh; .talking + --mo */
+function brummiSVG(){ const id='bm'+(++LANC), B='#3a2a1a', E='#1e140c';
+  return `<svg viewBox="0 0 150 112"><defs><clipPath id="${id}"><ellipse cx="62" cy="66" rx="46" ry="34"/></clipPath>
+   <radialGradient id="${id}g" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffe878"/><stop offset="1" stop-color="#f4b81a"/></radialGradient></defs>
+  <g class="bwg"><g class="bw1"><ellipse cx="56" cy="26" rx="24" ry="14" transform="rotate(-28 56 26)" fill="#eef9ff" fill-opacity=".72" stroke="#8ec4e8" stroke-width="2"/></g>
+   <g class="bw2"><ellipse cx="76" cy="28" rx="19" ry="11" transform="rotate(18 76 28)" fill="#eef9ff" fill-opacity=".72" stroke="#8ec4e8" stroke-width="2"/></g></g>
+  <path d="M44 96 l-4 10 M60 99 l0 10 M78 97 l4 10" stroke="${B}" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="62" cy="66" rx="46" ry="34" fill="url(#${id}g)"/>
+  <g clip-path="url(#${id})" fill="${B}"><path d="M38 20 Q30 66 40 112 L52 112 Q42 66 50 20Z"/><path d="M64 20 Q56 66 66 112 L78 112 Q68 66 76 20Z"/><path d="M90 20 Q84 66 92 112 L104 112 Q96 66 102 20Z"/><path d="M0 20 L20 20 Q12 66 22 112 L0 112Z"/></g>
+  <ellipse cx="62" cy="66" rx="46" ry="34" fill="none" stroke="${E}" stroke-width="3"/>
+  <ellipse cx="62" cy="66" rx="42" ry="30" fill="none" stroke="#fff6b0" stroke-width="2.4" stroke-dasharray="1 5" stroke-linecap="round" opacity=".75"/>
+  <ellipse cx="50" cy="52" rx="14" ry="7" fill="#fff" opacity=".28" transform="rotate(-18 50 52)"/>
+  <path d="M110 40 Q106 22 98 14 M122 42 Q126 24 134 18" stroke="${E}" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="98" cy="14" r="3.6" fill="${B}"/><circle cx="134" cy="18" r="3.6" fill="${B}"/>
+  <circle cx="118" cy="62" r="25" fill="#4a3a2a" stroke="${E}" stroke-width="3"/>
+  <ellipse cx="122" cy="72" rx="13" ry="9" fill="#6a5440" opacity=".7"/>
+  <ellipse cx="108" cy="72" rx="4.6" ry="3" fill="#ff8aa8" opacity=".7"/><ellipse cx="136" cy="70" rx="4" ry="2.8" fill="#ff8aa8" opacity=".7"/>
+  <g class="ey ey-o"><ellipse cx="112" cy="58" rx="6" ry="7" fill="#fff"/><ellipse cx="130" cy="57" rx="5.4" ry="6.6" fill="#fff"/><circle cx="113.5" cy="59" r="3.6" fill="${E}"/><circle cx="131.2" cy="58" r="3.3" fill="${E}"/><circle cx="114.6" cy="57.4" r="1.3" fill="#fff"/><circle cx="132.2" cy="56.4" r="1.2" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M106 60 q6 -7 12 0"/><path d="M125 59 q5.5 -6.4 11 0"/></g>
+  <g class="ey ey-c" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M106 58 q6 5 12 0"/><path d="M125 57 q5.5 4.6 11 0"/></g>
+  <g class="ey ey-w"><circle cx="112" cy="58" r="7" fill="#fff"/><circle cx="130" cy="57" r="6.4" fill="#fff"/><circle cx="112" cy="58.5" r="3" fill="${E}"/><circle cx="130" cy="57.5" r="2.8" fill="${E}"/></g>
+  <path class="m m-s" d="M114 74 q6 5 12 0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="120" cy="76" rx="3" ry="3.6" fill="#c84a6a"/>
+  <ellipse class="mo" cx="120" cy="75" rx="4" ry="3.4" fill="#c84a6a"/></svg>`; }
+/* a glow-worm (the tail lights up when it wakes): moods asleep, awake, happy */
+function wurmSVG(){ const id='gw'+(++LANC), C='#8aa86a', CS='#4a6a3a';
+  return `<svg viewBox="0 0 74 40"><defs><radialGradient id="${id}"><stop offset="0" stop-color="#fbffd0"/><stop offset=".55" stop-color="#d8ff7a"/><stop offset="1" stop-color="#a8e04a"/></radialGradient></defs>
+  <circle class="gt" cx="12" cy="27" r="9.5" fill="url(#${id})" stroke="#7a9a3a" stroke-width="2"/>
+  <circle cx="27" cy="25" r="9.5" fill="${C}" stroke="${CS}" stroke-width="2"/><circle cx="41" cy="23" r="9.5" fill="${C}" stroke="${CS}" stroke-width="2"/>
+  <path d="M22 33 l-1 5 M32 32 l1 5 M38 31 l-1 5 M46 30 l1 5" stroke="${CS}" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="57" cy="19" r="12" fill="#a8c47a" stroke="${CS}" stroke-width="2.2"/><path d="M54 8 Q52 1 48 0 M61 8 Q64 1 68 1" stroke="${CS}" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <ellipse cx="62" cy="24" rx="2.6" ry="1.6" fill="#ff9aa8" opacity=".7"/>
+  <g class="ey ey-c" fill="none" stroke="#2a3a1a" stroke-width="1.8" stroke-linecap="round"><path d="M50 18 q2.4 2 4.8 0"/><path d="M59 17 q2.4 2 4.8 0"/></g>
+  <g class="ey ey-o"><circle cx="52.4" cy="17.6" r="2.4" fill="#2a3a1a"/><circle cx="61.4" cy="16.6" r="2.4" fill="#2a3a1a"/><circle cx="53.2" cy="16.8" r=".8" fill="#fff"/><circle cx="62.2" cy="15.8" r=".8" fill="#fff"/></g>
+  <path class="m m-s" d="M55 24 q3 2.6 6 0" fill="none" stroke="#2a3a1a" stroke-width="1.6" stroke-linecap="round"/></svg>`; }
+/* a big leaf for the glow-worms to sleep under */
+function feeBlattSVG(){ return `<svg viewBox="0 0 100 62"><path d="M3 52 Q16 6 66 6 Q94 8 98 28 Q82 58 32 58 Q12 58 3 52Z" fill="#2e6a40" stroke="#1a4228" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M8 50 Q44 36 92 22 M30 44 Q34 30 44 20 M48 38 Q56 26 64 14 M38 42 Q52 50 66 52 M58 34 Q72 42 84 40" stroke="#4e9a5a" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>`; }
+/* a toadstool of the fairy ring: .on lights it, .nx (next) makes it pulse */
+function feePilzSVG(){ const id='fp'+(++LANC); return `<svg viewBox="0 0 80 84"><defs><radialGradient id="${id}" cx="45%" cy="30%" r="70%"><stop offset="0" stop-color="#ff7a7a"/><stop offset=".7" stop-color="#e2343e"/><stop offset="1" stop-color="#a81e2a"/></radialGradient>
+   <radialGradient id="${id}o" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#fff2c0"/><stop offset=".5" stop-color="#ff9ab0"/><stop offset="1" stop-color="#e2343e"/></radialGradient></defs>
+  <path d="M30 46 Q27 70 23 82 L57 82 Q53 70 50 46Z" fill="#f6eedc" stroke="#a89878" stroke-width="2.4" stroke-linejoin="round"/>
+  <ellipse cx="40" cy="50" rx="30" ry="5.4" fill="#e8d8b8" stroke="#a89878" stroke-width="2"/>
+  <path class="cap" d="M4 48 Q6 10 40 6 Q74 10 76 48 Q40 57 4 48Z" fill="url(#${id})" stroke="#7a141e" stroke-width="2.6"/>
+  <path class="capo" d="M4 48 Q6 10 40 6 Q74 10 76 48 Q40 57 4 48Z" fill="url(#${id}o)"/>
+  <g fill="#fff"><ellipse cx="22" cy="30" rx="5" ry="4"/><ellipse cx="40" cy="18" rx="5.6" ry="4.4"/><ellipse cx="58" cy="30" rx="5" ry="4"/><ellipse cx="34" cy="40" rx="3.4" ry="2.6"/><ellipse cx="50" cy="42" rx="3" ry="2.4"/><ellipse cx="66" cy="42" rx="2.6" ry="2"/><ellipse cx="13" cy="42" rx="2.6" ry="2"/></g>
+  <ellipse cx="28" cy="20" rx="7" ry="3" fill="#fff" opacity=".25" transform="rotate(-25 28 20)"/></svg>`; }
+/* the big open flower in the garden where Lilli sits */
+function feeBlumeSVG(){ return `<svg viewBox="0 0 100 190"><path d="M50 190 Q46 140 50 74" stroke="#3a8a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M48 150 Q20 136 14 108 Q36 116 48 140Z" fill="#4aa24a" stroke="#2a6a2a" stroke-width="2"/><path d="M51 128 Q80 116 88 90 Q64 98 51 120Z" fill="#4aa24a" stroke="#2a6a2a" stroke-width="2"/>
+  <g stroke="#b8467e" stroke-width="2.2" stroke-linejoin="round"><path d="M50 76 Q14 74 6 46 Q30 44 50 66Z" fill="#ff9ac8"/><path d="M50 76 Q86 74 94 46 Q70 44 50 66Z" fill="#ff9ac8"/>
+   <path d="M50 74 Q22 60 26 30 Q44 40 50 62Z" fill="#ffb4d6"/><path d="M50 74 Q78 60 74 30 Q56 40 50 62Z" fill="#ffb4d6"/>
+   <path d="M38 76 Q50 84 62 76 Q60 62 50 60 Q40 62 38 76Z" fill="#ff86bc"/></g>
+  <circle cx="50" cy="64" r="7" fill="#ffe27a" stroke="#c8962a" stroke-width="1.8"/>
+  <g fill="#e8f8ff" stroke="#9ac8e8" stroke-width=".8"><circle cx="16" cy="52" r="2.2"/><circle cx="84" cy="54" r="2"/><circle cx="30" cy="38" r="1.8"/><circle cx="36" cy="132" r="2"/></g></svg>`; }
+/* a daisy on a long stem (giant in the tiny world) */
+function feeGaensSVG(){ let pe=''; for(let i=0;i<16;i++){ const a=i*22.5; pe+=`<ellipse cx="50" cy="22" rx="5.4" ry="16" fill="#fff" stroke="#d8d0e0" stroke-width="1.2" transform="rotate(${a} 50 40)"/>`; }
+  return `<svg viewBox="0 0 100 300"><path d="M50 300 Q56 190 50 52" stroke="#3a8a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M52 230 Q78 214 88 190 Q66 196 52 220Z M50 262 Q24 248 14 224 Q36 230 50 252Z" fill="#4aa24a" stroke="#2a6a2a" stroke-width="2"/>
+  <g>${pe}</g><circle cx="50" cy="40" r="12" fill="#ffd23a" stroke="#d8962a" stroke-width="2"/><g fill="#e8a82a" opacity=".7"><circle cx="46" cy="37" r="1.6"/><circle cx="54" cy="38" r="1.6"/><circle cx="50" cy="44" r="1.6"/><circle cx="45" cy="44" r="1.2"/><circle cx="55" cy="44" r="1.2"/></g></svg>`; }
+/* tall blades of grass (n = night colours) */
+function feeHalmSVG(n){ const c=n?['#1e3e3a','#284e44','#183430']:['#4aa24a','#5ab85a','#3a8a3e'];
+  return `<svg viewBox="0 0 200 320"><path d="M30 320 Q20 180 4 20 Q40 170 52 320Z" fill="${c[0]}"/><path d="M60 320 Q70 160 120 6 Q92 170 86 320Z" fill="${c[1]}"/>
+  <path d="M100 320 Q110 200 180 70 Q140 200 128 320Z" fill="${c[2]}"/><path d="M140 320 Q160 230 196 150 Q176 240 166 320Z" fill="${c[0]}"/><path d="M66 320 Q50 220 30 120 Q66 220 80 320Z" fill="${c[2]}" opacity=".9"/>
+  <path d="M68 300 Q80 150 116 16 M18 300 Q14 170 6 30" stroke="#fff" stroke-width="1.2" opacity="${n?.08:.25}" fill="none"/></svg>`; }
+/* a flower arch for Brummi to fly through */
+function feeBogenSVG(){ let f=''; for(let i=0;i<10;i++){ const a=i/10*6.283, x=50+43*Math.cos(a), y=50+43*Math.sin(a), c=['#ff8ac8','#ffe27a','#8ad8ff','#ffffff','#c8a8ff'][i%5];
+    f+=`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><circle r="4.2" cx="-3.4" fill="${c}"/><circle r="4.2" cx="3.4" fill="${c}"/><circle r="4.2" cy="-3.4" fill="${c}"/><circle r="4.2" cy="3.4" fill="${c}"/><circle r="2.6" fill="#ffd23a"/></g>`; }
+  return `<svg viewBox="0 0 100 100" style="overflow:visible"><circle cx="50" cy="50" r="43" fill="none" stroke="#3a9a3a" stroke-width="4.6"/><circle cx="50" cy="50" r="43" fill="none" stroke="#7ad06a" stroke-width="2" stroke-dasharray="6 7"/>${f}</svg>`; }
+/* a little puddle that reflects the evening sky */
+function feePfSVG(){ return `<svg viewBox="0 0 120 30"><ellipse cx="60" cy="15" rx="58" ry="13" fill="#8a9ad8" stroke="#5a6aa8" stroke-width="2" opacity=".85"/><ellipse cx="60" cy="13" rx="50" ry="9" fill="#ffb4c0" opacity=".45"/>
+  <path d="M30 12 q10 -3 20 0 M70 18 q8 -2 16 0" stroke="#fff" stroke-width="1.6" fill="none" opacity=".7" stroke-linecap="round"/></svg>`; }
+/* Socke lying down, curled round the fairy ring, eyes shut, purring */
+function sockeLiegtSVG(){ const B='#2c2840', BS='#141220';
+  return `<svg viewBox="0 0 400 180"><g class="tl2"><path d="M66 154 Q92 184 160 178 Q190 175 204 166" stroke="${BS}" stroke-width="24" fill="none" stroke-linecap="round"/><path d="M66 154 Q92 184 160 178 Q190 175 204 166" stroke="${B}" stroke-width="18" fill="none" stroke-linecap="round"/><circle cx="204" cy="166" r="9" fill="#fff"/></g>
+  <path class="bd" d="M56 150 Q40 82 120 62 Q200 44 290 64 Q350 80 352 136 Q352 170 300 172 L104 172 Q60 172 56 150Z" fill="${B}" stroke="${BS}" stroke-width="4"/>
+  <path d="M140 80 Q190 66 250 76" stroke="#4a4460" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>
+  <ellipse cx="282" cy="172" rx="22" ry="9" fill="#fff" stroke="${BS}" stroke-width="3"/><ellipse cx="320" cy="173" rx="20" ry="8.5" fill="#fff" stroke="${BS}" stroke-width="3"/>
+  <path d="M302 80 L298 36 L332 60Z M362 82 L374 40 L340 58Z" fill="${B}" stroke="${BS}" stroke-width="4" stroke-linejoin="round"/><path d="M306 68 L304 48 L322 62Z M358 68 L366 48 L348 60Z" fill="#ff9ab8"/>
+  <circle cx="336" cy="110" r="46" fill="${B}" stroke="${BS}" stroke-width="4"/><ellipse cx="336" cy="128" rx="22" ry="15" fill="#fff" opacity=".92"/>
+  <g fill="none" stroke="#9ae04a" stroke-width="4" stroke-linecap="round"><path d="M308 104 q9 8 18 0"/><path d="M346 104 q9 8 18 0"/></g>
+  <path d="M330 118 h12 l-6 7Z" fill="#ff8aa8"/><path d="M324 132 q6 6 12 0 q6 6 12 0" fill="none" stroke="${BS}" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#fff" stroke-width="2" opacity=".75" stroke-linecap="round"><path d="M314 126 L280 120 M314 132 L280 136 M358 126 L392 120 M358 132 L392 136"/></g></svg>`; }
+/* the giant Socke peeking over the mushrooms: Socke himself with eyelids (--lid 0 open .. 1 shut) */
+function sockeRieseSVG(){ return sockeSVG().replace('</svg>',`<g class="lids"><rect class="lid" x="26.8" y="22.4" width="10.4" height="11.2" fill="#2c2840"/><rect class="lid" x="42.8" y="22.4" width="10.4" height="11.2" fill="#2c2840"/></g></svg>`); }
+/* the tiny silver bell the fairy queen gives Eefje */
+function feeGlockeSVG(){ const id='fg'+(++LANC); return `<svg viewBox="0 0 40 50"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a92a8"/><stop offset=".3" stop-color="#ffffff"/><stop offset=".6" stop-color="#c8d0e0"/><stop offset="1" stop-color="#7a8298"/></linearGradient></defs>
+  <g class="bsw"><path d="M16 10 Q20 1 24 10" stroke="#9aa2b8" stroke-width="2.6" fill="none"/><circle cx="20" cy="47" r="3.4" fill="#c8d0e0" stroke="#7a8298" stroke-width="1.4"/>
+  <path d="M7 40 Q7 14 20 10 Q33 14 33 40 Q35 43 38 44 L2 44 Q5 43 7 40Z" fill="url(#${id})" stroke="#6a7288" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M12 36 Q12 20 18 15" stroke="#fff" stroke-width="2" fill="none" opacity=".8" stroke-linecap="round"/>
+  <path d="M20 9 Q12 4 10 9 Q14 12 20 10 Q26 12 30 9 Q28 4 20 9Z" fill="#ff8ac8" stroke="#c0447e" stroke-width="1.2"/></g></svg>`; }
+/* the last picture: Eefje's window at night, the bell on the sill (.hbl swings) */
+function feeHeimSVG(){ const id='fh'+(++LANC); let st=''; const r=seeded(77); for(let i=0;i<14;i++) st+=`<circle cx="${(48+r()*64).toFixed(1)}" cy="${(14+r()*24).toFixed(1)}" r="${(.3+r()*.5).toFixed(2)}" fill="#fff"/>`;
+  return `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0c34"/><stop offset=".7" stop-color="#2a2a7a"/><stop offset="1" stop-color="#4a3a8a"/></linearGradient>
+   <radialGradient id="${id}l" cx="50%" cy="80%" r="70%"><stop offset="0" stop-color="#ffd890" stop-opacity=".5"/><stop offset="1" stop-color="#ffd890" stop-opacity="0"/></radialGradient></defs>
+  <rect width="160" height="100" fill="#3e2a62"/><g stroke="#2e1e4a" stroke-width=".6">${[16,32,48,64,80,96,112,128,144].map(x=>`<path d="M${x} 0 V100"/>`).join('')}</g>
+  <rect x="44" y="8" width="72" height="56" rx="3" fill="url(#${id}s)"/>${st}
+  <circle cx="98" cy="22" r="7" fill="#fff6c8"/><circle cx="101" cy="20" r="6" fill="#2a2a7a" opacity=".0"/>
+  <path d="M44 56 Q60 46 76 52 Q92 44 116 52 L116 64 L44 64Z" fill="#1e3a3a"/><g fill="#e2343e"><ellipse cx="70" cy="58" rx="1.6" ry="1"/><ellipse cx="74" cy="57" rx="1.6" ry="1"/><ellipse cx="78" cy="58" rx="1.6" ry="1"/><ellipse cx="74" cy="59.5" rx="1.6" ry="1"/></g>
+  <g fill="none" stroke="#7a5236" stroke-width="3.4"><rect x="44" y="8" width="72" height="56" rx="3"/><path d="M80 8 V64 M44 34 H116"/></g>
+  <path d="M30 4 Q46 30 40 68 L28 68 Q22 30 30 4Z" fill="#e8607e" stroke="#9a3050" stroke-width="1.2"/><path d="M130 4 Q114 30 120 68 L132 68 Q138 30 130 4Z" fill="#e8607e" stroke="#9a3050" stroke-width="1.2"/>
+  <rect x="24" y="2" width="112" height="4" rx="2" fill="#c8962a"/>
+  <rect x="34" y="64" width="92" height="7" rx="2" fill="#9a6a3e" stroke="#5a3a1e" stroke-width="1"/><rect x="34" y="71" width="92" height="29" fill="#4a3270"/>
+  <ellipse cx="80" cy="66" rx="40" ry="14" fill="url(#${id}l)"/>
+  <g transform="translate(50 52)"><rect x="-4" y="6" width="8" height="6" rx="1.5" fill="#c8704a"/><path d="M0 6 Q-2 0 -5 -2 M0 6 Q2 -1 5 -3 M0 6 V-4" stroke="#4aa24a" stroke-width="1.2" fill="none"/><circle cx="-5" cy="-2" r="1.6" fill="#ff8ac8"/><circle cx="5" cy="-3" r="1.6" fill="#ffe27a"/><circle cx="0" cy="-4" r="1.6" fill="#8ad8ff"/></g>
+  <g class="hbl" transform="translate(80 50.5)"><g class="hbs">${feeGlockeSVG().replace(/^<svg[^>]*>|<\/svg>$/g,'').replace('<g class="bsw">','<g transform="translate(-8.4 -5) scale(.42)">')}</g></g></svg>`; }
+Object.assign(SVGP,{FEEBLUME:[feeBlumeSVG,.526],FEEGAENS:[feeGaensSVG,.333],FEEHALM:[()=>feeHalmSVG(0),.625],FEEHALMN:[()=>feeHalmSVG(1),.625],FEEPF:[feePfSVG,1],FEEBLATT:[feeBlattSVG,1.6],FEEPILZ:[feePilzSVG,.95]});
+TSYL.FEE='FEE';
+
+Object.assign(SETS2,{
+  feengarten:{clean:1, sky:'linear-gradient(180deg,#4a4aa8 0%,#8e66c0 30%,#ff94ac 62%,#ffd0a0 100%)', stars:8,
+    far:sil(hills(211,232,70,'#8a6aa8')+pines(213,26,80,'#6a5a96',100)+hills(217,290,46,'#7a74ae'),58), gnd:'linear-gradient(180deg,#72b070 0%,#4e8e58 48%,#2e6a46 100%)',
+    act:[['haus','HEXHAUS',86,44,56,'big']], mid:[['PINE',5,48,26],['PINE',14,54,17]], fore:[['🌷',97,96,10],['🌿',64,105,14]]},
+  riesenwiese:{clean:1, sky:'linear-gradient(180deg,#363a94 0%,#7a58b0 34%,#f08aa8 68%,#ffc890 100%)', stars:10,
+    far:sil(hills(221,214,60,'#6a74b0')+hills(223,270,50,'#58689e'),62), gnd:'linear-gradient(180deg,#5a9a5c 0%,#3a7a4a 50%,#245a3a 100%)',
+    mid:[['FEEGAENS',8,40,110],['FEEGAENS',92,36,120],['FEEGAENS',70,44,80]], act:[['gb1','FEEGAENS',5,62,118],['gb2','FEEGAENS',95,60,128]],
+    fore:[['FEEHALM',-2,92,90],['FEEHALM',102,94,96]]},
+  grasnacht:{sky:'linear-gradient(180deg,#03051a 0%,#0c1440 55%,#1c2a5a 100%)', stars:70, dcol:'3,8,22',
+    far:sil(pines(231,40,150,'#0e1a32',80)+pines(233,30,120,'#0a1428',40),70), gnd:'linear-gradient(180deg,#1e3e34 0%,#122a24 55%,#0a1a16 100%)',
+    mid:[['FEEHALMN',10,40,90],['FEEHALMN',50,34,80],['FEEHALMN',90,38,100]], act:[['hn1','FEEHALMN',-4,48,120],['hn2','FEEHALMN',104,44,130]],
+    fore:[['FEEHALMN',-6,96,90],['FEEHALMN',106,98,100]]},
+  feenring:{sky:'linear-gradient(180deg,#05061e 0%,#141850 52%,#2c2c72 100%)', stars:90, moon:[63,33], dcol:'6,6,30',
+    far:sil(pines(241,36,140,'#141a44',90)+pines(243,26,110,'#0e1436',40),66), gnd:'linear-gradient(180deg,#2a5a4a 0%,#1a3e34 55%,#0e2620 100%)',
+    mid:[['FEEHALMN',4,40,90],['FEEHALMN',96,36,100]], fore:[['FEEHALMN',-6,98,80],['🍄',95,98,8]]},
+  gartennacht:{sky:'linear-gradient(180deg,#05061e 0%,#141850 55%,#2e3076 100%)', stars:80, moon:[63,33], dcol:'6,6,30',
+    far:sil(hills(251,232,70,'#22205a')+pines(253,26,80,'#1a1848',100)+hills(257,290,46,'#262864'),58), gnd:'linear-gradient(180deg,#2c5a46 0%,#1c3e32 55%,#10261e 100%)',
+    act:[['haus','HEXHAUS',84,44,56,'big']], mid:[['PINE',5,48,26],['PINE',14,54,17]], fore:[['🌿',64,105,14]]}
+});
+/* ---------- two new gestures: reigen (tap the glowing toadstool, each one sings the next note), streicheln (stroke the giant's nose) ---------- */
+const FEEMEL=[67,72,76,74,72,79];   /* the fairy song: one note per toadstool */
+const FEESONG=[[67,1],[72,1],[76,1],[74,1],[72,1],[79,2],[77,1],[76,1],[74,1],[72,1],[74,1],[72,3]];
+Object.assign(G2,{
+ /* reigen: the toadstools of a ring sing a tune one note each; the next one glows (.nx) – tap it. Tapping another one just plays its
+    own note softly (2 of those → hint). a:{ids:[…], notes}; hook item(id,b,k) */
+ reigen:{ setup(){ TB.left=TB.a.ids.slice(); TB.rgAuto=false; this.mark(); },
+   mark(){ TB.a.ids.forEach(id=>TB.els[id].classList.toggle('nx',id===TB.left[0])); },
+   note(id){ const N=TB.a.notes||FEEMEL; return N[TB.a.ids.indexOf(id)%N.length]; },
+   pick(x,y){ const u=vu(), c=TB.left[0]; if(c&&nearEl(TB.els[c],x,y,u*6)) return c; let best=null,bd=1e9;
+     TB.a.ids.forEach(id=>{ const b=TB.els[id]; if(!nearEl(b,x,y,u*2)) return; const [cx,cy]=ctr(b), d=Math.hypot(cx-x,cy-y); if(d<bd){ bd=d; best=id; } }); return best; },
+   down(x,y){ if(TB.rgAuto||TB.done) return; const id=this.pick(x,y); if(!id) return; if(id===TB.left[0]) return this.tap(id);
+     const b=TB.els[id]; wiggle(b); harp(this.note(id)-12,x); fxBurst(x,y,6,['rgba(255,200,230,.8)']); miss2(); },
+   tap(id){ if(id!==TB.left[0]||TB.done) return; TB.left.shift(); const b=TB.els[id], [x,y]=ctr(b), k=TB.a.ids.length-TB.left.length;
+     b.classList.remove('g2hint','nx'); b.classList.add('on'); sqs(b); harp(this.note(id),x); fxBurst(x,y,18,GLCOL); glitterBurst(x,y,12,12); dingRing(x,y,vu()*14,'#ffd0f0'); poke2();
+     if(TB.sc.item) TB.sc.item(id,b,k); this.mark(); if(!TB.left.length) bLater(()=>done2(),900); },
+   hint(){ const id=TB.left[0]; if(!id||TB.rgAuto) return; const b=TB.els[id], [x,y]=ctr(b), u=vu(); b.classList.add('g2hint'); bLater(()=>b.classList.remove('g2hint'),2000);
+     ghost([[x,y+u*10,1,0],[x,y,1,1],[x,y,.8,1],[x,y,1,1],[x,y,1,0]],1600); },
+   auto(){ if(TB.rgAuto) return; TB.rgAuto=true; const step=()=>{ if(!TB||TB.done||!TB.left.length) return; const id=TB.left[0], [x,y]=ctr(TB.els[id]);
+       ghost([[x,y,1,1],[x,y,.8,1],[x,y,1,0]],500); this.tap(id); bLater(step,750); }; step(); } },
+
+ /* streicheln: stroke something (the giant's nose) – every long stroke (len vh of finger path inside the box) counts once, n strokes
+    finish it. Pace doesn't matter, short wiggles add up too, nothing is lost when the finger lifts. a:{id, n, len, box:[fx,fy,fw,fh]
+    of the element}; hooks stroking(p) (continuous), stroked(k,p) */
+ streicheln:{ box(){ const a=TB.a, r=TB.els[a.id].getBoundingClientRect(), b=a.box||[0,0,1,1];
+     return {l:r.left+r.width*b[0], t:r.top+r.height*b[1], r:r.left+r.width*(b[0]+b[2]), b:r.top+r.height*(b[1]+b[3])}; },
+   setup(){ TB.sk={k:0,len:0,lx:null,ly:null,mv:0,sx:0,sy:0,g0:0,tap:0,auto:false}; const N=el('div','tp2 feenz'); TB.act.appendChild(N); TB.nz=N; this.place(); },
+   place(){ const z=this.box(), N=TB.nz; putAt(N,(z.l+z.r)/2,(z.t+z.b)/2); N.style.width=((z.r-z.l)/innerHeight*100).toFixed(1)+'vh'; N.style.height=((z.b-z.t)/innerHeight*100).toFixed(1)+'vh'; },
+   inZ(x,y){ const z=this.box(), u=vu()*6; return x>z.l-u&&x<z.r+u&&y>z.t-u&&y<z.b+u; },
+   down(x,y){ const s=TB.sk; if(TB.done||s.auto) return; s.lx=null; s.mv=0; s.sx=x; s.sy=y; s.g0=s.k*1e4+s.len; if(this.inZ(x,y)) poke2(); this.move(x,y); },
+   move(x,y){ const s=TB.sk; if(!TB.pd||TB.done||s.auto) return; s.mv=Math.max(s.mv,Math.hypot(x-s.sx,y-s.sy)); if(!this.inZ(x,y)){ s.lx=null; return; }
+     if(s.lx==null){ s.lx=x; s.ly=y; return; } const m=Math.hypot(x-s.lx,y-s.ly); s.lx=x; s.ly=y; if(m>vu()*9) return; this.fur(x,y); this.add(m); },
+   fur(x,y){ const u=vu(); if(Math.random()<.65) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*3,y:y+(Math.random()-.5)*u*3,vx:(Math.random()-.5)*6*u,vy:-(3+Math.random()*5)*u,life:.9+Math.random()*.6,s:.5+Math.random()*.6,c:rnd(['rgba(255,240,200,.9)','rgba(255,200,230,.9)','rgba(255,255,255,.9)'])}); },
+   add(m){ const s=TB.sk, n=TB.a.n||4, L=vu()*(TB.a.len||13); if(s.k>=n) return; s.len+=m; while(s.len>=L&&s.k<n){ s.len-=L; this.stroke(); }
+     if(TB.sc.stroking) TB.sc.stroking(Math.min(1,(s.k+Math.min(1,s.len/L))/n)); },
+   stroke(){ const s=TB.sk, n=TB.a.n||4; s.k++; const [x,y]=ctr(TB.nz); hearts(x,y-vu()*4,2); chime([523+s.k*90,784+s.k*90]); poke2(); if(TB.sc.stroked) TB.sc.stroked(s.k,s.k/n);
+     if(s.k>=n){ s.len=0; bLater(()=>done2(),900); } },
+   up(){ const s=TB.sk; if(TB.done||s.auto) return; const u=vu(); if(s.mv<u*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(s.k*1e4+s.len-s.g0<u*1.5) miss2(); },
+   frames(){ const z=this.box(), u=vu(), y=(z.t+z.b)/2, x0=z.l+u*2, x1=z.r-u*2;
+     return [[x0-u*4,y+u*9,1,0],[x0,y,.85,1],[x1,y+u*1.5,.85,1],[x1+u*3,y-u*3,1,0],[x0-u*2,y-u*3,1,0],[x0,y,.85,1],[x1,y+u*1.5,.85,1],[x1+u*3,y+u*5,1,0]]; },
+   hint(){ const s=TB.sk; if(s.auto||TB.done) return; const N=TB.nz; N.classList.remove('g2hint'); void N.offsetWidth; N.classList.add('g2hint'); bLater(()=>N.classList.remove('g2hint'),2900); ghost(this.frames(),2800); },
+   auto(){ const s=TB.sk; if(s.auto||TB.done) return; s.auto=true; ghost(this.frames(),2800,3); const sc=TB.sc, run=tale.run;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||TB.done){ clearInterval(iv); return; } const p=ghostXY(); if(p) this.fur(p[0],p[1]); this.add(vu()*.75); },60); taleT.push(iv); } }
+});
+
+/* ---------- helpers for the tale ---------- */
+const FEEA={purr:null,piv:null,miv:null};
+function feeAC(){ try{ if(!AC) AC=new (window.AudioContext||window.webkitAudioContext)(); if(AC.state==='suspended') AC.resume(); return AC; }catch(e){ return null; } }
+const feeLate=()=>!tale||tale.t!==FEEN2||!taleOn()||tale.i<5;
+/* Socke's purr: brown noise through a low filter, throbbing at ~24 Hz; lv 0..1. Stops by itself when the tale moves on */
+function feePurr(lv){ const ac=feeAC(); if(!ac) return; let P=FEEA.purr;
+  if(!P){ try{ const n=ac.sampleRate*2, b=ac.createBuffer(1,n,ac.sampleRate), d=b.getChannelData(0); let l=0; for(let i=0;i<n;i++){ l=(l+.02*(Math.random()*2-1))/1.02; d[i]=l*3.5; }
+      const src=ac.createBufferSource(); src.buffer=b; src.loop=true; const lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=360;
+      const am=ac.createGain(); am.gain.value=.55; const lfo=ac.createOscillator(); lfo.frequency.value=24; const lg=ac.createGain(); lg.gain.value=.45; lfo.connect(lg); lg.connect(am.gain);
+      const br=ac.createOscillator(); br.frequency.value=.42; const bg=ac.createGain(); bg.gain.value=.25; br.connect(bg);
+      const g=ac.createGain(); g.gain.value=0; bg.connect(g.gain); src.connect(lp); lp.connect(am); am.connect(g); g.connect(ac.destination); src.start(); lfo.start(); br.start();
+      P=FEEA.purr={src,lfo,br,g}; FEEA.piv=setInterval(()=>{ if(feeLate()) feePurrStop(); },400); }catch(e){ return; } }
+  try{ P.g.gain.cancelScheduledValues(ac.currentTime); P.g.gain.setTargetAtTime(Math.max(0,lv)*.7,ac.currentTime,.5); }catch(e){} }
+function feePurrStop(){ const P=FEEA.purr; if(!P) return; FEEA.purr=null; clearInterval(FEEA.piv); try{ P.g.gain.setTargetAtTime(0,AC.currentTime,.3); setTimeout(()=>{ try{ P.src.stop(); P.lfo.stop(); P.br.stop(); }catch(e){} },1600); }catch(e){} }
+/* a soft music-box note */
+function feeNote(m,t,v,x){ const ac=feeAC(); if(!ac) return; try{ const f=440*Math.pow(2,(m-69)/12), g=ac.createGain(), pn=ac.createStereoPanner?ac.createStereoPanner():null;
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0005,t+1.4);
+  if(pn){ pn.pan.value=x==null?0:Math.max(-.8,Math.min(.8,(x/innerWidth-.5)*1.4)); g.connect(pn); pn.connect(ac.destination); } else g.connect(ac.destination);
+  [[1,'triangle'],[2,'sine']].forEach(([k,ty],j)=>{ const o=ac.createOscillator(), og=ac.createGain(); o.type=ty; o.frequency.value=f*k; og.gain.value=j?.25:1; o.connect(og); og.connect(g); o.start(t); o.stop(t+1.5); }); }catch(e){} }
+/* the fest music: the fairy song on a loop, quieter while the narration speaks */
+function feeMusic(on){ if(!on){ clearInterval(FEEA.miv); FEEA.miv=null; return; } if(FEEA.miv) return; const ac=feeAC(); if(!ac) return; let t=ac.currentTime+.15, i=0; const beat=.4;
+  FEEA.miv=setInterval(()=>{ if(feeLate()){ feeMusic(false); return; } const T=ac.currentTime; if(t<T) t=T+.05;
+    while(t<T+.6){ const [m,b]=FEESONG[i%FEESONG.length], v=talkingNow()?.022:.05; feeNote(m+12,t,v); if(i%2===0) feeNote(m-12,t,v*.7); t+=b*beat; i++; if(i%FEESONG.length===0) t+=beat*2; } },150); }
+/* Lilli (and other fairies): wet wings droop; f = how dry (0..1) */
+function feeDry(f){ const L=TB.els.lilli; if(!L) return; L.style.setProperty('--dry',f.toFixed(2)); if(f>=1) L.classList.remove('wet'); }
+function feeDrops(T,n){ const r=seeded(n*31+5); for(let i=0;i<n;i++){ const D=el('span','efl feedrop'); const x=i%2?62+r()*28:10+r()*28, y=30+r()*40;
+  D.style.cssText=`left:${x}%;top:${y}%;width:${1.3+r()*.9}vh`; T.appendChild(D); } }
+/* a hop in an arc (no somersault) onto a parent, then it stays there as a child */
+function feeHop(e,par,fx,fy,ms,cb){ ms=ms||900; const [x0,y0]=ctr(e), pr=par.getBoundingClientRect(), x1=pr.left+pr.width*fx, y1=pr.top+pr.height*fy, u=vu(); if(e.classList.contains('kid')) unstick(e);
+  try{ e.animate([{transform:'none'},{transform:`translate(${(x1-x0)*.5}px,${Math.min(0,y1-y0)-u*12}px)`},{transform:`translate(${x1-x0}px,${y1-y0}px)`}],{duration:ms,easing:'ease-in-out'}); }catch(err){}
+  trail(e,ms); bLater(()=>{ stickTo(e,par,fx,fy); sqs(e); if(cb) cb(); },ms-30); }
+/* put a giant behind everything else on the stage (just in front of the ground) */
+function feeBack(e){ const g=TB.act.querySelector(':scope>.gnd'); if(g) g.after(e); }
+/* fairies circle the ring: every one gets its own phase */
+function feeDance(ids,on){ ids.forEach((id,i)=>{ const F=TB.els[id]; if(!F) return; F.classList.toggle('feedn',!!on); F.style.animationDelay=(-i*(6.4/ids.length)).toFixed(2)+'s'; }); }
+/* scene 2: the world grows huge – first she and the unicorn shrink at their feet, then the camera dives into the grass */
+function feeShrink(ms){ const E=TB.els.hexe, U=TB.els.uni, L=TB.els.lilli; ms=ms||2400;
+  [[E,.12,'50% 94%'],[U,.12,'50% 90%'],[L,.16,'50% 50%']].forEach(([e,s,o])=>{ if(!e) return; e.style.transformOrigin=o; e.style.transition=`scale ${ms}ms cubic-bezier(.5,0,.4,1)`; e.style.scale=s; });
+  if(U){ U.style.transition+=`, left ${ms}ms ease-in-out, top ${ms}ms ease-in-out`; U.style.left='28%'; U.style.top='71%'; }
+  if(L){ L.style.transition+=`, left ${ms}ms ease-in-out, top ${ms}ms ease-in-out`; L.style.left='32.8%'; L.style.top='75.8%'; }
+  for(let i=0;i<12;i++) bLater(()=>{ [E,U].forEach(e=>{ if(!e) return; const [x,y]=ctr(e); fxAdd({k:'spark',x:x+(Math.random()-.5)*vu()*6,y:y+(Math.random()-.5)*vu()*6,vx:(Math.random()-.5)*14*vu(),vy:-(6+Math.random()*12)*vu(),life:.8,s:.6+Math.random()*.6,c:rnd(GLCOL)}); }); },i*ms/12);
+  chime([1568,1318,1175,988,784,659]); }
+function feeZoom(ms){ const st=TB.st, E=TB.els.hexe; if(!st||!E) return; const r=E.getBoundingClientRect(), ax=r.left+r.width/2-vu()*1.2, ay=r.top+r.height*.94; ms=ms||2600;
+  st.style.transformOrigin=`${ax}px ${ay}px`; st.style.transition=`scale ${ms}ms cubic-bezier(.45,0,.3,1)`; st.style.scale=8.4; windFx(3); bLater(()=>{ windFx(0); st.style.willChange='auto'; feeSharp(); },ms+60); bLater(feeSharp,ms+1500); chime([392,523,659,784]); }
+/* after a big zoom, layers can keep their old (tiny) raster: restart their animations so they are drawn sharp again */
+function feeSharp(){ TB.act.querySelectorAll('.bb,.ub').forEach(b=>{ b.classList.remove('sqs'); b.style.animation='none'; void b.offsetWidth; b.style.animation=''; });
+  ['hexe','uni','lilli'].forEach(k=>{ const e=TB.els[k]; if(!e) return; const f=e.style.filter; e.style.filter='none'; void e.offsetWidth; e.style.filter=f; }); }
+/* scene 7: grown big again – a flash, and we see the garden at night from up here: the ring is a little circle of toadstools in the grass */
+function feeHomeView(){ const W=TB.W, old=TB.st, fl=el('div','feeflash'); W.appendChild(fl);
+  try{ fl.animate([{opacity:0},{opacity:1,offset:.4},{opacity:1,offset:.6},{opacity:0}],{duration:1500,easing:'ease-in-out',fill:'forwards'}); }catch(e){} chime([523,659,784,1047,1318]);
+  bLater(()=>{ const st=buildStage({set:'gartennacht'}); W.insertBefore(st,fl); old.remove(); TB.st=st; TB.act=st._act; const A=st._act; A.appendChild(prop('HEXHAUS',84,44,56,'tp2 big'));
+    const add=(id,cls,html,x,y,w)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${html}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(e); TB.els[id]=e; return e; };
+    for(let i=0;i<6;i++){ const a=i/6*6.283, p=add('mp'+i,'feemini',feePilzSVG(),48+7*Math.cos(a),86+2.2*Math.sin(a),2.6); p.classList.add('on'); }
+    const U=el('div','u2'); U.style.cssText='left:22%;top:68%;width:26vh'; U.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; A.appendChild(U); TB.els.uni=U;
+    const E=add('hexe','eef',eefjeSVG(),38,64,34); E.dataset.mood='happy'; E.dataset.arm='dn';
+    const S=add('socke','sck',sockeSVG(),55,82,12); S.dataset.mood='happy';
+    const B=add('glocke','feegl',feeGlockeSVG(),0,0,3); stickTo(B,E.querySelector('.bb'),.36,.69); B.style.width='9%';
+    FX.L=[]; FX.darkT=.3; light({el:E,r0:18,rT:18,k0:.5,kT:.5}); light({el:U,r0:14,rT:14,k0:.45,kT:.45}); light({el:TB.els.mp0,r0:8,rT:8,k0:.7,kT:.7,warm:1});
+    for(let i=0;i<5;i++) fxAdd({k:'fly',x:innerWidth*(.42+Math.random()*.14),y:innerHeight*(.78+Math.random()*.08),vx:0,vy:0,life:1e9,s:.7,ph:Math.random()*6.283,amb:1,c:'rgba(255,220,250,.85)'}); },650); }
+/* the very last picture: the bell on her windowsill, fairies come to visit and it rings */
+function feeWindow(){ const H=el('div','feehome',feeHeimSVG()); TB.W.appendChild(H); TB.els.heim=H; FX.darkT=0;
+  try{ H.animate([{opacity:0,transform:'scale(1.08)'},{opacity:1,transform:'none'}],{duration:1600,easing:'ease-out',fill:'forwards'}); }catch(e){} }
+function feeVisit(n){ const H=TB.els.heim; if(!H) return; const bl=H.querySelector('.hbl'); if(!bl) return; const u=vu();
+  for(let i=0;i<(n||3);i++) bLater(()=>{ const [x,y]=ctr(bl), d=el('div','feevis'); H.appendChild(d); const sx=innerWidth*(.38+Math.random()*.24), sy=innerHeight*(.12+Math.random()*.2);
+    d.style.left=sx+'px'; d.style.top=sy+'px';
+    try{ const an=d.animate([{transform:'translate(0,0)',opacity:0},{transform:`translate(${(x-sx)*.5+u*6}px,${(y-sy)*.4}px)`,opacity:1,offset:.4},{transform:`translate(${x-sx}px,${y-sy-u*3}px)`,opacity:1,offset:.85},{transform:`translate(${x-sx}px,${y-sy-u*3}px)`,opacity:0}],{duration:2600,easing:'ease-in-out',fill:'forwards'});
+      an.onfinish=()=>d.remove(); }catch(e){}
+    bLater(()=>{ const s=bl.querySelector('.hbs'); if(s){ s.classList.remove('ring'); void s.getBoundingClientRect(); s.classList.add('ring'); } chimeAt([2093+i*120,2637],x); glitterBurst(x,y,8,8); },2100); },i*900); }
+
+/* ================= Eefje und das Feenfest ================= */
+/* motif: for one night Eefje makes herself fairy-small – small ones can do big things, and big Socke isn't scary at all. Her spell starts
+   the same every time (Kribbel, krabbel, Funkelschein …) and ends anew: winzig klein (2) – kleines Licht (4) – wieder groß (7).
+   The fairy song is hummed by Lilli (5), sung by the toadstools (5) and played as the fest music over Socke's purring (6–7). */
+const FDUR={};
+const FEEN2={id:'feenfest', v2:true, eef:1, dur:FDUR, title:'Eefje und das Feenfest', vtitle:'Ehfje und das Feenfest', icon:'🧚', cover:'linear-gradient(180deg,#0a0c3a 0%,#3a2a7a 40%,#b85a9a 75%,#ffb48a 100%)',
+ cast(sc){ const mk=efCast(sc), fee=(id,svg,x,y,z,par,m)=>{ const F=mk(id,'feefe',svg,x,y,z,par); if(par) F.style.width=z+'%'; F.dataset.mood=m||'smile'; F.dataset.arm='dn'; return F; };
+  if(sc.li){ const [x,y,z,par]=sc.li, L=fee('lilli',lilliSVG(),x,y,z,par,TST.lim||'smile'); if(sc.st&&sc.st.wet){ L.classList.add('wet'); L.style.setProperty('--dry',0); feeDrops(L.querySelector('.bb'),8); } }
+  (sc.fe||[]).forEach(([id,x,y,z,k,cls])=>{ const F=fee(id,feeSVG(FEECOL[k%FEECOL.length]),x,y,z,null,'happy'); if(cls) F.classList.add(...cls.split(' ')); });
+  if(sc.qu){ const [x,y,z]=sc.qu, Q=fee('koenigin',queenSVG(),x,y,z,null,'smile'); Q.classList.add('feeq','away'); }
+  if(sc.bu){ const [x,y,z]=sc.bu, B=mk('brummi','feebee',brummiSVG(),x,y,z); B.dataset.mood=TST.bum||'smile'; }
+  (sc.wm||[]).forEach(([id,x,y,z,flip])=>{ const W=mk(id,'feewm'+(flip?' flip':''),wurmSVG(),x,y,z); W.dataset.mood='asleep'; });
+  (sc.bl||[]).forEach(([id,x,y,z,rot])=>{ const B=mk(id,'feebl',feeBlattSVG(),x,y,z); B.style.rotate=(rot||0)+'deg'; });
+  (sc.pz||[]).forEach(([id,x,y,z,on])=>{ const P=mk(id,'feepz',feePilzSVG(),x,y,z); if(on) P.classList.add('on'); });
+  if(sc.gate){ const [x,y,w,h]=sc.gate, G=el('div','tp2 feegate'); G.style.cssText=`left:${x}%;top:${y}%;width:${w}vh;height:${h}vh`; TB.act.appendChild(G); TB.els.tor=G; }
+  if(sc.ri){ const [x,y,z]=sc.ri, R=mk('riese','sck feeriese',sockeRieseSVG(),x,y,z); R.dataset.mood=TST.rim||'smile'; R.style.setProperty('--lid',TST.lid||0); feeBack(R); }
+  if(sc.lg){ const [x,y,z]=sc.lg, R=mk('liegt','feelg in',sockeLiegtSVG(),x,y,z); feeBack(R); }
+  if(sc.zone){ const [x,y,w,h]=sc.zone, Z=el('div','tp2 feezone'); Z.style.cssText=`left:${x}%;top:${y}%;width:${w}%;height:${h}%`; TB.act.appendChild(Z); TB.els.paar=Z; }
+  if(sc.gl){ const [x,y,z,par]=sc.gl, G=mk('glocke','feegl',feeGlockeSVG(),x,y,z,par); if(par) G.style.width=z+'%'; } },
+ react(id,b,x,y){ const u=vu();
+  if(id==='lilli'||/^f\d$/.test(id)||id==='koenigin'){ sqs(b); bubble(rnd(id==='koenigin'?['hallo!','willkommen!']:['hihi!','hallo!','tralala!']),x,y-u*5,3.4,'#ffe0f4'); glitterBurst(x,y,10,10); chime([1568,2093]); return true; }
+  if(id==='brummi'){ sqs(b); bubble(rnd(['summ!','brumm!','sssumm!']),x,y-u*7,3.8,'#fff3b0'); chime([196,247]); return true; }
+  if(/^w\d$/.test(id)){ sqs(b); bubble(b.dataset.mood==='asleep'?'schnarch…':rnd(['hallo!','hihi!']),x,y-u*4,3,'#eaffc0'); chime([988]); return true; }
+  if(/^b\d$/.test(id)){ wiggle(b); chime([440]); return true; }
+  if(/^p\d$/.test(id)){ sqs(b); const i=+id.slice(1)-1; harp(FEEMEL[i%FEEMEL.length],x); fxBurst(x,y,8,GLCOL); return true; }
+  if(id==='riese'||id==='liegt'){ sqs(b); bubble(rnd(['schnurr…','rrrr…','miau!']),x,y-u*8,4.4,'#e0e0f0'); feePurr(.8); bLater(()=>{ if(TB&&TB.sc&&!TB.sc.purr) feePurr(TB.sc.purr0||0); },1400); return true; }
+  if(id==='glocke'){ sqs(b); chimeAt([2093,2637],x); return true; }
+  if(id==='tor'){ fxBurst(x,y,10,GLCOL); chime([1318]); return true; }
+  return efReact(id,b,x,y); },
+ sc:[
+ /* 1 – evening after the rain: a tiny light droops in a flower – Lilli, her wings are wet; stroke them dry */
+ {set:'feengarten', dark:0, fx:{glit:.6}, u:[13,72,22], ef:[33,66,30,'st'], sk:[44,86,10], li:[50,20,40,'blume'],
+  p:[['blume','FEEBLUME',63,56,66],['pf','FEEPF',56,92,30],['g1','FEEGAENS',24,84,11],['g2','FEEGAENS',40,86,9]],
+  st:{efm:'smile',efa:'dn',skm:'smile',lim:'worry',wet:1},
+  enter(){ FX.em.push({rate:.9,fn:()=>{ if(!TB) return; const u=vu(); fxAdd({k:'drop',x:innerWidth*(.05+Math.random()*.9),y:innerHeight*(.05+Math.random()*.3),vy:(40+Math.random()*30)*u,len:u*1.4,life:1.6,amb:1}); }});
+    onPh('Kater Socke',()=>{ const S=TB.els.socke; sqs(S); const [x,y]=ctr(S); bubble('miau!',x,y-vu()*5,3.4,'#e0e0f0'); });
+    onPh('glitzerten Tropfen',()=>{ ['g1','g2','blume'].forEach((k,i)=>bLater(()=>{ const [x,y]=relEl(TB.els[k],[.5,.15]); glitterBurst(x,y,8,8); chime([1568+i*200]); },i*250)); });
+    onPh('winziges Licht',()=>{ mood('hexe','oh'); const L=TB.els.lilli; sqs(L); const [x,y]=ctr(L); fxBurst(x,y,10,['rgba(255,240,200,.9)']); });
+    onPh('kleine Fee',()=>{ mood('hexe','happy'); });
+    talk('lilli','Meine Flügel','schluchzte'); talk('lilli','Jetzt kann',null); onPh('Meine Flügel',()=>mood('lilli','worry'));
+    onPh('Streich ganz',()=>{ mood('hexe','smile'); uniHop(); }); },
+  ready(){ efReady(); mood('lilli','worry'); },
+  a:{t:'fegen',id:'lilli',n:5,drops:1,w:'FEE'},
+  s:'Es war einmal ein Abend nach dem Regen. Die kleine Hexe Ehfje ging mit ihrem Kater Socke und deinem Einhorn durch den Garten. Überall glitzerten Tropfen. Da sah Ehfje ein winziges Licht in einer Blume. Es war eine kleine Fee, und sie hieß Lilli. Meine Flügel sind ganz nass, schluchzte Lilli. Jetzt kann ich nicht mehr fliegen. Streich ganz sanft über Lillis Flügel, hin und her, dann werden sie wieder trocken!',
+  h:'Streich mit dem Finger sanft über Lillis Flügel, hin und her!',
+  sweeping(p){ feeDry(Math.min(1,p*1.1)); if(p>.5&&TST.lim==='worry') mood('lilli','oh'); },
+  done(){ feeDry(1); mood('lilli','happy'); },
+  d:[()=>{ onPh('flatterte',()=>{ const L=unstick(TB.els.lilli); L.style.transition='left 1.6s ease-in-out, top 1.6s ease-in-out'; L.style.left='54%'; L.style.top='42%'; trail(L,1600); glitterBurst(...ctr(L),20,16); chime([988,1318,1568]); },'d1'); },
+     'Die Tropfen flogen davon, und Lillis Flügel glitzerten wieder. Sie flatterte hoch in die Luft.',
+     ()=>{ talk('lilli','Danke','rief Lilli','d2'); talk('lilli','Heute Nacht',null,'d2'); onPh('Danke',()=>{ const L=TB.els.lilli; sqs(L); hearts(...ctr(L),3); mood('hexe','happy'); },'d2');
+       onPh('Kommt doch',()=>{ TB.els.lilli.dataset.arm='up'; },'d2'); onPh('viel zu groß',()=>{ mood('lilli','worry'); TB.els.lilli.dataset.arm='dn'; mood('hexe','oh'); },'d2'); },
+     'Danke! rief Lilli. Heute Nacht ist Feenfest im Feenring. Kommt doch mit! Aber … ihr seid ja viel zu groß.', 900]},
+
+ /* 2 – the spell: fairy dust over Eefje and the unicorn; Socke sneezes and runs off (he stays big); they shrink, the world grows huge */
+ {set:'feengarten', dark:0, fx:{glit:.5}, u:[13,72,22], ef:[31,66,30,'st'], sk:[45,86,10], li:[52,42,9], zone:[24,66,42,42],
+  p:[['blume','FEEBLUME',63,56,66],['pf','FEEPF',56,92,30],['g5','FEEGAENS',33.4,76.4,6],['g6','FEEGAENS',27.4,76,6.4],['g1','FEEGAENS',25.4,79,9],['g2','FEEGAENS',35.2,79.6,8],['g3','FEEGAENS',31.6,82.4,7],['g4','FEEGAENS',20,84,10]],
+  st:{efm:'smile',efa:'dn',skm:'smile',lim:'smile'},
+  enter(){ talk('hexe','Zu groß','sagte Ehfje'); talk('hexe','Ich bin doch','Sie hob'); talk('hexe','Kribbel','Und Lilli');
+    onPh('Zu groß',()=>mood('hexe','laugh')); onPh('Sie hob',()=>{ efArm('up'); mood('hexe','happy'); });
+    onPh('Kribbel',()=>{ efSpell(16); const [x,y]=efFinger(); glitterBurst(x,y,14,12); }); onPh('Und Lilli',()=>{ efArm('dn'); const L=TB.els.lilli; sqs(L); glitterBurst(...ctr(L),16,14); });
+    onPh('Wackel',()=>uniHop()); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','smile'); },
+  a:{t:'shake',id:'paar',n:9,up:10,pcs:['rgba(255,236,150,.95)','rgba(255,190,240,.95)','rgba(190,230,255,.95)','rgba(255,255,255,.95)'],w:'BLUME'},
+  s:'Zu groß? Das macht nichts, sagte Ehfje. Ich bin doch eine Hexe! Sie hob ihren Finger und rief: Kribbel, krabbel, Funkelschein – macht uns alle winzig klein! Und Lilli schüttelte Feenstaub aus ihren Flügeln. Wackel mit dem Finger über Ehfje und deinem Einhorn hin und her, dann rieselt der Feenstaub!',
+  h:'Wackel mit dem Finger über Ehfje und dem Einhorn, hin und her!',
+  shaking(p){ if(Math.random()<.3){ const e=rnd([TB.els.hexe,TB.els.uni]); const r=e.getBoundingClientRect(); fxAdd({k:'glit',x:r.left+Math.random()*r.width,y:r.top+Math.random()*r.height*.6,vy:4*vu(),ph:Math.random()*6,s:.7,life:1.4,c:rnd(GLCOL)}); }
+    if(p>.4&&TST.efm!=='laugh'){ mood('hexe','laugh'); } },
+  done(){ mood('hexe','happy'); },
+  d:[()=>{ onPh('hatschi',()=>{ const S=TB.els.socke; mood('socke','oh'); sqs(S); const [x,y]=ctr(S); fxBurst(x,y,22,GLCOL); bubble('Hatschi!',x+vu()*4,y-vu()*8,4.2,'#e0e0f0'); },'d1');
+       onPh('lief schnell',()=>{ const S=TB.els.socke; mood('socke','smile'); S.style.transition='left 1.6s ease-in, top 1.6s ease-in, opacity .5s 1.3s'; S.style.left='84%'; S.style.top='66%'; S.style.opacity=0; },'d1');
+       onPh('so groß',()=>{ mood('hexe','laugh'); },'d1'); },
+     'Der Feenstaub kitzelte Socke in der Nase. Ha… ha… hatschi! Socke nieste und lief schnell ins Haus. Er blieb so groß, wie er war.',
+     ()=>{ onPh('kleiner und kleiner',()=>{ mood('hexe','oh'); feeShrink(2400); },'d2'); onPh('so winzig',()=>{ mood('hexe','happy'); },'d2');
+       onPh('Und auf einmal',()=>{ feeZoom(2600); },'d2'); onPh('Bäume',()=>{ TB.els.hexe.dataset.mood='laugh'; TST.efm='laugh'; },'d2'); },
+     'Aber Ehfje und dein Einhorn wurden kleiner und kleiner, bis sie so winzig waren wie Lilli. Und auf einmal waren die Gänseblümchen so groß wie Bäume!', 1200]},
+
+ /* 3 – Brummi the bumblebee: they fly on her back through the flower arches */
+ {set:'riesenwiese', dark:0, fx:{glit:.4}, u:[12,66,20], flyU:1, ef:[52,72,26,'st'], li:[66,46,9], bu:[30,58,40], st:{efm:'smile',efa:'dn',lim:'happy',bum:'smile'},
+  enter(){ const B=TB.els.brummi; try{ B.animate([{transform:'translate(60vw,-30vh) rotate(-10deg)'},{transform:'translate(20vw,-12vh) rotate(6deg)',offset:.6},{transform:'none'}],{duration:2600,easing:'cubic-bezier(.3,.7,.4,1)'}); }catch(e){}
+    efRings([[52,62],[70,40],[86,64]],10); TB.rings.forEach(R=>{ R.classList.add('feearch'); R.innerHTML=feeBogenSVG(); });
+    onPh('angebrummt',()=>{ sqs(TB.els.brummi); chime([196,247,196]); mood('hexe','oh'); });
+    talk('brummi','Ich bin Brummi','brummte'); talk('brummi','Steigt auf','Ehfje kletterte'); onPh('Ich bin Brummi',()=>{ mood('hexe','happy'); mood('brummi','happy'); });
+    onPh('Ehfje kletterte',()=>this.board()); onPh('Leg deinen',()=>{ TB.rings.forEach((R,i)=>bLater(()=>{ R.classList.add('show'); const [x,y]=ctr(R); fxBurst(x,y,14,GLCOL); chime([988+i*190]); },i*400)); }); },
+  board(){ const E=TB.els.hexe, B=TB.els.brummi; if(!E||!B||E.classList.contains('kid')) return; E.classList.add('sitb'); efArm('fwd'); mood('hexe','happy'); feeHop(E,B.querySelector('.bb'),.44,.13,900,()=>{ E.style.width='62%'; mood('brummi','smile'); }); },
+  ready(){ efReady(); const E=TB.els.hexe, B=TB.els.brummi; if(!E.classList.contains('kid')){ E.classList.add('sitb'); efArm('fwd'); stickTo(E,B.querySelector('.bb'),.44,.13); E.style.width='62%'; }
+    mood('hexe','happy'); const L=TB.els.lilli; g2loop(dt=>{ if(!L||!B) return; const [bx,by]=ctr(B), [lx,ly]=ctr(L), u=vu(), tx=bx+u*26, ty=by-u*18; putAt(L,lx+(tx-lx)*Math.min(1,dt*1.4),ly+(ty-ly)*Math.min(1,dt*1.4)); }); },
+  a:{t:'fliegen',id:'brummi',rings:[[52,62],[70,40],[86,64]],r:10,w:'BIENE'},
+  s:'Zum Feenring war es weit, viel zu weit zum Laufen. Da kam eine dicke, pelzige Biene angebrummt. Ich bin Brummi, die Hummel, brummte sie. Steigt auf, ich fliege euch hin! Ehfje kletterte auf Brummis weichen Rücken. Leg deinen Finger auf Brummi und flieg mit ihr durch die Blumenbögen!',
+  h:'Leg den Finger auf Brummi und flieg durch den Blumenbogen!',
+  ringPass(k){ mood('hexe','laugh'); const [x,y]=ctr(TB.els.brummi); bubble(rnd(['summ!','juhu!','hui!']),x,y-vu()*14,3.8,'#fff3b0'); bLater(()=>mood('hexe','happy'),900); },
+  d:['Summ, summ! Brummi flog durch alle Blumenbögen, und Lilli und dein Einhorn flogen nebenher.',
+     ()=>{ onPh('wurde es dunkel',()=>{ FX.darkT=.45; FX.dc='10,10,50'; },'d2'); onPh('landete',()=>{ const B=TB.els.brummi; B.style.transition='left 1.6s ease-in-out, top 1.6s ease-in-out, rotate 1s'; B.style.left='52%'; B.style.top='70%'; B.style.rotate='0deg'; const U=TB.els.uni; U.style.transition='left 1.8s ease-in-out, top 1.8s ease-in-out'; U.style.left='24%'; U.style.top='72%'; uniFly(false); },'d2');
+       talk('brummi','Weiter fliege','gähnte','d2'); talk('brummi','Gute Nacht',null,'d2'); onPh('gähnte',()=>{ mood('brummi','sleepy'); zzz('brummi',.8,'#fff3c0'); },'d2'); },
+     'Doch dann wurde es dunkel, und Brummi landete im hohen Gras. Weiter fliege ich nicht, gähnte sie. Gute Nacht!', 900]},
+
+ /* 4 – dark among the giant grass: a light on her fingertip follows the finger and finds the glow-worms asleep under the leaves */
+ {set:'grasnacht', dark:.8, u:[12,72,20], ef:[27,68,28,'st'], li:[38,50,6.5], st:{efm:'oh',efa:'dn',lim:'smile'},
+  wm:[['w1',54,86,10],['w2',72,78,9,1],['w3',88,86,10],['w4',62,70,8,1]], bl:[['b1',54,82.5,15,-6],['b2',72,74.6,13.5,8],['b3',88,82.5,15,-4],['b4',62,67,12,6]],
+  lights:[{id:'hexe',name:'efL',r0:10,rT:10,k0:.42,kT:.42},{id:'uni',r0:10,rT:10,k0:.4,kT:.4},{id:'lilli',name:'liL',r0:5,rT:5,k0:.6,kT:.6}],
+  enter(){ talk('hexe','Kribbel','Da leuchtete'); onPh('Ehfje hob',()=>{ efArm('up'); mood('hexe','smile'); });
+    onPh('Da leuchtete',()=>{ efSpell(12); TB.finL=light({fn:efFinger,r0:2,rT:7,k0:.9,kT:.9,warm:1}); mood('hexe','happy'); });
+    talk('lilli','Unter den','flüsterte'); onPh('Glühwürmchen',()=>{ ['w1','w2','w3','w4'].forEach((k,i)=>bLater(()=>{ const [x,y]=relEl(TB.els[k],[.15,.7]); fxBurst(x,y,4,['rgba(220,255,140,.7)']); },i*300)); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); if(!TB.finL) TB.finL=light({fn:efFinger,r0:2,rT:7,k0:.9,kT:.9,warm:1}); },
+  a:{t:'torch',ids:['w1','w2','w3','w4'],r:17,lr:10,w:'LICHT'},
+  s:'Zwischen den Grashalmen war es dunkel wie in einem Wald. Ehfje hob ihren Finger und rief: Kribbel, krabbel, Funkelschein – kleines Licht, nun leuchte fein! Da leuchtete ein Licht auf ihrer Fingerspitze. Unter den Blättern schlafen Glühwürmchen, flüsterte Lilli. Fahr mit dem Finger über das dunkle Gras, dann wandert das Licht mit. Such die Glühwürmchen!',
+  h:'Fahr mit dem Finger über das dunkle Gras und such die Glühwürmchen!',
+  item(id,b,k){ const B=TB.els['b'+id.slice(1)]; if(B){ B.style.transition='transform 1.1s cubic-bezier(.3,.7,.4,1), opacity .9s .3s'; B.style.transform=`translate(${k%2?-8:8}vh,-9vh) rotate(${k%2?-70:70}deg)`; B.style.opacity=0; }
+    b.dataset.mood='awake'; sqs(b); const [x,y]=ctr(b); bubble(rnd(['huch!','hallo!','gähn…']),x,y-vu()*5,3.2,'#eaffc0'); FX.darkT=Math.max(.5,.8-k*.07); mood('hexe','laugh'); bLater(()=>mood('hexe','happy'),700); },
+  done(){ ['w1','w2','w3','w4'].forEach(k=>{ const W=TB.els[k]; if(W) W.dataset.mood='happy'; }); },
+  d:[()=>{ talk('w2','Kommt mit','sagten sie','d1'); talk('w2','wir zeigen',null,'d1');
+       onPh('Kommt mit',()=>{ [['w4',46,82],['w1',58,76],['w2',70,70],['w3',82,64]].forEach(([k,x,y],i)=>bLater(()=>{ const W=TB.els[k]; W.style.transition='left 1.4s ease-in-out, top 1.4s ease-in-out'; W.style.left=x+'%'; W.style.top=y+'%'; trail(W,1400); },i*250)); FX.darkT=.45; },'d1'); },
+     'Die Glühwürmchen wachten auf und leuchteten. Kommt mit, sagten sie, wir zeigen euch den Weg!',
+     ()=>{ onPh('leise Musik',()=>{ const ac=feeAC(); if(!ac) return; const t=ac.currentTime+.1; FEEMEL.forEach((m,i)=>feeNote(m+12,t+i*.38,.05,innerWidth*.9)); notes(TB.els.w3,3); },'d2'); },
+     'Und da vorne, hinter den Grashalmen, klang schon leise Musik.', 900]},
+
+ /* 5 – the fairy ring: the gate opens only with the fairy song; tap the glowing toadstool, each one sings the next note */
+ {set:'feenring', dark:.5, u:[9,73,19], ef:[22,68,28,'st'], li:[30,46,6.5], gate:[62,70,44,26],
+  pz:[['p1',38,77,12],['p2',50,69,10],['p3',74,69,10],['p4',86,77,12],['p5',74,85,14],['p6',50,85,14]],
+  st:{efm:'smile',efa:'dn',lim:'smile'},
+  lights:[{id:'hexe',r0:12,rT:12,k0:.45,kT:.45},{id:'uni',r0:11,rT:11,k0:.42,kT:.42},{id:'lilli',name:'liL',r0:6,rT:6,k0:.7,kT:.7},{id:'tor',name:'torL',r0:16,rT:16,k0:.35,kT:.35}],
+  enter(){ onPh('Mondschein',()=>{ ['p1','p2','p3','p4','p5','p6'].forEach((k,i)=>bLater(()=>sqs(TB.els[k]),i*160)); });
+    onPh('Tor war zu',()=>{ mood('hexe','oh'); const G=TB.els.tor; sqs(G); });
+    talk('lilli','Das Tor geht','sagte Lilli'); talk('lilli','Hör gut zu','Und sie');
+    onPh('summte',()=>{ mood('hexe','smile'); const ids=['p1','p2','p3','p4','p5','p6']; FEEMEL.forEach((m,i)=>bLater(()=>{ const P=TB.els[ids[i]]; P.classList.add('on'); harp(m,ctr(P)[0]); bLater(()=>P.classList.remove('on'),420); },i*480)); notes(TB.els.lilli,4); });
+    onPh('Tipp immer',()=>uniHop()); },
+  ready(){ efReady(); mood('hexe','smile'); },
+  a:{t:'reigen',ids:['p1','p2','p3','p4','p5','p6'],w:'PILZ'},
+  s:'Da war er, der Feenring: ein Kreis aus roten Pilzen im Mondschein. Aber das Tor war zu. Das Tor geht nur mit unserem Feenlied auf, sagte Lilli. Hör gut zu! Und sie summte ein feines Lied. Jeder Pilz singt einen Ton. Tipp immer auf den Pilz, der gerade leuchtet!',
+  h:'Tipp auf den Pilz, der leuchtet!',
+  item(id,b,k){ light({el:b,oy:.3,r0:2,rT:8,k0:.8,kT:.8,warm:1}); if(TB.torL) TB.torL.rT=16+k*2; mood('lilli','happy'); const [x,y]=ctr(TB.els.lilli); if(k%2) notes(TB.els.lilli,1); },
+  done(){ mood('hexe','happy'); },
+  d:[()=>{ onPh('Die Pilze sangen',()=>{ const ac=feeAC(); if(ac){ const t=ac.currentTime+.05; FEESONG.slice(0,9).reduce((tt,[m,bt],i)=>{ feeNote(m+12,tt,.07,innerWidth*(.4+i*.04)); return tt+bt*.36; },t); } },'d1');
+       onPh('ging auf',()=>{ const G=TB.els.tor; G.classList.add('open'); FX.darkT=.32; if(TB.torL) TB.torL.rT=34; const [x,y]=ctr(G); glitterBurst(x,y,40,30); fxBurst(x,y,30,GLCOL); chime([784,988,1175,1568,2093]); },'d1');
+       onPh('Herein',()=>{ [[54,64,0],[62,58,1],[70,64,2],[58,72,3],[68,72,4]].forEach(([x,y,k],i)=>bLater(()=>{ const F=el('div','tp2 chr feefe feepop',`<div class="bb">${feeSVG(FEECOL[k])}</div>`); F.dataset.mood='happy'; F.dataset.arm=i%2?'up':'dn';
+           F.style.cssText=`left:${x}%;top:${y}%;width:6vh`; TB.act.appendChild(F); TB.els['f'+(k+1)]=F; glitterBurst(...ctr(F),10,8); chimeAt([1568+i*150],ctr(F)[0]); },i*220)); },'d1'); },
+     'Die Pilze sangen das ganze Feenlied, und der Feenring ging auf. Herein, herein! riefen viele kleine Feen.', 1200]},
+
+ /* 6 – mid-fest the giant comes: Socke, looking for Eefje. The fairies hide; she strokes his huge nose until he purrs and lies down */
+ {set:'feenring', dark:.38, u:[9,73,19], ef:[20,68,28,'st'], li:[56,58,6.5], ri:[70,62,150],
+  pz:[['p1',38,77,12,1],['p2',50,69,10,1],['p3',74,69,10,1],['p4',86,77,12,1],['p5',74,85,14,1],['p6',50,85,14,1]],
+  fe:[['f1',62,60,6,0],['f2',62,60,6,1],['f3',62,60,6,2],['f4',62,60,6,3],['f5',62,60,6,4]],
+  st:{efm:'happy',efa:'dn',lim:'happy',rim:'smile',lid:0},
+  lights:[{id:'hexe',r0:13,rT:13,k0:.5,kT:.5},{id:'uni',r0:11,rT:11,k0:.45,kT:.45},{x:0,y:0,name:'ringL',r0:26,rT:26,k0:.55,kT:.55,warm:1}],
+  enter(){ const R=TB.els.riese; R.classList.add('hidden'); feeDance(['f1','f2','f3','f4','f5','lilli'],true); const [cx,cy]=wpx(62,74); TB.ringL.x=cx; TB.ringL.y=cy;
+    onPh('bebte der Boden',()=>{ const st=TB.st; try{ st.animate([{translate:'0 0'},{translate:'0 -1vh'},{translate:'0 1vh'},{translate:'0 -.6vh'},{translate:'0 0'}],{duration:500,iterations:3}); }catch(e){} chime([110,98]); });
+    onPh('tapp, tapp',()=>{ chime([98]); }); onPh('Zwei riesige',()=>{ const R=TB.els.riese; R.classList.remove('hidden'); R.classList.add('rise'); TB.eyeL=[light({fn:()=>relEl(TB.els.riese,[.4,.33]),r0:0,rT:7,k0:.9,kT:.9}),light({fn:()=>relEl(TB.els.riese,[.6,.33]),r0:0,rT:7,k0:.9,kT:.9})]; });
+    onPh('Ein Riese',()=>{ feeDance(['f1','f2','f3','f4','f5','lilli'],false); mood('lilli','worry'); [['f1',38,70],['f2',50,62],['f3',74,62],['f4',86,70],['f5',50,78],['lilli',30,60]].forEach(([k,x,y],i)=>{ const F=TB.els[k]; F.dataset.mood='worry';
+        F.style.transition='left .9s ease-in-out, top .9s ease-in-out, scale .9s'; F.style.left=x+'%'; F.style.top=y+'%'; F.style.scale=k==='lilli'?1:.7; bubble(i===0?'Ein Riese!':'huch!',...ctr(F),3.2,'#ffe0f4'); }); });
+    onPh('Aber Ehfje lachte',()=>mood('hexe','laugh')); talk('hexe','Das ist doch','Streichel'); onPh('Das ist doch',()=>{ efArm('up'); }); onPh('Er sucht',()=>{ efArm('dn'); mood('hexe','happy'); }); },
+  ready(){ efReady(); const R=TB.els.riese; R.classList.remove('hidden'); R.classList.add('rise'); if(!TB.eyeL) TB.eyeL=[light({fn:()=>relEl(TB.els.riese,[.4,.33]),r0:0,rT:7,k0:.9,kT:.9}),light({fn:()=>relEl(TB.els.riese,[.6,.33]),r0:0,rT:7,k0:.9,kT:.9})];
+    feePurr(.08); mood('hexe','happy'); },
+  a:{t:'streicheln',id:'riese',n:4,len:13,box:[.36,.37,.28,.13],w:'KATZE'},
+  s:'Im Feenring tanzten die Feen, und alles glitzerte. Doch plötzlich bebte der Boden: tapp, tapp, tapp. Zwei riesige grüne Augen schauten über die Pilze. Ein Riese! riefen die Feen und versteckten sich. Aber Ehfje lachte. Das ist doch mein Socke! Er sucht mich. Streichel Socke ganz langsam über die Nase, immer wieder!',
+  h:'Streich mit dem Finger langsam über Sockes große Nase!',
+  stroking(p){ const R=TB.els.riese; R.style.setProperty('--lid',Math.min(.92,p*1.05).toFixed(2)); TST.lid=p; feePurr(.12+p*.88); if(TB.eyeL) TB.eyeL.forEach(l=>l.kT=.9*(1-p*.85)); },
+  stroked(k,p){ const R=TB.els.riese, [x,y]=relEl(R,[.5,.3]); bubble(['schnurr…','schnurr, schnurr…','rrrrr…','rrrrrrr…'][Math.min(3,k-1)],x+vu()*(k%2?14:-14),y-vu()*4,3.4+k*.5,'#e0e0f0');
+    R.classList.remove('purr'); void R.offsetWidth; R.classList.add('purr'); const F=TB.els['f'+k]; if(F){ F.style.scale=.85; F.dataset.mood='oh'; } },
+  done(){ const R=TB.els.riese; R.dataset.mood='happy'; R.style.setProperty('--lid',0); feePurr(1); if(TB.eyeL) TB.eyeL.forEach(l=>l.kT=0); mood('hexe','laugh'); },
+  purr0:1,
+  d:[()=>{ onPh('legte er sich',()=>{ const R=TB.els.riese; R.classList.add('down'); const G=TB.els.liegt||TB.mk('liegt','feelg',sockeLiegtSVG(),56,56,150); feeBack(G); void G.offsetWidth; G.classList.add('in'); },'d1'); },
+     'Socke schnurrte, und seine Augen fielen zu. Ganz vorsichtig legte er sich rund um den Feenring.',
+     ()=>{ onPh('wie Musik',()=>{ feeMusic(true); feePurr(.55); notes(TB.els.liegt||TB.els.riese,4); },'d2');
+       onPh('Da kamen',()=>{ const ids=['f1','f2','f3','f4','f5','lilli']; ids.forEach(k=>{ const F=TB.els[k]; F.style.transition='scale .6s'; F.style.scale=1; F.style.left='62%'; F.style.top='60%'; F.dataset.mood='happy'; }); mood('lilli','happy'); feeDance(ids,true); },'d2'); },
+     'Und sein Schnurren klang wie Musik. Da kamen die Feen wieder heraus und tanzten weiter.', 1000]},
+
+ /* 7 – the fest under the moon: the fairy queen gives Eefje a tiny silver bell; hold her and they grow big again; home */
+ {set:'feenring', dark:.3, u:[11,71,20], ef:[24,68,28,'st'], li:[62,60,6.5], lg:[56,56,150], qu:[42,30,12],
+  pz:[['p1',38,77,12,1],['p2',50,69,10,1],['p3',74,69,10,1],['p4',86,77,12,1],['p5',74,85,14,1],['p6',50,85,14,1]],
+  fe:[['f1',62,60,6,0],['f2',62,60,6,1],['f3',62,60,6,2],['f4',62,60,6,3],['f5',62,60,6,4]],
+  st:{efm:'happy',efa:'dn',lim:'happy'},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.5,kT:.5},{id:'uni',r0:12,rT:12,k0:.45,kT:.45},{x:0,y:0,name:'ringL',r0:28,rT:28,k0:.55,kT:.55,warm:1},{id:'koenigin',name:'quL',r0:0,rT:0,k0:.7,kT:.7}],
+  enter(){ feeDance(['f1','f2','f3','f4','f5','lilli'],true); feeMusic(true); feePurr(.5); const [cx,cy]=wpx(62,74); TB.ringL.x=cx; TB.ringL.y=cy;
+    onPh('sogar dein Einhorn',()=>{ uniHop(); const U=TB.els.uni; U.classList.add('feehop'); });
+    onPh('Feenkönigin',()=>{ const Q=TB.els.koenigin; Q.classList.remove('away'); Q.classList.add('come'); TB.quL.rT=12; glitterBurst(...ctr(Q),30,20); chime([1047,1318,1568,2093]); TB.els.uni.classList.remove('feehop'); });
+    talk('koenigin','Danke, Ehfje','sagte sie'); talk('koenigin','Du warst','Sie schenkte');
+    onPh('Sie schenkte',()=>{ const Q=TB.els.koenigin, E=TB.els.hexe; mood('hexe','oh'); const B=TB.mk('glocke','feegl',feeGlockeSVG(),0,0,3); putAt(B,...relEl(Q,[.66,.4]));
+      feeHop(B,E.querySelector('.bb'),.36,.69,1300,()=>{ B.style.width='9%'; mood('hexe','happy'); chimeAt([2093,2637],ctr(B)[0]); glitterBurst(...ctr(B),12,10); }); });
+    onPh('Heimweg',()=>{ mood('hexe','smile'); }); talk('hexe','Kribbel','Leg deinen');
+    onPh('Ehfje rief',()=>{ efArm('up'); }); onPh('Kribbel',()=>{ efSpell(16); mood('hexe','happy'); }); onPh('Leg deinen',()=>{ efArm('dn'); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','happy'); const Q=TB.els.koenigin; Q.classList.remove('away'); Q.classList.add('come'); TB.els.uni.classList.remove('feehop');
+    if(!TB.els.glocke){ const B=TB.mk('glocke','feegl',feeGlockeSVG(),0,0,3); stickTo(B,TB.els.hexe.querySelector('.bb'),.36,.69); B.style.width='9%'; }
+    const U=TB.els.uni; g2loop(()=>{ const p=TB.hp||0; U.style.scale=(1+p*.3).toFixed(3); }); },
+  a:{t:'hold',id:'hexe',ms:2600,grow:.3,pc:'rgba(255,220,250,.9)',w:'GLOCKE'},
+  s:'Alle tanzten unter dem Mond, sogar dein Einhorn. Dann kam die Feenkönigin. Danke, Ehfje, sagte sie. Du warst ganz klein, und doch so mutig. Sie schenkte Ehfje eine winzige silberne Glocke. Nun war es Zeit für den Heimweg. Ehfje rief: Kribbel, krabbel, Funkelschein – jetzt wollen wir wieder groß sein! Leg deinen Finger auf Ehfje und lass ihn dort, dann wachsen sie wieder!',
+  h:'Leg den Finger auf Ehfje und lass ihn liegen!',
+  done(){ mood('hexe','laugh'); const U=TB.els.uni; U.style.scale=1.3; },
+  d:[()=>{ onPh('wuchsen',()=>{ feeMusic(false); feePurrStop(); feeHomeView(); },'d1'); onPh('kleiner Kreis',()=>{ for(let i=0;i<6;i++){ const P=TB.els['mp'+i]; if(P) bLater(()=>{ sqs(P); harp(FEEMEL[i],ctr(P)[0]); },i*180); } },'d1');
+       onPh('rieb seinen Kopf',()=>{ const S=TB.els.socke; if(!S) return; S.style.transition='left 1s ease-in-out'; S.style.left='46%'; sqs(S); bLater(()=>{ hearts(...ctr(S),4); mood('hexe','laugh'); },900); },'d1'); },
+     'Ehfje und dein Einhorn wuchsen und wuchsen, bis sie wieder groß waren. Der Feenring war nur noch ein kleiner Kreis aus Pilzen im Gras. Und Socke rieb seinen Kopf an Ehfjes Bein.',
+     ()=>{ onPh('Seitdem',()=>feeWindow(),'d2'); onPh('Feen zu Besuch',()=>feeVisit(3),'d2'); },
+     'Seitdem steht die silberne Glocke bei Ehfje auf dem Fensterbrett. Und immer, wenn Feen zu Besuch kommen, klingelt sie ganz leise.',
+     ()=>{ onPh('klingelt sie',()=>feeVisit(2),'d3'); },
+     'Und wenn sie nicht verklungen ist, dann klingelt sie noch heute.', 1400]}
+ ]};
+/*<FEEN*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -8258,7 +8810,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -8271,6 +8823,11 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     [[22,52,0],[40,40,-2.3],[66,58,-4.6],[30,30,-1.2],[72,34,-5.8]].map(([x,y,d])=>`<span class="fsd" style="left:${x}%;top:${y}%;animation-delay:${d}s">${flaumiSVG()}</span>`).join('')+`</div>`+tw;
   if(id==='eefje') return `<div class="art eart" style="width:54%;margin-top:2%"><div class="chr eef ride" data-mood="happy" data-arm="fwd" style="position:relative;width:100%"><div class="bb">${eefjeSVG()}<div class="tp2 chr hutk kid" style="left:50%;top:-6%;width:58%"><div class="bb">${hutSVG()}</div></div><div class="tp2 chr sck kid" data-mood="smile" style="left:24%;top:58%;width:27%"><div class="bb">${sockeSVG()}</div></div></div></div></div>`+
     [[14,20,6],[80,14,5],[86,62,4],[20,70,4.5],[66,8,3.6]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+  if(id==='feenfest') return `<div class="fart" style="position:absolute;inset:0">`+[[22,84,13],[36,90,15],[64,90,15],[78,84,13],[50,80,10]].map(([x,y,z])=>`<div class="tp2 feepz on" style="left:${x}%;top:${y}%;width:${z}%">${feePilzSVG()}</div>`).join('')+
+    `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:38%;top:52%;width:44%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr feefe" data-mood="happy" data-arm="up" style="left:72%;top:30%;width:22%"><div class="bb">${lilliSVG()}</div></div>`+
+    `<div class="tp2 feegl" style="left:57%;top:47%;width:8%">${feeGlockeSVG()}</div></div>`+
+    [[12,18,5],[84,12,4],[90,56,3.6],[14,60,3.4],[60,10,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
   if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
@@ -8518,6 +9075,8 @@ for(let d=7;d<=24;d++) regTale2(ADVD[d]);
 regTale2(FLAUMI2);
 /* Eefje und der Zauberhut: after Flaumi, so the older lines keep their order in voice/clips.tsv */
 regTale2(EEFJE2);
+/* Eefje und das Feenfest: after the hat story, so the older lines keep their order in voice/clips.tsv */
+regTale2(FEEN2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
