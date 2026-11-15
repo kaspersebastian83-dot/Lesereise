@@ -1110,6 +1110,25 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .rd6 .rdi{transform-box:fill-box;transform-origin:50% 0;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1)} .rd6.on .rdi{transform:scale(1)} .rd6.gone{display:none}
 .vogel6{position:absolute;left:0;top:0;pointer-events:none;z-index:6;fill:#3a2848} .vogel6 svg{width:100%;display:block;overflow:visible} .vogel6.rev svg{transform:scaleX(-1)}
 .vogel6 .vw{transform-box:view-box;transform-origin:30px 20px;animation:vflap .3s ease-in-out infinite alternate} @keyframes vflap{to{transform:scaleY(-.55)}}
+/* scene 7: above the clouds */
+.sky6.inst,.sky6.inst *{transition:none!important}
+.sky7{position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(180deg,#4f86de 0%,#86b4f0 30%,#c8d8f4 50%,#ffdcb4 68%,#fff0d8 100%)}
+.sun7{position:absolute;left:78%;top:27%;width:13vh;height:13vh;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,#fffef6 0,#fff4cc 45%,#ffe0a0 75%,#ffc890 100%);box-shadow:0 0 6vh 3vh rgba(255,236,190,.7),0 0 20vh 10vh rgba(255,210,150,.35)}
+.bank7{position:absolute;left:-10%;right:-10%;top:50%;height:18%;filter:blur(1.4vh);
+  background:radial-gradient(ellipse 30% 50% at 20% 60%,rgba(255,226,214,.9),rgba(255,226,214,0) 70%),radial-gradient(ellipse 34% 55% at 62% 55%,rgba(255,236,220,.9),rgba(255,236,220,0) 70%),radial-gradient(ellipse 26% 45% at 92% 62%,rgba(250,214,224,.85),rgba(250,214,224,0) 70%)}
+.sea7{position:absolute;left:-10%;width:120%;height:140%;top:-145%;pointer-events:none}
+.body7{position:absolute;left:0;right:0;top:4.5%;bottom:1%;background:linear-gradient(180deg,#fff2ea 0%,#f8dce6 18%,#e8d0ec 50%,#d4c4ea 80%,#c2b6e2 100%)}
+.row7{position:absolute;inset:0} .row7>span{position:absolute;translate:-50% -50%;border-radius:50%}
+.far7>span{background:radial-gradient(ellipse at 50% 35%,#fff6ee 0,#fde0e2 40%,rgba(248,214,226,0) 70%);filter:blur(.7vh);opacity:.9}
+.mid7>span{background:radial-gradient(ellipse at 50% 32%,#fffaf0 0,#ffe6dc 38%,#f6d4e2 58%,rgba(240,206,226,0) 71%);filter:blur(.25vh)}
+.near7>span{background:radial-gradient(ellipse at 48% 30%,#fff 0,#fff1d8 26%,#ffd9cc 46%,#f2cce0 60%,rgba(236,200,224,0) 71%)}
+.und7>span{background:radial-gradient(ellipse at 50% 70%,#c8bce4 0,#b8acd8 45%,rgba(184,172,216,0) 71%)}
+.far7{animation:sea7 60s ease-in-out infinite alternate} .mid7{animation:sea7 44s ease-in-out infinite alternate-reverse} .near7{animation:sea7n 30s ease-in-out infinite alternate}
+@keyframes sea7{to{transform:translateX(2.5%)}} @keyframes sea7n{to{transform:translateX(-4%)}}
+.luke7{position:absolute;left:60%;top:15%;width:36vh;height:13vh;translate:-50% -50%;opacity:0;transition:opacity 2.6s ease-out}
+.luke7>svg{position:absolute;inset:0;width:100%;height:100%}
+.luke7.open{opacity:1} .luke7 .lk{position:absolute;left:54%;top:50%;width:4.6vh;translate:-50% -50%} .luke7 .lk svg{width:100%;display:block}
+.wisp7{position:absolute;top:-200%;pointer-events:none;border-radius:50%;translate:0 -50%;filter:blur(1.2vh);background:radial-gradient(ellipse at 50% 50%,rgba(255,250,246,.85) 0,rgba(255,236,236,.5) 45%,rgba(255,236,236,0) 70%)}
 /*<FLAUMICSS*/
 </style>
 </head>
@@ -6556,9 +6575,9 @@ void main(){ vec2 px=v*res, d=px-sun; float r=length(d)/res.y, a=atan(d.y,d.x);
  o=vec4(col*(shaft*.6+glow+haze)*k,1.); }`,
  grassV:`#version 300 es
 layout(location=0) in vec2 q; layout(location=1) in vec4 ia; layout(location=2) in vec4 ib;
-uniform vec2 res, blowP, lp, gcut; uniform float t, vh, wind, gust, blow, grow, dir, scroll;
+uniform vec2 res, blowP, lp, gcut; uniform float t, vh, wind, gust, blow, grow, dir, scroll, scrollY;
 out float vs; out float vsh; out float vside; out float vlit;
-void main(){ float s=q.y, H=ia.z*vh*grow, W=ia.w*vh*(1.-s*.88); vec2 base=vec2((mod(ia.x+.03+scroll,1.06)-.03)*res.x, ia.y*res.y);
+void main(){ float s=q.y, H=ia.z*vh*grow, W=ia.w*vh*(1.-s*.88); vec2 base=vec2((mod(ia.x+.03+scroll,1.06)-.03)*res.x, (ia.y+scrollY)*res.y);
  float sway=sin(t*(1.1+ib.z*.7)+ib.y+ia.x*6.)*.16+sin(t*.63+ia.x*2.3+ib.y)*.08;
  float g=gust*(.55+.45*sin(t*2.3-ia.x*8.+ib.y*.3));
  float bd=distance(base,blowP)/res.y, bl=blow*exp(-bd*bd*3.)*(.75+.25*sin(t*11.+ib.y*3.));
@@ -6676,7 +6695,7 @@ function glxFrame(dt,t){ if(!GLX.ok||!GLX.cfg) return; const W=innerWidth, H=inn
     const gc=cfg.gcol||{};
     if(cfg.water) glWater(S2,cfg.water,W,H,t,sun);
     if(GLX.nG){ const P=S2.grass; gl.useProgram(P.p); gl.uniform2f(P.U.res,W,H); gl.uniform1f(P.U.t,t); gl.uniform1f(P.U.vh,u); gl.uniform1f(P.U.wind,WIND.v); gl.uniform1f(P.U.gust,WIND.g+WIND.hint*.4);
-      gl.uniform1f(P.U.blow,WIND.blow); gl.uniform2f(P.U.blowP,...(cfg.blowP&&TB?cfg.blowP():[W*.6,H*.6])); gl.uniform2f(P.U.lp,sun[0],sun[1]); gl.uniform1f(P.U.grow,GLX.grow); gl.uniform1f(P.U.dir,WIND.dir); gl.uniform1f(P.U.scroll,GLX.scroll); gl.uniform2fv(P.U.gcut,cfg.gcut||[2,2]);
+      gl.uniform1f(P.U.blow,WIND.blow); gl.uniform2f(P.U.blowP,...(cfg.blowP&&TB?cfg.blowP():[W*.6,H*.6])); gl.uniform2f(P.U.lp,sun[0],sun[1]); gl.uniform1f(P.U.grow,GLX.grow); gl.uniform1f(P.U.dir,WIND.dir); gl.uniform1f(P.U.scroll,GLX.scroll); gl.uniform1f(P.U.scrollY,GLX.scrollY||0); gl.uniform2fv(P.U.gcut,cfg.gcut||[2,2]);
       gl.uniform3fv(P.U.cB,GLX.gc.b); gl.uniform3fv(P.U.cT,GLX.gc.t); gl.uniform3fv(P.U.cL,GLX.gc.l); gl.uniform1f(P.U.a,GLX.fade);
       gl.bindVertexArray(S2.gVao); gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,S2.gVerts,GLX.nG); }
     if(GLX.P.length) glDrawSp(S2,GLX.P,W,H,false);
@@ -6720,7 +6739,7 @@ function tiltVal(dt){ if(!tiltOn()) return null; if(TILT.base==null){ TILT.cal.p
   let d=TILT.raw-TILT.base; d=Math.abs(d)<.05?0:d-Math.sign(d)*.05; const v=Math.max(-1,Math.min(1,d/.32)); TILT.v+=(v-TILT.v)*Math.min(1,dt*10); return TILT.v; }
 const FLX={on:false,t:0};
 function flxStart(){ tiltListen(true); if(FLX.on) return; FLX.on=true; FLX.t=now(); requestAnimationFrame(flxLoop); }
-function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); rainSnd(0); tiltListen(false); GLX.cfg=null; GLX.pan=null; WIND.blow=WIND.g=WIND.hint=0; const g=$('taleWorld').querySelector('.grade'); if(g) g.remove(); }
+function flxStop(){ FLX.on=false; glxShow(false); micStop(); mboxStop(); rainSnd(0); tiltListen(false); GLX.cfg=null; GLX.pan=null; GLX.scrollY=0; WIND.blow=WIND.g=WIND.hint=0; const g=$('taleWorld').querySelector('.grade'); if(g) g.remove(); }
 function flxLoop(){ if(!FLX.on) return; if(!flxOn()){ flxStop(); return; } requestAnimationFrame(flxLoop);
   const tn=now(), dt=Math.min(.05,(tn-FLX.t)/1000), t=tn/1000; FLX.t=tn;
   if(!(TB&&TB.bwOn)){ WIND.blow+=(0-WIND.blow)*Math.min(1,dt*2); } WIND.hint+=(0-WIND.hint)*Math.min(1,dt*1.5); WIND.g+=(0-WIND.g)*Math.min(1,dt*.7);
@@ -7107,7 +7126,7 @@ function bowPulse(i){ const p=TB.sky6&&TB.sky6.querySelectorAll('.bb6')[i]; if(!
 /* Flaumi's place: she drifts to a target, and the drops on her umbrella pull her down */
 function flWeight(){ const D=TB.drops; return D&&D.length?D.filter(d=>d.on&&!d.gone).length/D.length:0; }
 function flPlace(dt){ const F=TB.els.flaumi, P=TB.fp; if(!F||!P) return; const W=innerWidth, H=innerHeight, w=flWeight(), yT=P.yT+P.sink*w;
-  P.x+=(P.xT-P.x)*Math.min(1,dt*P.k); P.y+=(yT-P.y)*Math.min(1,dt*(yT>P.y?.9:1.5)); putAt(F,P.x*W+Math.sin(now()/900)*vu()*1.2,P.y*H);
+  P.x+=(P.xT-P.x)*Math.min(1,dt*P.k); P.y+=(yT-P.y)*Math.min(1,dt*(yT>P.y?.9:1.5)); putAt(F,P.x*W+Math.sin(now()/900)*vu()*1.2,P.y*H-(TB.camPx||0));
   const u=F.querySelector('.ump'); if(u) u.style.scale=`${(1+w*.05).toFixed(3)} ${(1-w*.16).toFixed(3)}`; }
 /* raindrops on the umbrella: they hang under the tips of the fluff; .on shows one */
 function flDrops(){ const F=TB.els.flaumi, sv=F.querySelector('svg'), ump=sv.querySelector('.ump'), id='dr'+(++UID);
@@ -7192,6 +7211,70 @@ function flBreak(){ const L=TB.sky6; L.classList.remove('rain'); L.classList.add
   if(GLX.cfg) GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:1.3,hz:.55,hk:.2,col:[1,.78,.5]},gcol:{b:[.06,.1,.05],t:[.45,.55,.22],l:[1,.75,.42]}});
   bLater(()=>{ const [sx,sy]=ctr(TB.els.sonne); glSpark(sx,sy,30,[1,.85,.5],16); chime([523,659,784,1047]); uniHop(); },700); bLater(bowGrow,900); }
 
+/* ---------- above the clouds: the camera rises with Flaumi's breath through the clouds to a golden sea of clouds ---------- */
+/* the unicorn's stable: warm wood, a rose roof, a round window with a star (also big in the homecoming) */
+function stallSVG(){ return `<svg viewBox="0 0 200 172"><ellipse cx="100" cy="164" rx="92" ry="8" fill="rgba(40,60,20,.3)"/>
+  <path d="M30 72 L170 72 L170 160 L30 160Z" fill="#dca474" stroke="#7a4a2a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M48 76 V158 M66 76 V158 M134 76 V158 M152 76 V158" stroke="#b47a4c" stroke-width="2.5" opacity=".7"/>
+  <path d="M74 160 V108 Q74 94 100 94 Q126 94 126 108 V160Z" fill="#9a5a34" stroke="#6a3a1c" stroke-width="3.5"/>
+  <path d="M78 156 L122 112 M78 112 L122 156" stroke="#fff2dc" stroke-width="4.5" stroke-linecap="round"/><path d="M76 134 H124" stroke="#fff2dc" stroke-width="4"/>
+  <path d="M90 88 a10 10 0 1 1 20 0" fill="none" stroke="#c0c4cc" stroke-width="4" stroke-linecap="round"/>
+  <path d="M12 80 L100 14 L188 80 Z" fill="#e8708a" stroke="#8a2a46" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M40 66 q10 -6 20 0 q10 -6 20 0 q10 -6 20 0 q10 -6 20 0 q10 -6 20 0 M60 50 q10 -6 20 0 q10 -6 20 0 q10 -6 20 0 M80 34 q10 -6 20 0 q10 -6 20 0" fill="none" stroke="#c44a66" stroke-width="2.5" opacity=".75"/>
+  <circle cx="100" cy="52" r="11" fill="#ffe9a8" stroke="#8a2a46" stroke-width="3"/><path d="M100 45 l2 4.6 5 .4 -3.8 3.2 1.2 4.8 -4.4 -2.6 -4.4 2.6 1.2 -4.8 -3.8 -3.2 5 -.4Z" fill="#ffb43a"/>
+  <g transform="translate(160 146)"><ellipse rx="20" ry="12" fill="#f0c860" stroke="#a87a28" stroke-width="2.5"/><path d="M-14 -4 l6 -6 M-4 -8 l3 -6 M6 -7 l5 -5" stroke="#a87a28" stroke-width="2"/></g></svg>`; }
+SVGP.STALL=[stallSVG,1.16]; TSYL.WOLKE=TSYL.WOLKE||'WOL-KE';
+SETS2.wolkenauf={sky:SETS2.morgenwiese.sky, stars:0, dcol:'30,20,64', far:SETS2.morgenwiese.far, mid:SETS2.morgenwiese.mid, gnd:SETS2.morgenwiese.gnd};
+/* the sky above the clouds, the sea of clouds (far rows soft = depth of field), near wisps that rush past in front */
+function flSea7(){ const st=TB.st, r=seeded(77);
+  const sky7=el('div','sky7','<div class="sun7"></div><div class="bank7"></div>'); st.insertBefore(sky7,st.querySelector(':scope>.l-far')); TB.sky7=sky7;
+  const row=(cls,n,y0,y1,s0,s1)=>{ let o=`<div class="row7 ${cls}">`; for(let i=0;i<n;i++){ const x=-4+i*108/(n-1)+(r()-.5)*5, y=y0+(y1-y0)*r(), s=s0+(s1-s0)*r();
+      o+=`<span style="left:${x.toFixed(1)}%;top:${y.toFixed(2)}%;width:${(s*1.7).toFixed(1)}vh;height:${s.toFixed(1)}vh"></span>`; } return o+'</div>'; };
+  const sea=el('div','sea7','<div class="body7"></div>'+row('far7',18,.3,1.4,7,11)+row('mid7',12,2.4,4,14,20)+`<div class="luke7">${lukeSVG()}<div class="lk">${stallSVG()}</div></div>`+row('near7',8,6.2,8.4,26,34)+row('und7',10,98.6,100,16,24));
+  st.insertBefore(sea,st.querySelector(':scope>.l-act')); TB.sea7=sea;
+  TB.wisp=[.5,.66,.8,.95,1.1,1.25].map((c,i)=>{ const w=el('div','wisp7'); w.style.left=((i%2?50:4)+r()*22)+'%'; w.style.width=(40+r()*30)+'vw'; w.style.height=(16+r()*12)+'vh'; st.appendChild(w); return {e:w,c}; }); }
+/* the view far down through a gap in the clouds: the meadow with tiny trees and a stream, hazy at the rim */
+function lukeSVG(){ const id='lk'+(++UID); let t=''; [[62,30],[72,44],[146,28],[156,40],[50,40],[128,50]].forEach(([x,y])=>{ t+=`<circle cx="${x}" cy="${y}" r="4.2" fill="#3e7a3a"/><circle cx="${x-1.4}" cy="${y-1.4}" r="1.8" fill="#6aa858"/>`; });
+  return `<svg viewBox="0 0 200 72" preserveAspectRatio="none"><defs><radialGradient id="${id}g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#a4d480"/><stop offset=".55" stop-color="#86c068"/><stop offset=".78" stop-color="#b6c8dc"/><stop offset="1" stop-color="#e8dcec" stop-opacity="0"/></radialGradient>
+    <radialGradient id="${id}h" cx="50%" cy="38%" r="55%"><stop offset=".6" stop-color="#9a86c0" stop-opacity="0"/><stop offset=".95" stop-color="#9a86c0" stop-opacity=".45"/><stop offset="1" stop-color="#9a86c0" stop-opacity="0"/></radialGradient></defs>
+   <ellipse cx="100" cy="36" rx="100" ry="36" fill="url(#${id}g)"/><path d="M30 50 Q70 40 96 46 T170 30" fill="none" stroke="#8ccaf0" stroke-width="2.6" opacity=".85"/>${t}
+   <g fill="#fff" opacity=".9"><circle cx="118" cy="44" r="1.3"/><circle cx="84" cy="30" r="1.1"/><circle cx="140" cy="46" r="1.1"/></g><ellipse cx="100" cy="36" rx="100" ry="36" fill="url(#${id}h)"/></svg>`; }
+/* the camera height h: 0 = on the meadow, 1 = inside the clouds, 1.6 = above them. Everything on the ground slides down (each layer at its speed); Flaumi and the unicorn stay with the camera */
+function flRise(h){ if(!TB||!TB.st) return; const H=innerHeight, st=TB.st, y=k=>`0 ${(h*H*k).toFixed(1)}px`;
+  [['.l-far',.5],['.l-mid',.75],['.l-act',1],['.l-fore',1.3]].forEach(([q,k])=>{ const e=st.querySelector(':scope>'+q); if(e) e.style.translate=y(k); });
+  const B=TB.sky6&&TB.sky6.querySelector('.bow6'); if(B) B.style.translate=y(.42);
+  TB.camPx=h*H; GLX.scrollY=h;
+  if(TB.sky7) TB.sky7.style.opacity=Math.max(0,Math.min(1,(h-.45)/.8)).toFixed(3);
+  if(TB.sea7) TB.sea7.style.top=((-1.57+h*1.4)*100).toFixed(2)+'%';
+  (TB.wisp||[]).forEach(w=>{ w.e.style.top=((-.4+(h-w.c)*2.4)*100).toFixed(2)+'%'; });
+  const U=TB.els.uni, q=Math.min(1,h/1.2), [dx,dy]=TB.uOff||[0,0]; if(U) U.style.transform=`translate(${(dx*q*innerWidth).toFixed(1)}px,${(-h*H+dy*q*H).toFixed(1)}px)`; }
+
+/* lift: one big breath carries everyone up. Blow (microphone), wipe upwards anywhere, or tap Flaumi; every bit of breath lifts the camera a little (progress kept). */
+Object.assign(G2,{
+ lift:{ setup(){ TB.bwOn=true; MBOX.quiet=true; TB.lf={p:TST.lfp||0,imp:0,done:false,auto:false,sw:null,q:Math.floor((TST.lfp||0)*6),mic:false};
+     micStart().then(ok=>{ if(TB&&TB.lf) TB.lf.mic=ok; }); g2loop(dt=>this.step(dt)); },
+   step(dt){ const g=TB.lf; if(g.done) return; const m=micLevel(dt); let s=m>.06?m:0; if(m>.3) poke2();
+     g.imp=Math.max(0,g.imp-dt*1.2); s=Math.max(s,g.imp); if(g.auto) s=Math.max(s,.75);
+     WIND.blow+=(Math.max(s,WIND.hint*.5)-WIND.blow)*Math.min(1,dt*6);
+     g.p=Math.min(1,g.p+s*dt*.7); TST.lfp=g.p; TB.camT=g.p;
+     const F=TB.els.flaumi, u=F&&F.querySelector('.ump'); if(u) u.style.scale=`${(1+WIND.blow*.22).toFixed(3)} ${(1-WIND.blow*.1).toFixed(3)}`;
+     if(s>.2&&Math.random()<dt*14&&F){ const [x,y]=ctr(F); fxAdd({k:'glit',x:x+(Math.random()-.5)*vu()*10,y:y+vu()*12,vy:-vu()*(16+Math.random()*10),ph:Math.random()*6,s:1,life:1.4,c:'rgba(255,240,200,.9)'}); }
+     const q=Math.floor(g.p*6); if(q>g.q){ g.q=q; chimeAt([659+q*131,988+q*131],innerWidth/2); if(F) glSpark(...ctr(F),8,[1,.92,.7],8); }
+     if(TB.sc.lifting) TB.sc.lifting(g.p); if(g.p>=1) this.finish(); },
+   down(x,y){ const g=TB.lf; if(g.done) return; g.sw={x,y,t:now()}; const F=TB.els.flaumi; if(F&&nearEl(F,x,y,vu()*5)){ g.imp=Math.max(g.imp,.6); poke2(); WIND.blow=Math.max(WIND.blow,.4); } },
+   move(x,y){ const g=TB.lf, s=g.sw; if(!s||g.done) return; const u=vu(), t=now(), dy=s.y-y, v=dy/Math.max(16,t-s.t);
+     if(dy>u*2&&v>.1){ g.imp=Math.min(1,Math.max(g.imp,.4+v*1.1)); poke2(); } if(dy<-u*3||t-s.t>220){ s.x=x; s.y=y; s.t=t; } },
+   up(x,y,pd){ const g=TB.lf; if(g.done) return; g.sw=null; if(pd&&Math.hypot(x-pd.x,y-pd.y)<vu()*2&&now()-pd.t<400&&!(TB.els.flaumi&&nearEl(TB.els.flaumi,x,y,vu()*5))) miss2(); },
+   hint(){ const g=TB.lf; if(g.done||g.auto) return; const F=TB.els.flaumi; if(!F) return; const [x,y]=ctr(F), u=vu();
+     ghost([[x-u*3,y+u*30,1,0],[x-u*3,y+u*26,.9,1],[x,y-u*4,.9,1],[x+u*2,y-u*18,1,0],[x-u*3,y+u*26,.9,0],[x-u*3,y+u*26,.9,1],[x,y-u*4,.9,1],[x+u*2,y-u*18,1,0]],2400);
+     /* only the picture of a breath: the mane, the grass and a few glints move, nobody rises */
+     const t0=now(), sc=TB.sc, iv=setInterval(()=>{ if(!TB||TB.sc!==sc||now()-t0>1900){ clearInterval(iv); return; } WIND.hint=Math.max(WIND.hint,.8);
+       fxAdd({k:'glit',x:x+(Math.random()-.5)*u*14,y:y+u*14,vy:-u*22,ph:Math.random()*6,s:.9,life:1,c:'rgba(255,240,210,.85)'}); },90); taleT.push(iv); },
+   auto(){ const g=TB.lf; if(g.done||g.auto) return; this.hint(); g.auto=true; },
+   finish(){ const g=TB.lf; if(g.done) return; g.done=true; TB.bwOn=false; micStop(); MBOX.quiet=false; gust(1.3); chime([784,988,1175,1568]);
+     const F=TB.els.flaumi; if(F) glSpark(...ctr(F),24,[1,.92,.7],14); done2(); } }
+});
+
 /* ================= the tale ================= */
 const FLVERS='Flieg, mein Flaumi, flieg so weit, über Wiese, Wald und Zeit!';
 const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis weite Reise', icon:'🌬️', cover:'linear-gradient(180deg,#2a3270 0%,#8a5a9a 38%,#f0946a 66%,#ffd890 100%)',
@@ -7208,7 +7291,7 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
   const sunF=()=>GLX.sunS?GLX.sunS:TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4];
   litUni(TB.els.uni,sc.litFn||sunF,Object.assign({k:sc.litK==null?1:sc.litK},sc.lit||{})); windUni(TB.els.uni);
   (sc.shadows||[]).forEach(([id,fx,fy,w])=>gShadow(id,fx,fy,w,sunF()[0]));
-  glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
+  GLX.scrollY=0; glxScene(sc.gl?Object.assign({sun:sunF},sc.gl):null);
   if(sc.music) mboxStart();
   alignLoad(Object.keys(CLIPS).filter(k=>k.startsWith('t2_'+tale.t.id+'_')||(sc.a&&sc.a.w&&k==='wort_'+keyOf(sc.a.w)))); },
  react(id,b,x,y){ const u=vu();
@@ -7406,6 +7489,39 @@ const FLAUMI2={id:'flaumi', v2:true, flx:1, nobook:1, wip:true, title:'Flaumis w
        onPh('aus Licht',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); TB.fp.yT=.4; },'d2');
        onPh('So bunt',()=>{ birdFly(.3,.18,5200,true,4); bLater(()=>birdFly(.36,.2,5600,true,3.4),500); const [x,y]=ctr(TB.els.flaumi); glSpark(x,y,16,[1,.9,.7],10); },'d2'); },
      'Oh, ein Bogen aus Licht! rief Flaumi. So bunt!', 1400]},
+ /* 7 – above the clouds: the rainbow reaches up into the clouds; one big breath carries everyone up through them to a golden sea of clouds; far below, the unicorn's stable */
+ {set:'wolkenauf', dark:0, u:[21,56,26], nofly:1, music:1, grade:'gold', st:{flm:'happy',lfp:0},
+  fl:[56,40,13], shadows:[],
+  lit:{lc:'#ffd090',lc2:'#fff4dc',sc:'#3a2a60'}, litFn:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4],
+  gl:{keep:1,grass:'keep',grow:.62,gcut:[2,2],gcol:{b:[.06,.1,.05],t:[.45,.55,.22],l:[1,.75,.42]},rays:{k:1.3,hz:.55,hk:.2,col:[1,.78,.5]},motes:80,mc:[1,.88,.7],flies:0,vig:[[.1,.05,.12],.4],
+      sun:()=>TB&&TB.els.sonne?ctr(TB.els.sonne):[innerWidth*.8,innerHeight*.4]},
+  frame(dt){ jellyStep(dt); TB.cam+=(TB.camT-TB.cam)*Math.min(1,dt*(TB.camK||2.2)); flRise(TB.cam); flPlace(dt); },
+  enter(){ TST.flm='happy'; TB.cam=TB.camT=0; TB.uOff=[.09,-.08]; TB.st.classList.add('mw6','mwd','sun6on');
+    const L=flSky6(); L.classList.add('inst','dawn','clear'); L.querySelector('.bow6').classList.add('on'); requestAnimationFrame(()=>requestAnimationFrame(()=>L.classList.remove('inst')));
+    flSea7(); flRise(0); TB.fp={x:.56,y:.4,xT:.56,yT:.4,sink:0,k:.6}; const F=TB.els.flaumi; F.classList.add('hover'); TB.els.uni.querySelector('.uni').classList.add('flying'); mood('flaumi','happy');
+    onPh('Der Regenbogen reichte',()=>{ for(let i=0;i<7;i++) bLater(()=>bowPulse(i),i*160); });
+    onPh('bis hoch in die Wolken',()=>{ for(let k=0;k<9;k++) bLater(()=>{ const [x,y]=bowPt(.06+k*.055,3); glSpark(x,y,6,[1,.95,.85],6); },k*110); mood('flaumi','oh'); });
+    talk('flaumi','Da will ich hin','rief Flaumi'); onPh('Da will ich hin',()=>{ mood('flaumi','happy'); jelly('flaumi',.6); TB.fp.yT=.37; });
+    onPh('Puste ganz fest',()=>{ mood('flaumi','curious'); TB.fp.yT=.42; }); },
+  ready(){ mood('flaumi','curious'); TB.fp.yT=.42; },
+  a:{t:'lift',w:'WOLKE'},
+  s:'Der Regenbogen reichte bis hoch in die Wolken. Da will ich hin! rief Flaumi. Puste ganz fest, dann fliegen wir hinauf!',
+  h:'Puste ganz fest, oder wisch mit dem Finger nach oben!',
+  lifting(p){ if(p>.15&&TST.flm!=='happy'){ mood('flaumi','happy'); TST.flm='happy'; } TB.fp.yT=.42-p*.04; },
+  done(){ mood('flaumi','happy'); kara('WOLKE'); TB.camT=1.6; TB.camK=.55; TB.fp.xT=.6; TB.fp.yT=.36; TB.els.sonne=TB.sky7.querySelector('.sun7')||TB.els.sonne;
+    if(GLX.cfg) GLX.cfg=Object.assign({},GLX.cfg,{rays:{k:1.2,hz:.6,hk:.22,col:[1,.84,.6]}}); },
+  d:[()=>{ onPh('Hui',()=>{ gust(1); const [x,y]=ctr(TB.els.flaumi); glSpark(x,y,16,[1,.95,.8],12); chimeAt([1047,1319,1568],x); },'d1');
+       onPh('ein Meer aus weichen Wolken',()=>{ for(let k=0;k<10;k++) bLater(()=>{ const x=innerWidth*(.05+k*.1), y=innerHeight*(.64+Math.sin(k*1.7)*.03); glSpark(x,y,5,[1,.95,.9],6); if(k%3===0) chimeAt([784+k*110],x); },k*120); },'d1');
+       onPh('golden in der Morgensonne',()=>{ const [x,y]=ctr(TB.els.sonne); glSpark(x,y,26,[1,.86,.55],14); chime([523,659,784,1047]); },'d1'); },
+     'Hui! Hoch, immer höher, bis über die Wolken. Da lag ein Meer aus weichen Wolken, ganz golden in der Morgensonne.',
+     ()=>{ onPh('Ganz weit unten',()=>{ TB.sea7.querySelector('.luke7').classList.add('open'); mood('flaumi','curious'); TB.fp.xT=.62; },'d2');
+       onPh('kleiner Stall',()=>{ const lk=TB.sea7.querySelector('.lk'), [x,y]=ctr(lk); glSpark(x,y,14,[1,.95,.8],8); chimeAt([1175,1568],x); },'d2');
+       onPh('Das ist mein Stall',()=>{ uniHop(); const [x,y]=ctr(TB.els.uni); hearts(x,y-vu()*8,3); },'d2'); },
+     'Ganz weit unten sah Flaumi eine Wiese, und darauf stand ein kleiner Stall. Das ist mein Stall! sagte dein Einhorn.',
+     ()=>{ talk('flaumi','Jetzt weiß','rief Flaumi','d3'); talk('flaumi','Gleich neben',null,'d3');
+       onPh('Jetzt weiß',()=>{ mood('flaumi','happy'); jelly('flaumi',.7); },'d3');
+       onPh('Gleich neben',()=>{ const [x,y]=ctr(TB.els.flaumi); glSpark(x,y,20,[1,.9,.7],12); hearts(x,y-vu()*10,3); chimeAt([784,988,1175,1568],x); },'d3'); },
+     'Jetzt weiß ich, wo ich wachsen möchte! rief Flaumi. Gleich neben deinem Stall!', 1400]},
  ]};
 /*<FLAUMI*/
 
