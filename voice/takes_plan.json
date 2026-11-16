@@ -3693,6 +3693,21 @@
      "say": "Öl"
     }
    ]
+  },
+  {
+   "id": "w_x045_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Weg. Schatz.",
+   "items": [
+    {
+     "key": "wort_weg",
+     "say": "Weg"
+    },
+    {
+     "key": "wort_schatz",
+     "say": "Schatz"
+    }
+   ]
   }
  ]
 }
