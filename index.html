@@ -1348,6 +1348,79 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.klufer.on{opacity:1;animation:klzp 1.6s ease-in-out infinite}
 .tp2.kloak svg{filter:hue-rotate(-100deg) saturate(1.25) brightness(1.05)}
 /*<KLONKICSS*/
+/*PEPPIOCSS>*/
+/* Eefje, Peppio, Niklas und die Mondinsel (all classes start with "pep") */
+.tp2.pepc{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.25))} .pepc>.bb{position:relative;animation:pepbr 3.1s ease-in-out infinite} @keyframes pepbr{50%{transform:translateY(-1%)}}
+.pepc svg{display:block;width:100%;overflow:visible}
+.pepc .pepa{display:none} .pepc[data-arm=dn] .pepa-dn,.pepc[data-arm=up] .pepa-up,.pepc[data-arm=drum] .pepa-drum,.pepc[data-arm=point] .pepa-point,.pepc[data-arm=map] .pepa-map{display:inline}
+.pepp:not(.hit) .pepd2,.pepp.hit .pepd1{display:none}
+.pepc .pepe,.pepc .pepm,.pepc .pepmo,.pepc .pepbl{display:none}
+.pepc[data-mood=smile] .pepe-o,.pepc[data-mood=smile] .pepm-s{display:inline}
+.pepc[data-mood=happy] .pepe-j,.pepc[data-mood=happy] .pepm-s,.pepc[data-mood=happy] .pepbl{display:inline}
+.pepc[data-mood=oh] .pepe-w,.pepc[data-mood=oh] .pepm-o{display:inline}
+.pepc[data-mood=worry] .pepe-w,.pepc[data-mood=worry] .pepm-w{display:inline}
+.pepc[data-mood=proud] .pepe-j,.pepc[data-mood=proud] .pepm-g,.pepc[data-mood=proud] .pepbl{display:inline}
+.pepc .peph{transform-box:view-box;transform-origin:80px 74px;transition:transform .4s} .pepc[data-mood=proud] .peph{transform:rotate(-7deg) translateY(-2px)}
+.pepc.pepred .pepbl{display:inline!important} .pepc.pepred .pepbl ellipse{opacity:.95;fill:#ff6a8a}
+.pepc.talking .pepm{display:none!important} .pepc.talking .pepmo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.05))}
+.pepc .pepe-w{transform-box:fill-box;transform-origin:center} .pepc .pepe-o{transform-box:fill-box;transform-origin:center;animation:pepblink 4.4s infinite} @keyframes pepblink{0%,94%,100%{transform:none}97%{transform:scaleY(.1)}}
+.pepc.pephop>.bb{animation:pephop .55s cubic-bezier(.3,.7,.4,1),pepbr 3.1s ease-in-out .55s infinite} @keyframes pephop{40%{transform:translateY(-14%) scale(1.04,.97)}75%{transform:translateY(0) scale(1.03,.96)}}
+.pepc.pepdig>.bb{animation:pepdig .4s ease-in-out 4} @keyframes pepdig{50%{transform:rotate(-5deg) translateY(2%)}}
+.pepc.pepwalk>.bb{animation:pepwalk .5s ease-in-out 5} @keyframes pepwalk{50%{transform:translateY(-4%) rotate(2deg)}}
+.sck.pepyawn>.bb{animation:pepyawn 1.4s ease-in-out} @keyframes pepyawn{40%{transform:scale(1.06,.94) translateY(3%)}}
+.tp2.pepboot{filter:drop-shadow(0 .8vh 1.2vh rgba(0,0,20,.35))} .pepboot>.bb{position:relative;animation:pepbob 3.4s ease-in-out infinite} @keyframes pepbob{50%{transform:translateY(-2.4%) rotate(.8deg)}}
+.pepboot svg{display:block;width:100%;overflow:visible} .pepbk{position:relative} .pepfr{position:absolute;left:0;top:0;width:100%;pointer-events:none}
+.pepboot .pepc>.bb{animation:none}
+.pepoar{position:absolute;width:3.4%;translate:-50% -17%;transform-origin:50% 17%;pointer-events:none;filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.3))}
+.pepoar svg{display:block;width:100%}
+.peprb{position:absolute;height:.7vh;transform-origin:0 50%;translate:0 -50%;border-radius:.4vh;pointer-events:none;transition:opacity .8s;
+  background:linear-gradient(180deg,#ffb0dc,#ff4fa8);box-shadow:0 0 1vh rgba(255,120,200,.8)}
+.pepscr{position:absolute;inset:0;pointer-events:none;will-change:transform}
+.pepzn{position:absolute;translate:-50% -50%;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:radial-gradient(circle,rgba(210,230,255,.45) 0,rgba(180,210,255,.2) 45%,rgba(180,210,255,0) 70%)}
+.pepzn.on{opacity:.7;animation:pepzn 1.6s ease-in-out infinite} @keyframes pepzn{50%{scale:1.12}} .pepzn.g2hint{opacity:1;animation:pepzn .5s ease-in-out infinite}
+.pepzn.pepzp{animation:pepzp .5s ease-out} @keyframes pepzp{0%{scale:1;opacity:1}100%{scale:1.4;opacity:.6}}
+.tp2.pepmap{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.35))} .pepmap svg{display:block;width:100%;overflow:visible}
+.pepmap.dusty>.bb svg{filter:grayscale(var(--g,1)) sepia(calc(var(--g,1)*.5)) brightness(calc(1 - var(--g,1)*.32))}
+.pepmap .pepsg{opacity:.12;transition:opacity .7s,stroke .7s} .pepmap .pepsg.on{opacity:1;stroke:#ff5a2a;filter:drop-shadow(0 0 1.5px #ffd84a)}
+.pepmap .pepmi{transform-box:fill-box;transform-origin:center} .pepmap .pepmi.on{animation:pepmi 1.4s ease-in-out infinite;filter:drop-shadow(0 0 3px #fff6a0)} @keyframes pepmi{50%{transform:scale(1.15)}}
+.tp2.pepboj{filter:brightness(.45) drop-shadow(0 .4vh .5vh rgba(0,0,0,.4));transition:filter .6s} .pepboj svg{display:block;width:100%;overflow:visible}
+.pepboj>.bb{animation:pepbj 2.8s ease-in-out infinite} @keyframes pepbj{50%{transform:translateY(-4%) rotate(3deg)}}
+.tp2.pepboj.found{filter:drop-shadow(0 0 1.6vh rgba(255,240,170,.95)) drop-shadow(0 0 4vh rgba(255,210,120,.7))}
+.pepboj .peplt rect{transition:fill .6s} .pepboj.found .peplt rect{fill:#fff6c8}
+.tp2.pepfog{filter:blur(2.6vh);pointer-events:none;z-index:4} .pepfog svg{display:block;width:100%;animation:pepfg 9s ease-in-out infinite alternate} @keyframes pepfg{to{transform:translateX(6%)}}
+.tp2.pepins{filter:drop-shadow(0 0 2vh rgba(160,190,255,.35));--gl:.25} .pepins svg{display:block;width:100%;overflow:visible}
+.pepins .pepbd{opacity:var(--gl);animation:pepbd 3s ease-in-out infinite} @keyframes pepbd{50%{filter:brightness(1.5)}}
+.pepins .pepcg{animation:pepcg 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center} @keyframes pepcg{50%{opacity:.6;transform:scale(.9)}}
+.pepglz{position:absolute;top:62%;bottom:-6%;translate:-50% 0;pointer-events:none;opacity:0;transition:opacity 2.4s;
+  background:repeating-linear-gradient(180deg,rgba(255,250,220,.0) 0,rgba(255,250,220,.0) 1.2vh,rgba(255,250,220,.8) 1.4vh,rgba(255,250,220,.0) 2vh);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);animation:pepglz 2s linear infinite}
+.pepglz.on{opacity:.75} @keyframes pepglz{to{background-position:0 2vh}}
+.tp2.pepzone{filter:none}
+.pephg{position:absolute;left:38%;top:38%;width:62%;height:62%;pointer-events:none}
+.tp2.pepblu{filter:brightness(.6);transition:filter .8s} .pepblu svg{display:block;width:100%;overflow:visible}
+.pepblu>.bb{transform-origin:50% 100%;animation:pepsw 3.4s ease-in-out infinite;animation-delay:var(--d,0s)} @keyframes pepsw{50%{transform:rotate(3deg)}}
+.pepblu .pepbo{opacity:0;transform:scale(.3);transform-box:view-box;transform-origin:30px 30px;transition:opacity .6s,transform .8s cubic-bezier(.3,1.6,.5,1)} .pepblu .pepbz{transition:opacity .5s}
+.pepblu.on .pepbo{opacity:1;transform:none} .pepblu.on .pepbz{opacity:0}
+.tp2.pepblu.on{filter:drop-shadow(0 0 1.2vh rgba(255,240,255,.95)) drop-shadow(0 0 3vh rgba(200,170,255,.8))}
+.tp2.peptor{filter:drop-shadow(0 0 2vh rgba(170,210,255,.6))} .peptor svg{display:block;width:100%;overflow:visible}
+.peptor .pepdl{transform-box:view-box;transform-origin:44px 150px;transition:transform 2.4s ease-in-out,opacity 2.4s} .peptor .pepdr{transform-box:view-box;transform-origin:156px 150px;transition:transform 2.4s ease-in-out,opacity 2.4s}
+.peptor.open .pepdl,.peptor.open .pepdr{transform:scaleX(.12);opacity:.35}
+.peptor .pepin{opacity:.18;transition:opacity 2.4s} .peptor.open .pepin{opacity:1}
+.tp2.pepsl{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.3));transition:filter .5s} .pepsl svg{display:block;width:100%;overflow:visible}
+.pepsl .pepsf{opacity:.22;transition:opacity .5s} .pepsl.on .pepsf{opacity:1} .tp2.pepsl.on{filter:drop-shadow(0 0 1.2vh #fff) drop-shadow(0 0 3vh rgba(255,240,180,.9))}
+.pepsl>.bb{animation:pepsl 2s ease-in-out infinite} @keyframes pepsl{50%{transform:scale(1.07)}} .pepsl.on>.bb{animation:none}
+.tp2.pepmb{filter:drop-shadow(0 0 2vh rgba(220,210,255,.6));--op:0} .pepmb svg{display:block;width:100%;overflow:visible}
+.pepmb .peppt{transform-box:view-box;transform-origin:100px 96px;transform:rotate(calc((var(--a0) * (1 - var(--op)) + var(--a1) * var(--op)) * 1deg)) scale(calc(.95 + var(--op) * .1),calc(1 - var(--op) * .1))}
+.pepmb .pepmg{opacity:calc(.25 + var(--op) * .75)} .pepmb .pepmc{transform-box:view-box;transform-origin:100px 96px;transform:scale(var(--op))}
+.pepmb>.bb{animation:pepmbb 3.6s ease-in-out infinite} @keyframes pepmbb{50%{transform:translateY(-1%)}}
+.tp2.pepli{filter:drop-shadow(0 0 1vh #fff) drop-shadow(0 0 2.6vh rgba(210,190,255,.95))} .pepli svg{display:block;width:100%;overflow:visible}
+.pepli>.bb{animation:pepli 2.2s ease-in-out infinite} @keyframes pepli{50%{transform:translateY(-10%) rotate(6deg)}}
+.pepheim{position:absolute;inset:0;opacity:0;transition:opacity 1.8s;z-index:8;pointer-events:none} .pepheim.on{opacity:1} .pepheim svg{display:block;width:100%;height:100%}
+.pepheim .pepwl2{animation:pepwl 2.2s ease-in-out infinite;filter:drop-shadow(0 0 3px #fff)} @keyframes pepwl{50%{opacity:.6}}
+.ill .pepart .pepc>.bb,.ill .pepart .eef>.bb{animation:none}
+.pepart .pepins{position:absolute;filter:drop-shadow(0 0 1.4vh rgba(160,190,255,.5));--gl:1}
+/*<PEPPIOCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -3529,7 +3602,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -9393,6 +9466,515 @@ const KLONKI2={id:'klonki', v2:true, eef:1, dur:KDUR, title:'Eefje und Klonki', 
      'Und wenn er nicht verrostet ist, dann tickt sein Herz noch heute.', 1600]}
  ]};
 /*<KLONKI*/
+/*PEPPIO>*/
+/* ================= Eefje, Peppio, Niklas und die Mondinsel: drawn cast and set pieces ================= */
+/* Eefje's two friends, same size and same viewBox as eefjeSVG (head at 80,50). All their classes start with "pep" (class names are global).
+   Peppio: curly orange-red hair, freckles, green striped jumper, blue trousers, red wellies, a little drum on a strap.
+     data-arm: dn | up (cheering) | drum (two sticks; class .hit swaps them). Moods: smile, happy, oh, proud. .talking + --mo.
+   Niklas: short dark hair, round glasses, blue duffle coat with toggles, a leather satchel.
+     data-arm: dn | up | point (right hand points ahead) | map (holds the map up in front). Moods: smile, happy, worry, oh. */
+function pepArm(d,hx,hy,c,cd,k,ks){ return `<path d="${d}" stroke="${cd}" stroke-width="11" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${c}" stroke-width="7.5" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="5.2" fill="${k}" stroke="${ks}" stroke-width="2"/>`; }
+function pepFace(E,KS,opt){ const o=opt||{};
+  return `<g class="pepbl"><ellipse cx="65" cy="60" rx="5" ry="3" fill="#ff8aa0" opacity=".6"/><ellipse cx="95" cy="60" rx="5" ry="3" fill="#ff8aa0" opacity=".6"/></g>
+   <g class="pepe pepe-o"><ellipse cx="71" cy="52" rx="${o.ex||3.6}" ry="${o.ey||4.5}" fill="${E}"/><ellipse cx="89" cy="52" rx="${o.ex||3.6}" ry="${o.ey||4.5}" fill="${E}"/><circle cx="72.3" cy="50.4" r="1.4" fill="#fff"/><circle cx="90.3" cy="50.4" r="1.4" fill="#fff"/></g>
+   <g class="pepe pepe-j" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M66.5 53 q4.5 -5.6 9 0"/><path d="M84.5 53 q4.5 -5.6 9 0"/></g>
+   <g class="pepe pepe-w"><circle cx="71" cy="52" r="4.8" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="89" cy="52" r="4.8" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="71" cy="53" r="2.7" fill="${E}"/><circle cx="89" cy="53" r="2.7" fill="${E}"/></g>
+   <ellipse cx="80" cy="58.5" rx="2.3" ry="1.7" fill="#e8a888"/>
+   <path class="pepm pepm-s" d="M73 64 q7 6 14 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+   <ellipse class="pepm pepm-o" cx="80" cy="66" rx="3.2" ry="4" fill="#8a2a3a"/>
+   <path class="pepm pepm-w" d="M74 67.5 q6 -4.5 12 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+   <g class="pepm pepm-g"><path d="M70 62 Q80 76 90 62Z" fill="#8a2a3a" stroke="${E}" stroke-width="2" stroke-linejoin="round"/><path d="M71.6 63 H88.4 L87 65.4 H73Z" fill="#fff"/></g>
+   <ellipse class="pepmo" cx="80" cy="65" rx="4" ry="3.6" fill="#8a2a3a"/>`; }
+function peppioSVG(){ const id='pp'+(++LANC), K='#ffe0c8', KS='#d49478', H='#e2582a', HD='#a83a16', J='#4cae52', JD='#24743a', JL='#a6e67c', E='#2a1a2e';
+  const arm=(d,hx,hy)=>pepArm(d,hx,hy,J,JD,K,KS), st=(x1,y1,x2,y2)=>`<path d="M${x1} ${y1} L${x2} ${y2}" stroke="#7a4a22" stroke-width="3.2" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="3.6" fill="#fff2dc" stroke="#7a4a22" stroke-width="1.6"/>`;
+  const boot=(x,f)=>{ const s=f?1:-1; return `<path d="M${x-7*s} 132 V148 Q${x-7*s} 152 ${x-3*s} 152 H${x+10*s} Q${x+13*s} 152 ${x+12*s} 148 Q${x+10*s} 144 ${x+7*s} 144 V132Z" fill="#e2363a" stroke="#8a1418" stroke-width="2.2" stroke-linejoin="round"/><path d="M${x-7} 135 H${x+7}" stroke="#ff8a8a" stroke-width="1.6" opacity=".8"/>`; };
+  return `<svg viewBox="0 0 160 160" style="overflow:visible"><defs><clipPath id="${id}c"><path d="M64 74 Q80 69 96 74 L106 120 Q80 127 54 120Z"/></clipPath></defs>
+  <g class="peplg"><path d="M71 116 V136 M89 116 V136" stroke="#1e3470" stroke-width="12.5" stroke-linecap="round"/><path d="M71 116 V136 M89 116 V136" stroke="#3a5aa8" stroke-width="9" stroke-linecap="round"/>${boot(71,0)}${boot(89,1)}</g>
+  <path d="M64 74 Q80 69 96 74 L106 120 Q80 127 54 120Z" fill="${J}" stroke="${JD}" stroke-width="3" stroke-linejoin="round"/>
+  <g clip-path="url(#${id}c)" fill="${JL}" opacity=".85"><rect x="40" y="84" width="80" height="5"/><rect x="40" y="96" width="80" height="5"/><rect x="40" y="108" width="80" height="5"/></g>
+  <path d="M70 74 Q80 82 90 74" fill="none" stroke="${JD}" stroke-width="3" stroke-linecap="round"/>
+  <path d="M68 77 L104 108" stroke="#c8902e" stroke-width="3.6" stroke-linecap="round"/>
+  <g class="pepdr"><path d="M93 106 V120 Q108 126 123 120 V106" fill="#e8443a" stroke="#8a1a1a" stroke-width="2.2"/><path d="M93 109 L100 118 L108 109 L116 118 L123 109" fill="none" stroke="#ffd24a" stroke-width="2.4" stroke-linejoin="round"/>
+   <ellipse cx="108" cy="106" rx="15" ry="5.2" fill="#fff6ea" stroke="#8a1a1a" stroke-width="2.2"/><path d="M93 120 Q108 126 123 120" fill="none" stroke="#ffd24a" stroke-width="2"/></g>
+  <g class="pepa pepa-dn">${arm('M67 80 Q57 94 59 106',59,107)}${arm('M93 80 Q102 90 100 102',100,103)}</g>
+  <g class="pepa pepa-up">${arm('M67 80 Q52 70 50 50',50,48)}${arm('M93 80 Q108 70 110 50',110,48)}</g>
+  <g class="pepa pepa-drum"><g class="pepd1">${arm('M67 80 Q78 98 96 98',96,98)}${st(96,98,104,104)}${arm('M93 80 Q112 76 120 84',120,84)}${st(120,84,128,72)}</g>
+   <g class="pepd2">${arm('M67 80 Q76 92 92 88',92,88)}${st(92,88,88,76)}${arm('M93 80 Q110 96 118 98',118,98)}${st(118,98,112,104)}</g></g>
+  <g class="peph"><circle cx="55" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/><circle cx="105" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/>
+   <circle cx="80" cy="50" r="25" fill="${K}" stroke="${KS}" stroke-width="2.6"/>
+   <g fill="${H}" stroke="${HD}" stroke-width="2">${[[58,42,8],[60,32,8.6],[68,25,9.4],[79,22,9.8],[90,24,9.4],[99,31,8.6],[103,41,7.2],[73,30,7],[86,29,7]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>
+   <g fill="none" stroke="#ff9a6a" stroke-width="1.6" stroke-linecap="round" opacity=".8"><path d="M64 28 q3 -3 6 -1"/><path d="M82 19 q3 -2 6 0"/><path d="M95 26 q3 -1 4 2"/></g>
+   <path d="M62 40 Q70 33 78 38 Q86 32 96 39" fill="none" stroke="${HD}" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+   <g fill="#d9845a" opacity=".8"><circle cx="66" cy="58" r="1.1"/><circle cx="69.5" cy="60.6" r="1.1"/><circle cx="64.4" cy="61.4" r="1"/><circle cx="94" cy="58" r="1.1"/><circle cx="90.5" cy="60.6" r="1.1"/><circle cx="95.6" cy="61.4" r="1"/></g>
+   ${pepFace(E,KS)}</g></svg>`; }
+function niklasSVG(){ const K='#ffe4d0', KS='#d09a7e', H='#3a2a24', HD='#1e1410', C='#3a6ad0', CD='#1c3a86', T='#f0d49a', E='#2a1a2e';
+  const arm=(d,hx,hy)=>pepArm(d,hx,hy,C,CD,K,KS), tog=(y)=>`<rect x="76.6" y="${y}" width="7" height="3.2" rx="1.6" fill="${T}" stroke="#8a6a3a" stroke-width="1"/>`;
+  return `<svg viewBox="0 0 160 160" style="overflow:visible">
+  <g class="peplg"><path d="M72 124 V140 M88 124 V140" stroke="#4a3220" stroke-width="12" stroke-linecap="round"/><path d="M72 124 V140 M88 124 V140" stroke="#7a5638" stroke-width="8.6" stroke-linecap="round"/>
+   <path d="M64 139 Q63 151 73 150 L79 150 Q82 149 80 144 Q76 143 76 138Z" fill="#3a2a22" stroke="#140c08" stroke-width="2"/><path d="M96 139 Q97 151 87 150 L81 150 Q78 149 80 144 Q84 143 84 138Z" fill="#3a2a22" stroke="#140c08" stroke-width="2"/></g>
+  <path d="M60 76 Q80 66 100 76 Q104 70 98 66 Q80 58 62 66 Q56 70 60 76Z" fill="#2e58b8" stroke="${CD}" stroke-width="2.4"/>
+  <path d="M64 74 Q80 69 96 74 L107 128 Q80 134 53 128Z" fill="${C}" stroke="${CD}" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 74 V130" stroke="${CD}" stroke-width="2" opacity=".6"/>${tog(86)}${tog(98)}${tog(110)}
+  <path d="M55 120 Q80 126 105 120" stroke="${CD}" stroke-width="1.6" fill="none" opacity=".5"/>
+  <path d="M93 76 L58 114" stroke="#7a4a1e" stroke-width="3.6" stroke-linecap="round"/>
+  <g class="pepsat"><rect x="42" y="108" width="26" height="20" rx="4" fill="#a8642a" stroke="#5a3414" stroke-width="2.2"/><path d="M42 113 Q55 120 68 113 V110 Q68 108 66 108 H44 Q42 108 42 110Z" fill="#c07a3a" stroke="#5a3414" stroke-width="1.8"/><rect x="53" y="114" width="4" height="5" rx="1" fill="#ffd24a" stroke="#7a5a1a" stroke-width="1"/></g>
+  <g class="pepa pepa-dn">${arm('M67 80 Q57 94 59 108',59,109)}${arm('M93 80 Q103 94 101 108',101,109)}</g>
+  <g class="pepa pepa-up">${arm('M67 80 Q52 70 50 50',50,48)}${arm('M93 80 Q108 70 110 50',110,48)}</g>
+  <g class="pepa pepa-point">${arm('M67 80 Q57 94 59 108',59,109)}${arm('M93 80 Q110 74 124 62',124,61)}<path d="M126 59 L133 53" stroke="${K}" stroke-width="3.4" stroke-linecap="round"/><path d="M126 59 L133 53" stroke="${KS}" stroke-width="1" stroke-linecap="round" opacity=".5"/></g>
+  <g class="pepa pepa-map">${arm('M67 80 Q60 96 68 104',68,104)}${arm('M93 80 Q102 96 94 104',94,104)}
+   <g transform="rotate(-4 81 98)"><path d="M60 86 L102 86 L104 110 L62 112Z" fill="#f4e2b4" stroke="#8a6a3a" stroke-width="2" stroke-linejoin="round"/><path d="M60 86 Q58 98 62 112" stroke="#c8a870" stroke-width="2.4" fill="none"/>
+    <path d="M67 104 Q74 92 82 100 Q88 106 96 94" fill="none" stroke="#c84a2a" stroke-width="1.6" stroke-dasharray="1.4 2.4" stroke-linecap="round"/><circle cx="97" cy="93" r="2.6" fill="#ffe27a" stroke="#c8962a" stroke-width="1"/></g>
+   <circle cx="68" cy="104" r="5.2" fill="${K}" stroke="${KS}" stroke-width="2"/><circle cx="94" cy="104" r="5.2" fill="${K}" stroke="${KS}" stroke-width="2"/></g>
+  <g class="peph"><circle cx="55" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/><circle cx="105" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/>
+   <circle cx="80" cy="50" r="25" fill="${K}" stroke="${KS}" stroke-width="2.6"/>
+   <path d="M55 50 Q53 26 80 24 Q106 25 105 48 Q104 40 98 37 Q90 40 82 36 Q74 41 64 38 Q58 42 55 50Z" fill="${H}" stroke="${HD}" stroke-width="2.2" stroke-linejoin="round"/>
+   <path d="M66 30 Q76 27 86 30" stroke="#6a5048" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+   ${pepFace(E,KS,{ex:3,ey:3.8})}
+   <g fill="rgba(220,240,255,.22)" stroke="#3a3040" stroke-width="2.4"><circle cx="71" cy="52" r="7.6"/><circle cx="89" cy="52" r="7.6"/></g>
+   <path d="M78.4 51 Q80 48.6 81.6 51" fill="none" stroke="#3a3040" stroke-width="2.2"/><path d="M63.4 51 L56 49 M96.6 51 L104 49" stroke="#3a3040" stroke-width="2" stroke-linecap="round"/>
+   <path d="M66 47.6 Q68.4 46 70.6 46.4" stroke="#fff" stroke-width="1.4" fill="none" opacity=".8" stroke-linecap="round"/><path d="M84 47.6 Q86.4 46 88.6 46.4" stroke="#fff" stroke-width="1.4" fill="none" opacity=".8" stroke-linecap="round"/></g></svg>`; }
+
+/* the little rowing boat, side view, bow to the right. part 'b' = the inside behind the children, 'f' = the outer side in front of them
+   (with the water line). The rim of the near side runs from (8,34) over (110,40) to (212,16). viewBox 0 0 220 90. */
+function pepBootSVG(part){ const id='pb'+(++LANC);
+  if(part==='b') return `<svg viewBox="0 0 220 90" style="overflow:visible"><path d="M10 33 Q110 24 210 12 Q206 26 200 30 Q110 42 16 40Z" fill="#6a4426" stroke="#3e2410" stroke-width="2.4" stroke-linejoin="round"/>
+   <path d="M30 34 Q110 27 196 18" stroke="#8a5a32" stroke-width="2" fill="none" opacity=".7"/></svg>`;
+  return `<svg viewBox="0 0 220 90" style="overflow:visible"><defs><linearGradient id="${id}h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d08a46"/><stop offset=".6" stop-color="#a8642e"/><stop offset="1" stop-color="#7a4420"/></linearGradient>
+    <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(150,170,230,.15)"/><stop offset=".35" stop-color="rgba(90,110,190,.75)"/><stop offset="1" stop-color="rgba(40,50,120,.92)"/></linearGradient></defs>
+   <path d="M8 34 Q110 46 212 16 Q208 46 184 66 Q110 84 40 76 Q14 66 8 34Z" fill="url(#${id}h)" stroke="#4a2810" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M14 46 Q110 58 204 32 M22 58 Q110 70 192 48" stroke="#6a3a18" stroke-width="2" fill="none" opacity=".7"/>
+   <path d="M8 34 Q110 46 212 16" stroke="#f0b070" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+   <path d="M150 46 l3 6 6.6 .8 -4.8 4.6 1.2 6.6 -6 -3.2 -6 3.2 1.2 -6.6 -4.8 -4.6 6.6 -.8Z" fill="#ffd84a" stroke="#c8962a" stroke-width="1"/>
+   <g fill="#5a5a66" stroke="#2a2a34" stroke-width="1.4"><rect x="77" y="38" width="6" height="6" rx="1.4"/><rect x="129" y="36" width="6" height="6" rx="1.4"/></g>
+   <clipPath id="${id}c"><path d="M8 34 Q110 46 212 16 Q208 46 184 66 Q110 84 40 76 Q14 66 8 34Z"/></clipPath>
+   <path clip-path="url(#${id}c)" d="M-6 64 Q30 58 60 66 Q110 76 160 64 Q196 54 226 58 L226 92 L-6 92Z" fill="url(#${id}w)"/>
+   <path d="M12 66 Q34 60 60 66 Q110 76 160 64 Q182 58 196 58" stroke="rgba(220,230,255,.75)" stroke-width="2.2" fill="none" stroke-linecap="round" class="pepwl"/></svg>`; }
+/* an oar: a long stick with the handle at the top; the oarlock (pivot) is 17 % down. viewBox 0 0 20 200 */
+function pepRuderSVG(){ return `<svg viewBox="0 0 20 200" style="overflow:visible"><path d="M10 4 V156" stroke="#5a3418" stroke-width="7" stroke-linecap="round"/><path d="M10 4 V156" stroke="#c8884a" stroke-width="4" stroke-linecap="round"/>
+  <rect x="6.6" y="2" width="6.8" height="16" rx="3" fill="#8a5a2a"/><path d="M10 150 Q1 160 2 182 Q6 198 10 198 Q14 198 18 182 Q19 160 10 150Z" fill="#c8884a" stroke="#5a3418" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M10 160 V190" stroke="#e8b07a" stroke-width="1.6" opacity=".7"/></svg>`; }
+/* the old map. Segments .pepsg (s1..s5) of the dotted way light up one after the other; the island (.pepmi) sparkles at the end. viewBox 0 0 200 124 */
+function pepKarteSVG(){ const id='pk'+(++LANC); const seg=[['M24 96 Q40 70 62 80'],['M62 80 Q84 92 96 70'],['M96 70 Q106 48 128 56'],['M128 56 Q148 64 152 46'],['M152 46 Q158 32 170 30']];
+  return `<svg viewBox="0 0 200 124" style="overflow:visible"><defs><radialGradient id="${id}" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#fbeec8"/><stop offset=".7" stop-color="#ecd29a"/><stop offset="1" stop-color="#c8a060"/></radialGradient></defs>
+   <path d="M6 10 Q4 4 12 4 L188 6 Q196 6 195 14 L192 112 Q192 120 184 119 L14 118 Q6 118 7 110Z" fill="url(#${id})" stroke="#8a6232" stroke-width="2.6"/>
+   <path d="M6 10 Q-2 20 4 34 Q-2 50 6 64" stroke="#b88a4a" stroke-width="3" fill="none"/><path d="M195 14 Q202 26 196 40" stroke="#b88a4a" stroke-width="3" fill="none"/>
+   <path d="M46 34 Q90 18 150 26 Q190 34 186 70 Q182 104 120 106 Q60 110 40 92 Q22 70 46 34Z" fill="#9ac6e2" stroke="#5a8aaa" stroke-width="1.6" opacity=".85"/>
+   <g stroke="#6a9aba" stroke-width="1.2" fill="none" opacity=".7"><path d="M60 50 q6 -3 12 0"/><path d="M110 92 q6 -3 12 0"/><path d="M150 82 q6 -3 12 0"/><path d="M80 64 q5 -2 10 0"/></g>
+   <g fill="#5aa04a" stroke="#2e6a2a" stroke-width="1.2"><path d="M8 102 Q20 84 34 96 Q40 108 30 114 L10 114Z"/><circle cx="20" cy="98" r="4" fill="#3e8a3a"/></g>
+   <g transform="translate(22 92)"><path d="M-6 0 L0 -7 L6 0 V6 H-6Z" fill="#9a76ea" stroke="#3a1e7a" stroke-width="1.2"/></g>
+   ${seg.map(([d],i)=>`<path class="pepsg s${i+1}" d="${d}" fill="none" stroke="#c84a2a" stroke-width="2.6" stroke-dasharray="2.4 3.6" stroke-linecap="round"/>`).join('')}
+   <g class="pepmi"><ellipse cx="172" cy="30" rx="13" ry="6.4" fill="#6aa86a" stroke="#2e6a2a" stroke-width="1.4"/><path d="M164 28 Q172 18 180 28" fill="#8ac87a" stroke="#2e6a2a" stroke-width="1.2"/>
+    <circle cx="172" cy="12" r="6" fill="#fff6c0" stroke="#e8c84a" stroke-width="1.4"/><path d="M167 10 Q170 13 167 16" fill="#e8c84a" opacity=".8"/></g>
+   <g transform="translate(176 96)" stroke="#8a6232" stroke-width="1.2" fill="none"><circle r="9"/><path d="M0 -12 V12 M-12 0 H12"/><path d="M0 -9 L2 0 L0 9 L-2 0Z" fill="#c84a2a"/></g></svg>`; }
+/* a buoy with a lantern on top (it lights when the light finds it) */
+function pepBojeSVG(){ return `<svg viewBox="0 0 60 90" style="overflow:visible"><path d="M30 6 V30" stroke="#4a4a56" stroke-width="3"/>
+  <g class="peplt"><rect x="22" y="8" width="16" height="16" rx="3" fill="#ffe8a0" stroke="#4a4a56" stroke-width="2.4"/><path d="M20 8 H40 L36 2 H24Z" fill="#4a4a56"/><circle cx="30" cy="16" r="4.4" fill="#fff6c8"/></g>
+  <path d="M12 70 Q10 40 30 30 Q50 40 48 70Z" fill="#e8443a" stroke="#7a1414" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M14 48 Q30 42 46 48 L47 58 Q30 52 13 58Z" fill="#fff" stroke="#7a1414" stroke-width="1.6"/>
+  <ellipse cx="30" cy="70" rx="22" ry="6" fill="#5a2a2a" stroke="#2a1010" stroke-width="2"/>
+  <path d="M2 76 Q16 70 30 76 Q44 82 58 76 L58 90 L2 90Z" fill="rgba(40,60,120,.85)"/><path d="M2 76 Q16 70 30 76 Q44 82 58 76" stroke="rgba(200,215,255,.6)" stroke-width="1.6" fill="none"/></svg>`; }
+/* a soft fog bank (a CSS-blurred blob) */
+function pepNebelSVG(){ return `<svg viewBox="0 0 200 80" style="overflow:visible"><g fill="#e8eaf6"><ellipse cx="60" cy="48" rx="56" ry="24"/><ellipse cx="120" cy="40" rx="64" ry="28"/><ellipse cx="160" cy="52" rx="40" ry="20"/><ellipse cx="96" cy="58" rx="80" ry="18"/></g></svg>`; }
+/* the moon island: a green hill with sleeping flowers, a little tree, sand at the edge and, far up, a tiny crystal glint. viewBox 0 0 300 170 */
+function pepInselSVG(){ const id='pi'+(++LANC), r=seeded(77);
+  let buds=''; for(let i=0;i<14;i++){ const x=50+r()*200, y=118-Math.max(0,60-Math.abs(x-150)*.55)*r()*.9-6; buds+=`<g class="pepbd" style="animation-delay:${(-r()*3).toFixed(2)}s"><path d="M${x.toFixed(1)} ${(y+6).toFixed(1)} V${(y+12).toFixed(1)}" stroke="#2a5a4a" stroke-width="1.4"/><ellipse cx="${x.toFixed(1)}" cy="${(y+4).toFixed(1)}" rx="2.6" ry="3.8" fill="#d8d0ff"/></g>`; }
+  return `<svg viewBox="0 0 300 170" style="overflow:visible"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ab89a"/><stop offset=".5" stop-color="#3a8070"/><stop offset="1" stop-color="#22504a"/></linearGradient>
+    <radialGradient id="${id}c" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".4" stop-color="#bfe8ff" stop-opacity=".6"/><stop offset="1" stop-color="#9ad0ff" stop-opacity="0"/></radialGradient></defs>
+   <path d="M0 150 Q20 128 60 120 L240 118 Q280 126 300 150 L300 172 L0 172Z" fill="#e8d6a2" stroke="#a8904e" stroke-width="2.4"/>
+   <path d="M18 138 Q40 96 96 76 Q130 30 166 34 Q208 40 228 82 Q270 100 284 140 Q150 156 18 138Z" fill="url(#${id}g)" stroke="#1e4a40" stroke-width="2.6" stroke-linejoin="round"/>
+   <path d="M60 110 Q110 92 150 100 Q200 108 250 104" stroke="#8ad0b0" stroke-width="2" fill="none" opacity=".5"/>
+   <g><path d="M72 104 Q74 90 72 78" stroke="#4a3a2a" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="72" cy="68" r="16" fill="#2e6e58" stroke="#1a4436" stroke-width="2"/><circle cx="64" cy="64" r="8" fill="#4a9a7a" opacity=".7"/></g>
+   <g fill="#8a8aa0" stroke="#4a4a5e" stroke-width="1.4"><ellipse cx="230" cy="124" rx="10" ry="6"/><ellipse cx="244" cy="128" rx="6" ry="4"/></g>
+   ${buds}
+   <g class="pepcg"><circle cx="166" cy="26" r="22" fill="url(#${id}c)"/><path d="M158 34 V18 L166 8 L174 18 V34" fill="#cfeaff" stroke="#7ab0e0" stroke-width="1.6" stroke-linejoin="round" opacity=".9"/></g></svg>`; }
+/* a flower of the island: asleep it is a closed bud, awake (.on) it opens and glows. viewBox 0 0 60 80 */
+function pepBlumeSVG(c){ const C=c||'#c8a8ff'; return `<svg viewBox="0 0 60 80" style="overflow:visible"><path d="M30 78 Q28 60 30 42" stroke="#2a6a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M30 64 Q16 56 12 62 Q20 70 30 66Z M30 58 Q44 48 48 54 Q40 62 30 60Z" fill="#3a8a5a" stroke="#1e5a3a" stroke-width="1.2"/>
+  <g class="pepbz"><path d="M30 44 Q20 32 30 16 Q40 32 30 44Z" fill="#8a80b8" stroke="#4a4078" stroke-width="1.6"/><path d="M30 44 Q24 34 30 22" stroke="#b0a8e0" stroke-width="1.4" fill="none"/></g>
+  <g class="pepbo">${[0,60,120,180,240,300].map(a=>`<path d="M30 30 Q22 18 30 6 Q38 18 30 30Z" transform="rotate(${a} 30 30)" fill="${C}" stroke="#fff" stroke-width="1"/>`).join('')}<circle cx="30" cy="30" r="5.4" fill="#fff6c0" stroke="#ffd84a" stroke-width="1.4"/></g></svg>`; }
+/* the crystal gate on the hill: two pillars, an arch of crystal points, two door panes (.pepdl/.pepdr) that slide open. viewBox 0 0 200 240 */
+function pepTorSVG(){ const id='pt'+(++LANC);
+  const pil=(x)=>`<path d="M${x} 236 V70 L${x+14} 52 L${x+28} 70 V236Z" fill="url(#${id}c)" stroke="#6aa0d8" stroke-width="2.2" stroke-linejoin="round"/><path d="M${x+14} 52 V236" stroke="#fff" stroke-width="1.6" opacity=".6"/><path d="M${x+5} 80 L${x+9} 74 V200" stroke="#fff" stroke-width="1.4" opacity=".55" fill="none"/>`;
+  const pts=[[46,60,10],[64,40,13],[84,28,16],[100,22,20],[116,28,16],[136,40,13],[154,60,10]];
+  return `<svg viewBox="0 0 200 240" style="overflow:visible"><defs><linearGradient id="${id}c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f6ff"/><stop offset=".5" stop-color="#9ad0f4"/><stop offset="1" stop-color="#5a8ad0"/></linearGradient>
+    <linearGradient id="${id}p" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="rgba(220,240,255,.75)"/><stop offset="1" stop-color="rgba(140,180,240,.55)"/></linearGradient>
+    <radialGradient id="${id}l" cx="50%" cy="60%" r="55%"><stop offset="0" stop-color="#fffbe8"/><stop offset=".45" stop-color="#e8f0ff" stop-opacity=".85"/><stop offset="1" stop-color="#c8d8ff" stop-opacity="0"/></radialGradient></defs>
+   <ellipse class="pepin" cx="100" cy="150" rx="70" ry="96" fill="url(#${id}l)"/>
+   <path d="M38 236 V100 Q38 56 100 52 Q162 56 162 100 V236" fill="none" stroke="url(#${id}c)" stroke-width="10"/>
+   ${pts.map(([x,y,h])=>`<path d="M${x-6} ${y+10} L${x} ${y-h} L${x+6} ${y+10}Z" fill="url(#${id}c)" stroke="#6aa0d8" stroke-width="1.6" stroke-linejoin="round"/>`).join('')}
+   <g class="pepdl"><path d="M44 236 V104 Q46 66 100 62 V236Z" fill="url(#${id}p)" stroke="#7ab0e0" stroke-width="2"/><path d="M60 120 L72 106 L84 120 L72 134Z M60 180 L72 166 L84 180 L72 194Z" fill="rgba(255,255,255,.5)"/></g>
+   <g class="pepdr"><path d="M156 236 V104 Q154 66 100 62 V236Z" fill="url(#${id}p)" stroke="#7ab0e0" stroke-width="2"/><path d="M140 120 L128 106 L116 120 L128 134Z M140 180 L128 166 L116 180 L128 194Z" fill="rgba(255,255,255,.5)"/></g>
+   ${pil(18)}${pil(154)}</svg>`; }
+/* one lock on the gate, in its friend's colour; .on = it glows */
+function pepSchlossSVG(c){ return `<svg viewBox="0 0 40 40" style="overflow:visible"><circle cx="20" cy="20" r="17" fill="rgba(240,248,255,.6)" stroke="${c}" stroke-width="4"/>
+  <circle class="pepsf" cx="20" cy="20" r="13" fill="${c}"/><circle cx="20" cy="17" r="4" fill="#2a2a40"/><path d="M17.4 18 L16 28 H24 L22.6 18Z" fill="#2a2a40"/><path d="M10 12 Q14 7 20 6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" opacity=".8"/></svg>`; }
+/* the moon-flower: 8 petals (.pepp1..8) around (100,96) that open with --op (0 closed bud .. 1 wide open), a glow in the middle. viewBox 0 0 200 220 */
+function pepMondblumeSVG(){ const id='pm'+(++LANC), A0=[-26,-18,-9,-3,3,9,18,26], A1=[-157,-112,-67,-22,22,67,112,157];
+  return `<svg viewBox="0 0 200 220" style="overflow:visible"><defs><linearGradient id="${id}p" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#b8a8f0"/><stop offset=".6" stop-color="#e8e2ff"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+    <radialGradient id="${id}g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffbe0"/><stop offset=".4" stop-color="#ffeaa0" stop-opacity=".8"/><stop offset="1" stop-color="#ffd870" stop-opacity="0"/></radialGradient></defs>
+   <path d="M100 220 Q92 170 100 110" stroke="#2e7a5a" stroke-width="7" fill="none" stroke-linecap="round"/>
+   <path d="M98 190 Q60 170 44 184 Q66 204 98 196Z" fill="#3a9a6a" stroke="#1e5a3a" stroke-width="2"/><path d="M98 160 Q140 136 160 150 Q134 172 98 166Z" fill="#3a9a6a" stroke="#1e5a3a" stroke-width="2"/>
+   <circle class="pepmg" cx="100" cy="96" r="70" fill="url(#${id}g)"/>
+   ${A0.map((a,i)=>`<path class="peppt" style="--a0:${a};--a1:${A1[i]}" d="M100 96 Q72 60 100 18 Q128 60 100 96Z" fill="url(#${id}p)" stroke="#8a7ad0" stroke-width="2" stroke-linejoin="round"/>`).join('')}
+   <g class="pepmc"><circle cx="100" cy="96" r="13" fill="#fff6c0" stroke="#ffd84a" stroke-width="2"/><circle cx="96" cy="92" r="4" fill="#fff"/></g></svg>`; }
+/* a glowing petal (the treasure every friend takes home) */
+function pepLichtSVG(){ return `<svg viewBox="0 0 30 40" style="overflow:visible"><path d="M15 38 Q2 22 15 2 Q28 22 15 38Z" fill="#f4f0ff" stroke="#fff" stroke-width="1.4"/><path d="M15 32 Q8 22 15 10" stroke="#c8b8ff" stroke-width="1.6" fill="none"/></svg>`; }
+/* home at night: three little houses on a hill, a light in every window; Socke sits in Eefje's window. viewBox 0 0 400 225 */
+function pepHeimSVG(){ const r=seeded(31); let st=''; for(let i=0;i<46;i++) st+=`<circle cx="${(r()*400).toFixed(1)}" cy="${(r()*120).toFixed(1)}" r="${(.5+r()*1.2).toFixed(2)}" fill="#fff" opacity="${(.4+r()*.6).toFixed(2)}"/>`;
+  const win=(k,x,y,w,h)=>`<g class="pepw pepw${k}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="2" fill="#ffd87a" stroke="#4a3020" stroke-width="2"/><path d="M${x+w/2} ${y+h*.82} Q${x+w/2-5} ${y+h*.5} ${x+w/2} ${y+h*.18} Q${x+w/2+5} ${y+h*.5} ${x+w/2} ${y+h*.82}Z" fill="#fff" class="pepwl2"/></g>`;
+  return `<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="pephs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060824"/><stop offset=".6" stop-color="#141a52"/><stop offset="1" stop-color="#2a2e74"/></linearGradient></defs>
+   <rect width="400" height="225" fill="url(#pephs)"/>${st}<circle cx="330" cy="40" r="18" fill="#fff6d0"/><circle cx="330" cy="40" r="30" fill="#fff6d0" opacity=".15"/>
+   <path d="M0 160 Q100 120 200 134 Q300 146 400 120 V225 H0Z" fill="#1a3a3a"/><path d="M0 182 Q120 160 220 172 Q320 182 400 166 V225 H0Z" fill="#12282a"/>
+   <g transform="translate(40 96)"><path d="M6 76 L8 34 L64 30 L68 76Z" fill="#c8b8a0" stroke="#3a2a20" stroke-width="2"/><path d="M-2 38 Q20 14 36 -6 Q42 -12 50 -8 Q46 0 46 6 Q60 22 76 36 Q40 30 -2 38Z" fill="#5a3a9a" stroke="#2a1a4a" stroke-width="2"/>
+    ${win(1,22,44,20,18)}<g transform="translate(26 50)"><ellipse cx="6" cy="10" rx="6" ry="5" fill="#1e1a2c"/><circle cx="6" cy="3" r="4.6" fill="#1e1a2c"/><path d="M2.4 0 L2 -4 L5 -1Z M9.6 0 L10 -4 L7 -1Z" fill="#1e1a2c"/><circle cx="4.4" cy="3" r="1.1" fill="#9ae04a"/><circle cx="7.6" cy="3" r="1.1" fill="#9ae04a"/></g></g>
+   <g transform="translate(170 104)"><path d="M4 70 V28 H62 V70Z" fill="#e8d8c0" stroke="#3a2a20" stroke-width="2"/><path d="M-4 30 L33 4 L70 30Z" fill="#c8402a" stroke="#5a1a10" stroke-width="2"/>${win(2,22,36,20,18)}<rect x="44" y="50" width="12" height="20" fill="#7a4a2a" stroke="#3a2010" stroke-width="1.6"/></g>
+   <g transform="translate(290 92)"><path d="M4 72 V30 H58 V72Z" fill="#d8dce8" stroke="#2a2a3a" stroke-width="2"/><path d="M-4 32 L31 6 L66 32Z" fill="#3a5ab8" stroke="#1a2a5a" stroke-width="2"/><rect x="40" y="0" width="8" height="18" fill="#6a6a7a" stroke="#2a2a3a" stroke-width="1.4"/>${win(3,20,38,20,18)}</g></svg>`; }
+Object.assign(SVGP,{PEPINSEL:[pepInselSVG,1.76],PEPTOR:[pepTorSVG,.83],PEPNEBEL:[pepNebelSVG,2.5]});
+Object.assign(TSYL,{WEG:'WEG',SCHATZ:'SCHATZ'});
+/* the hill on the island (scenes 5–6): sized in % of the stage (left 38 %, top 38 %, 62 % × 62 %), so the flowers can sit on it at any
+   screen shape. Surface: x = 38 + .62·sx/3, y = 38 + .62·sy/2 (viewBox 0 0 300 200) */
+function pepHuegelSVG(){ const id='ph'+(++LANC); return `<svg viewBox="0 0 300 200" preserveAspectRatio="none" style="width:100%;height:100%;overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a9282"/><stop offset=".45" stop-color="#2e6a5c"/><stop offset="1" stop-color="#163a34"/></linearGradient></defs>
+  <path d="M-20 210 L-20 176 Q60 164 110 132 Q170 92 200 52 Q222 26 250 24 Q284 26 320 46 V210Z" fill="url(#${id})"/>
+  <path d="M30 168 Q90 150 130 118 Q180 80 206 46" stroke="#7ac0a8" stroke-width="2.4" fill="none" opacity=".35" vector-effect="non-scaling-stroke"/></svg>`; }
+const pepHill=(sx,sy)=>[38+.62*sx/3, 38+.62*sy/2];
+
+Object.assign(SETS2,{
+  pepgarten:{sky:'linear-gradient(180deg,#34348a 0%,#7a54a6 32%,#e08aa2 60%,#ffc49a 82%,#ffe0b0 100%)', stars:12, dcol:'40,20,70',
+    far:sil(hills(401,236,70,'#8a6aa0')+pines(403,28,80,'#5a4a80',96)+hills(407,290,46,'#7a6a9a'),58), gnd:'linear-gradient(180deg,#6aa86a 0%,#4a8a5a 48%,#2e6a4a 100%)',
+    act:[['haus','HEXHAUS',87,49,50,'big']], mid:[['PINE',5,48,26],['🌳',14,54,16]], fore:[['🌼',3,96,9],['🌷',97,95,9],['🌸',58,104,9]]},
+  pepsee:{sky:'linear-gradient(180deg,#22286e 0%,#4e3e8e 36%,#b6709a 66%,#f0a88e 86%,#ffcfa0 100%)', stars:18, dcol:'30,20,70',
+    far:sil(hills(411,330,26,'#4a3a7a')+pines(413,46,34,'#3a2e6a',18),30), sea:{top:60,c:['#b07aa8','#5a4a96','#262864'],crest:'#d8a0c0'}},
+  pepnebel:{sky:'linear-gradient(180deg,#0a0c2a 0%,#1c2050 50%,#3a3e70 100%)', stars:6, dcol:'8,10,30',
+    sea:{top:58,c:['#4a5080','#2a305e','#121838'],crest:'#6a70a0'}, fog:[[44,12,.8],[54,14,.75],[66,12,.8],[78,10,.7]]},
+  pepmondsee:{sky:'linear-gradient(180deg,#05061e 0%,#10164a 55%,#283478 100%)', stars:70, dcol:'6,8,30',
+    sea:{top:62,c:['#7a88d0','#36468e','#121a4e'],crest:'#b8c4f4'}},
+  pepinsel:{sky:'linear-gradient(180deg,#04051c 0%,#0e1448 55%,#26327a 100%)', stars:80, dcol:'6,8,30',
+    far:sil(hills(421,252,56,'#1c2660')+hills(423,300,30,'#16204e'),46), gnd:'linear-gradient(180deg,#3e8272 0%,#28604e 50%,#143430 100%)',
+    mid:[['PINE',4,50,20]], fore:[['🌿',3,97,14],['🌾',97,97,14]]},
+  pephuegel:{sky:'linear-gradient(180deg,#04051c 0%,#121a52 55%,#2e3a86 100%)', stars:90, dcol:'6,8,30',
+    far:sil(hills(431,300,30,'#1a2458'),30), gnd:'linear-gradient(180deg,#468a7a 0%,#2c6454 50%,#163a34 100%)', fore:[['🌿',3,97,14],['🌾',97,97,14]]},
+  pepmondhain:{sky:'linear-gradient(180deg,#0a0626 0%,#2a1a5e 50%,#4a3a8e 100%)', stars:110, dcol:'14,8,40',
+    far:sil(hills(441,250,70,'#2a2060')+hills(443,296,40,'#221a54'),50), gnd:'linear-gradient(180deg,#5a8aa0 0%,#3a5e7e 50%,#1e3450 100%)',
+    mid:[['💎',10,62,7],['💎',90,60,8],['💎',80,66,5]], fore:[['🌿',3,97,14],['💎',96,97,8],['🌾',50,104,12]]}
+});
+
+/* ---------- sounds: a little drum, a splash, the buoy bell ---------- */
+const PEPA={loop:false};
+const pepLate=()=>!tale||tale.t!==PEPPIO2||!taleOn();
+function pepDrum(v,x){ const ac=feeAC(); if(!ac||pepLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x); v=v||.22;
+  const o=ac.createOscillator(), g=ac.createGain(); o.type='sine'; o.frequency.setValueAtTime(150,t); o.frequency.exponentialRampToValueAtTime(58,t+.18);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.006); g.gain.exponentialRampToValueAtTime(.0005,t+.34); o.connect(g); g.connect(out); o.start(t); o.stop(t+.4);
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); const lp=ac.createBiquadFilter(); lp.type='bandpass'; lp.frequency.value=1600; lp.Q.value=.8; const ng=ac.createGain();
+  ng.gain.setValueAtTime(v*.5,t); ng.gain.exponentialRampToValueAtTime(.0005,t+.07); n.connect(lp); lp.connect(ng); ng.connect(out); n.start(t); n.stop(t+.1); }catch(e){} }
+function pepPlatsch(x,v){ const ac=feeAC(); if(!ac||pepLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x); v=v||.12;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type='bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(1800,t); bp.frequency.exponentialRampToValueAtTime(420,t+.3);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.02); g.gain.exponentialRampToValueAtTime(.0005,t+.38); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+.42); }catch(e){} }
+function pepBell(x,k){ chimeAt([[1568,2093],[1760,2349],[2093,2637]][(k||0)%3],x); }
+
+/* ---------- helpers ---------- */
+/* one frame loop per scene: things that follow (the ribbon, the scrolling shore, the rising island) */
+function pepEvery(fn){ if(!TB) return; (TB.pepf=TB.pepf||[]).push(fn); if(TB.pepOn) return; TB.pepOn=1; const sc=TB.sc; let t0=now();
+  const st=()=>{ if(!TB||TB.sc!==sc||pepLate()) return; const t=now(), dt=Math.min(.05,(t-t0)/1000); t0=t; TB.pepf.forEach(f=>{ try{ f(dt); }catch(e){} }); requestAnimationFrame(st); }; requestAnimationFrame(st); }
+function pepHit(){ const P=TB&&TB.els.peppio; if(!P) return; P.classList.toggle('hit'); const [x,y]=relEl(P,[.675,.66]); pepDrum(.2,x); fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*10*vu(),vy:-8*vu(),life:.45,s:.7,c:'rgba(255,226,122,.95)'}); }
+function pepRoll(n,ms){ for(let i=0;i<(n||3);i++) bLater(pepHit,i*(ms||330)); }
+function pepArmSet(id,a){ const e=TB&&TB.els[id]; if(e) e.dataset.arm=a; if(id==='peppio') TST.pea=a; if(id==='niklas') TST.nia=a; }
+function pepHop(id){ const e=TB&&TB.els[id]; if(!e) return; e.classList.remove('pephop'); void e.offsetWidth; e.classList.add('pephop'); }
+/* the boat: the scroll of the shore while rowing, the little surge and bob */
+function pepBoatLoop(){ pepEvery(dt=>{ const u=vu(); TB.pV=(TB.pV||0)*Math.exp(-1.3*dt); const v=Math.max(TB.pV,TB.pIdle||0); TB.pS=(TB.pS||0)+v*u*dt;
+  if(TB.pscr) TB.pscr.style.transform=`translateX(${(-TB.pS).toFixed(1)}px)`; if(TB.pscf) TB.pscf.style.transform=`translateX(${(-TB.pS*1.6).toFixed(1)}px)`;
+  const B=TB.els.boot; if(B){ B.style.rotate=(-Math.min(4,TB.pV*.12)).toFixed(2)+'deg'; if(v>2&&Math.random()<v*.02){ const [x,y]=relEl(B,[.02+Math.random()*.1,.78]); fxAdd({k:'spark',x,y,vx:-(10+Math.random()*10)*u,vy:-2*u,life:.6,s:.6,c:'rgba(220,230,255,.8)'}); } } }); }
+/* the ribbon from the bow to the unicorn's mouth */
+function pepBand(){ pepEvery(()=>{ const R=TB.els.band, B=TB.els.boot, U=TB.els.uni; if(!R||!B||!U) return; const [x0,y0]=relEl(B.querySelector('.pepbk'),[.955,.16]), ub=U.querySelector('.ub')||U, [x1,y1]=relEl(ub,TB.uMouth||[.86,.36]);
+  const [px,py]=wpos(x0,y0), d=Math.hypot(x1-x0,y1-y0), a=Math.atan2(y1-y0,x1-x0)*57.3; R.style.left=px+'%'; R.style.top=py+'%'; R.style.width=d+'px'; R.style.rotate=a.toFixed(1)+'deg'; }); }
+/* the shore that slides by while she rows: reeds and lily pads in two layers (act: behind the boat, fore: in front) */
+function pepShore(){ const S=el('div','pepscr'), F=el('div','pepscr'), r=seeded(5);
+  for(let i=0;i<34;i++){ const x=-10+i*14+r()*6, y=63+r()*7, e=prop(r()<.6?'SCHILF':'SEEROSE',x,y,6+r()*5,'m-e'); S.appendChild(e); }
+  for(let i=0;i<14;i++){ const x=-6+i*34+r()*10; F.appendChild(prop(r()<.5?'SCHILF':'SEEBL',x,96+r()*5,9+r()*5,'m-e')); }
+  (TB.sea||TB.act.firstChild).after(S); TB.st.querySelector('.l-fore').appendChild(F); TB.pscr=S; TB.pscf=F; }
+/* an oar stroke: dip, pull, back */
+function pepOar(i){ const O=TB.els['oar'+i]; if(!O) return; const s=i?-1:1, a0=TB.oarA||60; O.getAnimations().forEach(q=>q.cancel());
+  try{ O.animate([{rotate:s*a0+'deg'},{rotate:s*(a0-10)+'deg',offset:.2},{rotate:s*(a0+16)+'deg',offset:.7},{rotate:s*a0+'deg'}],{duration:620,easing:'ease-in-out'}); }catch(e){}
+  bLater(()=>{ const bl=O.querySelector('svg'), [x,y]=relEl(bl,[.5,.96]), u=vu(); dingRing(x,y+u*1.4,u*9,'rgba(220,230,255,.9)'); pepPlatsch(x);
+    for(let k=0;k<7;k++) fxAdd({k:'spark',x:x+(Math.random()-.5)*u*3,y,vx:(Math.random()-.5)*22*u,vy:-(8+Math.random()*12)*u,life:.6+Math.random()*.4,s:.5+Math.random()*.5,c:rnd(['rgba(220,235,255,.95)','rgba(255,255,255,.95)'])}); },140); }
+/* the moon rises (scene 4) */
+function pepMoonUp(y0,y1,ms){ const M=TB.els.mond; if(!M) return; M.style.transition='none'; M.style.top=y0+'%'; void M.offsetWidth; M.style.transition=`top ${ms}ms cubic-bezier(.3,.6,.3,1)`; M.style.top=y1+'%'; }
+/* water running off the island while it rises */
+function pepStreams(k){ const I=TB.els.insel; if(!I) return; const u=vu(); for(let i=0;i<(k||3);i++){ const [x,y]=relEl(I,[.08+Math.random()*.84,.5+Math.random()*.38]);
+  if(y>innerHeight*.63) continue; fxAdd({k:'fall',x,y,vx:(Math.random()-.5)*8*u,vy:4*u,g:50*u,yEnd:innerHeight*.635,life:1.6,s:.5+Math.random()*.5,ph:Math.random()*6,c:rnd(['rgba(200,220,255,.9)','rgba(255,255,255,.9)'])}); } }
+/* a petal light flies from the flower into a friend's hand and stays there */
+function pepGift(id,f,cb){ const M=TB.els.blume, K=TB.els[id]; if(!M||!K) return; const L=TB.mk('li_'+id,'pepli',pepLichtSVG(),0,0,3.4); putAt(L,...relEl(M,[.5,.44]));
+  light({el:L,r0:2,rT:7,k0:.9,kT:.9}); glitterBurst(...ctr(L),10,8); chimeAt([1568,2093],ctr(L)[0]);
+  flyStick(L,K.querySelector('.bb'),f[0],f[1],1500,14,()=>{ L.style.width='14%'; sqs(K); hearts(...ctr(L),2); if(cb) cb(); }); }
+/* jump onto something (no spin): a little arc, then it sits there */
+function pepHopOn(e,par,fx,fy,ms,cb){ const [x0,y0]=ctr(e), pr=par.getBoundingClientRect(), x1=pr.left+pr.width*fx, y1=pr.top+pr.height*fy, u=vu(); e.getAnimations().forEach(q=>q.cancel()); e.style.transition='none';
+  try{ const an=e.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${Math.min(0,y1-y0)-u*12}px)`},{transform:`translate(${x1-x0}px,${y1-y0}px)`}],{duration:ms||900,easing:'ease-in-out',fill:'forwards'});
+    an.onfinish=()=>{ if(!e.isConnected) return; stickTo(e,par,fx,fy); if(cb) cb(); }; }catch(err){ stickTo(e,par,fx,fy); if(cb) cb(); } }
+/* home: three houses at night, a little moon light in every window, Socke in Eefje's window */
+function pepHome(){ if(TB.els.heim) return; const H=el('div','pepheim',pepHeimSVG()); TB.st.appendChild(H); TB.els.heim=H; void H.offsetWidth; H.classList.add('on');
+  FX.darkT=.12; FX.L=[]; bLater(()=>{ H.querySelectorAll('.pepw').forEach((w,i)=>{ const W=w.querySelector('.pepwl2'); light({fn:()=>ctr(W),r0:0,rT:6,k0:.9,kT:.9,warm:1}); }); },900); }
+function pepTwinkle(){ const H=TB.els.heim; if(!H) return; H.querySelectorAll('.pepw').forEach((w,i)=>bLater(()=>{ const [x,y]=ctr(w); glitterBurst(x,y,8,6); chimeAt([1568+i*262],x); },i*420)); }
+
+/* ---------- the new gesture: rudern (row the boat) ----------
+   Two big oar zones on the water, left and right of the boat. A stroke = the finger moves about a.len vh (8) inside a zone; a stroke on the
+   other side than the last one counts 1, the same side again counts ½ (it still works, just more slowly); a.n pairs (5) are enough.
+   Wobbly strokes count, progress stays when the finger lifts; a tap without a stroke is a try. a:{id (the boat), n, r (zone vh), len};
+   hook rowing(side 1|2, p). The zones sit at the oar blades. */
+Object.assign(G2,{
+ rudern:{ setup(){ const a=TB.a; TB.rd={p:0,n:(a.n||5)*2,last:0,auto:false,fin:false,side:0,len:0,lx:0,ly:0,lt:0,mv:0,sx:0,sy:0,g0:0};
+     TB.rdz=[0,1].map(()=>{ const Z=el('div','pepzn on'); Z.style.width=Z.style.height=(a.r||17)*2+'vh'; TB.act.appendChild(Z); return Z; }); this.place(); g2loop(()=>this.place()); },
+   zc(i){ const B=TB.els[TB.a.id], r=B.getBoundingClientRect(); return [r.left+r.width*(i?.88:.12), r.top+r.height*.84]; },
+   place(){ TB.rdz.forEach((Z,i)=>putAt(Z,...this.zc(i))); },
+   side(x,y){ const B=TB.els[TB.a.id], r=B.getBoundingClientRect(), u=vu(), R=u*(TB.a.r||17);
+     for(let i=0;i<2;i++){ const [zx,zy]=this.zc(i); if(Math.hypot(x-zx,y-zy)<R*1.2) return i+1; }
+     if(y>r.top+r.height*.45&&x>r.left-u*24&&x<r.right+u*24) return x<r.left+r.width/2?1:2; return 0; },
+   down(x,y){ const d=TB.rd; if(d.auto||d.fin) return; d.side=this.side(x,y); d.len=0; d.lx=x; d.ly=y; d.mv=0; d.sx=x; d.sy=y; d.g0=d.p; if(d.side) poke2(); },
+   move(x,y){ const d=TB.rd; if(!TB.pd||d.auto||d.fin) return; d.mv=Math.max(d.mv,Math.hypot(x-d.sx,y-d.sy)); const s=this.side(x,y), m=Math.hypot(x-d.lx,y-d.ly); d.lx=x; d.ly=y;
+     if(s!==d.side){ d.side=s; d.len=0; return; } if(!s) return; d.len+=m; if(Math.random()<.3) fxAdd({k:'spark',x,y,vx:0,vy:-4*vu(),life:.4,s:.8,c:'rgba(220,235,255,.9)'});
+     if(d.len>=vu()*(TB.a.len||8)&&now()-d.lt>260){ d.len=0; this.stroke(s); } },
+   stroke(s){ const d=TB.rd; if(d.fin) return; d.p=Math.min(d.n,d.p+(s!==d.last?1:.5)); d.last=s; d.lt=now(); poke2();
+     const k=Math.max(0,Math.ceil(d.p)-1); chime([[523,587,659,698,784,880,988,1047,1175,1318][Math.min(9,k)]]);
+     const Z=TB.rdz[s-1]; Z.classList.remove('pepzp'); void Z.offsetWidth; Z.classList.add('pepzp');
+     if(TB.sc.rowing) TB.sc.rowing(s,d.p/d.n);
+     if(d.p>=d.n){ d.fin=true; TB.rdz.forEach(Z=>Z.classList.remove('on','g2hint')); bLater(()=>done2(),700); } },
+   up(){ const d=TB.rd; if(d.auto||d.fin) return; if(d.p===d.g0) miss2(); },
+   frames(){ const u=vu(), [x1,y1]=this.zc(0), [x2,y2]=this.zc(1);
+     return [[x1+u*7,y1+u*8,1,0],[x1+u*7,y1-u*3,.85,1],[x1-u*7,y1+u*4,.85,1],[x1-u*8,y1+u*5,1,0],[x2-u*7,y2+u*8,1,0],[x2-u*7,y2-u*3,.85,1],[x2+u*7,y2+u*4,.85,1],[x2+u*8,y2+u*5,1,0]]; },
+   hint(){ const d=TB.rd; if(d.auto||d.fin) return; TB.rdz.forEach(Z=>{ Z.classList.remove('g2hint'); void Z.offsetWidth; Z.classList.add('g2hint'); }); bLater(()=>TB.rdz&&TB.rdz.forEach(Z=>Z.classList.remove('g2hint')),2900); ghost(this.frames(),2800); },
+   auto(){ const d=TB.rd; if(d.auto||d.fin) return; d.auto=true; const sc=TB.sc, run=tale.run; let k=d.last===1?1:0;
+     const go=()=>{ if(!okRun(run,sc)||d.fin) return; const s=(k++%2)+1, [x,y]=this.zc(s-1), u=vu(), w=s===1?7:-7; ghost([[x+w*u,y-u*3,.85,1],[x-w*u,y+u*4,.85,1],[x-w*u,y+u*4,1,0]],460);
+       bLater(()=>{ this.stroke(s); if(!d.fin) bLater(go,230); },400); }; go(); } }
+});
+
+/* ================= Eefje, Peppio, Niklas und die Mondinsel ================= */
+/* heart: Eefje's magic works best with her friends – "zusammen sind wir stark". Nobody but Eefje can do magic, and it isn't needed:
+   Niklas reads the map (1, 3), Peppio drums the rowing beat (2) and wakes the island (5), Eefje's light finds the buoys (3); at the gate
+   her spell alone makes only a spark (6), all three together open it. The moon-flower gives a petal light to everyone who came together (7).
+   Socke hates water and stays home: he yawns on the windowsill (1) and sits by the light in the window at the end (7). */
+const PDUR={};
+const PEPPIO2={id:'peppio', v2:true, eef:1, dur:PDUR, title:'Eefje, Peppio, Niklas und die Mondinsel', vtitle:'Ehfje, Peppio, Niklas und die Mondinsel', icon:'🏝️',
+ cover:'linear-gradient(180deg,#05061e 0%,#1a2060 40%,#5a4a9a 72%,#c88ab8 100%)',
+ cast(sc){ TB.uMouth=[.86,.36];
+  if(sc.boot){ const [x,y,w]=sc.boot, B=el('div','tp2 pepboot',`<div class="bb"><div class="pepbk">${pepBootSVG('b')}</div></div>`); B.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; TB.act.appendChild(B); TB.els.boot=B; }
+  if(sc.scr) pepShore();
+  const mk=efCast(sc); try{ alignLoad(['d4'].map(s=>TB.n(s))); }catch(e){}
+  if(sc.pe){ const [x,y,z,par]=sc.pe, P=mk('peppio','pepc pepp',peppioSVG(),x,y,z,par); if(par) P.style.width=z+'%'; P.dataset.mood=TST.pem||'smile'; P.dataset.arm=TST.pea||'dn'; }
+  if(sc.ni){ const [x,y,z,par]=sc.ni, N=mk('niklas','pepc pepn',niklasSVG(),x,y,z,par); if(par) N.style.width=z+'%'; N.dataset.mood=TST.nim||'smile'; N.dataset.arm=TST.nia||'dn'; }
+  if(sc.boot){ const bb=TB.els.boot.querySelector('.bb'); bb.appendChild(el('div','pepfr',pepBootSVG('f'))); TB.oarA=60;
+    [[38.6,42],[61.4,42]].forEach(([x,y],i)=>{ const O=el('div','pepoar',pepRuderSVG()); O.style.left=x+'%'; O.style.top=y+'%'; O.style.rotate=(i?-60:60)+'deg'; bb.appendChild(O); TB.els['oar'+i]=O; });
+    pepBoatLoop(); }
+  if(sc.band){ const R=el('div','peprb'); TB.act.appendChild(R); TB.els.band=R; if(sc.band==='off') R.style.opacity=0; pepBand(); }
+  if(sc.karte){ const [x,y,z]=sc.karte; mk('karte','pepmap',pepKarteSVG(),x,y,z); if(TST.kta) TB.els.karte.querySelectorAll('.pepsg').forEach(s=>s.classList.add('on')); }
+  (sc.bj||[]).forEach(([id,x,y,z])=>mk(id,'pepboj',pepBojeSVG(),x,y,z));
+  TB.fog=(sc.nb||[]).map(([x,y,z,o])=>{ const F=el('div','tp2 pepfog',pepNebelSVG()); F.style.cssText=`left:${x}%;top:${y}%;width:${z}vh;opacity:${o}`; F.dataset.o=o; TB.st.querySelector('.l-fore').appendChild(F); return F; });
+  if(sc.ins){ const [x,y,z]=sc.ins, I=el('div','tp2 pepins',pepInselSVG()); I.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; TB.act.appendChild(I); TB.els.insel=I; behindSea(['insel']); pepIsle(TST.insp||0); }
+  if(sc.glz){ const [x,w]=sc.glz, G=el('div','pepglz'); G.style.cssText=`left:${x}%;width:${w}vh`; TB.act.appendChild(G); behindSea([]); if(TB.sea) TB.sea.after(G); }
+  if(sc.zn){ const [x,y,w,h]=sc.zn, Z=el('div','tp2 pepzone'); Z.style.cssText=`left:${x}%;top:${y}%;width:${w}vh;height:${h}vh`; TB.act.appendChild(Z); TB.els.zone=Z; }
+  if(sc.hg){ const H=el('div','pephg',pepHuegelSVG()); (TB.act.querySelector('.gnd')||TB.act.firstChild).after(H); TB.els.huegel=H; }
+  (sc.bl||[]).forEach(([id,x,y,z,c])=>{ const F=mk(id,'pepblu'+(TST.blu?' on':''),pepBlumeSVG(c),x,y,z); F.style.setProperty('--d',(-Math.random()*3).toFixed(2)+'s'); });
+  if(sc.tor){ const [x,y,z]=sc.tor, T=mk('tor','peptor',pepTorSVG(),x,y,z); if(TST.toro) T.classList.add('open');
+    [['l1',32,62,'#3a6ad0'],['l2',50,62,'#4cae52'],['l3',68,62,'#e8692e']].forEach(([id,lx,ly,c])=>{ const L=mk(id,'pepsl',pepSchlossSVG(c),lx,ly,0,'tor'); L.style.width='16%'; }); }
+  if(sc.mb){ const [x,y,z]=sc.mb; mk('blume','pepmb',pepMondblumeSVG(),x,y,z).style.setProperty('--op',TST.mbo||0); }
+  if(sc.flyU) uniFly(true);
+  },
+ react(id,b,x,y){ const u=vu();
+  if(id==='peppio'){ pepHit(); sqs(b); bubble(rnd(['bum!','bum, bum!','juhu!']),x,y-u*8,3.8,'#d8ffc8'); return true; }
+  if(id==='niklas'){ sqs(b); bubble(rnd(['hallo!','hm?','schau!']),x,y-u*8,3.8,'#d8e6ff'); chime([659,880]); return true; }
+  if(id==='karte'){ wiggle(b); chime([784,988]); return true; }
+  if(/^b\d$/.test(id)){ sqs(b); pepBell(x,+id[1]); return true; }
+  if(/^f\d$/.test(id)){ sqs(b); harp(72+(+id[1])*2,x); return true; }
+  if(/^l\d$/.test(id)){ sqs(b); chimeAt([1318,1760],x); return true; }
+  if(id==='boot'||/^oar/.test(id)){ pepPlatsch(x,.08); return true; }
+  if(id==='blume'||id==='tor'||id==='insel'){ glitterBurst(x,y,10,10); chime([1175,1568]); return true; }
+  if(/^li_/.test(id)){ glitterBurst(x,y,8,6); chimeAt([2093],x); return true; }
+  if(id==='zone'||id==='band'||id==='huegel'||id==='heim') return true;
+  return efReact(id,b,x,y); },
+ sc:[
+ /* 1 – dusk in Eefje's garden: Peppio drums, Niklas finds an old dusty map; wipe it clean, the dotted way to the Moon Island lights up */
+ {set:'pepgarten', dark:.12, fx:{flies:6}, u:[9,73,19], ef:[34,63,26,'st'], pe:[18,65,25], ni:[64,63,25], sk:[75,85,9], karte:[49,86,40],
+  st:{efm:'smile',efa:'dn',skm:'smile',pem:'happy',pea:'drum',nim:'smile',nia:'dn',kta:0},
+  lights:[{id:'hexe',r0:16,rT:16,k0:.3,kT:.3},{id:'karte',r0:14,rT:14,k0:.35,kT:.35,warm:1}],
+  enter(){ const K=TB.els.karte; K.style.opacity=0; K.style.transition='opacity .8s, scale .8s'; K.style.scale=.6;
+    onPh('Bum, bum, bum',()=>pepRoll(3,300));
+    onPh('kramte',()=>{ const N=TB.els.niklas; N.classList.add('pepdig'); bLater(()=>N.classList.remove('pepdig'),1600); });
+    talk('niklas','Schaut mal','sagte er'); talk('niklas','Aber sie','Wisch');
+    onPh('Schaut mal',()=>{ pepArmSet('niklas','map'); mood('niklas','happy'); mood('hexe','oh'); mood('peppio','oh'); });
+    onPh('Aber sie',()=>this.lay()); onPh('Wisch',()=>{ uniHop(); mood('hexe','smile'); }); },
+  lay(inst){ const K=TB.els.karte; if(!K||K.dataset.on) return; K.dataset.on=1; pepArmSet('niklas','dn'); mood('niklas','worry'); K.style.opacity=1; K.style.scale=1;
+    if(!inst){ const [x,y]=ctr(K); for(let i=0;i<14;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*20,y:y+(Math.random()-.5)*vu()*8,vx:(Math.random()-.5)*20*vu(),vy:-(4+Math.random()*8)*vu(),s:1+Math.random(),life:1.4,c:'rgba(220,210,190,.7)'}); } },
+  ready(){ efReady(); const K=TB.els.karte; K.style.transition='none'; this.lay(true); mood('hexe','smile'); mood('peppio','smile'); },
+  a:{t:'rub',id:'karte',w:'KARTE'},
+  s:'Es war einmal ein lauer Abend. Die kleine Hexe Ehfje saß mit ihren Freunden Peppio und Niklas im Garten. Bum, bum, bum, trommelte Peppio. Niklas kramte in seiner Tasche. Schaut mal, eine alte Karte, sagte er. Aber sie ist ganz staubig! Wisch den Staub von der Karte, hin und her!',
+  h:'Wisch mit dem Finger über die staubige Karte, hin und her!',
+  rubStep(cl){ const K=TB.els.karte, n=Math.min(5,Math.ceil(cl/.7*5)); K.querySelectorAll('.pepsg').forEach((s,i)=>{ if(i<n&&!s.classList.contains('on')){ s.classList.add('on'); const [x,y]=ctr(s); glitterBurst(x,y,6,5); } });
+    if(cl>.3) mood('niklas','oh'); },
+  done(){ TST.kta=1; const K=TB.els.karte; K.querySelectorAll('.pepsg').forEach(s=>s.classList.add('on')); mood('niklas','happy'); mood('hexe','happy'); },
+  d:[()=>{ onPh('bis zu einer Insel',()=>{ const M=TB.els.karte.querySelector('.pepmi'); M.classList.add('on'); const [x,y]=ctr(M); glitterBurst(x,y,16,10); chimeAt([1568,2093,2637],x); },'d1'); },
+     'Unter dem Staub leuchtete ein Weg aus kleinen Punkten, über einen See bis zu einer Insel.',
+     ()=>{ talk('niklas','Die Mondinsel!','rief Niklas','d2'); talk('niklas','Sie taucht','Ein Abenteuer','d2'); talk('peppio','Ein Abenteuer!','rief Peppio','d2');
+       onPh('Die Mondinsel',()=>{ pepArmSet('niklas','point'); mood('niklas','happy'); },'d2'); onPh('Vollmond!',()=>{ mood('hexe','laugh'); },'d2');
+       onPh('Ein Abenteuer',()=>{ pepArmSet('peppio','up'); mood('peppio','happy'); pepHop('peppio'); pepArmSet('niklas','dn'); },'d2');
+       onPh('Bum, bum!',()=>{ pepArmSet('peppio','drum'); pepRoll(2,320); mood('hexe','happy'); },'d2'); },
+     'Die Mondinsel! rief Niklas. Sie taucht nur bei Vollmond aus dem See auf. Und heute ist Vollmond! Ein Abenteuer! rief Peppio. Bum, bum!',
+     ()=>{ onPh('gähnte',()=>{ const S=TB.els.socke; S.classList.add('pepyawn'); mood('socke','oh'); bubble('uaaah…',...relEl(S,[.5,0]),3.2,'#e0e0f0'); },'d3');
+       onPh('rollte sich',()=>{ const S=TB.els.socke; S.classList.remove('pepyawn'); mood('socke','happy'); S.style.transition='left 1.6s ease-in-out, top 1.6s ease-in-out'; S.style.left='81%'; S.style.top='79%'; bLater(()=>{ zzz('socke'); },1700); },'d3'); },
+     'Socke gähnte und rollte sich vor der Tür zusammen. Er mag kein Wasser.', 900]},
+
+ /* 2 – the boat: the unicorn pulls it on a ribbon, Eefje rows, Peppio drums the beat, Niklas holds the map */
+ {set:'pepsee', dark:.16, u:[80,53,18], flyU:1, boot:[42,70,70], band:1, scr:1, ef:[50,21,34.7,'st','boot'], pe:[20,21,34.7,'boot'], ni:[80,11.5,34.7,'boot'],
+  st:{efm:'happy',efa:'dn',pem:'happy',pea:'drum',nim:'smile',nia:'map'},
+  lights:[{id:'boot',r0:26,rT:26,k0:.25,kT:.25,warm:1},{id:'uni',r0:12,rT:12,k0:.3,kT:.3}],
+  enter(){ TB.pIdle=2; const R=TB.els.band; R.style.opacity=0; R.style.transition='opacity .8s';
+    onPh('Band ins Maul',()=>{ R.style.opacity=1; uniHop(); chime([880,1175]); });
+    onPh('flog voraus',()=>{ TB.pV=8; });
+    onPh('trommelte',()=>pepRoll(2,360)); onPh('nahm die Ruder',()=>{ mood('hexe','smile'); pepOar(0); bLater(()=>pepOar(1),300); });
+    onPh('Ruder mit',()=>uniHop()); },
+  ready(){ efReady(); const R=TB.els.band; R.style.transition='none'; R.style.opacity=1; mood('hexe','smile'); TB.pIdle=1; },
+  a:{t:'rudern',id:'boot',n:5,r:17,len:8,w:'BOOT'},
+  s:'Am See lag ein kleines Holzboot im Schilf. Ehfje, Peppio und Niklas kletterten hinein. Dein Einhorn nahm ein Band ins Maul und flog voraus. Niklas hielt die Karte, und Peppio trommelte: bum, bum. Ehfje nahm die Ruder. Ruder mit, einmal links und einmal rechts!',
+  h:'Wisch mit dem Finger durchs Wasser, einmal links und einmal rechts vom Boot!',
+  rowing(s,p){ pepOar(s-1); TB.pV=Math.min(46,(TB.pV||0)+16); pepHit(); if(Math.random()<.4) uniHop();
+    if(p>.45&&!TB.pjy){ TB.pjy=1; mood('peppio','happy'); bubble('juhu!',...relEl(TB.els.peppio,[.5,.05]),3.6,'#d8ffc8'); } if(p>.7) mood('hexe','laugh'); },
+  done(){ TB.pV=60; mood('hexe','happy'); mood('peppio','happy'); pepRoll(3,260); },
+  d:[()=>{ onPh('Platsch',()=>{ pepOar(0); pepOar(1); TB.pV=50; },'d1'); onPh('immer weiter',()=>{ pepOar(0); pepOar(1); TB.pV=50; pepRoll(2,300); },'d1'); },
+     'Platsch, platsch! Das Boot glitt über den See, immer weiter, bis das Ufer ganz klein war.',
+     ()=>{ talk('peppio','Das macht Spaß!','rief Peppio','d2'); talk('niklas','Immer geradeaus!','sagte Niklas','d2');
+       onPh('Das macht',()=>{ pepArmSet('peppio','up'); pepHop('peppio'); },'d2'); onPh('Immer',()=>{ pepArmSet('peppio','drum'); pepArmSet('niklas','point'); mood('niklas','happy'); },'d2'); },
+     'Das macht Spaß! rief Peppio. Immer geradeaus! sagte Niklas und zeigte nach vorn.', 800]},
+
+ /* 3 – the fog: everything turns grey and dark; her fingertip light finds the three buoys of the map, the fog moves back */
+ {set:'pepnebel', dark:.78, u:[72,56,17], flyU:1, boot:[34,73,62], band:1, ef:[50,21,34.7,'st','boot'], pe:[20,21,34.7,'boot'], ni:[80,11.5,34.7,'boot'],
+  bj:[['b1',63,75,11],['b2',80,66,9],['b3',91,80,11]], nb:[[62,70,70,.92],[86,62,56,.9],[90,82,60,.88],[48,54,80,.7],[78,48,70,.6]],
+  st:{efm:'oh',efa:'dn',pem:'oh',pea:'dn',nim:'smile',nia:'map'},
+  lights:[{id:'hexe',name:'efL',r0:9,rT:9,k0:.38,kT:.38},{id:'peppio',r0:8,rT:8,k0:.3,kT:.3},{id:'niklas',r0:8,rT:8,k0:.3,kT:.3},{id:'uni',r0:9,rT:9,k0:.32,kT:.32}],
+  enter(){ TB.pIdle=0; const F=TB.fog; F.forEach((f,i)=>{ f.style.transition='none'; f.style.transform=`translateX(${(i%2?1:-1)*30}vw)`; void f.offsetWidth; f.style.transition='transform 5s ease-out, opacity 1.6s'; f.style.transform='none'; });
+    talk('peppio','Ich sehe','rief Peppio'); onPh('Ich sehe',()=>{ mood('peppio','oh'); pepHop('peppio'); });
+    talk('niklas','Auf der Karte','sagte Niklas'); talk('niklas','Die zeigen','Ehfje hob'); onPh('Auf der Karte',()=>{ mood('niklas','happy'); });
+    onPh('Ehfje hob',()=>{ efArm('up'); mood('hexe','smile'); }); talk('hexe','Kribbel','Fahr mit');
+    onPh('Kribbel',()=>{ efSpell(12); mood('hexe','happy'); }); onPh('nun leuchte',()=>{ if(!TB.finL) TB.finL=light({fn:efFinger,r0:2,rT:7,k0:.9,kT:.9,warm:1}); chime([1175,1568]); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); if(!TB.finL) TB.finL=light({fn:efFinger,r0:2,rT:7,k0:.9,kT:.9,warm:1}); TB.fog.forEach(f=>{ f.style.transition='opacity 1.6s'; f.style.transform='none'; }); },
+  a:{t:'torch',ids:['b1','b2','b3'],r:17,lr:11,w:'NEBEL'},
+  s:'Auf einmal kam dichter Nebel über den See. Alles wurde grau und dunkel. Ich sehe gar nichts mehr! rief Peppio. Auf der Karte sind drei Lichter, sagte Niklas. Die zeigen uns den Weg. Ehfje hob den Finger: Kribbel, krabbel, Funkelschein – kleines Licht, nun leuchte fein! Fahr mit dem Licht durch den Nebel und such die drei Lichter!',
+  h:'Fahr mit dem Finger durch den Nebel und such die Lichter auf dem Wasser!',
+  item(id,b,k){ const [x,y]=ctr(b); pepBell(x,k-1); bubble('ding!',x,y-vu()*7,3.4,'#fff6c0'); FX.darkT=Math.max(.45,.78-k*.1);
+    TB.fog.forEach((f,i)=>{ if(i%3===k-1||(k===3)) { f.style.opacity=(+f.dataset.o*(k===3?.0:.35)).toFixed(2); } });
+    pepArmSet('niklas','point'); mood('niklas','happy'); mood('hexe','laugh'); bLater(()=>mood('hexe','happy'),700); if(k===2){ mood('peppio','happy'); pepHop('peppio'); } },
+  done(){ TB.fog.forEach(f=>{ f.style.opacity=0; }); FX.darkT=.42; mood('peppio','happy'); },
+  d:[()=>{ onPh('Ding, ding, ding',()=>{ ['b1','b2','b3'].forEach((k,i)=>bLater(()=>{ const B=TB.els[k]; sqs(B); pepBell(ctr(B)[0],i); },i*320)); },'d1'); onPh('zog sich zurück',()=>{ TB.pIdle=4; TB.pV=10; },'d1'); },
+     'Ding, ding, ding! Die drei Bojen leuchteten, und der Nebel zog sich zurück.',
+     ()=>{ talk('hexe','Ohne deine Karte','sagte Ehfje','d2'); onPh('Ohne deine',()=>{ efArm('dn'); mood('hexe','happy'); pepArmSet('niklas','map'); },'d2');
+       onPh('ganz rot',()=>{ const N=TB.els.niklas; N.classList.add('pepred'); mood('niklas','happy'); hearts(...relEl(N,[.5,.2]),3); },'d2'); },
+     'Ohne deine Karte hätte ich sie nie gefunden, sagte Ehfje zu Niklas. Und Niklas wurde ganz rot vor Freude.', 800]},
+
+ /* 4 – the full moon rises, the lake turns silver; hold the finger on the water and the island comes up */
+ {set:'pepmondsee', dark:.5, u:[47,62,14], flyU:1, boot:[22,77,52], band:1, ef:[50,21,34.7,'st','boot'], pe:[20,21,34.7,'boot'], ni:[80,11.5,34.7,'boot'],
+  mn:[84,52,12], ins:[66,48,76], glz:[84,16], zn:[64,79,18,10],
+  st:{efm:'smile',efa:'dn',pem:'smile',pea:'dn',nim:'smile',nia:'dn',insp:0},
+  lights:[{id:'mond',r0:22,rT:22,k0:.85,kT:.85},{id:'boot',r0:20,rT:20,k0:.35,kT:.35},{id:'uni',r0:9,rT:9,k0:.3,kT:.3},{id:'insel',name:'insL',r0:0,rT:0,k0:.5,kT:.5}],
+  enter(){ TB.pIdle=0; pepMoonUp(52,20,5200); FX.darkT=.62; bLater(()=>{ FX.darkT=.5; },2600);
+    onPh('silbern',()=>{ const G=TB.act.querySelector('.pepglz'); if(G) G.classList.add('on'); chime([1318,1568,2093]); });
+    talk('niklas','Jetzt muss','flüsterte'); onPh('Jetzt muss',()=>{ pepArmSet('niklas','point'); mood('niklas','oh'); });
+    onPh('ganz still',()=>{ mood('hexe','worry'); mood('peppio','oh'); pepArmSet('niklas','dn'); });
+    onPh('Leg deinen',()=>{ uniHop(); mood('hexe','smile'); }); },
+  ready(){ efReady(); const M=TB.els.mond; M.style.transition='none'; M.style.top='20%'; const G=TB.act.querySelector('.pepglz'); if(G) G.classList.add('on'); mood('hexe','smile'); pepArmSet('niklas','dn');
+    TB.isq=0; g2loop(()=>{ const p=Math.max(TST.insp||0,TB.hp||0); if(p>(TST.insp||0)+.001){ pepIsle(p); if(Math.random()<.5) pepStreams(2); if(TB.insL){ TB.insL.r=TB.insL.rT=p*26; }
+      if(Math.random()<.25){ const Z=TB.els.zone, [x,y]=relEl(Z,[.2+Math.random()*.6,.3+Math.random()*.4]); fxAdd({k:'bub',x,y,vx:0,vy:-6*vu(),life:.8,s:.6,c:'rgba(220,235,255,.9)'}); }
+      const q=Math.floor(p*4); if(q>TB.isq){ TB.isq=q; mood(q>=2?'peppio':'niklas','oh'); } } }); },
+  a:{t:'hold',id:'zone',ms:3200,grow:.001,pc:'rgba(200,220,255,.9)',w:'INSEL'},
+  s:'Da schob sich der Mond hinter den Wolken hervor, groß und rund. Der ganze See glänzte silbern. Jetzt muss die Insel kommen, flüsterte Niklas. Aber das Wasser blieb ganz still. Leg deinen Finger auf das Wasser und lass ihn dort, dann taucht die Insel auf!',
+  h:'Leg den Finger auf das glitzernde Wasser und lass ihn liegen!',
+  done(){ pepIsle(1); if(TB.insL){ TB.insL.r=TB.insL.rT=26; } const I=TB.els.insel; I.classList.add('up'); const [x,y]=relEl(I,[.5,.5]); glitterBurst(x,y,30,26); mood('hexe','laugh'); mood('peppio','happy'); mood('niklas','happy'); },
+  d:[()=>{ onPh('Blubb',()=>{ for(let i=0;i<10;i++) bLater(()=>pepStreams(4),i*160); pepPlatsch(innerWidth*.66,.14); },'d1'); onPh('glitzernden',()=>{ for(let i=0;i<12;i++) bLater(()=>pepStreams(4),i*150); },'d1'); },
+     'Blubb, blubb! Langsam stieg eine kleine Insel aus dem See. Das Wasser lief in glitzernden Bächen von ihren Wiesen.',
+     ()=>{ talk('niklas','Die Mondinsel!','riefen','d2'); talk('peppio','Die Mondinsel!','riefen','d2'); talk('hexe','Die Mondinsel!','riefen','d2');
+       onPh('Die Mondinsel',()=>{ pepArmSet('peppio','up'); pepArmSet('niklas','up'); efArm('up'); pepHop('peppio'); pepHop('niklas'); },'d2');
+       onPh('glitt sanft',()=>{ const B=TB.els.boot, U=TB.els.uni; pepArmSet('peppio','dn'); pepArmSet('niklas','dn'); efArm('dn'); B.style.transition='left 3.4s ease-in-out, top 3.4s ease-in-out, scale 3.4s ease-in-out'; B.style.left='44%'; B.style.top='70%'; B.style.scale=.72;
+         U.style.transition='left 3s ease-in-out, top 3s ease-in-out'; U.style.left='58%'; U.style.top='60%'; },'d2'); },
+     'Die Mondinsel! riefen alle drei. Und das Boot glitt sanft ans Ufer.', 1400]},
+
+ /* 5 – on the island: everything asleep and dark; tap along to Peppio's drum, every beat wakes a flower, a path of light up the hill */
+ {set:'pepinsel', dark:.62, u:[7,71,17], ni:[19,70,24], ef:[30,69,24,'st'], pe:[41,71,24], hg:1,
+  bl:[['f1',...pepHill(60,166).map((v,i)=>i?v-5:v),8,'#c8a8ff'],['f2',...pepHill(110,134).map((v,i)=>i?v-5:v),7.6,'#ffb0d8'],['f3',...pepHill(150,104).map((v,i)=>i?v-4.6:v),7,'#a8d8ff'],
+      ['f4',...pepHill(184,70).map((v,i)=>i?v-4.4:v),6.6,'#ffe08a'],['f5',...pepHill(212,40).map((v,i)=>i?v-4.2:v),6.2,'#c8a8ff'],['f6',...pepHill(240,26).map((v,i)=>i?v-4:v),5.8,'#ffb0d8']],
+  st:{efm:'oh',efa:'dn',pem:'smile',pea:'drum',nim:'oh',nia:'dn',blu:0},
+  lights:[{id:'hexe',r0:12,rT:12,k0:.35,kT:.35},{id:'peppio',name:'peL',r0:12,rT:12,k0:.35,kT:.35},{id:'niklas',r0:10,rT:10,k0:.3,kT:.3},{id:'uni',r0:10,rT:10,k0:.32,kT:.32},{x:0,y:0,name:'gateL',r0:6,rT:6,k0:.5,kT:.5}],
+  enter(){ const [gx,gy]=wpx(...pepHill(250,8)); TB.gateL.x=gx; TB.gateL.y=gy;
+    talk('hexe','Wie finden','fragte Ehfje'); onPh('Wie finden',()=>mood('hexe','worry'));
+    onPh('Peppio grinste',()=>{ mood('peppio','proud'); }); talk('peppio','Ich weck','Und er'); onPh('Ich weck',()=>{ pepArmSet('peppio','drum'); });
+    onPh('bum, bum, bum',()=>{ pepRoll(3,340); }); onPh('Tipp mit',()=>{ uniHop(); mood('hexe','smile'); mood('peppio','happy'); }); },
+  ready(){ efReady(); mood('hexe','smile'); mood('peppio','happy'); pepArmSet('peppio','drum'); },
+  a:{t:'beat',n:6,ms:820,win:240,at:['peppio',.675,.7],wait:900,w:'WEG'},
+  s:'Auf der Insel war es still. Alle Blumen schliefen, und es war ganz dunkel. Wie finden wir den Weg? fragte Ehfje. Peppio grinste. Ich weck sie auf! Und er schlug auf seine Trommel: bum, bum, bum. Tipp mit, im Takt der Trommel!',
+  h:'Tipp im Takt, wenn Peppio trommelt: bum, bum!',
+  beat(i){ pepHit(); },
+  beatStep(k,on){ const F=TB.els['f'+k]; if(!F) return; F.classList.add('on'); sqs(F); const [x,y]=ctr(F); harp([67,69,72,74,76,79][Math.min(5,k-1)],x); glitterBurst(x,y,on?12:7,8);
+    light({el:F,r0:2,rT:9,k0:.9,kT:.9}); FX.darkT=Math.max(.42,.62-k*.035); if(k===3) mood('hexe','laugh'); if(k>=4){ mood('peppio','proud'); mood('niklas','happy'); } },
+  done(){ for(let k=1;k<=6;k++){ const F=TB.els['f'+k]; if(F) F.classList.add('on'); } TST.blu=1; if(TB.gateL){ TB.gateL.rT=14; } mood('hexe','happy'); },
+  d:[()=>{ onPh('So entstand',()=>{ for(let k=1;k<=6;k++) bLater(()=>{ const F=TB.els['f'+k]; if(F){ sqs(F); const [x,y]=ctr(F); glitterBurst(x,y,8,6); } },k*180); },'d1'); },
+     'Bei jedem Bum wachte eine Blume auf und leuchtete. So entstand ein Weg aus Licht, den Hügel hinauf.',
+     ()=>{ talk('peppio','Ich hab','rief Peppio','d2'); onPh('Ich hab',()=>{ pepArmSet('peppio','up'); mood('peppio','proud'); pepHop('peppio'); },'d2');
+       onPh('liefen',()=>{ [['niklas',46,72],['hexe',56,71],['peppio',64,70]].forEach(([k,x,y],i)=>bLater(()=>{ const E=TB.els[k]; if(!E) return; E.style.transition='left 2.4s ease-in-out, top 2.4s ease-in-out, scale 2.4s'; E.style.left=x+'%'; E.style.top=y+'%'; E.style.scale=.86; E.classList.add('pepwalk'); },i*300));
+         pepArmSet('peppio','dn'); },'d2'); },
+     'Ich hab die ganze Insel geweckt! rief Peppio stolz. Und alle liefen den leuchtenden Weg hinauf.', 1000]},
+
+ /* 6 – the crystal gate with three locks: Eefje's spell alone makes only a spark; tap the three locks, one for every friend; all three cast the spell */
+ {set:'pephuegel', dark:.5, u:[8,72,17], ni:[20,71,24], ef:[31,70,24,'st'], pe:[42,72,24], tor:[71,52,48],
+  st:{efm:'smile',efa:'dn',pem:'smile',pea:'dn',nim:'oh',nia:'dn',toro:0},
+  lights:[{id:'hexe',r0:12,rT:12,k0:.35,kT:.35},{id:'peppio',r0:10,rT:10,k0:.3,kT:.3},{id:'niklas',r0:10,rT:10,k0:.3,kT:.3},{id:'uni',r0:10,rT:10,k0:.3,kT:.3},{id:'tor',name:'torL',r0:22,rT:22,k0:.45,kT:.45}],
+  enter(){ onPh('Ehfje rief',()=>{ efArm('up'); mood('hexe','smile'); }); talk('hexe','Kribbel','Aber nur');
+    onPh('Kribbel',()=>{ const [x,y]=efFinger(); for(let i=0;i<3;i++) bLater(()=>fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*8*vu(),vy:-10*vu(),life:.7,s:.6,c:rnd(GLCOL)}),i*90); });
+    onPh('Aber nur',()=>{ const [x,y]=efFinger(); fxAdd({k:'spark',x,y:y-vu()*2,vx:0,vy:-4*vu(),life:1.2,s:1.2,c:'rgba(255,236,150,.95)'}); chime([523,392]); });
+    onPh('blieb zu',()=>{ mood('hexe','worry'); efArm('dn'); mood('peppio','oh'); });
+    talk('hexe','Ohne meine','sagte Ehfje'); onPh('Ohne meine',()=>{ mood('hexe','smile'); });
+    onPh('Tipp auf',()=>uniHop()); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','smile'); mood('peppio','smile'); mood('niklas','smile'); },
+  a:{t:'tapall',ids:['l1','l2','l3'],w:'TOR'},
+  s:'Oben auf dem Hügel stand ein Tor aus Kristall. Es hatte drei kleine Schlösser: ein blaues, ein grünes und ein orangenes. Ehfje rief: Kribbel, krabbel, Funkelschein! Aber nur ein kleiner Funke flog, und das Tor blieb zu. Ohne meine Freunde geht es nicht, sagte Ehfje. Tipp auf die drei Schlösser, für jeden eins!',
+  h:'Tipp auf die drei bunten Schlösser!',
+  item(id,b){ b.classList.add('on'); const who={l1:'niklas',l2:'peppio',l3:'hexe'}[id], K=TB.els[who]; if(!K) return; mood(who,who==='hexe'?'laugh':'happy'); if(who!=='hexe') pepHop(who); else sqs(K);
+    const [x0,y0]=relEl(K,[.5,.3]), [x1,y1]=ctr(b), c={niklas:'rgba(120,170,255,.95)',peppio:'rgba(130,230,120,.95)',hexe:'rgba(255,170,90,.95)'}[who];
+    for(let i=0;i<14;i++){ const f=i/13; bLater(()=>fxAdd({k:'spark',x:x0+(x1-x0)*f,y:y0+(y1-y0)*f-Math.sin(f*Math.PI)*vu()*10,vx:0,vy:-2*vu(),life:.7,s:.8,c}),i*30); }
+    if(TB.torL) TB.torL.rT+=6; },
+  done(){ ['l1','l2','l3'].forEach(k=>TB.els[k].classList.add('on')); },
+  d:[()=>{ onPh('Blau für',()=>sqs(TB.els.niklas),'d1'); onPh('grün für',()=>sqs(TB.els.peppio),'d1'); onPh('orange für',()=>sqs(TB.els.hexe),'d1');
+       onPh('Da riefen',()=>{ efArm('up'); pepArmSet('peppio','up'); pepArmSet('niklas','up'); mood('hexe','happy'); mood('peppio','happy'); mood('niklas','happy'); },'d1');
+       ['hexe','peppio','niklas'].forEach(k=>talk(k,'Kribbel',null,'d1'));
+       onPh('Kribbel',()=>{ ['hexe','peppio','niklas'].forEach(k=>{ const E=TB.els[k]; for(let i=0;i<10;i++) bLater(()=>{ const [x,y]=relEl(E,[.5,.05]); fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*24*vu(),vy:-(14+Math.random()*20)*vu(),life:1,s:.7+Math.random()*.6,c:rnd(GLCOL)}); },i*70); }); },'d1');
+       onPh('nie allein',()=>{ const [x,y]=ctr(TB.els.tor); glitterBurst(x,y,40,30); chime([784,988,1175,1568,2093]); ['l1','l2','l3'].forEach(k=>sqs(TB.els[k])); },'d1'); },
+     'Blau für Niklas, grün für Peppio und orange für Ehfje. Da riefen alle drei zusammen: Kribbel, krabbel, Funkelschein – zusammen sind wir nie allein!',
+     ()=>{ onPh('Kling, klang',()=>{ const T=TB.els.tor; T.classList.add('open'); TST.toro=1; if(TB.torL){ TB.torL.rT=40; TB.torL.kT=.9; } chime([1318,1568,2093,2637]); efArm('dn'); pepArmSet('peppio','dn'); pepArmSet('niklas','dn'); },'d2');
+       onPh('langsam auf',()=>{ const [x,y]=relEl(TB.els.tor,[.5,.6]); glitterBurst(x,y,30,20); mood('hexe','laugh'); },'d2'); },
+     'Kling, klang! Das Kristalltor ging langsam auf.', 1000]},
+
+ /* 7 – the moon-flower: hold the finger on it, it opens petal by petal; a petal light for every friend; home on the unicorn; three lit windows */
+ {set:'pepmondhain', dark:.45, u:[8,72,17], ni:[20,71,24], ef:[31,70,24,'st'], pe:[42,72,24], mb:[68,58,50], mn:[88,15,10], zn:[68,45,20,24],
+  st:{efm:'oh',efa:'dn',pem:'oh',pea:'dn',nim:'oh',nia:'dn',mbo:0},
+  lights:[{id:'mond',r0:16,rT:16,k0:.7,kT:.7},{id:'hexe',r0:12,rT:12,k0:.35,kT:.35},{id:'peppio',r0:10,rT:10,k0:.3,kT:.3},{id:'niklas',r0:10,rT:10,k0:.3,kT:.3},{id:'uni',r0:10,rT:10,k0:.3,kT:.3},{id:'blume',name:'mbL',r0:12,rT:12,k0:.5,kT:.5}],
+  enter(){ talk('niklas','Das ist','flüsterte'); onPh('Das ist der',()=>{ pepArmSet('niklas','point'); mood('niklas','happy'); }); onPh('Leg deinen',()=>{ pepArmSet('niklas','dn'); uniHop(); mood('hexe','smile'); }); },
+  ready(){ efReady(); pepArmSet('niklas','dn'); mood('hexe','smile'); mood('peppio','smile'); mood('niklas','smile');
+    g2loop(()=>{ const p=TB.hp||0, M=TB.els.blume; M.style.scale=(1+p*.05).toFixed(3); if(!M) return; const e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2; M.style.setProperty('--op',(e*.85).toFixed(3)); TST.mbo=e*.85; if(TB.mbL) TB.mbL.rT=12+e*16; }); },
+  a:{t:'hold',id:'zone',ms:3200,grow:.001,pc:'rgba(230,220,255,.9)',w:'SCHATZ'},
+  s:'Hinter dem Tor wuchs eine riesige Mondblume. Sie war noch ganz fest zu, und ein sanftes Licht schimmerte zwischen ihren Blättern. Das ist der Mondschatz, flüsterte Niklas. Leg deinen Finger auf die Blume und lass ihn dort, dann geht sie auf!',
+  h:'Leg den Finger auf die Mondblume und lass ihn liegen!',
+  done(){ const M=TB.els.blume; M.style.setProperty('--op',1); TST.mbo=1; M.classList.add('open'); if(TB.mbL){ TB.mbL.rT=30; TB.mbL.kT=.8; } mood('hexe','laugh'); mood('peppio','happy'); mood('niklas','happy'); },
+  d:[()=>{ onPh('Blatt für Blatt',()=>{ const [x,y]=relEl(TB.els.blume,[.5,.44]); glitterBurst(x,y,24,18); },'d1');
+       onPh('eins für Ehfje',()=>{ pepGift('hexe',[.36,.68]); mood('hexe','happy'); },'d1');
+       onPh('eins für Peppio',()=>{ pepGift('peppio',[.37,.68]); pepArmSet('peppio','dn'); },'d1');
+       onPh('eins für Niklas',()=>{ pepGift('niklas',[.37,.69]); },'d1'); },
+     'Die Mondblume öffnete sich, Blatt für Blatt. Drei leuchtende Blütenblätter schwebten heraus: eins für Ehfje, eins für Peppio und eins für Niklas.',
+     ()=>{ talk('hexe','Zusammen haben','sagte Ehfje','d2'); onPh('Zusammen',()=>{ efArm('up'); mood('hexe','happy'); },'d2');
+       onPh('Dann flogen',()=>{ const U=TB.els.uni, ub=U.querySelector('.ub'); efArm('dn'); uniFly(true);
+         [['niklas',.36,.2],['hexe',.52,.16],['peppio',.68,.2]].forEach(([k,fx,fy],i)=>bLater(()=>{ const E=TB.els[k]; if(!E) return; E.style.scale=''; pepHopOn(E,ub,fx,fy,900,()=>{ E.style.width='42%'; }); },i*220)); },'d2');
+       onPh('unter dem Mond',()=>{ const U=TB.els.uni; flyOff(U,70,-40,3600); },'d2'); },
+     'Zusammen haben wir den Schatz gefunden, sagte Ehfje. Dann flogen die drei Freunde auf deinem Einhorn unter dem Mond nach Hause.',
+     ()=>{ onPh('Seitdem',()=>pepHome(),'d3'); onPh('Socke',()=>{ const H=TB.els.heim, S=H&&H.querySelector('.pepw1'); if(S){ const [x,y]=ctr(S); hearts(x,y-vu()*3,2); } },'d3'); },
+     'Seitdem leuchtet in drei Häusern ein kleines Mondlicht im Fenster. Und bei Ehfje sitzt Socke daneben und schnurrt.',
+     ()=>{ onPh('leuchten ihre',()=>pepTwinkle(),'d4'); },
+     'Und wenn sie nicht erloschen sind, dann leuchten ihre drei Lichter noch heute.', 1600]}
+ ]};
+/* the island rises out of the lake: p 0 (all under water) .. 1 (up) */
+function pepIsle(p){ TST.insp=p; const I=TB&&TB.els.insel; if(!I) return; const e=1-Math.pow(1-p,2.2); I.style.translate=`-50% calc(-50% + ${((1-e)*40).toFixed(2)}vh)`;
+  I.style.setProperty('--gl',(.25+p*.75).toFixed(2)); }
+/*<PEPPIO*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -9417,7 +9999,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -9440,6 +10022,15 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="tp2 chr klk jl1 jl2 jl3 lit" data-mood="happy" style="left:60%;top:53%;width:50%;--rust:.06;--glow:.8;--ta:-6;--la:8;--lf:0;--ext:0;--cr:0;--ex:0;--ey:0;--kn:0"><div class="bb">${klonkiSVG()}<div class="tp2 klhut kid" style="left:50%;top:5.5%;width:30%;--rust:.06">${klDeckelSVG()}</div><div class="tp2 klhz on" style="left:50%;top:57.5%;width:21.25%">${klHerzSVG(0)}</div></div></div>`+
     `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:21%;top:66%;width:36%"><div class="bb">${eefjeSVG()}</div></div></div>`+
     [[12,16,5],[40,10,4],[92,62,3.6],[10,46,3.4],[64,8,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+  if(id==='peppio') return `<div class="pepart" style="position:absolute;inset:0"><div style="position:absolute;right:12%;top:10%;width:13%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,#fffbe8,#f4e8b8 60%,#e0d090);box-shadow:0 0 4vh 1.4vh rgba(255,246,200,.45)"></div>`+
+    `<div class="pepins" style="left:66%;top:44%;width:44%;translate:-50% -50%">${pepInselSVG()}</div>`+
+    `<div style="position:absolute;left:0;right:0;top:56%;bottom:0;background:linear-gradient(180deg,#8a94d8 0%,#3a4a96 40%,#141e52 100%)"></div>`+
+    `<div class="tp2 pepboot" style="left:42%;top:68%;width:74%"><div class="bb"><div class="pepbk">${pepBootSVG('b')}</div>`+
+    `<div class="tp2 chr pepc pepp kid" data-mood="happy" data-arm="up" style="left:20%;top:21%;width:34.7%"><div class="bb">${peppioSVG()}</div></div>`+
+    `<div class="tp2 chr eef kid" data-mood="happy" data-arm="up" style="left:50%;top:21%;width:34.7%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr pepc pepn kid" data-mood="happy" data-arm="map" style="left:80%;top:11.5%;width:34.7%"><div class="bb">${niklasSVG()}</div></div>`+
+    `<div class="pepfr">${pepBootSVG('f')}</div></div></div></div>`+
+    [[12,16,5],[40,8,4],[90,40,3.4],[10,44,3.4],[60,14,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
   if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
@@ -9691,6 +10282,8 @@ regTale2(EEFJE2);
 regTale2(FEEN2);
 /* Eefje und Klonki: after the fairy fest, so the older lines keep their order in voice/clips.tsv */
 regTale2(KLONKI2);
+/* Eefje, Peppio, Niklas und die Mondinsel: after Klonki, so the older lines keep their order in voice/clips.tsv */
+regTale2(PEPPIO2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
