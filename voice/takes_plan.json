@@ -3723,6 +3723,17 @@
      "say": "Kakao"
     }
    ]
+  },
+  {
+   "id": "w_x047_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Flügel.",
+   "items": [
+    {
+     "key": "wort_fluegel",
+     "say": "Flügel"
+    }
+   ]
   }
  ]
 }
