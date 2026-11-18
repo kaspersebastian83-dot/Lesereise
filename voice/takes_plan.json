@@ -3708,6 +3708,21 @@
      "say": "Schatz"
     }
    ]
+  },
+  {
+   "id": "w_x046_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Buch. Kakao.",
+   "items": [
+    {
+     "key": "wort_buch",
+     "say": "Buch"
+    },
+    {
+     "key": "wort_kakao",
+     "say": "Kakao"
+    }
+   ]
   }
  ]
 }
