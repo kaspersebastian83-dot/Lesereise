@@ -1421,6 +1421,47 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .ill .pepart .pepc>.bb,.ill .pepart .eef>.bb{animation:none}
 .pepart .pepins{position:absolute;filter:drop-shadow(0 0 1.4vh rgba(160,190,255,.5));--gl:1}
 /*<PEPPIOCSS*/
+/*TASSECSS>*/
+/* Eefje und die Zaubertasse (all classes start with "tas") */
+.tp2.tasn{filter:drop-shadow(0 .5vh .8vh rgba(0,0,0,.28));--lv:0;--tg:0} .tasn svg{display:block;width:100%;overflow:visible}
+.tasn>.bb{position:relative;animation:tasbr 2.6s ease-in-out infinite} @keyframes tasbr{50%{transform:translateY(-2%) scale(1.01,.99)}}
+.tasn .tasin{opacity:calc(.12 + var(--lv)*.88)} .tasn .swirl circle{opacity:var(--lv)} .tasn .tasgl{opacity:var(--tg)}
+.tasn .tase,.tasn .tasm,.tasn .tasmo,.tasn .tasbl{display:none}
+.tasn[data-mood=smile] .tase-o,.tasn[data-mood=smile] .tasm-s{display:inline}
+.tasn[data-mood=happy] .tase-j,.tasn[data-mood=happy] .tasm-s,.tasn[data-mood=happy] .tasbl{display:inline}
+.tasn[data-mood=oh] .tase-w,.tasn[data-mood=oh] .tasm-o{display:inline} .tasn[data-mood=oh] .tasbw{display:none}
+.tasn[data-mood=worry] .tase-w,.tasn[data-mood=worry] .tasm-w{display:inline}
+.tasn[data-mood=laugh] .tase-j,.tasn[data-mood=laugh] .tasm-l,.tasn[data-mood=laugh] .tasbl{display:inline}
+.tasn.talking .tasm{display:none!important} .tasn.talking .tasmo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.05))}
+.tasn .tase-o{transform-box:fill-box;transform-origin:center;animation:tasblink 4.2s infinite} @keyframes tasblink{0%,93%,100%{transform:none}96%{transform:scaleY(.1)}}
+.tasn.tasblk .tase-o{animation:tasblink2 .45s 2} @keyframes tasblink2{50%{transform:scaleY(.1)}}
+.tasn.taswb>.bb{animation:taswb .6s ease-in-out,tasbr 2.6s ease-in-out .6s infinite} @keyframes taswb{20%{transform:rotate(-9deg)}45%{transform:rotate(8deg)}70%{transform:rotate(-5deg)}90%{transform:rotate(2deg)}}
+.tasn.tasrut>.bb{animation:tasrut .34s ease-in-out infinite} @keyframes tasrut{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg) translateY(-3%)}}
+.tasn .bb.taskz{animation:taskz .22s ease-in-out} @keyframes taskz{30%{transform:rotate(-6deg) scale(1.04,.96)}70%{transform:rotate(5deg) scale(.97,1.03)}}
+.tasn.taslol>.bb{animation:taslol .3s ease-in-out 8} @keyframes taslol{50%{transform:translateY(-6%) rotate(4deg) scale(1.04,.96)}}
+.tasn .ring2{z-index:6}
+.tp2.tastisch{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.22))} .tastisch svg{display:block;width:100%;overflow:visible}
+.tp2.tastopf{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.25));--lv:0} .tastopf svg{display:block;width:100%;overflow:visible} .tastopf .taslv{opacity:var(--lv)}
+.tp2.taskr{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.25))} .taskr svg{display:block;width:100%;overflow:visible}
+.tp2.tasbuch{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.3))} .tasbuch svg{display:block;width:100%;overflow:visible}
+.tasbuch .tasbo{opacity:0} .tasbuch.open .tasbz{opacity:0} .tasbuch.open .tasbo{opacity:1} .tasbuch .tasbz,.tasbuch .tasbo{transition:opacity .5s}
+.tasbuch.dusty>.bb svg{filter:grayscale(var(--g,1)) sepia(calc(var(--g,1)*.6)) brightness(calc(1 - var(--g,1)*.3))}
+.tasbuch.tasflip>.bb{animation:tasflip .26s ease-in-out 5} @keyframes tasflip{50%{transform:scaleX(.96) skewY(-1deg)}}
+.tasbuch .taspic{transform-box:fill-box;transform-origin:center} .tasbuch .taspic.on{animation:taspic 1.4s ease-in-out infinite;filter:drop-shadow(0 0 2px #ffd84a)} @keyframes taspic{50%{transform:scale(1.12)}}
+.tp2.tasrose{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.2))} .tasrose svg{display:block;width:100%;overflow:visible}
+.tasrose .tasrh{transform-box:fill-box;transform-origin:70% 100%;animation:tasrh 4s ease-in-out infinite} @keyframes tasrh{50%{transform:rotate(-3deg)}}
+.tasrose .tasdrop{transform-box:fill-box;transform-origin:50% 0;animation:tasdrop 1.6s ease-in-out infinite;filter:drop-shadow(0 0 2px #fff)} @keyframes tasdrop{50%{transform:scale(1.15,1.25)}}
+.tp2.tastau{border-radius:50%;background:radial-gradient(ellipse,rgba(200,235,255,.6) 0,rgba(200,235,255,.25) 45%,rgba(200,235,255,0) 70%);animation:tastau 1.6s ease-in-out infinite;transition:opacity .6s;filter:none}
+@keyframes tastau{50%{scale:1.15;opacity:.7}} .tp2.tastau.off{opacity:0}
+.tp2.tasdr{filter:drop-shadow(0 0 1vh #fff);z-index:7}
+.tp2.tasfd{filter:drop-shadow(0 .3vh .5vh rgba(0,0,0,.25)) drop-shadow(0 0 1.4vh rgba(255,250,230,.6))} .tasfd svg{display:block;width:100%;overflow:visible}
+.tasfd>.bb{animation:tasfd 2.2s ease-in-out infinite} @keyframes tasfd{50%{transform:rotate(8deg)}}
+.tasn .tasfd>.bb{animation:none} .tasn .tp2.tasfd{z-index:-1}
+.tasbart{position:absolute;left:50%;top:38.6%;width:17%;translate:-50% -50%;pointer-events:none} .tasbart svg{display:block;width:100%}
+.sck.tastail .tl{animation:sctl .28s ease-in-out infinite}
+.eef.tassnz>.bb{animation:tassnz .6s cubic-bezier(.3,.7,.4,1)} @keyframes tassnz{25%{transform:rotate(-6deg) translateY(2%)}55%{transform:rotate(7deg) translateY(-3%) scale(1.04,.96)}}
+.ill .tasart .tasn>.bb,.ill .tasart .eef>.bb{animation:none}
+/*<TASSECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -3602,7 +3643,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim',tasse:'tam'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -9471,7 +9512,7 @@ const KLONKI2={id:'klonki', v2:true, eef:1, dur:KDUR, title:'Eefje und Klonki', 
 /* Eefje's two friends, same size and same viewBox as eefjeSVG (head at 80,50). All their classes start with "pep" (class names are global).
    Peppio: curly orange-red hair, freckles, green striped jumper, blue trousers, red wellies, a little drum on a strap.
      data-arm: dn | up (cheering) | drum (two sticks; class .hit swaps them). Moods: smile, happy, oh, proud. .talking + --mo.
-   Niklas: short dark hair, round glasses, blue duffle coat with toggles, a leather satchel.
+   Niklas: short blond hair (no glasses), blue duffle coat with toggles, a leather satchel.
      data-arm: dn | up | point (right hand points ahead) | map (holds the map up in front). Moods: smile, happy, worry, oh. */
 function pepArm(d,hx,hy,c,cd,k,ks){ return `<path d="${d}" stroke="${cd}" stroke-width="11" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${c}" stroke-width="7.5" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="5.2" fill="${k}" stroke="${ks}" stroke-width="2"/>`; }
 function pepFace(E,KS,opt){ const o=opt||{};
@@ -9507,7 +9548,7 @@ function peppioSVG(){ const id='pp'+(++LANC), K='#ffe0c8', KS='#d49478', H='#e25
    <path d="M62 40 Q70 33 78 38 Q86 32 96 39" fill="none" stroke="${HD}" stroke-width="2" stroke-linecap="round" opacity=".7"/>
    <g fill="#d9845a" opacity=".8"><circle cx="66" cy="58" r="1.1"/><circle cx="69.5" cy="60.6" r="1.1"/><circle cx="64.4" cy="61.4" r="1"/><circle cx="94" cy="58" r="1.1"/><circle cx="90.5" cy="60.6" r="1.1"/><circle cx="95.6" cy="61.4" r="1"/></g>
    ${pepFace(E,KS)}</g></svg>`; }
-function niklasSVG(){ const K='#ffe4d0', KS='#d09a7e', H='#3a2a24', HD='#1e1410', C='#3a6ad0', CD='#1c3a86', T='#f0d49a', E='#2a1a2e';
+function niklasSVG(){ const K='#ffe4d0', KS='#d09a7e', H='#f4cc52', HD='#b8861c', C='#3a6ad0', CD='#1c3a86', T='#f0d49a', E='#2a1a2e';
   const arm=(d,hx,hy)=>pepArm(d,hx,hy,C,CD,K,KS), tog=(y)=>`<rect x="76.6" y="${y}" width="7" height="3.2" rx="1.6" fill="${T}" stroke="#8a6a3a" stroke-width="1"/>`;
   return `<svg viewBox="0 0 160 160" style="overflow:visible">
   <g class="peplg"><path d="M72 124 V140 M88 124 V140" stroke="#4a3220" stroke-width="12" stroke-linecap="round"/><path d="M72 124 V140 M88 124 V140" stroke="#7a5638" stroke-width="8.6" stroke-linecap="round"/>
@@ -9528,11 +9569,8 @@ function niklasSVG(){ const K='#ffe4d0', KS='#d09a7e', H='#3a2a24', HD='#1e1410'
   <g class="peph"><circle cx="55" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/><circle cx="105" cy="54" r="5" fill="${K}" stroke="${KS}" stroke-width="2"/>
    <circle cx="80" cy="50" r="25" fill="${K}" stroke="${KS}" stroke-width="2.6"/>
    <path d="M55 50 Q53 26 80 24 Q106 25 105 48 Q104 40 98 37 Q90 40 82 36 Q74 41 64 38 Q58 42 55 50Z" fill="${H}" stroke="${HD}" stroke-width="2.2" stroke-linejoin="round"/>
-   <path d="M66 30 Q76 27 86 30" stroke="#6a5048" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
-   ${pepFace(E,KS,{ex:3,ey:3.8})}
-   <g fill="rgba(220,240,255,.22)" stroke="#3a3040" stroke-width="2.4"><circle cx="71" cy="52" r="7.6"/><circle cx="89" cy="52" r="7.6"/></g>
-   <path d="M78.4 51 Q80 48.6 81.6 51" fill="none" stroke="#3a3040" stroke-width="2.2"/><path d="M63.4 51 L56 49 M96.6 51 L104 49" stroke="#3a3040" stroke-width="2" stroke-linecap="round"/>
-   <path d="M66 47.6 Q68.4 46 70.6 46.4" stroke="#fff" stroke-width="1.4" fill="none" opacity=".8" stroke-linecap="round"/><path d="M84 47.6 Q86.4 46 88.6 46.4" stroke="#fff" stroke-width="1.4" fill="none" opacity=".8" stroke-linecap="round"/></g></svg>`; }
+   <path d="M66 30 Q76 27 86 30" stroke="#fff0a8" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+   ${pepFace(E,KS)}</g></svg>`; }
 
 /* the little rowing boat, side view, bow to the right. part 'b' = the inside behind the children, 'f' = the outer side in front of them
    (with the water line). The rim of the near side runs from (8,34) over (110,40) to (212,16). viewBox 0 0 220 90. */
@@ -9975,6 +10013,382 @@ const PEPPIO2={id:'peppio', v2:true, eef:1, dur:PDUR, title:'Eefje, Peppio, Nikl
 function pepIsle(p){ TST.insp=p; const I=TB&&TB.els.insel; if(!I) return; const e=1-Math.pow(1-p,2.2); I.style.translate=`-50% calc(-50% + ${((1-e)*40).toFixed(2)}vh)`;
   I.style.setProperty('--gl',(.25+p*.75).toFixed(2)); }
 /*<PEPPIO*/
+/*TASSE>*/
+/* ================= Eefje und die Zaubertasse: drawn cast and set pieces ================= */
+/* All classes start with "tas" (class names are global).
+   tasseSVG: Niklas as a mug – blue like his duffle coat, his blond fringe under the rim, his face, two coat toggles.
+     Moods smile, happy, worry, oh, laugh; .talking + --mo. Inside the rim a magic filling (--lv 0..1) with a .swirl for stirring,
+     a soft glow around it (--tg 0..1). viewBox 0 0 120 120, the rim at y 32, the bottom at y 108. */
+function tasseSVG(){ const id='ts'+(++LANC), E='#2a1a2e', B='#3a6ad0', BD='#1c3a86', H='#f4cc52', HD='#b8861c';
+  return `<svg viewBox="0 0 120 120" style="overflow:visible"><defs><linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a56b8"/><stop offset=".35" stop-color="#4a7ae0"/><stop offset=".7" stop-color="#3a6ad0"/><stop offset="1" stop-color="#244a9e"/></linearGradient>
+    <radialGradient id="${id}f" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fffbe0"/><stop offset=".5" stop-color="#bfe8ff"/><stop offset="1" stop-color="#7ab8f0"/></radialGradient>
+    <radialGradient id="${id}g" cx="50%" cy="55%" r="50%"><stop offset="0" stop-color="#fff6c8" stop-opacity=".9"/><stop offset=".5" stop-color="#bfe0ff" stop-opacity=".45"/><stop offset="1" stop-color="#9ad0ff" stop-opacity="0"/></radialGradient></defs>
+   <ellipse class="tasgl" cx="60" cy="66" rx="66" ry="60" fill="url(#${id}g)"/>
+   <ellipse cx="60" cy="110" rx="36" ry="5" fill="rgba(0,0,0,.18)"/>
+   <path d="M92 46 C114 44 116 84 90 86" fill="none" stroke="${BD}" stroke-width="13" stroke-linecap="round"/><path d="M92 46 C114 44 116 84 90 86" fill="none" stroke="${B}" stroke-width="8" stroke-linecap="round"/>
+   <path d="M22 32 L27 98 Q29 108 41 108 L79 108 Q91 108 93 98 L98 32Z" fill="url(#${id}b)" stroke="${BD}" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M30 40 L34 96" stroke="#8ab0ff" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+   <ellipse cx="60" cy="32" rx="38" ry="9" fill="#173078" stroke="${BD}" stroke-width="3"/>
+   <ellipse class="tasin" cx="60" cy="33.5" rx="33" ry="6.4" fill="url(#${id}f)"/>
+   <g transform="translate(60 33.5) scale(1 .22)"><g class="swirl"><circle cx="22" cy="0" r="4" fill="#fff"/><circle cx="-14" cy="18" r="3" fill="#fff6b0"/><circle cx="-10" cy="-22" r="3.4" fill="#d8f0ff"/></g></g>
+   <path d="M22 32 Q60 46 98 32" fill="none" stroke="#7aa4f4" stroke-width="2.4" opacity=".8"/>
+   <path d="M27 39 Q33 51 39 43 Q45 54 51 44 Q57 55 63 44 Q69 54 75 43 Q81 51 87 43 Q91 47 93 40 Q60 50 27 39Z" fill="${H}" stroke="${HD}" stroke-width="1.8" stroke-linejoin="round"/>
+   <path d="M38 44 q4 3 7 1 M58 46 q4 3 7 0" stroke="#fff0a8" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".9"/>
+   <g class="tasbl"><ellipse cx="38" cy="74" rx="6" ry="3.4" fill="#ff8aa0" opacity=".6"/><ellipse cx="82" cy="74" rx="6" ry="3.4" fill="#ff8aa0" opacity=".6"/></g>
+   <g class="tase tase-o"><ellipse cx="47" cy="64" rx="4.4" ry="5.4" fill="${E}"/><ellipse cx="73" cy="64" rx="4.4" ry="5.4" fill="${E}"/><circle cx="48.6" cy="62" r="1.7" fill="#fff"/><circle cx="74.6" cy="62" r="1.7" fill="#fff"/></g>
+   <g class="tase tase-j" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"><path d="M41.5 65 q5.5 -7 11 0"/><path d="M67.5 65 q5.5 -7 11 0"/></g>
+   <g class="tase tase-w"><circle cx="47" cy="64" r="6" fill="#fff" stroke="${BD}" stroke-width="1.4"/><circle cx="73" cy="64" r="6" fill="#fff" stroke="${BD}" stroke-width="1.4"/><circle cx="47" cy="65" r="3.3" fill="${E}"/><circle cx="73" cy="65" r="3.3" fill="${E}"/>
+    <path class="tasbw" d="M40 55 L52 57.5 M80 55 L68 57.5" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/></g>
+   <path class="tasm tasm-s" d="M51 78 q9 7 18 0" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"/>
+   <ellipse class="tasm tasm-o" cx="60" cy="80" rx="4" ry="5" fill="#8a2a3a"/>
+   <path class="tasm tasm-w" d="M52 82 q8 -5 16 0" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"/>
+   <g class="tasm tasm-l"><path d="M48 76 Q60 94 72 76Z" fill="#8a2a3a" stroke="${E}" stroke-width="2.2" stroke-linejoin="round"/><path d="M50 77 H70 L68.6 79.6 H51.4Z" fill="#fff"/><path d="M54 86 Q60 90 66 86 Q60 83 54 86Z" fill="#ff7a8a"/></g>
+   <ellipse class="tasmo" cx="60" cy="79" rx="4.6" ry="4.2" fill="#8a2a3a"/>
+   <g fill="#f0d49a" stroke="#8a6a3a" stroke-width="1.2"><rect x="56" y="92" width="8" height="3.6" rx="1.8"/><rect x="56" y="99" width="8" height="3.6" rx="1.8"/></g></svg>`; }
+
+/* the garden table with a red-and-white cloth. The top is at y 22 of 130. viewBox 0 0 200 130 */
+function tasTischSVG(){ const id='tt'+(++LANC);
+  return `<svg viewBox="0 0 200 130" style="overflow:visible"><defs><pattern id="${id}p" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#fff"/><rect width="7" height="7" fill="#f07a7a"/><rect x="7" y="7" width="7" height="7" fill="#f07a7a"/><rect x="7" width="7" height="7" fill="#ffc8c8"/><rect y="7" width="7" height="7" fill="#ffc8c8"/></pattern></defs>
+   <ellipse cx="100" cy="126" rx="90" ry="6" fill="rgba(0,0,0,.18)"/>
+   <g stroke="#5a3418" stroke-width="2.4" stroke-linejoin="round"><path d="M34 40 L28 126 H38 L46 40Z" fill="#a86a34"/><path d="M166 40 L172 126 H162 L154 40Z" fill="#a86a34"/><path d="M92 44 L90 124 H110 L108 44Z" fill="#8a5428"/></g>
+   <path d="M4 22 Q4 44 12 52 Q22 46 30 54 Q40 46 50 56 Q60 48 70 57 Q80 49 90 58 Q100 50 110 58 Q120 49 130 57 Q140 48 150 56 Q160 46 170 54 Q178 46 188 52 Q196 44 196 22Z" fill="url(#${id}p)" stroke="#b04a4a" stroke-width="2.2" stroke-linejoin="round"/>
+   <ellipse cx="100" cy="22" rx="96" ry="18" fill="url(#${id}p)" stroke="#b04a4a" stroke-width="2.4"/>
+   <ellipse cx="100" cy="20" rx="80" ry="11" fill="rgba(255,255,255,.25)"/></svg>`; }
+/* the copper pot: the cocoa inside (.taslv, --lv 0..1 = how much milk), steam when it is warm (class .warm on the prop). viewBox 0 0 120 100 */
+function tasTopfSVG(){ const id='tp'+(++LANC);
+  return `<svg viewBox="0 0 120 100" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8582a"/><stop offset=".4" stop-color="#f0a06a"/><stop offset=".7" stop-color="#d0743e"/><stop offset="1" stop-color="#8a3e1a"/></linearGradient></defs>
+   <path d="M18 34 Q4 32 6 42 Q8 48 20 46" fill="none" stroke="#6a2e10" stroke-width="5" stroke-linecap="round"/><path d="M102 34 Q116 32 114 42 Q112 48 100 46" fill="none" stroke="#6a2e10" stroke-width="5" stroke-linecap="round"/>
+   <path d="M16 30 L22 86 Q24 96 36 96 H84 Q96 96 98 86 L104 30Z" fill="url(#${id})" stroke="#6a2e10" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M26 40 L30 84" stroke="#ffd0a0" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+   <ellipse cx="60" cy="30" rx="44" ry="10" fill="#4a1e0c" stroke="#6a2e10" stroke-width="3"/>
+   <ellipse cx="60" cy="31.5" rx="39" ry="7.4" fill="#6a3a1e"/>
+   <ellipse class="taslv" cx="60" cy="31.5" rx="39" ry="7.4" fill="#c8946a"/>
+   <path d="M16 30 Q60 46 104 30" fill="none" stroke="#ffc896" stroke-width="2.4" opacity=".8"/></svg>`; }
+/* the milk jug: white with blue dots, the spout up left (at 8,18). viewBox 0 0 80 100 */
+function tasKanneSVG(){ return `<svg viewBox="0 0 80 100" style="overflow:visible"><path d="M60 30 Q80 30 78 52 Q76 70 58 72" fill="none" stroke="#3a5aa8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M6 16 Q14 22 18 22 L16 34 Q8 60 14 86 Q18 96 32 96 H52 Q64 96 66 86 Q72 60 62 30 L62 16 Q40 10 18 14Z" fill="#fbfbff" stroke="#3a5aa8" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="40" cy="16" rx="22" ry="5" fill="#e8eeff" stroke="#3a5aa8" stroke-width="2.4"/>
+  <g fill="#5a8ae8">${[[30,44],[48,40],[26,62],[44,58],[56,70],[34,80],[50,84]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.4"/>`).join('')}</g>
+  <path d="M22 30 Q18 60 24 84" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".9"/></svg>`; }
+/* the old spellbook, standing up. Closed (.tasbz): a purple cover with a golden moon and star. Open (class .open on the prop, .tasbo):
+   two pages with three pictures – a dew drop, a feather and a laughing face. viewBox 0 0 200 150 */
+function tasBuchSVG(){ const id='tb'+(++LANC), ln=(x,y,w)=>`<path d="M${x} ${y} h${w}" stroke="#b8a070" stroke-width="2" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 200 150" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a5ad0"/><stop offset="1" stop-color="#4a2a8a"/></linearGradient></defs>
+   <g class="tasbz"><rect x="54" y="12" width="96" height="132" rx="6" fill="#f4e6c0" stroke="#7a5a2a" stroke-width="2"/>
+    <rect x="48" y="8" width="98" height="134" rx="7" fill="url(#${id})" stroke="#2a1458" stroke-width="3"/>
+    <rect x="58" y="18" width="78" height="114" rx="4" fill="none" stroke="#ffd84a" stroke-width="2.4"/>
+    <path d="M48 20 Q44 75 48 130" stroke="#2a1458" stroke-width="6" fill="none"/>
+    <path d="M104 52 A20 20 0 1 0 104 92 A15 15 0 1 1 104 52Z" fill="#ffd84a" stroke="#c8962a" stroke-width="1.6"/>
+    <path d="M114 62 l2.6 5.4 6 .8 -4.4 4 1 6 -5.2 -2.8 -5.2 2.8 1 -6 -4.4 -4 6 -.8Z" fill="#fff2a0" stroke="#c8962a" stroke-width="1"/>
+    <g fill="#ffd84a"><path d="M58 18 l10 0 -10 10Z"/><path d="M136 18 l-10 0 10 10Z"/><path d="M58 132 l10 0 -10 -10Z"/><path d="M136 132 l-10 0 10 -10Z"/></g></g>
+   <g class="tasbo"><path d="M100 18 Q60 6 10 14 V140 Q60 132 100 144Z" fill="#fbf0d2" stroke="#7a5a2a" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M100 18 Q140 6 190 14 V140 Q140 132 100 144Z" fill="#fbf0d2" stroke="#7a5a2a" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M100 18 V144" stroke="#c8a870" stroke-width="2.4"/><path d="M8 140 Q60 134 100 146 Q140 134 192 140 V146 Q140 140 100 150 Q60 140 8 146Z" fill="url(#${id})" stroke="#2a1458" stroke-width="2"/>
+    <g class="taspic tp1"><path d="M38 34 Q26 52 26 60 A12 12 0 0 0 50 60 Q50 52 38 34Z" fill="#9ad6ff" stroke="#3a7ac8" stroke-width="2"/><circle cx="33" cy="58" r="3" fill="#fff"/></g>
+    <g class="taspic tp2"><path d="M70 96 Q60 70 76 50 Q84 66 80 82 Q78 92 70 96Z" fill="#f4ecdc" stroke="#8a7a5a" stroke-width="2"/><path d="M70 96 Q72 76 77 54" stroke="#8a7a5a" stroke-width="1.6" fill="none"/></g>
+    ${ln(22,90,40)}${ln(22,100,52)}${ln(22,110,34)}${ln(22,120,48)}
+    <g class="taspic tp3"><circle cx="146" cy="58" r="24" fill="#ffe27a" stroke="#c8962a" stroke-width="2"/><path d="M134 54 q5 -6 10 0 M150 54 q5 -6 10 0" stroke="#5a3a1a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+     <path d="M134 64 Q146 82 158 64Z" fill="#8a2a3a" stroke="#5a3a1a" stroke-width="2" stroke-linejoin="round"/><path d="M118 40 q-4 -4 -2 -8 M174 40 q4 -4 2 -8" stroke="#c8962a" stroke-width="2" fill="none"/></g>
+    ${ln(118,96,56)}${ln(118,106,46)}${ln(118,116,60)}${ln(118,126,38)}</g></svg>`; }
+/* the rose bush: a big pink rose leans over to the left, a dew drop (.tasdrop) hangs under it at (58,66). viewBox 0 0 140 200 */
+function tasRoseSVG(){ const pt=(d,f)=>`<path d="${d}" fill="${f}" stroke="#b02a5a" stroke-width="2" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 140 200" style="overflow:visible">
+   <path d="M76 198 Q70 140 84 100 Q90 70 66 52" stroke="#2e7a3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <path d="M80 150 Q100 120 118 116" stroke="#2e7a3a" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M76 170 Q50 150 30 150" stroke="#2e7a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+   <g fill="#3a9a4a" stroke="#1e5a2a" stroke-width="2">${[[96,100,30],[112,128,-20],[58,140,200],[38,160,170],[92,170,40],[74,84,-40],[108,152,10]].map(([x,y,a])=>`<path d="M${x} ${y} q14 -10 26 0 q-14 10 -26 0Z" transform="rotate(${a} ${x} ${y})"/>`).join('')}</g>
+   <g class="tasbl2"><circle cx="118" cy="110" r="10" fill="#ff8ab8" stroke="#b02a5a" stroke-width="2"/><path d="M112 108 q6 -6 12 0" stroke="#b02a5a" stroke-width="1.6" fill="none"/>
+    <circle cx="30" cy="146" r="9" fill="#ff8ab8" stroke="#b02a5a" stroke-width="2"/><path d="M25 144 q5 -5 10 0" stroke="#b02a5a" stroke-width="1.6" fill="none"/></g>
+   <g class="tasrh">${pt('M40 56 Q30 26 58 18 Q86 14 88 42 Q86 64 64 66 Q46 66 40 56Z','#ff7aa8')}${pt('M48 50 Q44 30 62 28 Q78 28 78 44 Q74 58 60 58 Q50 58 48 50Z','#ff9ac0')}
+    ${pt('M56 46 Q56 36 64 36 Q72 38 70 46 Q66 52 60 51Z','#ffb8d4')}<path d="M60 44 q3 -4 6 -1" stroke="#b02a5a" stroke-width="1.6" fill="none"/></g>
+   <g class="tasdrop"><path d="M58 60 Q52 70 52 74 A6 6 0 0 0 64 74 Q64 70 58 60Z" fill="#cfeeff" stroke="#5aa0e0" stroke-width="1.6"/><circle cx="56" cy="72" r="1.8" fill="#fff"/></g></svg>`; }
+/* a soft owl feather. viewBox 0 0 40 80 */
+function tasFederSVG(){ return `<svg viewBox="0 0 40 80" style="overflow:visible"><path d="M20 78 Q8 50 14 26 Q18 8 28 2 Q34 20 30 44 Q28 62 20 78Z" fill="#f4ecdc" stroke="#8a7a5a" stroke-width="2"/>
+  <g stroke="#c8b898" stroke-width="1.4" fill="none"><path d="M22 40 L13 34 M23 30 L15 24 M21 52 L13 48 M24 34 L31 28 M23 46 L30 42 M22 58 L28 54"/></g>
+  <path d="M20 78 Q21 46 28 4" stroke="#8a7a5a" stroke-width="1.6" fill="none"/></svg>`; }
+/* a cocoa moustache for Niklas at the end */
+function tasBartSVG(){ return `<svg viewBox="0 0 40 14" style="overflow:visible"><path d="M2 6 Q8 13 20 7 Q32 13 38 6 Q36 2 30 4 Q24 6 20 3 Q16 6 10 4 Q4 2 2 6Z" fill="#7a4a26" stroke="#4a2a12" stroke-width="1.2"/></svg>`; }
+Object.assign(SVGP,{TASTISCH:[tasTischSVG,.65],TASROSE:[tasRoseSVG,1.43]});
+Object.assign(TSYL,{BUCH:'BUCH',KAKAO:'KA-KA-O'});
+
+Object.assign(SETS2,{
+  tasgarten:{clean:1, sky:'linear-gradient(180deg,#6aaee8 0%,#a8d4f2 45%,#ffe2b8 100%)', sun:[80,13],
+    far:sil(hills(451,236,70,'#a4d48e')+pines(453,30,90,'#6aa86a',96)+hills(457,290,46,'#86c472'),58), gnd:'linear-gradient(180deg,#94d672 0%,#6eb85a 48%,#4c9446 100%)',
+    act:[['haus','HEXHAUS',89,47,48,'big']], mid:[['PINE',5,47,26],['🌳',14,53,16]], fore:[['🌼',3,96,9],['🌷',97,95,9],['🌸',60,104,9]]},
+  tasrosen:{clean:1, sky:'linear-gradient(180deg,#7a9ee0 0%,#c0b4e0 40%,#ffc49a 78%,#ffe0b0 100%)', sun:[14,30],
+    far:sil(hills(461,240,60,'#b0c48a')+pines(463,24,80,'#7a9a6a',100)+hills(467,292,40,'#98b47a'),58), gnd:'linear-gradient(180deg,#8ccc6a 0%,#68ae56 48%,#468a44 100%)',
+    mid:[['🌳',94,50,18],['🌹',8,58,7],['🌹',86,60,6]], fore:[['🌹',4,96,10],['🌷',95,97,9],['🌿',40,105,14]]},
+  tasnacht:{sky:'linear-gradient(180deg,#05061e 0%,#141850 55%,#2e3076 100%)', stars:70, dcol:'8,8,34',
+    far:sil(hills(471,236,70,'#1e2a52')+pines(473,30,90,'#141c40',96)+hills(477,290,46,'#1a2448'),58), gnd:'linear-gradient(180deg,#2e5a4a 0%,#1e4236 50%,#122a24 100%)',
+    act:[['haus','HEXHAUS',89,47,48,'big']], mid:[['PINE',5,47,26]], fore:[['🌿',3,97,12],['🌾',97,97,12]]}
+});
+
+/* ---------- sounds: a poof, a plop, a giggle, a gurgle ---------- */
+const tasLate=()=>!tale||tale.t!==TAS2||!taleOn();
+function tasNoise(x,v,f0,f1,ms){ const ac=feeAC(); if(!ac||tasLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||400)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type='bandpass'; bp.Q.value=1; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.02); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+const tasPuff=(x)=>{ tasNoise(x,.2,600,120,700); chime([392,523,784]); };
+const tasPlitsch=(x)=>{ tasNoise(x,.12,2200,500,260); chimeAt([1568,2093],x); };
+function tasGluck(x,n){ for(let i=0;i<(n||4);i++) bLater(()=>{ tasNoise(x,.1,500+i*60,240,160); },i*260); }
+function tasGiggle(k,x){ const b=[880,988,1047,1175,1318,1397,1568][Math.min(6,k)]; for(let i=0;i<3;i++) bLater(()=>chimeAt([b+i*60],x),i*110); }
+
+/* ---------- helpers ---------- */
+/* the mug's filling and glow */
+function tasFill(lv,tg){ if(lv!=null) TST.tlv=lv; if(tg!=null) TST.ttg=tg; const T=TB&&TB.els.tasse; if(!T) return; T.style.setProperty('--lv',TST.tlv||0); T.style.setProperty('--tg',TST.ttg||0); }
+/* a magic poof cloud at x,y (px) */
+function tasPoof(x,y,k){ const u=vu(), s=k||1; for(let i=0;i<22*s;i++){ const a=Math.random()*6.283, v=(8+Math.random()*16)*u*s;
+    fxAdd({k:'steam',x:x+Math.cos(a)*u*3,y:y+Math.sin(a)*u*3,vx:Math.cos(a)*v,vy:Math.sin(a)*v-4*u,ph:Math.random()*6,s:(2.2+Math.random()*1.6)*s,life:1.4+Math.random()*.6,c:'rgba(255,255,255,.95)'}); }
+  glitterBurst(x,y,24*s,18*s); fxBurst(x,y,20,GLCOL); tasPuff(x); }
+/* steam over the pot once the cocoa is warm */
+function tasSteam(){ FX.em.push({rate:2.2,fn:()=>{ const P=TB&&TB.els.topf; if(!P||!P.isConnected||!P.classList.contains('warm')) return; const [x,y]=relEl(P,[.35+Math.random()*.3,.22]), u=vu();
+  fxAdd({k:'steam',x,y,vy:-(5+Math.random()*4)*u,vx:(Math.random()-.5)*3*u,ph:Math.random()*6,s:1.2,life:2.6,amb:1,c:'rgba(255,255,255,.9)'}); }}); }
+/* a hop of an element to a point (% of the stage), a little arc */
+function tasHop(e,x,y,ms,cb){ if(!e) return; const [x0,y0]=ctr(e), [x1,y1]=wpx(x,y), u=vu(); e.getAnimations().forEach(q=>q.cancel());
+  try{ const an=e.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${Math.min(0,y1-y0)-u*10}px)`},{transform:`translate(${x1-x0}px,${y1-y0}px)`}],{duration:ms||700,easing:'ease-in-out'});
+    an.onfinish=()=>{ if(!e.isConnected) return; e.style.left=x+'%'; e.style.top=y+'%'; if(cb) cb(); }; }catch(err){ e.style.left=x+'%'; e.style.top=y+'%'; if(cb) cb(); }
+  }
+/* the mug wobbles (scared, giggling) */
+function tasWob(){ const T=TB&&TB.els.tasse; if(!T) return; T.classList.remove('taswb'); void T.offsetWidth; T.classList.add('taswb'); }
+/* Niklas turns into the mug (scene 1) and back (scene 7) */
+function tasToMug(inst){ const N=TB.els.niklas, T=TB.els.tasse; if(!N||!T||TST.mug) return; TST.mug=1;
+  if(!inst){ const [x,y]=ctr(N); tasPoof(x,y,1.3); bLater(()=>{ const [tx,ty]=ctr(T); tasPoof(tx,ty,.7); },350); }
+  N.style.transition=inst?'none':'opacity .4s'; N.style.opacity=0; T.style.transition=inst?'none':'opacity .5s .5s, scale .5s .5s'; T.style.opacity=1; T.style.scale=1; }
+function tasToBoy(inst){ const N=TB.els.niklas, T=TB.els.tasse; if(!N||!T||!TST.mug) return; TST.mug=0;
+  if(!inst){ const [x,y]=ctr(T); tasPoof(x,y,1.1); bLater(()=>{ const [nx,ny]=ctr(N); tasPoof(nx,ny,1.3); },300); }
+  T.style.transition=inst?'none':'opacity .4s, scale .4s'; T.style.opacity=0; T.style.scale=.4; N.style.transition=inst?'none':'opacity .6s .5s'; N.style.opacity=1; }
+/* golden laugh bubbles rise from the mug's mouth and sink into it */
+function tasLaughBubs(n){ const T=TB&&TB.els.tasse; if(!T) return; const u=vu(); for(let i=0;i<(n||6);i++) bLater(()=>{ if(!TB||!TB.els.tasse) return; const [x,y]=relEl(T,[.5,.68]);
+  fxAdd({k:'bub',x:x+(Math.random()-.5)*u*5,y,vx:0,vy:-(8+Math.random()*6)*u,ph:Math.random()*6,life:1.1,s:.8+Math.random()*.6,c:rnd(['rgba(255,226,122,.95)','rgba(255,246,190,.95)'])}); },i*120); }
+
+/* ---------- the new gesture: kitzeln (tickle) ----------
+   Wiggle the finger quickly over something. Every turn of direction (after at least 1.2 vh) is a tickle, a long straight stroke over it
+   counts as one too (generous); every 3 tickles make a giggle; a.n giggles (6) are enough. Progress stays when the finger lifts.
+   A tap without moving is a try. a:{id, n, pad (vh around it that still counts)}; hook giggle(k, p). */
+Object.assign(G2,{
+ kitzeln:{ setup(){ TB.kz={c:0,k:0,dir:0,seg:0,lx:null,ly:null,mv:0,sx:0,sy:0,g0:0,tap:0,auto:false,fin:false}; },
+   box(){ const r=TB.els[TB.a.id].getBoundingClientRect(), u=vu()*(TB.a.pad||8); return {l:r.left-u,t:r.top-u,r:r.right+u,b:r.bottom+u,cx:r.left+r.width/2,cy:r.top+r.height*.55}; },
+   inZ(x,y){ const z=this.box(); return x>z.l&&x<z.r&&y>z.t&&y<z.b; },
+   down(x,y){ const s=TB.kz; if(TB.done||s.auto||s.fin) return; s.lx=null; s.mv=0; s.sx=x; s.sy=y; s.g0=s.c; if(this.inZ(x,y)) poke2(); this.move(x,y); },
+   move(x,y){ const s=TB.kz; if(!TB.pd||TB.done||s.auto||s.fin) return; s.mv=Math.max(s.mv,Math.hypot(x-s.sx,y-s.sy)); if(!this.inZ(x,y)){ s.lx=null; return; }
+     if(s.lx==null){ s.lx=x; s.ly=y; s.dir=0; s.seg=0; return; } const mx=x-s.lx, my=y-s.ly, m=Math.hypot(mx,my); if(m<1) return; s.lx=x; s.ly=y;
+     const d=Math.abs(mx)>=Math.abs(my)?Math.sign(mx):2*Math.sign(my), u=vu();
+     if(s.dir&&d!==s.dir&&s.seg>u*1.2){ this.tick(x,y); s.seg=0; } else if(s.seg>u*11){ this.tick(x,y); s.seg=0; }
+     s.dir=d; s.seg+=m; if(Math.random()<.35) this.spark(x,y); },
+   spark(x,y){ const u=vu(); fxAdd({k:'spark',x:x+(Math.random()-.5)*u*3,y:y+(Math.random()-.5)*u*3,vx:(Math.random()-.5)*14*u,vy:-(4+Math.random()*8)*u,life:.5,s:.7+Math.random()*.5,c:rnd(['rgba(255,236,150,.95)','rgba(255,255,255,.95)','rgba(255,190,230,.9)'])}); },
+   tick(x,y){ const s=TB.kz; if(s.fin) return; s.c++; const T=TB.els[TB.a.id], w=T.querySelector('.bb')||T; w.classList.remove('taskz'); void w.offsetWidth; w.classList.add('taskz');
+     if(s.c%3===0) this.giggle(x,y); },
+   giggle(x,y){ const s=TB.kz, n=TB.a.n||6; if(s.fin) return; s.k++; const T=TB.els[TB.a.id], [cx,cy]=relEl(T,[.5,.2]), u=vu();
+     bubble(['hi!','hihi!','hihi!','haha!','hahaha!','hahaha!'][Math.min(5,s.k-1)],cx+(Math.random()-.5)*u*10,cy-u*4,3.4+s.k*.3,'#fff2b8'); tasGiggle(s.k,cx); poke2();
+     if(TB.sc.giggle) TB.sc.giggle(s.k,s.k/n);
+     if(s.k>=n){ s.fin=true; const [px,py]=ctr(T); glitterBurst(px,py,26,20); bLater(()=>done2(),900); } },
+   up(){ const s=TB.kz; if(TB.done||s.auto||s.fin) return; if(s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(s.c===s.g0) miss2(); },
+   frames(){ const z=this.box(), u=vu(), x=z.cx, y=z.cy, f=[[x-u*5,y+u*12,1,0],[x-u*3,y,.85,1]];
+     for(let i=0;i<10;i++) f.push([x+(i%2?u*3.5:-u*3.5),y+(i%3-1)*u*1.6,.85,1]); f.push([x+u*4,y+u*10,1,0]); return f; },
+   hint(){ const s=TB.kz; if(s.auto||s.fin) return; const T=TB.els[TB.a.id]; T.classList.add('g2hint'); bLater(()=>T.classList.remove('g2hint'),2500); ghost(this.frames(),2400); },
+   auto(){ const s=TB.kz; if(s.auto||s.fin) return; s.auto=true; ghost(this.frames(),2400,4); const sc=TB.sc, run=tale.run;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||TB.done||s.fin){ clearInterval(iv); return; } const p=ghostXY()||ctr(TB.els[TB.a.id]); this.spark(p[0],p[1]); this.tick(p[0],p[1]); },230); taleT.push(iv); } }
+});
+
+/* ================= Eefje und die Zaubertasse ================= */
+/* heart: a mistake can be fixed when friends stick together. Eefje's sneeze turns her friend Niklas into a mug; her spell can't simply
+   undo it, but the old spellbook can: a dew drop from the rose, a feather from Ulla the owl and a happy laugh. Being a mug turns out to be
+   useful – Niklas carries everything himself. The ending pays off the beginning: this time Socke keeps his tail still, and they finally
+   drink their cocoa. */
+const TDUR={};
+const TAS2={id:'tasse', v2:true, eef:1, dur:TDUR, title:'Eefje und die Zaubertasse', vtitle:'Ehfje und die Zaubertasse', icon:'☕',
+ cover:'linear-gradient(180deg,#2a2a7a 0%,#5a4ab4 40%,#e88ab0 75%,#ffd49a 100%)',
+ cast(sc){ const A=TB.act, box=(id,cls,svg,[x,y,z])=>{ const e=el('div','tp2 '+cls,svg); e.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; A.appendChild(e); TB.els[id]=e; return e; };
+  if(sc.tisch) box('tisch','tastisch',tasTischSVG(),sc.tisch);
+  if(sc.rose) box('rose','tasrose',tasRoseSVG(),sc.rose);
+  if(sc.tau){ const [y,w]=sc.tau, [rx,ry,rz]=sc.rose, dx=(58/140-.5)*rz*innerHeight/100/TB.W.offsetWidth*100, Z=el('div','tp2 tastau'); Z.style.cssText=`left:${rx+dx}%;top:${y}%;width:${w}vh;height:${w*.5}vh`; A.appendChild(Z); TB.els.tau=Z; }
+  const mk=efCast(sc); try{ alignLoad(['d4','d5'].map(s=>TB.n(s))); }catch(e){}
+  if(sc.ul){ const [x,y,z]=sc.ul; mk('eule','ulla',owlSVG(),x,y,z*.79).dataset.mood=TST.om||'smile'; }
+  if(sc.ni){ const [x,y,z]=sc.ni, N=mk('niklas','pepc pepn',niklasSVG(),x,y,z); N.dataset.mood=TST.nim||'smile'; N.dataset.arm=TST.nia||'dn'; if(TST.mug) N.style.opacity=0;
+    if(TST.bart){ const B=el('div','tasbart',tasBartSVG()); N.querySelector('.bb').appendChild(B); } }
+  if(sc.topf){ const P=mk('topf','tastopf',tasTopfSVG(),...sc.topf); P.style.setProperty('--lv',TST.tml||0); if(TST.tkw) P.classList.add('warm'); tasSteam(); }
+  if(sc.kanne) mk('kanne','taskr',tasKanneSVG(),...sc.kanne);
+  if(sc.buch){ const B=mk('buch','tasbuch',tasBuchSVG(),...sc.buch); if(TST.tbo) B.classList.add('open'); }
+  if(sc.ts){ const T=mk('tasse','tasn',tasseSVG(),...sc.ts); T.dataset.mood=TST.tam||'smile'; if(!TST.mug&&sc.ni){ T.style.opacity=0; T.style.scale=.4; }
+    if(TST.tfd){ const F=mk('federk','tasfd',tasFederSVG(),66,4,0,'tasse'); F.style.width='22%'; F.style.rotate='24deg'; } tasFill(); }
+  if(sc.feder){ const F=mk('feder','tasfd',tasFederSVG(),...sc.feder); F.style.opacity=0; }
+  },
+ react(id,b,x,y){ const u=vu();
+  if(id==='tasse'||id==='federk'){ const T=TB.els.tasse; tasWob(); bubble(rnd(['hihi!','klirr!','hallo!','ich bin Niklas!']),x,y-u*8,3.6,'#d8e6ff'); chime([988,1318]); return true; }
+  if(id==='niklas'){ sqs(b); bubble(rnd(['hallo!','hihi!','juhu!']),x,y-u*8,3.8,'#d8e6ff'); chime([659,880]); return true; }
+  if(id==='eule'){ sqs(b); bubble(rnd(['huhu!','schuhu!']),x,y-u*7,3.8,'#e8d8ff'); chime([392,523]); return true; }
+  if(id==='topf'){ sqs(b); tasGluck(x,2); return true; }
+  if(id==='kanne'){ sqs(b); chime([784,988]); return true; }
+  if(id==='buch'){ sqs(b); glitterBurst(x,y,10,8); chime([1175,1568]); return true; }
+  if(id==='rose'){ wiggle(b); chime([1318,1760]); return true; }
+  if(id==='feder'){ sqs(b); chime([1568]); return true; }
+  if(id==='tisch'||id==='tau') return true;
+  return efReact(id,b,x,y); },
+ sc:[
+ /* 1 – a sunny afternoon in Eefje's garden: Niklas is visiting; pour the milk; her warming spell – Socke's tail tickles her nose – hatschi! – Niklas is a mug */
+ {set:'tasgarten', dark:0, u:[9,74,19], tisch:[56,84,62], ef:[24,63,28,'st'], sk:[34,88,10], ni:[86,62,27], topf:[47,63.6,17], kanne:[59,63.2,12], ts:[69,65.1,14],
+  st:{efm:'smile',efa:'dn',skm:'smile',nim:'happy',nia:'dn',tam:'oh',mug:0,tml:0,tkw:0,tlv:0,ttg:0,tfd:0,tbo:0,bart:0},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.2,kT:.2}],
+  enter(){ talk('niklas','Lass uns','sagte Niklas'); onPh('Lass uns',()=>{ mood('niklas','happy'); pepArmSet('niklas','up'); }); onPh('sagte Niklas',()=>pepArmSet('niklas','dn'));
+    onPh('Gieß die',()=>{ uniHop(); mood('hexe','happy'); }); },
+  ready(){ efReady(); pepArmSet('niklas','dn'); mood('hexe','smile'); },
+  a:{t:'pour',id:'kanne',to:'topf',lv:[0,1],lip:[-.4,-.32],tilt:-100,ms:3000,col:'rgba(255,255,255,.96)',pc:'rgba(255,255,255,.9)',w:'MILCH'},
+  s:'Es war einmal ein sonniger Nachmittag. Niklas war bei der kleinen Hexe Ehfje zu Besuch. Im Garten stand ein Tisch, darauf ein Topf mit Kakaopulver und ein Krug mit Milch. Lass uns Kakao kochen! sagte Niklas. Gieß die Milch in den Topf!',
+  h:'Leg den Finger auf den Milchkrug und schieb ihn über den Topf!',
+  pouring(p){ if(p>.5&&!TB.tq){ TB.tq=1; mood('niklas','happy'); mood('hexe','laugh'); } },
+  done(){ TST.tml=1; mood('hexe','happy'); },
+  d:[()=>{ onPh('Gluck',()=>tasGluck(ctr(TB.els.topf)[0],4),'d1'); },
+     'Gluck, gluck, gluck! Die Milch floss in den Topf. Jetzt muss der Kakao nur noch warm werden.',
+     ()=>{ talk('hexe','Kribbel','Da sprang','d2'); onPh('Ehfje hob',()=>{ efArm('up'); mood('hexe','smile'); },'d2'); onPh('Kribbel',()=>efSpell(10),'d2');
+       onPh('Da sprang',()=>{ const S=TB.els.socke; tasHop(S,39.5,64.5,700); mood('socke','happy'); },'d2');
+       onPh('kitzelte',()=>{ const S=TB.els.socke; S.classList.add('tastail'); mood('hexe','oh'); bubble('kitzel!',...relEl(S,[.2,.1]),3,'#e0e0f0'); },'d2'); },
+     'Ehfje hob den Finger: Kribbel, krabbel, Funkelschein – Kakao, Kakao, warm sollst du sein! Da sprang Socke auf den Tisch, und sein Schwanz kitzelte Ehfje an der Nase.',
+     ()=>{ onPh('Ha …',()=>{ const E=TB.els.hexe; bubble('ha …',...relEl(E,[.5,.1]),3.4,'#e8d8ff'); mood('hexe','oh'); },'d3');
+       onPh('hatschi',()=>TB.sc.sneeze(),'d3'); onPh('Puff',()=>tasToMug(),'d3'); },
+     'Ha … ha … hatschi! Der Zauber flog am Topf vorbei, direkt zu Niklas. Puff!',
+     ()=>{ onPh('war Niklas weg',()=>{ mood('hexe','worry'); efArm('dn'); },'d4'); onPh('eine blaue Tasse',()=>{ sqs(TB.els.tasse); mood('socke','oh'); },'d4');
+       onPh('blinzelte',()=>{ const T=TB.els.tasse; T.dataset.mood='smile'; T.classList.add('tasblk'); bLater(()=>T.classList.remove('tasblk'),900); chime([1318,1568]); },'d4'); },
+     'Als der Rauch verflogen war, war Niklas weg. Auf dem Tisch stand eine blaue Tasse mit einem blonden Schopf. Und die Tasse blinzelte.', 900],
+  sneeze(){ const E=TB.els.hexe, N=TB.els.niklas, S=TB.els.socke; sqs(E); E.classList.add('tassnz'); bLater(()=>E.classList.remove('tassnz'),700); if(S) S.classList.remove('tastail');
+    bubble('HATSCHI!',...relEl(E,[.5,.05]),4.6,'#fff2b8'); chime([1568,1047,784]); mood('niklas','oh');
+    const [x0,y0]=efFinger(), [x1,y1]=relEl(N,[.5,.35]), u=vu(); for(let i=0;i<18;i++){ const f=i/17; bLater(()=>{ fxAdd({k:'spark',x:x0+(x1-x0)*f,y:y0+(y1-y0)*f-Math.sin(f*Math.PI)*u*12,vx:(Math.random()-.5)*6*u,vy:-2*u,life:.7,s:.9,c:rnd(GLCOL)}); },i*28); } }},
+
+ /* 2 – "I'm a mug!": he slides to and fro on the table in fright; tap the mug to hold it; her spell only makes soap bubbles */
+ {set:'tasgarten', dark:0, u:[9,74,19], tisch:[56,84,62], ef:[24,63,28,'st'], sk:[34,88,10], ts:[45,65.1,14],
+  st:{efm:'worry',efa:'dn',skm:'oh',tam:'oh',mug:1},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.2,kT:.2}],
+  enter(){ talk('tasse','Ich bin','rief Niklas'); onPh('Ich bin',()=>{ mood('tasse','worry'); tasWob(); });
+    onPh('erschrak',()=>{ mood('tasse','oh'); TB.els.tasse.classList.add('tasrut'); mood('hexe','oh'); }); onPh('Tipp auf',()=>uniHop()); },
+  ready(){ efReady(); TB.els.tasse.classList.add('tasrut'); mood('tasse','oh'); mood('hexe','oh'); },
+  a:{t:'catch',id:'tasse',path:[[45,65.1],[67,65.1]],spd:.7,roll:.001,w:'TASSE'},
+  s:'Ich bin eine Tasse! rief Niklas. Er erschrak so sehr, dass er wackelte und über den Tisch rutschte, hin und her. Gleich fällt er herunter! Tipp auf die Tasse und halt sie fest!',
+  h:'Tipp auf die rutschende Tasse!',
+  item(){ const T=TB.els.tasse; T.classList.remove('tasrut'); T.style.rotate='0deg'; mood('hexe','happy'); mood('socke','smile'); },
+  done(){ mood('tasse','smile'); },
+  d:[()=>{ talk('tasse','Puh','sagte Niklas','d1'); talk('tasse','Danke',null,'d1'); onPh('Gerade noch',()=>{ efArm('up'); },'d1'); onPh('Danke',()=>{ mood('tasse','happy'); efArm('dn'); const [x,y]=ctr(TB.els.tasse); hearts(x,y-vu()*4,2); },'d1'); },
+     'Gerade noch! Ehfje hielt die Tasse ganz fest. Puh, sagte Niklas. Danke!',
+     ()=>{ talk('hexe','Keine Angst','sagte Ehfje','d2'); talk('hexe','Kribbel','Aber aus','d2'); onPh('Keine Angst',()=>mood('hexe','smile'),'d2');
+       onPh('Kribbel',()=>{ efArm('up'); efSpell(8); },'d2');
+       onPh('Seifenblasen',()=>{ const u=vu(); for(let i=0;i<14;i++) bLater(()=>{ const [x,y]=efFinger(); fxAdd({k:'bub',x,y,vx:(Math.random()-.3)*10*u,vy:-(5+Math.random()*7)*u,ph:Math.random()*6,life:2.2,s:1+Math.random()*1.2,c:rnd(['rgba(200,230,255,.9)','rgba(255,210,240,.9)','rgba(220,255,230,.9)'])}); },i*90);
+         mood('hexe','worry'); mood('tasse','worry'); bLater(()=>efArm('dn'),1400); },'d2'); },
+     'Keine Angst, ich zaubere dich zurück, sagte Ehfje. Kribbel, krabbel, Funkelschein – Niklas soll wieder Niklas sein! Aber aus ihrem Finger kamen nur Seifenblasen.',
+     ()=>{ talk('tasse','Hm','sagte Niklas','d3'); talk('tasse','Vielleicht',null,'d3'); onPh('Vielleicht',()=>mood('tasse','smile'),'d3'); onPh('Zauberbuch',()=>{ mood('hexe','happy'); },'d3'); },
+     'Hm, sagte Niklas und dachte nach. Vielleicht steht es in deinem Zauberbuch?', 800]},
+
+ /* 3 – the old spellbook: wipe off the dust; it opens by itself at a page with three pictures */
+ {set:'tasgarten', dark:0, u:[9,74,19], tisch:[56,84,62], ef:[24,63,28,'st'], sk:[34,88,10], ts:[69,65.1,14], buch:[49,57.2,36],
+  st:{efm:'smile',efa:'dn',skm:'smile',tam:'smile',mug:1,tbo:0},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.2,kT:.2}],
+  enter(){ const B=TB.els.buch; B.style.opacity=0; B.style.transition='opacity .8s, scale .8s'; B.style.scale=.5;
+    onPh('Zauberbuch',()=>{ B.style.opacity=1; B.style.scale=1; const [x,y]=ctr(B); glitterBurst(x,y,12,12); chime([988,1318]); });
+    onPh('ganz staubig',()=>{ const [x,y]=ctr(TB.els.buch); for(let i=0;i<12;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*14,y:y+(Math.random()-.5)*vu()*12,vx:(Math.random()-.5)*16*vu(),vy:-(4+Math.random()*6)*vu(),s:1+Math.random(),life:1.4,c:'rgba(220,210,190,.7)'}); mood('hexe','oh'); });
+    onPh('Wisch',()=>{ uniHop(); mood('hexe','smile'); }); },
+  ready(){ efReady(); const B=TB.els.buch; B.style.transition='none'; B.style.opacity=1; B.style.scale=1; mood('hexe','smile'); },
+  a:{t:'rub',id:'buch',w:'BUCH'},
+  s:'Ehfje holte ihr altes Zauberbuch aus dem Haus. Es war ganz staubig, so lange hatte sie nicht mehr hineingeschaut. Wisch den Staub vom Zauberbuch, hin und her!',
+  h:'Wisch mit dem Finger über das staubige Buch, hin und her!',
+  rubStep(cl){ if(cl>.4) mood('tasse','happy'); },
+  done(){ mood('hexe','happy'); },
+  d:[()=>{ onPh('klappte',()=>{ const B=TB.els.buch; B.classList.add('open'); TST.tbo=1; sqs(B); chime([784,988,1175]); },'d1');
+       onPh('blätterten',()=>{ const B=TB.els.buch; B.classList.add('tasflip'); for(let i=0;i<5;i++) bLater(()=>{ try{ if(typeof pageSnd==='function') pageSnd(); }catch(e){} },i*260); bLater(()=>B.classList.remove('tasflip'),1500); },'d1');
+       onPh('drei Bildern',()=>{ const [x,y]=ctr(TB.els.buch); glitterBurst(x,y,16,14); },'d1'); },
+     'Da klappte das Buch auf, und die Seiten blätterten ganz von allein. Bis zu einer Seite mit drei Bildern.',
+     ()=>{ talk('hexe','Ein Niesezauber',null,'d2'); onPh('Ehfje las',()=>{ mood('hexe','smile'); },'d2');
+       [['Tautropfen','tp1'],['Feder','tp2'],['Lachen','tp3']].forEach(([w,c])=>onPh(w,()=>{ const P=TB.els.buch.querySelector('.'+c); P.classList.add('on'); const [x,y]=ctr(P); glitterBurst(x,y,10,6); chime([1318,1568]); },'d2')); },
+     'Ehfje las vor: Ein Niesezauber geht wieder weg mit drei Dingen. Mit einem Tautropfen von der Rose. Mit einer Feder von der Eule. Und mit einem fröhlichen Lachen.',
+     ()=>{ talk('hexe','Wer soll','fragte Ehfje','d3'); talk('tasse','Ich natürlich',null,'d3'); onPh('Wer soll',()=>mood('hexe','worry'),'d3');
+       onPh('grinste',()=>{ mood('tasse','happy'); tasWob(); },'d3'); onPh('Ich bin doch',()=>{ mood('hexe','laugh'); },'d3'); },
+     'Wer soll das alles tragen? fragte Ehfje. Niklas grinste. Ich natürlich! Ich bin doch eine Tasse!', 900]},
+
+ /* 4 – the rose garden: a dew drop hangs from the biggest rose; push the mug under it – plitsch! */
+ {set:'tasrosen', dark:.06, u:[9,74,18], ef:[23,64,26,'st'], ts:[36,85,15], rose:[70,50,52], tau:[85,17],
+  st:{efm:'smile',efa:'dn',tam:'smile',mug:1,tlv:0,ttg:0},
+  lights:[{id:'rose',r0:10,rT:10,k0:.2,kT:.2,warm:1}],
+  enter(){ onPh('glitzernder',()=>{ const D=TB.els.rose.querySelector('.tasdrop'), [x,y]=ctr(D); glitterBurst(x,y,12,6); chimeAt([2093,2637],x); });
+    onPh('Gleich fällt',()=>{ mood('tasse','oh'); wiggle(TB.els.rose); }); onPh('Schieb die',()=>{ uniHop(); mood('tasse','smile'); }); },
+  ready(){ efReady(); mood('tasse','smile'); },
+  a:{t:'drag',ids:['tasse'],to:'tau',w:'ROSE'},
+  s:'Ehfje trug Niklas in den Rosengarten. Socke blieb zu Hause und passte auf. An der größten Rose hing ein glitzernder Tautropfen. Gleich fällt er herunter! Schieb die Tasse unter die Rose!',
+  h:'Leg den Finger auf die Tasse und schieb sie unter den Tautropfen!',
+  done(){ mood('tasse','happy'); mood('hexe','happy'); TB.els.tau.classList.add('off'); },
+  d:[()=>{ onPh('Plitsch',()=>TB.sc.drop(),'d1'); onPh('leuchtete',()=>{ tasFill(.35,.3); const [x,y]=relEl(TB.els.tasse,[.5,.3]); glitterBurst(x,y,14,8); },'d1'); },
+     'Plitsch! Der Tautropfen fiel genau in die Tasse und leuchtete.',
+     ()=>{ talk('tasse','Gut, dass','sagte Niklas','d2'); onPh('Gut, dass',()=>{ mood('tasse','happy'); tasWob(); },'d2'); onPh('stolz',()=>{ mood('hexe','laugh'); },'d2'); },
+     'Gut, dass ich eine Tasse bin! sagte Niklas stolz.', 800],
+  drop(){ const R=TB.els.rose, D=R.querySelector('.tasdrop'), T=TB.els.tasse; if(!D||!T) return; const r=D.getBoundingClientRect(), [x1,y1]=relEl(T,[.5,.28]);
+    const P=el('div','tp2 tasdr',`<svg viewBox="0 0 16 22" style="width:100%;display:block"><path d="M8 1 Q1 12 1 15 A7 7 0 0 0 15 15 Q15 12 8 1Z" fill="#cfeeff" stroke="#5aa0e0" stroke-width="1.4"/></svg>`);
+    P.style.width=(r.width/innerHeight*100)+'vh'; TB.act.appendChild(P); putAt(P,r.left+r.width/2,r.top+r.height/2); D.style.opacity=0; const [x0,y0]=ctr(P);
+    try{ P.animate([{transform:'none'},{transform:`translate(${x1-x0}px,${y1-y0}px)`}],{duration:520,easing:'cubic-bezier(.5,0,1,1)',fill:'forwards'}).onfinish=()=>{ P.remove(); tasPlitsch(x1); dingRing(x1,y1,vu()*10,'rgba(200,235,255,.95)'); sqs(T); }; }catch(e){ P.remove(); } }},
+
+ /* 5 – at Ulla's oak: Ulla shakes out a feather; guide it into the mug */
+ {set:'eulenberg', dark:.28, u:[12,73,20], ef:[29,70,27,'st'], ts:[45,85,14], ul:[76,52,17], feder:[68,60,9],
+  st:{efm:'smile',efa:'dn',tam:'smile',mug:1,tlv:.35,ttg:.3,om:'smile'},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.45,kT:.45},{id:'uni',r0:12,rT:12,k0:.4,kT:.4},{id:'eule',r0:10,rT:10,k0:.45,kT:.45},{id:'tasse',r0:10,rT:10,k0:.45,kT:.45}],
+  enter(){ talk('hexe','Liebe Ulla','sagte Ehfje'); talk('hexe','wir brauchen','Ulla schüttelte'); onPh('Liebe Ulla',()=>{ sqs(TB.els.eule); efArm('up'); });
+    onPh('Ulla schüttelte',()=>{ efArm('dn'); this.shake(); }); onPh('Lenk die',()=>uniHop()); },
+  shake(inst){ const U=TB.els.eule, F=TB.els.feder; if(!F||F.dataset.on) return; F.dataset.on=1; if(!inst){ wiggle(U); mood('eule','joy'); const [x,y]=ctr(U); glitterBurst(x,y,10,10); chime([523,784]); }
+    F.style.transition=inst?'none':'opacity .6s'; F.style.opacity=1; },
+  ready(){ efReady(); this.shake(true); mood('eule','smile'); mood('tasse','smile'); },
+  a:{t:'drift',id:'feder',to:'tasse',at:[.5,.22],v:5,tol:12,w:'FEDER'},
+  s:'Dann flogen sie auf deinem Einhorn zum Eulenberg. Dort, in der alten Eiche, wohnte Ulla, die Eule. Liebe Ulla, sagte Ehfje, wir brauchen eine Feder von dir. Ulla schüttelte sich, und eine weiche Feder schwebte herunter. Lenk die Feder mit dem Finger in die Tasse!',
+  h:'Fahr mit dem Finger hin und her und lenk die Feder in die Tasse!',
+  landed(){ mood('tasse','happy'); },
+  done(){ const F=TB.els.feder, T=TB.els.tasse; if(F&&T){ stickTo(F,T.querySelector('.bb'),.66,.04); F.style.width='22%'; F.style.rotate='24deg'; } TST.tfd=1; tasFill(.5,.4); mood('hexe','happy'); },
+  d:[()=>{ onPh('landete',()=>{ const [x,y]=relEl(TB.els.tasse,[.5,.25]); glitterBurst(x,y,14,8); chime([1318,1760]); },'d1'); },
+     'Die Feder landete in der Tasse, genau neben dem Tautropfen.',
+     ()=>{ talk('eule','Viel Glück','sagte Ulla','d2'); talk('eule','Und vergesst','Schuhu','d2'); onPh('Viel Glück',()=>{ mood('eule','joy'); TB.els.eule.classList.add('wave'); },'d2');
+       onPh('Schuhu',()=>{ TB.els.eule.classList.remove('wave'); sqs(TB.els.eule); },'d2'); },
+     'Viel Glück! sagte Ulla. Und vergesst das Lachen nicht! Schuhu!', 900]},
+
+ /* 6 – night in Eefje's garden: Niklas is too worried to laugh; tickle the mug until he laughs, golden bubbles sink into it */
+ {set:'tasnacht', dark:.42, u:[9,74,19], tisch:[56,84,62], ef:[24,63,28,'st'], sk:[34,88,10], ts:[57,65.1,14], mn:[80,20,10],
+  st:{efm:'smile',efa:'dn',skm:'smile',tam:'worry',mug:1,tml:1,tkw:0,tlv:.5,ttg:.4,tfd:1},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.4,kT:.4},{id:'uni',r0:12,rT:12,k0:.35,kT:.35},{id:'mond',r0:14,rT:14,k0:.6,kT:.6},{id:'tasse',name:'tsL',r0:12,rT:12,k0:.5,kT:.5,warm:1},{id:'haus',r0:16,rT:16,k0:.25,kT:.25,warm:1}],
+  enter(){ talk('hexe','Jetzt fehlt','sagte Ehfje'); talk('tasse','Ich kann','Dann kitzeln'); talk('hexe','Dann kitzeln','sagte Ehfje');
+    onPh('ernstes Gesicht',()=>mood('tasse','worry')); onPh('für immer',()=>{ mood('hexe','worry'); });
+    onPh('Dann kitzeln',()=>{ mood('hexe','laugh'); efArm('up'); }); onPh('Kitzel die',()=>{ efArm('dn'); uniHop(); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','happy'); mood('tasse','worry'); },
+  a:{t:'kitzeln',id:'tasse',n:6,w:'LACHEN'},
+  s:'Als es Nacht wurde, waren sie wieder in Ehfjes Garten. Jetzt fehlt nur noch das Lachen, sagte Ehfje. Aber Niklas machte ein ernstes Gesicht. Ich kann jetzt nicht lachen. Was ist, wenn ich für immer eine Tasse bleibe? Dann kitzeln wir dich! sagte Ehfje. Kitzel die Tasse, ganz schnell hin und her!',
+  h:'Wackel mit dem Finger ganz schnell über der Tasse: kille, kille!',
+  giggle(k){ const T=TB.els.tasse; tasWob(); if(k===1) mood('tasse','oh'); if(k===2) mood('tasse','smile'); if(k>=3) mood('tasse',k>=4?'laugh':'happy');
+    if(k===3){ const S=TB.els.socke; tasHop(S,43.5,64.5,700,()=>{ sqs(S); bubble('miau!',...relEl(S,[.5,0]),3.2,'#e0e0f0'); }); mood('socke','happy'); }
+    if(k===5){ try{ sneeze(); }catch(e){} mood('hexe','laugh'); }
+    if(k>=4) tasLaughBubs(4); tasFill(.5+k*.04,.4+k*.04); },
+  done(){ mood('tasse','laugh'); mood('hexe','laugh'); tasLaughBubs(10); tasFill(.75,.6); if(TB.tsL){ TB.tsL.rT=18; } },
+  d:[()=>{ onPh('Hihi',()=>{ mood('tasse','laugh'); const T=TB.els.tasse; T.classList.add('taslol'); },'d1'); onPh('goldene',()=>{ tasLaughBubs(12); tasFill(.8,.7); },'d1'); },
+     'Hihi, haha, hahaha! Niklas lachte und lachte. Und aus seinem Lachen stiegen goldene Bläschen in die Tasse.',
+     ()=>{ talk('tasse','Das war','sagte Niklas','d2'); talk('tasse','Jetzt haben',null,'d2'); onPh('Das war',()=>{ TB.els.tasse.classList.remove('taslol'); mood('tasse','happy'); },'d2');
+       onPh('Jetzt haben',()=>{ mood('hexe','happy'); const [x,y]=ctr(TB.els.tasse); hearts(x,y-vu()*4,3); },'d2'); },
+     'Das war lustig! sagte Niklas. Jetzt haben wir alles!', 800]},
+
+ /* 7 – stir everything in the mug; the spell backwards – puff! – Niklas is back; this time Socke keeps his tail still; cocoa for everyone */
+ {set:'tasnacht', dark:.42, u:[9,74,19], tisch:[56,84,62], ef:[24,63,28,'st'], sk:[34,88,10], topf:[45,63.6,17], ts:[62,65.1,14], ni:[86,62,27], mn:[80,20,10],
+  st:{efm:'happy',efa:'dn',skm:'happy',tam:'happy',mug:1,tml:1,tkw:0,tlv:.8,ttg:.7,tfd:1,nim:'happy',nia:'dn',bart:0},
+  lights:[{id:'hexe',r0:14,rT:14,k0:.4,kT:.4},{id:'uni',r0:12,rT:12,k0:.35,kT:.35},{id:'mond',r0:14,rT:14,k0:.6,kT:.6},{id:'tasse',name:'tsL',r0:16,rT:16,k0:.55,kT:.55,warm:1},{id:'haus',r0:16,rT:16,k0:.25,kT:.25,warm:1}],
+  enter(){ onPh('der Tautropfen',()=>{ const [x,y]=relEl(TB.els.tasse,[.5,.28]); glitterBurst(x,y,8,5); chimeAt([2093],x); });
+    onPh('die Feder',()=>sqs(TB.els.federk||TB.els.tasse)); onPh('das Lachen',()=>tasLaughBubs(5)); onPh('Rühr alles',()=>uniHop()); },
+  ready(){ efReady(); },
+  a:{t:'stir',id:'tasse',turns:2,pc:'rgba(200,230,255,.95)',w:'KAKAO'},
+  s:'Jetzt war alles in der Tasse: der Tautropfen, die Feder und das Lachen. Der Mond schien hell auf den Garten. Rühr alles in der Tasse um, rundherum!',
+  h:'Fahr mit dem Finger rundherum über die Tasse!',
+  stirring(p){ tasFill(.8+p*.2,.7+p*.3); if(TB.tsL) TB.tsL.rT=16+p*14; if(p>.5&&!TB.tq){ TB.tq=1; mood('tasse','laugh'); bubble('das kitzelt!',...relEl(TB.els.tasse,[.5,0]),3.4,'#fff2b8'); } },
+  done(){ tasFill(1,1); mood('tasse','happy'); },
+  d:[()=>{ onPh('wie ein kleiner Mond',()=>{ const [x,y]=ctr(TB.els.tasse); glitterBurst(x,y,24,16); chime([1318,1568,2093]); },'d1');
+       talk('hexe','Schein, Funkel',null,'d1'); onPh('rückwärts',()=>{ efArm('up'); mood('hexe','smile'); },'d1'); onPh('Schein, Funkel',()=>efSpell(16),'d1'); },
+     'Die Tasse leuchtete wie ein kleiner Mond. Ehfje sagte den Zauberspruch ganz langsam rückwärts: Schein, Funkel, krabbel, kribbel!',
+     ()=>{ onPh('Puff',()=>{ tasToBoy(); if(TB.tsL){ TB.tsL.el=TB.els.niklas; TB.tsL.rT=14; } },'d2');
+       onPh('Hurra',()=>{ efArm('up'); mood('hexe','laugh'); mood('niklas','happy'); pepArmSet('niklas','up'); pepHop('niklas'); sqs(TB.els.socke); const [x,y]=ctr(TB.els.niklas); hearts(x,y-vu()*8,4); chime([784,988,1175,1568]); },'d2'); },
+     'Puff! Da stand Niklas wieder im Garten, mit seinen blonden Haaren und ganz ohne Henkel. Hurra! riefen alle.',
+     ()=>{ onPh('zauberte',()=>{ efArm('up'); efSpell(10); pepArmSet('niklas','dn'); },'d3'); onPh('warm',()=>{ TB.els.topf.classList.add('warm'); TST.tkw=1; tasGluck(ctr(TB.els.topf)[0],3); },'d3');
+       onPh('diesmal',()=>{ efArm('dn'); const S=TB.els.socke; mood('socke','smile'); sqs(S); },'d3'); onPh('ganz still',()=>{ mood('hexe','happy'); },'d3'); },
+     'Dann zauberte Ehfje den Kakao warm. Und diesmal hielt Socke seinen Schwanz ganz still.',
+     ()=>{ onPh('trank',()=>{ const N=TB.els.niklas; if(N&&!N.querySelector('.tasbart')){ const B=el('div','tasbart',tasBartSVG()); N.querySelector('.bb').appendChild(B); TST.bart=1; } sqs(N); },'d4');
+       onPh('lachten',()=>{ mood('hexe','laugh'); mood('niklas','happy'); mood('socke','happy'); const [x,y]=ctr(TB.els.niklas); hearts(x,y-vu()*6,3); },'d4'); },
+     'Niklas trank so schnell, dass er einen braunen Kakaobart bekam. Da lachten sie alle.',
+     ()=>{ onPh('trinken sie',()=>{ ['hexe','niklas','socke'].forEach((k,i)=>bLater(()=>{ const E=TB.els[k]; if(E){ const [x,y]=ctr(E); glitterBurst(x,y,10,8); chimeAt([1568+i*262],x); } },i*360)); },'d5'); },
+     'Und wenn sie nicht ausgetrunken haben, dann trinken sie noch heute.', 1600]}
+ ]};
+/*<TASSE*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -9999,7 +10413,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -10031,6 +10445,11 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="tp2 chr pepc pepn kid" data-mood="happy" data-arm="map" style="left:80%;top:11.5%;width:34.7%"><div class="bb">${niklasSVG()}</div></div>`+
     `<div class="pepfr">${pepBootSVG('f')}</div></div></div></div>`+
     [[12,16,5],[40,8,4],[90,40,3.4],[10,44,3.4],[60,14,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+  if(id==='tasse') return `<div class="tasart" style="position:absolute;inset:0">`+
+    `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:30%;top:56%;width:46%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr tasn" data-mood="laugh" style="left:68%;top:62%;width:30%;--lv:1;--tg:.8"><div class="bb">${tasseSVG()}<div class="tp2 chr tasfd kid" style="left:66%;top:4%;width:22%;rotate:24deg"><div class="bb">${tasFederSVG()}</div></div></div></div>`+
+    `<div class="tp2 tasbuch open" style="left:72%;top:22%;width:30%;rotate:8deg">${tasBuchSVG()}</div></div>`+
+    [[12,16,5],[44,10,4],[92,56,3.6],[10,46,3.4],[56,30,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
   if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
@@ -10284,6 +10703,8 @@ regTale2(FEEN2);
 regTale2(KLONKI2);
 /* Eefje, Peppio, Niklas und die Mondinsel: after Klonki, so the older lines keep their order in voice/clips.tsv */
 regTale2(PEPPIO2);
+/* Eefje und die Zaubertasse: after the Mondinsel, so the older lines keep their order in voice/clips.tsv */
+regTale2(TAS2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
