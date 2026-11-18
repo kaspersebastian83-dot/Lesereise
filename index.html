@@ -1515,6 +1515,95 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .ill .kiart .kiki>.bb,.ill .kiart .eef>.bb{animation:none}
 .kiart .kiki .kiw1,.kiart .kiki .kiw2{animation:none}
 /*<KIKICSS*/
+/*FAMILIECSS>*/
+/* Eefje und das große Picknick (all classes start with "fam") */
+.tp2.famp{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.22))} .famp svg,.famjn svg,.famdog svg,.famhop svg,.famdk svg,.fambu svg,.famham svg,.famkz svg,.famwu svg,.famcot svg{display:block;width:100%;overflow:visible}
+.famp>.bb{position:relative;animation:fampb 3.4s ease-in-out infinite} @keyframes fampb{50%{transform:translateY(-.6%)}}
+.fampa>.bb{animation-delay:-1.2s}
+.famp .arm{display:none} .famp[data-arm=dn] .arm-dn,.famp[data-arm=up] .arm-up,.famp[data-arm=hold] .arm-hold,.famp[data-arm=hug] .arm-hug,.famp[data-arm=carry] .arm-carry{display:inline}
+.famp .famsl{display:none} .famp.carry .famsl{display:inline}
+.famp .ey,.famp .m,.famp .mo,.famp .blush{display:none}
+.famp[data-mood=smile] .ey-o,.famp[data-mood=smile] .m-smile{display:inline}
+.famp[data-mood=happy] .ey-j,.famp[data-mood=happy] .m-smile,.famp[data-mood=happy] .blush{display:inline}
+.famp[data-mood=oh] .ey-w,.famp[data-mood=oh] .m-oh{display:inline}
+.famp[data-mood=laugh] .ey-j,.famp[data-mood=laugh] .m-laugh,.famp[data-mood=laugh] .blush{display:inline}
+.famp.talking .m{display:none!important} .famp.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.05))}
+.famp .ey-o{transform-box:fill-box;transform-origin:center;animation:famblk 5.2s infinite} .fampa .ey-o{animation-delay:-2.3s} @keyframes famblk{0%,95%,100%{transform:none}97%{transform:scaleY(.1)}}
+/* Janneke */
+.tp2.famjn{filter:drop-shadow(0 .3vh .5vh rgba(0,0,0,.2))} .famjn>.bb{position:relative;animation:famjb 2.4s ease-in-out infinite} @keyframes famjb{50%{transform:translateY(-2%) rotate(1.5deg)}}
+.famjn .ey,.famjn .m,.famjn .famtr{display:none}
+.famjn[data-mood=smile] .ey-o,.famjn[data-mood=smile] .m-s{display:inline}
+.famjn[data-mood=happy] .ey-j,.famjn[data-mood=happy] .m-s{display:inline}
+.famjn[data-mood=laugh] .ey-j,.famjn[data-mood=laugh] .m-l{display:inline}
+.famjn[data-mood=oh] .ey-o,.famjn[data-mood=oh] .m-o{display:inline}
+.famjn[data-mood=cry] .ey-c,.famjn[data-mood=cry] .m-c,.famjn[data-mood=cry] .famtr{display:inline}
+.famjn[data-mood=sleepy] .ey-z,.famjn[data-mood=sleepy] .m-z{display:inline}
+.famjn[data-mood=cry]>.bb{animation:famjc .5s ease-in-out infinite} @keyframes famjc{50%{transform:translateY(-3%) rotate(-3deg)}}
+.famjn[data-mood=laugh]>.bb{animation:famjl .36s ease-in-out infinite} @keyframes famjl{50%{transform:translateY(-4%) scale(1.03,.97)}}
+.famjn[data-mood=sleepy]>.bb{animation:famjb 4s ease-in-out infinite}
+.famjn .famtr{animation:famtr 1.2s ease-in infinite} @keyframes famtr{0%{transform:translateY(0);opacity:1}100%{transform:translateY(8px);opacity:0}}
+.famjn .famjh{transform-box:fill-box;transform-origin:50% 100%} .famjn[data-mood=laugh] .famjh{animation:famjh .3s ease-in-out infinite} @keyframes famjh{50%{transform:translateY(-14%)}}
+/* Boris */
+.tp2.famdog{filter:drop-shadow(0 .5vh .8vh rgba(0,0,0,.22))} .famdog>.bb{position:relative;animation:famdb 2.8s ease-in-out infinite} @keyframes famdb{50%{transform:translateY(-1%) scale(1.005,.995)}}
+.famdog.flip svg{scale:-1 1}
+.famdog .famtl{transform-box:view-box;transform-origin:54px 74px;animation:famtl 1.4s ease-in-out infinite} @keyframes famtl{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(12deg)}}
+.famdog.famwag .famtl{animation:famtl .32s ease-in-out infinite}
+.famdog .famhd{transform-box:view-box;transform-origin:136px 76px;transition:transform .5s cubic-bezier(.3,.7,.4,1)}
+.famdog.famsnf .famhd{transform:rotate(26deg) translate(2px,8px)} .famdog .famear{transform-box:view-box;transform-origin:148px 46px;animation:famear 2.8s ease-in-out infinite} @keyframes famear{50%{transform:rotate(4deg)}}
+.famdog.famrun .famlg path{transform-box:fill-box;transform-origin:50% 0;animation:famleg .3s ease-in-out infinite alternate} .famdog.famrun .famlb path{animation-delay:-.15s}
+.famdog.famrun .famlg path:nth-child(2){animation-direction:alternate-reverse} @keyframes famleg{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+.famdog.famrun>.bb{animation:famrn .3s ease-in-out infinite} @keyframes famrn{50%{transform:translateY(-3%)}}
+.famdog.famshk>.bb{animation:famshk .14s linear 9} @keyframes famshk{0%,100%{transform:rotate(0)}25%{transform:rotate(-5deg) translateX(-2%)}75%{transform:rotate(5deg) translateX(2%)}}
+.famdog.lie .famlg{display:none} .famdog.lie>.bb{transform:translateY(16%)} .famdog.lie .famhd{transform:rotate(14deg) translate(-4px,10px)} .famdog.lie .famsh{transform:translateY(-22px)}
+.famdog .ey,.famdog .m,.famdog .mo{display:none}
+.famdog[data-mood=smile] .ey-o,.famdog[data-mood=smile] .m-s{display:inline}
+.famdog[data-mood=happy] .ey-j,.famdog[data-mood=happy] .m-t{display:inline}
+.famdog[data-mood=oh] .ey-w,.famdog[data-mood=oh] .m-o{display:inline}
+.famdog[data-mood=sniff] .ey-z,.famdog[data-mood=sniff] .m-s{display:inline}
+.famdog[data-mood=sleepy] .ey-z,.famdog[data-mood=sleepy] .m-s{display:inline}
+.famdog.talking .m{display:none!important} .famdog.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.05))}
+.famdog[data-mood=sleepy] .famtl{animation:none;transform:rotate(60deg)}
+/* Hoppel, the basket, stones, pebble, sausage, food */
+.tp2.famhop{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.25));transition:opacity .4s} .famhop>.bb{position:relative}
+.tp2.famhop.wet{filter:drop-shadow(0 0 .8vh rgba(140,210,255,.9)) saturate(.8)}
+.tp2.famhop.hide:not(.peek){opacity:0} .tp2.famhop.peek{opacity:1}
+.tp2.famhop.peek>.bb{animation:famhpk 1s ease-in-out infinite} @keyframes famhpk{50%{transform:translateY(-8%) rotate(-6deg)}}
+.famk{opacity:0;transition:opacity .4s} .famk.in{opacity:1}
+.tp2.famkz{filter:drop-shadow(0 .2vh .3vh rgba(0,0,0,.3))} .tp2.famwu{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25))}
+.tp2.famfood{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25));animation:famfd .5s cubic-bezier(.3,1.6,.5,1)} @keyframes famfd{from{scale:.2;opacity:0}}
+.famband{position:absolute;left:0;width:100%;pointer-events:none} .famband svg{display:block;width:100%;height:100%}
+.famband .famrip path{animation:famrp 2.4s linear infinite} @keyframes famrp{0%{transform:translateY(-2px);opacity:0}30%{opacity:.9}100%{transform:translateY(4px);opacity:0}}
+.famband .famgl ellipse{animation:famgl 2.6s ease-in-out infinite} @keyframes famgl{0%,100%{opacity:.15}50%{opacity:.95}}
+.famband.famgold{--fsw0:#ffe0a8;--fsw1:#7ab8e0;--fsw2:#4a90c8} .famband.famrose{--fsw0:#ffb48a;--fsw1:#c87aa8;--fsw2:#6a5a9a}
+/* the blanket */
+.tp2.famdk{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.2))} .famdk svg{transition:none}
+.tp2.fambu{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.25));transition:opacity .4s}
+.famgrip{position:absolute;width:7vh;height:7vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:4;
+  background:radial-gradient(circle,rgba(255,255,255,.95) 0,rgba(255,236,150,.8) 30%,rgba(255,220,120,0) 70%);animation:famgp 1.4s ease-in-out infinite;transition:opacity .4s}
+@keyframes famgp{50%{scale:1.3}} .famgrip.held{scale:1.4;animation:none} .famgrip.pulse{animation:famgp .45s ease-in-out 5}
+/* the hammock: it swings round its rope's knot */
+.tp2.famham{transform-origin:50% 0;filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.25))} .famham>.bb{position:relative;transform-origin:50% 0}
+.famham .famjn>.bb{animation:none}
+/* the paw prints of the trace */
+.tdot.fampaw{width:4.2vh;height:4.2vh;background:transparent no-repeat center/contain;border:none;box-shadow:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%237a5a3a'%3E%3Cellipse cx='20' cy='27' rx='9' ry='8'/%3E%3Cellipse cx='9' cy='16' rx='3.6' ry='4.6'/%3E%3Cellipse cx='16' cy='9' rx='3.6' ry='4.6'/%3E%3Cellipse cx='24' cy='9' rx='3.6' ry='4.6'/%3E%3Cellipse cx='31' cy='16' rx='3.6' ry='4.6'/%3E%3C/g%3E%3C/svg%3E")}
+.tdot.fampaw.on{opacity:1;filter:drop-shadow(0 0 .8vh #fff) drop-shadow(0 0 1.6vh rgba(255,215,100,.9));background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%23ffc83a'%3E%3Cellipse cx='20' cy='27' rx='9' ry='8'/%3E%3Cellipse cx='9' cy='16' rx='3.6' ry='4.6'/%3E%3Cellipse cx='16' cy='9' rx='3.6' ry='4.6'/%3E%3Cellipse cx='24' cy='9' rx='3.6' ry='4.6'/%3E%3Cellipse cx='31' cy='16' rx='3.6' ry='4.6'/%3E%3C/g%3E%3C/svg%3E")}
+.leader.fampl{width:5vh;height:5vh}
+/* home at night: the nursery */
+.famheim{position:absolute;inset:0;opacity:0;transition:opacity 1.8s;z-index:8;pointer-events:none;overflow:hidden} .famheim.on{opacity:1}
+.famheim .famwall{position:absolute;inset:0;background:linear-gradient(180deg,#3a3058 0%,#5a4870 60%,#6a5478 100%)}
+.famheim .famwall::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 3vh,transparent 3vh 6vh)}
+.famheim .famfloor{position:absolute;left:0;right:0;top:74%;bottom:0;background:linear-gradient(180deg,#7a5a40 0%,#5a402c 100%)}
+.famheim .famwin{position:absolute;left:12%;top:10%;width:22%;height:36%;border:1.4vh solid #c8a070;border-radius:1vh;background:linear-gradient(180deg,#081038,#1a2464);overflow:hidden;box-shadow:0 0 0 .4vh #8a6a42}
+.famheim .famwx{position:absolute;inset:0;background:linear-gradient(90deg,transparent calc(50% - .5vh),#c8a070 calc(50% - .5vh),#c8a070 calc(50% + .5vh),transparent calc(50% + .5vh)),linear-gradient(180deg,transparent calc(50% - .5vh),#c8a070 calc(50% - .5vh),#c8a070 calc(50% + .5vh),transparent calc(50% + .5vh))}
+.famheim .famwsky i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
+.famheim .famstar{position:absolute;left:66%;top:22%;width:3.4vh;height:3.4vh;translate:-50% -50%;background:radial-gradient(circle,#fff 0,#fff6c0 30%,rgba(255,240,180,0) 70%);animation:famst 2.4s ease-in-out infinite} @keyframes famst{50%{scale:1.5}}
+.famheim .famlamp{position:absolute;left:62%;top:42%;width:40vh;height:40vh;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(255,220,150,.45) 0,rgba(255,200,120,.15) 45%,rgba(255,200,120,0) 70%)}
+.famheim .tp2{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.3))} .famheim .famcotf{position:absolute;inset:0;pointer-events:none} .famheim .famcotf svg{width:100%;height:100%}
+.famheim .famjn.kid{z-index:1} .famheim .famcotf{z-index:2}
+.famheim .famp>.bb,.famheim .eef>.bb,.famheim .famdog>.bb{animation:none}
+.famart .famp>.bb,.famart .eef>.bb,.famart .famdog>.bb,.famart .famjn>.bb{animation:none}
+/*<FAMILIECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -2846,8 +2935,8 @@ const G2={
      dense.push(pts[pts.length-1]); let L=0; const acc=[0]; for(let i=1;i<dense.length;i++){ L+=Math.hypot(dense[i][0]-dense[i-1][0],dense[i][1]-dense[i-1][1]); acc.push(L); }
      for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1);
        S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
-     TB.S=S.map(p=>wpos(p[0],p[1])); TB.k=0; TB.dots=TB.S.map((p,i)=>{ if(TB.a.hoof){ if(i%5!==2) return null; const q=TB.S[Math.min(TB.S.length-1,i+1)], an=Math.atan2(q[1]-p[1],q[0]-p[0])*57.3+90;
-       const d=el('div','tdot hoof'); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; d.style.rotate=(an+(i%10<5?-14:14)).toFixed(0)+'deg'; TB.act.appendChild(d); return d; }
+     TB.S=S.map(p=>wpos(p[0],p[1])); TB.k=0; TB.dots=TB.S.map((p,i)=>{ if(TB.a.hoof||TB.a.paw){ if(i%5!==2) return null; const q=TB.S[Math.min(TB.S.length-1,i+1)], an=Math.atan2(q[1]-p[1],q[0]-p[0])*57.3+90;
+       const d=el('div','tdot '+(TB.a.paw?'fampaw':'hoof')); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; d.style.rotate=(an+(i%10<5?-14:14)).toFixed(0)+'deg'; TB.act.appendChild(d); return d; }
        if(i%2) return null; const d=el('div','tdot'); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; TB.act.appendChild(d); return d; });
      if(TB.a.rainbow){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${['#ff5f6d','#ffb347','#ffe66b','#6bdc8a','#5fb8ff','#a57bff'].map(c=>`<polyline fill="none" stroke="${c}" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
@@ -2861,7 +2950,7 @@ const G2={
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      if(TB.a.pearl){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b8a0f0','2.2vh',.55],['#fff6fe','1.2vh',1],['#ffe27a','.35vh',1]].map(([c,w,o])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:${o}" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
-     const ld=el('div','leader'); TB.act.appendChild(ld); TB.lead=ld; FX.P.forEach(p=>{ if(p.sw) p.x=S[0][0]+(Math.random()-.5)*40, p.y=S[0][1]+(Math.random()-.5)*40; }); this.draw(); },
+     const ld=el('div','leader'+(TB.a.paw?' fampl':'')); TB.act.appendChild(ld); TB.lead=ld; FX.P.forEach(p=>{ if(p.sw) p.x=S[0][0]+(Math.random()-.5)*40, p.y=S[0][1]+(Math.random()-.5)*40; }); this.draw(); },
    pt(k){ return wpx(...TB.S[Math.min(TB.S.length-1,k)]); },
    draw(){ const p=TB.S[TB.k]; TB.lead.style.left=p[0]+'%'; TB.lead.style.top=p[1]+'%';
      if(TB.rbw){ const pts=TB.S.slice(0,TB.k+1); TB.rbw.querySelectorAll('polyline').forEach((l,i)=>l.setAttribute('points',pts.map(q=>q[0].toFixed(2)+','+(q[1]+(TB.a.straw||TB.a.pearl?0:(i-2.5)*1.25)).toFixed(2)).join(' '))); } TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
@@ -2902,7 +2991,7 @@ const G2={
 
  /* tap every one of them */
  tapall:{ setup(){ TB.left=TB.a.ids.slice(); },
-   down(x,y){ const id=TB.left.find(id=>nearEl(TB.els[id],x,y,vu()*5)); if(id) this.tap(id); },
+   down(x,y){ let id=TB.left.find(id=>nearEl(TB.els[id],x,y,vu()*5)); if(id&&TB.a.seq) id=TB.left[0]; if(id) this.tap(id); else if(TB.a.seq) miss2(); },
    tap(id){ if(!TB.left.includes(id)) return; TB.left=TB.left.filter(x=>x!==id); const b=TB.els[id], [x,y]=ctr(b), n=TB.a.ids.length-TB.left.length;
      const fx=TB.a.m==='poof'?'poof2':TB.a.m==='ring'?'ring2a':'twk'; b.classList.remove('g2hint',fx); void b.offsetWidth; b.classList.add(fx); fxBurst(x,y,24); glitterBurst(x,y,14,14); chime([[784,880,988,1175,1318,1568][Math.min(5,n-1)]]); poke2();
      if(TB.sc.item) TB.sc.item(id,b); if(!TB.left.length) bLater(()=>done2(),700); },
@@ -3697,7 +3786,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim',tasse:'tam',kiki:'kim'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim',tasse:'tam',kiki:'kim',mama:'mam',papa:'pam',janneke:'jam',boris:'bom'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -4472,7 +4561,7 @@ Object.assign(G2,{
    step(dir){ if(TB.rDone||TB.done) return; const a=TB.a, n=a.n||3, k=++TB.rk, W=TB.els[a.id], [x,y]=ctr(W), u=vu(); TB.rT=now();
      const bb=W.querySelector('.bb')||W; bb.getAnimations().forEach(q=>{ if(q.id==='rk') q.cancel(); });
      try{ const an=bb.animate([{transform:'none'},{transform:`translateX(${dir*5}%) rotate(${dir*11}deg) scale(1.1,.92)`,offset:.35},{transform:`translateX(${-dir*2}%) rotate(${-dir*5}deg) scale(.95,1.07)`,offset:.7},{transform:'none'}],{duration:760,easing:'ease-out'}); an.id='rk'; }catch(e){}
-     const r=W.getBoundingClientRect(); foam(x+dir*r.width*.3,r.bottom-r.height*.2,6+k*4,.7+k*.15);
+     const r=W.getBoundingClientRect(); if(!a.nofoam) foam(x+dir*r.width*.3,r.bottom-r.height*.2,6+k*4,.7+k*.15);
      chime([[523,659],[659,784],[784,988,1175],[880,1175,1568]][Math.min(3,k-1)]); poke2();
      if(TB.sc.rockStep) TB.sc.rockStep(k,dir);
      if(k>=n){ TB.rDone=true; return bLater(()=>done2(),a.wait||900); }
@@ -10818,6 +10907,536 @@ const KIKI2={id:'kiki', v2:true, eef:1, dur:KDUR2, title:'Eefje und Kiki fliegen
 /* little z's over a sleeping element outside TB.els */
 function zzzEl(e){ if(!e) return; FX.em.push({rate:.6,fn:()=>{ if(!TB||!e.isConnected) return; const r=e.getBoundingClientRect(), u=vu(); fxAdd({k:'glit',x:r.left+r.width*.8,y:r.top+r.height*.2,vy:-6*u,vx:3*u,ph:0,s:1,life:2.4,amb:1,c:'rgba(255,246,200,.9)'}); }}); }
 /*<KIKI*/
+/*FAMILIE>*/
+/* ================= Eefje und das große Picknick: drawn cast and set pieces ================= */
+/* All classes start with "fam" (class names are global; checked: no .fam… class existed before).
+   mamaSVG / papaSVG: grown-ups, same drawing style as eefjeSVG, viewBox 0 0 160 260 (feet at y≈252, head centre 80,42).
+     data-arm: Mama dn | up | hold (both hands low in front, holding the blanket) ; Papa dn | carry (one arm under the baby) | up | hug.
+     Moods smile, happy, oh, laugh; .talking + --mo opens the mouth. Papa's .carry shows the sling strap.
+   jannekeSVG: the baby, swaddled in a rose wrap (works in the sling and in the hammock). viewBox 0 0 80 80.
+     Moods smile, happy, laugh, oh, cry (+ tear), sleepy.
+   borisSVG: Boris the beagle, side view facing right. viewBox 0 0 200 150. Moods smile, happy (tongue), oh, sniff, sleepy.
+     Classes: .famrun (trotting legs), .famwag (fast tail), .famsnf (head down, sniffing), .lie (lying down), .flip.
+     Anchor: .famnose. */
+function mamaSVG(){ const K='#f8d6bc', KS='#c99a7a', H='#8a4a26', HD='#5a2e14', D='#2aa198', DD='#17675f', E='#2a1a2e';
+  const arm=(d,hx,hy)=>`<path d="${d}" stroke="${KS}" stroke-width="10.5" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${K}" stroke-width="7.5" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="5.4" fill="${K}" stroke="${KS}" stroke-width="2"/>`;
+  const sl=`<circle cx="62" cy="78" r="9.5" fill="${D}" stroke="${DD}" stroke-width="2.4"/><circle cx="98" cy="78" r="9.5" fill="${D}" stroke="${DD}" stroke-width="2.4"/>`;
+  return `<svg viewBox="0 0 160 260" style="overflow:visible">
+  <ellipse class="famsh" cx="80" cy="253" rx="34" ry="5" fill="rgba(0,0,0,.16)"/>
+  <path d="M57 40 Q52 70 56 98 Q64 104 70 96 L90 96 Q96 104 104 98 Q108 70 103 40Z" fill="${H}" stroke="${HD}" stroke-width="2.4" stroke-linejoin="round"/>
+  <g><path d="M71 196 V244" stroke="${KS}" stroke-width="10" stroke-linecap="round"/><path d="M71 196 V244" stroke="${K}" stroke-width="7" stroke-linecap="round"/>
+   <path d="M89 196 V244" stroke="${KS}" stroke-width="10" stroke-linecap="round"/><path d="M89 196 V244" stroke="${K}" stroke-width="7" stroke-linecap="round"/>
+   <path d="M62 244 Q62 252 72 252 L80 251 Q82 247 78 244Z" fill="#c8763a" stroke="#7a3e18" stroke-width="2"/><path d="M98 244 Q98 252 88 252 L80 251 Q78 247 82 244Z" fill="#c8763a" stroke="#7a3e18" stroke-width="2"/></g>
+  <path d="M63 70 Q80 64 97 70 L103 112 Q108 152 122 198 Q80 210 38 198 Q52 152 57 112Z" fill="${D}" stroke="${DD}" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M57 110 Q80 116 103 110 L104 118 Q80 124 56 118Z" fill="#ffe27a" stroke="#b8862e" stroke-width="1.6"/>
+  <g fill="#fff" opacity=".85"><circle cx="70" cy="86" r="2.4"/><circle cx="88" cy="94" r="2.4"/><circle cx="64" cy="138" r="2.6"/><circle cx="82" cy="146" r="2.6"/><circle cx="98" cy="134" r="2.6"/><circle cx="72" cy="168" r="2.8"/><circle cx="94" cy="176" r="2.8"/><circle cx="54" cy="184" r="2.6"/><circle cx="108" cy="186" r="2.6"/><circle cx="84" cy="190" r="2.4"/></g>
+  <path d="M72 68 Q80 76 88 68" fill="none" stroke="${DD}" stroke-width="2"/>
+  <g class="arm arm-dn">${arm('M62 78 Q50 112 54 142',54,144)}${arm('M98 78 Q110 112 106 142',106,144)}${sl}</g>
+  <g class="arm arm-up">${arm('M62 78 Q50 112 54 142',54,144)}${arm('M98 78 Q120 66 124 38',124,35)}${sl}</g>
+  <g class="arm arm-hold">${arm('M62 78 Q56 116 74 146',74,148)}${arm('M98 78 Q108 116 90 148',90,150)}${sl}</g>
+  <g class="arm arm-hug">${arm('M62 78 Q58 112 82 120',82,120)}${arm('M98 78 Q104 112 88 124',88,124)}${sl}</g>
+  <rect x="74" y="56" width="12" height="14" rx="4" fill="${K}" stroke="${KS}" stroke-width="2"/>
+  <g class="hd"><circle cx="80" cy="16" r="10" fill="${H}" stroke="${HD}" stroke-width="2.2"/>
+   <circle cx="80" cy="42" r="22" fill="${K}" stroke="${KS}" stroke-width="2.6"/>
+   <path d="M58 44 Q55 18 80 18 Q105 18 102 44 Q98 32 86 30 Q76 26 66 33 Q60 37 58 44Z" fill="${H}" stroke="${HD}" stroke-width="2.2" stroke-linejoin="round"/>
+   <circle cx="58.5" cy="50" r="2.2" fill="#ffd84a"/><circle cx="101.5" cy="50" r="2.2" fill="#ffd84a"/>
+   <g class="blush"><ellipse cx="66" cy="51" rx="4.6" ry="2.8" fill="#ff8aa0" opacity=".55"/><ellipse cx="94" cy="51" rx="4.6" ry="2.8" fill="#ff8aa0" opacity=".55"/></g>
+   <g class="ey ey-o"><ellipse cx="72" cy="43" rx="3.2" ry="4.2" fill="${E}"/><ellipse cx="88" cy="43" rx="3.2" ry="4.2" fill="${E}"/><circle cx="73.2" cy="41.5" r="1.3" fill="#fff"/><circle cx="89.2" cy="41.5" r="1.3" fill="#fff"/>
+    <path d="M68 39 l-2.4 -1.6 M92 39 l2.4 -1.6" stroke="${E}" stroke-width="1.4" stroke-linecap="round"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"><path d="M68 44 q4 -5 8 0"/><path d="M84 44 q4 -5 8 0"/></g>
+   <g class="ey ey-w"><circle cx="72" cy="43" r="4.4" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="88" cy="43" r="4.4" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="72" cy="44" r="2.5" fill="${E}"/><circle cx="88" cy="44" r="2.5" fill="${E}"/></g>
+   <path d="M67 36 Q72 34 76 36 M84 36 Q88 34 93 36" fill="none" stroke="${HD}" stroke-width="1.8" stroke-linecap="round"/>
+   <ellipse cx="80" cy="49" rx="2" ry="1.5" fill="#e0a088"/>
+   <path class="m m-smile" d="M74 54 q6 5 12 0" fill="none" stroke="#a8323e" stroke-width="2.4" stroke-linecap="round"/>
+   <ellipse class="m m-oh" cx="80" cy="56" rx="3" ry="3.6" fill="#8a2a3a"/>
+   <path class="m m-laugh" d="M73 53 Q80 63 87 53Z" fill="#8a2a3a" stroke="#a8323e" stroke-width="1.8" stroke-linejoin="round"/>
+   <ellipse class="mo" cx="80" cy="55" rx="3.8" ry="3.4" fill="#8a2a3a"/></g></svg>`; }
+
+function papaSVG(){ const id='fp'+(++LANC), K='#f2c8a8', KS='#c08a6a', H='#b0802e', HD='#6a4818', S='#4e8f5a', SD='#2e5e3a', J='#3e5f9a', JD='#25406e', E='#2a1a2e';
+  const arm=(d,hx,hy)=>`<path d="${d}" stroke="${SD}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="${d}" stroke="url(#${id}c)" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="6" fill="${K}" stroke="${KS}" stroke-width="2"/>`;
+  return `<svg viewBox="0 0 160 260" style="overflow:visible"><defs><pattern id="${id}c" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="${S}"/><path d="M0 6h12M6 0v12" stroke="#86c48e" stroke-width="3" opacity=".55"/><path d="M0 6h12" stroke="#2e5e3a" stroke-width="1" opacity=".35"/></pattern></defs>
+  <ellipse class="famsh" cx="80" cy="253" rx="38" ry="5" fill="rgba(0,0,0,.16)"/>
+  <path d="M58 148 L55 238 L77 238 L80 170 L83 238 L105 238 L102 148Z" fill="${J}" stroke="${JD}" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M80 172 V236" stroke="${JD}" stroke-width="1.6" opacity=".6"/>
+  <path d="M52 236 Q50 252 62 252 L80 252 Q82 244 76 236Z" fill="#7a4a2a" stroke="#3e2410" stroke-width="2.2"/><path d="M108 236 Q110 252 98 252 L80 252 Q78 244 84 236Z" fill="#7a4a2a" stroke="#3e2410" stroke-width="2.2"/>
+  <path d="M55 70 Q80 61 105 70 L109 150 Q80 158 51 150Z" fill="url(#${id}c)" stroke="${SD}" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M52 144 Q80 150 108 144 L108 152 Q80 158 52 152Z" fill="#6a3e1e" stroke="#3e2410" stroke-width="1.6"/><rect x="75" y="144" width="10" height="9" rx="2" fill="#d8b04a" stroke="#8a6a1a" stroke-width="1.4"/>
+  <path d="M72 66 L80 80 L88 66" fill="none" stroke="${SD}" stroke-width="2.4" stroke-linejoin="round"/>
+  <path class="famsl" d="M60 70 Q86 92 106 138" stroke="#c45a78" stroke-width="11" fill="none" stroke-linecap="round"/><path class="famsl" d="M60 70 Q86 92 106 138" stroke="#f08aa6" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <g class="arm arm-dn">${arm('M57 76 Q44 112 48 142',48,145)}${arm('M103 76 Q116 112 112 142',112,145)}</g>
+  <g class="arm arm-carry">${arm('M57 76 Q44 112 48 142',48,145)}${arm('M103 76 Q114 114 90 126',88,126)}</g>
+  <g class="arm arm-up">${arm('M57 76 Q44 112 48 142',48,145)}${arm('M103 76 Q124 62 128 34',128,31)}</g>
+  <g class="arm arm-hug">${arm('M57 76 Q50 114 74 124',74,124)}${arm('M103 76 Q112 114 88 128',88,128)}</g>
+  <rect x="73" y="54" width="14" height="14" rx="4" fill="${K}" stroke="${KS}" stroke-width="2"/>
+  <g class="hd"><circle cx="80" cy="40" r="23" fill="${K}" stroke="${KS}" stroke-width="2.6"/>
+   <path d="M58 48 Q60 66 80 68 Q100 66 102 48 Q98 58 90 58 Q80 55 70 58 Q62 58 58 48Z" fill="${H}" stroke="${HD}" stroke-width="2" stroke-linejoin="round"/>
+   <path d="M57 38 Q55 14 80 14 Q106 14 103 38 Q100 26 90 24 Q80 20 70 24 Q60 26 57 38Z" fill="${H}" stroke="${HD}" stroke-width="2.2" stroke-linejoin="round"/>
+   <ellipse cx="57" cy="43" rx="3.4" ry="5" fill="${K}" stroke="${KS}" stroke-width="1.8"/><ellipse cx="103" cy="43" rx="3.4" ry="5" fill="${K}" stroke="${KS}" stroke-width="1.8"/>
+   <g class="blush"><ellipse cx="66" cy="48" rx="4.4" ry="2.6" fill="#ff8aa0" opacity=".45"/><ellipse cx="94" cy="48" rx="4.4" ry="2.6" fill="#ff8aa0" opacity=".45"/></g>
+   <g class="ey ey-o"><ellipse cx="72" cy="40" rx="3.1" ry="4" fill="${E}"/><ellipse cx="88" cy="40" rx="3.1" ry="4" fill="${E}"/><circle cx="73.2" cy="38.6" r="1.2" fill="#fff"/><circle cx="89.2" cy="38.6" r="1.2" fill="#fff"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"><path d="M68 41 q4 -5 8 0"/><path d="M84 41 q4 -5 8 0"/></g>
+   <g class="ey ey-w"><circle cx="72" cy="40" r="4.2" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="88" cy="40" r="4.2" fill="#fff" stroke="${KS}" stroke-width="1.2"/><circle cx="72" cy="41" r="2.4" fill="${E}"/><circle cx="88" cy="41" r="2.4" fill="${E}"/></g>
+   <path d="M66 32 Q72 29 77 32 M83 32 Q88 29 94 32" fill="none" stroke="${HD}" stroke-width="2.6" stroke-linecap="round"/>
+   <ellipse cx="80" cy="47" rx="2.6" ry="2" fill="#d89a7a"/>
+   <path d="M71 52 Q76 49 80 51 Q84 49 89 52 Q84 54 80 53 Q76 54 71 52Z" fill="${H}" stroke="${HD}" stroke-width="1.4"/>
+   <path class="m m-smile" d="M74 56 q6 4.6 12 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
+   <ellipse class="m m-oh" cx="80" cy="58" rx="3" ry="3.4" fill="#7a2a2a"/>
+   <path class="m m-laugh" d="M73 55 Q80 65 87 55Z" fill="#7a2a2a" stroke="${E}" stroke-width="1.8" stroke-linejoin="round"/>
+   <ellipse class="mo" cx="80" cy="57" rx="3.8" ry="3.4" fill="#7a2a2a"/></g></svg>`; }
+
+function jannekeSVG(){ const K='#fbe0cc', KS='#d4a088', W='#f08aa6', WD='#c45a78', E='#2a1a2e';
+  return `<svg viewBox="0 0 80 80" style="overflow:visible">
+  <path d="M13 42 Q10 74 40 77 Q70 74 67 42 Q56 34 40 36 Q24 34 13 42Z" fill="${W}" stroke="${WD}" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M18 50 Q40 60 62 50 M20 62 Q40 70 60 62" fill="none" stroke="${WD}" stroke-width="1.6" opacity=".6"/>
+  <g fill="#fff" opacity=".7"><circle cx="26" cy="66" r="1.6"/><circle cx="50" cy="70" r="1.6"/><circle cx="38" cy="58" r="1.4"/><circle cx="58" cy="58" r="1.4"/></g>
+  <g class="famjh"><circle cx="26" cy="44" r="4.4" fill="${K}" stroke="${KS}" stroke-width="1.6"/><circle cx="54" cy="44" r="4.4" fill="${K}" stroke="${KS}" stroke-width="1.6"/></g>
+  <g class="famjk"><circle cx="40" cy="26" r="16.5" fill="${K}" stroke="${KS}" stroke-width="2"/>
+   <path d="M36 11 q2 -7 8 -4 q-4 0 -3 4" fill="none" stroke="#c8963a" stroke-width="2.2" stroke-linecap="round"/>
+   <ellipse cx="31" cy="31" rx="3.6" ry="2.2" fill="#ff8aa0" opacity=".55"/><ellipse cx="49" cy="31" rx="3.6" ry="2.2" fill="#ff8aa0" opacity=".55"/>
+   <g class="ey ey-o"><circle cx="34" cy="25" r="2.3" fill="${E}"/><circle cx="46" cy="25" r="2.3" fill="${E}"/><circle cx="34.8" cy="24.2" r=".8" fill="#fff"/><circle cx="46.8" cy="24.2" r=".8" fill="#fff"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round"><path d="M31 26 q3 -3.4 6 0"/><path d="M43 26 q3 -3.4 6 0"/></g>
+   <g class="ey ey-z" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round"><path d="M31 25 q3 2.6 6 0"/><path d="M43 25 q3 2.6 6 0"/></g>
+   <g class="ey ey-c" fill="none" stroke="${E}" stroke-width="1.8" stroke-linecap="round"><path d="M31 24 l5 1.8 -5 1.4"/><path d="M49 24 l-5 1.8 5 1.4"/></g>
+   <path class="famtr" d="M31 29 q-1.6 3 0 4.4 q1.6 -1.4 0 -4.4Z" fill="#7ac8ff"/>
+   <ellipse cx="40" cy="29" rx="1.4" ry="1" fill="#e8a888"/>
+   <path class="m m-s" d="M37 33 q3 2.4 6 0" fill="none" stroke="#b04a5a" stroke-width="1.8" stroke-linecap="round"/>
+   <path class="m m-l" d="M35 32 Q40 40 45 32Z" fill="#a8323e" stroke="#7a2a2a" stroke-width="1.2" stroke-linejoin="round"/>
+   <ellipse class="m m-o" cx="40" cy="34" rx="2.2" ry="2.6" fill="#a8323e"/>
+   <path class="m m-c" d="M34 36 Q40 30 46 36 Q40 39 34 36Z" fill="#a8323e" stroke="#7a2a2a" stroke-width="1.2" stroke-linejoin="round"/>
+   <path class="m m-z" d="M38 34 h4" stroke="#b04a5a" stroke-width="1.6" stroke-linecap="round"/></g></svg>`; }
+
+function borisSVG(){ const W='#fffaf2', WS='#b8a48a', T='#c8843a', TD='#8a5420', B='#2a2420', E='#2a1a10';
+  const leg=(x,c,s)=>`<path d="M${x} 102 V132 Q${x} 140 ${x+8} 140 Q${x+16} 140 ${x+14} 132 V102Z" fill="${c}" stroke="${s}" stroke-width="2.2" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 200 150" style="overflow:visible">
+  <ellipse class="famsh" cx="98" cy="141" rx="60" ry="6" fill="rgba(0,0,0,.16)"/>
+  <g class="famtl"><path d="M54 74 Q34 54 40 26" stroke="${TD}" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M54 74 Q34 54 40 26" stroke="${T}" stroke-width="8" fill="none" stroke-linecap="round"/>
+   <path d="M39 38 Q38 30 40 24" stroke="${W}" stroke-width="8.4" fill="none" stroke-linecap="round"/></g>
+  <g class="famlg famlb">${leg(66,'#efe4d2',WS)}${leg(122,'#efe4d2',WS)}</g>
+  <ellipse cx="95" cy="86" rx="50" ry="27" fill="${W}" stroke="${WS}" stroke-width="2.6"/>
+  <path d="M60 72 Q70 57 100 59 Q128 59 134 72 Q120 82 96 80 Q72 82 60 72Z" fill="${B}"/>
+  <path d="M47 84 Q50 68 62 71 Q60 88 54 96Z" fill="${T}"/>
+  <path d="M120 66 Q132 64 140 72 Q134 82 126 80Z" fill="${T}"/>
+  <g class="famlg famlf">${leg(76,W,WS)}${leg(130,W,WS)}</g>
+  <g class="famhd">
+   <path d="M128 76 Q132 56 146 50 L154 74 Q142 86 128 76Z" fill="${T}" stroke="${TD}" stroke-width="2"/>
+   <path d="M134 70 Q142 86 152 82" stroke="#d8343a" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="146" cy="86" r="3.4" fill="#ffd84a" stroke="#b8862e" stroke-width="1.2"/>
+   <ellipse cx="157" cy="54" rx="23" ry="20" fill="${T}" stroke="${TD}" stroke-width="2.4"/>
+   <path d="M156 36 Q150 48 158 62 L176 72 Q188 70 190 62 Q178 54 166 52 Q162 42 156 36Z" fill="${W}"/>
+   <ellipse cx="177" cy="66" rx="15" ry="10.5" fill="${W}" stroke="${WS}" stroke-width="2"/>
+   <g fill="#c8b8a0"><circle cx="172" cy="68" r=".9"/><circle cx="176" cy="70" r=".9"/><circle cx="180" cy="68" r=".9"/></g>
+   <ellipse cx="189" cy="61" rx="5.6" ry="4.4" fill="${B}"/><ellipse cx="190.4" cy="59.4" rx="1.8" ry="1.1" fill="#fff" opacity=".6"/><circle class="famnose" cx="193" cy="61" r="1" fill="none"/>
+   <g class="ey ey-o"><ellipse cx="164" cy="49" rx="3.8" ry="4.4" fill="${E}"/><circle cx="165.4" cy="47.4" r="1.4" fill="#fff"/></g>
+   <g class="ey ey-j" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"><path d="M160 50 q4 -5 8 0"/></g>
+   <g class="ey ey-w"><circle cx="164" cy="49" r="5" fill="#fff" stroke="${TD}" stroke-width="1.2"/><circle cx="165" cy="49.6" r="2.8" fill="${E}"/></g>
+   <g class="ey ey-z" fill="none" stroke="${E}" stroke-width="2.2" stroke-linecap="round"><path d="M160 49 q4 3 8 0"/></g>
+   <path d="M159 41 q5 -3 9 0" fill="none" stroke="${TD}" stroke-width="1.8" stroke-linecap="round"/>
+   <path class="m m-s" d="M171 74 q6 4.4 12 -1" fill="none" stroke="${E}" stroke-width="2" stroke-linecap="round"/>
+   <g class="m m-t"><path d="M171 74 q6 4.4 12 -1" fill="none" stroke="${E}" stroke-width="2" stroke-linecap="round"/><path d="M175 75 q1 11 6 10 q5 -1 3 -11Z" fill="#ff7a9a" stroke="#c84a6a" stroke-width="1.4"/></g>
+   <ellipse class="m m-o" cx="178" cy="75" rx="3" ry="3.4" fill="#7a2a2a"/>
+   <ellipse class="mo" cx="178" cy="75" rx="3.6" ry="3.2" fill="#7a2a2a"/>
+   <path class="famear" d="M146 42 Q130 44 132 70 Q136 90 148 88 Q156 72 153 48Z" fill="${TD}" stroke="#5e3410" stroke-width="2.2" stroke-linejoin="round"/></g></svg>`; }
+
+/* Hoppel, Janneke's cuddly bunny (one ear flopped). viewBox 0 0 40 50 */
+function hoppelSVG(){ const F='#e6dfe6', FS='#9a8e98', P='#ffb6c8';
+  return `<svg viewBox="0 0 40 50" style="overflow:visible"><path d="M13 20 Q6 2 13 1 Q20 3 18 19Z" fill="${F}" stroke="${FS}" stroke-width="1.8"/><path d="M13.5 17 Q10 6 13.5 5 Q16 7 16 17Z" fill="${P}"/>
+  <path d="M23 19 Q32 5 38 10 Q38 16 27 22Z" fill="${F}" stroke="${FS}" stroke-width="1.8"/><path d="M25 18 Q32 9 35 11 Q34 15 27 20Z" fill="${P}"/>
+  <ellipse cx="20" cy="40" rx="12" ry="9.5" fill="${F}" stroke="${FS}" stroke-width="1.8"/><path d="M16 36 q4 6 8 0" fill="none" stroke="${FS}" stroke-width="1.2" stroke-dasharray="1.6 1.6"/>
+  <circle cx="20" cy="25" r="10.5" fill="${F}" stroke="${FS}" stroke-width="1.8"/><circle cx="16" cy="24" r="1.7" fill="#2a1a2e"/><circle cx="24" cy="24" r="1.7" fill="#2a1a2e"/>
+  <path d="M18.6 28 h2.8 l-1.4 1.6Z" fill="#ff8aa8"/><path d="M18 30.6 q2 1.6 4 0" fill="none" stroke="#7a5a6a" stroke-width="1" stroke-linecap="round"/>
+  <ellipse cx="13" cy="28" rx="2.4" ry="1.4" fill="${P}" opacity=".6"/><ellipse cx="27" cy="28" rx="2.4" ry="1.4" fill="${P}" opacity=".6"/></svg>`; }
+
+/* the wicker picnic basket; four goodies inside (.famk1..4) appear as they are packed. viewBox 0 0 120 100 */
+function famKorbSVG(){ const id='fk'+(++LANC);
+  return `<svg viewBox="0 0 120 100" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2b06a"/><stop offset="1" stop-color="#b8803e"/></linearGradient></defs>
+  <path d="M22 44 Q60 -10 98 44" stroke="#7a4e22" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M22 44 Q60 -10 98 44" stroke="#c8904a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <g class="famk famk1"><circle cx="34" cy="36" r="9" fill="#e83a3a" stroke="#9a1a1a" stroke-width="1.6"/><path d="M34 27 q2 -5 6 -5" stroke="#5a3a1a" stroke-width="1.8" fill="none"/><ellipse cx="31" cy="33" rx="2.4" ry="1.6" fill="#fff" opacity=".5"/></g>
+  <g class="famk famk2"><path d="M44 42 L74 14 Q80 12 82 18 L54 44Z" fill="#e8b25a" stroke="#9a6a2a" stroke-width="1.6"/><path d="M62 30 l4 2 M68 24 l4 2 M74 18 l4 2" stroke="#9a6a2a" stroke-width="1.4"/></g>
+  <g class="famk famk3"><path d="M62 42 L86 26 L94 40Z" fill="#ffd84a" stroke="#c8962a" stroke-width="1.6" stroke-linejoin="round"/><circle cx="82" cy="36" r="2" fill="#e8b82a"/><circle cx="88" cy="38" r="1.4" fill="#e8b82a"/></g>
+  <g class="famk famk4"><path d="M86 42 Q84 30 92 30 Q100 30 98 42Z" fill="#ff4a5a" stroke="#b81a2a" stroke-width="1.4"/><path d="M88 30 l4 -4 l4 4" fill="#5ab84a"/><g fill="#ffe27a"><circle cx="90" cy="35" r=".9"/><circle cx="95" cy="36" r=".9"/><circle cx="92" cy="39" r=".9"/></g></g>
+  <path d="M10 40 L110 40 L100 92 Q60 99 20 92Z" fill="url(#${id})" stroke="#7a4e22" stroke-width="3" stroke-linejoin="round"/>
+  <g stroke="#9a6a32" stroke-width="1.6" opacity=".75" fill="none"><path d="M13 54 Q60 59 107 54 M15 66 Q60 71 105 66 M17 78 Q60 83 103 78"/><path d="M28 41 L30 93 M44 41 L45 95 M60 41 V96 M76 41 L75 95 M92 41 L90 93"/></g>
+  <path d="M8 38 L112 38 L110 46 L10 46Z" fill="#e8445a" stroke="#9a2a3a" stroke-width="2"/><g fill="#fff"><rect x="18" y="38" width="8" height="8"/><rect x="34" y="38" width="8" height="8"/><rect x="50" y="38" width="8" height="8"/><rect x="66" y="38" width="8" height="8"/><rect x="82" y="38" width="8" height="8"/><rect x="98" y="38" width="8" height="8"/></g></svg>`; }
+
+/* a flat stepping stone (moss on top). viewBox 0 0 70 34 */
+function famSteinSVG(){ return `<svg viewBox="0 0 70 34" style="overflow:visible"><ellipse cx="35" cy="22" rx="33" ry="11" fill="#7c8288" stroke="#4e5458" stroke-width="2.4"/><ellipse cx="34" cy="17" rx="29" ry="9" fill="#a4aab0"/>
+  <ellipse cx="26" cy="14" rx="12" ry="3.4" fill="#c8ced2" opacity=".8"/><path d="M44 12 q6 -2 12 2 q-6 2 -12 -2Z" fill="#6aa65a" opacity=".85"/></svg>`; }
+/* a small flat pebble for skipping */
+function famKieselSVG(){ return `<svg viewBox="0 0 30 18"><ellipse cx="15" cy="10" rx="13" ry="7" fill="#8e949a" stroke="#4e5458" stroke-width="1.8"/><ellipse cx="12" cy="7.6" rx="6" ry="2.2" fill="#d0d6da" opacity=".8"/></svg>`; }
+/* the sausage for Boris */
+function famWurstSVG(){ return `<svg viewBox="0 0 50 20"><path d="M6 10 Q6 3 14 3 L36 3 Q44 3 44 10 Q44 17 36 17 L14 17 Q6 17 6 10Z" fill="#c8603a" stroke="#7a3018" stroke-width="2"/><path d="M14 7 Q25 5 36 7" stroke="#ffb08a" stroke-width="1.8" fill="none" opacity=".7"/><path d="M4 10 l-3 -3 M46 10 l3 -3" stroke="#7a3018" stroke-width="1.6"/></svg>`; }
+
+/* the brook seen from the bank, flowing towards us (scene 3). viewBox 0 0 200 100, stretched over the lower half of the stage */
+function famBachSVG(){ const id='fb'+(++LANC);
+  return `<svg viewBox="0 0 200 100" preserveAspectRatio="none" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ad8f2"/><stop offset=".5" stop-color="#5ab0e0"/><stop offset="1" stop-color="#3a8ac8"/></linearGradient></defs>
+  <path d="M80 0 L120 0 Q128 50 156 100 L44 100 Q72 50 80 0Z" fill="#8a7a5a" opacity=".5"/>
+  <path d="M83 0 L117 0 Q124 50 150 100 L50 100 Q76 50 83 0Z" fill="url(#${id})"/>
+  <g class="famrip" fill="none" stroke="#e8f8ff" stroke-width=".9" stroke-linecap="round" opacity=".8"><path d="M92 14 q4 2 8 0"/><path d="M104 26 q4 2 8 0"/><path d="M84 40 q5 2.4 10 0"/><path d="M106 52 q6 2.4 12 0"/><path d="M74 66 q6 2.6 12 0"/><path d="M110 78 q7 2.6 14 0"/><path d="M64 90 q8 2.8 16 0"/><path d="M118 94 q8 2.8 16 0"/></g></svg>`; }
+/* the brook running across, behind the reeds (scene 4). viewBox 0 0 200 40 */
+function famBach2SVG(){ const id='fb'+(++LANC);
+  return `<svg viewBox="0 0 200 40" preserveAspectRatio="none" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ad8f2"/><stop offset="1" stop-color="#3e90cc"/></linearGradient></defs>
+  <path d="M0 4 Q50 0 100 5 Q150 9 200 3 L200 36 Q150 40 100 35 Q50 31 0 37Z" fill="url(#${id})"/>
+  <g class="famrip" fill="none" stroke="#e8f8ff" stroke-width=".8" stroke-linecap="round" opacity=".85"><path d="M14 14 q6 2 12 0"/><path d="M52 24 q6 2 12 0"/><path d="M96 14 q6 2 12 0"/><path d="M136 26 q6 2 12 0"/><path d="M176 16 q6 2 12 0"/></g></svg>`; }
+/* the lake (scenes 5–7): far shore, water, glitter. viewBox 0 0 400 100, stretched across the stage */
+function famSeeSVG(){ const id='fs'+(++LANC);
+  return `<svg viewBox="0 0 400 100" preserveAspectRatio="none" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--fsw0,#8ad0f0)"/><stop offset=".6" stop-color="var(--fsw1,#4aa4dc)"/><stop offset="1" stop-color="var(--fsw2,#3a88c4)"/></linearGradient></defs>
+  <path d="M0 8 Q100 2 200 6 Q300 10 400 4 L400 86 Q300 96 200 90 Q100 84 0 94Z" fill="url(#${id})"/>
+  <path d="M0 8 Q100 2 200 6 Q300 10 400 4" fill="none" stroke="#e8f8ff" stroke-width="1.4" opacity=".7"/>
+  <g class="famgl" fill="#fff">${[[60,30],[120,50],[180,24],[250,44],[320,30],[90,70],[220,68],[350,62],[150,80],[290,80]].map(([x,y],i)=>`<ellipse cx="${x}" cy="${y}" rx="${5+i%3*2}" ry="1" style="animation-delay:${(-i*.37).toFixed(2)}s"/>`).join('')}</g></svg>`; }
+/* the picnic blanket, red and white checks, lying in perspective. viewBox 0 0 200 90; the top-left corner (30,6) is where Mama holds it */
+function famDeckeSVG(){ const id='fd'+(++LANC);
+  return `<svg viewBox="0 0 200 90" style="overflow:visible"><defs><pattern id="${id}" width="20" height="14" patternUnits="userSpaceOnUse" patternTransform="skewX(-14)"><rect width="20" height="14" fill="#fff6ee"/><rect width="10" height="14" fill="#e8445a" opacity=".85"/><rect width="20" height="7" fill="#e8445a" opacity=".55"/></pattern></defs>
+  <path d="M30 6 L176 6 L198 84 L4 84Z" fill="url(#${id})" stroke="#a8283a" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M30 6 L176 6 L198 84 L4 84Z" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8" transform="translate(0 0) scale(1)"/></svg>`; }
+/* the folded blanket (a little bundle) */
+function famBuendelSVG(){ return `<svg viewBox="0 0 60 40" style="overflow:visible"><path d="M6 14 L48 8 L56 28 L12 36Z" fill="#e8445a" stroke="#a8283a" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M8 18 L50 12 M10 24 L52 18 M11 30 L54 24" stroke="#fff6ee" stroke-width="2.6" opacity=".9"/><path d="M20 12 L26 34 M34 10 L40 32" stroke="#fff6ee" stroke-width="2.4" opacity=".7"/></svg>`; }
+/* the baby hammock hanging from one rope (rocks round its top). viewBox 0 0 120 130, the rope's knot at 60,0 */
+function famMatteSVG(){ const id='fm'+(++LANC);
+  return `<svg viewBox="0 0 120 130" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb84a"/><stop offset=".2" stop-color="#ffe27a"/><stop offset=".4" stop-color="#8ad88a"/><stop offset=".6" stop-color="#7ac8f8"/><stop offset=".8" stop-color="#c8a0f8"/><stop offset="1" stop-color="#ff9ac0"/></linearGradient></defs>
+  <path d="M60 0 L14 84 M60 0 L106 84 M60 0 L40 88 M60 0 L80 88" stroke="#e8d4a8" stroke-width="2" fill="none"/><circle cx="60" cy="2" r="4" fill="#c8a868"/>
+  <path d="M8 82 Q60 140 112 82 Q60 106 8 82Z" fill="url(#${id})" stroke="#a8784a" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M14 88 Q60 128 106 88" fill="none" stroke="#fff" stroke-width="1.2" opacity=".6" stroke-dasharray="3 3"/></svg>`; }
+/* a birch tree for the evening lake. viewBox 0 0 100 220 */
+function famBirkeSVG(){ return `<svg viewBox="0 0 100 220" style="overflow:visible"><path d="M44 220 L48 60 L54 60 L58 220Z" fill="#f4f0e8" stroke="#8a8478" stroke-width="2"/>
+  <g fill="#2a2a2a"><rect x="46" y="190" width="8" height="2.4"/><rect x="49" y="160" width="7" height="2"/><rect x="47" y="130" width="6" height="2.2"/><rect x="50" y="100" width="5" height="1.8"/><rect x="47" y="80" width="5" height="1.6"/></g>
+  <path d="M52 90 Q72 80 92 84" stroke="#8a8478" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <g fill="#7ab85a" opacity=".95"><ellipse cx="50" cy="44" rx="34" ry="40"/><ellipse cx="28" cy="70" rx="20" ry="18"/><ellipse cx="74" cy="66" rx="22" ry="20"/><ellipse cx="88" cy="80" rx="12" ry="10"/></g>
+  <g fill="#9ad078" opacity=".8"><ellipse cx="40" cy="30" rx="14" ry="12"/><ellipse cx="64" cy="48" rx="12" ry="10"/><ellipse cx="30" cy="62" rx="9" ry="8"/></g></svg>`; }
+Object.assign(SVGP,{FAMKORB:[famKorbSVG,1],FAMSTEIN:[famSteinSVG,1],FAMBIRKE:[famBirkeSVG,.45]});
+Object.assign(TSYL,{KORB:'KORB',SEE:'SEE',LIED:'LIED'});
+
+Object.assign(SETS2,{
+  famgarten:{clean:1, sky:'linear-gradient(180deg,#6ab4ee 0%,#a8d8f6 48%,#fff0c8 100%)', sun:[14,13], farp:[['CLD',30,22,7],['CLD',70,16,6]],
+    far:sil(hills(601,236,70,'#a8d690')+pines(603,24,80,'#6aa86a',96)+hills(607,292,40,'#8cc676'),58), gnd:'linear-gradient(180deg,#9ad874 0%,#72ba5c 48%,#4e9646 100%)',
+    act:[['haus','HEXHAUS',90,47,44]], mid:[['🌳',6,52,16]], fore:[['🌼',4,97,9],['🌸',97,98,9],['🌷',44,104,8]]},
+  famwald:{clean:1, sky:'linear-gradient(180deg,#7ac0ea 0%,#b8e0f2 48%,#f2f8d8 100%)', sun:[80,12],
+    far:sil(hills(611,240,70,'#7ab878')+pines(613,30,110,'#4a8a5a',90)+pines(617,26,90,'#3e7a4e',40),62), gnd:'linear-gradient(180deg,#8aca6a 0%,#68aa52 48%,#4a8840 100%)',
+    mid:[['PINE',4,46,28],['🌳',16,50,18],['PINE',94,44,30],['🌳',78,50,16]], fore:[['🍄',6,95,8],['🌿',96,97,14],['🌱',52,104,10]]},
+  fambach:{clean:1, sky:'linear-gradient(180deg,#74bcec 0%,#b2dcf4 48%,#f4f6d8 100%)', sun:[84,12],
+    far:sil(hills(621,236,70,'#94cc84')+pines(623,26,96,'#5a9a62',80)+hills(627,296,36,'#80be6e'),58), gnd:'linear-gradient(180deg,#90d06c 0%,#6cb256 48%,#4c9244 100%)',
+    mid:[['🌳',6,50,18],['PINE',95,46,26]], fore:[['🌿',3,97,14],['🌼',97,97,9]]},
+  famschilf:{clean:1, sky:'linear-gradient(180deg,#76bcec 0%,#b4dcf4 50%,#f6f4d4 100%)', sun:[12,12],
+    far:sil(hills(631,238,64,'#9ace86')+pines(633,24,84,'#5e9e62',90)+hills(637,298,32,'#86c272'),58), gnd:'linear-gradient(180deg,#94d270 0%,#70b458 48%,#4e9446 100%)',
+    mid:[['🌳',94,50,17]], fore:[['🌼',3,97,8]]},
+  famsee:{clean:1, sky:'linear-gradient(180deg,#5aaeee 0%,#9ad2f6 46%,#eaf6ff 100%)', sun:[84,12], farp:[['CLD',20,20,7],['CLD',56,14,6]],
+    far:sil(hills(641,250,56,'#86c47a')+pines(643,30,80,'#4e925a',70),48), gnd:'linear-gradient(180deg,#9ad874 0%,#74bc5c 48%,#509848 100%)',
+    mid:[], fore:[['🌼',3,97,9],['🌸',97,97,9]]},
+  famufer:{clean:1, sky:'linear-gradient(180deg,#6aa8e8 0%,#b0cff0 40%,#ffe2b0 82%,#ffd49a 100%)', sun:[80,30],
+    far:sil(hills(651,250,56,'#9ab878')+pines(653,30,80,'#5a8a5a',70),48), gnd:'linear-gradient(180deg,#c8d47a 0%,#9ab85c 48%,#6e9446 100%)',
+    mid:[], fore:[['🌾',3,97,12],['🌼',97,97,9]]},
+  famabend:{sky:'linear-gradient(180deg,#3a3a8a 0%,#7a5aa8 28%,#e8889a 58%,#ffb47a 80%,#ffd49a 100%)', sun:[78,44], stars:10, dcol:'40,20,60',
+    far:sil(hills(661,250,56,'#6a5a8a')+pines(663,30,80,'#4a3e6e',70),48), gnd:'linear-gradient(180deg,#8a8a6a 0%,#6a6a52 48%,#4a4a3a 100%)',
+    mid:[], fore:[['🌾',97,97,12]]}
+});
+
+/* ---------- sounds: Boris (woof, sniff), water, the baby's giggle, a lullaby ---------- */
+const famLate=()=>!tale||tale.t!==FAM2||!taleOn();
+function famNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||famLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.4; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.03,d*.2)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function famSniff(x,k){ famNoise(x,.09*(k||1),2600,4200,110); setTimeout(()=>famNoise(x,.08*(k||1),2800,4600,100),150); }
+function famSplash(x){ famNoise(x,.22,1400,300,500,'lowpass'); }
+function famWoof(x){ const ac=feeAC(); if(!ac||famLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(), lp=ac.createBiquadFilter(); o.type='sawtooth'; lp.type='lowpass'; lp.frequency.value=900;
+  o.frequency.setValueAtTime(260,t); o.frequency.exponentialRampToValueAtTime(420,t+.06); o.frequency.exponentialRampToValueAtTime(190,t+.22);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.16,t+.02); g.gain.exponentialRampToValueAtTime(.0005,t+.26); o.connect(lp); lp.connect(g); g.connect(out); o.start(t); o.stop(t+.3); }catch(e){} famNoise(x,.06,700,400,180); }
+function famGiggle(x,n){ const ac=feeAC(); if(!ac||famLate()) return; try{ for(let i=0;i<(n||4);i++){ const t=ac.currentTime+i*.13, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type='sine';
+    const f=880+Math.random()*160+(i%2)*120; o.frequency.setValueAtTime(f,t); o.frequency.exponentialRampToValueAtTime(f*1.25,t+.05); o.frequency.exponentialRampToValueAtTime(f*.9,t+.11);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.07,t+.015); g.gain.exponentialRampToValueAtTime(.0005,t+.12); o.connect(g); g.connect(out); o.start(t); o.stop(t+.13); } }catch(e){} }
+/* the little lullaby Ehfje sings (one phrase per rocking stroke, all of it at the end) */
+const FAMLULL=[[67,74,72,71,69,67],[67,69,71,72,71,69],[69,71,72,74,72,71],[71,69,67,69,71,67]];
+function famLull(k,x){ if(famLate()) return; const ph=FAMLULL[(k||0)%FAMLULL.length]; ph.forEach((m,i)=>setTimeout(()=>{ if(!famLate()) chimeAt([440*Math.pow(2,(m-69)/12)],x==null?innerWidth/2:x); },i*330)); }
+
+/* ---------- helpers ---------- */
+function famArm(id,a){ const E=TB&&TB.els[id]; if(E) E.dataset.arm=a; }
+function famWag(on){ const B=TB&&TB.els.boris; if(B) B.classList.toggle('famwag',!!on); }
+function famNose(){ const B=TB&&TB.els.boris, n=B&&B.querySelector('.famnose'); return n?ctr(n):[innerWidth/2,innerHeight/2]; }
+/* a hop along an arc to x,y (% of the stage); h = height in vh */
+function famHop(e,x,y,ms,h,cb){ if(!e) return; const [x0,y0]=ctr(e), [x1,y1]=wpx(x,y), u=vu(); e.getAnimations().forEach(q=>q.cancel());
+  const kf=[]; for(let i=0;i<=10;i++){ const f=i/10; kf.push({transform:`translate(${(x1-x0)*f}px,${(y1-y0)*f-Math.sin(f*Math.PI)*u*(h==null?9:h)}px)`}); }
+  try{ const an=e.animate(kf,{duration:ms||600,easing:'ease-in-out',fill:'forwards'}); an.onfinish=()=>{ if(!e.isConnected) return; an.cancel(); e.style.left=x+'%'; e.style.top=y+'%'; sqs(e); if(cb) cb(); }; }
+  catch(err){ e.style.left=x+'%'; e.style.top=y+'%'; if(cb) cb(); } }
+/* Boris trots to x (% of the stage), turning the right way */
+function famTrot(x,ms,cb){ const B=TB&&TB.els.boris; if(!B) return; const [bx]=ctr(B), [tx]=wpx(x,0); B.classList.toggle('flip',tx<bx); B.classList.add('famrun');
+  kiPath(B,[[x,parseFloat(B.style.top)]],ms||1200,()=>{ B.classList.remove('famrun'); if(cb) cb(); }); }
+/* water drops flying off (Boris shaking himself, a splash) */
+function famDrops(x,y,n,sp){ const u=vu(); for(let i=0;i<(n||16);i++){ const a=-Math.PI*(.1+Math.random()*.8), v=(18+Math.random()*28)*u*(sp||1);
+  fxAdd({k:'foam',x:x+(Math.random()-.5)*u*6,y,vx:Math.cos(a)*v*(Math.random()<.5?-1:1),vy:Math.sin(a)*v,g:80*u,yEnd:y+u*(6+Math.random()*10),life:1.4,s:.5+Math.random()*.7}); } }
+/* the lake / brook as a stretched band in the act layer (top and height in % of the stage) */
+function famBand(svg,top,h,cls){ const D=el('div','famband'+(cls?' '+cls:''),svg); D.style.cssText=`top:${top}%;height:${h}%`; const g=TB.act.querySelector(':scope>.gnd'); TB.act.insertBefore(D,g?g.nextSibling:TB.act.firstChild); return D; }
+/* the picnic blanket opening: o = 0 (folded bundle at Mama's corner) … 1 (lying flat) */
+const FAMDK=[[.15,.07],[.99,.93]];
+function famBlanket(o){ const D=TB&&TB.els.decke; if(!D) return; const s=D.querySelector('svg'), p=Math.max(.04,o), X=(FAMDK[0][0]+(1-FAMDK[0][0])*p)*100, Y=(FAMDK[0][1]+(1-FAMDK[0][1])*p)*100;
+  s.style.clipPath=`polygon(0 0,${X.toFixed(1)}% 0,${X.toFixed(1)}% ${Y.toFixed(1)}%,0 ${Y.toFixed(1)}%)`;
+  const B=TB.els.buendel, G=TB.els.grip, [cx,cy]=famCorner(o); if(B){ putAt(B,cx,cy); B.style.scale=(1-o*.6).toFixed(3); B.style.opacity=o>.92?0:1; } if(G){ putAt(G,cx,cy); G.style.opacity=o>=1?0:1; } }
+function famCorner(o){ const D=TB.els.decke, r=D.querySelector('svg').getBoundingClientRect(), [a,b]=FAMDK; return [r.left+r.width*(a[0]+(b[0]-a[0])*o), r.top+r.height*(a[1]+(b[1]-a[1])*o)]; }
+/* the stone skips over the lake: from x,y (px) along the direction, getting smaller, with rings where it touches the water */
+function famSkip(x,y,ux,n,cb){ const u=vu(), S=el('div','tp2 famkz',famKieselSVG()); S.style.width='3.4vh'; TB.act.appendChild(S); putAt(S,x,y);
+  const W=TB.els.see, wr=W?W.getBoundingClientRect():{top:innerHeight*.4,height:innerHeight*.25}, y0=wr.top+wr.height*.92, y1=wr.top+wr.height*.18; const pts=[[x,y]];
+  for(let i=0;i<=n;i++){ const f=i/n; pts.push([x+ux*u*(14+f*30),y0-(y0-y1)*Math.pow(f,.8)]); }
+  const kf=[]; let tot=0; const seg=pts.slice(1).map((p,i)=>{ const q=pts[i], d=Math.hypot(p[0]-q[0],p[1]-q[1]); tot+=d; return d; });
+  let acc=0; kf.push({transform:'none',offset:0}); seg.forEach((d,i)=>{ const p=pts[i+1], q=pts[i], s=1-(i+1)/(n+2)*.75; acc+=d;
+    kf.push({transform:`translate(${(q[0]+p[0])/2-x}px,${(q[1]+p[1])/2-y-u*(i?3.5:9)*(1-i/(n+1))}px) scale(${(s+.12).toFixed(2)}) rotate(${i*120+60}deg)`,offset:Math.max(0,(acc-d/2)/tot)});
+    kf.push({transform:`translate(${p[0]-x}px,${p[1]-y}px) scale(${s.toFixed(2)}) rotate(${i*120+120}deg)`,offset:acc/tot}); });
+  const ms=900+n*260; try{ S.animate(kf,{duration:ms,easing:'linear',fill:'forwards'}); }catch(e){}
+  let a2=0; seg.forEach((d,i)=>{ a2+=d; if(i===0) return; const p=pts[i+1], s=1-(i+1)/(n+2)*.75; bLater(()=>{ dingRing(p[0],p[1],u*14*s,'rgba(255,255,255,.9)'); famDrops(p[0],p[1],5,.35*s); chimeAt([988+i*196],p[0]); famNoise(p[0],.05,2400,1200,120); },ms*a2/tot); });
+  bLater(()=>{ S.style.transition='opacity .4s'; S.style.opacity=0; const L=pts[pts.length-1]; dingRing(L[0],L[1],u*8,'rgba(255,255,255,.8)'); bLater(()=>S.remove(),500); if(cb) cb(); },ms); }
+/* Hoppel: where he is – in Janneke's arms, in Boris' mouth, or somewhere on the stage */
+function famHoppelTo(par,fx,fy,w,ms,cb){ const H=TB&&TB.els.hoppel, P=TB&&TB.els[par]; if(!H||!P) return; const b=P.querySelector(':scope>.bb')||P; H.style.opacity=1;
+  flyStick(H,b,fx,fy,ms||900,10,()=>{ H.style.width=w+'%'; if(cb) cb(); }); }
+/* home at night: the nursery – Janneke asleep in her cot, Boris lying in front, Ehfje whispering, Mama and Papa in the door */
+function famHome(){ if(TB.els.heim) return; const r=seeded(71); let st=''; for(let i=0;i<14;i++) st+=`<i style="left:${(8+r()*84).toFixed(1)}%;top:${(8+r()*70).toFixed(1)}%;animation-delay:${(-r()*4).toFixed(2)}s"></i>`;
+  const H=el('div','famheim',`<div class="famwall"></div><div class="famfloor"></div>
+    <div class="famwin"><div class="famwsky">${st}<b class="famstar"></b></div><div class="famwx"></div></div>
+    <div class="famlamp"></div>
+    <div class="tp2 chr famp famma" data-mood="smile" data-arm="hug" style="left:80%;top:56%;width:22vh"><div class="bb">${mamaSVG()}</div></div>
+    <div class="tp2 chr famp fampa" data-mood="smile" data-arm="hug" style="left:91%;top:55%;width:23vh"><div class="bb">${papaSVG()}</div></div>
+    <div class="tp2 famcot" style="left:44%;top:64%;width:40vh">${famCotSVG()}<div class="tp2 chr famjn kid" data-mood="sleepy" style="left:50%;top:44%;width:30%"><div class="bb">${jannekeSVG()}</div></div><div class="famcotf">${famCotSVG(1)}</div></div>
+    <div class="tp2 chr famdog lie" data-mood="sleepy" style="left:40%;top:88%;width:22vh"><div class="bb">${borisSVG()}</div></div>
+    <div class="tp2 chr eef" data-mood="smile" data-arm="hug" style="left:64%;top:72%;width:22vh"><div class="bb">${eefjeSVG()}</div></div>`);
+  TB.st.appendChild(H); TB.els.heim=H; TB.els.jn2=H.querySelector('.famjn'); TB.els.hexe2=H.querySelector('.eef'); void H.offsetWidth; H.classList.add('on');
+  FX.darkT=.12; FX.L=[]; zzzEl(TB.els.jn2); }
+/* Janneke's cot (back with the mattress, or the front bars) */
+function famCotSVG(front){ if(front) return `<svg viewBox="0 0 200 140" style="overflow:visible"><g stroke="#c8925a" stroke-width="5" stroke-linecap="round">${[30,48,66,84,102,120,138,156,174].map(x=>`<path d="M${x} 74 V122"/>`).join('')}</g>
+  <path d="M18 72 H182" stroke="#a8743e" stroke-width="7" stroke-linecap="round"/><path d="M18 124 H182" stroke="#a8743e" stroke-width="7" stroke-linecap="round"/>
+  <path d="M16 40 V136 M184 40 V136" stroke="#a8743e" stroke-width="9" stroke-linecap="round"/><circle cx="16" cy="38" r="7" fill="#e8b86a" stroke="#a8743e" stroke-width="2.4"/><circle cx="184" cy="38" r="7" fill="#e8b86a" stroke="#a8743e" stroke-width="2.4"/></svg>`;
+  return `<svg viewBox="0 0 200 140" style="overflow:visible"><path d="M16 50 H184 V118 H16Z" fill="#f2dcc0" stroke="#a8743e" stroke-width="3"/><g stroke="#d8b484" stroke-width="4">${[40,70,100,130,160].map(x=>`<path d="M${x} 52 V116"/>`).join('')}</g>
+  <path d="M22 96 Q100 86 178 96 L178 116 L22 116Z" fill="#c8e4ff" stroke="#8ab4d8" stroke-width="2"/><path d="M24 98 Q60 80 96 94 Q140 82 176 98" fill="#e8f4ff" stroke="#8ab4d8" stroke-width="1.6"/></svg>`; }
+
+/* ---------- the new gestures ---------- */
+Object.assign(G2,{
+ /* schnuppern (sniff): her finger on the ground and Boris trots there, nose down; the closer he gets to what is hidden, the faster
+    he sniffs and the more the reeds rustle. When his nose reaches it (a.r vh) he has found it. Boris only follows a real finger
+    (the ghost finger shows the way but never moves him). A tap is fine too: he trots to the spot. Moving without getting closer
+    is a try. a:{id (Boris), to (the hiding place), x0, x1 (range, % of the stage), r, reeds:[ids]}; hooks sniffed(p), found() */
+ schnuppern:{ setup(){ const a=TB.a; TB.sn={tx:null,best:0,b0:0,mv:0,sx:0,sy:0,lx:0,ly:0,fin:false,auto:false,tSn:.4,tap:0};
+     g2loop(dt=>this.loop(dt)); },
+   tgt(){ return ctr(TB.els[TB.a.to]); },
+   prox(){ const [nx]=famNose(), [tx]=this.tgt(); return Math.max(0,1-Math.abs(nx-tx)/(vu()*70)); },
+   loop(dt){ const s=TB.sn, a=TB.a, B=TB.els[a.id], u=vu(); if(s.fin||!B) return;
+     if(TB.pd&&!s.auto) s.tx=TB.pd.cx;
+     if(s.tx!=null){ const lo=wpx(a.x0||10,0)[0], hi=wpx(a.x1||90,0)[0]; s.tx=Math.max(lo,Math.min(hi,s.tx)); const [bx]=ctr(B), [nx]=famNose(), fl=B.classList.contains('flip');
+       const d=s.tx-nx; if(Math.abs(d)>u*1.2){ const step=Math.sign(d)*Math.min(Math.abs(d),u*(s.auto?26:40)*dt); B.style.left=wpos(bx+step,0)[0].toFixed(2)+'%'; B.classList.add('famrun','famsnf');
+         if(d<-u*3&&!fl){ B.classList.add('flip'); } else if(d>u*3&&fl){ B.classList.remove('flip'); } }
+       else { B.classList.remove('famrun'); if(s.auto&&!s.fin) s.tx=this.tgt()[0]; } }
+     const p=this.prox(); s.tSn-=dt; if(s.tSn<=0){ s.tSn=1.05-p*.8; this.sniff(p); }
+     if(p>s.best){ s.best=p; if(TB.sc.sniffed) TB.sc.sniffed(p); }
+     const [nx]=famNose(), [tx]=this.tgt(); if(Math.abs(nx-tx)<u*(a.r||8)) this.found(); },
+   sniff(p){ const [x,y]=famNose(), u=vu(); famSniff(x,.6+p); for(let i=0;i<3+p*5;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*3,y:y+u*1.5,vx:(Math.random()-.5)*10*u,vy:-(3+Math.random()*6)*u,life:.8,s:.7+Math.random()*.6,c:'rgba(255,250,235,.8)'});
+     if(Math.random()<.25+p*.4) bubble(rnd(['schnüff!','schnüff, schnüff!']),x,y-u*7,3,'#fff6e0');
+     (TB.a.reeds||[]).forEach(id=>{ const R=TB.els[id]; if(R&&Math.abs(ctr(R)[0]-x)<u*14) wiggle(R); });
+     if(p>.75){ const R=TB.els[TB.a.to]; if(R) wiggle(R); } },
+   found(){ const s=TB.sn; if(s.fin) return; s.fin=true; const B=TB.els[TB.a.id]; B.classList.remove('famrun'); famWoof(ctr(B)[0]); poke2();
+     const [x,y]=this.tgt(); glitterBurst(x,y,22,16); fxBurst(x,y,20); if(TB.sc.found) TB.sc.found(); bLater(()=>done2(),700); },
+   down(x,y){ const s=TB.sn; if(s.fin) return; s.sx=s.lx=x; s.sy=s.ly=y; s.mv=0; s.b0=s.best; poke2(); },
+   move(x,y){ const s=TB.sn; if(s.fin) return; s.mv+=Math.hypot(x-s.lx,y-s.ly); s.lx=x; s.ly=y; if(s.mv>vu()*8) poke2(); },
+   up(x,y){ const s=TB.sn; if(s.fin||s.auto) return; if(s.mv<vu()*2) return; bLater(()=>{ if(!s.fin&&s.best<=s.b0+.02) miss2(); },900); },
+   frames(){ const [nx,ny]=famNose(), [tx]=this.tgt(), u=vu(), y=ny+u*6; return [[nx,y+u*6,1,0],[nx,y,.85,1],[nx+(tx-nx)*.5,y,.85,1],[tx,y,.85,1],[tx,y,1,0]]; },
+   hint(){ const s=TB.sn; if(s.fin) return; const R=TB.els[TB.a.to]; if(R){ R.classList.add('g2hint'); bLater(()=>R.classList.remove('g2hint'),2600); } ghost(this.frames(),2600); },
+   auto(){ const s=TB.sn; if(s.fin||s.auto) return; s.auto=true; ghost(this.frames(),2200); s.tx=this.tgt()[0]; } },
+
+ /* ausbreiten (spread the blanket): Mama holds one corner; her finger pulls the other (glowing) corner away – the blanket opens as far
+    as her finger gets along the way from corner to corner (progress kept). Starting anywhere near the blanket or the corner counts.
+    ~70 % is enough, then it settles flat by itself. A tap is a try. a:{id}; hook spread(o) */
+ ausbreiten:{ setup(){ TB.ab={o:0,o0:0,dn:false,mv:0,sx:0,sy:0,go:false,fin:false,auto:false,tap:0}; famBlanket(0);
+     g2loop(dt=>{ const s=TB.ab; if((s.go||s.auto)&&s.o<1) this.set(Math.min(1,s.o+dt*(s.go?1.1:.55))); }); },
+   pts(){ return [famCorner(0),famCorner(1)]; },
+   proj(x,y){ const [p,q]=this.pts(), vx=q[0]-p[0], vy=q[1]-p[1]; return ((x-p[0])*vx+(y-p[1])*vy)/(vx*vx+vy*vy); },
+   down(x,y){ const s=TB.ab; if(s.fin||s.auto) return; const [cx,cy]=famCorner(s.o), u=vu(); s.dn=Math.hypot(x-cx,y-cy)<u*20||nearEl(TB.els.decke.querySelector('svg'),x,y,u*8);
+     s.mv=0; s.sx=x; s.sy=y; s.o0=s.o; if(s.dn){ poke2(); TB.els.grip.classList.add('held'); } },
+   move(x,y){ const s=TB.ab; if(!s.dn||s.fin||s.auto) return; s.mv=Math.max(s.mv,Math.hypot(x-s.sx,y-s.sy)); const p=this.proj(x,y);
+     if(p>s.o&&s.mv>vu()*1.5) this.set(Math.min(1,p)); if(Math.random()<.3) fxAdd({k:'spark',x,y,vx:0,vy:-5*vu(),life:.5,s:1,c:'rgba(255,240,200,.9)'}); },
+   up(x,y){ const s=TB.ab; TB.els.grip&&TB.els.grip.classList.remove('held'); if(s.fin||s.auto) return; if(!s.dn||s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } return; } if(s.o<=s.o0+.01) miss2(); s.dn=false; },
+   set(o){ const s=TB.ab, old=s.o; s.o=o; famBlanket(o); if(Math.floor(o*5)>Math.floor(old*5)){ const [x,y]=famCorner(o); chimeAt([523+Math.floor(o*5)*110],x); famNoise(x,.05,600,1400,220); poke2(); if(TB.sc.spread) TB.sc.spread(o); }
+     if(o>=.7&&!s.go){ s.go=true; s.fin=true; } if(o>=1&&s.fin&&!s.end){ s.end=true; const D=TB.els.decke, [x,y]=ctr(D); glitterBurst(x,y,26,24); fxBurst(x,y,20); bLater(()=>done2(),500); } },
+   frames(){ const s=TB.ab, [a,b]=[famCorner(s.o),famCorner(1)], u=vu(); return [[a[0],a[1]+u*6,1,0],[a[0],a[1],.85,1],[(a[0]+b[0])/2,(a[1]+b[1])/2,.85,1],[b[0],b[1],.85,1],[b[0],b[1]+u*4,1,0]]; },
+   hint(){ const s=TB.ab; if(s.fin) return; const G=TB.els.grip; G.classList.remove('pulse'); void G.offsetWidth; G.classList.add('pulse'); ghost(this.frames(),2200); },
+   auto(){ const s=TB.ab; if(s.fin||s.auto) return; s.auto=true; s.fin=true; ghost(this.frames(),1800); } }
+});
+
+/* ================= Eefje und das große Picknick ================= */
+/* heart: Ehfje is the big sister now and thinks her baby sister Janneke is too small to do anything ("sie kann ja noch gar nichts").
+   On the family hike Janneke watches everything: she gurgles at Boris, cries for her bunny, and at the lake she laughs her first big
+   laugh – at her big sister. At sunset Ehfje is the one who sings her to sleep. Mama's "Warte nur ab" (scene 1) pays off in scene 6. */
+const FDUR2={};
+const FAM2={id:'picknick', v2:true, eef:1, dur:FDUR2, title:'Eefje und das große Picknick', vtitle:'Ehfje und das große Picknick', icon:'🧺',
+ cover:'linear-gradient(180deg,#5aaeee 0%,#9ad2f6 45%,#c8ecb0 75%,#7ec46a 100%)',
+ cast(sc){ const A=TB.act;
+  if(sc.see) TB.els.see=famBand(famSeeSVG(),sc.see[0],sc.see[1],sc.see[2]);
+  if(sc.bach) TB.els.bach=famBand(famBachSVG(),50,52,'famb1');
+  if(sc.bach2) TB.els.bach=famBand(famBach2SVG(),sc.bach2[0],sc.bach2[1]);
+  if(sc.decke){ const [x,y,w]=sc.decke, D=el('div','tp2 famdk',famDeckeSVG()); D.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(D); TB.els.decke=D;
+    if(!TST.dko){ const B=el('div','tp2 fambu',famBuendelSVG()); B.style.width=(w*.2)+'vh'; A.appendChild(B); TB.els.buendel=B; const G=el('div','famgrip'); A.appendChild(G); TB.els.grip=G; requestAnimationFrame(()=>famBlanket(0)); } }
+  const mk=efCast(sc); try{ alignLoad(['d4','d5'].map(s=>TB.n(s))); }catch(e){}
+  if(sc.matte){ const [x,y,w]=sc.matte, M=el('div','tp2 chr famham',`<div class="bb">${famMatteSVG()}</div>`); M.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(M); TB.els.matte=M; }
+  if(sc.mama){ const [x,y,z]=sc.mama, M=mk('mama','famp famma',mamaSVG(),x,y,z); M.dataset.mood=TST.mam||'smile'; M.dataset.arm=TST.maa||'dn'; }
+  if(sc.papa){ const [x,y,z]=sc.papa, P=mk('papa','famp fampa',papaSVG(),x,y,z); P.dataset.mood=TST.pam||'smile'; P.dataset.arm=TST.paa||(sc.jn==='papa'?'carry':'dn'); if(sc.jn==='papa') P.classList.add('carry'); }
+  if(sc.jn){ const par=sc.jn==='papa'?'papa':sc.jn==='matte'?'matte':null; let J;
+    if(par==='papa'){ J=mk('janneke','famjn',jannekeSVG(),50,38.5,0,'papa'); J.style.width='30%'; }
+    else if(par==='matte'){ J=mk('janneke','famjn',jannekeSVG(),50,70,0,'matte'); J.style.width='46%'; }
+    else { const [x,y,z]=sc.jn; J=mk('janneke','famjn',jannekeSVG(),x,y,z); }
+    J.dataset.mood=TST.jam||'smile'; }
+  if(sc.boris){ const [x,y,z,cls]=sc.boris, B=mk('boris','famdog'+(cls?' '+cls:''),borisSVG(),x,y,z); B.dataset.mood=TST.bom||'smile'; }
+  /* Hoppel: in Janneke's arms ('jn'), hidden somewhere [x,y,z], or gone */
+  if(TST.hop==='jn'&&TB.els.janneke){ const H=mk('hoppel','famhop',hoppelSVG(),78,50,0,'janneke'); H.style.width='36%'; }
+  else if(Array.isArray(sc.hop)){ const [x,y,z]=sc.hop; mk('hoppel','famhop wet hide',hoppelSVG(),x,y,z); }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); });
+  if(sc.kz){ const K=mk('kiesel','famkz',famKieselSVG(),72,30,0,'hexe'); K.style.width='16%'; } },
+ react(id,b,x,y){ const u=vu();
+  if(id==='boris'){ sqs(b); bubble(rnd(['wuff!','wau!','wuff, wuff!']),x,y-u*8,3.8,'#fff0d8'); famWoof(x); famWag(1); bLater(()=>famWag(0),1600); return true; }
+  if(id==='janneke'||id==='jn2'){ sqs(b); bubble(rnd(['gugu!','dada!','hihi!']),x,y-u*5,3.2,'#ffe0ea'); famGiggle(x,3); return true; }
+  if(id==='mama'){ sqs(b); bubble(rnd(['hallo!','huhu!','na, du?']),x,y-u*14,3.6,'#d8fff6'); chime([659,880]); return true; }
+  if(id==='papa'){ sqs(b); bubble(rnd(['hallo!','hoho!','na, du?']),x,y-u*14,3.6,'#e0ffd8'); chime([392,523]); return true; }
+  if(id==='hoppel'){ sqs(b); bubble('hopp!',x,y-u*4,3,'#f4e8f4'); chime([1175,1568]); return true; }
+  if(id==='korb'||id==='decke'||id==='matte'||id==='see'||id==='bach'||/^s\d$/.test(id)||/^r\d$/.test(id)){ if(b.classList.contains('tp2')) sqs(b); chime([784]); return true; }
+  return efReact(id,b,x,y); },
+ sc:[
+ /* 1 – a sunny summer morning at the witch's house: pack the picnic basket (drag); Ehfje: "Janneke can't do anything yet" – Mama: "Warte nur ab" */
+ {set:'famgarten', dark:0, u:[8,76,17], ef:[22,68,26,'st'], mama:[37,60,23], papa:[65,59,24], jn:'papa', boris:[82,79,21],
+  p:[['korb','FAMKORB',52,82,19],['i1','🍎',26,91,6.5],['i2','🥖',40,94,7.5],['i3','🧀',64,94,6.5],['i4','🍓',76,91,6.5]],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'sleepy',bom:'happy',hop:'jn',dko:0},
+  enter(){ onPh('Sommermorgen',()=>{ const [x,y]=ctr(TB.els.haus); glitterBurst(x,y-vu()*6,10,14); });
+    onPh('Mama',()=>{ sqs(TB.els.mama); mood('mama','happy'); }); onPh('Papa',()=>{ sqs(TB.els.papa); });
+    onPh('ihrer kleinen',()=>{ sqs(TB.els.janneke); mood('janneke','smile'); }); onPh('Boris, der Hund',()=>{ famWag(1); sqs(TB.els.boris); famWoof(ctr(TB.els.boris)[0]); });
+    onPh('dein Einhorn',()=>uniHop()); onPh('Hilf Mama',()=>{ famArm('mama','up'); mood('hexe','smile'); }); },
+  ready(){ efReady(); famArm('mama','up'); famWag(1); mood('janneke','smile'); },
+  a:{t:'drag',ids:['i1','i2','i3','i4'],to:'korb',w:'KORB'},
+  h:'Nimm etwas zu essen und schieb es in den Korb!',
+  s:'Es war einmal ein sonniger Sommermorgen. Die kleine Hexe Ehfje wollte mit Mama, Papa und ihrer kleinen Schwester Janneke zum See wandern und dort Picknick machen. Janneke war noch ein Baby und lag in Papas Tragetuch. Boris, der Hund, wedelte schon ganz aufgeregt mit dem Schwanz. Und dein Einhorn kam natürlich auch mit. Hilf Mama beim Einpacken! Schieb alles in den Picknickkorb!',
+  item(id,b){ const k={i1:1,i2:2,i3:3,i4:4}[id]; bLater(()=>{ b.style.transition='opacity .3s, scale .3s'; b.style.opacity=0; b.style.scale=.5; const K=TB.els.korb.querySelector('.famk'+k); if(K) K.classList.add('in'); sqs(TB.els.korb); },380);
+    if(k===2){ const B=TB.els.boris; B.classList.add('famsnf'); bubble('schnüff!',...famNose(),3.2,'#fff6e0'); famSniff(ctr(B)[0]); bLater(()=>B.classList.remove('famsnf'),1200); } if(k===3) mood('hexe','laugh'); },
+  done(){ mood('mama','happy'); famArm('mama','dn'); mood('hexe','happy'); },
+  d:[()=>{ talk('hexe','Sie ist noch','sagte Ehfje','d1'); talk('hexe','Sie kann',null,'d1'); onPh('schaute Janneke',()=>{ mood('hexe','smile'); mood('janneke','oh'); },'d1');
+       onPh('Sie kann',()=>mood('hexe','worry'),'d1'); },
+     'Alles war eingepackt. Ehfje schaute Janneke an. Sie ist noch so klein, sagte Ehfje. Sie kann ja noch gar nichts.',
+     ()=>{ talk('mama','Warte nur','sagte Mama','d2'); onPh('lächelte',()=>mood('mama','happy'),'d2'); onPh('Und dann',()=>{ mood('hexe','happy'); famWag(1); famWoof(ctr(TB.els.boris)[0]); famTrot(104,1600); },'d2'); },
+     'Mama lächelte. Warte nur ab, sagte Mama. Und dann ging es los!', 900]},
+
+ /* 2 – into the woods: Boris has run ahead; follow his paw prints (trace, paw:1) to find him under a big tree; Janneke gurgles at his tail */
+ {set:'famwald', dark:0, u:[6,73,15], ef:[17,69,24,'st'], papa:[29,58,22], jn:'papa', mama:[41,59,21], boris:[86,74,20],
+  p:[['baum','OAK',90,44,62,'big']],
+  st:{efm:'oh',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'smile',bom:'happy',hop:'jn'},
+  enter(){ const B=TB.els.boris; B.style.opacity=0; TB.act.appendChild(B);
+    talk('hexe','Wo ist Boris','rief Ehfje'); onPh('Wo ist Boris',()=>{ mood('hexe','worry'); efArm('up'); });
+    talk('papa','Schau mal','sagte Papa'); onPh('Schau mal',()=>{ mood('papa','happy'); famArm('papa','up'); efArm('dn'); mood('hexe','oh'); });
+    onPh('Fahr den',()=>{ famArm('papa','carry'); mood('hexe','smile'); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','smile'); famArm('papa','carry'); },
+  a:{t:'trace',path:[[22,90],[33,85],[44,90],[55,84],[66,87],[76,80]],end:'boris',paw:1,w:'HUND'},
+  h:'Fahr mit dem Finger von Pfote zu Pfote!',
+  s:'Der Weg führte in den Wald. Die Bäume waren hoch und grün, und die Vögel sangen. Boris lief voraus, und auf einmal war er verschwunden. Wo ist Boris? rief Ehfje. Schau mal, Pfotenspuren! sagte Papa. Fahr den Spuren mit dem Finger nach!',
+  done(){ const B=TB.els.boris; B.style.transition='opacity .5s'; B.style.opacity=1; famWag(1); famWoof(ctr(B)[0]); sqs(B); mood('hexe','laugh'); },
+  d:[()=>{ onPh('Wuff',()=>{ const B=TB.els.boris; sqs(B); famWoof(ctr(B)[0]); bubble('wuff!',...famNose(),3.8,'#fff0d8'); },'d1'); },
+     'Da war Boris! Er saß unter einem großen Baum und wedelte mit dem Schwanz. Wuff!',
+     ()=>{ onPh('gluckste',()=>{ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],5); sqs(TB.els.janneke); },'d2'); talk('hexe','Komm, Boris','rief Ehfje','d2'); talk('hexe','weiter',null,'d2');
+       onPh('Komm, Boris',()=>{ mood('hexe','happy'); efArm('up'); mood('janneke','smile'); },'d2'); },
+     'Janneke gluckste, als sie den wedelnden Schwanz sah. Komm, Boris, rief Ehfje, weiter geht es!', 900]},
+
+ /* 3 – the brook: tap the stepping stones and Ehfje hops across (tapall, seq:1); Boris splashes through; Hoppel falls in and floats away */
+ {set:'fambach', dark:0, u:[92,72,15], ef:[27,69,22,'st'], mama:[17,59,20], papa:[6,58,21], jn:'papa', boris:[50,88,17],
+  bach:1, p:[['s1','FAMSTEIN',38.5,83,9],['s2','FAMSTEIN',46,80,8.5],['s3','FAMSTEIN',53.5,83,9],['s4','FAMSTEIN',61,80,8.5]],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'smile',bom:'happy',hop:'jn'},
+  enter(){ famWag(1); onPh('plätscherte',()=>{ const [x,y]=ctr(TB.els.boris); famDrops(x,y,10,.6); famSplash(x); });
+    talk('papa','Über die Steine','sagte Papa'); onPh('Über die Steine',()=>{ mood('papa','happy'); }); onPh('Tipp auf',()=>{ mood('hexe','smile'); }); },
+  ready(){ efReady(); mood('papa','smile'); },
+  a:{t:'tapall',ids:['s1','s2','s3','s4'],seq:1,w:'PAPA'},
+  h:'Tipp auf den nächsten Stein, dann hüpft Ehfje!',
+  s:'Bald kamen sie an einen Bach. Das Wasser plätscherte über die Steine. Papa hielt Janneke gut fest. Über die Steine kommen wir rüber! sagte Papa. Tipp auf die Steine, dann hüpft Ehfje hinüber!',
+  item(id,b){ const k=4-TB.left.length, S=TB.els['s'+k], E=TB.els.hexe; if(!S||!E) return; const sx=parseFloat(S.style.left), sy=parseFloat(S.style.top);
+    famHop(E,sx,sy-9.5,560,10,()=>{ const [x,y]=ctr(S); famDrops(x,y,6,.4); chimeAt([660+k*110],x); }); mood('hexe',k%2?'laugh':'happy');
+    if(k===2){ const B=TB.els.boris; famDrops(...ctr(B),12,.8); famSplash(ctr(B)[0]); sqs(B); } },
+  done(){ const E=TB.els.hexe; bLater(()=>famHop(E,74,70,700,12,()=>{ mood('hexe','laugh'); efArm('up'); }),650); },
+  d:[()=>{ onPh('und Mama',()=>{ kiPath(TB.els.mama,[[48,54],[70,58]],2200); kiPath(TB.els.papa,[[44,53],[83,57]],2600); },'d1');
+       onPh('platschte',()=>{ const B=TB.els.boris; B.classList.add('famrun'); kiPath(B,[[62,86],[90,84]],1600,()=>{ B.classList.remove('famrun'); famDrops(...ctr(B),18,.9); famSplash(ctr(B)[0]); }); famSplash(ctr(B)[0]); },'d1'); },
+     'Hopp, hopp, hopp! Ehfje kam trocken ans andere Ufer, und Mama und Papa auch. Nur Boris platschte einfach mitten durchs Wasser.',
+     ()=>{ onPh('platsch',()=>{ const H=TB.els.hoppel; if(!H) return; const h=unstick(H); TB.act.appendChild(h); const [x,y]=wpx(58,90); h.classList.add('wet');
+         kiPath(h,[[66,76],[58,90]],700,()=>{ famDrops(x,y,14,.7); famSplash(x); dingRing(x,y,vu()*12,'rgba(255,255,255,.9)'); kiPath(h,[[55,98],[60,112]],3200); }); mood('janneke','oh'); },'d2');
+       onPh('weinen',()=>{ mood('janneke','cry'); mood('hexe','worry'); mood('mama','oh'); TST.hop='none'; },'d2'); },
+     'Doch da – platsch! Jannekes Kuschelhase Hoppel fiel ins Wasser, und der Bach trug ihn fort. Janneke fing an zu weinen.', 900]},
+
+ /* 4 – the reeds: Boris has the best nose – lead him along the bank with the finger (schnuppern) until he finds Hoppel */
+ {set:'famschilf', dark:0, u:[5,74,14], ef:[13,69,21,'st'], papa:[25,56,20], jn:'papa', mama:[36,57,19], boris:[24,83,19],
+  bach2:[50,14], hop:[85,70,7], p:[['r1','SCHILF',50,63,40],['r2','SCHILF',67,62,42],['r3','SCHILF',85,62,44]], front:['r3'],
+  st:{efm:'worry',efa:'dn',mam:'oh',maa:'dn',pam:'smile',jam:'cry',bom:'smile',hop:'hide'},
+  enter(){ talk('boris','Schnüff, schnüff','Boris hat'); onPh('Wo ist Hoppel',()=>{ mood('hexe','worry'); efArm('up'); });
+    onPh('hob Boris',()=>{ const B=TB.els.boris; B.classList.add('famsnf'); mood('boris','sniff'); famSniff(ctr(B)[0]); efArm('dn'); });
+    onPh('beste Nase',()=>{ mood('boris','happy'); famWag(1); B2(); }); function B2(){ const B=TB.els.boris; B.classList.remove('famsnf'); sqs(B); } },
+  ready(){ efReady(); efArm('dn'); mood('boris','sniff'); famWag(1); },
+  a:{t:'schnuppern',id:'boris',to:'hoppel',x0:12,x1:92,r:9,reeds:['r1','r2','r3'],w:'NASE'},
+  h:'Leg deinen Finger auf den Boden, dann läuft Boris dorthin!',
+  s:'Oh nein! Wo ist Hoppel? Ehfje suchte überall, aber im hohen Schilf konnte sie nichts sehen. Da hob Boris seine Nase. Schnüff, schnüff! Boris hat die beste Nase von allen. Leg deinen Finger auf den Boden, dann läuft Boris hin und schnüffelt!',
+  sniffed(p){ if(p>.55) mood('hexe','oh'); if(p>.8){ const H=TB.els.hoppel; if(H) H.classList.add('peek'); } },
+  found(){ const B=TB.els.boris; mood('boris','happy'); famWag(1); B.classList.add('famsnf'); mood('hexe','happy'); },
+  d:[()=>{ onPh('zog Hoppel',()=>{ const B=TB.els.boris; B.classList.remove('famsnf'); const H=TB.els.hoppel; if(!H) return; H.classList.add('peek'); TB.act.appendChild(H);
+         const fl=B.classList.contains('flip'); famHoppelTo('boris',fl?.06:.94,.52,22,700); },'d1');
+       onPh('schüttelte',()=>{ const B=TB.els.boris; B.classList.remove('famshk'); void B.offsetWidth; B.classList.add('famshk'); const [x,y]=ctr(B); famDrops(x,y-vu()*4,30,1.1); famSplash(x);
+         ['hexe','mama','papa'].forEach(id=>mood(id,'oh')); bLater(()=>B.classList.remove('famshk'),1400); },'d1'); },
+     'Wuff! Boris steckte den Kopf ins Schilf und zog Hoppel heraus. Dann schüttelte er sich, und alle wurden nass!',
+     ()=>{ onPh('lachen',()=>{ ['hexe','mama','papa'].forEach(id=>mood(id,'laugh')); },'d2');
+       onPh('drückte Hoppel',()=>{ TST.hop='jn'; famHoppelTo('janneke',.78,.5,36,1100,()=>{ const H=TB.els.hoppel; H.classList.remove('wet','peek','hide'); mood('janneke','happy'); sqs(TB.els.janneke); famGiggle(ctr(TB.els.janneke)[0],3); }); },'d2');
+       talk('hexe','Danke, Boris','sagte Ehfje','d2'); onPh('Danke, Boris',()=>{ efArm('hug'); mood('hexe','happy'); famWag(1); },'d2'); },
+     'Da mussten alle lachen. Janneke drückte Hoppel ganz fest. Danke, Boris! sagte Ehfje.', 900]},
+
+ /* 5 – the lake: Mama holds one corner of the blanket; pull the other one (ausbreiten); the picnic, and a sausage for Boris */
+ {set:'famsee', dark:0, u:[7,74,16], ef:[18,71,23,'st'], mama:[48,59,22], papa:[86,59,22], jn:'papa', boris:[93,84,16,'flip'],
+  see:[40,22], decke:[62,77,62], p:[['korb','FAMKORB',25,90,12]],
+  st:{efm:'happy',efa:'dn',mam:'happy',maa:'hold',pam:'smile',jam:'smile',bom:'smile',hop:'jn',dko:0},
+  enter(){ onPh('der See',()=>{ const W=TB.els.see, r=W.getBoundingClientRect(); for(let i=0;i<8;i++) bLater(()=>glitterBurst(r.left+r.width*(.1+Math.random()*.8),r.top+r.height*(.2+Math.random()*.6),5,6),i*150); chime([784,988,1175]); mood('hexe','oh'); });
+    onPh('glitzerte',()=>mood('hexe','happy')); talk('mama','Hier machen','sagte Mama'); onPh('Hier machen',()=>{ mood('mama','happy'); }); onPh('Sie hielt',()=>famArm('mama','hold')); },
+  ready(){ efReady(); famArm('mama','hold'); mood('mama','smile'); },
+  a:{t:'ausbreiten',id:'decke',w:'MAMA'},
+  h:'Zieh die leuchtende Ecke von der Decke ganz weit auf!',
+  s:'Und dann lag er vor ihnen: der See. Das Wasser glitzerte in der Sonne. Hier machen wir Picknick! sagte Mama. Sie hielt eine Ecke der Decke fest. Zieh die andere Ecke ganz weit auf!',
+  spread(o){ if(o>.4) mood('mama','happy'); if(o>.6) mood('hexe','laugh'); },
+  done(){ TST.dko=1; famArm('mama','dn'); mood('mama','laugh'); },
+  d:[()=>{ onPh('packte',()=>{ famArm('mama','hold'); [['🍎',46,78],['🥖',56,74],['🧀',66,80],['🍓',74,76]].forEach(([e,x,y],i)=>bLater(()=>{ const F=el('div','tp2 famfood',e); F.style.cssText=`left:${x}%;top:${y}%;font-size:6vh`; TB.act.appendChild(F); const [px,py]=ctr(F); fxBurst(px,py,10); chimeAt([784+i*130],px); },i*420)); },'d1');
+       onPh('lecker',()=>{ mood('hexe','laugh'); mood('papa','happy'); famArm('mama','dn'); },'d1'); },
+     'Schön glatt lag die Decke im Gras. Mama packte Äpfel, Brot, Käse und Erdbeeren aus. Mmh, lecker!',
+     ()=>{ onPh('Würstchen',()=>{ const W=el('div','tp2 famwu',famWurstSVG()); W.style.cssText='left:80%;top:84%;width:6vh'; TB.act.appendChild(W); TB.els.wurst=W; famTrot(84,700,()=>{ mood('boris','happy'); }); famWag(1); },'d2');
+       onPh('Schmatz',()=>{ const W=TB.els.wurst; if(W){ W.style.transition='opacity .4s, scale .4s'; W.style.opacity=0; W.style.scale=.3; } const B=TB.els.boris; sqs(B); famWoof(ctr(B)[0]); bubble('schmatz!',...famNose(),3.4,'#fff0d8'); },'d2'); },
+     'Und Boris bekam ein Würstchen. Wuff! Schmatz!', 900]},
+
+ /* 6 – skipping stones with Papa (flick): every throw skips over the water; at the third Janneke laughs her first big laugh – at Ehfje */
+ {set:'famufer', dark:0, u:[9,75,16], ef:[42,73,26,'st'], papa:[63,58,22], jn:'papa', mama:[81,60,21], boris:[91,84,16,'flip'], see:[34,30,'famgold'], kz:1,
+  st:{efm:'happy',efa:'up',mam:'smile',maa:'dn',pam:'happy',paa:'carry',jam:'smile',bom:'smile',hop:'jn'},
+  enter(){ onPh('warf einen',()=>{ famArm('papa','up'); const P=TB.els.papa, [x,y]=relEl(P,[.8,.12]); famSkip(x,y,.5,3); }); onPh('hüpf, hüpf',()=>{ mood('hexe','laugh'); });
+    talk('papa','Jetzt du','sagte Papa'); onPh('Jetzt du',()=>{ famArm('papa','carry'); mood('papa','happy'); mood('hexe','happy'); }); },
+  ready(){ efReady(); famArm('papa','carry'); efArm('up'); },
+  a:{t:'flick',id:'hexe',at:[.72,.3],n:3,w:'SEE'},
+  h:'Leg den Finger auf Ehfjes Hand und wisch schnell nach oben!',
+  s:'Nach dem Essen gingen Papa und Ehfje ans Wasser. Papa warf einen flachen Stein, und der hüpfte übers Wasser: hüpf, hüpf, hüpf! Jetzt du, Ehfje! sagte Papa. Wisch schnell nach oben, dann wirft Ehfje ihren Stein!',
+  flicked(k,x,y,ux){ const K=TB.els.kiesel; if(K) K.style.opacity=0; famSkip(x,y,ux*1.6,2+k,()=>{ const J=TB.els.janneke; if(!J) return; mood('janneke',k>=3?'laugh':k===2?'happy':'oh'); sqs(J); if(k>=2) famGiggle(ctr(J)[0],k*2); if(K&&k<3) K.style.opacity=1; });
+    mood('hexe','laugh'); bLater(()=>mood('hexe','happy'),900); },
+  done(){ mood('janneke','laugh'); },
+  d:[()=>{ onPh('lachte Janneke',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],8); const [x,y]=ctr(J); hearts(x,y-vu()*4,3); },'d1');
+       onPh('schaute dabei',()=>{ mood('hexe','oh'); efArm('dn'); famGiggle(ctr(TB.els.janneke)[0],5); },'d1'); },
+     'Da lachte Janneke. Nicht nur ein bisschen – sie lachte laut und glücklich und schaute dabei Ehfje an.',
+     ()=>{ talk('hexe','Sie lacht','rief Ehfje','d2'); talk('mama','Siehst du',null,'d2'); onPh('Sie lacht',()=>{ mood('hexe','laugh'); efArm('up'); },'d2');
+       onPh('Mama nickte',()=>{ sqs(TB.els.mama); mood('mama','happy'); efArm('dn'); },'d2'); onPh('hat dich lieb',()=>{ efArm('hug'); mood('hexe','happy'); const [x,y]=ctr(TB.els.janneke); hearts(x,y,4); },'d2'); },
+     'Sie lacht über mich! rief Ehfje. Mama nickte. Siehst du? Deine kleine Schwester hat dich lieb.', 900]},
+
+ /* 7 – sunset: Janneke is tired; Ehfje's spell brings glow-worms; rock the little hammock (rock) while Ehfje sings; at home in her cot */
+ {set:'famabend', dark:.16, u:[92,77,15], ef:[51,71,23,'st'], mama:[67,59,21], papa:[81,58,22], jn:'matte', boris:[41,85,22,'lie'], see:[36,26,'famrose'],
+  p:[['birke','FAMBIRKE',15,38,112]], matte:[28.5,44,32],
+  st:{efm:'smile',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'dn',jam:'cry',bom:'sleepy',hop:'jn'},
+  lights:[{id:'hexe',r0:16,rT:16,k0:.35,kT:.35},{id:'matte',r0:14,rT:14,k0:.35,kT:.35,warm:1}],
+  enter(){ onPh('quengelte',()=>{ mood('janneke','cry'); sqs(TB.els.janneke); }); onPh('Hängematte',()=>{ mood('janneke','oh'); });
+    talk('hexe','Kribbel','Da tanzten'); onPh('Ehfje hob',()=>{ efArm('up'); mood('hexe','smile'); }); onPh('Kribbel',()=>efSpell(18));
+    onPh('Glühwürmchen',()=>{ efArm('dn'); fxFlies(14,true,false); chime([1175,1568,2093]); mood('janneke','smile'); }); },
+  ready(){ efReady(); efArm('dn'); if(!TB.flies){ TB.flies=1; fxFlies(10,true,false); } mood('janneke','smile'); },
+  a:{t:'rock',id:'matte',n:4,len:6,nofoam:1,w:'LIED'},
+  h:'Wisch ganz sanft hin und her, dann schaukelt die Hängematte!',
+  s:'Langsam ging die Sonne unter, und der Himmel wurde rosa. Janneke war müde und quengelte. Papa legte sie in die kleine Hängematte. Ehfje hob ihren Finger: Kribbel, krabbel, Funkelschein – schlaf jetzt, kleine Schwester mein! Da tanzten Glühwürmchen über dem See. Schaukel Janneke ganz sanft hin und her!',
+  rockStep(k){ famLull(k-1,ctr(TB.els.matte)[0]); mood('janneke',k>=3?'sleepy':'happy'); if(k===2) mood('hexe','happy'); const [x,y]=ctr(TB.els.matte); glitterBurst(x,y,8,10); },
+  done(){ mood('janneke','sleepy'); mood('hexe','happy'); },
+  d:[()=>{ onPh('sang',()=>{ famLull(0); bLater(()=>famLull(1),2000); talkSing(); },'d1'); onPh('schlief ein',()=>{ mood('janneke','sleepy'); zzz('janneke',.6); ['mama','papa'].forEach(id=>mood(id,'happy')); },'d1');
+       function talkSing(){ const E=TB.els.hexe; if(E){ E.classList.add('talking'); let t=0; const iv=setInterval(()=>{ t+=.1; if(!TB||!E.isConnected||t>3.6){ clearInterval(iv); if(E.isConnected){ E.classList.remove('talking'); E.style.setProperty('--mo',0); } return; } E.style.setProperty('--mo',(.3+.3*Math.sin(t*7)).toFixed(2)); },100); taleT.push(iv); } } },
+     'Ehfje sang ein leises Lied, und Janneke schlief ein.',
+     ()=>{ onPh('Am Abend',()=>famHome(),'d2');
+       onPh('Gute Nacht',()=>{ const E=TB.els.hexe2; if(E) E.classList.add('talking'); },'d2'); onPh('flüsterte Ehfje',()=>{ const E=TB.els.hexe2; if(E){ E.classList.remove('talking'); E.dataset.mood='happy'; } },'d2'); },
+     'Am Abend lag Janneke zu Hause in ihrem Bettchen, und Boris schlief davor. Gute Nacht, kleine Schwester, flüsterte Ehfje.',
+     ()=>{ onPh('schläft sie',()=>{ const H=TB.els.heim, s=H&&H.querySelector('.famstar'); if(s){ const [x,y]=ctr(s); glitterBurst(x,y,14,10); chimeAt([1318,1568,2093],x); } },'d3'); },
+     'Und wenn sie nicht aufgewacht ist, dann schläft sie noch heute.', 1600]}
+ ]};
+/*<FAMILIE*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -10842,7 +11461,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -10885,6 +11504,12 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="tp2 chr tasn" data-mood="laugh" style="left:68%;top:62%;width:30%;--lv:1;--tg:.8"><div class="bb">${tasseSVG()}<div class="tp2 chr tasfd kid" style="left:66%;top:4%;width:22%;rotate:24deg"><div class="bb">${tasFederSVG()}</div></div></div></div>`+
     `<div class="tp2 tasbuch open" style="left:72%;top:22%;width:30%;rotate:8deg">${tasBuchSVG()}</div></div>`+
     [[12,16,5],[44,10,4],[92,56,3.6],[10,46,3.4],[56,30,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+  if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
+    `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
+    `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
+    `<div class="tp2 chr eef" data-mood="happy" data-arm="hug" style="left:30%;top:62%;width:36%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr famjn" data-mood="laugh" style="left:55%;top:72%;width:19%"><div class="bb">${jannekeSVG()}<div class="tp2 famhop kid" style="left:78%;top:50%;width:36%">${hoppelSVG()}</div></div></div>`+
+    `<div class="tp2 chr famdog" data-mood="happy" style="left:79%;top:70%;width:32%"><div class="bb">${borisSVG()}</div></div></div>`+tw;
   if(id==='laterne') return `<div class="art" style="width:48%"><div class="lan awake cand lit" style="position:relative;width:100%">${lanternSVG()}</div></div>`+tw;
   if(id==='prinzessin') return `<div class="art" style="width:40%"><div class="prin" data-mood="laugh" style="position:relative;width:100%">${princessSVG()}<div class="bird oncrown">${birdSVG()}</div></div></div>`+tw;
   if(id==='mondkuchen') return `<div class="art" style="width:46%;margin-top:8%"><div class="chr bear" data-mood="smile" style="position:relative;width:100%"><div class="bb">${bearSVG()}<div class="chr mouse onhat" data-mood="happy"><div class="bb">${mouseSVG()}</div></div></div></div></div>`+
@@ -11142,6 +11767,8 @@ regTale2(PEPPIO2);
 regTale2(TAS2);
 /* Eefje und Kiki fliegen zu den Sternen: after the Zaubertasse, so the older lines keep their order in voice/clips.tsv */
 regTale2(KIKI2);
+/* Eefje und das große Picknick: after Kiki, so the older lines keep their order in voice/clips.tsv */
+regTale2(FAM2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
