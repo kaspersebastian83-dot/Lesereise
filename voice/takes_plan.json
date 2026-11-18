@@ -3734,6 +3734,25 @@
      "say": "Flügel"
     }
    ]
+  },
+  {
+   "id": "w_x048_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Korb. See. Lied.",
+   "items": [
+    {
+     "key": "wort_korb",
+     "say": "Korb"
+    },
+    {
+     "key": "wort_see",
+     "say": "See"
+    },
+    {
+     "key": "wort_lied",
+     "say": "Lied"
+    }
+   ]
   }
  ]
 }
