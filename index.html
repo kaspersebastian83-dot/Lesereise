@@ -1462,6 +1462,59 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .eef.tassnz>.bb{animation:tassnz .6s cubic-bezier(.3,.7,.4,1)} @keyframes tassnz{25%{transform:rotate(-6deg) translateY(2%)}55%{transform:rotate(7deg) translateY(-3%) scale(1.04,.96)}}
 .ill .tasart .tasn>.bb,.ill .tasart .eef>.bb{animation:none}
 /*<TASSECSS*/
+/*KIKICSS>*/
+/* Eefje und Kiki fliegen zu den Sternen (all classes start with "ki") */
+.tp2.kiki{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.25)) drop-shadow(0 0 calc(var(--kg,0)*3vh) rgba(230,220,255,.9));--kg:0} .kiki svg{display:block;width:100%;overflow:visible}
+.kiki>.bb{position:relative;animation:kibr 3s ease-in-out infinite} @keyframes kibr{50%{transform:translateY(-1.5%) scale(1.01,.99)}}
+.kiki.kifly>.bb{animation:kifl 1.8s ease-in-out infinite} @keyframes kifl{50%{transform:translateY(-5%) rotate(-2deg)}}
+.kiki .kigl{opacity:calc(.25 + var(--kg,0)*.75)}
+.kiki .kiw{transform-box:view-box;transform-origin:86px 64px}
+.kiki .kiw1{animation:kiw1 3s ease-in-out infinite} .kiki .kiw2{animation:kiw2 3s ease-in-out infinite}
+@keyframes kiw1{50%{transform:rotate(-6deg)}} @keyframes kiw2{50%{transform:rotate(-4deg) translate(6px,-2px)}}
+.kiki .kiw2{transform:translate(8px,-3px)}
+.kiki.kifly .kiw1,.kiki.kifly .kiwf .kiw1{animation:kiwf1 .9s ease-in-out infinite} .kiki.kifly .kiw2{animation:kiwf2 .9s ease-in-out infinite}
+@keyframes kiwf1{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(22deg) scale(1,.8)}} @keyframes kiwf2{0%,100%{transform:translate(8px,-3px) rotate(-10deg)}50%{transform:translate(8px,-3px) rotate(18deg) scale(1,.85)}}
+.kiki.kiflap .kiw1,.kiki.kiflap .kiwf .kiw1{animation:kifp1 .5s cubic-bezier(.3,.7,.4,1)} .kiki.kiflap .kiw2{animation:kifp2 .5s cubic-bezier(.3,.7,.4,1)}
+@keyframes kifp1{0%{transform:rotate(-24deg)}55%{transform:rotate(34deg) scale(1,.75)}100%{transform:none}} @keyframes kifp2{0%{transform:translate(8px,-3px) rotate(-20deg)}55%{transform:translate(8px,-3px) rotate(28deg) scale(1,.8)}100%{transform:translate(8px,-3px)}}
+.kiki .kiwf{position:absolute;inset:0;pointer-events:none;z-index:3} .kiki .kiwf svg{width:100%;height:100%} .kiki .kiwf~.kiw1{display:none}
+.kiki:has(.kiwf)>.bb>svg .kiw1{visibility:hidden}
+.kiki .kitl{transform-box:view-box;transform-origin:50px 108px;animation:kitl 2.6s ease-in-out infinite} @keyframes kitl{50%{transform:rotate(-2deg)}}
+.kiki .kie,.kiki .kim,.kiki .kimo,.kiki .kibl{display:none}
+.kiki[data-mood=smile] .kie-o,.kiki[data-mood=smile] .kim-s{display:inline}
+.kiki[data-mood=happy] .kie-j,.kiki[data-mood=happy] .kim-s,.kiki[data-mood=happy] .kibl{display:inline}
+.kiki[data-mood=oh] .kie-w,.kiki[data-mood=oh] .kim-o{display:inline} .kiki[data-mood=oh] .kibw{display:none}
+.kiki[data-mood=worry] .kie-w,.kiki[data-mood=worry] .kim-w{display:inline}
+.kiki[data-mood=laugh] .kie-j,.kiki[data-mood=laugh] .kim-l,.kiki[data-mood=laugh] .kibl{display:inline}
+.kiki[data-mood=sleepy] .kie-z,.kiki[data-mood=sleepy] .kim-s,.kiki[data-mood=sleepy] .kibl{display:inline}
+.kiki.talking .kim{display:none!important} .kiki.talking .kimo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.2 + var(--mo,0)*1.05))}
+.kiki .kie-o{transform-box:fill-box;transform-origin:center;animation:kiblk 4.6s infinite} @keyframes kiblk{0%,94%,100%{transform:none}97%{transform:scaleY(.1)}}
+.kiki.kizit>.bb{animation:kizit .16s linear infinite} @keyframes kizit{0%,100%{transform:translateX(0)}50%{transform:translateX(1.2%)}}
+.kiki.kicurl>.bb>svg .kihd{transform-box:view-box;transform-origin:130px 80px;transform:rotate(18deg) translate(-14px,22px)} .kiki.kicurl>.bb>svg .kiw{transform:rotate(30deg) scale(.7)}
+.kiki .kihd{transition:transform .9s ease}
+.kiki.kisnz>.bb{animation:kisnz .6s cubic-bezier(.3,.7,.4,1)} @keyframes kisnz{25%{transform:rotate(4deg) translateY(2%)}55%{transform:rotate(-6deg) translateY(-4%) scale(1.04,.96)}}
+.kiki .bb.taskz{animation:kikz .22s ease-in-out} @keyframes kikz{30%{transform:rotate(-4deg) scale(1.04,.96)}70%{transform:rotate(3deg) scale(.97,1.03)}}
+.kiki .eef.kid{z-index:2}
+.tp2.kihb{filter:none} .tp2.kihf{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.25))} .kihb svg,.kihf svg{display:block;width:100%;overflow:visible}
+.tp2.kisn{filter:drop-shadow(0 0 1.4vh rgba(255,230,140,.9))} .kisn svg{display:block;width:100%;overflow:visible}
+.kisn .kisst{transform-box:fill-box;transform-origin:center;animation:kisst 1s linear infinite} @keyframes kisst{to{transform:rotate(360deg)}}
+.tp2.kilt{filter:drop-shadow(0 0 1vh #fff3a0) drop-shadow(0 0 2.4vh rgba(255,200,80,.9));z-index:4} .kilt svg{display:block;width:100%}
+.kilt>svg{animation:kilt 1.6s ease-in-out infinite} @keyframes kilt{50%{transform:scale(1.18) rotate(12deg)}}
+.tp2.kispur{filter:drop-shadow(0 0 .8vh #fff6c0);width:4.4vh;animation:kispur 2s ease-in-out infinite} .kispur svg{display:block;width:100%} @keyframes kispur{50%{opacity:.6}}
+.tp2.kibild{opacity:0;transition:opacity 2s;filter:drop-shadow(0 0 1vh #fff) drop-shadow(0 0 3vh rgba(200,190,255,.9))} .tp2.kibild.on{opacity:.55}
+.kibild svg{display:block;width:100%;overflow:visible} .kibild svg *{fill:rgba(255,255,255,.18)!important;stroke:#fff!important} .kibild .kie,.kibild .kim,.kibild .kimo,.kibild .kigl,.kibild .kish,.kibild .kibl{display:none}
+.kibild.kipul{animation:kipul 1.6s ease-in-out 2} @keyframes kipul{50%{opacity:.95;scale:1.04}}
+.kiheim{position:absolute;inset:0;opacity:0;transition:opacity 1.8s;z-index:8;pointer-events:none;background:linear-gradient(180deg,#050722 0%,#121650 55%,#2a2c72 100%);overflow:hidden} .kiheim.on{opacity:1}
+.kiheim .kihsky i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
+.kiheim .kihbox{position:absolute;left:30%;top:8%;width:34%;height:20%} .kiheim .kihbild{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 2s;overflow:visible} .kiheim.bild .kihbild{opacity:1}
+.kiheim .kihbild polyline{fill:none;stroke:rgba(255,236,170,.8);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 2px #fff)}
+.kiheim .kihst b{position:absolute;width:1.6vh;height:1.6vh;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,#fff 0,#fff6c0 35%,rgba(255,240,180,0) 70%);animation:kihst 2.4s ease-in-out infinite} @keyframes kihst{50%{scale:1.5}}
+.kiheim.bild .kihst b{background:radial-gradient(circle,#fff 0,#fff6c0 40%,rgba(255,240,180,0) 72%);width:2.4vh;height:2.4vh}
+.kiheim .kihgr{position:absolute;left:0;right:0;top:66%;bottom:0;background:linear-gradient(180deg,#2e5a4a 0%,#1e4236 50%,#122a24 100%);border-radius:50% 50% 0 0/14% 14% 0 0}
+.kiheim .tp2.kihaus{left:72%;top:52%;width:50vh;filter:drop-shadow(0 1vh 2vh rgba(0,0,0,.4))} .kiheim .kihaus svg{display:block;width:100%}
+.kiheim .kiki>.bb,.kiheim .eef>.bb{animation:none}
+.ill .kiart .kiki>.bb,.ill .kiart .eef>.bb{animation:none}
+.kiart .kiki .kiw1,.kiart .kiki .kiw2{animation:none}
+/*<KIKICSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -2807,10 +2860,11 @@ const G2={
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      if(TB.a.straw){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b07a1a','2vh'],['#ffd86a','1.2vh'],['#fff3b8','.35vh']].map(([c,w])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:1" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
+     if(TB.a.pearl){ const R=el('div','',`<svg class="rbw" viewBox="0 0 100 100" preserveAspectRatio="none">${[['#b8a0f0','2.2vh',.55],['#fff6fe','1.2vh',1],['#ffe27a','.35vh',1]].map(([c,w,o])=>`<polyline fill="none" stroke="${c}" style="stroke-width:${w};opacity:${o}" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`).join('')}</svg>`).firstChild; TB.act.appendChild(R); TB.rbw=R; }
      const ld=el('div','leader'); TB.act.appendChild(ld); TB.lead=ld; FX.P.forEach(p=>{ if(p.sw) p.x=S[0][0]+(Math.random()-.5)*40, p.y=S[0][1]+(Math.random()-.5)*40; }); this.draw(); },
    pt(k){ return wpx(...TB.S[Math.min(TB.S.length-1,k)]); },
    draw(){ const p=TB.S[TB.k]; TB.lead.style.left=p[0]+'%'; TB.lead.style.top=p[1]+'%';
-     if(TB.rbw){ const pts=TB.S.slice(0,TB.k+1); TB.rbw.querySelectorAll('polyline').forEach((l,i)=>l.setAttribute('points',pts.map(q=>q[0].toFixed(2)+','+(q[1]+(TB.a.straw?0:(i-2.5)*1.25)).toFixed(2)).join(' '))); } TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
+     if(TB.rbw){ const pts=TB.S.slice(0,TB.k+1); TB.rbw.querySelectorAll('polyline').forEach((l,i)=>l.setAttribute('points',pts.map(q=>q[0].toFixed(2)+','+(q[1]+(TB.a.straw||TB.a.pearl?0:(i-2.5)*1.25)).toFixed(2)).join(' '))); } TB.dots.forEach((d,i)=>d&&d.classList.toggle('on',i<=TB.k)); FX.att=this.pt(TB.k); },
    down(x,y){ TB.trMoved=false; TB.trGain=0; this.move(x,y); },
    move(x,y){ if(!TB.pd||TB.done) return; TB.trMoved=true; const tol=vu()*12; let best=-1,bd=1e9;
      for(let j=TB.k;j<Math.min(TB.S.length,TB.k+9);j++){ const [px,py]=this.pt(j), d=Math.hypot(x-px,y-py); if(d<tol&&d<bd){ bd=d; best=j; } }
@@ -3643,7 +3697,7 @@ Object.assign(SETS2,{
 });
 /* mood, squash-and-stretch, little life */
 function sqs(e){ if(!e) return; const w=e.querySelector('.bb')||e; w.classList.remove('sqs'); void w.offsetWidth; w.classList.add('sqs'); }
-function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim',tasse:'tam'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
+function mood(id,m){ const k={flaumi:'flm',frosch:'fsm',baer:'bm',maus:'mm',mond:'mo',drache:'dm',gross:'gm',gross2:'gm',koenig:'km',eule:'om',welle:'wm',kroete:'tm',muschel:'sm',wal:'whm',kind:'cm',mondw:'mwm',flocke:'flm',rotkehlchen:'rkm',sonne:'sum',igel:'igm',wolke:'wom',stern:'stm',esel:'esm',niko:'nkm',hexe:'efm',socke:'skm',besen:'bsm',vogel:'vgm',lilli:'lim',brummi:'bum',riese:'rim',klonki:'klm',peppio:'pem',niklas:'nim',tasse:'tam',kiki:'kim'}[id]; if(k) TST[k]=m; const e=TB&&TB.els[id]; if(e){ e.dataset.mood=m; sqs(e); } }
 function moonPhase(p){ TST.mp=p; const m=TB&&TB.els.mond; if(!m) return; const c=m.querySelector('.msh'); if(c) c.setAttribute('cx',(66+p*86).toFixed(1));
   if(TB.moonL){ TB.moonL.rT=11+p*30; TB.moonL.kT=.55+p*.45; } }
 function moonGrow(ms){ const p0=TST.mp||0, t0=now(), sc=TB.sc, run=tale.run;
@@ -10389,6 +10443,381 @@ const TAS2={id:'tasse', v2:true, eef:1, dur:TDUR, title:'Eefje und die Zaubertas
      'Und wenn sie nicht ausgetrunken haben, dann trinken sie noch heute.', 1600]}
  ]};
 /*<TASSE*/
+/*KIKI>*/
+/* ================= Eefje und Kiki fliegen zu den Sternen: drawn cast and set pieces ================= */
+/* All classes start with "ki" (class names are global; checked: no .ki… class existed before).
+   kikiSVG: Kiki, a small round white dragon, side view facing right. Pearly scales, soft lilac wings (.kiw1 near, .kiw2 far, hinge at
+     86,64), lilac back spikes, golden eyes, two little golden horns. She breathes glitter instead of fire. Moods smile, happy, oh, worry,
+     laugh, sleepy; .talking + --mo. Classes on the element: .kifly (wings beat slowly), .kiflap (one strong beat, retriggered), .kicurl
+     (curled up, scared), .kiglow (pearly glow). Anchors: .kimouth (mouth, for the glitter breath), .kitip (tail tip, for the star lantern),
+     .kiseat (where Eefje sits). viewBox 0 0 200 150. */
+function kikiSVG(o){ o=o||{}; const id='ki'+(++LANC), W='#ffffff', WS='#b8b0d8', L='#cbb2f4', LD='#8a6ad0', E='#2a1a3e', G='#f2b21e';
+  const wing=(cls,f,s)=>`<g class="kiw ${cls}"><path d="M86 64 Q72 18 34 8 Q42 24 28 30 Q44 38 34 48 Q52 50 48 62 Q66 60 70 72Z" fill="${f}" stroke="${s}" stroke-width="2.6" stroke-linejoin="round"/>
+    <path d="M84 62 Q66 34 40 16 M80 64 Q58 44 36 36 M76 68 Q60 58 46 54" stroke="${s}" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/></g>`;
+  return `<svg viewBox="0 0 200 150" style="overflow:visible"><defs><radialGradient id="${id}b" cx="45%" cy="38%" r="65%"><stop offset="0" stop-color="#ffffff"/><stop offset=".65" stop-color="#f4f2ff"/><stop offset="1" stop-color="#dcd6f4"/></radialGradient>
+    <linearGradient id="${id}w" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8dcff"/><stop offset=".5" stop-color="${L}"/><stop offset="1" stop-color="#ffc8ec"/></linearGradient>
+    <radialGradient id="${id}g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".6" stop-color="#e8dcff" stop-opacity=".3"/><stop offset="1" stop-color="#e8dcff" stop-opacity="0"/></radialGradient></defs>
+   <ellipse class="kigl" cx="100" cy="86" rx="104" ry="80" fill="url(#${id}g)"/>
+   <ellipse class="kish" cx="96" cy="142" rx="54" ry="6" fill="rgba(0,0,0,.16)"/>
+   ${wing('kiw2','#b89ae8',LD)}
+   <g class="kitl"><path d="M50 108 Q16 118 14 92 Q12 70 28 58" fill="none" stroke="${WS}" stroke-width="17" stroke-linecap="round"/><path d="M50 108 Q16 118 14 92 Q12 70 28 58" fill="none" stroke="${W}" stroke-width="12" stroke-linecap="round"/>
+    <path d="M28 58 Q18 44 30 38 Q34 50 44 50 Q36 56 28 58Z" fill="${L}" stroke="${LD}" stroke-width="2" stroke-linejoin="round"/><circle class="kitip" cx="30" cy="44" r="2" fill="none"/></g>
+   <g fill="${L}" stroke="${LD}" stroke-width="1.8" stroke-linejoin="round"><path d="M54 70 L58 56 L66 66Z"/><path d="M68 62 L74 48 L80 60Z"/><path d="M102 60 L110 47 L114 60Z"/><path d="M118 58 L124 46 L128 58Z"/></g>
+   <g class="kift"><ellipse cx="72" cy="134" rx="13" ry="8" fill="${W}" stroke="${WS}" stroke-width="2.4"/><ellipse cx="114" cy="136" rx="13" ry="8" fill="${W}" stroke="${WS}" stroke-width="2.4"/>
+    <g fill="${L}"><circle cx="64" cy="137" r="2.2"/><circle cx="70" cy="139" r="2.2"/><circle cx="106" cy="139" r="2.2"/><circle cx="112" cy="141" r="2.2"/></g></g>
+   <ellipse cx="92" cy="98" rx="50" ry="40" fill="url(#${id}b)" stroke="${WS}" stroke-width="2.6"/>
+   <path d="M90 80 Q128 76 132 104 Q130 130 98 134 Q80 132 80 112 Q80 88 90 80Z" fill="#fff6fb" stroke="#e6c8e8" stroke-width="1.6"/>
+   <g stroke="#ecd2ea" stroke-width="1.6" fill="none" stroke-linecap="round"><path d="M88 94 Q106 90 126 94"/><path d="M84 106 Q106 102 130 106"/><path d="M84 118 Q104 115 126 118"/></g>
+   <g fill="none" stroke="#e4def6" stroke-width="1.4" opacity=".9"><path d="M54 92 q5 -5 10 0 M64 84 q5 -5 10 0 M58 104 q5 -5 10 0 M68 96 q5 -5 10 0"/></g>
+   <g class="kipe" fill="#fff" opacity=".9"><circle cx="66" cy="80" r="1.6"/><circle cx="58" cy="98" r="1.2"/><circle cx="120" cy="88" r="1.3"/></g>
+   <path d="M122 110 Q136 112 136 122" stroke="${WS}" stroke-width="9" fill="none" stroke-linecap="round"/><path d="M122 110 Q136 112 136 122" stroke="${W}" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <path d="M116 66 Q126 52 138 50 L150 74 Q134 84 120 84Z" fill="${W}" stroke="none"/>
+   <path d="M118 64 Q128 50 140 48 M122 84 Q136 84 150 74" stroke="${WS}" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+   <circle class="kiseat" cx="98" cy="62" r="1" fill="none"/>
+   <g class="kihd">
+    <path d="M134 34 Q128 20 120 14 Q134 14 142 30Z" fill="#ffe08a" stroke="#c8962a" stroke-width="2" stroke-linejoin="round"/><path d="M154 30 Q154 16 150 8 Q162 14 162 30Z" fill="#ffe08a" stroke="#c8962a" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M124 46 Q108 40 104 28 Q116 30 122 36 Q116 24 120 16 Q130 26 132 38Z" fill="${L}" stroke="${LD}" stroke-width="2" stroke-linejoin="round"/>
+    <ellipse cx="170" cy="68" rx="16" ry="12" fill="${W}" stroke="${WS}" stroke-width="2.4"/>
+    <circle cx="148" cy="56" r="29" fill="url(#${id}b)" stroke="${WS}" stroke-width="2.6"/>
+    <ellipse cx="163" cy="66" rx="9" ry="9.4" fill="#fcfbff"/>
+    <g fill="none" stroke="#b8a8d8" stroke-width="1.6" stroke-linecap="round"><path d="M179 62 q2 -2 4 0"/><path d="M182 67 q1.6 -1.6 3.2 0"/></g>
+    <g fill="${L}" stroke="${LD}" stroke-width="1.4" stroke-linejoin="round"><path d="M140 28 L144 20 L148 28Z"/></g>
+    <g class="kibl"><ellipse cx="135" cy="68" rx="6" ry="3.6" fill="#ffa8c8" opacity=".7"/><ellipse cx="167" cy="61" rx="3.6" ry="2.4" fill="#ffa8c8" opacity=".55"/></g>
+    <g class="kie kie-o"><ellipse cx="141" cy="54" rx="7" ry="8.6" fill="${E}"/><ellipse cx="160" cy="52" rx="5.6" ry="7.4" fill="${E}"/>
+     <ellipse cx="141" cy="57.5" rx="4.6" ry="4" fill="${G}" opacity=".85"/><ellipse cx="160" cy="55.5" rx="3.6" ry="3.4" fill="${G}" opacity=".85"/><circle cx="143" cy="50.5" r="2.8" fill="#fff"/><circle cx="161.6" cy="49" r="2.2" fill="#fff"/><circle cx="139" cy="57" r="1.1" fill="#fff"/></g>
+    <g class="kie kie-j" fill="none" stroke="${E}" stroke-width="3" stroke-linecap="round"><path d="M134 55 q7 -8 14 0"/><path d="M154.5 53 q5.5 -7 11 0"/></g>
+    <g class="kie kie-w"><ellipse cx="141" cy="54" rx="8" ry="9.4" fill="#fff" stroke="${E}" stroke-width="1.6"/><ellipse cx="160" cy="52" rx="6.4" ry="8" fill="#fff" stroke="${E}" stroke-width="1.6"/>
+     <circle cx="141.6" cy="55" r="4.6" fill="${E}"/><circle cx="160.6" cy="53" r="3.6" fill="${E}"/><circle cx="143" cy="53" r="1.6" fill="#fff"/><circle cx="162" cy="51.4" r="1.3" fill="#fff"/>
+     <path class="kibw" d="M133 43 L145 38.6 M167 41 L158 37.4" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/></g>
+    <g class="kie kie-z" fill="none" stroke="${E}" stroke-width="2.8" stroke-linecap="round"><path d="M134 55 q7 5 14 0"/><path d="M154.5 53 q5.5 4 11 0"/></g>
+    <path class="kim kim-s" d="M163 76 q7 5.4 14 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+    <ellipse class="kim kim-o" cx="170" cy="77" rx="3.6" ry="4.2" fill="#8a2a5a"/>
+    <path class="kim kim-w" d="M164 79 q6 -4.4 12 0" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"/>
+    <path class="kim kim-l" d="M161 73 Q170 88 179 73Z" fill="#8a2a5a" stroke="${E}" stroke-width="2" stroke-linejoin="round"/>
+    <ellipse class="kimo" cx="170" cy="76" rx="4.2" ry="3.8" fill="#8a2a5a"/>
+    <circle class="kimouth" cx="184" cy="72" r="1" fill="none"/></g>
+   ${wing('kiw1',`url(#${id}w)`,LD)}
+   ${o.ghost?'':''}</svg>`; }
+
+/* the cave in the hillside: the back (dark hole, behind Kiki) and the front rim (in front of her). viewBox 0 0 240 200 */
+function kiHoehleSVG(front){ const id='kh'+(++LANC);
+  if(front) return `<svg viewBox="0 0 240 200" style="overflow:visible"><path d="M0 200 L0 120 Q8 30 120 18 Q232 30 240 120 L240 200 L200 200 L200 150 Q196 74 120 68 Q44 74 40 150 L40 200Z" fill="#7a6a8a" stroke="#4a3e5a" stroke-width="3" stroke-linejoin="round"/>
+   <g fill="#5e5070" opacity=".8"><path d="M20 120 q14 -10 26 -2 q-10 8 -26 2Z"/><path d="M190 96 q14 -8 26 0 q-12 8 -26 0Z"/><path d="M90 40 q16 -8 30 0 q-14 8 -30 0Z"/></g>
+   <g fill="#5aa05a"><path d="M8 72 Q30 50 54 58 Q40 70 8 72Z"/><path d="M170 36 Q196 26 214 46 Q192 50 170 36Z"/></g>
+   <g fill="#ff9ac8"><circle cx="30" cy="62" r="3.4"/><circle cx="196" cy="38" r="3"/></g><g fill="#ffe27a"><circle cx="44" cy="60" r="2.6"/><circle cx="182" cy="34" r="2.4"/></g></svg>`;
+  return `<svg viewBox="0 0 240 200" style="overflow:visible"><defs><radialGradient id="${id}" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="#3a2e52"/><stop offset="1" stop-color="#140e24"/></radialGradient></defs>
+   <path d="M30 200 L32 140 Q40 66 120 60 Q200 66 208 140 L210 200Z" fill="url(#${id})"/></svg>`; }
+/* a shooting star with a long golden tail (pointing up right). viewBox 0 0 120 60, the star at 18,40 */
+function kiSchnuppeSVG(){ const id='ks'+(++LANC); return `<svg viewBox="0 0 120 60" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#fff3b0" stop-opacity=".95"/><stop offset=".5" stop-color="#ffc85a" stop-opacity=".55"/><stop offset="1" stop-color="#ff9ad8" stop-opacity="0"/></linearGradient></defs>
+  <path d="M18 34 Q60 18 118 2 Q64 30 22 48Z" fill="url(#${id})"/>
+  <path class="kisst" d="M18 26 L21.6 35 L31 35.6 L23.8 41.6 L26.2 50.8 L18 45.6 L9.8 50.8 L12.2 41.6 L5 35.6 L14.4 35Z" fill="#fff3a0" stroke="#ffc83a" stroke-width="1.6" stroke-linejoin="round"/><circle cx="18" cy="40" r="3" fill="#fff"/></svg>`; }
+/* a moon crater. viewBox 0 0 100 40 */
+function kiKraterSVG(){ return `<svg viewBox="0 0 100 40" style="overflow:visible"><ellipse cx="50" cy="20" rx="48" ry="17" fill="#c4c6dc" stroke="#9a9cb8" stroke-width="2"/><ellipse cx="52" cy="22" rx="38" ry="11" fill="#a6a8c4"/><path d="M14 18 Q50 4 86 18" stroke="#e8eaf8" stroke-width="2.4" fill="none" opacity=".8"/></svg>`; }
+/* a glittering footprint on the moon */
+function kiSpurSVG(){ return `<svg viewBox="0 0 30 16"><ellipse cx="15" cy="9" rx="12" ry="6" fill="#fff6d0" opacity=".85"/><g fill="#fff"><circle cx="6" cy="4" r="2"/><circle cx="12" cy="2.4" r="2"/><circle cx="18" cy="2.4" r="2"/><circle cx="24" cy="4" r="2"/></g></svg>`; }
+Object.assign(SVGP,{KIHOEHLE:[()=>kiHoehleSVG(false),1.2],KIHOEHLEV:[()=>kiHoehleSVG(true),1.2],KIKRATER:[kiKraterSVG,2.5]});
+Object.assign(TSYL,{'FLÜGEL':'FLÜ-GEL'});
+
+Object.assign(SETS2,{
+  kikihang:{sky:'linear-gradient(180deg,#2a2a6e 0%,#5e4a9a 35%,#d47aa4 70%,#ffb48a 92%,#ffd49a 100%)', stars:16, dcol:'34,18,64',
+    far:sil(hills(481,236,70,'#7a62a4')+pines(483,30,90,'#5e4a8a',96)+hills(487,290,46,'#6a5696'),58), gnd:'linear-gradient(180deg,#6a9a6a 0%,#4a7a5a 48%,#2e5a46 100%)',
+    act:[['hoehle','KIHOEHLE',74,58,46,'big kihb']], mid:[['PINE',5,47,26],['🌳',16,52,15]], fore:[['🌼',3,96,9],['🌿',97,97,12],['🌸',52,104,8]]},
+  kikidorf:{sky:'linear-gradient(180deg,#1a1c5a 0%,#3e3a8a 35%,#a46aa8 72%,#ff9a8a 92%,#ffc49a 100%)', stars:28, dcol:'24,16,60',
+    far:sil(hills(491,250,60,'#5a4a8a')+`<g fill="#3a3070">${[[120,250],[200,262],[290,244],[600,252],[700,240],[820,256]].map(([x,y],i)=>`<path d="M${x} 400 V${y} L${x+30} ${y-34} L${x+60} ${y} V400Z"/><rect x="${x+36}" y="${y-30}" width="9" height="20"/>`).join('')}</g>`+`<g fill="#ffd87a">${[[132,270],[214,280],[302,262],[614,270],[712,258],[834,274],[150,290],[730,282]].map(([x,y])=>`<rect x="${x}" y="${y}" width="9" height="10" rx="1"/>`).join('')}</g>`+hills(497,300,40,'#2e3a5e'),58),
+    gnd:'linear-gradient(180deg,#3a6a5a 0%,#2a5446 50%,#1a3a32 100%)', mid:[['PINE',4,48,24],['PINE',95,49,26]], fore:[['🌿',3,97,12],['🌾',97,97,12]]},
+  kikiwolken:{sky:'linear-gradient(180deg,#14164e 0%,#2e2e78 40%,#6a5aa8 75%,#b88ab8 100%)', stars:30, dcol:'20,18,60',
+    farp:[['CLD',12,40,10],['CLD',50,30,8],['CLD',88,46,9]], mid:[['CLD',6,60,16],['CLD',96,36,15],['CLD',50,74,14]], fore:[['CLD',4,100,26],['CLD',50,108,24],['CLD',96,102,26]]},
+  kikinacht:{sky:'linear-gradient(180deg,#03041a 0%,#0c0e3e 50%,#1e2066 100%)', stars:110, dcol:'4,4,26',
+    mid:[['CLD',8,92,18],['CLD',92,90,18]], fore:[['CLD',4,106,30],['CLD',38,110,28],['CLD',72,108,30],['CLD',100,104,26]]},
+  kikimond:{sky:'linear-gradient(180deg,#02031a 0%,#0a0c38 55%,#1a1c56 100%)', stars:120, dcol:'4,4,28', cs:1,
+    gnd:'radial-gradient(140% 60% at 50% 0%,#f4f4ff 0%,#d4d6ea 40%,#a8aac6 100%)',
+    act:[['k1','KIKRATER',70,80,9],['k2','KIKRATER',28,92,7],['k3','KIKRATER',92,94,6]], fore:[]}
+});
+
+/* ---------- sounds: a soft whoosh for the wings, a boing for moon hops, Kiki's giggle ---------- */
+const kiLate=()=>!tale||tale.t!==KIKI2||!taleOn();
+function kiNoise(x,v,f0,f1,ms){ const ac=feeAC(); if(!ac||kiLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||400)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type='bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+d*.3); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+const kiWoosh=(x)=>kiNoise(x,.16,300,900,520);
+function kiBoing(x,k){ const ac=feeAC(); if(!ac||kiLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type='sine';
+  const f=330+(k||0)*40; o.frequency.setValueAtTime(f,t); o.frequency.exponentialRampToValueAtTime(f*2.2,t+.35); o.frequency.exponentialRampToValueAtTime(f*1.1,t+.9);
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.12,t+.04); g.gain.exponentialRampToValueAtTime(.0005,t+1); o.connect(g); g.connect(out); o.start(t); o.stop(t+1.05); }catch(e){} }
+
+/* ---------- helpers ---------- */
+/* points on Kiki: her mouth (glitter breath), the tail tip (the star lantern) */
+function kiMouth(){ const K=TB&&TB.els.kiki, m=K&&K.querySelector('.kimouth'); return m?ctr(m):[innerWidth/2,innerHeight/2]; }
+function kiTip(){ const K=TB&&TB.els.kiki, m=K&&K.querySelector('.kitip'); return m?ctr(m):[innerWidth/2,innerHeight/2]; }
+/* Kiki breathes glitter: a stream of sparks out of her mouth, forward (dir 1) or up */
+function kiBreath(n,up){ const u=vu(), K=TB&&TB.els.kiki; if(!K) return; const fl=K.classList.contains('flip')?-1:1;
+  for(let i=0;i<(n||24);i++) bLater(()=>{ const [x,y]=kiMouth(), a=(up?-1.1:-.15)+(Math.random()-.5)*.7, v=(28+Math.random()*30)*u;
+    fxAdd({k:'spark',x,y,vx:Math.cos(a)*v*fl,vy:Math.sin(a)*v,life:.8+Math.random()*.7,s:.6+Math.random()*.8,c:rnd(GLCOL)}); },i*35); }
+function kiSneeze(){ const [x,y]=kiMouth(), u=vu(); glitterBurst(x,y,30,22); fxBurst(x,y,26,GLCOL); kiBreath(30); bubble('Hatschi!',x,y-u*10,4.6,'#f2eaff'); chime([1568,1175,784]);
+  const K=TB.els.kiki; K.classList.remove('kisnz'); void K.offsetWidth; K.classList.add('kisnz'); }
+/* Eefje climbs onto Kiki's back (inst: put her there at once) */
+const KISEAT=[.43,.31,52];
+function kiBoard(inst){ const E=TB.els.hexe, K=TB.els.kiki; if(!E||!K||E.classList.contains('kid')) return; E.classList.add('sitb'); efArm('fwd'); const b=K.querySelector('.bb');
+  if(inst){ stickTo(E,b,KISEAT[0],KISEAT[1]); E.style.width=KISEAT[2]+'%'; kiFront(); return; }
+  mood('hexe','happy'); feeHop(E,b,KISEAT[0],KISEAT[1],900,()=>{ E.style.width=KISEAT[2]+'%'; kiFront(); sqs(K); }); }
+/* the near wing sits over Eefje's legs: a copy of it on top */
+function kiFront(){ const K=TB&&TB.els.kiki; if(!K||K.querySelector('.kiwf')) return; const w=K.querySelector('.kiw1'); if(!w) return;
+  const s=K.querySelector('svg'), f=el('div','kiwf',`<svg viewBox="0 0 200 150" style="overflow:visible">${s.querySelector('defs').outerHTML}${w.outerHTML}</svg>`); K.querySelector('.bb').appendChild(f); }
+function kiFly(on){ const K=TB&&TB.els.kiki; if(K) K.classList.toggle('kifly',!!on); }
+function kiFlap(){ const K=TB&&TB.els.kiki; if(!K) return; K.classList.remove('kiflap'); void K.offsetWidth; K.classList.add('kiflap'); const [x,y]=ctr(K), u=vu(); kiWoosh(x);
+  for(let i=0;i<8;i++) fxAdd({k:'spark',x:x+(Math.random()-.6)*u*14,y:y+u*8,vx:(Math.random()-.5)*16*u,vy:(10+Math.random()*12)*u,life:.7,s:.6+Math.random()*.5,c:rnd(['rgba(230,220,255,.9)','rgba(255,255,255,.9)'])}); }
+function kiGlow(v){ const K=TB&&TB.els.kiki; if(K) K.style.setProperty('--kg',v); }
+/* a per-frame loop for the scene (stops itself at a scene change) */
+function kiEvery(fn){ const sc=TB.sc, run=tale.run; let t0=now(); const step=()=>{ if(!okRun(run,sc)) return; const t=now(), dt=Math.min(.05,(t-t0)/1000); t0=t; try{ fn(dt); }catch(e){} requestAnimationFrame(step); }; requestAnimationFrame(step); }
+/* the unicorn flies along next to Kiki (offset in vh) */
+function kiUniFollow(ox,oy){ kiEvery(dt=>{ const U=TB.els.uni, K=TB.els.kiki; if(!U||!K||TB.uniFree) return; const [kx,ky]=ctr(K), [ux,uy]=ctr(U), u=vu(), tx=kx+u*(ox==null?-30:ox), ty=ky+u*(oy==null?6:oy);
+  putAt(U,ux+(tx-ux)*Math.min(1,dt*1.5),uy+(ty-uy)*Math.min(1,dt*1.5)); }); }
+/* move an element along a few points (% of the stage) */
+function kiPath(e,pts,ms,cb){ if(!e) return; const [x0,y0]=ctr(e); e.getAnimations().forEach(q=>q.cancel());
+  const kf=pts.map(([x,y,s])=>{ const [px,py]=wpx(x,y); return {transform:`translate(${px-x0}px,${py-y0}px)`+(s!=null?` scale(${s})`:'')}; });
+  try{ const an=e.animate([{transform:'none'},...kf],{duration:ms||1600,easing:'ease-in-out',fill:'forwards'}); an.onfinish=()=>{ if(!e.isConnected) return; const L=pts[pts.length-1]; an.cancel(); e.style.left=L[0]+'%'; e.style.top=L[1]+'%'; if(L[2]!=null) e.style.scale=L[2]; if(cb) cb(); }; }
+  catch(err){ const L=pts[pts.length-1]; e.style.left=L[0]+'%'; e.style.top=L[1]+'%'; if(cb) cb(); } }
+/* scene 1: Kiki comes out of her cave (in front of the rim) */
+function kiOut(inst){ const K=TB.els.kiki; if(!K||TST.kout) return; TST.kout=1; K.classList.remove('kizit','kicurl');
+  if(inst){ TB.act.appendChild(K); K.style.left='56%'; K.style.top='74%'; K.style.width='36vh'; return; }
+  K.style.transition='width 1.2s ease-in-out'; kiPath(K,[[64,70],[56,74]],1300,()=>{ TB.act.appendChild(K); K.style.transition='none'; K.style.width='36vh'; sqs(K); });
+  K.style.width='36vh'; bLater(()=>TB.act.appendChild(K),650); }
+/* scene 6: the constellation becomes a glowing picture of a little dragon */
+function kiBild(inst){ if(TB.els.bild) return; const B=el('div','tp2 kibild',kikiSVG()); B.style.cssText=`left:${KIBILD[0]}%;top:${KIBILD[1]}%;width:${KIBILD[2]}vh`; TB.act.appendChild(B); TB.els.bild=B;
+  if(inst) B.classList.add('on'); else { void B.offsetWidth; B.classList.add('on'); const [x,y]=ctr(B); glitterBurst(x,y,40,30); chime([784,988,1175,1568,2093]); } }
+const KIBILD=[62,50,44];
+/* scene 7: home – Eefje's crooked house at night, Kiki curled up under the window, her star picture in the sky */
+function kiHome(){ if(TB.els.heim) return; const r=seeded(57); let st=''; for(let i=0;i<60;i++) st+=`<i style="left:${(r()*100).toFixed(1)}%;top:${(r()*55).toFixed(1)}%;animation-delay:${(-r()*4).toFixed(2)}s"></i>`;
+  const H=el('div','kiheim',`<div class="kihsky">${st}</div>
+    <div class="kihbox"><svg class="kihbild" viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="${KIPTS.map(([x,y])=>kiBx(x)+','+kiBy(y)).join(' ')}"/></svg>
+     <div class="kihst">${KIPTS.map(([x,y])=>`<b style="left:${kiBx(x)}%;top:${kiBy(y)}%"></b>`).join('')}</div></div>
+    <div class="kihgr"></div>
+    <div class="tp2 kihaus">${hexhausSVG()}</div>
+    <div class="tp2 chr kiki kicurl" data-mood="sleepy" style="left:30%;top:80%;width:40vh"><div class="bb">${kikiSVG()}</div></div>
+    <div class="tp2 chr eef sitb" data-mood="happy" data-arm="hug" style="left:47%;top:72%;width:22vh"><div class="bb">${eefjeSVG()}</div></div>`);
+  TB.st.appendChild(H); TB.els.heim=H; TB.els.kiki2=H.querySelector('.kiki'); TB.els.hexe2=H.querySelector('.eef'); void H.offsetWidth; H.classList.add('on');
+  FX.darkT=.1; FX.L=[]; bLater(()=>{ const w=H.querySelector('.kihaus .win'); if(w) light({fn:()=>ctr(w),r0:0,rT:14,k0:.9,kT:.9,warm:1}); light({el:TB.els.kiki2,r0:0,rT:16,k0:.5,kT:.5}); },900); }
+const kiBx=x=>((x-36)/46*100).toFixed(1), kiBy=y=>((y-44)/18*100).toFixed(1);
+const KIPTS=[[36,62],[44,54],[52,58],[58,46],[64,56],[74,52],[82,44]];
+
+/* the star lantern on Kiki's tail tip (scene 4 on): flies there from x,y (px), or sits there at once */
+function kiStarSVG(){ return `<svg viewBox="0 0 40 40"><path d="M20 2 L25.3 14.6 L38.5 15.5 L28.4 24.2 L31.6 37.5 L20 30.2 L8.4 37.5 L11.6 24.2 L1.5 15.5 L14.7 14.6Z" fill="#fff3a0" stroke="#ffc83a" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="21" r="5" fill="#fff"/></svg>`; }
+function kiLantern(inst,from){ const K=TB&&TB.els.kiki; if(!K||TB.els.lat) return; const b=K.querySelector('.bb'), fx=30/200, fy=44/150;
+  const L=el('div','tp2 kilt',kiStarSVG()); TB.els.lat=L;
+  if(inst){ L.style.cssText=`left:${(fx*100).toFixed(1)}%;top:${(fy*100).toFixed(1)}%;width:11%`; L.classList.add('kid'); b.appendChild(L); }
+  else { L.style.width='7vh'; TB.act.appendChild(L); putAt(L,from[0],from[1]); flyStick(L,b,fx,fy,1100,16,()=>{ L.style.width='11%'; const [x,y]=ctr(L); glitterBurst(x,y,14,10); chime([1568,2093]); }); }
+  TB.latL=light({fn:()=>ctr(L),r0:4,rT:inst?16:9,k0:.85,kT:.85,warm:1}); }
+
+/* ---------- the new gestures ---------- */
+Object.assign(G2,{
+ /* flattern (flap the wings): wipe up and down over Kiki. Every turn of direction after at least 4 vh (or a long 14 vh stroke) is one wing
+    beat; a.n beats (6) are enough. Mostly-sideways wiping counts too, just needs the length. Progress stays when the finger lifts.
+    A tap without moving is a try. a:{id, n, pad (vh around Kiki that still counts, 14)}; hook flapping(k, p). */
+ flattern:{ setup(){ TB.ft={c:0,dir:0,seg:0,lx:null,ly:null,mv:0,sx:0,sy:0,c0:0,tap:0,auto:false,fin:false}; },
+   box(){ const r=TB.els[TB.a.id].getBoundingClientRect(), u=vu()*(TB.a.pad||14); return {l:r.left-u,t:r.top-u,r:r.right+u,b:r.bottom+u,cx:r.left+r.width*.44,cy:r.top+r.height*.36}; },
+   inZ(x,y){ const z=this.box(); return x>z.l&&x<z.r&&y>z.t&&y<z.b; },
+   down(x,y){ const s=TB.ft; if(TB.done||s.auto||s.fin) return; s.lx=null; s.mv=0; s.sx=x; s.sy=y; s.c0=s.c; s.seg=0; s.dir=0; if(this.inZ(x,y)) poke2(); this.move(x,y); },
+   move(x,y){ const s=TB.ft; if(!TB.pd||TB.done||s.auto||s.fin) return; s.mv=Math.max(s.mv,Math.hypot(x-s.sx,y-s.sy)); if(!this.inZ(x,y)){ s.lx=null; return; }
+     if(s.lx==null){ s.lx=x; s.ly=y; return; } const dx=x-s.lx, dy=y-s.ly, m=Math.hypot(dx,dy); if(m<1) return; s.lx=x; s.ly=y; const u=vu();
+     const d=Math.abs(dy)>=Math.abs(dx)*.5?Math.sign(dy):(s.dir||1);
+     if(s.dir&&d!==s.dir&&s.seg>u*4){ this.beat(); s.seg=0; } else if(s.seg>u*14){ this.beat(); s.seg=0; }
+     s.dir=d; s.seg+=m; if(Math.random()<.4) fxAdd({k:'spark',x,y,vx:0,vy:-4*u,life:.5,s:1,c:'rgba(230,220,255,.9)'}); },
+   beat(){ const s=TB.ft, n=TB.a.n||6; if(s.fin) return; s.c++; kiFlap(); chime([[523],[587],[659],[784],[880],[988],[1175]][Math.min(6,s.c-1)]); poke2();
+     if(TB.sc.flapping) TB.sc.flapping(s.c,s.c/n); if(s.c>=n){ s.fin=true; const [x,y]=ctr(TB.els[TB.a.id]); glitterBurst(x,y,26,20); bLater(()=>done2(),700); } },
+   up(){ const s=TB.ft; if(TB.done||s.auto||s.fin) return; if(s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(s.c===s.c0) miss2(); },
+   frames(){ const z=this.box(), u=vu(), x=z.cx, y=z.cy, f=[[x,y+u*14,1,0],[x,y+u*8,.85,1]]; for(let i=0;i<4;i++) f.push([x+u*(i%2?2:-2),y+(i%2?u*8:-u*8),.85,1]); f.push([x,y+u*12,1,0]); return f; },
+   hint(){ const s=TB.ft; if(s.auto||s.fin) return; const K=TB.els[TB.a.id]; K.classList.add('g2hint'); bLater(()=>K.classList.remove('g2hint'),2500); ghost(this.frames(),2400); },
+   auto(){ const s=TB.ft; if(s.auto||s.fin) return; s.auto=true; ghost(this.frames(),2400,3); const sc=TB.sc, run=tale.run;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||TB.done||s.fin){ clearInterval(iv); return; } this.beat(); },650); taleT.push(iv); } },
+
+ /* hüpfen (hop on the moon): every tap – anywhere – makes Kiki jump, slow as a feather, to the next spot of a.xs (x % of the stage);
+    she lands with a puff of moon dust and leaves a glittering footprint. Taps while she is in the air are simply ignored. a.n hops.
+    a:{id, xs:[x…], y (ground, %), ms (time in the air)}; hook hopped(k, p) */
+ huepfen:{ setup(){ TB.hu={k:0,busy:false,auto:false,fin:false}; },
+   down(x,y){ const h=TB.hu; if(TB.done||h.fin||h.busy||h.auto) return; this.hop(); },
+   move(){}, up(){},
+   hop(){ const h=TB.hu, a=TB.a, K=TB.els[a.id], n=a.xs.length; if(h.fin||h.busy) return; h.busy=true; const x1=a.xs[h.k], y1=a.y, ms=a.ms||1500, u=vu();
+     const [x0,y0]=ctr(K), [px,py]=wpx(x1,y1); K.getAnimations().forEach(q=>q.cancel()); kiBoing(x0,h.k); kiFlap(); poke2();
+     const [dx,dy]=relEl(K,[.45,.92]); for(let i=0;i<10;i++) fxAdd({k:'dust',x:dx+(Math.random()-.5)*u*12,y:dy,vx:(Math.random()-.5)*12*u,vy:-(2+Math.random()*5)*u,s:1+Math.random(),life:1.2,c:'rgba(230,232,250,.8)'});
+     const kf=[]; for(let i=0;i<=12;i++){ const f=i/12; kf.push({transform:`translate(${(px-x0)*f}px,${(py-y0)*f-Math.sin(f*Math.PI)*u*26}px) rotate(${Math.sin(f*Math.PI*2)*-6}deg)`}); }
+     try{ const an=K.animate(kf,{duration:ms,easing:'linear',fill:'forwards'}); an.onfinish=()=>{ if(!K.isConnected) return; an.cancel(); K.style.left=x1+'%'; K.style.top=y1+'%'; this.land(); }; }
+     catch(e){ K.style.left=x1+'%'; K.style.top=y1+'%'; this.land(); } },
+   land(){ const h=TB.hu, a=TB.a, K=TB.els[a.id], u=vu(); h.k++; h.busy=false; sqs(K); const [fx,fy]=relEl(K,[.45,.93]);
+     for(let i=0;i<14;i++) fxAdd({k:'dust',x:fx+(Math.random()-.5)*u*16,y:fy,vx:(Math.random()-.5)*18*u,vy:-(3+Math.random()*7)*u,s:1.1+Math.random(),life:1.4,c:'rgba(230,232,250,.85)'});
+     glitterBurst(fx,fy,10,10); const S=el('div','tp2 kispur',kiSpurSVG()); TB.act.insertBefore(S,K); putAt(S,fx,fy+u*1.5); chimeAt([1318+h.k*120,1760+h.k*120],fx);
+     if(TB.sc.hopped) TB.sc.hopped(h.k,h.k/a.xs.length);
+     if(h.k>=a.xs.length){ h.fin=true; bLater(()=>done2(),500); } else if(h.auto) bLater(()=>this.hop(),500); },
+   hint(){ const h=TB.hu; if(h.auto||h.fin) return; const K=TB.els[TB.a.id], [x,y]=relEl(K,[.5,.5]), u=vu(); K.classList.add('g2hint'); bLater(()=>K.classList.remove('g2hint'),2400);
+     ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.78,1],[x,y,1,1],[x,y+u*6,1,0]],1500); },
+   auto(){ const h=TB.hu; if(h.auto||h.fin) return; h.auto=true; this.hint(); if(!h.busy) bLater(()=>this.hop(),700); } }
+});
+
+/* ================= Eefje und Kiki fliegen zu den Sternen ================= */
+/* heart: Kiki, a little white dragon who breathes glitter instead of fire, is afraid of the dark. Eefje's plan: fly up to the stars,
+   "da oben ist es hell". On the way the dark gets friendlier step by step – a shooting star becomes her lantern, hopping on the moon is
+   fun, and at last she finds her own star picture: stars only shine in the dark. The ending pays off the beginning: the dragon who hid
+   in her cave at nightfall falls asleep outside under the stars. */
+const KDUR2={};
+const KIKI2={id:'kiki', v2:true, eef:1, dur:KDUR2, title:'Eefje und Kiki fliegen zu den Sternen', vtitle:'Ehfje und Kiki fliegen zu den Sternen', icon:'🐉',
+ cover:'linear-gradient(180deg,#0a0c3e 0%,#2e2e7e 40%,#8a6ac8 75%,#ffc8e4 100%)',
+ cast(sc){ const A=TB.act;
+  /* Kiki first, so Eefje can sit on her back (ef:[…,'sitb','kiki']) */
+  if(sc.ki){ const [x,y,z,cls]=sc.ki, K=el('div','tp2 chr kiki'+(cls?' '+cls:''),`<div class="bb">${kikiSVG()}</div>`); K.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; A.appendChild(K); TB.els.kiki=K;
+    K.dataset.mood=TST.kim||'smile'; K.style.setProperty('--kg',TST.kg||0); }
+  const ride=sc.ef&&sc.ef[3]==='sitb'&&sc.ef[4]==='kiki';
+  const mk=efCast(ride?Object.assign({},sc,{ef:[50,50,10,'st']}):sc); try{ alignLoad(['d4','d5'].map(s=>TB.n(s))); }catch(e){}
+  if(ride){ kiBoard(true); TB.els.hexe.dataset.arm=TST.efa||'fwd'; }
+  if(sc.rim){ const R=prop('KIHOEHLEV',...sc.rim,'tp2 big kihf'); A.appendChild(R); TB.els.rim=R; if(TST.kout) A.appendChild(TB.els.kiki); }
+  if(sc.ul){ const [x,y,z]=sc.ul; const U=mk('eule','ulla',owlSVG(),x,y,z*.79); U.dataset.mood=TST.om||'smile'; if(!TST.ulo) U.style.opacity=0; }
+  if(sc.sn){ const [x,y,z]=sc.sn; const S=el('div','tp2 kisn',kiSchnuppeSVG()); S.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; A.appendChild(S); TB.els.schnuppe=S; }
+  if(TST.lat&&TB.els.kiki) kiLantern(true);
+  if(TST.bld) kiBild(true);
+  if(sc.fly) kiFly(true); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='kiki'){ sqs(b); bubble(rnd(['hihi!','huhu!','ich bin Kiki!','flapp!']),x,y-u*10,3.8,'#f2eaff'); kiBreath(10); chime([1175,1568]); return true; }
+  if(id==='eule'){ sqs(b); bubble(rnd(['huhu!','schuhu!']),x,y-u*7,3.8,'#e8d8ff'); chime([392,523]); return true; }
+  if(id==='schnuppe'){ sqs(b); glitterBurst(x,y,10,8); chime([1568,2093]); return true; }
+  if(id==='hoehle'||id==='rim'||id==='bild'||/^k\d$/.test(id)) return true;
+  return efReact(id,b,x,y); },
+ sc:[
+ /* 1 – dusk at Kiki's cave: she hides from the night; tickle her until she giggles, sneezes glitter and comes out */
+ {set:'kikihang', dark:.18, u:[10,74,20], ef:[33,68,28,'st'], ki:[74,70,26,'kizit kicurl'], rim:[74,58,46],
+  st:{efm:'smile',efa:'dn',kim:'worry',kout:0,kg:0,lat:0,bld:0,ulo:0,om:'smile'},
+  lights:[{id:'hexe',r0:16,rT:16,k0:.35,kT:.35},{id:'kiki',r0:14,rT:14,k0:.35,kT:.35}],
+  enter(){ onPh('weißer Drache',()=>{ const K=TB.els.kiki; sqs(K); const [x,y]=ctr(K); glitterBurst(x,y,10,10); });
+    onPh('nur Glitzer',()=>kiBreath(14,true)); onPh('kroch sie',()=>mood('kiki','worry'));
+    talk('kiki','Ich mag','flüsterte Kiki'); onPh('Da kam',()=>{ uniHop(); mood('hexe','happy'); });
+    talk('hexe','Komm raus','rief Ehfje'); talk('hexe','Wir fliegen','Kitzel'); onPh('Wir fliegen',()=>{ efArm('up'); efSpell(8); });
+    onPh('Kitzel',()=>{ efArm('dn'); mood('hexe','smile'); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','smile'); mood('kiki','worry'); },
+  a:{t:'kitzeln',id:'kiki',n:5,pad:6,w:'DRACHE'},
+  s:'Es war einmal ein kleiner weißer Drache, der hieß Kiki. Kiki konnte kein Feuer speien, nur Glitzer. Und Kiki hatte Angst vor der Nacht. Als es Abend wurde, kroch sie schnell in ihre Höhle. Ich mag die Dunkelheit nicht, flüsterte Kiki. Da kam die kleine Hexe Ehfje mit deinem Einhorn. Komm raus, Kiki! rief Ehfje. Wir fliegen heute zu den Sternen, da oben ist es hell! Kitzel Kiki am Bauch, dann kommt sie heraus!',
+  h:'Wackel mit dem Finger ganz schnell über Kiki: kille, kille!',
+  giggle(k){ const K=TB.els.kiki; K.classList.remove('kizit'); mood('kiki',k>=3?'laugh':k>=2?'happy':'oh'); if(k>=2) kiBreath(6,true); if(k===3) mood('hexe','laugh'); },
+  done(){ mood('kiki','laugh'); },
+  d:[()=>{ onPh('Hatschi',()=>kiSneeze(),'d1'); onPh('Glitzer',()=>{ kiBreath(20); mood('hexe','laugh'); },'d1'); },
+     'Hihi, haha! Kiki kicherte so sehr, dass sie niesen musste. Hatschi! Und aus ihrer Nase sprühte Glitzer.',
+     ()=>{ talk('kiki','Na gut','sagte Kiki','d2'); talk('kiki','Aber nur',null,'d2'); onPh('kroch aus',()=>{ kiOut(); mood('kiki','smile'); },'d2');
+       onPh('Aber nur',()=>mood('kiki','worry'),'d2'); talk('hexe','Versprochen','sagte Ehfje','d2'); onPh('Versprochen',()=>{ mood('hexe','happy'); efArm('hug'); mood('kiki','smile'); },'d2'); },
+     'Na gut, sagte Kiki und kroch aus der Höhle. Aber nur, wenn ihr bei mir bleibt! Versprochen, sagte Ehfje.', 900]},
+
+ /* 2 – take off: Eefje climbs onto Kiki's back; she flaps her wings (wipe up and down) and they rise over the village roofs */
+ {set:'kikidorf', dark:.22, u:[12,74,19], ef:[30,68,28,'st'], ki:[56,72,40],
+  st:{efm:'happy',efa:'dn',kim:'worry'},
+  lights:[{id:'kiki',r0:18,rT:18,k0:.35,kT:.35},{id:'uni',r0:12,rT:12,k0:.3,kT:.3}],
+  enter(){ onPh('kletterte',()=>kiBoard()); onPh('breitete',()=>{ kiFlap(); mood('kiki','smile'); });
+    talk('kiki','Ich bin noch nie','sagte sie leise'); onPh('Ich bin noch nie',()=>mood('kiki','worry')); onPh('Hilf Kiki',()=>{ uniHop(); mood('hexe','smile'); }); },
+  ready(){ efReady(); kiBoard(true); mood('kiki','smile'); mood('hexe','happy'); },
+  a:{t:'flattern',id:'kiki',n:6,pad:14,w:'FLÜGEL'},
+  s:'Ehfje kletterte auf Kikis weichen Rücken. Kiki breitete ihre Flügel aus. Ich bin noch nie so hoch geflogen, sagte sie leise. Hilf Kiki beim Fliegen! Wisch über ihre Flügel, rauf und runter!',
+  h:'Wisch mit dem Finger rauf und runter, dann schlägt Kiki mit den Flügeln!',
+  flapping(k,p){ this.rise(p); if(k===1){ uniFly(true); TB.uniFree=0; kiUniFollow(-30,8); } if(k===3) mood('kiki','happy'); if(k===4){ mood('hexe','laugh'); const [x,y]=efHead(); bubble('hui!',x,y-vu()*8,3.6,'#e8d8ff'); } },
+  rise(p){ const K=TB.els.kiki; K.style.transition='top .6s cubic-bezier(.3,.7,.4,1)'; K.style.top=(72-p*26)+'%';
+    ['.l-far','.l-mid','.gnd'].forEach((s,i)=>{ const L=TB.st.querySelector(s); if(L){ L.style.transition='translate 1.2s ease-out'; L.style.translate=`0 ${p*[14,22,30][i]}vh`; } }); },
+  done(){ kiFly(true); mood('kiki','happy'); },
+  d:[()=>{ onPh('Höher',()=>{ const K=TB.els.kiki; K.style.transition='top 3s ease-in-out'; K.style.top='38%'; ['.l-far','.l-mid','.gnd'].forEach((s,i)=>{ const L=TB.st.querySelector(s); if(L){ L.style.transition='translate 3.4s ease-in-out'; L.style.translate=`0 ${[24,40,56][i]}vh`; } }); },'d1'); },
+     'Flapp, flapp, flapp! Höher und höher stiegen sie, über die Bäume und über die Dächer vom Dorf.',
+     ()=>{ talk('hexe','Juhu','rief Ehfje','d2'); onPh('Juhu',()=>{ mood('hexe','laugh'); efArm('up'); mood('kiki','laugh'); },'d2'); },
+     'Dein Einhorn flog neben ihnen her. Juhu! rief Ehfje.', 900]},
+
+ /* 3 – the clouds: thick and grey, Kiki can't see; Eefje's spell makes glittering rings; fly Kiki through them */
+ {set:'kikiwolken', dark:.3, u:[8,50,17], ef:[0,0,0,'sitb','kiki'], ki:[22,60,34], fly:1,
+  st:{efm:'smile',efa:'fwd',kim:'worry'},
+  lights:[{id:'kiki',r0:18,rT:18,k0:.4,kT:.4},{id:'uni',r0:12,rT:12,k0:.35,kT:.35}],
+  enter(){ uniFly(true); kiUniFollow(-26,8); efRings([[46,52],[66,70],[84,46]],10);
+    onPh('nichts mehr',()=>mood('kiki','worry')); talk('hexe','Kribbel','Da glitzerten'); onPh('Ehfje hob',()=>{ efArm('up'); mood('hexe','smile'); });
+    onPh('Kribbel',()=>efSpell(16)); onPh('Da glitzerten',()=>{ efArm('fwd'); TB.rings.forEach((R,i)=>bLater(()=>{ R.classList.add('show'); const [x,y]=ctr(R); fxBurst(x,y,16,GLCOL); chime([988+i*190]); },i*420)); mood('kiki','smile'); }); },
+  ready(){ efReady(); efArm('fwd'); mood('kiki','smile'); mood('hexe','happy'); TB.uniFree=0; },
+  a:{t:'fliegen',id:'kiki',rings:[[46,52],[66,70],[84,46]],r:10,w:'WOLKE'},
+  s:'Bald kamen sie zu den Wolken. Die Wolken waren dick und grau, und Kiki konnte nichts mehr sehen. Ehfje hob ihren Finger: Kribbel, krabbel, Funkelschein – zeigt uns den Weg, ihr Ringelein! Da glitzerten Ringe zwischen den Wolken. Leg deinen Finger auf Kiki und flieg mit ihr durch alle Ringe!',
+  h:'Leg den Finger auf Kiki und flieg durch den glitzernden Ring!',
+  ringPass(k){ TB.uniFree=1; kiFlap(); mood('kiki','happy'); mood('hexe','laugh'); const [x,y]=efHead(); bubble(rnd(['juhu!','hui!','flapp!']),x,y-vu()*8,3.8,'#e8d8ff'); bLater(()=>mood('hexe','happy'),900); },
+  d:[()=>{ onPh('über den Wolken',()=>{ TB.uniFree=0; const K=TB.els.kiki; K.style.transition='left 2s ease-in-out, top 2s ease-in-out, rotate 1s'; K.style.left='50%'; K.style.top='40%'; K.style.rotate='0deg';
+         ['.l-mid','.l-fore'].forEach((s,i)=>{ const L=TB.st.querySelector(s); if(L){ L.style.transition='translate 3s ease-in-out'; L.style.translate=`0 ${[30,40][i]}vh`; } }); },'d1'); },
+     'Hui! Durch den letzten Ring, und schon waren sie über den Wolken.',
+     ()=>{ onPh('dunkel',()=>{ FX.darkT=.55; FX.dc='6,6,30'; mood('kiki','worry'); TB.els.kiki.classList.add('kizit'); mood('hexe','oh'); },'d2'); talk('kiki','Es ist so','flüsterte','d2'); },
+     'Doch über den Wolken war es dunkel. Kiki zitterte. Es ist so dunkel hier, flüsterte sie.', 900]},
+
+ /* 4 – a shooting star: tap it to catch it; it settles on Kiki's tail tip like a little lantern */
+ {set:'kikinacht', dark:.55, u:[9,46,16], ef:[0,0,0,'sitb','kiki'], ki:[24,66,34], fly:1, sn:[90,42,16],
+  st:{efm:'oh',efa:'fwd',kim:'worry',lat:0},
+  lights:[{id:'kiki',r0:16,rT:16,k0:.4,kT:.4},{id:'uni',r0:10,rT:10,k0:.35,kT:.35},{id:'schnuppe',name:'snL',r0:10,rT:10,k0:.85,kT:.85,warm:1}],
+  enter(){ uniFly(true); TB.els.kiki.classList.add('kizit'); kiUniFollow(-20,-14); const S=TB.els.schnuppe; S.style.opacity=0;
+    onPh('zischte',()=>{ S.style.transition='opacity .4s'; S.style.opacity=1; const [x,y]=ctr(S); fxBurst(x,y,20,['rgba(255,236,150,.95)','rgba(255,255,255,.95)']); chime([1568,2093,2637]); mood('kiki','oh'); });
+    talk('hexe','Eine Sternschnuppe','rief Ehfje'); onPh('Eine Sternschnuppe',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('Tipp auf',()=>{ efArm('fwd'); uniHop(); }); },
+  ready(){ efReady(); const S=TB.els.schnuppe; S.style.transition='none'; S.style.opacity=1; efArm('fwd'); mood('hexe','happy'); },
+  a:{t:'catch',id:'schnuppe',path:[[90,44],[72,54],[54,46],[38,54]],spd:.55,roll:.001,lift:0,w:'LICHT'},
+  s:'Da zischte etwas Helles über den Himmel, mit einem langen goldenen Schweif. Eine Sternschnuppe! rief Ehfje. Tipp auf die Sternschnuppe und fang sie!',
+  h:'Tipp auf die fliegende Sternschnuppe!',
+  item(){ mood('hexe','laugh'); mood('kiki','oh'); },
+  done(){ const S=TB.els.schnuppe; if(!S) return; const st=S.querySelector('.kisst'), [x,y]=st?ctr(st):ctr(S); S.style.transition='opacity .4s'; S.style.opacity=0; if(TB.snL){ TB.snL.kT=0; TB.snL.rT=0; } kiLantern(false,[x,y]); },
+  d:[()=>{ onPh('Laterne',()=>{ TST.lat=1; const K=TB.els.kiki; K.classList.remove('kizit'); if(TB.latL){ TB.latL.rT=16; } FX.darkT=.42; const [x,y]=kiTip(); glitterBurst(x,y,20,14); chime([1175,1568,2093]); },'d1'); },
+     'Die Sternschnuppe setzte sich auf Kikis Schwanzspitze und leuchtete wie eine kleine Laterne.',
+     ()=>{ talk('kiki','Oh, wie schön','sagte Kiki','d2'); onPh('Oh, wie schön',()=>{ mood('kiki','happy'); mood('hexe','happy'); },'d2'); onPh('zitterte',()=>mood('kiki','smile'),'d2'); },
+     'Oh, wie schön! sagte Kiki. Und sie zitterte nicht mehr so sehr.', 900]},
+
+ /* 5 – on the moon: soft silver dust; tap and Kiki hops, slow as a feather, leaving glittering footprints; she laughs for the first time at night */
+ {set:'kikimond', dark:.3, u:[10,76,19], ef:[0,0,0,'sitb','kiki'], ki:[24,74,32],
+  st:{efm:'happy',efa:'fwd',kim:'smile',lat:1},
+  lights:[{id:'kiki',r0:22,rT:22,k0:.5,kT:.5},{id:'uni',r0:14,rT:14,k0:.45,kT:.45}],
+  enter(){ onPh('landeten',()=>{ const K=TB.els.kiki; sqs(K); const [x,y]=relEl(K,[.45,.92]); for(let i=0;i<16;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*18,y,vx:(Math.random()-.5)*18*vu(),vy:-(2+Math.random()*6)*vu(),s:1.2,life:1.4,c:'rgba(230,232,250,.85)'}); });
+    onPh('Puderzucker',()=>mood('kiki','oh')); onPh('ganz leicht',()=>{ uniHop(); mood('kiki','smile'); }); },
+  ready(){ efReady(); mood('kiki','smile'); },
+  a:{t:'huepfen',id:'kiki',xs:[38,52,66,80],y:74,ms:1500,w:'MOND'},
+  s:'Dann landeten sie auf dem Mond. Der Boden war weich und silbern, wie Puderzucker. Hier oben war alles ganz leicht. Lass Kiki hüpfen! Tipp, und sie springt ganz hoch!',
+  h:'Tipp auf Kiki, dann hüpft sie!',
+  hopped(k){ mood('kiki',k>=2?'laugh':'happy'); if(k===2){ mood('hexe','laugh'); const [x,y]=efHead(); bubble('hui!',x,y-vu()*8,3.6,'#e8d8ff'); }
+    if(k===3){ const U=TB.els.uni, [ux]=ctr(U); kiPath(U,[[30,76]],1500); } },
+  done(){ mood('kiki','laugh'); },
+  d:['Hops, hops, hops! Kiki hüpfte, langsam wie eine Feder, und überall blieben glitzernde Fußspuren.',
+     ()=>{ talk('kiki','Hihi','Im Dunkeln','d2'); talk('kiki','Im Dunkeln',null,'d2'); onPh('lachte Kiki',()=>{ mood('kiki','laugh'); kiBreath(16,true); },'d2'); onPh('Im Dunkeln',()=>{ mood('hexe','laugh'); efArm('up'); },'d2'); },
+     'Da lachte Kiki zum ersten Mal in der Nacht. Hihi! Im Dunkeln hüpfen macht ja Spaß!', 900]},
+
+ /* 6 – the star picture: from the moon they see some stars shine brighter; join them – a little dragon, Kiki's own; Ulla: stars only shine in the dark */
+ {set:'kikimond', dark:.36, u:[8,78,17], ef:[0,0,0,'sitb','kiki'], ki:[20,76,28], ul:[86,64,24],
+  st:{efm:'happy',efa:'fwd',kim:'smile',lat:1,bld:0,ulo:0},
+  lights:[{id:'kiki',r0:20,rT:20,k0:.5,kT:.5},{id:'uni',r0:12,rT:12,k0:.45,kT:.45}],
+  enter(){ onPh('besonders hell',()=>{ (TB.a.pts||[]).forEach(([x,y],i)=>bLater(()=>{ const [px,py]=wpx(x,y); glitterBurst(px,py,6,4); chimeAt([1318+i*110],px); },i*220)); mood('kiki','oh'); });
+    onPh('Fahr mit',()=>{ uniHop(); mood('kiki','smile'); }); },
+  ready(){ efReady(); mood('kiki','smile'); },
+  a:{t:'dots',pts:KIPTS,sz:6.4,r:9,w:'STERN'},
+  s:'Vom Mond aus sahen sie ganz viele Sterne. Ein paar Sterne funkelten besonders hell, als wollten sie etwas zeigen. Fahr mit dem Finger von Stern zu Stern!',
+  h:'Fahr mit dem Finger von einem Stern zum nächsten!',
+  dotStep(k){ if(k===4) mood('kiki','happy'); },
+  done(){ mood('kiki','oh'); },
+  d:[()=>{ onPh('leuchtete ein Bild',()=>{ kiBild(); TST.bld=1; },'d1'); onPh('genau wie Kiki',()=>{ mood('kiki','happy'); mood('hexe','laugh'); },'d1'); },
+     'Und auf einmal leuchtete ein Bild am Himmel: ein kleiner Drache mit Flügeln, genau wie Kiki!',
+     ()=>{ talk('kiki','Das bin ja ich','rief Kiki','d2'); onPh('Das bin ja ich',()=>{ mood('kiki','laugh'); kiBreath(20,true); kiFlap(); },'d2');
+       onPh('Ulla',()=>{ const U=TB.els.eule; TST.ulo=1; U.style.opacity=1; try{ U.animate([{transform:'translate(30vw,-40vh) scale(.6)'},{transform:'translate(8vw,-12vh)',offset:.6},{transform:'none'}],{duration:2200,easing:'cubic-bezier(.3,.7,.4,1)'}); }catch(e){} chime([392,523,659]); },'d2'); },
+     'Das bin ja ich! rief Kiki. Da kam Ulla, die Eule, herbeigeflogen.',
+     ()=>{ talk('eule','Schuhu','sagte Ulla','d3'); talk('eule','Sterne leuchten',null,'d3'); onPh('Schuhu',()=>{ sqs(TB.els.eule); mood('eule','joy'); },'d3');
+       onPh('nur im Dunkeln',()=>{ const B=TB.els.bild; if(B){ B.classList.remove('kipul'); void B.offsetWidth; B.classList.add('kipul'); } },'d3'); onPh('Ohne die Nacht',()=>{ mood('kiki','smile'); },'d3'); },
+     'Schuhu, sagte Ulla. Sterne leuchten nur im Dunkeln. Ohne die Nacht könntest du dein Sternbild nie sehen.', 900]},
+
+ /* 7 – home: Kiki isn't afraid any more; she breathes a glitter path across the sky; trace it home; she curls up under Eefje's window */
+ {set:'kikinacht', dark:.45, u:[8,34,15], ef:[0,0,0,'sitb','kiki'], ki:[20,46,30], fly:1, p:[['haus','HEXHAUS',90,84,13]],
+  st:{efm:'happy',efa:'fwd',kim:'happy',lat:1},
+  lights:[{id:'kiki',r0:18,rT:18,k0:.45,kT:.45},{id:'uni',r0:10,rT:10,k0:.35,kT:.35},{id:'haus',r0:8,rT:8,k0:.4,kT:.4,warm:1}],
+  enter(){ uniFly(true); kiUniFollow(-18,-10); talk('kiki','Die Nacht ist ja','sagte sie'); talk('kiki','Komm, wir',null);
+    onPh('Die Nacht ist ja',()=>{ mood('kiki','laugh'); }); onPh('atmete tief',()=>mood('kiki','smile')); onPh('pustete',()=>{ kiBreath(40); TB.sc.glit(); }); onPh('Fahr den',()=>uniHop()); },
+  glit(){ if(TB.glitOn) return; TB.glitOn=1; const P=TB.a.path, u=vu(); P.forEach(([x,y],i)=>bLater(()=>{ const [px,py]=wpx(x,y); glitterBurst(px,py,8,6); },i*160)); },
+  ready(){ efReady(); this.glit(); mood('kiki','happy'); },
+  a:{t:'trace',path:[[32,52],[42,62],[54,66],[66,64],[78,72],[88,80]],end:'haus',pearl:1,w:'NACHT'},
+  s:'Jetzt hatte Kiki keine Angst mehr. Die Nacht ist ja wunderschön! sagte sie. Komm, wir fliegen nach Hause. Kiki atmete tief ein und pustete einen langen Glitzerweg über den Himmel. Fahr den Glitzerweg mit dem Finger nach, bis nach Hause!',
+  h:'Fahr mit dem Finger den Glitzerweg entlang!',
+  done(){ mood('kiki','laugh'); mood('hexe','laugh'); },
+  d:[()=>{ onPh('flogen sie heim',()=>{ TB.uniFree=1; const K=TB.els.kiki, U=TB.els.uni; kiPath(K,[[42,62,.9],[66,66,.6],[88,80,.2]],3200); kiPath(U,[[34,56,.9],[60,62,.6],[86,78,.2]],3400); },'d1');
+       onPh('schiefem',()=>kiHome(),'d1'); },
+     'Auf dem Glitzerweg flogen sie heim, bis zu Ehfjes schiefem Häuschen.',
+     ()=>{ onPh('rollte sich',()=>{ const K=TB.els.kiki2; if(K){ sqs(K); } },'d2'); onPh('Sternbild',()=>{ const H=TB.els.heim; if(H) H.classList.add('bild'); chime([1318,1568,2093]); },'d2');
+       onPh('Gute Nacht, Kiki',()=>{ const E=TB.els.hexe2; if(E) E.classList.add('talking'); },'d2'); onPh('flüsterte Ehfje',()=>{ const E=TB.els.hexe2; if(E){ E.classList.remove('talking'); E.dataset.mood='smile'; } },'d2');
+       onPh('Gute Nacht, Sterne',()=>{ const K=TB.els.kiki2; if(K) K.classList.add('talking'); },'d2'); onPh('flüsterte Kiki',()=>{ const K=TB.els.kiki2; if(K){ K.classList.remove('talking'); K.dataset.mood='sleepy'; } zzzEl(K); },'d2'); },
+     'Kiki rollte sich unter Ehfjes Fenster zusammen und schaute hinauf zu ihrem Sternbild. Gute Nacht, Kiki, flüsterte Ehfje. Gute Nacht, Sterne, flüsterte Kiki.',
+     ()=>{ onPh('zählen sie',()=>{ const H=TB.els.heim; if(H) H.querySelectorAll('.kihst b').forEach((b,i)=>bLater(()=>{ const [x,y]=ctr(b); glitterBurst(x,y,6,4); chimeAt([1318+i*130],x); },i*260)); },'d3'); },
+     'Und wenn sie nicht eingeschlafen sind, dann zählen sie noch heute die Sterne.', 1600]}
+ ]};
+/* little z's over a sleeping element outside TB.els */
+function zzzEl(e){ if(!e) return; FX.em.push({rate:.6,fn:()=>{ if(!TB||!e.isConnected) return; const r=e.getBoundingClientRect(), u=vu(); fxAdd({k:'glit',x:r.left+r.width*.8,y:r.top+r.height*.2,vy:-6*u,vx:3*u,ph:0,s:1,life:2.4,amb:1,c:'rgba(255,246,200,.9)'}); }}); }
+/*<KIKI*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -10413,7 +10842,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -10445,6 +10874,12 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="tp2 chr pepc pepn kid" data-mood="happy" data-arm="map" style="left:80%;top:11.5%;width:34.7%"><div class="bb">${niklasSVG()}</div></div>`+
     `<div class="pepfr">${pepBootSVG('f')}</div></div></div></div>`+
     [[12,16,5],[40,8,4],[90,40,3.4],[10,44,3.4],[60,14,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+  if(id==='kiki') return `<div class="kiart" style="position:absolute;inset:0">`+
+    `<svg style="position:absolute;left:8%;top:8%;width:56%;height:34%;overflow:visible" viewBox="0 0 100 60" preserveAspectRatio="none"><polyline points="${KIPTS.map(([x,y])=>((x-30)*1.8).toFixed(1)+','+((y-38)*2.2).toFixed(1)).join(' ')}" fill="none" stroke="rgba(255,255,255,.75)" stroke-width=".8" stroke-dasharray="2 1.6"/>${KIPTS.map(([x,y])=>`<circle cx="${((x-30)*1.8).toFixed(1)}" cy="${((y-38)*2.2).toFixed(1)}" r="1.8" fill="#fff6c0"/>`).join('')}</svg>`+
+    `<div class="tp2 luna" style="left:84%;top:16%;width:16%">${moonSVG()}</div>`+
+    `<div class="tp2 chr kiki" data-mood="happy" style="left:50%;top:66%;width:78%"><div class="bb">${kikiSVG()}<div class="tp2 chr eef sitb kid" data-mood="happy" data-arm="up" style="left:${KISEAT[0]*100}%;top:${KISEAT[1]*100}%;width:${KISEAT[2]}%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 kilt kid" style="left:15%;top:29.3%;width:11%">${kiStarSVG()}</div></div></div></div>`+
+    [[12,60,4],[40,8,3.4],[92,56,3.6],[8,86,3.4],[66,40,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
   if(id==='tasse') return `<div class="tasart" style="position:absolute;inset:0">`+
     `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:30%;top:56%;width:46%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2 chr tasn" data-mood="laugh" style="left:68%;top:62%;width:30%;--lv:1;--tg:.8"><div class="bb">${tasseSVG()}<div class="tp2 chr tasfd kid" style="left:66%;top:4%;width:22%;rotate:24deg"><div class="bb">${tasFederSVG()}</div></div></div></div>`+
@@ -10705,6 +11140,8 @@ regTale2(KLONKI2);
 regTale2(PEPPIO2);
 /* Eefje und die Zaubertasse: after the Mondinsel, so the older lines keep their order in voice/clips.tsv */
 regTale2(TAS2);
+/* Eefje und Kiki fliegen zu den Sternen: after the Zaubertasse, so the older lines keep their order in voice/clips.tsv */
+regTale2(KIKI2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
