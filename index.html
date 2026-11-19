@@ -1655,6 +1655,29 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .eikart .famjn,.eikart .eikwg{position:absolute}
 
 /*<EINKAUFCSS*/
+/*MALENCSS>*/
+/* Eefje und die Wachsmalstifte (all classes start with "mal") */
+.eef .malknee,.eef .malpfl,.eef .maltr{display:none}
+.eef.malkn .malknee{display:inline} .eef.malpf .malpfl{display:inline} .eef.malpf .malknee{display:none}
+.eef .malpfw{opacity:var(--pw,0);transition:opacity .3s}
+.eef[data-mood=cry] .malcy,.eef[data-mood=cry] .malcm,.eef[data-mood=cry] .maltr{display:inline}
+.eef .maltr path{transform-box:fill-box;animation:maltr 1.1s ease-in infinite} .eef .maltr path:nth-child(2){animation-delay:-.55s}
+@keyframes maltr{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(120%);opacity:0}}
+.eef.malsit>.bb{translate:0 16%}
+.eef.mallimp>.bb{animation:mallimp .75s ease-in-out infinite} @keyframes mallimp{0%,100%{transform:none}50%{transform:translateY(2.5%) rotate(-3deg)}}
+.malbl .malrb,.malbl .malsun,.malbl .maldg{opacity:0;transition:opacity .9s} .malbl .malso{transition:opacity .6s}
+.malbl.h-sun .malsun,.malbl.h-rbw .malrb,.malbl.h-dog .maldg{opacity:1} .malbl.h-sun .malso{opacity:0}
+.malbl .malwc{opacity:0} .malbl.wink .malwo{animation:malwo 1.3s 2} .malbl.wink .malwc{animation:malwc 1.3s 2}
+@keyframes malwo{0%,25%,75%,100%{opacity:1}30%,70%{opacity:0}} @keyframes malwc{0%,25%,75%,100%{opacity:0}30%,70%{opacity:1}}
+.malcv{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.tp2.malkst{opacity:0;transition:opacity .2s;transform-origin:50% 2%;rotate:24deg;translate:-50% -2%;z-index:6;filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.25))} .tp2.malkst.on{opacity:1}
+.malkst svg,.malhs svg,.malfr svg,.malart svg{display:block;width:100%}
+.tp2.malhs{rotate:-28deg;pointer-events:none;filter:none}
+.tp2.mallift{scale:1.15;filter:drop-shadow(0 1.4vh 1.4vh rgba(0,0,0,.3))}
+.tp2.malbl,.tp2.malfr{filter:drop-shadow(0 .5vh .8vh rgba(0,0,0,.18))}
+.malmag{position:absolute;left:50%;top:-3%;width:2.6vh;height:2.6vh;border-radius:50%;translate:-50% 0;background:radial-gradient(circle at 35% 35%,#ff9ac0,#e8447a);box-shadow:0 .2vh .4vh rgba(0,0,0,.3)}
+.malart .tp2{position:absolute}
+/*<MALENCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -8282,10 +8305,10 @@ function eefjeSVG(){ const K='#ffe2cc', KS='#d79a7a', H='#e8692e', HD='#a8421a',
    <path d="M30 106 L6 100 M30 111 L4 111 M30 116 L6 121" stroke="#c8963a" stroke-width="1.8" stroke-linecap="round"/>
    <rect x="31" y="100" width="8" height="20" rx="3" fill="#e8445a" stroke="#9a2a3a" stroke-width="2" transform="rotate(-5 35 110)"/>
    <g class="brf"><circle cx="17" cy="106" r="1.9" fill="#5a3a1a"/><circle cx="25" cy="105" r="1.9" fill="#5a3a1a"/><path d="M18 112 q3.5 3 7 -.5" stroke="#5a3a1a" stroke-width="1.6" fill="none" stroke-linecap="round"/></g></g>
-  <g class="st">${leg('M71 118 V143')}${leg('M89 118 V143')}
+  <g class="st">${leg('M71 118 V143')}${leg('M89 118 V143')}<g transform="translate(89 130) rotate(0)"><g class="malknee"><ellipse rx="4.8" ry="3.6" fill="#ff6a80" opacity=".92"/><path d="M-2.8 -1.2 l4.8 1.4 M-2.2 1.3 l3.8 .9" stroke="#c82a44" stroke-width="1.1" stroke-linecap="round"/></g><g class="malpfl"><rect x="-9" y="-4.8" width="18" height="9.6" rx="4.2" fill="#f8cfa4" stroke="#c8925a" stroke-width="1.1"/><rect x="-3.4" y="-3.1" width="6.8" height="6.2" rx="1.4" fill="#fff8ee"/><path transform="translate(-6 0) scale(0.55)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><path transform="translate(6 0) scale(0.55)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><path transform="translate(0 0) scale(0.5)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><g class="malpfw" stroke="#a8764a" stroke-width=".9" fill="none" stroke-linecap="round"><path d="M-7.5 -3 q2.4 3 0 6 M7 -3.4 q-2.2 3 .2 6.4 M-2.5 -4.4 q1.8 2.2 -.2 4.4 M2.4 0 q1.6 2.2 0 4.2"/></g></g></g>
    <path d="M64 141 Q64 152 74 151 L82 151 Q86 151 84 147 Q78 146 77 140Z" fill="#3a2a4a" stroke="#1e1428" stroke-width="2"/><path d="M96 141 Q96 152 86 151 L80 151" fill="none"/>
    <path d="M96 141 Q97 152 87 151 L80 151 Q77 150 80 146 Q85 146 84 140Z" fill="#3a2a4a" stroke="#1e1428" stroke-width="2"/></g>
-  <g class="sit">${leg('M80 114 L96 136')}${leg('M90 114 L108 132')}
+  <g class="sit">${leg('M80 114 L96 136')}${leg('M90 114 L108 132')}<g transform="translate(99 123) rotate(-45)"><g class="malknee"><ellipse rx="4.8" ry="3.6" fill="#ff6a80" opacity=".92"/><path d="M-2.8 -1.2 l4.8 1.4 M-2.2 1.3 l3.8 .9" stroke="#c82a44" stroke-width="1.1" stroke-linecap="round"/></g><g class="malpfl"><rect x="-9" y="-4.8" width="18" height="9.6" rx="4.2" fill="#f8cfa4" stroke="#c8925a" stroke-width="1.1"/><rect x="-3.4" y="-3.1" width="6.8" height="6.2" rx="1.4" fill="#fff8ee"/><path transform="translate(-6 0) scale(0.55)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><path transform="translate(6 0) scale(0.55)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><path transform="translate(0 0) scale(0.5)" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".4"/><g class="malpfw" stroke="#a8764a" stroke-width=".9" fill="none" stroke-linecap="round"><path d="M-7.5 -3 q2.4 3 0 6 M7 -3.4 q-2.2 3 .2 6.4 M-2.5 -4.4 q1.8 2.2 -.2 4.4 M2.4 0 q1.6 2.2 0 4.2"/></g></g></g>
    <path d="M90 132 Q88 144 98 142 L106 142 Q110 140 106 136 Q100 136 98 131Z" fill="#3a2a4a" stroke="#1e1428" stroke-width="2"/>
    <path d="M102 128 Q101 140 111 138 L119 137 Q123 135 119 131 Q113 131 111 126Z" fill="#3a2a4a" stroke="#1e1428" stroke-width="2"/></g>
   <path d="M66 74 Q80 69 94 74 L110 120 Q80 129 50 120Z" fill="${D}" stroke="${DD}" stroke-width="3" stroke-linejoin="round"/>
@@ -8309,6 +8332,9 @@ function eefjeSVG(){ const K='#ffe2cc', KS='#d79a7a', H='#e8692e', HD='#a8421a',
    <ellipse class="m m-oh" cx="80" cy="66" rx="3.2" ry="4" fill="#8a2a3a"/>
    <path class="m m-worry" d="M74 67.5 q6 -4.5 12 0" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"/>
    <path class="m m-laugh" d="M72 63 Q80 74 88 63Z" fill="#8a2a3a" stroke="${E}" stroke-width="2" stroke-linejoin="round"/>
+   <g class="ey malcy" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M66 48.5 L75 52.5 L66 56.5"/><path d="M94 48.5 L85 52.5 L94 56.5"/></g>
+   <path class="m malcm" d="M72 70 Q80 61 88 70 Q80 67 72 70Z" fill="#8a2a3a" stroke="${E}" stroke-width="2" stroke-linejoin="round"/>
+   <g class="maltr"><path d="M68 57 q-2.4 4.4 0 6.6 q2.4 -2.2 0 -6.6Z" fill="#8ad0ff" stroke="#4a9ad8" stroke-width=".6"/><path d="M92 57 q-2.4 4.4 0 6.6 q2.4 -2.2 0 -6.6Z" fill="#8ad0ff" stroke="#4a9ad8" stroke-width=".6"/></g>
    <ellipse class="mo" cx="80" cy="65" rx="4" ry="3.6" fill="#8a2a3a"/></g></svg>`; }
 /* her pointed hat (separate, so the wind can take it) */
 function hutSVG(){ return `<svg viewBox="0 0 100 96"><path d="M20 80 Q32 50 44 26 Q52 8 72 4 Q62 14 60 28 Q68 54 80 80Z" fill="#6a3ac8" stroke="#2a1660" stroke-width="3" stroke-linejoin="round"/>
@@ -12040,6 +12066,451 @@ const EINK2={id:'einkauf', v2:true, eef:1, fam:1, dur:EDUR3, title:'Eefje und de
  ]};
 
 /*<EINKAUF*/
+/*MALEN>*/
+/* ================= Eefje und die Wachsmalstifte (all classes start with "mal") ================= */
+/* ---------- drawn props ---------- */
+const MALCOL={r:['#ff4a5a','#b8202e'],o:['#ff9a3a','#c8601a'],y:['#ffd83a','#c8961a'],g:['#5ac85a','#2a8a2a'],b:['#4a9aff','#1e5ab8'],l:['#a86af0','#6a34b8']};
+/* a wax crayon lying sideways, tip to the right. viewBox 0 0 100 24 */
+function malStiftSVG(k){ const [c,d]=MALCOL[k||'r'];
+  return `<svg viewBox="0 0 100 24" style="overflow:visible"><ellipse cx="50" cy="22" rx="44" ry="2.4" fill="rgba(0,0,0,.14)"/>
+  <path d="M6 4 Q2 12 6 20 L74 20 L74 4Z" fill="${c}" stroke="${d}" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="16" y="4" width="48" height="16" fill="#fff8ec" stroke="${d}" stroke-width="1.6"/><path d="M16 8 H64 M16 16 H64" stroke="${c}" stroke-width="2"/>
+  <path d="M28 12 h20" stroke="${d}" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+  <path d="M74 4 L94 10 Q97 12 94 14 L74 20Z" fill="${c}" stroke="${d}" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M10 7 H72" stroke="#fff" stroke-width="1.6" opacity=".5"/></svg>`; }
+/* the crayon in Ehfje's hand while she scribbles (tip down-left). viewBox 0 0 40 100 */
+function malHandStiftSVG(k){ const [c,d]=MALCOL[k||'y'];
+  return `<svg viewBox="0 0 40 100" style="overflow:visible"><path d="M12 22 L28 22 L28 96 Q20 100 12 96Z" fill="${c}" stroke="${d}" stroke-width="2.4" stroke-linejoin="round"/>
+  <rect x="12" y="40" width="16" height="40" fill="#fff8ec" stroke="${d}" stroke-width="1.8"/><path d="M12 46 H28 M12 74 H28" stroke="${c}" stroke-width="2.4"/>
+  <path d="M12 22 L18 3 Q20 0 22 3 L28 22Z" fill="${c}" stroke="${d}" stroke-width="2.4" stroke-linejoin="round"/><path d="M15 24 V94" stroke="#fff" stroke-width="2" opacity=".45"/></svg>`; }
+/* the crayon tin with crayons sticking out. viewBox 0 0 120 130 */
+function malDoseSVG(){ const st=(x,k,h,r)=>{ const [c,d]=MALCOL[k]; return `<g transform="rotate(${r} ${x} 70)"><path d="M${x-6} 70 L${x-6} ${70-h} L${x} ${58-h} L${x+6} ${70-h} L${x+6} 70Z" fill="${c}" stroke="${d}" stroke-width="2" stroke-linejoin="round"/><rect x="${x-6}" y="${76-h}" width="12" height="${h-16}" fill="#fff8ec" stroke="${d}" stroke-width="1.4" opacity=".9"/></g>`; };
+  return `<svg viewBox="0 0 120 130" style="overflow:visible"><ellipse cx="60" cy="126" rx="50" ry="5" fill="rgba(0,0,0,.15)"/>
+  ${st(30,'o',44,-14)}${st(46,'g',52,-5)}${st(62,'y',48,3)}${st(78,'l',54,10)}${st(92,'b',40,18)}
+  <path d="M14 64 L106 64 L100 124 Q60 130 20 124Z" fill="#5ab4e8" stroke="#2a6a9a" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="60" cy="64" rx="46" ry="7" fill="#7ac8f4" stroke="#2a6a9a" stroke-width="3"/>
+  <g fill="#ffd84a" stroke="#c8961a" stroke-width="1.2"><path d="M40 90 l3 6 6.6 .8 -4.8 4.6 1.2 6.6 -6 -3.2 -6 3.2 1.2 -6.6 -4.8 -4.6 6.6 -.8Z"/><circle cx="76" cy="100" r="5" fill="#ff7aa8" stroke="#c44a78"/></g>
+  <path d="M22 72 Q24 100 26 118" stroke="#fff" stroke-width="3" opacity=".5" fill="none" stroke-linecap="round"/></svg>`; }
+
+/* the drawing: one sheet of paper for the whole tale. Groups appear with classes on the prop (h-sun h-rbw h-dog);
+   only = list of groups to draw without classes (for the book page). viewBox 0 0 400 280 */
+const MALSUN=[318,74,50], MALRB=[178,262], MALDOG=[[126,206],[140,182],[166,192],[230,195],[250,176],[234,248],[168,248],[136,222]];
+function malHatch(id,c,a,op){ return `<pattern id="${id}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(${a})"><rect width="6" height="6" fill="${c}" opacity="${op==null?.45:op}"/><path d="M0 1.4 H6 M0 4.4 H6" stroke="${c}" stroke-width="2.2"/></pattern>`; }
+function malBlattSVG(only){ const id='mb'+(++LANC), has=k=>!only||only.includes(k), [sx,sy,sr]=MALSUN, [rx,ry]=MALRB;
+  const g=(k,cls,s)=>has(k)?`<g class="${only?'':cls}">${s}</g>`:'';
+  const rays=Array.from({length:12},(_,i)=>{ const a=i/12*6.283, r0=sr+8, r1=sr+(i%2?20:26); return `M${(sx+Math.cos(a)*r0).toFixed(1)} ${(sy+Math.sin(a)*r0).toFixed(1)} L${(sx+Math.cos(a)*r1).toFixed(1)} ${(sy+Math.sin(a)*r1).toFixed(1)}`; }).join(' ');
+  const arcs=['#ff4a5a','#ff9a3a','#ffd83a','#5ac85a','#4a9aff','#a86af0'].map((c,i)=>{ const r=156-i*9; return `<path d="M${rx-r} ${ry} A${r} ${r} 0 0 1 ${rx+r} ${ry}" stroke="${c}" stroke-width="8.4" fill="none" stroke-linecap="round" stroke-dasharray="26 2.4 40 1.6" opacity=".92"/><path d="M${rx-r+2} ${ry} A${r-1.6} ${r-1.6} 0 0 1 ${rx+r-2} ${ry}" stroke="#fff" stroke-width="1.2" fill="none" stroke-dasharray="3 9" opacity=".55"/>`; }).join('');
+  const dog=`<path d="M160 228 L160 250 M176 232 L176 252 M214 232 L214 252 M228 228 L228 250" stroke="#8a5420" stroke-width="6" stroke-linecap="round"/>
+   <path d="M232 204 Q250 196 250 176" stroke="#c8843a" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="250" cy="174" r="4.6" fill="#fffaf2" stroke="#8a5420" stroke-width="2"/>
+   <ellipse cx="196" cy="216" rx="40" ry="21" fill="url(#${id}w)" stroke="#8a5420" stroke-width="3.4"/>
+   <path d="M178 200 Q196 192 222 200 Q220 214 200 214 Q184 214 178 200Z" fill="url(#${id}t)" stroke="#8a5420" stroke-width="2"/>
+   <circle cx="146" cy="202" r="21" fill="url(#${id}w)" stroke="#8a5420" stroke-width="3.4"/><path d="M138 186 Q150 180 160 190 Q158 200 148 196 Q140 194 138 186Z" fill="url(#${id}t)"/>
+   <path d="M156 190 Q172 196 168 222 Q160 228 154 214Z" fill="url(#${id}t)" stroke="#8a5420" stroke-width="2.6" stroke-linejoin="round"/>
+   <circle cx="126" cy="206" r="4.6" fill="#2a2420"/><circle cx="141" cy="198" r="2.6" fill="#2a2420"/><path d="M128 214 q8 6 16 0" stroke="#2a2420" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+   <path d="M134 216 q2 8 6 9" stroke="#ff7aa8" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 400 280" style="overflow:visible"><defs>${malHatch(id+'y','#ffc81a',-30)}${malHatch(id+'w','#f4dcb8',20,.6)}${malHatch(id+'t','#c8843a',-40,.5)}</defs>
+  <path d="M10 8 L392 4 L396 270 L4 276Z" fill="#fffef6" stroke="#d8ccb0" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M12 10 L390 6" stroke="#fff" stroke-width="2" opacity=".8"/>
+  ${has('so')&&!only?`<circle class="malso" cx="${sx}" cy="${sy}" r="${sr}" fill="none" stroke="#f0d890" stroke-width="2.6" stroke-dasharray="7 6"/>`:''}
+  ${g('rbw','malrb',arcs)}
+  ${g('sun','malsun',`<path d="${rays}" stroke="#ffa82a" stroke-width="6" stroke-linecap="round"/><circle cx="${sx}" cy="${sy}" r="${sr}" fill="url(#${id}y)" stroke="#f0a818" stroke-width="4.6"/>
+   <circle cx="${sx-16}" cy="${sy-6}" r="5" fill="#8a4a10"/><g class="malwk"><circle class="malwo" cx="${sx+16}" cy="${sy-6}" r="5" fill="#8a4a10"/><path class="malwc" d="M${sx+9} ${sy-5} q7 6 14 0" stroke="#8a4a10" stroke-width="3.4" fill="none" stroke-linecap="round"/></g>
+   <path d="M${sx-18} ${sy+12} Q${sx} ${sy+30} ${sx+18} ${sy+12}" stroke="#8a4a10" stroke-width="3.6" fill="none" stroke-linecap="round"/><ellipse cx="${sx-28}" cy="${sy+10}" rx="6" ry="4" fill="#ff8a6a" opacity=".55"/><ellipse cx="${sx+28}" cy="${sy+10}" rx="6" ry="4" fill="#ff8a6a" opacity=".55"/>`)}
+  ${g('dog','maldg',dog)}
+  ${has('hz')&&only?`<g transform="translate(96 60) scale(1.35)">${malHerzPath('#ff3a4a','#c81e30')}</g>`:''}
+  </svg>`; }
+/* the heart (painted in the last scene, its own prop on the sheet). viewBox 0 0 100 90 */
+function malHerzPath(c,d){ return `<path d="M0 34 C-30 14 -34 -14 -16 -20 C-6 -23 0 -14 0 -8 C0 -14 6 -23 16 -20 C34 -14 30 14 0 34Z" fill="${c}" stroke="${d}" stroke-width="4.4" stroke-linejoin="round"/>`; }
+function malHerzSVG(grey){ const id='mh'+(++LANC);
+  if(grey) return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 90"><rect width="100" height="90" fill="#fffef6"/><g transform="translate(50 46) scale(1.25)"><path d="M0 34 C-30 14 -34 -14 -16 -20 C-6 -23 0 -14 0 -8 C0 -14 6 -23 16 -20 C34 -14 30 14 0 34Z" fill="#fffef6" stroke="#ff8a9a" stroke-width="3.4" stroke-dasharray="7 5"/></g></svg>`;
+  return `<svg viewBox="0 0 100 90" style="overflow:visible"><defs>${malHatch(id,'#ff2a3e',-35,.55)}</defs><rect width="100" height="90" fill="#fffef6"/><g transform="translate(50 46) scale(1.25)"><path d="M0 34 C-30 14 -34 -14 -16 -20 C-6 -23 0 -14 0 -8 C0 -14 6 -23 16 -20 C34 -14 30 14 0 34Z" fill="url(#${id})" stroke="#d01e32" stroke-width="3.6" stroke-linejoin="round"/>
+   <path d="M-14 -10 Q-20 -2 -16 6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".7"/></g></svg>`; }
+
+/* the plaster with little stars (the one she drags). viewBox 0 0 100 50 */
+function malPflasterSVG(){ const s=(x,y,r)=>`<path transform="translate(${x} ${y}) scale(${r})" d="M0 -5 L1.5 -1.6 5 -1.4 2.3 1 3.1 4.6 0 2.7 -3.1 4.6 -2.3 1 -5 -1.4 -1.5 -1.6Z" fill="#ffd84a" stroke="#c8961a" stroke-width=".5"/>`;
+  return `<svg viewBox="0 0 100 50" style="overflow:visible"><rect x="3" y="5" width="94" height="40" rx="18" fill="#f8cfa4" stroke="#c8925a" stroke-width="2.6"/>
+  <g fill="#e8b68a">${[14,24,76,86].map(x=>`<circle cx="${x}" cy="16" r="1.4"/><circle cx="${x}" cy="34" r="1.4"/>`).join('')}</g>
+  <rect x="34" y="12" width="32" height="26" rx="5" fill="#fff8ee" stroke="#e8c8a4" stroke-width="1.4"/>
+  ${s(16,25,1.3)}${s(84,25,1.3)}${s(50,25,1.6)}${s(27,13,.8)}${s(73,37,.8)}</svg>`; }
+/* the tin with plasters (Mama's). viewBox 0 0 120 80 */
+function malPflDoseSVG(){ return `<svg viewBox="0 0 120 80" style="overflow:visible"><ellipse cx="60" cy="76" rx="54" ry="4" fill="rgba(0,0,0,.15)"/>
+  <path d="M8 20 L112 20 L108 74 L12 74Z" fill="#ff6a7a" stroke="#b82a3a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M8 20 L20 2 L100 2 L112 20Z" fill="#ff8a96" stroke="#b82a3a" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="46" y="34" width="28" height="28" rx="4" fill="#fff"/><path d="M60 38 V58 M50 48 H70" stroke="#ff3a4a" stroke-width="7" stroke-linecap="round"/></svg>`; }
+
+/* ---------- the house ---------- */
+/* an open door to the living room, warm light inside. viewBox 0 0 160 300 */
+function malTuerSVG(){ const id='mt'+(++LANC);
+  return `<svg viewBox="0 0 160 300" style="overflow:visible"><defs><radialGradient id="${id}" cx=".5" cy=".55" r=".75"><stop offset="0" stop-color="#fff4c8"/><stop offset=".6" stop-color="#ffd890"/><stop offset="1" stop-color="#e8a860"/></radialGradient></defs>
+  <rect x="10" y="10" width="140" height="290" fill="url(#${id})"/>
+  <path d="M10 230 L150 230 L150 300 L10 300Z" fill="#d8946a" opacity=".55"/><rect x="40" y="140" width="80" height="60" rx="16" fill="#ff9ab0" opacity=".5"/>
+  <path d="M2 300 V4 H158 V300" fill="none" stroke="#a8784a" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M150 12 L190 30 L190 296 L150 300Z" fill="#f2e2c8" stroke="#a8784a" stroke-width="4" stroke-linejoin="round"/><circle cx="160" cy="160" r="5" fill="#c8a040" stroke="#8a6a1a" stroke-width="2"/></svg>`; }
+/* the sofa from the front. viewBox 0 0 400 200 */
+function malSofaSVG(){ return `<svg viewBox="0 0 400 200" style="overflow:visible"><ellipse cx="200" cy="196" rx="190" ry="6" fill="rgba(0,0,0,.18)"/>
+  <rect x="40" y="186" width="16" height="12" rx="3" fill="#6a4222"/><rect x="344" y="186" width="16" height="12" rx="3" fill="#6a4222"/>
+  <path d="M40 30 Q40 10 70 10 L330 10 Q360 10 360 30 L360 120 L40 120Z" fill="#6aa0d8" stroke="#2e5a8a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M200 16 V116" stroke="#4a7ab8" stroke-width="3"/>
+  <path d="M30 110 Q30 96 50 96 L350 96 Q370 96 370 110 L370 160 Q370 190 340 190 L60 190 Q30 190 30 160Z" fill="#7ab0e4" stroke="#2e5a8a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M60 112 H340" stroke="#a8d0f4" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M200 100 V150" stroke="#4a7ab8" stroke-width="3"/>
+  <path d="M2 80 Q2 56 26 56 Q50 56 50 80 L50 180 Q50 192 36 192 L16 192 Q2 192 2 180Z" fill="#5a90cc" stroke="#2e5a8a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M350 80 Q350 56 374 56 Q398 56 398 80 L398 180 Q398 192 384 192 L364 192 Q350 192 350 180Z" fill="#5a90cc" stroke="#2e5a8a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M290 30 Q340 26 340 62 Q336 92 296 88 Q270 84 272 58 Q274 32 290 30Z" fill="#ffd27a" stroke="#c8862a" stroke-width="3"/><circle cx="306" cy="58" r="6" fill="#ff9ab0"/></svg>`; }
+/* a soft play mat with Janneke's toys. viewBox 0 0 200 60 */
+function malMatteSVG(){ return `<svg viewBox="0 0 200 60" style="overflow:visible"><path d="M14 10 L186 10 L198 54 L2 54Z" fill="#ffe0ea" stroke="#e8a0b8" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#ffb0c8" opacity=".8">${[30,70,110,150].map(x=>`<circle cx="${x}" cy="32" r="7"/>`).join('')}</g>
+  <circle cx="176" cy="40" r="9" fill="#ffd84a" stroke="#c8961a" stroke-width="2"/><path d="M168 40 H184" stroke="#ff6a7a" stroke-width="3"/></svg>`; }
+
+/* ---------- the rooms (viewBox 1600 x 1000, cut to fit the screen) ---------- */
+function malRoomSVG(kind){ const id='mr'+(++LANC);
+  if(kind==='kueche2'){ /* the kitchen after the rain: blue sky and a real rainbow in the window */
+    let s=eikRoomSVG('kueche'); s=s.replace('stop-color="#8a9ab0"','stop-color="#6ab8f0"').replace('stop-color="#c0cad8"','stop-color="#dff2ff"');
+    const arcs=['#ff5a6a','#ffa84a','#ffe25a','#6ad87a','#5ab4ff','#a46af0'].map((c,i)=>`<path d="M${1000+i*14} 470 A${190-i*14} ${190-i*14} 0 0 1 ${1380-i*14} 470" stroke="${c}" stroke-width="15" fill="none" opacity=".9"/>`).join('');
+    return s.replace(/<g stroke="#e8f2ff" stroke-width="3" opacity=".7">[\s\S]*?<\/g>/,`<defs><clipPath id="${id}"><rect x="968" y="158" width="424" height="314"/></clipPath></defs><g clip-path="url(#${id})">${arcs}<circle cx="1340" cy="210" r="40" fill="#fff2a0"/><circle cx="1340" cy="210" r="62" fill="#fff6c0" opacity=".45"/><path d="M968 430 Q1060 400 1140 432 Q1240 400 1392 436 L1392 472 L968 472Z" fill="#9ad87a"/></g>`); }
+  if(kind==='flur'){ let st=''; for(let x=0;x<1600;x+=80) st+=`<rect x="${x}" y="0" width="40" height="640" fill="#fff" opacity=".22"/>`;
+    let pl=''; for(let i=0;i<14;i++) pl+=`<path d="M${i*120-40} 650 L${i*150-300} 1000"/>`;
+    return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+     <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe8c8"/><stop offset="1" stop-color="#f6d2a6"/></linearGradient>
+     <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88a52"/><stop offset="1" stop-color="#a86a38"/></linearGradient></defs>
+     <rect width="1600" height="1000" fill="url(#${id}w)"/>${st}
+     <g transform="translate(170 150)"><rect width="180" height="140" rx="6" fill="#fffef6" stroke="#c89a5a" stroke-width="10"/><circle cx="60" cy="60" r="26" fill="#ffd84a"/><path d="M20 120 Q90 60 160 120" stroke="#5ac85a" stroke-width="12" fill="none"/></g>
+     <g transform="translate(430 190)"><rect width="140" height="120" rx="6" fill="#fffef6" stroke="#c89a5a" stroke-width="10"/><path d="M30 90 L70 30 L110 90Z" fill="#ff7aa8"/><circle cx="104" cy="34" r="12" fill="#5ab4ff"/></g>
+     <path d="M640 250 H900" stroke="#8a5a2e" stroke-width="16" stroke-linecap="round"/>${[680,760,840].map(x=>`<circle cx="${x}" cy="262" r="10" fill="#c8a040"/>`).join('')}
+     <path d="M668 268 Q630 380 660 520 L740 520 Q760 380 690 268Z" fill="#e8786a" stroke="#a8463a" stroke-width="6"/>
+     <path d="M760 268 L720 330 Q760 344 800 330Z" fill="#6a3ac8" stroke="#2a1660" stroke-width="6" stroke-linejoin="round"/><ellipse cx="760" cy="332" rx="52" ry="12" fill="#4a2a9a" stroke="#2a1660" stroke-width="5"/>
+     <rect x="0" y="628" width="1600" height="26" fill="#e8b888"/><rect y="650" width="1600" height="350" fill="url(#${id}f)"/>
+     <g stroke="#8a5a2e" stroke-width="3" opacity=".5">${pl}</g>
+     <path d="M200 780 L1400 780 L1500 940 L100 940Z" fill="#d85a6a" opacity=".85"/><path d="M230 800 L1380 800 M180 900 L1430 900" stroke="#ffc0c8" stroke-width="8" stroke-dasharray="30 20" opacity=".8"/></svg>`; }
+  /* the living room */
+  let rain=''; const r=seeded(57); for(let i=0;i<22;i++){ const x=150+r()*330, y=170+r()*260; rain+=`<path d="M${x} ${y} l-6 18"/>`; }
+  let pl=''; for(let i=0;i<14;i++) pl+=`<path d="M${i*120-40} 640 L${i*150-300} 1000"/>`;
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f4e4"/><stop offset="1" stop-color="#d0e8cc"/></linearGradient>
+   <linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a9ab0"/><stop offset="1" stop-color="#c0cad8"/></linearGradient>
+   <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d89a5e"/><stop offset="1" stop-color="#b87a42"/></linearGradient></defs>
+   <rect width="1600" height="1000" fill="url(#${id}w)"/>
+   <rect x="130" y="150" width="380" height="300" rx="14" fill="url(#${id}s)" stroke="#a8784a" stroke-width="14"/><g stroke="#e8f2ff" stroke-width="3" opacity=".7">${rain}</g>
+   <path d="M320 150 V450 M130 300 H510" stroke="#a8784a" stroke-width="10"/><path d="M110 450 H530" stroke="#c89060" stroke-width="18" stroke-linecap="round"/>
+   <path d="M114 142 Q170 260 130 450 L110 450 L100 140Z M526 142 Q470 260 510 450 L530 450 L540 140Z" fill="#ffd27a" opacity=".9"/>
+   <g transform="translate(1250 120)"><rect width="240" height="470" rx="8" fill="#c8945a" stroke="#8a5a2e" stroke-width="8"/>${[0,1,2,3].map(k=>`<rect x="10" y="${110+k*115}" width="220" height="10" fill="#8a5a2e"/>`).join('')}
+    ${['#ff6a6a','#5ab4ff','#ffd84a','#6ad87a','#b48aff','#ff9a3a','#5ab4ff','#ff7aa8'].map((c,i)=>`<rect x="${20+(i%4)*52}" y="${(Math.floor(i/4))*115+40}" width="40" height="70" rx="3" fill="${c}"/>`).join('')}
+    <circle cx="70" cy="320" r="26" fill="#ff9ab0"/><circle cx="160" cy="430" r="30" fill="#ffd84a"/></g>
+   <path d="M1080 120 V560" stroke="#8a6a4a" stroke-width="8"/><path d="M1020 140 L1140 140 L1110 60 L1050 60Z" fill="#ffe08a" stroke="#c8962a" stroke-width="6"/><ellipse cx="1080" cy="600" rx="60" ry="14" fill="#8a6a4a"/>
+   <ellipse cx="1080" cy="150" rx="120" ry="40" fill="#fff2b0" opacity=".35"/>
+   <rect x="0" y="626" width="1600" height="22" fill="#e8c8a0"/><rect y="640" width="1600" height="360" fill="url(#${id}f)"/>
+   <g stroke="#a86a32" stroke-width="3" opacity=".55">${pl}</g>
+   <ellipse cx="800" cy="860" rx="640" ry="110" fill="#9ac8a0" opacity=".85"/><ellipse cx="800" cy="860" rx="560" ry="84" fill="none" stroke="#c8e8c8" stroke-width="10" stroke-dasharray="40 24"/></svg>`; }
+
+Object.assign(SVGP,{MALBLATT:[()=>malBlattSVG(),1],MALDOSE:[malDoseSVG,1],MALHERZ:[()=>malHerzSVG(0),1],MALHERZG:[()=>malHerzSVG(1),1],MALPFL:[malPflasterSVG,1],MALPFLDOSE:[malPflDoseSVG,1],
+  MALTUER:[malTuerSVG,1],MALSOFA:[malSofaSVG,1],MALMATTE:[malMatteSVG,1]});
+Object.keys(MALCOL).forEach(k=>{ SVGP['MALSTIFT'+k.toUpperCase()]=[()=>malStiftSVG(k),1]; });
+Object.assign(SETS2,{
+  malkueche:{clean:1, sky:'#fff4dc', room:'kueche'},
+  malflur:{clean:1, sky:'#ffe8c8', mroom:'flur'},
+  malwohn:{clean:1, sky:'#e8f4e4', mroom:'wohn'},
+  malsonne:{clean:1, sky:'#fff4dc', mroom:'kueche2'}
+});
+Object.assign(TSYL,{STIFT:'STIFT',PFLASTER:'PFLAS-TER'});
+
+/* ---------- sounds: scribbling, the crayon rolling, a bump, the plaster, Mama blowing ---------- */
+const malLate=()=>!tale||!tale.t||tale.t.id!=='malen'||!taleOn();
+function malTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||malLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0008,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+let malScT=0; function malScribble(x){ const t=now(); if(t-malScT<70) return; malScT=t; famNoise(x,.05,2200+Math.random()*900,3200+Math.random()*900,80); }
+function malRoll(x,n){ for(let i=0;i<(n||6);i++) setTimeout(()=>malTone(x,1400+Math.random()*500,1200,40,.025,'triangle'),i*110); }
+function malBump(x){ malTone(x,180,70,260,.18,'sine'); famNoise(x,.12,600,150,220,'lowpass'); }
+function malCrinkle(x){ for(let i=0;i<3;i++) setTimeout(()=>famNoise(x,.05,5000,7000,50),i*70); }
+function malBlow(x){ famNoise(x,.09,900,300,900,'lowpass'); }
+
+/* ---------- helpers ---------- */
+/* Ehfje's knee in screen px (standing: on her right leg; sitting on the floor: on the bent leg) */
+function malKnee(){ const E=TB&&TB.els.hexe; if(!E) return [innerWidth/2,innerHeight/2]; const sit=E.classList.contains('malsit'); return relEl(E.querySelector('.bb'),sit?[99/160,123/160]:[89/160,130/160]); }
+function malSheet(k){ const B=TB&&TB.els.blatt; if(!B) return; B.classList.add('h-'+k); const s=new Set((TST.bl||'').split(' ').filter(Boolean)); s.add(k); TST.bl=[...s].join(' '); }
+/* a point on the sheet (viewBox 400 x 280) in % of the stage */
+function malOn(x,y){ return eikAt(TB.els.blatt,x/400,y/280).map(v=>+v.toFixed(2)); }
+/* a crayon from the table flies into Ehfje's hand and stays there while she draws */
+function malHand(k){ const E=TB.els.hexe; if(!E) return; let H=TB.els.hst; if(H) H.remove(); if(!k){ TB.els.hst=null; return; }
+  H=el('div','tp2 kid malhs',malHandStiftSVG(k)); H.style.cssText='left:76%;top:58%;width:9%'; E.querySelector('.bb').appendChild(H); TB.els.hst=H; sqs(E); }
+/* tears drop from her eyes now and then (while she cries) */
+function malTears(on){ FX.em=FX.em.filter(e=>!e.malt); if(!on) return; FX.em.push({malt:1,rate:2.4,fn:()=>{ const E=TB&&TB.els.hexe; if(!E||!E.isConnected||E.dataset.mood!=='cry') return;
+  const [x,y]=relEl(E.querySelector('.bb'),[Math.random()<.5?.42:.58,.37]), u=vu(); fxAdd({k:'foam',x,y,vx:(Math.random()-.5)*10*u,vy:-4*u,g:60*u,yEnd:y+u*14,life:1,s:.45,amb:1}); }}); }
+/* something flies from where it is to x,y (% of the stage) and ends with width w (vh) */
+function malFly(e,x,y,w,ms,cb){ const r=e.getBoundingClientRect(), [x1,y1]=wpx(x,y), sc=w*vu()/r.width, x0=r.left+r.width/2, y0=r.top+r.height/2, u=vu();
+  try{ const an=e.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${(y1-y0)/2-u*10}px) scale(${(1+sc)/2}) rotate(-6deg)`},{transform:`translate(${x1-x0}px,${y1-y0}px) scale(${sc}) rotate(3deg)`}],{duration:ms||1400,easing:'ease-in-out',fill:'forwards'});
+    an.onfinish=()=>{ if(!e.isConnected) return; an.cancel(); e.style.left=x+'%'; e.style.top=y+'%'; e.style.width=w+'vh'; e.style.rotate='3deg'; if(cb) cb(); }; }catch(err){ e.style.left=x+'%'; e.style.top=y+'%'; e.style.width=w+'vh'; if(cb) cb(); } }
+
+/* ---------- the gestures ---------- */
+Object.assign(G2,{
+ /* kritzeln (scribble): a crayon on her fingertip colours a shape on the paper with waxy strokes, back and forth. The strokes stay
+    inside the shape (clip); ~60 % of the shape coloured is enough, then it fills completely. A tap is a try.
+    a:{id (the paper), zone:[cx,cy,rx,ry] (fractions of the paper), col (MALCOL key), cls (class for the paper when done), pct, r (brush vh)};
+    hook scribbling(p) */
+ kritzeln:{ setup(){ const a=TB.a, E=TB.els[a.id], c=document.createElement('canvas'); c.className='malcv'; E.appendChild(c);
+     const W=c.width=Math.max(8,Math.round(E.offsetWidth)), H=c.height=Math.max(8,Math.round(E.offsetHeight)), [cx,cy,rx,ry]=a.zone, s={c,g:c.getContext('2d'),W,H,cx:cx*W,cy:cy*H,rx:rx*W,ry:ry*H,
+       grid:[],N:0,p:0,q:0,last:null,mv:0,gain:0,tap:0,fin:false,auto:false,p0:null};
+     for(let j=0;j<14;j++) for(let i=0;i<14;i++){ const fx=-1+(i+.5)/7, fy=-1+(j+.5)/7; if(fx*fx+fy*fy<1) s.grid.push({x:s.cx+fx*s.rx,y:s.cy+fy*s.ry,on:true}); }
+     s.N=s.grid.length; TB.kz=s;
+     const S=el('div','tp2 malkst',malHandStiftSVG(a.col||'y')); S.style.width='4.4vh'; TB.act.appendChild(S); s.st=S; },
+   k(){ const r=TB.kz.c.getBoundingClientRect(); return [r,TB.kz.c.width/r.width]; },
+   tip(x,y,on){ const S=TB.kz.st; if(!S) return; putAt(S,x,y); S.classList.toggle('on',!!on); },
+   line(x0,y0,x1,y1){ const s=TB.kz, [r,k]=this.k(), g=s.g, a=TB.a, [col,dk]=MALCOL[a.col||'y'], R=vu()*(a.r||3.4)*k;
+     const P=(x,y)=>[(x-r.left)*k,(y-r.top)*k], [ax,ay]=P(x0,y0), [bx,by]=P(x1,y1);
+     g.save(); g.beginPath(); g.ellipse(s.cx,s.cy,s.rx*1.04,s.ry*1.04,0,0,6.283); g.clip(); g.lineCap='round'; g.lineJoin='round';
+     g.globalAlpha=.55; g.strokeStyle=col; g.lineWidth=R*1.5; g.beginPath(); g.moveTo(ax,ay); g.lineTo(bx,by); g.stroke();
+     for(let i=0;i<3;i++){ const ox=(Math.random()-.5)*R*1.1, oy=(Math.random()-.5)*R*1.1; g.globalAlpha=.75; g.strokeStyle=i?col:dk; g.lineWidth=R*(i?.42:.16);
+       g.beginPath(); g.moveTo(ax+ox,ay+oy); g.lineTo(bx+ox,by+oy); g.stroke(); }
+     g.restore();
+     const d=Math.hypot(bx-ax,by-ay), st=Math.max(1,Math.ceil(d/(R*.5))), R2=(R*1.15)**2; let hit=0;
+     for(let i=0;i<=st;i++){ const px=ax+(bx-ax)*i/st, py=ay+(by-ay)*i/st; s.grid.forEach(q=>{ if(q.on&&(q.x-px)**2+(q.y-py)**2<R2){ q.on=false; hit++; } }); }
+     if(hit){ s.p=1-s.grid.filter(q=>q.on).length/s.N; if(TB.sc.scribbling) TB.sc.scribbling(s.p);
+       const q=Math.floor(s.p*10); if(q>s.q){ s.q=q; chimeAt([600+q*60],x1); poke2(); }
+       if(s.p>=(a.pct||.6)) this.finish(); }
+     if(Math.random()<.12) fxAdd({k:'spark',x:x1,y:y1,vx:(Math.random()-.5)*14*vu(),vy:-(3+Math.random()*8)*vu(),life:.45,s:.5,c:'rgba(255,240,180,.8)'});
+     malScribble(x1); return hit; },
+   down(x,y){ const s=TB.kz; if(s.fin||s.auto) return; s.last=[x,y]; s.mv=0; s.gain=0; s.p0=[x,y]; this.tip(x,y,1); },
+   move(x,y){ const s=TB.kz; if(!TB.pd||s.fin||s.auto) return; this.tip(x,y,1); if(s.p0) s.mv=Math.max(s.mv,Math.hypot(x-s.p0[0],y-s.p0[1]));
+     const L=s.last; if(L&&Math.hypot(x-L[0],y-L[1])>2){ s.gain+=this.line(L[0],L[1],x,y); s.last=[x,y]; } else if(!L) s.last=[x,y]; },
+   up(){ const s=TB.kz; if(!s||s.fin||s.auto) return; s.last=null; this.tip(0,0,0); s.st.classList.remove('on');
+     if(s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(!s.gain) miss2(); },
+   finish(){ const s=TB.kz; if(s.fin) return; s.fin=true; const a=TB.a, E=TB.els[a.id], [r,k]=this.k(), x=r.left+s.cx/k, y=r.top+s.cy/k;
+     if(a.cls) malSheet(a.cls); s.c.style.transition='opacity 1.2s'; s.c.style.opacity=0; bLater(()=>s.c.remove(),1300); s.st.classList.remove('on');
+     glitterBurst(x,y,22,18); fxBurst(x,y,20,[MALCOL[a.col||'y'][0],'rgba(255,255,255,.95)']); bLater(()=>done2(),500); },
+   frames(){ const s=TB.kz, [r,k]=this.k(), f=[]; for(let i=0;i<8;i++){ const fy=-.7+i*.2, fx=(i%2?.75:-.75)*Math.sqrt(Math.max(.1,1-fy*fy));
+       f.push([r.left+(s.cx+fx*s.rx)/k, r.top+(s.cy+fy*s.ry)/k,.85,i?1:0]); } f.push([f[f.length-1][0],f[f.length-1][1]+vu()*6,1,0]); return f; },
+   hint(){ const s=TB.kz; if(!s||s.fin||s.auto) return; ghost(this.frames(),2800); const c=MALCOL[TB.a.col||'y'][0];
+     ghostTrail(2800,(x,y)=>{ if(Math.random()<.6) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*10*vu(),vy:-4*vu(),life:.5,s:.7,c}); }); },
+   auto(){ const s=TB.kz; if(s.fin||s.auto) return; s.auto=true; ghost(this.frames(),3000); const sc=TB.sc, t0=now(); let L=null;
+     const iv=setInterval(()=>{ if(!TB||TB.sc!==sc||s.fin||now()-t0>3100){ clearInterval(iv); return; } const g=ghostXY(); if(!g){ L=null; return; } this.tip(g[0],g[1],1);
+       if(L) this.line(L[0],L[1],g[0],g[1]); L=g; },40); taleT.push(iv); bLater(()=>this.finish(),3300); } },
+
+ /* kleben (plaster): first pull the plaster onto Ehfje's knee (it sticks as soon as it comes close, or when let go near it), then
+    smooth it flat with a few strokes over the knee. Progress is kept. A tap without moving is a try.
+    a:{id (the plaster prop), n (strokes)}; hooks stuck(), smoothed(k) */
+ kleben:{ setup(){ const P=TB.els[TB.a.id]; TB.kb={ph:0,k:0,dn:false,lx:0,ly:0,mv:0,acc:0,ox:0,oy:0,fin:false,auto:false,tap:0,home:[P.style.left,P.style.top]}; },
+   near(x,y,r){ const [kx,ky]=malKnee(); return Math.hypot(x-kx,y-ky)<vu()*r; },
+   down(x,y){ const s=TB.kb, P=TB.els[TB.a.id]; if(s.fin||s.auto) return; s.mv=0; s.lx=x; s.ly=y; s.x0=x; s.y0=y;
+     if(s.ph===0){ if(nearEl(P,x,y,vu()*8)){ const [cx,cy]=ctr(P); s.dn=true; s.ox=x-cx; s.oy=y-cy; P.style.transition='none'; P.classList.add('mallift'); malCrinkle(x); poke2(); } else s.dn=false; }
+     else s.dn=this.near(x,y,18); },
+   move(x,y){ const s=TB.kb; if(!s.dn||s.fin||s.auto) return; const d=Math.hypot(x-s.lx,y-s.ly); s.mv+=d; s.lx=x; s.ly=y;
+     if(s.ph===0){ const P=TB.els[TB.a.id]; putAt(P,x-s.ox,y-s.oy); if(s.mv>vu()*5) poke2(); const [cx,cy]=ctr(P); if(this.near(cx,cy,6)) this.stick(); return; }
+     if(this.near(x,y,20)){ s.acc+=d; if(Math.random()<.4) fxAdd({k:'spark',x,y,vx:0,vy:-4*vu(),life:.5,s:.8,c:'rgba(255,226,120,.95)'}); if(s.acc>vu()*8){ s.acc=0; this.smooth(); } } },
+   up(x,y){ const s=TB.kb; if(s.fin||s.auto) return; const was=s.dn; s.dn=false; const P=TB.els[TB.a.id];
+     if(s.ph===0&&was){ P.classList.remove('mallift'); const [cx,cy]=ctr(P); if(this.near(cx,cy,13)) return this.stick();
+       P.style.transition='left .6s cubic-bezier(.3,1.4,.5,1),top .6s cubic-bezier(.3,1.4,.5,1)'; P.style.left=s.home[0]; P.style.top=s.home[1]; }
+     if(Math.hypot(x-s.x0,y-s.y0)<vu()*2&&s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(!was) miss2(); },
+   stick(){ const s=TB.kb; if(s.ph!==0) return; s.ph=1; s.dn=false; const P=TB.els[TB.a.id], E=TB.els.hexe, [kx,ky]=malKnee();
+     P.classList.remove('mallift'); P.style.transition='opacity .25s, scale .25s'; P.style.opacity=0; P.style.scale=.5;
+     E.classList.add('malpf'); E.style.setProperty('--pw',1); TST.pf=1; malCrinkle(kx); chimeAt([784,988],kx); fxBurst(kx,ky,14,['rgba(255,226,120,.95)','rgba(255,255,255,.95)']); sqs(E);
+     poke2(); if(TB.sc.stuck) TB.sc.stuck(); },
+   smooth(){ const s=TB.kb; if(s.fin||s.ph!==1) return; s.k++; const n=TB.a.n||3, E=TB.els.hexe, [kx,ky]=malKnee(); E.style.setProperty('--pw',Math.max(0,1-s.k/n).toFixed(2));
+     chimeAt([880+s.k*130],kx); malCrinkle(kx); for(let i=0;i<8;i++) fxAdd({k:'spark',x:kx+(Math.random()-.5)*vu()*8,y:ky+(Math.random()-.5)*vu()*4,vx:(Math.random()-.5)*20*vu(),vy:-(6+Math.random()*10)*vu(),life:.7,s:.8,c:rnd(['rgba(255,226,90,.95)','rgba(255,255,255,.95)'])});
+     poke2(); if(TB.sc.smoothed) TB.sc.smoothed(s.k);
+     if(s.k>=n){ s.fin=true; TST.pfw=0; glitterBurst(kx,ky,20,12); bLater(()=>done2(),600); } },
+   frames(){ const s=TB.kb, [kx,ky]=malKnee(), u=vu();
+     if(s.ph===0){ const [px,py]=ctr(TB.els[TB.a.id]); return [[px,py+u*6,1,0],[px,py,.82,1],[(px+kx)/2,Math.min(py,ky)-u*6,.85,1],[kx,ky,.85,1],[kx,ky+u*6,1,0]]; }
+     return [[kx-u*7,ky+u*6,1,0],[kx-u*7,ky,.85,1],[kx+u*7,ky,.85,1],[kx-u*7,ky,.85,1],[kx+u*7,ky,.85,1],[kx+u*7,ky+u*6,1,0]]; },
+   hint(){ const s=TB.kb; if(!s||s.fin) return; if(s.ph===0){ const P=TB.els[TB.a.id]; P.classList.add('g2hint'); bLater(()=>P.classList.remove('g2hint'),2400); } ghost(this.frames(),2400); },
+   auto(){ const s=TB.kb; if(s.fin||s.auto) return; s.auto=true; const n=TB.a.n||3;
+     const rub=()=>{ ghost(this.frames(),2200); for(let i=s.k;i<n;i++) bLater(()=>this.smooth(),300+(i-s.k)*600); };
+     if(s.ph===0){ ghost(this.frames(),1600); const P=TB.els[TB.a.id], [kx,ky]=malKnee(), [tx,ty]=wpos(kx,ky); P.style.transition='none';
+       kiPath(P,[[(parseFloat(P.style.left)+tx)/2,Math.min(parseFloat(P.style.top),ty)-8],[tx,ty]],1300,()=>{ this.stick(); bLater(rub,400); }); }
+     else rub(); } }
+});
+
+/* ================= Eefje und die Wachsmalstifte ================= */
+/* heart: a rainy afternoon, Ehfje draws a picture for Mama (sun, rainbow, Boris). Running to show it she slips on the red crayon and
+   hurts her knee. Her magic only makes a few sparks – Mama's hug, "Heile, heile Segen" and a star plaster help. "Manchmal braucht auch
+   eine kleine Hexe ihre Mama." At the end she paints a red heart with the very crayon that tripped her, the sun comes out, and the
+   picture goes on the fridge. Recurring: the sheet (sun → rainbow → Boris → heart), the red crayon, the rainbow (drawn → real). */
+const MDUR={};
+const MAL2={id:'malen', v2:true, eef:1, fam:1, dur:MDUR, title:'Eefje und die Wachsmalstifte', vtitle:'Ehfje und die Wachsmalstifte', icon:'🖍️',
+ cover:'linear-gradient(180deg,#8ac4ff 0%,#c8e4ff 35%,#fff4dc 70%,#ffd27a 100%)',
+ cast(sc){ const A=TB.act, B=SETS2[sc.set];
+  if(B.mroom){ const R=el('div','eikroom',malRoomSVG(B.mroom)); A.insertBefore(R,A.firstChild); TB.els.room=R; }
+  EINK2.cast.call(this,sc);
+  const E=TB.els.hexe; if(E){ E.classList.toggle('malkn',!!TST.kn); E.classList.toggle('malpf',!!TST.pf); E.style.setProperty('--pw',TST.pfw!=null?TST.pfw:0);
+    if(sc.ef[3]==='floor') E.classList.add('sitb','malsit'); if(TST.efm==='cry') malTears(true); }
+  const Bl=TB.els.blatt; if(Bl){ Bl.classList.add('malbl'); (TST.bl||'').split(' ').filter(Boolean).forEach(k=>Bl.classList.add('h-'+k)); }
+  if(sc.hand) malHand(sc.hand);
+  if(sc.a&&sc.a.t==='paint') G2.paint.prep();
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='blatt'){ sqs(b); if(/h-sun/.test(b.className)){ b.classList.remove('wink'); void b.offsetWidth; b.classList.add('wink'); } chime([784,988]); return true; }
+  if(/^s[rygbol]$/.test(id)||id==='dose'){ sqs(b); malRoll(x,3); return true; }
+  if(['sofa','matte','tuer','pdose','hz'].includes(id)){ sqs(b); chime([659]); return true; }
+  return EINK2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a rainy afternoon in the kitchen: Ehfje gets out her crayons and scribbles a sun (kritzeln) – it winks */
+ {set:'malkueche', dark:0, u:[70,27,10], ef:[17,60,40,'st'], boris:[88,89,21,'lie'],
+  p:[['tisch','EIKTISCH',50,93,150],['blatt','MALBLATT',56,60,72],['dose','MALDOSE',90,67,13],['sr','MALSTIFTR',27,79,9],['sg','MALSTIFTG',33,82,9],['sb','MALSTIFTB',84,80,9]],
+  front:['tisch','blatt','dose','sr','sg','sb','boris'],
+  st:{efm:'smile',efa:'dn',bom:'sleepy',bl:'',kn:0,pf:0,pfw:0,jam:'smile'},
+  enter(){ onPh('Es regnete',()=>{ chime([523,440]); }); onPh('Wachsmalstifte',()=>{ const D=TB.els.dose; sqs(D); malRoll(ctr(D)[0],5); mood('hexe','happy'); efArm('up'); });
+    onPh('rot, gelb',()=>{ ['sr','sy','sg','sb'].forEach((id,i)=>bLater(()=>{ const s=TB.els[id]; if(s){ wiggle(s); chimeAt([660+i*110],ctr(s)[0]); } },i*420)); efArm('dn'); });
+    talk('hexe','Draußen ist','sagte Ehfje'); talk('hexe','Ich male',null); onPh('Draußen ist',()=>{ mood('hexe','worry'); }); onPh('Ich male',()=>{ mood('hexe','happy'); efArm('up'); sqs(TB.els.blatt); });
+    onPh('Nimm den gelben',()=>{ malHand('y'); efArm('fwd'); mood('hexe','smile'); }); },
+  ready(){ efReady(); malHand('y'); efArm('fwd'); mood('hexe','smile'); },
+  a:{t:'kritzeln',id:'blatt',zone:[MALSUN[0]/400,MALSUN[1]/280,(MALSUN[2]+4)/400,(MALSUN[2]+4)/280],col:'y',cls:'sun',pct:.6,r:3.4,w:'SONNE'},
+  h:'Kritzel mit dem Finger über die Sonne, hin und her!',
+  s:'Es regnete schon den ganzen Nachmittag. Mama war im Wohnzimmer, und Janneke machte ihren Mittagsschlaf. Ehfje saß am Küchentisch und holte ihre Wachsmalstifte heraus: rot, gelb, grün und blau. Draußen ist alles so grau, sagte Ehfje. Ich male mir eine Sonne! Nimm den gelben Stift und kritzel die Sonne ganz gelb!',
+  scribbling(p){ if(p>.3) mood('hexe','happy'); },
+  done(){ mood('hexe','laugh'); efArm('up'); malHand(null); },
+  d:[()=>{ onPh('zwinkerte',()=>{ const B=TB.els.blatt; B.classList.add('wink'); const [x,y]=relEl(B,[MALSUN[0]/400,MALSUN[1]/280]); glitterBurst(x,y,14,10); chimeAt([1318,1760],x); mood('hexe','oh'); },'d1'); },
+     'Kritzel, kratzel! Die Sonne wurde ganz gelb und hell. Und dann zwinkerte sie Ehfje zu!',
+     ()=>{ talk('hexe','Hihi','kicherte','d2'); onPh('Hihi',()=>{ mood('hexe','laugh'); efArm('dn'); },'d2'); onPh('ein bisschen verzaubert',()=>{ efSpell(8); },'d2'); },
+     'Hihi, kicherte Ehfje. Bei einer kleinen Hexe sind sogar die Bilder ein bisschen verzaubert.', 600]},
+
+ /* 2 – a rainbow over the whole sheet (trace with the rainbow trail); Boris comes out from under the table */
+ {set:'malkueche', dark:0, u:[70,27,10], ef:[17,60,40,'st'], boris:[88,89,21,'lie'],
+  p:[['tisch','EIKTISCH',50,93,150],['blatt','MALBLATT',56,60,72],['dose','MALDOSE',90,67,13],['sr','MALSTIFTR',27,79,9],['sg','MALSTIFTG',33,82,9],['sb','MALSTIFTB',84,80,9]],
+  front:['tisch','blatt','dose','sr','sg','sb','boris'],
+  st:{efm:'happy',efa:'dn',bom:'sleepy',bl:'sun'},
+  enter(){ const [rx,ry]=MALRB, R=133; TB.sc.a.path=Array.from({length:9},(_,i)=>{ const an=Math.PI*(1-i/8); return malOn(rx+Math.cos(an)*R,ry-Math.sin(an)*R); });
+    talk('hexe','Da fehlt','sagte Ehfje'); talk('hexe','Nach dem Regen',null); onPh('Da fehlt',()=>{ mood('hexe','worry'); });
+    onPh('Nach dem Regen',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('alle Stifte',()=>{ ['sr','sg','sb'].forEach((id,i)=>bLater(()=>wiggle(TB.els[id]),i*200)); efArm('fwd'); malHand('l'); }); },
+  ready(){ efReady(); malHand('l'); efArm('fwd'); mood('hexe','smile'); },
+  a:{t:'trace',path:[[30,50],[56,30],[82,50]],rainbow:1,w:'BOGEN'},
+  h:'Fahr mit dem Finger den Bogen entlang!',
+  s:'Da fehlt noch etwas, sagte Ehfje. Nach dem Regen kommt doch ein Regenbogen! Sie nahm alle Stifte auf einmal in die Hand. Mal einen großen bunten Bogen über das Blatt!',
+  done(){ malSheet('rbw'); if(TB.rbw){ TB.rbw.style.transition='opacity 1.2s'; TB.rbw.style.opacity=0; } (TB.dots||[]).forEach(d=>d&&(d.style.opacity=0)); mood('hexe','laugh'); efArm('up'); malHand(null); },
+  d:[()=>{ onPh('Was für',()=>{ const [x,y]=ctr(TB.els.blatt); glitterBurst(x,y-vu()*8,16,24); },'d1'); },
+     'Rot, gelb, grün, blau und lila! Was für ein schöner Regenbogen.',
+     ()=>{ onPh('Da kam Boris',()=>{ const B=TB.els.boris; B.classList.remove('lie'); mood('boris','oh'); sqs(B); famWag(1); },'d2'); onPh('neugierig',()=>{ mood('boris','sniff'); famSniff(ctr(TB.els.boris)[0]); },'d2');
+       onPh('Wuff',()=>{ mood('boris','happy'); famWoof(ctr(TB.els.boris)[0]); bubble('wuff?',...famNose(),3.4,'#fff0d8'); },'d2'); },
+     'Da kam Boris unter dem Tisch hervor und schaute neugierig auf das Bild. Wuff?', 600]},
+
+ /* 3 – Boris sits as a model; draw him from star to star (dots) */
+ {set:'malkueche', dark:0, u:[70,27,10], ef:[17,60,40,'st'], boris:[88,82,23],
+  p:[['tisch','EIKTISCH',50,93,150],['blatt','MALBLATT',56,60,72],['dose','MALDOSE',90,67,13],['sr','MALSTIFTR',27,79,9],['sg','MALSTIFTG',33,82,9],['sb','MALSTIFTB',84,80,9]],
+  front:['tisch','blatt','dose','sr','sg','sb','boris'],
+  st:{efm:'happy',efa:'dn',bom:'happy',bl:'sun rbw'},
+  enter(){ TB.sc.a.pts=MALDOG.map(([x,y])=>malOn(x,y)); TB.els.boris.classList.add('flip');
+    talk('hexe','Boris, du','sagte Ehfje'); onPh('Boris, du',()=>{ mood('hexe','happy'); efArm('up'); famWag(1); });
+    onPh('ganz still',()=>{ famWag(0); mood('boris','smile'); sqs(TB.els.boris); }); onPh('Nase hoch',()=>{ const B=TB.els.boris; try{ B.querySelector('.bb').animate([{transform:'none'},{transform:'rotate(-6deg) translateY(-3%)'}],{duration:500,fill:'forwards'}); }catch(e){} });
+    onPh('Mal Boris',()=>{ malHand('o'); efArm('fwd'); mood('hexe','smile'); }); },
+  ready(){ efReady(); malHand('o'); efArm('fwd'); },
+  a:{t:'dots',pts:[[50,50]],sz:4.4,r:9,w:'HUND'},
+  h:'Fahr mit dem Finger von Stern zu Stern!',
+  s:'Boris, du kommst auch auf mein Bild! sagte Ehfje. Und Boris setzte sich ganz still hin und hielt die Nase hoch. Mal Boris, von Stern zu Stern!',
+  dotStep(k){ if(k===4) mood('hexe','happy'); },
+  done(){ malSheet('dog'); TB.dst&&TB.dst.forEach(s=>{ s.style.transition='opacity .6s'; s.style.opacity=0; }); if(TB.dsv){ TB.dsv.style.transition='opacity .8s'; TB.dsv.style.opacity=0; }
+    const B=TB.els.blatt, [x,y]=relEl(B,[190/400,214/280]); glitterBurst(x,y,20,14); mood('hexe','laugh'); efArm('up'); malHand(null); },
+  d:[()=>{ onPh('bellte',()=>{ const B=TB.els.boris; mood('boris','happy'); famWoof(ctr(B)[0]); bubble('wuff, wuff!',...famNose(),3.8,'#fff0d8'); setTimeout(()=>famWoof(ctr(B)[0]),320); },'d1');
+       onPh('wedelte',()=>{ famWag(1); sqs(TB.els.boris); },'d1'); onPh('Ehfje lachte',()=>{ mood('hexe','laugh'); hearts(...ctr(TB.els.hexe),3); },'d1'); },
+     'Da ist ja Boris, mit Schlappohren und Wedelschwanz! Boris bellte sein Bild an: Wuff, wuff! Und vor Freude wedelte er ganz wild mit dem Schwanz. Ehfje lachte.', 800]},
+
+ /* 4 – Boris' tail bumps the table, the crayons roll: catch the blue one (catch); the red one rolls into the hall unseen */
+ {set:'malkueche', dark:0, u:[70,27,10], ef:[17,60,40,'st'], boris:[88,82,23,'flip famwag'],
+  p:[['tisch','EIKTISCH',50,93,150],['blatt','MALBLATT',56,60,72],['dose','MALDOSE',90,67,13],['sr','MALSTIFTR',27,79,9],['sg','MALSTIFTG',33,82,9],['sb','MALSTIFTB',80,80,10]],
+  front:['tisch','blatt','dose','sr','sg','sb','boris'],
+  st:{efm:'happy',efa:'dn',bom:'happy',bl:'sun rbw dog'},
+  enter(){ onPh('so doll',()=>{ famWag(1); }); onPh('Rums',()=>{ malBump(ctr(TB.els.tisch)[0]); wiggle(TB.els.tisch); wiggle(TB.els.dose); mood('hexe','oh'); mood('boris','oh'); sqs(TB.els.blatt); });
+    onPh('kullerten',()=>{ ['sr','sg'].forEach((id,i)=>{ const s=TB.els[id]; kiPath(s,[[parseFloat(s.style.left)-2-i*2,parseFloat(s.style.top)+1]],700); }); const S=TB.els.sb; wiggle(S); malRoll(ctr(S)[0],8); });
+    onPh('Schnell',()=>{ famWag(0); mood('hexe','worry'); }); },
+  ready(){ efReady(); mood('hexe','oh'); famWag(0); },
+  a:{t:'catch',id:'sb',path:[[80,80],[70,82.5],[60,84],[50,84],[40,85],[32,88],[26,95]],spd:.7,roll:160,w:'STIFT'},
+  h:'Tipp auf den Stift, dann hast du ihn!',
+  s:'Boris wedelte so doll, dass sein Schwanz an den Tisch stieß. Rums! Die Stifte kullerten durcheinander und rollten über den Tisch. Schnell, fang den blauen Stift!',
+  item(){ malRoll(innerWidth/2,2); },
+  done(){ mood('hexe','laugh'); mood('boris','happy'); },
+  d:[()=>{ onPh('zurück in die Dose',()=>{ const S=TB.els.sb, D=TB.els.dose, [dx,dy]=eikAt(D,.5,.2); S.style.rotate='-80deg'; kiPath(S,[[(parseFloat(S.style.left)+dx)/2,dy-14],[dx,dy]],900,()=>{ S.style.opacity=0; sqs(D); chimeAt([988],ctr(D)[0]); }); },'d1');
+       onPh('Aber den roten',()=>{ mood('hexe','smile'); const R=TB.els.sr; R.classList.add('g2hint'); },'d1');
+       onPh('leise, leise',()=>{ const R=TB.els.sr; R.classList.remove('g2hint'); malRoll(ctr(R)[0],12); R.style.transition='none';
+         try{ R.animate([{rotate:'0deg'},{rotate:'-720deg'}],{duration:2600,easing:'linear',fill:'forwards'}); }catch(e){} kiPath(R,[[16,86],[10,95],[-10,95]],2600); },'d1'); },
+     'Gefangen! Ehfje legte den blauen Stift zurück in die Dose. Aber den roten Stift hatte niemand gesehen. Der rollte leise, leise vom Tisch und hinaus in den Flur.',
+     ()=>{ talk('hexe','Fertig','rief Ehfje','d2'); talk('hexe','Das muss',null,'d2'); onPh('Fertig',()=>{ mood('hexe','laugh'); efArm('up'); const B=TB.els.blatt; sqs(B); },'d2');
+       onPh('Das muss',()=>{ mood('hexe','happy'); },'d2');
+       onPh('lief sie los',()=>{ const B=TB.els.blatt, E=TB.els.hexe; B.style.transition='none'; kiPath(B,[[30,48,.5],[-30,52,.4]],1400); kiPath(E,[[-20,50]],1400); },'d2'); },
+     'Fertig! rief Ehfje und hielt ihr Bild hoch. Das muss ich sofort Mama zeigen! Und schon lief sie los.', 900]},
+
+ /* 5 – in the hall she steps on the red crayon and falls: her knee hurts, she cries; her spell only makes sparks.
+       Help her limp to Mama (trace); Mama hugs her */
+ {set:'malflur', dark:0, u:[7,64,15], ef:[-10,58,30,'st'], mama:[85,57,24],
+  p:[['tuer','MALTUER',86,51,30],['sr','MALSTIFTR',44,81,7],['bl2','MALBLATT',30,84,13]],
+  front:['sr'],
+  st:{efm:'happy',efa:'up',mam:'oh',maa:'dn',kn:0,pf:0,bl:'sun rbw dog'},
+  enter(){ const E=TB.els.hexe, M=TB.els.mama, P=TB.els.bl2; M.style.opacity=0; P.style.opacity=0;
+    onPh('rannte durch',()=>{ kiPath(E,[[20,56],[34,58]],1800); E.classList.add('wob'); });
+    onPh('Da lag',()=>{ const R=TB.els.sr; R.classList.add('g2hint'); bLater(()=>R.classList.remove('g2hint'),1600); });
+    onPh('trat darauf',()=>{ E.classList.remove('wob'); const R=TB.els.sr; malRoll(ctr(R)[0],4); kiPath(R,[[54,82]],500); kiPath(E,[[39,57]],420); mood('hexe','oh');
+      try{ E.querySelector('.bb').animate([{transform:'none'},{transform:'rotate(14deg)'},{transform:'rotate(-10deg) translateY(4%)'}],{duration:700,easing:'ease-in'}); }catch(e){} });
+    onPh('plumps',()=>{ E.classList.add('sitb','malsit'); malBump(ctr(E)[0]); sqs(E); fxBurst(...relEl(E.querySelector('.bb'),[.6,.9]),10,['rgba(255,255,255,.9)']);
+      const B=TB.els.bl2; B.style.opacity=1; kiPath(B,[[30,84]],10); });
+    onPh('Autsch',()=>{ E.classList.add('malkn'); TST.kn=1; mood('hexe','cry'); malTears(true); efArm('dn'); bubble('autsch!',...relEl(E.querySelector('.bb'),[.5,.12]),4,'#ffe0e0'); });
+    onPh('hob sie ihren',()=>{ mood('hexe','worry'); efArm('up'); }); onPh('Kribbel',()=>efSpell(10)); talk('hexe','Kribbel','Aber es');
+    onPh('nur ein paar',()=>{ const [x,y]=efFinger(), u=vu(); for(let i=0;i<4;i++) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*10*u,vy:-(4+Math.random()*4)*u,life:.5,s:.5,c:rnd(GLCOL)}); mood('hexe','cry'); efArm('dn'); });
+    onPh('Mama! rief',()=>{ bubble('Mama!',...relEl(E.querySelector('.bb'),[.5,.1]),4.4,'#ffe8f0'); M.style.transition='opacity .6s'; M.style.opacity=1; famArm('mama','up'); mood('mama','oh'); });
+    onPh('Hilf Ehfje',()=>{ famArm('mama','hug'); }); },
+  ready(){ efReady(); const E=TB.els.hexe, M=TB.els.mama; E.getAnimations().forEach(a=>a.cancel()); E.style.left='39%'; E.style.top='57%'; E.classList.remove('wob','sitb','malsit');
+    E.classList.add('malkn','mallimp'); TST.kn=1; mood('hexe','cry'); malTears(true); efArm('dn'); M.style.opacity=1; famArm('mama','hug'); mood('mama','oh');
+    const R=TB.els.sr; R.getAnimations().forEach(a=>a.cancel()); R.style.left='54%'; R.style.top='82%'; TB.els.bl2.style.opacity=1;
+    const off=(151/160-.5)*E.offsetHeight/TB.W.offsetHeight*100;
+    g2loop(dt=>{ if(!TB.S) return; const p=TB.S[Math.max(0,TB.k-1)], x=parseFloat(E.style.left), y=parseFloat(E.style.top), tx=Math.max(39,p[0]-3), ty=p[1]-off;
+      E.style.left=(x+(tx-x)*Math.min(1,dt*3)).toFixed(2)+'%'; E.style.top=(y+(ty-y)*Math.min(1,dt*3)).toFixed(2)+'%'; }); },
+  a:{t:'trace',path:[[44,77],[54,79],[64,79],[73,77]],w:'MAMA'},
+  h:'Fahr mit dem Finger den Weg entlang bis zu Mama!',
+  s:'Ehfje rannte durch den Flur, so schnell sie konnte. Da lag der rote Stift auf dem Boden. Ehfje trat darauf, rutschte aus, und plumps! fiel sie hin. Autsch! Ihr Knie tat weh, und Ehfje fing an zu weinen. Schniefend hob sie ihren Finger: Kribbel, krabbel, Funkelschein – Knie, sollst wieder heile sein! Aber es kamen nur ein paar kleine Fünkchen. Mama! rief Ehfje. Hilf Ehfje zu Mama!',
+  done(){ const E=TB.els.hexe; E.classList.remove('mallimp'); kiPath(E,[[76,59]],600); efArm('hug'); },
+  d:[()=>{ talk('mama','Oh, mein','sagte Mama','d1'); talk('mama','Hast du',null,'d1'); onPh('nahm Ehfje',()=>{ famArm('mama','hug'); const [x,y]=ctr(TB.els.mama); hearts(x,y,4); chimeAt([523,659,784],x); },'d1');
+       onPh('Oh, mein',()=>{ mood('mama','smile'); },'d1'); },
+     'Mama nahm Ehfje ganz fest in den Arm. Oh, mein Schatz, sagte Mama. Hast du dir wehgetan?',
+     ()=>{ onPh('schniefte',()=>{ mood('hexe','worry'); malTears(false); },'d2'); onPh('Da',()=>{ efArm('fwd'); const [x,y]=malKnee(); fxBurst(x,y,8,['rgba(255,150,170,.9)']); bubble('da!',x,y-vu()*8,3.4,'#ffe0e0'); },'d2'); },
+     'Ehfje schniefte und zeigte auf ihr Knie. Da!', 700]},
+
+ /* 6 – on the sofa: Mama blows on the knee, "Heile, heile Segen"; pull the star plaster onto the knee and smooth it (kleben) */
+ {set:'malwohn', dark:0, u:[21,33,10], ef:[41,56,58,'st'], mama:[74,47,37], jn:[11,84,15],
+  p:[['matte','MALMATTE',11,92,30],['sofa','MALSOFA',44,71,96],['pdose','MALPFLDOSE',86,87,14],['pfl','MALPFL',86,79,10]],
+  front:['pdose','pfl'],
+  st:{efm:'cry',efa:'dn',mam:'smile',maa:'dn',jam:'smile',kn:1,pf:0,pfw:0},
+  enter(){ const E=TB.els.hexe; TB.els.sofa.after(E); malTears(true);
+    talk('mama','Nur ein','sagte Mama'); talk('mama','Heile, heile','Und dann'); onPh('schaute sich',()=>{ famArm('mama','hold'); mood('mama','oh'); });
+    onPh('Nur ein',()=>{ mood('mama','smile'); }); onPh('pustete',()=>{ const [x,y]=malKnee(); malBlow(x); for(let i=0;i<10;i++) bLater(()=>fxAdd({k:'spark',x:x+vu()*8,y:y-vu()*2,vx:-(14+Math.random()*12)*vu(),vy:(Math.random()-.5)*6*vu(),life:.7,s:.7,c:'rgba(255,255,255,.95)'}),i*60); mood('hexe','worry'); malTears(false); });
+    onPh('Heile, heile',()=>{ mood('mama','happy'); famArm('mama','up'); [0,1,2].forEach(i=>bLater(()=>{ const [x,y]=ctr(TB.els.mama); glitterBurst(x,y-vu()*16,6,10); },i*700)); });
+    onPh('Pflaster mit',()=>{ famArm('mama','dn'); const P=TB.els.pfl; wiggle(P); P.classList.add('g2hint'); bLater(()=>P.classList.remove('g2hint'),1600); mood('hexe','oh'); }); },
+  ready(){ efReady(); mood('hexe','worry'); malTears(false); famArm('mama','dn'); mood('mama','smile'); },
+  a:{t:'kleben',id:'pfl',n:3,w:'PFLASTER'},
+  h:'Schieb das Pflaster auf das Knie und streich darüber!',
+  s:'Mama setzte Ehfje aufs Sofa und schaute sich das Knie genau an. Nur ein kleiner Kratzer, sagte Mama. Sie pustete ganz sanft darauf und sang: Heile, heile Segen, drei Tage Regen, drei Tage Schnee, dann tut es nicht mehr weh! Und dann holte sie ein Pflaster mit kleinen Sternen. Kleb das Pflaster auf Ehfjes Knie und streich es glatt!',
+  stuck(){ mood('hexe','oh'); },
+  smoothed(k){ if(k>=2) mood('hexe','smile'); },
+  done(){ mood('hexe','smile'); mood('mama','happy'); },
+  d:[()=>{ onPh('lächelte sie',()=>{ mood('hexe','happy'); const [x,y]=ctr(TB.els.hexe); hearts(x,y-vu()*10,3); },'d1');
+       onPh('Janneke gluckste',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); famGiggle(ctr(J)[0],6); sqs(J); },'d1'); },
+     'Das Sternenpflaster klebte ganz fest. Ehfje schniefte noch einmal, und dann lächelte sie wieder. Janneke gluckste auf ihrer Decke.',
+     ()=>{ talk('hexe','Mama','sagte Ehfje','d2'); talk('hexe','mein Zauber','Mama gab','d2'); talk('mama','Manchmal',null,'d2');
+       onPh('mein Zauber',()=>{ mood('hexe','worry'); },'d2'); onPh('Aber du',()=>{ mood('hexe','happy'); efArm('hug'); },'d2');
+       onPh('Kuss',()=>{ famArm('mama','hug'); mood('mama','happy'); const [x,y]=ctr(TB.els.hexe); hearts(x,y-vu()*14,5); chimeAt([784,988,1318],x); },'d2'); },
+     'Mama, sagte Ehfje leise, mein Zauber hat nicht geholfen. Aber du! Mama gab ihr einen dicken Kuss. Manchmal braucht auch eine kleine Hexe ihre Mama.', 800]},
+
+ /* 7 – the sun comes out, a real rainbow outside; with the red crayon Ehfje paints a heart (paint); the picture goes on the fridge */
+ {set:'malsonne', dark:0, u:[70,27,10], ef:[21,60,38,'st'], mama:[75,51,24], boris:[62,91,18,'lie'], jn:'stuhl', stuhl:[6,64,16],
+  p:[['tisch','EIKTISCH',46,93,140],['fridge','EIKFRIDGE',91,52,28],['blatt','MALBLATT',46,61,62],['hz','MALHERZ',24,22,19,'','blatt'],['sr','MALSTIFTR',-8,60,8]],
+  front:['tisch','blatt','boris','sr'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',jam:'smile',bom:'sleepy',kn:1,pf:1,pfw:0,bl:'sun rbw dog',hop:''},
+  enter(){ onPh('schien die Sonne',()=>{ const R=TB.els.room; chime([784,988,1175]); fxBurst(innerWidth*.72,innerHeight*.3,18,['rgba(255,240,160,.95)']); });
+    onPh('echter Regenbogen',()=>{ mood('hexe','oh'); mood('janneke','oh'); });
+    onPh('holte den roten',()=>{ const R=TB.els.sr, [hx,hy]=eikAt(TB.els.hexe,.76,.6); R.style.rotate='-70deg'; kiPath(R,[[10,40],[hx,hy]],1300,()=>{ R.style.opacity=0; malHand('r'); efArm('fwd'); mood('hexe','happy'); }); });
+    talk('hexe','Mit dir','sagte sie'); onPh('Mit dir',()=>{ mood('hexe','happy'); }); onPh('Mal ein großes',()=>{ mood('mama','happy'); }); },
+  ready(){ efReady(); TB.els.sr.style.opacity=0; malHand('r'); efArm('fwd'); mood('hexe','smile'); },
+  a:{t:'paint',id:'hz',grey:'MALHERZG',box:[.5,.52,.4,.44],pct:.6,r:6,w:'HERZ'},
+  h:'Wisch mit dem Finger über das Herz, dann wird es rot!',
+  s:'Da schien die Sonne durchs Küchenfenster. Der Regen war vorbei, und draußen stand ein echter Regenbogen, genau wie auf Ehfjes Bild! Ehfje holte den roten Stift aus dem Flur. Mit dir male ich jetzt etwas Schönes, sagte sie. Mal ein großes rotes Herz für Mama!',
+  painting(p){ if(p>.3) mood('hexe','happy'); },
+  done(){ mood('hexe','laugh'); malHand(null); efArm('up'); mood('mama','happy'); },
+  d:[()=>{ talk('hexe','Das Bild','sagte Ehfje','d1'); talk('mama','Das ist das',null,'d1'); onPh('Das Bild',()=>{ efArm('up'); mood('hexe','happy'); sqs(TB.els.blatt); },'d1');
+       onPh('hängte es',()=>{ const B=TB.els.blatt, F=TB.els.fridge, [fx,fy]=eikAt(F,.5,.62), C=el('div','tp2 malfr',malBlattSVG(['sun','rbw','dog','hz'])); C.style.cssText=B.style.cssText; TB.act.appendChild(C); TB.els.bild=C;
+         B.style.opacity=0; famArm('mama','up'); malFly(C,fx,fy,19,1500,()=>{ const M=el('i','malmag'); C.appendChild(M); sqs(C); chimeAt([988,1318],ctr(C)[0]); famArm('mama','dn'); }); },'d1');
+       onPh('Das ist das',()=>{ mood('mama','happy'); const C=TB.els.bild; if(C) glitterBurst(...ctr(C),14,12); },'d1'); },
+     'Das Bild ist für dich, Mama! sagte Ehfje. Mama hängte es an den Kühlschrank, genau in die Mitte. Das ist das schönste Bild der Welt, sagte Mama.',
+     ()=>{ onPh('kuschelte',()=>{ const E=TB.els.hexe; kiPath(E,[[58,51]],900,()=>{ efArm('hug'); famArm('mama','hug'); const [x,y]=ctr(E); hearts(x+vu()*6,y-vu()*8,5); }); },'d2');
+       onPh('gar nicht mehr',()=>{ const [x,y]=malKnee(); glitterBurst(x,y,10,8); chimeAt([1318],x); },'d2'); },
+     'Ehfje kuschelte sich an Mama, und ihr Knie tat gar nicht mehr weh.',
+     ()=>{ onPh('noch heute',()=>{ const C=TB.els.bild||TB.els.blatt, [x,y]=ctr(C); glitterBurst(x,y,18,16); chimeAt([1318,1568,2093],x); mood('janneke','laugh'); },'d3'); },
+     'Und wenn sie nicht aufgehört haben, dann malen sie noch heute.', 1600]}
+ ]};
+/*<MALEN*/
+
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -12064,7 +12535,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -12111,6 +12582,10 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr eikwg h-ban h-apf h-milch h-ei h-hon" style="left:56%;top:66%;width:66%"><div class="bb">${eikWagenSVG()}<div class="tp2 chr famjn kid" data-mood="laugh" style="left:28%;top:14%;width:27%"><div class="bb">${jannekeSVG()}</div></div><div class="kid eikwv">${eikWagenVSVG()}</div></div></div>`+
     `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:20%;top:60%;width:36%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2" style="left:80%;top:18%;width:14%;rotate:12deg">${eikHonigSVG()}</div></div>`+tw;/*<EIKART*/
+  if(id==='malen') return `<div class="malart" style="position:absolute;inset:0">`+
+    `<div class="tp2" style="left:60%;top:38%;width:62%;rotate:-4deg;filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.2))">${malBlattSVG(['sun','rbw','dog','hz'])}</div>`+
+    `<div class="tp2 chr eef malpf" data-mood="happy" data-arm="up" style="left:26%;top:64%;width:46%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2" style="left:80%;top:80%;width:17%">${malDoseSVG()}</div></div>`+tw;/*<MALART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -12378,6 +12853,8 @@ regTale2(KIKI2);
 regTale2(FAM2);
 /* Eefje und der große Einkauf: after the picnic, so the older lines keep their order in voice/clips.tsv */
 regTale2(EINK2);
+/* Eefje und die Wachsmalstifte: after the shopping trip, so the older lines keep their order in voice/clips.tsv */
+regTale2(MAL2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
