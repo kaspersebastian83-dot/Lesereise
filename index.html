@@ -1604,6 +1604,57 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .famheim .famp>.bb,.famheim .eef>.bb,.famheim .famdog>.bb{animation:none}
 .famart .famp>.bb,.famart .eef>.bb,.famart .famdog>.bb,.famart .famjn>.bb{animation:none}
 /*<FAMILIECSS*/
+/*EINKAUFCSS>*/
+/* Eefje und der große Einkauf (all classes start with "eik") */
+.eikroom{position:absolute;inset:-3% -4%;pointer-events:none} .eikroom svg{display:block;width:100%;height:100%}
+.tp2.eikwg,.tp2.eikauto,.tp2.eikst{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.2))}
+.eikwg svg,.eikst svg,.eikauto svg,.eikkt svg,.eikwv svg,.eiktab svg,.eikfork svg,.eiklf svg,.eikbon svg,.eikwu svg{display:block;width:100%;overflow:visible}
+.eikwg>.bb,.eikst>.bb{position:relative}
+.eikwg .eikwi>g{opacity:0;transition:opacity .4s} .eikwg.h-ban .eikw-ban,.eikwg.h-apf .eikw-apf,.eikwg.h-milch .eikw-milch,.eikwg.h-ei .eikw-ei,.eikwg.h-hon .eikw-hon{opacity:1}
+.eikwv{position:absolute;inset:0;pointer-events:none}
+.eikkt .eike{opacity:0;transition:opacity .3s} .eikkt .eike.in{opacity:1}
+/* the shopping list */
+.tp2 .eikzp,.tp2 .eikbz{opacity:0;transition:opacity .8s} .eikzshow .eikzp{opacity:1} .eikban .eikbz{opacity:1}
+/* the car */
+.eikab{position:relative} .eikab>svg{display:block;width:100%}
+.eikin,.eikgl{position:absolute;left:16%;top:19.33%;width:68%;height:30.67%;clip-path:polygon(11.76% 0,88.24% 0,100% 100%,0 100%);overflow:hidden}
+.eikin{background:linear-gradient(180deg,#4a5262,#2e3240)}
+.eikgl{pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 38%,rgba(255,255,255,.12) 62%,rgba(255,255,255,0) 80%)}
+.eikfog{position:absolute;inset:0;background:rgba(200,214,228,.9);opacity:calc(var(--fog,1)*.72);transition:opacity .5s}
+.eikdr{position:absolute;width:calc(1.3vh*var(--ds,1));height:calc(1.7vh*var(--ds,1));border-radius:50% 50% 50% 50%/40% 40% 60% 60%;translate:-50% -50%;
+  background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.95) 0 18%,rgba(190,215,240,.55) 40%,rgba(120,150,190,.35) 100%);box-shadow:0 .15vh .3vh rgba(40,60,90,.35);transition:opacity .35s,scale .35s;animation:eikdr .5s ease-out}
+.eikdr.gone{opacity:0;scale:.3} @keyframes eikdr{from{scale:.2;opacity:0}}
+.eikdry .eikdr{opacity:0}
+.eikwp{position:absolute;inset:0;pointer-events:none} .eikwp svg{width:100%;height:auto}
+.eikauto .eikwb{transform:rotate(var(--wa,0deg))}
+.eikin .chr{filter:none} .eiklenk{position:absolute;left:62%;width:30%;bottom:-4%;translate:-50% 0} .eiklenk svg{display:block;width:100%}
+.eikin .eiksitz svg{display:block;width:100%}
+.eikauto .eikhl circle:first-child{filter:drop-shadow(0 0 1.4vh #fff6b0)}
+/* the fruit stand tumbles */
+.eikobst,.tp2.eiktumble .eikap{transform-box:fill-box;transform-origin:center}
+.tp2.eiktumble .eikap:nth-child(3n){animation:eiktb .6s ease-out both} .tp2.eiktumble .eikap:nth-child(3n+1){animation:eiktb2 .7s ease-out both}
+@keyframes eiktb{0%{transform:none}60%{transform:translate(6px,10px) rotate(40deg)}100%{transform:translate(5px,8px) rotate(30deg)}}
+@keyframes eiktb2{0%{transform:none}60%{transform:translate(-7px,9px) rotate(-50deg)}100%{transform:translate(-6px,7px) rotate(-40deg)}}
+/* the careful eggs */
+.tp2.eikwob{animation:eikwob .22s ease-in-out infinite} @keyframes eikwob{0%,100%{rotate:-12deg}50%{rotate:12deg}}
+/* the checkout */
+.eikkasse .eikbelt{animation:none} .tp2.eikrun .eikbelt{animation:eikbelt .8s linear infinite} @keyframes eikbelt{to{transform:translateX(10px)}}
+.tp2 .eikscan{transition:fill .15s} .tp2.eikbeep .eikscan{fill:#ff3a3a;filter:drop-shadow(0 0 6px #ff4a4a)} .tp2.eikbeep .eikscr{fill:#e8ffd0}
+.tp2.eikszone{width:7vh;height:3vh;border-radius:1vh;pointer-events:none}
+.tp2.eikbon{animation:eikbon .9s ease-out} @keyframes eikbon{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+/* the plate: the banana becomes mash */
+.eiktl .eikb0,.eiktl .eikb1,.eiktl .eikb2{transform-box:fill-box;transform-origin:50% 100%;transition:opacity .3s,transform .3s}
+.eiktl .eikb1,.eiktl .eikb2{opacity:0}
+.eiktl[data-s="1"] .eikb0{transform:scale(1.06,.62)} .eiktl[data-s="1"] .eikb1{opacity:.6}
+.eiktl[data-s="2"] .eikb0{opacity:0} .eiktl[data-s="2"] .eikb1{opacity:1}
+.eiktl[data-s="3"] .eikb0,.eiktl[data-s="3"] .eikb1{opacity:0} .eiktl[data-s="3"] .eikb2{opacity:1}
+.tp2.eikfork{width:3.4vh;pointer-events:none;z-index:5}
+.tp2.eiklf,.tp2.eikwu{filter:drop-shadow(0 .3vh .5vh rgba(0,0,0,.2))}
+.eiktab{pointer-events:none}
+/* book page */
+.eikart .famjn,.eikart .eikwg{position:absolute}
+
+/*<EINKAUFCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -11130,7 +11181,7 @@ Object.assign(SETS2,{
 });
 
 /* ---------- sounds: Boris (woof, sniff), water, the baby's giggle, a lullaby ---------- */
-const famLate=()=>!tale||tale.t!==FAM2||!taleOn();
+const famLate=()=>!tale||!tale.t||!tale.t.fam||!taleOn();
 function famNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||famLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
   const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.4; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
   const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.03,d*.2)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
@@ -11258,7 +11309,7 @@ Object.assign(G2,{
    On the family hike Janneke watches everything: she gurgles at Boris, cries for her bunny, and at the lake she laughs her first big
    laugh – at her big sister. At sunset Ehfje is the one who sings her to sleep. Mama's "Warte nur ab" (scene 1) pays off in scene 6. */
 const FDUR2={};
-const FAM2={id:'picknick', v2:true, eef:1, dur:FDUR2, title:'Eefje und das große Picknick', vtitle:'Ehfje und das große Picknick', icon:'🧺',
+const FAM2={id:'picknick', v2:true, eef:1, fam:1, dur:FDUR2, title:'Eefje und das große Picknick', vtitle:'Ehfje und das große Picknick', icon:'🧺',
  cover:'linear-gradient(180deg,#5aaeee 0%,#9ad2f6 45%,#c8ecb0 75%,#7ec46a 100%)',
  cast(sc){ const A=TB.act;
   if(sc.see) TB.els.see=famBand(famSeeSVG(),sc.see[0],sc.see[1],sc.see[2]);
@@ -11437,6 +11488,558 @@ const FAM2={id:'picknick', v2:true, eef:1, dur:FDUR2, title:'Eefje und das groß
      'Und wenn sie nicht aufgewacht ist, dann schläft sie noch heute.', 1600]}
  ]};
 /*<FAMILIE*/
+/*EINKAUF>*/
+/* ---------- drawn props (all classes start with "eik") ---------- */
+/* kitchen table seen from the front, with a checked cloth. viewBox 0 0 400 150 */
+function eikTischSVG(){ const id='et'+(++LANC);
+  return `<svg viewBox="0 0 400 150" style="overflow:visible"><defs><pattern id="${id}" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="#fff6f0"/><rect width="12" height="12" fill="#f4a8b0" opacity=".75"/><rect x="12" y="12" width="12" height="12" fill="#f4a8b0" opacity=".75"/></pattern></defs>
+  <ellipse cx="200" cy="146" rx="190" ry="7" fill="rgba(0,0,0,.14)"/>
+  <path d="M40 60 L40 146 M360 60 L360 146" stroke="#8a5a2e" stroke-width="14" stroke-linecap="round"/>
+  <path d="M30 20 L370 20 L392 58 L8 58Z" fill="url(#${id})" stroke="#c8707a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M8 58 L392 58 L388 92 Q200 104 12 92Z" fill="url(#${id})" stroke="#c8707a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M12 92 Q200 104 388 92" stroke="#e8889a" stroke-width="4" fill="none"/>
+  <path d="M30 20 L370 20" stroke="#fff" stroke-width="2" opacity=".7"/></svg>`; }
+
+/* the shopping list on the table: Mama's handwriting and Ehfje's pictures; the banana (.eikbz) is drawn by the dots. viewBox 0 0 200 240 */
+function eikZettelSVG(){
+  return `<svg viewBox="0 0 200 240" style="overflow:visible">
+  <path d="M10 8 L190 4 L194 232 L6 236Z" fill="#fffdf4" stroke="#c8b898" stroke-width="2.4" stroke-linejoin="round"/>
+  <g stroke="#bcd4f0" stroke-width="1.4">${[40,70,100,130,160,190,220].map(y=>`<path d="M12 ${y} L190 ${y-2}"/>`).join('')}</g>
+  <path d="M26 6 V234" stroke="#f4a8b0" stroke-width="1.6"/>
+  <g fill="none" stroke="#3a4a8a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M36 32 q4 -10 8 0 q4 -10 8 0 q3 -6 7 -2 M66 32 q3 -8 6 0 q4 -6 8 0"/><path d="M36 62 q5 -9 9 0 q3 -7 7 0 M60 62 q4 -8 8 0 q5 -8 9 0 q3 -5 6 0"/>
+   <path d="M36 92 q4 -9 8 0 q5 -8 9 0 M62 92 q3 -7 7 0 q4 -9 8 0"/><path d="M36 122 q4 -8 8 0 q3 -6 7 0 q5 -9 9 0"/></g>
+  <g class="eikzp">
+   <g transform="translate(140 26) rotate(-6)"><circle r="13" fill="#ff6a6a" stroke="#c82a2a" stroke-width="2.6"/><path d="M0 -13 q2 -7 7 -8" stroke="#6a4a1a" stroke-width="2.4" fill="none"/><path d="M3 -14 q8 -6 12 0 q-6 4 -12 0Z" fill="#5ac84a"/></g>
+   <g transform="translate(108 60) rotate(8)"><ellipse rx="10" ry="13" fill="#fff" stroke="#c8a87a" stroke-width="2.6"/><ellipse cx="-3" cy="-4" rx="2.4" ry="4" fill="#fff" stroke="#e8d8c0" stroke-width="1.4"/></g>
+   <g transform="translate(160 84) rotate(-4)"><path d="M-10 -14 L10 -14 L12 16 L-12 16Z" fill="#8ac4ff" stroke="#3a6ab8" stroke-width="2.6" stroke-linejoin="round"/><path d="M-10 -14 L0 -24 L10 -14" fill="#fff" stroke="#3a6ab8" stroke-width="2.6" stroke-linejoin="round"/><path d="M-5 2 h10" stroke="#fff" stroke-width="3"/></g>
+   <g transform="translate(112 124) rotate(5)"><path d="M-11 -10 Q-14 14 0 15 Q14 14 11 -10Z" fill="#ffc83a" stroke="#c8861a" stroke-width="2.6"/><rect x="-12" y="-17" width="24" height="7" rx="2" fill="#e8783a" stroke="#a8461a" stroke-width="2"/></g></g>
+  <g class="eikbz"><path d="M40 160 Q52 214 108 222 Q160 222 176 164 Q160 200 110 202 Q66 198 52 158Z" fill="#ffe24a" stroke="#d09a1a" stroke-width="3.2" stroke-linejoin="round"/>
+   <path d="M62 196 Q110 214 160 188" stroke="#f4b82a" stroke-width="2.6" fill="none"/><path d="M40 160 l-6 -10" stroke="#6a4a1a" stroke-width="5" stroke-linecap="round"/><circle cx="176" cy="164" r="3.4" fill="#6a4a1a"/>
+   <path d="M150 142 l6 -6 l4 6 l6 -4" stroke="#ff7aa8" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>`; }
+/* where the dots of the banana sit on the list (fractions of the list box), in drawing order */
+const EIKBANPTS=[[.22,.67],[.32,.84],[.54,.92],[.78,.85],[.88,.68],[.66,.82],[.42,.81]];
+
+/* a high chair (Hochstuhl) seen from the front; Janneke sits in it. viewBox 0 0 120 200 */
+function eikStuhlSVG(){
+  return `<svg viewBox="0 0 120 200" style="overflow:visible"><ellipse cx="60" cy="196" rx="46" ry="5" fill="rgba(0,0,0,.14)"/>
+  <path d="M30 96 L14 194 M90 96 L106 194 M24 150 L96 150" stroke="#e8a85a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M28 20 Q60 6 92 20 L94 100 L26 100Z" fill="#ffd27a" stroke="#c8862a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M38 30 Q60 22 82 30 L82 90 L38 90Z" fill="#fff0c8" opacity=".7"/></svg>`; }
+/* the tray of the high chair, in front of Janneke. viewBox 0 0 140 40 */
+function eikTablettSVG(){ return `<svg viewBox="0 0 140 40" style="overflow:visible"><path d="M6 10 Q70 0 134 10 L130 30 Q70 40 10 30Z" fill="#ffe2a8" stroke="#c8862a" stroke-width="3" stroke-linejoin="round"/><path d="M14 12 Q70 4 126 12" stroke="#fff" stroke-width="2" fill="none" opacity=".8"/></svg>`; }
+
+/* ---------- the car, seen from the front: body (back), the windscreen opening, the wipers on top. viewBox 0 0 400 300 ---------- */
+const EIKWS=[[96,58],[304,58],[338,152],[62,152]];   // windscreen corners
+function eikAutoSVG(){ const id='ea'+(++LANC);
+  return `<svg viewBox="0 0 400 300" style="overflow:visible"><defs>
+   <linearGradient id="${id}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a5a"/><stop offset=".55" stop-color="#f0603a"/><stop offset="1" stop-color="#c8402a"/></linearGradient>
+   <linearGradient id="${id}i" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a6070"/><stop offset="1" stop-color="#2e3240"/></linearGradient>
+   <radialGradient id="${id}l"><stop offset="0" stop-color="#fffef0"/><stop offset=".6" stop-color="#fff2a8"/><stop offset="1" stop-color="#ffd84a"/></radialGradient></defs>
+  <ellipse cx="200" cy="292" rx="186" ry="9" fill="rgba(0,0,0,.25)"/>
+  <rect x="52" y="250" width="56" height="40" rx="12" fill="#2a2a32"/><rect x="292" y="250" width="56" height="40" rx="12" fill="#2a2a32"/>
+  <path d="M96 58 Q100 30 130 26 L270 26 Q300 30 304 58 L340 150 Q372 156 378 186 L380 244 Q380 262 362 262 L38 262 Q20 262 20 244 L22 186 Q28 156 60 150Z" fill="url(#${id}b)" stroke="#8a2a1a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M${EIKWS.map(p=>p.join(' ')).join(' L')}Z" fill="url(#${id}i)" stroke="#5a1a10" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M120 30 Q200 22 280 30" stroke="#ffc0a0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  <path d="M64 150 Q30 128 40 112 L60 116 Z" fill="#f0603a" stroke="#8a2a1a" stroke-width="3" stroke-linejoin="round"/><path d="M336 150 Q370 128 360 112 L340 116 Z" fill="#f0603a" stroke="#8a2a1a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M60 158 Q200 170 340 158" stroke="#ffb08a" stroke-width="3" fill="none" opacity=".7"/>
+  <g class="eikhl"><circle cx="86" cy="196" r="24" fill="url(#${id}l)" stroke="#8a2a1a" stroke-width="3.4"/><circle cx="314" cy="196" r="24" fill="url(#${id}l)" stroke="#8a2a1a" stroke-width="3.4"/>
+   <circle cx="80" cy="190" r="6" fill="#fff"/><circle cx="308" cy="190" r="6" fill="#fff"/></g>
+  <rect x="140" y="182" width="120" height="34" rx="14" fill="#3a3a44" stroke="#2a1a1a" stroke-width="3"/><g stroke="#6a6a78" stroke-width="3"><path d="M150 192 H250 M150 200 H250 M150 208 H250"/></g>
+  <path d="M120 186 Q112 200 120 214 M280 186 Q288 200 280 214" stroke="#ffb08a" stroke-width="3" fill="none" opacity=".6"/>
+  <rect x="30" y="228" width="340" height="24" rx="10" fill="#d0d4dc" stroke="#6a6e78" stroke-width="3"/>
+  <rect x="162" y="230" width="76" height="20" rx="4" fill="#fffef6" stroke="#6a6e78" stroke-width="2"/><path d="M200 233 l2.6 5.4 l6 .8 l-4.3 4.2 l1 6 l-5.3 -2.8 l-5.3 2.8 l1 -6 l-4.3 -4.2 l6 -.8Z" fill="#ffc83a" stroke="#c8861a" stroke-width="1.4"/></svg>`; }
+/* the wipers: two blades that turn around their pivots at the bottom of the windscreen (CSS var --wa on .eikwp) */
+function eikWischerSVG(){ const id='ew'+(++LANC);
+  const blade=(x,y,L)=>`<g class="eikwb" style="transform-origin:${x}px ${y}px"><path d="M${x} ${y} L${x+L} ${y-3}" stroke="#1e1e26" stroke-width="4.6" stroke-linecap="round"/><path d="M${x+14} ${y-4} L${x+L+2} ${y-7}" stroke="#3a3a46" stroke-width="3.2" stroke-linecap="round"/><circle cx="${x}" cy="${y}" r="5.5" fill="#2a2a32" stroke="#6a6e78" stroke-width="1.6"/></g>`;
+  return `<svg viewBox="0 0 400 300" style="overflow:visible"><defs><clipPath id="${id}"><path d="M90 50 L310 50 L346 156 L54 156Z"/></clipPath></defs>
+  <g clip-path="url(#${id})">${blade(124,148,104)}${blade(236,148,98)}</g></svg>`; }
+
+/* rainy village street far away: little houses with lit windows */
+function eikHouses(seed,n,col,win,base){ const r=seeded(seed), w=1000/n; let s='';
+  for(let i=0;i<n;i++){ const x=i*w+r()*w*.2, hw=w*(.55+r()*.3), h=base*(.55+r()*.5), y=400-h, rh=hw*(.35+r()*.2);
+    s+=`<path d="M${x} 400 V${y} L${x+hw/2} ${y-rh} L${x+hw} ${y} V400Z" fill="${col}"/>`;
+    if(win) for(let k=0;k<2;k++) if(r()>.35) s+=`<rect x="${x+hw*(.2+k*.4)}" y="${y+h*.25}" width="${hw*.2}" height="${hw*.2}" fill="${win}"/>`; }
+  return s; }
+
+/* ---------- the supermarket ---------- */
+/* a shopping cart in side view (handle and child seat on the left). Things she buys show up inside (.eikw-…). viewBox 0 0 300 230 */
+function eikWagenSVG(){
+  const wire=[];
+  for(let x=76;x<=270;x+=16) wire.push(`M${x} 52 L${x-6+((x-76)/194)*10} 150`);
+  return `<svg viewBox="0 0 300 230" style="overflow:visible"><ellipse cx="160" cy="224" rx="124" ry="6" fill="rgba(0,0,0,.16)"/>
+  <path d="M70 150 L84 196 L262 196 L276 150" stroke="#8a96a8" stroke-width="5" fill="none" stroke-linejoin="round"/>
+  <path d="M84 176 H262" stroke="#aab4c4" stroke-width="4"/>
+  <g class="eikwi">
+   <g class="eikw-ban"><path d="M96 54 Q110 26 146 22 Q132 34 128 52Z" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M106 54 Q122 30 154 30 Q138 40 136 54Z" fill="#ffd83a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M146 22 l6 -4" stroke="#6a4a1a" stroke-width="3" stroke-linecap="round"/></g>
+   <g class="eikw-apf"><circle cx="172" cy="44" r="12" fill="#e83a3a" stroke="#9a1a1a" stroke-width="2.2"/><circle cx="192" cy="46" r="11" fill="#ff5a4a" stroke="#9a1a1a" stroke-width="2.2"/><path d="M172 32 q2 -5 6 -6 M192 35 q2 -5 6 -6" stroke="#5a3a1a" stroke-width="2" fill="none"/><ellipse cx="168" cy="40" rx="3" ry="2" fill="#fff" opacity=".5"/></g>
+   <g class="eikw-milch"><path d="M212 54 L212 18 L222 8 L240 8 L240 54Z" fill="#f4faff" stroke="#3a6ab8" stroke-width="2.4" stroke-linejoin="round"/><path d="M212 18 L240 18" stroke="#3a6ab8" stroke-width="2"/><rect x="214" y="28" width="24" height="12" fill="#8ac4ff"/><path d="M218 34 q4 -4 8 0 q4 4 8 0" stroke="#fff" stroke-width="2" fill="none"/></g>
+   <g class="eikw-ei"><rect x="138" y="40" width="52" height="16" rx="5" fill="#d8c09a" stroke="#8a6a3a" stroke-width="2.2"/><g fill="#fffaf0" stroke="#c8a87a" stroke-width="1.6"><ellipse cx="148" cy="38" rx="6" ry="7"/><ellipse cx="164" cy="37" rx="6" ry="7.4"/><ellipse cx="180" cy="38" rx="6" ry="7"/></g></g>
+   <g class="eikw-hon"><path d="M246 30 Q242 56 258 56 Q274 56 270 30Z" fill="#ffb82a" stroke="#b8761a" stroke-width="2.4"/><rect x="244" y="22" width="28" height="9" rx="2.6" fill="#e8783a" stroke="#a8461a" stroke-width="2"/><ellipse cx="258" cy="44" rx="6" ry="5" fill="#fff6c8" opacity=".85"/></g></g>
+  <path d="M60 52 L280 52 L268 150 L76 150Z" fill="rgba(200,215,235,.22)" stroke="#6a7890" stroke-width="5" stroke-linejoin="round"/>
+  <g stroke="#8a98ae" stroke-width="2.4" opacity=".95"><path d="${wire.join(' ')}"/><path d="M63 76 L277 76 M66 100 L274 100 M70 124 L271 124"/></g>
+  <path d="M60 52 L280 52" stroke="#c8d2e2" stroke-width="3"/>
+  <path d="M60 52 L36 40 L28 40" stroke="#6a7890" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="12" y="32" width="26" height="14" rx="6" fill="#e8445a" stroke="#9a2a3a" stroke-width="2.4"/>
+  <circle cx="90" cy="208" r="13" fill="#3a3a44" stroke="#1a1a22" stroke-width="2.4"/><circle cx="90" cy="208" r="4.6" fill="#aab4c4"/>
+  <circle cx="252" cy="208" r="13" fill="#3a3a44" stroke="#1a1a22" stroke-width="2.4"/><circle cx="252" cy="208" r="4.6" fill="#aab4c4"/></svg>`; }
+/* the front of the cart (wires) drawn again over Janneke's legs */
+function eikWagenVSVG(){ return `<svg viewBox="0 0 300 230" style="overflow:visible"><path d="M60 52 L64 76 L110 76 L106 52" fill="rgba(200,215,235,.35)" stroke="#6a7890" stroke-width="4" stroke-linejoin="round"/><g stroke="#8a98ae" stroke-width="2.2"><path d="M76 52 L78 76 M92 52 L94 76"/></g><path d="M58 52 L108 52" stroke="#c8d2e2" stroke-width="3.4"/></svg>`; }
+
+/* the shop backdrop: a long shelf full of colourful things. viewBox 0 0 400 260 */
+function eikRegalSVG(seed){ const r=seeded(seed||5), C=['#ff6a6a','#ffb43a','#ffe25a','#6ad87a','#5ab4ff','#b48aff','#ff8ac8','#fff4e0','#4ac8c0'];
+  let s=''; for(let row=0;row<4;row++){ const y=32+row*58; let x=14; while(x<380){ const w=14+r()*20, h=22+r()*24, c=C[Math.floor(r()*C.length)], k=r();
+      if(k<.25) s+=`<path d="M${x+2} ${y+48} Q${x} ${y+48-h*.5} ${x+w/2-3} ${y+48-h} L${x+w/2+3} ${y+48-h} Q${x+w} ${y+48-h*.5} ${x+w-2} ${y+48}Z" fill="${c}" stroke="rgba(0,0,0,.25)" stroke-width="1.4"/>`;
+      else if(k<.45) s+=`<rect x="${x}" y="${y+48-h*.7}" width="${w}" height="${h*.7}" rx="${w*.4}" fill="${c}" stroke="rgba(0,0,0,.25)" stroke-width="1.4"/><rect x="${x+1}" y="${y+48-h*.7-4}" width="${w-2}" height="5" rx="2" fill="#fff" opacity=".7"/>`;
+      else s+=`<rect x="${x}" y="${y+48-h}" width="${w}" height="${h}" rx="2" fill="${c}" stroke="rgba(0,0,0,.25)" stroke-width="1.4"/><rect x="${x+3}" y="${y+48-h*.7}" width="${w-6}" height="${h*.3}" fill="#fff" opacity=".55"/>`;
+      x+=w+3+r()*4; } }
+  return `<svg viewBox="0 0 400 260" style="overflow:visible"><rect x="4" y="4" width="392" height="252" rx="6" fill="#e6dcd0" stroke="#a8988a" stroke-width="4"/>${s}
+  <g fill="#c8b8a8" stroke="#8a7a6a" stroke-width="2">${[80,138,196,254].map(y=>`<rect x="6" y="${y}" width="388" height="8"/>`).join('')}</g></svg>`; }
+
+/* the fruit stand: wooden crates with apples, bananas, oranges and pears. viewBox 0 0 260 200 */
+function eikObstSVG(){
+  const ap=(x,y,r,c)=>`<g class="eikap"><circle cx="${x}" cy="${y}" r="${r}" fill="${c||'#e83a3a'}" stroke="#9a1a1a" stroke-width="2"/><path d="M${x} ${y-r} q2 -4 5 -5" stroke="#5a3a1a" stroke-width="1.8" fill="none"/><ellipse cx="${x-r*.35}" cy="${y-r*.35}" rx="${r*.28}" ry="${r*.18}" fill="#fff" opacity=".5"/></g>`;
+  const or=(x,y)=>`<circle cx="${x}" cy="${y}" r="10" fill="#ffa02a" stroke="#c8661a" stroke-width="2"/><circle cx="${x-3}" cy="${y-3}" r="2" fill="#fff" opacity=".5"/>`;
+  let apples=''; [[30,102],[52,102],[74,102],[96,102],[41,84],[63,84],[85,84],[52,66],[74,66],[63,48]].forEach(([x,y],i)=>apples+=ap(x,y,11,i%3===1?'#ff5a4a':'#e83a3a'));
+  let ors=''; [[160,112],[182,112],[204,112],[171,95],[193,95],[182,78]].forEach(([x,y])=>ors+=or(x,y));
+  return `<svg viewBox="0 0 260 200" style="overflow:visible"><ellipse cx="130" cy="196" rx="124" ry="6" fill="rgba(0,0,0,.14)"/>
+  <path d="M20 190 L20 150 M240 190 L240 150" stroke="#8a5a2e" stroke-width="8" stroke-linecap="round"/>
+  ${apples}${ors}
+  <g transform="translate(212 42) rotate(14)"><path d="M-30 18 Q-24 -12 10 -16 Q0 -4 -4 18Z" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M-20 20 Q-10 -6 22 -8 Q10 4 8 20Z" fill="#ffd83a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M-10 22 Q2 2 30 2 Q18 12 18 22Z" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><rect x="8" y="-20" width="10" height="8" rx="2" fill="#6a4a1a"/></g>
+  <path d="M10 112 L250 112 L244 152 L16 152Z" fill="#d8a060" stroke="#8a5a2e" stroke-width="3.4" stroke-linejoin="round"/>
+  <g stroke="#a8743a" stroke-width="2" opacity=".8"><path d="M13 125 H247 M14 138 H246"/><path d="M128 113 V152"/></g>
+  <rect x="44" y="120" width="44" height="22" rx="4" fill="#fffdf4" stroke="#8a5a2e" stroke-width="2"/><circle cx="58" cy="131" r="6" fill="#e83a3a"/><path d="M68 131 h12" stroke="#3a4a8a" stroke-width="2.4" stroke-linecap="round"/>
+  <rect x="170" y="120" width="44" height="22" rx="4" fill="#fffdf4" stroke="#8a5a2e" stroke-width="2"/><circle cx="184" cy="131" r="6" fill="#ffa02a"/><path d="M194 131 h12" stroke="#3a4a8a" stroke-width="2.4" stroke-linecap="round"/></svg>`; }
+/* one apple (the one that rolls away), and the bananas Ehfje puts in the cart */
+function eikApfelSVG(){ return `<svg viewBox="0 0 40 40" style="overflow:visible"><circle cx="20" cy="22" r="15" fill="#e83a3a" stroke="#9a1a1a" stroke-width="2.4"/><path d="M20 7 q2 -5 7 -6" stroke="#5a3a1a" stroke-width="2.4" fill="none"/><path d="M22 7 q9 -6 13 1 q-7 4 -13 -1Z" fill="#5ac84a" stroke="#2a8a2a" stroke-width="1.4"/><ellipse cx="14" cy="16" rx="4" ry="2.6" fill="#fff" opacity=".55"/></svg>`; }
+function eikBananenSVG(){ return `<svg viewBox="0 0 60 50" style="overflow:visible"><path d="M8 40 Q14 10 46 6 Q34 18 32 40Z" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 44 Q26 16 56 16 Q44 26 42 44Z" fill="#ffd83a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><rect x="42" y="2" width="9" height="8" rx="2" fill="#6a4a1a"/></svg>`; }
+
+/* the cold shelf (Kühlregal) with milk, yoghurt and cheese behind glass. viewBox 0 0 200 300 */
+function eikKuehlSVG(){ const id='ek'+(++LANC);
+  const milk=(x,y)=>`<path d="M${x} ${y} V${y-30} L${x+7} ${y-38} L${x+21} ${y-38} V${y}Z" fill="#f4faff" stroke="#3a6ab8" stroke-width="2"/><rect x="${x+2}" y="${y-24}" width="17" height="10" fill="#8ac4ff"/>`;
+  const yog=(x,y,c)=>`<path d="M${x} ${y} L${x-2} ${y-18} L${x+18} ${y-18} L${x+16} ${y}Z" fill="#fff" stroke="#a8a8b8" stroke-width="1.6"/><rect x="${x-3}" y="${y-21}" width="22" height="4" rx="1" fill="${c}"/>`;
+  const ch=(x,y)=>`<path d="M${x} ${y} L${x+34} ${y} L${x+34} ${y-14} L${x} ${y-22}Z" fill="#ffd84a" stroke="#c8962a" stroke-width="2"/><circle cx="${x+10}" cy="${y-8}" r="2.4" fill="#e8b82a"/><circle cx="${x+22}" cy="${y-5}" r="1.8" fill="#e8b82a"/>`;
+  return `<svg viewBox="0 0 200 300" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8f6ff"/><stop offset="1" stop-color="#b8dcf4"/></linearGradient></defs>
+  <ellipse cx="100" cy="296" rx="96" ry="5" fill="rgba(0,0,0,.14)"/>
+  <rect x="6" y="6" width="188" height="288" rx="8" fill="#f2f6fa" stroke="#7a8a9a" stroke-width="4"/>
+  <rect x="18" y="20" width="164" height="254" rx="4" fill="url(#${id})" stroke="#9aaabb" stroke-width="2.4"/>
+  ${milk(26,96)}${milk(52,96)}${milk(78,96)}${yog(112,96,'#ff7aa8')}${yog(136,96,'#ffb43a')}${yog(160,96,'#6ad87a')}
+  ${ch(28,170)}${ch(66,170)}${yog(116,170,'#5ab4ff')}${yog(140,170,'#ff7aa8')}${milk(160,170)}
+  ${milk(30,244)}${milk(56,244)}${ch(90,244)}${yog(140,244,'#b48aff')}
+  <g fill="#c8d4e0" stroke="#8a9aaa" stroke-width="1.6">${[98,172,246].map(y=>`<rect x="18" y="${y}" width="164" height="7"/>`).join('')}</g>
+  <path d="M30 30 L70 30 L40 260 L20 260Z" fill="#fff" opacity=".28"/><path d="M100 20 V274" stroke="#7a8a9a" stroke-width="3"/>
+  <rect x="88" y="120" width="6" height="40" rx="3" fill="#aab4c4"/><rect x="106" y="120" width="6" height="40" rx="3" fill="#aab4c4"/></svg>`; }
+/* a straw nest basket with three loose eggs on a little stand, and one egg. */
+function eikNestSVG(){ return `<svg viewBox="0 0 120 70" style="overflow:visible"><path d="M8 30 Q60 80 112 30 Q60 46 8 30Z" fill="#d8b06a" stroke="#8a6a3a" stroke-width="2.6" stroke-linejoin="round"/>
+  <g stroke="#a8803a" stroke-width="1.6" fill="none" opacity=".9"><path d="M16 36 Q60 60 104 36 M26 46 Q60 62 94 46 M12 32 l10 6 M30 40 l8 8 M90 40 l-8 8 M108 32 l-10 6"/></g>
+  <path d="M8 30 Q60 46 112 30" stroke="#f4d08a" stroke-width="3" fill="none"/></svg>`; }
+function eikEiSVG(){ return `<svg viewBox="0 0 30 38" style="overflow:visible"><ellipse cx="15" cy="21" rx="12" ry="15" fill="#fffaf0" stroke="#c8a87a" stroke-width="2.2"/><ellipse cx="10" cy="15" rx="3" ry="5" fill="#fff" opacity=".9"/></svg>`; }
+/* the egg box in the cart: six holes, three already full, three wait for her eggs (.eike1–3). viewBox 0 0 140 50 */
+function eikKartonSVG(){ const egg=(x,c)=>`<ellipse class="${c||''}" cx="${x}" cy="18" rx="9" ry="11" fill="#fffaf0" stroke="#c8a87a" stroke-width="1.8"/>`;
+  return `<svg viewBox="0 0 140 50" style="overflow:visible"><path d="M6 20 L134 20 L130 46 L10 46Z" fill="#d8c09a" stroke="#8a6a3a" stroke-width="2.6" stroke-linejoin="round"/>
+  ${egg(22)}${egg(42)}${egg(62)}${egg(82,'eike eike1')}${egg(102,'eike eike2')}${egg(122,'eike eike3')}
+  <path d="M6 24 L134 24 L130 46 L10 46Z" fill="#d8c09a" stroke="#8a6a3a" stroke-width="2.6" stroke-linejoin="round"/>
+  <g stroke="#b8a07a" stroke-width="1.6">${[32,52,72,92,112].map(x=>`<path d="M${x} 26 V44"/>`).join('')}</g></svg>`; }
+
+/* the tall shelf with jam and honey jars; the honey jar right at the top is its own prop (EIKHONIG). viewBox 0 0 120 300 */
+function eikGlasRegalSVG(){
+  const jar=(x,y,c,l)=>`<path d="M${x} ${y} Q${x-3} ${y+26} ${x+12} ${y+26} Q${x+27} ${y+26} ${x+24} ${y}Z" fill="${c}" stroke="rgba(0,0,0,.35)" stroke-width="1.8"/><rect x="${x-1}" y="${y-7}" width="26" height="8" rx="2" fill="${l}" stroke="rgba(0,0,0,.35)" stroke-width="1.6"/><rect x="${x+4}" y="${y+8}" width="16" height="10" rx="2" fill="#fffdf0" opacity=".85"/>`;
+  return `<svg viewBox="0 0 120 300" style="overflow:visible"><ellipse cx="60" cy="296" rx="58" ry="5" fill="rgba(0,0,0,.14)"/>
+  <rect x="6" y="20" width="108" height="276" rx="4" fill="#e6dcd0" stroke="#a8988a" stroke-width="3.4"/>
+  ${jar(14,110,'#c82a4a','#ffd84a')}${jar(46,110,'#ffb82a','#e8783a')}${jar(78,110,'#8a2a8a','#fff4e0')}
+  ${jar(14,180,'#ff7a3a','#5ab4ff')}${jar(46,180,'#c82a4a','#fff4e0')}${jar(78,180,'#ffb82a','#e8783a')}
+  ${jar(14,250,'#8a2a8a','#ffd84a')}${jar(46,250,'#ff7a3a','#fff4e0')}${jar(78,250,'#c82a4a','#5ab4ff')}
+  <g fill="#c8b8a8" stroke="#8a7a6a" stroke-width="2">${[70,138,208,278].map(y=>`<rect x="8" y="${y}" width="104" height="7"/>`).join('')}</g></svg>`; }
+function eikHonigSVG(){ return `<svg viewBox="0 0 60 64" style="overflow:visible"><path d="M8 16 Q2 60 30 60 Q58 60 52 16Z" fill="#ffb82a" stroke="#a8661a" stroke-width="2.8"/>
+  <path d="M14 22 Q10 50 24 54" stroke="#ffe08a" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  <rect x="5" y="4" width="50" height="14" rx="4" fill="#e8783a" stroke="#a8461a" stroke-width="2.4"/><path d="M8 10 H52" stroke="#ffb08a" stroke-width="2" opacity=".7"/>
+  <rect x="16" y="28" width="28" height="20" rx="4" fill="#fffdf0" stroke="#c8861a" stroke-width="1.6"/>
+  <g transform="translate(30 38)"><ellipse rx="6" ry="4.6" fill="#ffd84a" stroke="#3a2a1a" stroke-width="1.4"/><path d="M-2 -4.4 V4.4 M2 -4.4 V4.4" stroke="#3a2a1a" stroke-width="1.6"/><ellipse cx="-2" cy="-6" rx="3" ry="2.4" fill="#e8f6ff" opacity=".9"/><ellipse cx="2.6" cy="-6" rx="3" ry="2.4" fill="#e8f6ff" opacity=".9"/></g></svg>`; }
+
+/* ---------- the checkout: a counter with a conveyor belt, the scanner (red light) and a paper bag. viewBox 0 0 400 140 ---------- */
+function eikKasseSVG(){
+  return `<svg viewBox="0 0 400 140" style="overflow:visible"><ellipse cx="200" cy="136" rx="196" ry="5" fill="rgba(0,0,0,.16)"/>
+  <rect x="4" y="44" width="392" height="92" rx="8" fill="#5ab4c8" stroke="#2a6a7a" stroke-width="3.4"/>
+  <path d="M14 60 H386" stroke="#8ad4e4" stroke-width="3" opacity=".7"/>
+  <rect x="10" y="28" width="230" height="20" rx="9" fill="#3a3a44" stroke="#1a1a22" stroke-width="2.4"/>
+  <g class="eikbelt" stroke="#5a5a66" stroke-width="2.4">${Array.from({length:22},(_,i)=>`<path d="M${18+i*10} 31 L${14+i*10} 45"/>`).join('')}</g>
+  <rect x="244" y="24" width="64" height="24" rx="4" fill="#2a2a32" stroke="#1a1a22" stroke-width="2.4"/><rect class="eikscan" x="252" y="28" width="48" height="14" rx="3" fill="#5a1a1a"/>
+  <path d="M276 24 V-14" stroke="#7a8a9a" stroke-width="5"/><rect x="252" y="-44" width="52" height="34" rx="6" fill="#2a3a4a" stroke="#1a1a22" stroke-width="2.6"/>
+  <rect class="eikscr" x="258" y="-38" width="40" height="22" rx="3" fill="#bff0c8"/>
+  <g class="eiksmil"><circle cx="270" cy="-30" r="1.8" fill="#2a6a3a"/><circle cx="286" cy="-30" r="1.8" fill="#2a6a3a"/><path d="M268 -24 Q278 -18 288 -24" stroke="#2a6a3a" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+  <rect x="312" y="34" width="80" height="14" rx="4" fill="#c8d4e0" stroke="#7a8a9a" stroke-width="2"/></svg>`; }
+/* a paper shopping bag (front), things put in it disappear behind its front. viewBox 0 0 100 110 */
+function eikTueteSVG(full){ return `<svg viewBox="0 0 100 110" style="overflow:visible">
+  ${full?`<path d="M26 14 Q30 -6 40 2 Q46 -10 54 4 Q62 -6 70 10" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4"/><path d="M58 4 V-14 L66 -22 L76 -22 V8" fill="#f4faff" stroke="#3a6ab8" stroke-width="2.2"/>`:''}
+  <path d="M14 18 L86 18 L92 106 L8 106Z" fill="#d8a868" stroke="#8a5a2e" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M14 18 L22 10 L78 10 L86 18" fill="#c89858" stroke="#8a5a2e" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M36 18 Q36 2 50 2 Q64 2 64 18" stroke="#8a5a2e" stroke-width="4" fill="none"/>
+  <path d="M34 54 q8 -10 16 0 q8 -10 16 0 q-8 16 -16 22 q-8 -6 -16 -22Z" fill="#ff8aa8" opacity=".85"/></svg>`; }
+/* the receipt that curls out of the till */
+function eikBonSVG(){ return `<svg viewBox="0 0 30 80" style="overflow:visible"><path d="M2 0 H28 V72 L24 78 L20 72 L16 78 L12 72 L8 78 L4 72 L2 76Z" fill="#fffef8" stroke="#b8b0a0" stroke-width="1.6"/>
+  <g stroke="#8a8a9a" stroke-width="1.8" stroke-linecap="round">${[10,18,26,34,42,50,58].map((y,i)=>`<path d="M6 ${y} H${16+(i*7)%8} M21 ${y} H25"/>`).join('')}</g></svg>`; }
+
+/* ---------- at home: plate, the banana that turns into mash, a fork and a spoon ---------- */
+/* banana mash in stages: --m 0 (whole banana) … 1 (soft mash). viewBox 0 0 140 70 */
+function eikTellerSVG(){
+  return `<svg viewBox="0 0 140 70" style="overflow:visible"><ellipse cx="70" cy="50" rx="66" ry="18" fill="#fff" stroke="#b8c4d4" stroke-width="2.6"/><ellipse cx="70" cy="48" rx="48" ry="11" fill="#eef4fa"/>
+  <g class="eikb0"><path d="M26 46 Q40 22 90 24 Q112 26 116 40 Q104 34 86 36 Q46 38 30 50Z" fill="#ffe24a" stroke="#c8961a" stroke-width="2.4" stroke-linejoin="round"/><path d="M116 40 l6 -4" stroke="#6a4a1a" stroke-width="3" stroke-linecap="round"/><path d="M44 40 Q70 30 100 32" stroke="#f4c83a" stroke-width="2" fill="none"/></g>
+  <g class="eikb1"><path d="M30 48 Q46 36 88 38 Q108 40 112 46 Q90 52 60 52 Q38 52 30 48Z" fill="#fff4c0" stroke="#d8b84a" stroke-width="2.2"/><path d="M50 44 l6 2 M70 42 l5 3 M90 43 l4 3" stroke="#d8b84a" stroke-width="1.6"/></g>
+  <g class="eikb2"><path d="M30 50 Q34 38 54 38 Q62 32 76 36 Q96 32 106 42 Q114 50 98 54 Q70 58 42 56 Q28 56 30 50Z" fill="#fff0b0" stroke="#d8b84a" stroke-width="2.2"/><g fill="#e8d07a"><circle cx="52" cy="46" r="1.6"/><circle cx="66" cy="44" r="1.4"/><circle cx="80" cy="47" r="1.6"/><circle cx="92" cy="44" r="1.4"/></g></g></svg>`; }
+function eikGabelSVG(){ return `<svg viewBox="0 0 24 90" style="overflow:visible"><rect x="9" y="34" width="6" height="54" rx="3" fill="#c8d4e0" stroke="#6a7a8a" stroke-width="1.6"/><path d="M3 4 V24 Q3 34 12 34 Q21 34 21 24 V4 M9 4 V26 M15 4 V26" stroke="#6a7a8a" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M4 22 Q12 30 20 22" fill="#c8d4e0"/></svg>`; }
+function eikLoeffelSVG(full){ return `<svg viewBox="0 0 30 80" style="overflow:visible"><rect x="12" y="26" width="6" height="52" rx="3" fill="#ffb4c8" stroke="#c45a78" stroke-width="1.6"/><ellipse cx="15" cy="14" rx="11" ry="13" fill="#ffb4c8" stroke="#c45a78" stroke-width="2"/>${full?'<ellipse cx="15" cy="12" rx="7" ry="6" fill="#fff0b0" stroke="#d8b84a" stroke-width="1.4"/>':''}</svg>`; }
+
+Object.assign(SVGP,{EIKTISCH:[eikTischSVG,1],EIKZETTEL:[eikZettelSVG,1],EIKSTUHL:[eikStuhlSVG,1],EIKOBST:[eikObstSVG,1],EIKAPFEL:[eikApfelSVG,.4],EIKBAN:[eikBananenSVG,1],
+  EIKKUEHL:[eikKuehlSVG,1],EIKNEST:[eikNestSVG,1],EIKEI:[eikEiSVG,.4],EIKKARTON:[eikKartonSVG,1],EIKGLAS:[eikGlasRegalSVG,1],EIKHONIG:[eikHonigSVG,.4],EIKKASSE:[eikKasseSVG,1],
+  EIKTUETE:[eikTueteSVG,1],EIKTUETEV:[()=>eikTueteSVG(1),1],EIKTELLER:[eikTellerSVG,1],EIKMILCH:[()=>`<svg viewBox="0 0 30 46" style="overflow:visible"><path d="M2 44 V12 L10 2 L22 2 V44Z" fill="#f4faff" stroke="#3a6ab8" stroke-width="2.4" stroke-linejoin="round"/><path d="M2 12 H22 L28 6 V40 L22 44" fill="#d8eaff" stroke="#3a6ab8" stroke-width="2.4" stroke-linejoin="round"/><rect x="4" y="20" width="16" height="12" fill="#8ac4ff"/><path d="M6 26 q3 -3 6 0 q3 3 6 0" stroke="#fff" stroke-width="2" fill="none"/></svg>`,.4],
+  EIKKARTONZU:[()=>`<svg viewBox="0 0 70 34" style="overflow:visible"><path d="M4 10 L66 10 L62 32 L8 32Z" fill="#d8c09a" stroke="#8a6a3a" stroke-width="2.4" stroke-linejoin="round"/><path d="M4 10 Q12 2 20 10 Q28 2 36 10 Q44 2 52 10 Q60 2 66 10" fill="#e8d0aa" stroke="#8a6a3a" stroke-width="2.2"/><g stroke="#b8a07a" stroke-width="1.4"><path d="M22 14 V30 M36 14 V30 M50 14 V30"/></g></svg>`,.6]});
+Object.assign(TSYL,{KASSE:'KAS-SE','LÖFFEL':'LÖF-FEL'});
+
+/* a home fridge (cream, two doors, magnets) – the shopping list hangs on it. viewBox 0 0 160 300 */
+function eikFridgeSVG(){
+  return `<svg viewBox="0 0 160 300" style="overflow:visible"><ellipse cx="80" cy="296" rx="76" ry="5" fill="rgba(0,0,0,.15)"/>
+  <rect x="6" y="6" width="148" height="288" rx="16" fill="#f6f2e6" stroke="#a8a090" stroke-width="4"/>
+  <path d="M8 100 H152" stroke="#a8a090" stroke-width="3.4"/><rect x="126" y="40" width="9" height="44" rx="4" fill="#c8c0b0" stroke="#8a8478" stroke-width="2"/><rect x="126" y="118" width="9" height="70" rx="4" fill="#c8c0b0" stroke="#8a8478" stroke-width="2"/>
+  <path d="M20 20 Q24 60 22 90 M20 116 Q24 200 22 280" stroke="#fff" stroke-width="5" fill="none" opacity=".8" stroke-linecap="round"/>
+  <circle cx="40" cy="40" r="8" fill="#ff7aa8" stroke="#c44a78" stroke-width="2"/><path d="M92 30 l5 10 l11 1 l-8 7 l3 11 l-11 -6 l-11 6 l3 -11 l-8 -7 l11 -1Z" fill="#ffd84a" stroke="#c8962a" stroke-width="2"/>
+  <rect x="34" y="232" width="34" height="28" rx="3" fill="#bfe6ff" stroke="#5a8ab8" stroke-width="2" transform="rotate(-8 51 246)"/><path d="M40 252 q8 -12 16 -2 q4 -8 8 0" stroke="#e8445a" stroke-width="2.4" fill="none" transform="rotate(-8 51 246)"/></svg>`; }
+/* the rooms behind everything: the kitchen and the shop (viewBox 1600 x 1000, cut to fit the screen) */
+function eikRoomSVG(kind){ const id='er'+(++LANC);
+  if(kind==='kueche'){ let rain=''; const r=seeded(91); for(let i=0;i<26;i++){ const x=990+r()*380, y=170+r()*280; rain+=`<path d="M${x} ${y} l-6 18" />`; }
+    let pl=''; for(let i=0;i<14;i++) pl+=`<path d="M${i*120-40} 640 L${i*150-300} 1000"/>`;
+    return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+     <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4dc"/><stop offset="1" stop-color="#f8e2b8"/></linearGradient>
+     <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d89a5e"/><stop offset="1" stop-color="#b87a42"/></linearGradient>
+     <linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a9ab0"/><stop offset="1" stop-color="#c0cad8"/></linearGradient></defs>
+     <rect width="1600" height="1000" fill="url(#${id}w)"/>
+     <g fill="#9ad8c8" stroke="#5a9a8a" stroke-width="5"><rect x="60" y="110" width="200" height="220" rx="12"/><rect x="270" y="110" width="200" height="220" rx="12"/></g>
+     <g fill="#fff" opacity=".6"><circle cx="230" cy="220" r="10"/><circle cx="300" cy="220" r="10"/></g>
+     <g stroke="#e8c8a0" stroke-width="3" opacity=".6">${[0,1,2,3,4,5].map(i=>`<path d="M40 ${400+i*40} H520"/>`).join('')}</g>
+     <rect x="960" y="150" width="440" height="330" rx="16" fill="url(#${id}s)" stroke="#a8784a" stroke-width="14"/><g stroke="#e8f2ff" stroke-width="3" opacity=".7">${rain}</g>
+     <path d="M1180 150 V480 M960 315 H1400" stroke="#a8784a" stroke-width="10"/><path d="M940 480 H1420" stroke="#c89060" stroke-width="18" stroke-linecap="round"/>
+     <path d="M944 142 Q1000 260 960 480 L940 480 L930 140Z M1416 142 Q1360 260 1400 480 L1420 480 L1430 140Z" fill="#ff9ab0" opacity=".85"/>
+     <circle cx="700" cy="190" r="56" fill="#fff" stroke="#8a6a4a" stroke-width="8"/><path d="M700 190 V150 M700 190 L728 204" stroke="#3a2a1a" stroke-width="7" stroke-linecap="round"/>
+     <path d="M800 0 V90" stroke="#8a6a4a" stroke-width="4"/><path d="M740 140 Q800 70 860 140Z" fill="#ffd27a" stroke="#c8862a" stroke-width="4"/>
+     <rect x="0" y="626" width="1600" height="22" fill="#e8c8a0"/><rect y="640" width="1600" height="360" fill="url(#${id}f)"/>
+     <g stroke="#a86a32" stroke-width="3" opacity=".55">${pl}</g></svg>`; }
+  /* the shop */
+  let tiles=''; for(let i=-10;i<=26;i++) tiles+=`<path d="M${800+(i-8)*60} 620 L${800+(i-8)*190} 1000"/>`; for(let k=0;k<6;k++){ const y=620+Math.pow(k/5,1.6)*380; tiles+=`<path d="M0 ${y.toFixed(0)} H1600"/>`; }
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf8f2"/><stop offset="1" stop-color="#efe8dc"/></linearGradient>
+   <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2e6ea"/><stop offset="1" stop-color="#c8ced6"/></linearGradient></defs>
+   <rect width="1600" height="1000" fill="url(#${id}w)"/><rect y="70" width="1600" height="54" fill="#7ac89a"/><rect y="124" width="1600" height="10" fill="#5aa87a"/>
+   ${[200,600,1000,1400].map(x=>`<rect x="${x-90}" y="0" width="180" height="22" rx="8" fill="#fffef0" stroke="#d8d0c0" stroke-width="3"/><ellipse cx="${x}" cy="30" rx="120" ry="16" fill="#fffbe0" opacity=".7"/>`).join('')}
+   <rect y="614" width="1600" height="14" fill="#c8c0b0"/><rect y="626" width="1600" height="374" fill="url(#${id}f)"/>
+   <g stroke="#b0b8c2" stroke-width="3" opacity=".8">${tiles}</g></svg>`; }
+
+/* ---------- sets ---------- */
+Object.assign(SETS2,{
+  eikkueche:{clean:1, sky:'#fff4dc', room:'kueche'},
+  eikstrasse:{sky:'linear-gradient(180deg,#7a889c 0%,#9eaabb 50%,#c4ccd6 100%)', dcol:'40,50,70', farp:[['CLD',22,16,9],['CLD',60,12,10],['CLD',88,18,8]],
+    far:sil(hills(701,250,40,'#8a9aaa')+eikHouses(703,9,'#6a7a90','#ffe08a',150)+eikHouses(707,7,'#55657c','#ffd06a',110),58),
+    mid:[['🌳',6,52,18],['🌳',95,50,17]], gnd:'linear-gradient(180deg,#8a929c 0%,#6e7680 50%,#5a626c 100%)'},
+  eikladen:{clean:1, sky:'#fbf8f2', room:'laden', act:[['rg1','EIKREGAL',20,40,62],['rg2','EIKREGAL',80,40,62]]}
+});
+Object.assign(SVGP,{EIKREGAL:[()=>eikRegalSVG(5),1],EIKREGAL2:[()=>eikRegalSVG(11),1],EIKFRIDGE:[eikFridgeSVG,1]});
+Object.assign(TSYL,{BREI:'BREI'});
+
+/* ---------- sounds: the scanner beep, the wiper squeak, a wobble, mashing, a cash-register ring ---------- */
+const eikLate=()=>!tale||tale.t!==EINK2||!taleOn();
+function eikTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||eikLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0008,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function eikBeep(x){ eikTone(x,1760,1760,120,.09,'square'); }
+function eikSqueak(x){ eikTone(x,900,1300,160,.035,'triangle'); setTimeout(()=>eikTone(x,1250,880,140,.03,'triangle'),150); }
+function eikWob(x){ eikTone(x,320,520,140,.08,'sine'); setTimeout(()=>eikTone(x,520,300,160,.07,'sine'),130); }
+function eikMatsch(x){ if(eikLate()) return; famNoise(x,.14,700,180,240,'lowpass'); }
+function eikKling(x){ [1568,2093,2637].forEach((f,i)=>setTimeout(()=>eikTone(x,f,f,380,.06,'sine'),i*90)); }
+function eikRainSnd(on){ if(TB&&TB.rainIv){ clearInterval(TB.rainIv); TB.rainIv=null; } if(!on||!TB) return; const iv=setInterval(()=>{ if(eikLate()||!TB||TB.rainIv!==iv){ clearInterval(iv); return; } famNoise(innerWidth*Math.random(),.025,3000,5000,260); },320); TB.rainIv=iv; taleT.push(iv); }
+
+/* ---------- helpers ---------- */
+/* a point inside an element in % of the stage, from layout sizes (correct even while the camera flies in) */
+function eikAt(e,fx,fy){ const W=TB.W, l=parseFloat(e.style.left), t=parseFloat(e.style.top); return [l+(fx-.5)*e.offsetWidth/W.offsetWidth*100, t+(fy-.5)*e.offsetHeight/W.offsetHeight*100]; }
+/* the things in the cart: TST.wg holds them ('ban apf milch ei hon') */
+function eikWg(k){ const s=new Set((TST.wg||'').split(' ').filter(Boolean)); s.add(k); TST.wg=[...s].join(' '); const W=TB&&TB.els.wagen; if(W){ W.classList.add('h-'+k); sqs(W); } }
+function eikRain(on,rate){ FX.em=FX.em.filter(e=>!e.eikr); if(!on) return; FX.em.push({eikr:1,rate:rate||36,fn:()=>{ const u=vu(); fxAdd({k:'drop',x:Math.random()*innerWidth*1.1,y:-u*4,vy:(90+Math.random()*50)*u,len:u*(2.4+Math.random()*2),life:1.4,amb:1}); }}); }
+/* raindrops on the windscreen */
+function eikDrop(G){ if(!G) return; const d=el('i','eikdr'); d.style.cssText=`left:${(4+Math.random()*92).toFixed(1)}%;top:${(4+Math.random()*90).toFixed(1)}%;--ds:${(.6+Math.random()*.9).toFixed(2)}`; G.appendChild(d); return d; }
+function eikWipe(){ const G=TB&&TB.els.glas; if(!G) return; G.querySelectorAll('.eikdr').forEach(d=>{ d.classList.add('gone'); setTimeout(()=>d.remove(),400); }); }
+/* the fork presses into the banana */
+function eikFork(x,y){ const F=el('div','tp2 eikfork',eikGabelSVG()); TB.act.appendChild(F); putAt(F,x,y-vu()*7); const u=vu();
+  try{ F.animate([{transform:'translateY(-4vh) rotate(-14deg)',opacity:0},{transform:'translateY(0) rotate(-6deg)',opacity:1,offset:.35},{transform:'translateY(.6vh) rotate(-6deg) scaleY(.94)',offset:.5},{transform:'translateY(-3vh) rotate(-12deg)',opacity:0}],{duration:520,easing:'ease-out'}).onfinish=()=>F.remove(); }catch(e){ F.remove(); }
+  for(let i=0;i<7;i++) fxAdd({k:'spark',x:x+(Math.random()-.5)*u*5,y,vx:(Math.random()-.5)*30*u,vy:-(8+Math.random()*14)*u,life:.5,s:.7+Math.random()*.5,c:'rgba(255,226,90,.95)'}); }
+/* the cart rolls in a little (the unicorn pushes) */
+function eikPush(dx,ms){ const W=TB&&TB.els.wagen, U=TB&&TB.els.uni; [W,U].forEach(e=>{ if(!e) return; try{ e.animate([{transform:`translateX(${-dx}vh)`},{transform:'none'}],{duration:ms||1400,easing:'cubic-bezier(.3,.8,.4,1)'}); }catch(err){} }); }
+/* something flies along an arc into the cart and shows up inside */
+function eikToCart(src,k,ms,cb){ const W=TB.els.wagen; if(!src||!W) return; const [x0,y0]=ctr(src), [x1,y1]=relEl(W.querySelector('.bb')||W,[.6,.12]), u=vu();
+  try{ const an=src.animate([{transform:'none'},{transform:`translate(${(x1-x0)/2}px,${Math.min(0,y1-y0)-u*14}px) rotate(-20deg)`},{transform:`translate(${x1-x0}px,${y1-y0}px) scale(.6)`,opacity:.2}],{duration:ms||900,easing:'ease-in-out',fill:'forwards'});
+    an.onfinish=()=>{ src.style.opacity=0; eikWg(k); fxBurst(x1,y1,12); chimeAt([988,1318],x1); if(cb) cb(); }; }catch(e){ src.style.opacity=0; eikWg(k); if(cb) cb(); } }
+
+/* ---------- the gestures ---------- */
+Object.assign(G2,{
+ /* wischer (windscreen wipers): wipe back and forth over the windscreen; the wipers follow her finger. Every turn of direction
+    after a few vh (or one long stroke) is one wipe: the drops go, the fog clears. n wipes are enough. A tap is a try.
+    a:{id (the car), n}; hook wiped(k,p) */
+ wischer:{ setup(){ TB.ws={k:0,dn:false,dir:0,acc:0,lx:0,mv:0,got:0,ang:0,angT:0,tap:0,fin:false,auto:false,t:0}; const G=TB.els.glas; for(let i=0;i<26;i++) eikDrop(G);
+     g2loop(dt=>{ const s=TB.ws, A=TB.els[TB.a.id]; s.ang+=(s.angT-s.ang)*Math.min(1,dt*14); A.style.setProperty('--wa',s.ang.toFixed(1)+'deg');
+       s.t+=dt; const p=s.k/(TB.a.n||5); if(!s.fin&&s.t>.12){ s.t=0; if(G.querySelectorAll('.eikdr:not(.gone)').length<26*(1-p)) eikDrop(G); } }); },
+   rect(){ return TB.els.glas.getBoundingClientRect(); },
+   inZ(x,y){ const r=this.rect(), u=vu(); return x>r.left-u*12&&x<r.right+u*12&&y>r.top-u*14&&y<r.bottom+u*16; },
+   aim(x){ const r=this.rect(), f=Math.max(0,Math.min(1,(x-r.left)/r.width)); TB.ws.angT=-(1-f)*140; },
+   down(x,y){ const s=TB.ws; if(s.fin||s.auto) return; s.dn=this.inZ(x,y); if(!s.dn) return; s.lx=x; s.mv=0; s.got=0; s.dir=0; s.acc=0; this.aim(x); poke2(); },
+   move(x,y){ const s=TB.ws; if(!s.dn||s.fin||s.auto) return; const dx=x-s.lx, u=vu(); s.lx=x; s.mv+=Math.abs(dx); this.aim(x);
+     if(Math.abs(dx)<.5) return; const d=Math.sign(dx);
+     if(d!==s.dir){ if(s.dir&&s.acc>u*6) this.wipe(); s.dir=d; s.acc=0; }
+     s.acc+=Math.abs(dx); if(s.acc>u*18){ this.wipe(); s.acc=0; } },
+   up(x,y){ const s=TB.ws; if(!s.dn) return; s.dn=false; if(s.fin||s.auto) return; if(s.dir&&s.acc>vu()*6) this.wipe();
+     if(s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } return; } if(!s.got) miss2(); },
+   wipe(){ const s=TB.ws; if(s.fin) return; s.k++; s.got++; const n=TB.a.n||5, p=Math.min(1,s.k/n), A=TB.els[TB.a.id], [x,y]=ctr(TB.els.glas);
+     eikWipe(); A.style.setProperty('--fog',(1-p).toFixed(2)); eikSqueak(x); chimeAt([523+s.k*98],x); poke2();
+     for(let i=0;i<8;i++) fxAdd({k:'spark',x:x+(Math.random()-.5)*vu()*40,y:y+(Math.random()-.5)*vu()*10,vx:(Math.random()-.5)*40*vu(),vy:-(6+Math.random()*12)*vu(),life:.6,s:.8,c:'rgba(220,240,255,.95)'});
+     if(TB.sc.wiped) TB.sc.wiped(s.k,p);
+     if(s.k>=n){ s.fin=true; bLater(()=>{ TB.ws.angT=0; },350); const r=this.rect(); glitterBurst(r.left+r.width/2,r.top+r.height/2,24,30); bLater(()=>done2(),700); } },
+   frames(){ const r=this.rect(), y=r.top+r.height*.62, a=r.left+r.width*.18, b=r.left+r.width*.82, u=vu(); return [[b,y+u*10,1,0],[b,y,.85,1],[a,y,.85,1],[b,y,.85,1],[a,y,.85,1],[a,y+u*8,1,0]]; },
+   hint(){ const s=TB.ws; if(s.fin) return; ghost(this.frames(),2600); },
+   auto(){ const s=TB.ws; if(s.fin||s.auto) return; s.auto=true; ghost(this.frames(),2400); const n=TB.a.n||5;
+     for(let i=s.k;i<n;i++) bLater(()=>{ TB.ws.angT=(i%2)?0:-140; bLater(()=>this.wipe(),260); },(i-s.k)*520); } },
+
+ /* vorsicht (carefully): like drag, but the thing only follows her finger slowly. If her finger runs ahead it wobbles ("wackel!")
+    and catches up – nothing ever breaks. Dropped near the target it goes in, anywhere else it floats home. a:{ids, to, v (vh/s)} */
+ vorsicht:Object.assign(Object.create(G2.drag),{
+   setup(){ G2.drag.setup.call(this); g2loop(dt=>this.loop(dt)); },
+   slot(id){ const a=TB.a, k=a.ids.indexOf(id), K=TB.els[a.to]; return relEl(K,[(82+20*k)/140,18/50]); },
+   down(x,y){ G2.drag.down.call(this,x,y); const d=TB.dg; if(d){ const [cx,cy]=ctr(d.b); d.px=d.tx=cx; d.py=d.ty=cy; d.wob=0; poke2(); } },
+   move(x,y){ const d=TB.dg; if(!d) return; d.tx=x-d.ox; d.ty=y-d.oy; d.moved=Math.max(d.moved,Math.hypot(x-d.sx,y-d.sy)); if(d.moved>vu()*6) poke2(); },
+   loop(dt){ const d=TB.dg; if(!d||!d.b.isConnected) return; const u=vu(), dx=d.tx-d.px, dy=d.ty-d.py, L=Math.hypot(dx,dy), st=Math.min(L,u*(TB.a.v||42)*dt);
+     if(L>0){ d.px+=dx/L*st; d.py+=dy/L*st; } const [px,py]=wpos(d.px,d.py); d.b.style.left=px+'%'; d.b.style.top=py+'%';
+     const fast=L>u*8; d.b.classList.toggle('eikwob',fast);
+     if(fast&&!d.wob){ d.wob=1; bubble('wackel!',d.px,d.py-u*6,3.2,'#fff6e0'); eikWob(d.px); if(TB.sc.wobble) TB.sc.wobble(); } else if(!fast&&L<u*2) d.wob=0;
+     if(Math.random()<.2) fxAdd({k:'spark',x:d.px,y:d.py,vx:0,vy:-4*u,life:.5,s:1,c:'rgba(255,250,220,.9)'}); },
+   up(x,y){ const d=TB.dg; if(d) d.b.classList.remove('eikwob'); G2.drag.up.call(this,x,y); } }),
+
+ /* scannen (checkout): pull each thing over the red light of the scanner. As soon as it passes the light it beeps and slides on
+    into the bag (no need to let go there). Dropped on the scanner counts too; dropped elsewhere it floats back. a:{ids, to (scanner
+    zone), bag}; hook item(id,el) */
+ scannen:Object.assign(Object.create(G2.drag),{
+   zone(){ const T=TB.els[TB.a.to], [x,y]=ctr(T); return {x,y,r:Math.max(T.getBoundingClientRect().width*.75,vu()*9)}; },
+   slot(id){ const B=TB.els[TB.a.bag]; return relEl(B,[.5,.32]); },
+   path(id){ const b=TB.els[id], [x0,y0]=ctr(b), z=this.zone(), [x2,y2]=this.slot(id); return [[x0,y0],[z.x,z.y],[x2,y2]]; },
+   move(x,y){ const d=TB.dg; if(!d) return; G2.drag.move.call(this,x,y); const [cx,cy]=ctr(d.b), z=this.zone(); if(Math.hypot(cx-z.x,cy-z.y)<z.r){ TB.dg=null; d.b.classList.remove('lift'); this.success(d.id); } } }),
+
+ /* matschen (mash): tap the banana with the fork – every tap (or every bit of rubbing on the plate) squashes it a little more.
+    n taps are enough. A tap far away from the plate is a try. a:{id (plate), n}; hook mashed(k,p) */
+ matschen:{ setup(){ TB.mt={k:0,fin:false,auto:false,last:0,dn:false,mv:0,lx:0,ly:0}; },
+   inZ(x,y){ const P=TB.els[TB.a.id]; return nearEl(P,x,y,vu()*14); },
+   down(x,y){ const s=TB.mt; if(s.fin||s.auto) return; if(!this.inZ(x,y)){ miss2(); return; } s.dn=true; s.mv=0; s.lx=x; s.ly=y; this.mash(x,y); },
+   move(x,y){ const s=TB.mt; if(!s.dn||s.fin||s.auto) return; s.mv+=Math.hypot(x-s.lx,y-s.ly); s.lx=x; s.ly=y; if(s.mv>vu()*10&&this.inZ(x,y)){ s.mv=0; this.mash(x,y); } },
+   up(){ if(TB.mt) TB.mt.dn=false; },
+   mash(x,y){ const s=TB.mt; if(s.fin) return; const t=now(); if(t-s.last<260) return; s.last=t; s.k++; const n=TB.a.n||6, p=Math.min(1,s.k/n), P=TB.els[TB.a.id];
+     const [px,py]=relEl(P,[.5,.6]); eikFork(x==null?px:x*.4+px*.6,py); eikMatsch(px); chimeAt([392+s.k*66],px); poke2();
+     P.dataset.s=p>=.99?3:p>=.6?2:p>=.25?1:0; P.style.setProperty('--m',p.toFixed(2)); sqs(P); if(TB.sc.mashed) TB.sc.mashed(s.k,p);
+     if(s.k>=n){ s.fin=true; P.classList.remove('g2hint'); glitterBurst(px,py,22,18); bLater(()=>done2(),600); } },
+   frames(){ const [x,y]=relEl(TB.els[TB.a.id],[.5,.55]), u=vu(); return [[x,y+u*12,1,0],[x,y,.82,1],[x,y-u*6,1,1],[x,y,.82,1],[x,y-u*6,1,1],[x,y,.82,1],[x,y+u*8,1,0]]; },
+   hint(){ const s=TB.mt; if(s.fin) return; const P=TB.els[TB.a.id]; P.classList.add('g2hint'); bLater(()=>P.classList.remove('g2hint'),2400); ghost(this.frames(),2200); },
+   auto(){ const s=TB.mt; if(s.fin||s.auto) return; s.auto=true; ghost(this.frames(),2000); const n=TB.a.n||6; for(let i=s.k;i<n;i++) bLater(()=>this.mash(null,null),(i-s.k)*420+200); } }
+});
+
+/* ================= Eefje und der große Einkauf ================= */
+/* heart: at the picnic Ehfje thought Janneke "can't do anything yet". Now Ehfje writes (draws) the shopping list and adds one thing
+   of her own: a banana for Janneke. On the trip the little one watches everything – the wipers, the rolling apple, the beeping
+   till – and at home her very first banana mash, mashed by her big sister, is a hit. Mama: "Du weißt schon genau, was deine kleine
+   Schwester mag." Recurring: the banana (list → cart → till → plate). */
+const EDUR3={};
+const EINK2={id:'einkauf', v2:true, eef:1, fam:1, dur:EDUR3, title:'Eefje und der große Einkauf', vtitle:'Ehfje und der große Einkauf', icon:'🛒',
+ cover:'linear-gradient(180deg,#7ac89a 0%,#bfe8cc 40%,#fff4dc 75%,#ffe08a 100%)',
+ cast(sc){ const A=TB.act, B=SETS2[sc.set];
+  if(B.room){ const R=el('div','eikroom',eikRoomSVG(B.room)); A.insertBefore(R,A.firstChild); TB.els.room=R; }
+  const mk=efCast(sc);
+  if(sc.mama){ const [x,y,z]=sc.mama, M=mk('mama','famp famma',mamaSVG(),x,y,z); M.dataset.mood=TST.mam||'smile'; M.dataset.arm=TST.maa||'dn'; }
+  if(sc.papa){ const [x,y,z]=sc.papa, P=mk('papa','famp fampa',papaSVG(),x,y,z); P.dataset.mood=TST.pam||'smile'; P.dataset.arm=TST.paa||(sc.jn==='papa'?'carry':'dn'); if(sc.jn==='papa') P.classList.add('carry'); }
+  if(sc.boris){ const [x,y,z,cls]=sc.boris, D=mk('boris','famdog'+(cls?' '+cls:''),borisSVG(),x,y,z); D.dataset.mood=TST.bom||'smile'; }
+  /* the shopping cart, Janneke in its child seat, the wires in front of her legs */
+  if(sc.wagen){ const [x,y,w]=sc.wagen, W=mk('wagen','eikwg',eikWagenSVG(),x,y,w); (TST.wg||'').split(' ').filter(Boolean).forEach(k=>W.classList.add('h-'+k));
+    if(sc.karton){ const K=el('div','tp2 kid eikkt',eikKartonSVG()); K.style.cssText='left:57%;top:17%;width:44%'; W.querySelector('.bb').appendChild(K); TB.els.karton=K; } }
+  /* the car from the front: people inside, glass with rain, wipers */
+  if(sc.auto){ const [x,y,w]=sc.auto, C=el('div','tp2 eikauto',`<div class="eikab">${eikAutoSVG()}<div class="eikin"></div><div class="eikgl"><div class="eikfog"></div></div><div class="eikwp">${eikWischerSVG()}</div></div>`);
+    C.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(C); TB.els.auto=C; const I=C.querySelector('.eikin'); TB.els.innen=I; TB.els.glas=C.querySelector('.eikgl');
+    const put=(id,cls,svg,px,py,pw)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${px}%;top:${py}%;width:${pw}%`; I.appendChild(e); TB.els[id]=e; return e; };
+    const E=put('hexe','eef',eefjeSVG(),43,58,25); E.dataset.mood=TST.efm||'smile'; E.dataset.arm='dn';
+    const S=put('sitz','eiksitz','<svg viewBox="0 0 60 50"><path d="M6 48 Q2 8 30 4 Q58 8 54 48Z" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="3"/></svg>',59,74,17);
+    const J=put('janneke','famjn',jannekeSVG(),59,64,13); J.dataset.mood=TST.jam||'smile';
+    const P=put('papa','famp fampa',papaSVG(),24,92,26); P.dataset.mood=TST.pam||'smile'; P.dataset.arm='dn';
+    const M=put('mama','famp famma',mamaSVG(),76,92,26); M.dataset.mood=TST.mam||'smile'; M.dataset.arm='dn';
+    I.appendChild(el('div','eiklenk','<svg viewBox="0 0 100 40"><path d="M8 40 Q8 4 50 4 Q92 4 92 40" stroke="#2a2a32" stroke-width="9" fill="none"/><path d="M50 40 V20" stroke="#2a2a32" stroke-width="7"/></svg>'));
+    C.style.setProperty('--fog',TST.fog!=null?TST.fog:1); }
+  /* Janneke: in Papa's carrier, in the cart, in her high chair, or somewhere [x,y,z] */
+  if(sc.jn&&!sc.auto){ let J;
+    if(sc.jn==='papa'){ J=mk('janneke','famjn',jannekeSVG(),50,38.5,0,'papa'); J.style.width='30%'; }
+    else if(sc.jn==='wagen'){ J=mk('janneke','famjn',jannekeSVG(),28,16,0,'wagen'); J.style.width='27%'; const V=el('div','kid eikwv',eikWagenVSVG()); TB.els.wagen.querySelector('.bb').appendChild(V); }
+    else if(sc.jn==='stuhl'){ const [x,y,z]=sc.stuhl, C=mk('stuhl','eikst',eikStuhlSVG(),x,y,z); J=mk('janneke','famjn',jannekeSVG(),50,30,0,'stuhl'); J.style.width='66%';
+      const T=el('div','tp2 kid eiktab',eikTablettSVG()); T.style.cssText='left:50%;top:52%;width:112%'; C.querySelector('.bb').appendChild(T); TB.els.tablett=T; }
+    else { const [x,y,z]=sc.jn; J=mk('janneke','famjn',jannekeSVG(),x,y,z); }
+    J.dataset.mood=TST.jam||'smile'; }
+  if(TST.hop==='jn'&&TB.els.janneke){ const H=mk('hoppel','famhop',hoppelSVG(),78,50,0,'janneke'); H.style.width='36%'; }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); });
+  A.querySelectorAll(':scope>.tp2>svg').forEach(v=>v.style.display='block'); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='wagen'){ sqs(b); chime([523,659]); eikPush(2,700); return true; }
+  if(id==='auto'||id==='glas'){ const C=TB.els.auto; if(C){ eikSqueak(x); C.style.setProperty('--wa','-60deg'); setTimeout(()=>C&&C.style.setProperty('--wa','0deg'),350); } return true; }
+  if(id==='kasse'||id==='scan'){ eikBeep(x); return true; }
+  if(['obst','kuehl','regal','glas2','rg1','rg2','tisch','fridge','zettel','teller','tuete','tuete2','nest','stuhl','tablett'].includes(id)){ if(b.classList.contains('tp2')) sqs(b); chime([784]); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a grey autumn morning in the kitchen: the shopping list on the fridge; Ehfje draws the last thing on it: a banana for Janneke (dots) */
+ {set:'eikkueche', dark:0, u:[93,76,13], ef:[56,68,24,'st'], mama:[38,58,23], papa:[17,58,24], jn:'papa', boris:[87,88,18],
+  p:[['fridge','EIKFRIDGE',76,50,30],['zettel','EIKZETTEL',75,45,27]],
+  st:{efm:'smile',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'smile',bom:'smile',hop:'jn',wg:'',fog:1},
+  enter(){ const Z=TB.els.zettel, pts=EIKBANPTS.map(([fx,fy])=>eikAt(Z,fx,fy).map(v=>+v.toFixed(2))); TB.sc.a.pts=pts;
+    onPh('schaute in den',()=>{ famArm('mama','up'); }); talk('mama','Fast leer','sagte Mama'); talk('mama','Heute gehen',null);
+    onPh('Fast leer',()=>{ mood('mama','oh'); }); onPh('Heute gehen',()=>{ mood('mama','happy'); famArm('mama','dn'); sqs(TB.els.zettel); });
+    onPh('aber malen',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('einen Apfel',()=>{ const Z=TB.els.zettel; Z.classList.add('eikzshow'); glitterBurst(...relEl(Z,[.7,.3]),10,10); chime([880,1175]); });
+    onPh('Und noch etwas',()=>{ mood('janneke','happy'); sqs(TB.els.janneke); famGiggle(ctr(TB.els.janneke)[0],3); }); onPh('Mal mit',()=>{ efArm('dn'); mood('hexe','smile'); }); },
+  ready(){ efReady(); TB.els.zettel.classList.add('eikzshow'); efArm('dn'); mood('mama','smile'); },
+  a:{t:'dots',pts:[[50,50]],sz:4.6,r:9,w:'BANANE'},
+  h:'Fahr mit dem Finger von Stern zu Stern!',
+  s:'Es war ein grauer, nasser Herbstmorgen. Mama schaute in den Kühlschrank. Fast leer! sagte Mama. Heute gehen wir einkaufen. Sie schrieb einen Einkaufszettel. Ehfje konnte noch nicht schreiben, aber malen konnte sie: einen Apfel, ein Ei, die Milch und den Honig. Und noch etwas für Janneke! Mal es mit dem Finger, von Stern zu Stern!',
+  dotStep(k){ if(k===3) mood('hexe','happy'); },
+  done(){ const Z=TB.els.zettel; Z.classList.add('eikban'); TB.dst&&TB.dst.forEach(s=>{ s.style.transition='opacity .6s'; s.style.opacity=0; }); if(TB.dsv) TB.dsv.style.opacity=0;
+    glitterBurst(...relEl(Z,[.55,.82]),20,16); mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ talk('hexe','Eine Banane','rief Ehfje','d1'); talk('hexe','Die ist für',null,'d1'); onPh('Janneke strampelte',()=>{ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],6); sqs(TB.els.janneke); efArm('dn'); },'d1'); },
+     'Eine Banane! rief Ehfje. Die ist für Janneke. Janneke strampelte mit den Beinen.',
+     ()=>{ onPh('Boris musste',()=>{ mood('boris','oh'); sqs(TB.els.boris); },'d2'); talk('papa','Pass gut auf','sagte Papa','d2'); onPh('Pass gut',()=>{ famArm('papa','up'); mood('papa','happy'); },'d2');
+       onPh('Wuff',()=>{ mood('boris','happy'); famWag(1); famWoof(ctr(TB.els.boris)[0]); bubble('wuff!',...famNose(),3.6,'#fff0d8'); famArm('papa','carry'); },'d2'); },
+     'Boris musste zu Hause bleiben, denn Hunde dürfen nicht mit in den Laden. Pass gut auf das Haus auf, Boris! sagte Papa. Wuff!', 800]},
+
+ /* 2 – in the car in the pouring rain: wipe the windscreen (wischer); Janneke laughs at the wipers */
+ {set:'eikstrasse', dark:.06, u:[86,22,12], flyU:1, auto:[50,65,78],
+  st:{efm:'smile',mam:'smile',pam:'smile',jam:'oh',fog:1},
+  enter(){ eikRain(true); eikRainSnd(true); onPh('Plitsch',()=>{ const G=TB.els.glas; for(let i=0;i<12;i++) eikDrop(G); });
+    onPh('dein Einhorn',()=>uniHop()); onPh('Mama konnte',()=>{ mood('mama','oh'); }); onPh('Wisch hin',()=>{ mood('hexe','smile'); }); },
+  ready(){ efReady(); mood('mama','smile'); },
+  a:{t:'wischer',id:'auto',n:5,w:'AUTO'},
+  h:'Wisch mit dem Finger über die Scheibe, hin und her!',
+  s:'Alle stiegen ins Auto. Janneke saß in ihrem Kindersitz, und dein Einhorn flog nebenher. Draußen regnete es in Strömen. Plitsch, platsch! Mama konnte kaum noch etwas sehen. Wisch hin und her, dann wischen die Scheibenwischer den Regen weg!',
+  wiped(k,p){ const J=TB.els.janneke; if(J){ mood('janneke',k>=3?'laugh':'happy'); if(k>=2) famGiggle(ctr(J)[0],k); } if(k===2) mood('hexe','happy'); if(k>=3) mood('mama','happy'); },
+  done(){ mood('janneke','laugh'); mood('hexe','laugh'); mood('papa','happy'); eikRain(true,12); },
+  d:[()=>{ onPh('Jetzt konnten',()=>{ mood('mama','happy'); },'d1'); onPh('lachte über',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); famGiggle(ctr(J)[0],8); hearts(...ctr(J),3); },'d1'); },
+     'Wisch, wasch, wisch, wasch! Jetzt konnten alle wieder gut sehen. Und Janneke lachte über die Scheibenwischer.',
+     ()=>{ onPh('hörte der Regen',()=>{ eikRain(false); eikRainSnd(false); TB.els.auto.classList.add('eikdry'); },'d2'); onPh('da vorne',()=>{ const C=TB.els.auto; try{ C.animate([{transform:'none'},{transform:'translateY(-1vh) scale(1.04)'}],{duration:1600,fill:'forwards',easing:'ease-in'}); }catch(e){} chime([659,880,1175]); },'d2'); },
+     'Bald hörte der Regen auf, und da vorne war schon der große Laden.', 700]},
+
+ /* 3 – the fruit: Janneke pulls an apple, the pile tumbles, one rolls away – catch it (catch); bananas for Janneke into the cart */
+ {set:'eikladen', dark:0, u:[9,75,15], wagen:[31,73,34], jn:'wagen', ef:[52,67,23,'st'], mama:[93,58,22],
+  p:[['obst','EIKOBST',74,73,44],['ap','EIKAPFEL',66,86,14],['ban','EIKBAN',82,58,10]], front:['ap'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',jam:'smile',hop:'jn',wg:''},
+  enter(){ const A=TB.els.ap; A.style.opacity=0; eikPush(8,1800); const N=TB.els.ban, [nx,ny]=eikAt(TB.els.obst,.8,.22); N.style.left=nx+'%'; N.style.top=ny+'%';
+    onPh('dein Einhorn',()=>uniHop()); onPh('Papa ging',()=>{ chime([523,659]); });
+    onPh('streckte Janneke',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); }); onPh('zog an einem',()=>{ wiggle(TB.els.obst); famGiggle(ctr(TB.els.janneke)[0],2); });
+    onPh('Oh nein',()=>{ mood('hexe','oh'); mood('mama','oh'); const O=TB.els.obst; O.classList.add('eiktumble'); chime([392,330,262]); });
+    onPh('einer rollte',()=>{ const A=TB.els.ap; A.style.transition='opacity .3s'; A.style.opacity=1; wiggle(A); }); onPh('Fang den',()=>{ mood('hexe','smile'); }); },
+  ready(){ efReady(); TB.els.ap.style.opacity=1; TB.els.obst.classList.add('eiktumble'); mood('janneke','laugh'); },
+  a:{t:'catch',id:'ap',path:[[66,90],[52,93],[38,92],[22,94],[12,92]],spd:.75,roll:900,w:'APFEL'},
+  h:'Tipp auf den Apfel, dann hast du ihn!',
+  s:'Im Laden setzte Papa Janneke vorne in den Einkaufswagen, und dein Einhorn schob ihn mit der Nase. Papa ging noch schnell Brot holen. Die anderen gingen zum Obst. Da streckte Janneke die Hand aus und zog an einem Apfel. Oh nein! Die Äpfel kullerten durcheinander, und einer rollte davon. Fang den Apfel!',
+  done(){ mood('hexe','laugh'); mood('mama','happy'); },
+  d:[()=>{ onPh('legte den Apfel',()=>{ eikToCart(TB.els.ap,'apf',900); efArm('up'); },'d1'); onPh('ein paar dazu',()=>{ famArm('mama','up'); chimeAt([784,988],ctr(TB.els.wagen)[0]); efArm('dn'); },'d1'); },
+     'Gefangen! Ehfje legte den Apfel in den Wagen, und Mama legte noch ein paar dazu.',
+     ()=>{ talk('hexe','Und die Bananen','sagte Ehfje','d2'); onPh('Und die Bananen',()=>{ mood('hexe','happy'); efArm('up'); famArm('mama','dn'); },'d2');
+       onPh('legte sie',()=>{ eikToCart(TB.els.ban,'ban',1000); },'d2'); onPh('Janneke gluckste',()=>{ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],6); efArm('dn'); },'d2'); },
+     'Und die Bananen für Janneke! sagte Ehfje und legte sie ganz vorsichtig dazu. Janneke gluckste.', 700]},
+
+ /* 4 – the cold shelf: milk; three loose eggs from the straw basket into the egg box – slowly, or they wobble (vorsicht) */
+ {set:'eikladen', dark:0, u:[9,75,15], wagen:[31,73,34], jn:'wagen', karton:1, ef:[52,67,23,'st'], mama:[71,58,22],
+  p:[['kuehl','EIKKUEHL',87,47,34],['nest','EIKNEST',66,87,22],['e1','EIKEI',61,84,14],['e2','EIKEI',66,83,14],['e3','EIKEI',71,84,14]], front:['nest','e1','e2','e3'],
+  st:{efm:'smile',efa:'dn',mam:'smile',maa:'dn',jam:'smile',hop:'jn',wg:'apf ban'},
+  enter(){ FX.em.push({rate:2.2,fn:()=>{ const K=TB&&TB.els.kuehl; if(!K||!K.isConnected) return; const [x,y]=relEl(K,[.3+Math.random()*.5,.95]), u=vu(); fxAdd({k:'steam',x,y,vy:-(2+Math.random()*3)*u,vx:-(6+Math.random()*6)*u,ph:Math.random()*6,s:1.6,life:3,amb:1,c:'rgba(225,242,255,.9)'}); }});
+    onPh('Brrr',()=>{ mood('hexe','oh'); mood('janneke','oh'); sqs(TB.els.hexe); }); onPh('nahm die Milch',()=>{ famArm('mama','up'); const K=TB.els.kuehl; sqs(K); bLater(()=>{ eikWg('milch'); famArm('mama','dn'); chimeAt([784,988],ctr(TB.els.wagen)[0]); },700); });
+    onPh('frische Eier',()=>{ ['e1','e2','e3'].forEach((id,i)=>bLater(()=>wiggle(TB.els[id]),i*200)); mood('hexe','smile'); }); onPh('sonst wackeln',()=>{ wiggle(TB.els.karton); }); },
+  ready(){ efReady(); mood('hexe','smile'); mood('janneke','smile'); if(!/milch/.test(TST.wg)) eikWg('milch'); },
+  a:{t:'vorsicht',ids:['e1','e2','e3'],to:'karton',v:40,w:'EI'},
+  h:'Nimm ein Ei und schieb es ganz langsam in den Karton!',
+  s:'Weiter ging es zum Kühlregal. Brrr, da war es kalt! Mama nahm die Milch heraus. Daneben lagen frische Eier in einem Strohkorb. Leg die Eier in den Eierkarton. Aber ganz langsam und vorsichtig, sonst wackeln sie!',
+  item(id,b){ const k=+id.slice(1); bLater(()=>{ b.style.transition='opacity .25s'; b.style.opacity=0; const E=TB.els.karton.querySelector('.eike'+k); if(E) E.classList.add('in'); sqs(TB.els.karton); },420);
+    mood('hexe',k===3?'laugh':'happy'); if(k===2){ mood('janneke','happy'); famGiggle(ctr(TB.els.janneke)[0],2); } },
+  wobble(){ mood('hexe','oh'); bLater(()=>mood('hexe','smile'),900); },
+  done(){ mood('mama','happy'); mood('hexe','happy'); },
+  d:[()=>{ talk('mama','Das hast du','sagte Mama','d1'); onPh('Kein einziges',()=>{ glitterBurst(...ctr(TB.els.karton),14,12); },'d1'); onPh('Das hast du',()=>{ mood('mama','happy'); famArm('mama','up'); },'d1'); },
+     'Geschafft! Kein einziges Ei ist kaputt gegangen. Das hast du toll gemacht, sagte Mama.', 900]},
+
+ /* 5 – the honey is at the very top of the shelf: Ehfje's spell – hold her and the jar floats down into the cart (hold) */
+ {set:'eikladen', dark:0, u:[9,75,15], wagen:[31,73,34], jn:'wagen', ef:[55,67,23,'st'], mama:[70,58,22],
+  p:[['glas2','EIKGLAS',85,50,26],['honig','EIKHONIG',85,16.6,22]],
+  st:{efm:'smile',efa:'dn',mam:'smile',maa:'dn',jam:'smile',hop:'jn',wg:'apf ban milch ei'},
+  enter(){ onPh('ganz oben',()=>{ const H=TB.els.honig; H.classList.add('g2hint'); bLater(()=>H.classList.remove('g2hint'),1800); mood('hexe','oh'); });
+    onPh('sogar zu hoch',()=>{ famArm('mama','up'); mood('mama','oh'); bLater(()=>famArm('mama','dn'),1600); });
+    talk('hexe','Kribbel','Halte deinen'); onPh('hob Ehfje',()=>{ efArm('up'); mood('hexe','smile'); }); onPh('Kribbel',()=>efSpell(18)); onPh('Honigglas, schweb',()=>{ glitterBurst(...ctr(TB.els.honig),12,10); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','smile'); const H=TB.els.honig, h0=[parseFloat(H.style.left),parseFloat(H.style.top)]; TB.hon0=h0;
+    g2loop(()=>{ const p=TB.hp||0, e=p*p*(3-2*p), W=TB.els.wagen, [tx,ty]=eikAt(W,.66,.05), x=h0[0]+(tx-h0[0])*e, y=h0[1]+(ty-h0[1])*e-Math.sin(Math.PI*e)*8;
+      H.style.left=x.toFixed(2)+'%'; H.style.top=y.toFixed(2)+'%'; H.style.rotate=(Math.sin(now()/260)*6*Math.sin(Math.PI*e)).toFixed(1)+'deg';
+      if((TB.holding||TB.autoHold)&&Math.random()<.6){ const [fx,fy]=efFinger(), [hx,hy]=ctr(H), f=Math.random(); fxAdd({k:'spark',x:fx+(hx-fx)*f,y:fy+(hy-fy)*f,vx:(Math.random()-.5)*8*vu(),vy:-3*vu(),life:.6,s:.7+Math.random()*.5,c:rnd(GLCOL)}); } }); },
+  a:{t:'hold',id:'hexe',ms:3200,grow:.0001,pc:'rgba(255,214,90,.9)',w:'HONIG'},
+  h:'Halte deinen Finger auf Ehfje, dann schwebt der Honig herunter!',
+  s:'Jetzt fehlte nur noch der Honig. Aber das Honigglas stand ganz oben im Regal, viel zu hoch für Ehfje und sogar zu hoch für Mama. Da hob Ehfje ihren Finger: Kribbel, krabbel, Funkelschein – Honigglas, schweb in den Wagen hinein! Halte deinen Finger auf Ehfje, dann zaubert sie!',
+  done(){ const H=TB.els.honig, W=TB.els.wagen, [tx,ty]=eikAt(W,.66,.05); H.style.left=tx+'%'; H.style.top=ty+'%'; H.style.rotate='0deg'; H.style.transition='opacity .4s'; bLater(()=>{ H.style.opacity=0; eikWg('hon'); fxBurst(...ctr(W),14); },300);
+    mood('hexe','laugh'); efArm('dn'); mood('janneke','oh'); },
+  d:[()=>{ onPh('Oh, staunte',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); bubble('oh!',...relEl(TB.els.janneke,[.5,0]),3.4,'#ffe0ea'); },'d1'); },
+     'Ganz sanft schwebte das Honigglas herunter und landete im Wagen. Oh, staunte Janneke und bekam ganz große Augen.',
+     ()=>{ talk('mama','Alles da','sagte Mama','d2'); talk('mama','Jetzt geht',null,'d2'); onPh('Alles da',()=>{ mood('mama','happy'); famArm('mama','up'); },'d2'); onPh('Jetzt geht',()=>{ famArm('mama','dn'); eikPush(-4,1200); },'d2'); },
+     'Alles da! sagte Mama. Jetzt geht es zur Kasse.', 700]},
+
+ /* 6 – the checkout: pull each thing over the red light, it beeps (scannen); Janneke laughs louder with every beep */
+ {set:'eikladen', dark:0, u:[4,78,12], wagen:[14,74,30], jn:'wagen', ef:[41,58,24,'st'], mama:[88,56,21], papa:[97,56,22],
+  p:[['kasse','EIKKASSE',50,76.5,100],['tuete','EIKTUETE',77,61,15],['i1','EIKBAN',24,62,9],['i2','EIKMILCH',31,61,17],['i3','EIKKARTONZU',39,64,15],['i4','EIKHONIG',47,62,17],['scan','',61,66,1]],
+  front:['kasse','tuete','i1','i2','i3','i4','scan'],
+  st:{efm:'smile',efa:'dn',mam:'smile',maa:'dn',pam:'happy',paa:'dn',jam:'smile',hop:'jn',wg:''},
+  enter(){ const K=TB.els.kasse, S=TB.els.scan, [sx,sy]=eikAt(K,276/400,35/140); S.className='tp2 eikszone'; S.style.left=sx+'%'; S.style.top=sy+'%';
+    onPh('selbst über',()=>{ efArm('up'); mood('hexe','happy'); }); onPh('piep',()=>{ eikBeep(ctr(S)[0]); TB.els.kasse.classList.add('eikbeep'); bLater(()=>TB.els.kasse.classList.remove('eikbeep'),260); });
+    onPh('hörte ganz genau',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); }); onPh('Zieh die',()=>{ efArm('dn'); }); },
+  ready(){ efReady(); efArm('dn'); mood('janneke','oh'); TB.els.kasse.classList.add('eikrun'); },
+  a:{t:'scannen',ids:['i1','i2','i3','i4'],to:'scan',bag:'tuete',w:'KASSE'},
+  h:'Schieb eine Sache über das rote Licht, dann piept es!',
+  s:'An der Kasse durfte Ehfje die Sachen selbst über den Scanner ziehen. Jedes Mal machte es piep! Janneke hörte ganz genau hin. Zieh die Sachen über das rote Licht!',
+  item(id,b){ const k=4-TB.left.length, K=TB.els.kasse, [x]=ctr(TB.els.scan); eikBeep(x); K.classList.add('eikbeep'); bLater(()=>K.classList.remove('eikbeep'),300);
+    bubble('piep!',...ctr(TB.els.scan),3.4,'#ffe0e0'); bLater(()=>{ b.style.transition='opacity .3s, scale .3s'; b.style.opacity=0; b.style.scale=.5; const T=TB.els.tuete; sqs(T); },450);
+    const J=TB.els.janneke; mood('janneke',k>=3?'laugh':k===2?'happy':'smile'); if(k>=2) famGiggle(ctr(J)[0],k*2); mood('hexe',k%2?'laugh':'happy'); },
+  done(){ mood('janneke','laugh'); mood('mama','laugh'); mood('papa','laugh'); },
+  d:[()=>{ onPh('Piep, piep',()=>{ const [x,y]=ctr(TB.els.scan); [0,1,2,3].forEach(i=>bLater(()=>eikBeep(x),i*300)); },'d1');
+       onPh('lachte Janneke lauter',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); famGiggle(ctr(J)[0],8); hearts(...ctr(J),3); },'d1');
+       onPh('alle Leute',()=>{ ['mama','papa','hexe'].forEach(id=>mood(id,'laugh')); famGiggle(ctr(TB.els.janneke)[0],10); },'d1'); },
+     'Piep, piep, piep, piep! Bei jedem Piep lachte Janneke lauter. Und dann lachte sie so sehr, dass alle mitlachen mussten.',
+     ()=>{ onPh('Mama bezahlte',()=>{ famArm('mama','up'); eikKling(ctr(TB.els.kasse)[0]); },'d2');
+       onPh('langen Zettel',()=>{ famArm('mama','dn'); const K=TB.els.kasse, [bx,by]=eikAt(K,300/400,0), B=el('div','tp2 eikbon',eikBonSVG()); B.style.cssText=`left:${bx}%;top:${by}%;width:4vh`; TB.act.appendChild(B); TB.els.bon=B; },'d2');
+       onPh('Den durfte',()=>{ const B=TB.els.bon; if(!B) return; const [bx,by]=[parseFloat(B.style.left),parseFloat(B.style.top)], [hx,hy]=eikAt(TB.els.hexe,.72,.3); kiPath(B,[[(bx+hx)/2,Math.min(by,hy)-8],[hx,hy]],1300,()=>{ efArm('up'); mood('hexe','happy'); hearts(...ctr(B),2); }); },'d2'); },
+     'Mama bezahlte, und die Kasse gab einen langen Zettel heraus. Den durfte Ehfje behalten.', 700]},
+
+ /* 7 – at home: Boris sniffs the bags and gets a sausage; Ehfje mashes the banana (matschen); Janneke's first banana – a hit */
+ {set:'eikkueche', dark:0, u:[94,73,12], ef:[52,63,22,'st'], mama:[33,57,22], papa:[11,58,23], boris:[24,86,18], jn:'stuhl', stuhl:[80,64,21],
+  p:[['tuete','EIKTUETEV',4,86,13],['tisch','EIKTISCH',50,88,74],['teller','EIKTELLER',49,79,24]], front:['tisch','teller','boris'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'dn',jam:'smile',bom:'happy',hop:'jn'},
+  enter(){ TB.els.teller.classList.add('eiktl'); TB.els.teller.dataset.s=0;
+    onPh('wartete Boris',()=>{ famWag(1); famWoof(ctr(TB.els.boris)[0]); sqs(TB.els.boris); }); onPh('schnüffelte',()=>{ const B=TB.els.boris; B.classList.add('famsnf'); mood('boris','sniff'); famSniff(ctr(B)[0]); bLater(()=>B.classList.remove('famsnf'),1600); });
+    onPh('Papa gab ihm',()=>{ famArm('papa','up'); const W=el('div','tp2 eikwu',famWurstSVG()); W.style.width='6vh'; TB.act.appendChild(W); const [px,py]=eikAt(TB.els.papa,.8,.42); W.style.left=px+'%'; W.style.top=py+'%';
+      const [bx,by]=eikAt(TB.els.boris,.86,.36); kiPath(W,[[(px+bx)/2,py-8],[bx,by]],1100,()=>{ W.style.opacity=0; mood('boris','happy'); famWag(1); bubble('mmh!',...famNose(),3.4,'#fff0d8'); famArm('papa','dn'); }); });
+    onPh('Jannekes Brei',()=>{ mood('janneke','happy'); sqs(TB.els.janneke); }); onPh('Ehfje durfte',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('boris','happy'); famArm('papa','dn'); },
+  a:{t:'matschen',id:'teller',n:6,w:'BREI'},
+  h:'Tipp mit dem Finger auf die Banane, immer wieder!',
+  s:'Zu Hause wartete Boris schon an der Tür und schnüffelte an allen Tüten. Papa gab ihm ein Würstchen. Dann war es Zeit für Jannekes Brei. Ehfje durfte die Banane zerdrücken. Tipp mit der Gabel auf die Banane, bis sie ganz weich ist!',
+  mashed(k,p){ mood('hexe',k%2?'laugh':'happy'); if(k===3){ mood('janneke','oh'); } },
+  done(){ mood('hexe','happy'); mood('mama','happy'); },
+  d:[()=>{ onPh('fütterte Janneke',()=>{ const T=TB.els.teller, L=el('div','tp2 eiklf',eikLoeffelSVG(1)); L.style.width='4vh'; TB.act.appendChild(L); const [tx,ty]=eikAt(T,.5,.4); L.style.left=tx+'%'; L.style.top=ty+'%'; TB.els.loeffel=L;
+         const [jx,jy]=eikAt(TB.els.janneke,.5,.55); efArm('fwd'); kiPath(L,[[(tx+jx)/2,Math.min(ty,jy)-10],[jx,jy+4]],1500,()=>{ mood('janneke','oh'); sqs(TB.els.janneke); }); },'d1');
+       onPh('schmatzte',()=>{ famNoise(ctr(TB.els.janneke)[0],.06,500,900,160); const L=TB.els.loeffel; if(L) L.style.opacity=0; },'d1');
+       onPh('verzog',()=>{ mood('janneke','cry'); mood('hexe','oh'); efArm('dn'); },'d1');
+       onPh('und dann lachte',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); famGiggle(ctr(J)[0],8); hearts(...ctr(J),4); mood('hexe','laugh'); },'d1');
+       onPh('Mehr',()=>{ bubble('mehr!',...relEl(TB.els.janneke,[.5,0]),4,'#ffe0ea'); sqs(TB.els.janneke); },'d1'); },
+     'Ehfje fütterte Janneke mit dem Löffel. Janneke schmatzte, verzog das Gesicht … und dann lachte sie und riss den Mund ganz weit auf, als wollte sie sagen: Mehr!',
+     ()=>{ talk('mama','Siehst du','sagte Mama','d2'); talk('mama','Du weißt',null,'d2'); onPh('Siehst du',()=>{ mood('mama','happy'); famArm('mama','up'); },'d2');
+       onPh('Ehfje strahlte',()=>{ efArm('hug'); mood('hexe','happy'); const [x,y]=ctr(TB.els.hexe); hearts(x,y-vu()*6,4); famArm('mama','dn'); },'d2'); },
+     'Siehst du, sagte Mama. Du weißt schon ganz genau, was deine kleine Schwester mag. Ehfje strahlte.',
+     ()=>{ onPh('noch heute',()=>{ const J=TB.els.janneke, [x,y]=ctr(J); glitterBurst(x,y,16,14); chimeAt([1318,1568,2093],x); },'d3'); },
+     'Und wenn sie nicht satt geworden ist, dann isst sie noch heute.', 1600]}
+ ]};
+
+/*<EINKAUF*/
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
 function owlSVG(){ return `<svg viewBox="0 0 120 152">
@@ -11461,7 +12064,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -11504,6 +12107,10 @@ function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map
     `<div class="tp2 chr tasn" data-mood="laugh" style="left:68%;top:62%;width:30%;--lv:1;--tg:.8"><div class="bb">${tasseSVG()}<div class="tp2 chr tasfd kid" style="left:66%;top:4%;width:22%;rotate:24deg"><div class="bb">${tasFederSVG()}</div></div></div></div>`+
     `<div class="tp2 tasbuch open" style="left:72%;top:22%;width:30%;rotate:8deg">${tasBuchSVG()}</div></div>`+
     [[12,16,5],[44,10,4],[92,56,3.6],[10,46,3.4],[56,30,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+tw;
+if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0">`+
+    `<div class="tp2 chr eikwg h-ban h-apf h-milch h-ei h-hon" style="left:56%;top:66%;width:66%"><div class="bb">${eikWagenSVG()}<div class="tp2 chr famjn kid" data-mood="laugh" style="left:28%;top:14%;width:27%"><div class="bb">${jannekeSVG()}</div></div><div class="kid eikwv">${eikWagenVSVG()}</div></div></div>`+
+    `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:20%;top:60%;width:36%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2" style="left:80%;top:18%;width:14%;rotate:12deg">${eikHonigSVG()}</div></div>`+tw;/*<EIKART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -11769,6 +12376,8 @@ regTale2(TAS2);
 regTale2(KIKI2);
 /* Eefje und das große Picknick: after Kiki, so the older lines keep their order in voice/clips.tsv */
 regTale2(FAM2);
+/* Eefje und der große Einkauf: after the picnic, so the older lines keep their order in voice/clips.tsv */
+regTale2(EINK2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
