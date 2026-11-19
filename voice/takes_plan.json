@@ -3753,6 +3753,21 @@
      "say": "Lied"
     }
    ]
+  },
+  {
+   "id": "w_x049_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Kasse. Brei.",
+   "items": [
+    {
+     "key": "wort_kasse",
+     "say": "Kasse"
+    },
+    {
+     "key": "wort_brei",
+     "say": "Brei"
+    }
+   ]
   }
  ]
 }
