@@ -3768,6 +3768,21 @@
      "say": "Brei"
     }
    ]
+  },
+  {
+   "id": "w_x050_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Stift. Pflaster.",
+   "items": [
+    {
+     "key": "wort_stift",
+     "say": "Stift"
+    },
+    {
+     "key": "wort_pflaster",
+     "say": "Pflaster"
+    }
+   ]
   }
  ]
 }
