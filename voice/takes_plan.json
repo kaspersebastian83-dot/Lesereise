@@ -3806,6 +3806,17 @@
      "say": "Rutsche"
     }
    ]
+  },
+  {
+   "id": "w_x052_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Traum.",
+   "items": [
+    {
+     "key": "wort_traum",
+     "say": "Traum"
+    }
+   ]
   }
  ]
 }
