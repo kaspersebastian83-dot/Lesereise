@@ -3783,6 +3783,29 @@
      "say": "Pflaster"
     }
    ]
+  },
+  {
+   "id": "w_x051_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pfütze. Schaukel. Wippe. Rutsche.",
+   "items": [
+    {
+     "key": "wort_pfuetze",
+     "say": "Pfütze"
+    },
+    {
+     "key": "wort_schaukel",
+     "say": "Schaukel"
+    },
+    {
+     "key": "wort_wippe",
+     "say": "Wippe"
+    },
+    {
+     "key": "wort_rutsche",
+     "say": "Rutsche"
+    }
+   ]
   }
  ]
 }
