@@ -1710,6 +1710,74 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.splleaf{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25));z-index:5}
 .splart .tp2{position:absolute} .splart .famp>.bb,.splart .eef>.bb{animation:none}
 /*<SPIELCSS*/
+/*BETTCSS>*/
+/* Eefje will noch nicht schlafen (all classes start with "bet") */
+/* Ehfje: pyjamas, brushing arm, sleepy faces, foam beard */
+.eef .betpjt,.eef .betpjl,.eef .betpjs{display:none}
+.eef.betpj .betpjt{display:inline} .eef.betpj:not(.sitb):not(.ride) .betpjl{display:inline} .eef.betpj.sitb .betpjs,.eef.betpj.ride .betpjs{display:inline}
+.eef.betpj .arm path[stroke="#7b4fd6"]{stroke:#8ec8ff} .eef.betpj .arm path[stroke="#3e2290"]{stroke:#3e6ab0}
+.eef[data-arm=putz] .betarm{display:inline}
+.eef .betfoam{opacity:var(--fm,0);transition:opacity .4s}
+.eef[data-mood=sleepy] .betmd,.eef[data-mood=sleepy] .m-smile{display:inline}
+.eef[data-mood=yawn] .betzu,.eef[data-mood=yawn] .betgn{display:inline}
+.eef[data-mood=asleep] .betzu,.eef[data-mood=asleep] .m-smile,.eef[data-mood=asleep] .blush{display:inline}
+.eef[data-mood=grin] .ey-j,.eef[data-mood=grin] .betgr,.eef[data-mood=grin] .blush{display:inline}
+.eef .betgn,.famp .betgn,.sck .betgn,.luna .betgn{transform-box:fill-box;transform-origin:50% 30%;animation:betgn 1.5s ease-in-out} @keyframes betgn{0%{transform:scale(.3)}40%,70%{transform:scale(1.18)}100%{transform:scale(1)}}
+.famp[data-mood=yawn] .betzu,.famp[data-mood=yawn] .betgn{display:inline} .famp[data-mood=sleepy] .betzu,.famp[data-mood=sleepy] .m-smile{display:inline}
+.sck[data-mood=sleepy] .betzu,.sck[data-mood=sleepy] .m-s{display:inline} .sck[data-mood=yawn] .betzu,.sck[data-mood=yawn] .betgn{display:inline}
+.sck[data-mood=sleepy]>.bb{animation:breathe 4.4s ease-in-out infinite} .sck[data-mood=sleepy] .tl{animation-duration:5s}
+.famdog[data-mood=yawn] .ey-z,.famdog[data-mood=yawn] .m-o{display:inline}
+.luna.betmn[data-mood=asleep] .mz{display:none} .luna.betmn[data-mood=asleep] .betzu,.luna.betmn[data-mood=asleep] .m-s,.luna.betmn[data-mood=asleep] .ck{display:inline}
+.luna.betmn[data-mood=betgaehn] .betzu,.luna.betmn[data-mood=betgaehn] .betgn,.luna.betmn[data-mood=betgaehn] .ck{display:inline}
+.luna.betmn .cap{transition:transform 1.2s ease-in-out} .luna.betmn.capdn .cap{transform:translate(-4px,14px) rotate(-10deg)}
+.tp2.luna.betmn{filter:drop-shadow(0 0 2vh rgba(255,240,180,.7)) drop-shadow(0 0 5vh rgba(255,220,140,.45))}
+.u2.betsleep .ub{animation:float 7s ease-in-out infinite}
+/* the room's props */
+.betki svg,.bettoy svg,.betwb svg,.betbr svg,.betlp svg,.betuhr svg,.betnl svg,.betfe svg,.betvh svg,.bettisch svg,.betbed svg,.betrider svg{display:block;width:100%;overflow:visible}
+.tp2.betki{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.22))} .betki .betlc{display:none} .betki.zu .betlc{display:inline} .betki.zu .betlo{display:none}
+.tp2.bettoy{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.2))}
+.tp2.betwb{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.16))}
+.tp2.betbr{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.25));z-index:6} .betbr .betpaste{transition:opacity .4s} .betbr.betnop .betpaste{opacity:0}
+.tp2.bettisch{filter:drop-shadow(0 .5vh .7vh rgba(0,0,0,.2))}
+.tp2.betlp{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.2))} .betlp .betsh{transition:fill .5s} .betlp .betbl{opacity:0;transition:opacity .5s}
+.tp2.betlp.lit{filter:drop-shadow(0 0 2vh #ffe8a0) drop-shadow(0 0 5vh rgba(255,200,90,.75))} .betlp.lit .betsh{fill:#fff4c0} .betlp.lit .betbl{opacity:1}
+.tp2.betnl{filter:drop-shadow(0 .2vh .3vh rgba(0,0,0,.2));transition:filter .8s} .tp2.betnl.lit{filter:drop-shadow(0 0 1.4vh #fff3b0) drop-shadow(0 0 3.4vh rgba(255,220,120,.85))}
+.tp2.betuhr{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.25))} .betuhr .swirl{transform-box:fill-box;transform-origin:center}
+.betuhr .betfig{transform-box:fill-box;transform-origin:50% 100%} .betuhr.play .betfig{animation:betfig 2.6s linear infinite}
+@keyframes betfig{0%{transform:scaleX(1)}25%{transform:scaleX(.08)}50%{transform:scaleX(-1)}75%{transform:scaleX(-.08)}100%{transform:scaleX(1)}}
+.tp2.betuhr.play{filter:drop-shadow(0 0 1.6vh rgba(255,220,240,.9)) drop-shadow(0 .4vh .6vh rgba(0,0,0,.25))}
+/* the window with curtains, stars and the moon */
+.tp2.betfe{filter:drop-shadow(0 1vh 1.4vh rgba(0,0,0,.3))} .betfe .stn,.betfe .luna{z-index:1}
+.tp2.betvh{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.25));z-index:3} .betvh svg{transition:transform 1.8s ease-in-out} .betvh.l svg{transform-origin:0 50%} .betvh.r svg{transform-origin:100% 50%}
+.betvh.zu svg{transform:scaleX(2.75)}
+/* the bed: back, Ehfje, blanket, footboard, Socke */
+.tp2.betbed{filter:drop-shadow(0 1vh 1.4vh rgba(0,0,0,.22))} .betbb{position:relative} .betdkw,.betfb{position:absolute;inset:0;pointer-events:none} .betdkw{z-index:2} .betfb{z-index:3}
+.betbed .tp2.betin{z-index:1;filter:none} .betbed .betin>.bb{animation:betbr 4.2s ease-in-out infinite} @keyframes betbr{50%{transform:translateY(-.8%)}}
+.betbed .tp2.betsk{z-index:4;filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.25))}
+.betgrip{position:absolute;width:7vh;height:7vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:6;
+  background:radial-gradient(circle,rgba(255,255,255,.95) 0,rgba(255,236,150,.8) 30%,rgba(255,220,120,0) 70%);animation:famgp 1.4s ease-in-out infinite;transition:opacity .4s}
+.betgrip.held{scale:1.4;animation:none} .betgrip.pulse{animation:famgp .45s ease-in-out 5}
+/* the storybook */
+.tp2.betbuch{filter:drop-shadow(0 1.2vh 1.4vh rgba(0,0,0,.3));z-index:4} .betbk{position:relative;perspective:150vh} .betcv{display:block;width:100%;height:auto}
+.betpl,.betpr,.betleaf{position:absolute;top:4.6%;height:91.2%;width:45%} .betpl{left:4%} .betpr,.betleaf{left:51%}
+.betleaf{transform-origin:-2.2% 50%;transform-style:preserve-3d;z-index:2}
+.betleaf .f,.betleaf .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden} .betleaf .b{transform:rotateY(180deg)}
+.betpg{position:absolute;inset:0;background:linear-gradient(90deg,#efe0c0 0%,#f8ecd2 12%,#f8ecd2 88%,#efe0c0 100%);border-radius:.4vh;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5%}
+.betleaf .betpg{box-shadow:inset .6vh 0 1vh rgba(120,80,30,.18)}
+.betpic{position:relative;width:88%;height:64%} .betpic svg.betun{position:absolute;left:50%;top:50%;width:100%;translate:-50% -50%;overflow:visible}
+.betpic .tp2{position:absolute} .betpic .eef>.bb,.betpic .kiki>.bb{animation:none}
+.betln{width:80%;display:flex;flex-direction:column;gap:.9vh} .betln i{display:block;height:.6vh;border-radius:.4vh;background:#c8b48a;opacity:.75}
+.betti{color:#8a3a2a;font-size:3.6vh;font-weight:800} .betti b{font-size:2.2vh;color:#c8962a;font-weight:400}
+.betorn{color:#c8962a;font-size:3vh;line-height:1}
+.betend span{font-size:4.6vh;font-weight:800;color:#8a3a2a} .betend b{font-size:4.6vh;color:#e8447a;line-height:1}
+/* the dream: riding the unicorn */
+.tp2.betrider{filter:drop-shadow(0 1vh 1.6vh rgba(0,0,0,.3)) drop-shadow(0 0 3vh rgba(255,220,255,.55))} .betrider>.bb{position:relative} .betrider .eef{filter:none}
+/* back in her room at the end */
+.betheim{position:absolute;inset:0;opacity:0;transition:opacity 2.2s;z-index:8;pointer-events:none;overflow:hidden} .betheim.on{opacity:1}
+.betheim .famp>.bb{animation:none} .betheim .tp2{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.25))}
+.betart .tp2{position:absolute} .betart .eef>.bb,.betart .sck>.bb,.betart .u2 .ub{animation:none}
+/*<BETTCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -13104,6 +13172,628 @@ const SPL2={id:'spielplatz', v2:true, eef:1, fam:1, dur:SPLDUR, title:'Eefje und
      'Und wenn sie nicht müde geworden sind, dann schaukeln sie noch heute.', 1600]}
  ]};
 /*<SPIEL*/
+/*BETT>*/
+/* ================= Eefje will noch nicht schlafen (all classes start with "bet"; checked: no .bet… class existed before) ================= */
+/* ---------- the characters get sleepy: closed eyes, a yawn, Ehfje's starry pyjamas, her brushing arm (for all tales, hidden by default) ---------- */
+const BETEEF0=eefjeSVG;
+eefjeSVG=function(){ let s=BETEEF0(); const E='#2a1a2e', P='#8ec8ff', PD='#3e6ab0', K='#ffe2cc', KS='#d79a7a', D='#7b4fd6', DD='#3e2290';
+  const st=(x,y,r,c)=>`<path d="M${x} ${y-r} L${x+r*.3} ${y-r*.3} L${x+r} ${y} L${x+r*.3} ${y+r*.3} L${x} ${y+r} L${x-r*.3} ${y+r*.3} L${x-r} ${y} L${x-r*.3} ${y-r*.3}Z" fill="${c||'#ffd84a'}"/>`;
+  const moon=(x,y,r)=>`<path d="M${x} ${y-r} A${r} ${r} 0 1 0 ${x} ${y+r} A${r*.72} ${r*.72} 0 1 1 ${x} ${y-r}Z" fill="#fff6c0"/>`;
+  /* the pyjama top lies over the dress (same outline) */
+  const top=`<g class="betpjt"><path d="M66 74 Q80 69 94 74 L110 120 Q80 129 50 120Z" fill="${P}" stroke="${PD}" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M51 115 Q80 124 109 115 L110 120 Q80 129 50 120Z" fill="#6aaaf0" stroke="${PD}" stroke-width="2" stroke-linejoin="round"/>
+   ${st(64,92,4.4)}${st(96,98,4)}${st(78,110,3.6)}${moon(88,86,4.2)}${moon(62,108,3.6)}<g fill="#fff">${[[80,84],[80,96]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.7" stroke="${PD}" stroke-width=".8"/>`).join('')}</g></g>`;
+  /* pyjama trousers and fluffy socks: standing (also stretched out in bed) and sitting */
+  const leg=(d,w)=>`<path d="${d}" stroke="${PD}" stroke-width="${w+3}" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${P}" stroke-width="${w}" fill="none" stroke-linecap="round"/>`;
+  const sock=(x,y,r)=>`<ellipse cx="${x}" cy="${y}" rx="9" ry="5.6" transform="rotate(${r} ${x} ${y})" fill="#ff9ac0" stroke="#c45a88" stroke-width="2"/><ellipse cx="${x}" cy="${y-3}" rx="7" ry="2" transform="rotate(${r} ${x} ${y})" fill="#fff" opacity=".7"/>`;
+  const pjl=`<g class="betpjl">${leg('M71 117 V141',11)}${leg('M89 117 V141',11)}<g fill="#ffd84a"><circle cx="71" cy="128" r="1.6"/><circle cx="89" cy="132" r="1.6"/></g>${sock(73,146,-6)}${sock(87,146,6)}</g>`;
+  const pjs=`<g class="betpjs">${leg('M80 114 L96 134',11)}${leg('M90 114 L107 130',11)}${sock(100,138,-30)}${sock(111,133,-30)}</g>`;
+  s=s.replace('<g class="sit">',pjl+'<g class="sit">');
+  s=s.replace('<path d="M66 74 Q80 69 94 74 L110 120',pjs+'<path d="M66 74 Q80 69 94 74 L110 120');
+  s=s.replace('<path d="M70 74 Q80 82 90 74',top+'<path d="M70 74 Q80 82 90 74');
+  /* holding the toothbrush at her mouth */
+  const arm=(d,hx,hy)=>`<path d="${d}" stroke="${DD}" stroke-width="11" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${D}" stroke-width="7.5" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="5.2" fill="${K}" stroke="${KS}" stroke-width="2"/>`;
+  s=s.replace('<g class="hd">',`<g class="arm betarm">${arm('M68 80 Q58 94 60 106',60,107)}${arm('M92 80 Q114 86 111 72',111,71)}</g><g class="hd">`);
+  /* sleepy, asleep, a big yawn, a grin with teeth (brushing), and the foam beard */
+  const foam=[[70,66,3.6],[75,70.5,4],[81,72,4.2],[87,70,3.8],[91,66,3.2],[73,75,3.4],[80,77.5,4],[87,75,3.4],[80,81.5,3],[66,63,2.4],[94,63,2.4]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('');
+  s=s.replace('<ellipse class="mo"',`<g class="ey betzu" fill="none" stroke="${E}" stroke-width="2.6" stroke-linecap="round"><path d="M66 52 q5 4.5 10 0"/><path d="M84 52 q5 4.5 10 0"/></g>
+   <g class="ey betmd"><path d="M66.6 51 a4.4 4.4 0 0 0 8.8 0Z" fill="${E}"/><path d="M84.6 51 a4.4 4.4 0 0 0 8.8 0Z" fill="${E}"/><path d="M65.4 50.6 h11.2 M83.4 50.6 h11.2" stroke="${E}" stroke-width="2.2" stroke-linecap="round"/></g>
+   <g class="m betgn"><ellipse cx="80" cy="66.5" rx="4.8" ry="6.8" fill="#8a2a3a" stroke="${E}" stroke-width="1.6"/><ellipse cx="80" cy="70.2" rx="3" ry="1.9" fill="#ff8a9a"/></g>
+   <g class="m betgr"><path d="M71 62 Q80 73 89 62Z" fill="#fff" stroke="${E}" stroke-width="2" stroke-linejoin="round"/><path d="M73 63.6 H87" stroke="#d8d0d8" stroke-width="1"/></g>
+   <g class="betfoam" fill="#fff" stroke="#b8dcf4" stroke-width=".9">${foam}</g><ellipse class="mo"`);
+  return s; };
+const BETMAMA0=mamaSVG;
+mamaSVG=function(){ const E='#2a1a2e'; return BETMAMA0().replace('<ellipse class="mo"',`<g class="ey betzu" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"><path d="M68 43 q4 3.6 8 0"/><path d="M84 43 q4 3.6 8 0"/></g>
+  <ellipse class="m betgn" cx="80" cy="56" rx="4" ry="5.6" fill="#8a2a3a" stroke="#a8323e" stroke-width="1.4"/><ellipse class="mo"`); };
+const BETPAPA0=papaSVG;
+papaSVG=function(){ const E='#2a1a2e'; return BETPAPA0().replace('<ellipse class="mo"',`<g class="ey betzu" fill="none" stroke="${E}" stroke-width="2.4" stroke-linecap="round"><path d="M68 40 q4 3.6 8 0"/><path d="M84 40 q4 3.6 8 0"/></g>
+  <ellipse class="m betgn" cx="80" cy="58" rx="4" ry="5.6" fill="#7a2a2a" stroke="${E}" stroke-width="1.4"/><ellipse class="mo"`); };
+const BETSOCKE0=sockeSVG;
+sockeSVG=function(){ return BETSOCKE0().replace('<path d="M37.5 34',`<g class="ey betzu" fill="none" stroke="#9ae04a" stroke-width="2.6" stroke-linecap="round"><path d="M28 28 q4 3.4 8 0"/><path d="M44 28 q4 3.4 8 0"/></g>
+  <ellipse class="m betgn" cx="40" cy="41" rx="3.2" ry="4.4" fill="#8a2a3a"/><path d="M37.5 34`); };
+/* the moon with a nightcap: closed eyes and a yawn (class betmn) */
+function betMoonSVG(){ return moonSVG().replace('<circle class="msh" cx="66"','<circle class="msh" cx="152"').replace('<path class="m m-s"',`<g class="ey betzu" fill="none" stroke="#5a4220" stroke-width="2.8" stroke-linecap="round"><path d="M33 47 q5 4.5 10 0"/><path d="M57 47 q5 4.5 10 0"/></g>
+  <g class="m betgn"><ellipse cx="50" cy="64" rx="6" ry="8" fill="#8a4a2a"/><ellipse cx="50" cy="68.5" rx="3.6" ry="2.2" fill="#ff9a8a"/></g><path class="m m-s"`); }
+/* the unicorn falls asleep: its eye closes */
+function betUniSleep(on,U){ U=U||(TB&&TB.els.uni); if(!U) return; const sv=U.querySelector('svg.uni'); if(!sv) return; let z=sv.querySelector('.betuz');
+  if(!z){ z=document.createElementNS('http://www.w3.org/2000/svg','path'); z.setAttribute('class','betuz'); z.setAttribute('d','M190 66 q10 8 20 0'); z.setAttribute('fill','none'); z.setAttribute('stroke','#3b2a5a');
+    z.setAttribute('stroke-width','3.6'); z.setAttribute('stroke-linecap','round'); sv.appendChild(z); }
+  sv.querySelectorAll('ellipse,circle').forEach(e=>{ const x=e.getAttribute('cx'), y=e.getAttribute('cy'); if((x==='200'&&y==='68')||(x==='202.5'&&y==='64')||(x==='197.5'&&y==='72')) e.style.opacity=on?0:1; });
+  z.style.opacity=on?1:0; U.classList.toggle('betsleep',!!on); }
+
+/* ---------- drawn props ---------- */
+const betStar=(x,y,r,c,o)=>`<path d="M${x} ${y-r} L${x+r*.3} ${y-r*.3} L${x+r} ${y} L${x+r*.3} ${y+r*.3} L${x} ${y+r} L${x-r*.3} ${y+r*.3} L${x-r} ${y} L${x-r*.3} ${y-r*.3}Z" fill="${c||'#ffd84a'}"${o!=null?` opacity="${o}"`:''}/>`;
+const betStar5=(x,y,r,c,s)=>{ let d=''; for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, q=i%2?r*.45:r; d+=(i?'L':'M')+(x+Math.cos(a)*q).toFixed(1)+' '+(y+Math.sin(a)*q).toFixed(1)+' '; }
+  return `<path d="${d}Z" fill="${c||'#ffd84a'}"${s?` stroke="${s}" stroke-width="1.6" stroke-linejoin="round"`:''}/>`; };
+/* Ehfje's room (abend: sunset in the window, nacht: night, wand: the wall without the window) and the bathroom. 1600 x 1000, sliced */
+function betRoomSVG(kind){ if(kind==='bad') return betBadSVG(); const id='br'+(++LANC), nt=kind!=='abend';
+  const W0=nt?'#6a5ea0':'#fde4ec', W1=nt?'#4e4484':'#f4cede', WP=nt?'#fff6c0':'#ffffff';
+  let wp=''; for(let r=0;r<8;r++) for(let c=0;c<22;c++){ const x=c*78+(r%2?39:0)-20, y=50+r*80; wp+=(r*7+c*3)%5===0?betStar(x,y,8,WP):`<circle cx="${x}" cy="${y}" r="3"/>`; }
+  let win='';
+  if(kind!=='wand'){ const sky=nt?`<stop offset="0" stop-color="#0e1650"/><stop offset=".7" stop-color="#2a3080"/><stop offset="1" stop-color="#4a3a8a"/>`:`<stop offset="0" stop-color="#ff9a7a"/><stop offset=".55" stop-color="#ffc48a"/><stop offset="1" stop-color="#ffe6b0"/>`;
+    const r=seeded(nt?83:81); let st=''; if(nt) for(let i=0;i<26;i++) st+=`<circle cx="${(150+r()*320).toFixed(0)}" cy="${(160+r()*200).toFixed(0)}" r="${(1+r()*2).toFixed(1)}" fill="#fff" opacity="${(.5+r()*.5).toFixed(2)}"/>`;
+    win=`<defs><linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1">${sky}</linearGradient><clipPath id="${id}c"><rect x="140" y="150" width="340" height="310"/></clipPath></defs>
+     <rect x="140" y="150" width="340" height="310" fill="url(#${id}s)"/>
+     <g clip-path="url(#${id}c)">${st}
+      ${nt?`<path d="M400 190 A40 40 0 1 0 400 270 A30 30 0 1 1 400 190Z" fill="#fff3c0"/><circle cx="390" cy="230" r="70" fill="#fff6c8" opacity=".12"/>`
+         :`<circle cx="330" cy="452" r="62" fill="#ffd660"/><circle cx="330" cy="452" r="92" fill="#ffe08a" opacity=".35"/><g fill="#ffb0b8" opacity=".8"><ellipse cx="220" cy="230" rx="60" ry="14"/><ellipse cx="400" cy="290" rx="50" ry="11"/></g>`}
+      <path d="M140 460 L140 400 L170 400 L170 380 L200 360 L230 380 L230 400 L290 400 L290 372 L320 352 L350 372 L350 410 L410 410 L410 390 L440 370 L480 392 L480 460Z" fill="${nt?'#141a48':'#c8705a'}" opacity="${nt?1:.55}"/>
+      ${nt?`<g fill="#ffd86a"><rect x="190" y="388" width="12" height="12"/><rect x="330" y="384" width="10" height="12"/><rect x="430" y="396" width="10" height="10"/></g>`:''}</g>
+     <rect x="140" y="150" width="340" height="310" fill="none" stroke="#c8a070" stroke-width="16" rx="6"/><path d="M310 150 V460 M140 300 H480" stroke="#c8a070" stroke-width="10"/>
+     <path d="M118 462 H502" stroke="#b88a5a" stroke-width="20" stroke-linecap="round"/>
+     <path d="M112 132 Q172 270 128 466 L104 466 L96 128Z M508 132 Q448 270 492 466 L516 466 L524 128Z" fill="${nt?'#a88ad0':'#ffd27a'}" stroke="${nt?'#6a4a9a':'#d8a040'}" stroke-width="4"/>
+     <g fill="${nt?'#fff3b0':'#fff'}" opacity=".8">${[[108,200],[118,300],[112,400],[512,220],[502,330],[510,420]].map(([x,y])=>betStar(x,y,7,nt?'#fff3b0':'#fff')).join('')}</g>
+     <path d="M90 126 H530" stroke="#8a6a4a" stroke-width="10" stroke-linecap="round"/>`; }
+  /* a child's drawing on the wall (the sun, the rainbow and Boris from the rainy afternoon) */
+  const pic=`<g transform="translate(640 170)"><rect width="210" height="160" rx="6" fill="#fffef6" stroke="#e8a0b8" stroke-width="10"/>
+    ${['#ff5a6a','#ffa84a','#ffe25a','#6ad87a','#5ab4ff'].map((c,i)=>`<path d="M${40+i*9} 130 A${66-i*9} ${66-i*9} 0 0 1 ${172-i*9} 130" stroke="${c}" stroke-width="8" fill="none"/>`).join('')}
+    <circle cx="46" cy="40" r="20" fill="#ffd84a"/><g stroke="#ffb82a" stroke-width="4" stroke-linecap="round"><path d="M46 8 V14 M14 40 H20 M24 18 l4 4 M68 18 l-4 4"/></g>
+    <ellipse cx="150" cy="118" rx="22" ry="12" fill="#fff" stroke="#8a5420" stroke-width="3"/><circle cx="170" cy="106" r="9" fill="#c8843a" stroke="#8a5420" stroke-width="3"/></g>`;
+  /* the shelf with books, a drum and Ulla as a soft toy */
+  const shelf=`<g transform="translate(1180 190)"><rect width="250" height="380" rx="8" fill="${nt?'#a8784a':'#d8a46a'}" stroke="#8a5a2e" stroke-width="8"/>
+    ${[120,250,370].map(y=>`<rect x="8" y="${y}" width="234" height="12" fill="#8a5a2e"/>`).join('')}
+    ${['#ff6a6a','#5ab4ff','#ffd84a','#6ad87a','#b48aff','#ff9a3a'].map((c,i)=>`<rect x="${20+i*24}" y="${46+(i%2)*8}" width="20" height="${74-(i%2)*8}" rx="3" fill="${c}"/>`).join('')}
+    <g transform="translate(190 82)"><ellipse rx="26" ry="30" fill="#c89a6a" stroke="#7a5a3a" stroke-width="4"/><circle cx="-9" cy="-8" r="8" fill="#fff"/><circle cx="9" cy="-8" r="8" fill="#fff"/><circle cx="-9" cy="-8" r="3.6" fill="#2a1a2e"/><circle cx="9" cy="-8" r="3.6" fill="#2a1a2e"/><path d="M-4 2 L0 8 L4 2Z" fill="#f0a020"/></g>
+    <g transform="translate(64 196)"><ellipse rx="44" ry="12" fill="#ffe0e8" stroke="#c45a78" stroke-width="4"/><path d="M-44 0 V40 Q0 56 44 40 V0" fill="#ff7aa0" stroke="#c45a78" stroke-width="4"/><path d="M-30 6 L-14 44 M0 10 V50 M30 6 L14 44" stroke="#fff" stroke-width="4"/></g>
+    <g transform="translate(176 180)"><rect x="-26" y="-20" width="52" height="62" rx="6" fill="#8ad0ff" stroke="#3a7ab8" stroke-width="4"/>${['#ff5a6a','#ffd84a','#6ad87a','#b48aff'].map((c,i)=>`<rect x="${-20+i*11}" y="-40" width="8" height="30" rx="3" fill="${c}"/>`).join('')}</g>
+    ${['#ffd84a','#ff9ac0','#8ad0ff'].map((c,i)=>`<rect x="${30+i*64}" y="${300}" width="50" height="58" rx="6" fill="${c}" stroke="#8a5a2e" stroke-width="3"/>`).join('')}</g>`;
+  let pl=''; for(let i=0;i<14;i++) pl+=`<path d="M${i*120-40} 650 L${i*150-300} 1000"/>`;
+  const F0=nt?'#9a6a48':'#d89a5e', F1=nt?'#7a5238':'#b87a42', R0=nt?'#7a96d0':'#a8d0f4';
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${W0}"/><stop offset="1" stop-color="${W1}"/></linearGradient>
+   <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${F0}"/><stop offset="1" stop-color="${F1}"/></linearGradient></defs>
+   <rect width="1600" height="1000" fill="url(#${id}w)"/><g fill="${WP}" opacity="${nt?.22:.55}">${wp}</g>
+   ${win}${kind==='wand'?'':pic}${shelf}
+   <g${kind==='wand'?' transform="translate(0 170)"':''}><rect x="0" y="626" width="1600" height="24" fill="${nt?'#c8a8d8':'#f8d8e4'}"/><rect y="646" width="1600" height="354" fill="url(#${id}f)"/>
+   <g stroke="#6a4224" stroke-width="3" opacity=".45">${pl}</g>
+   <ellipse cx="760" cy="866" rx="600" ry="104" fill="${R0}" opacity=".95"/><ellipse cx="760" cy="866" rx="530" ry="80" fill="none" stroke="#fff" stroke-width="9" stroke-dasharray="36 22" opacity=".75"/>
+   ${[[420,862],[760,830],[1100,866],[600,900],[930,900]].map(([x,y])=>betStar(x,y,12,'#fff3b0',.9)).join('')}</g></svg>`; }
+/* the bathroom: tiles, a little night window, the mirror, towels, the bathtub with a duck */
+function betBadSVG(){ const id='bb'+(++LANC); let tl=''; for(let x=0;x<=1600;x+=64) tl+=`<path d="M${x} 0 V640"/>`; for(let y=0;y<=640;y+=64) tl+=`<path d="M0 ${y} H1600"/>`;
+  let fl=''; for(let i=0;i<20;i++) for(let j=0;j<5;j++) if((i+j)%2) fl+=`<rect x="${i*80}" y="${650+j*72}" width="80" height="72"/>`;
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2fbff"/><stop offset=".6" stop-color="#cfe8f6"/><stop offset="1" stop-color="#b0d4ec"/></linearGradient>
+   <linearGradient id="${id}t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dce8f2"/></linearGradient></defs>
+   <rect width="1600" height="1000" fill="#d4f0f0"/><g stroke="#fff" stroke-width="4" opacity=".75">${tl}</g>
+   <rect y="392" width="1600" height="34" fill="#8ad0d4"/><g fill="#fff" opacity=".6">${Array.from({length:26},(_,i)=>`<circle cx="${i*64+32}" cy="409" r="6"/>`).join('')}</g>
+   <rect x="170" y="110" width="210" height="170" rx="14" fill="#1a2468" stroke="#fff" stroke-width="14"/><path d="M330 150 A26 26 0 1 0 330 202 A20 20 0 1 1 330 150Z" fill="#fff3c0"/>
+   <g fill="#fff">${[[210,150],[250,220],[290,140],[220,250]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2.6"/>`).join('')}</g><path d="M275 110 V280" stroke="#fff" stroke-width="8"/>
+   <ellipse cx="640" cy="290" rx="168" ry="196" fill="#f6c8d8" stroke="#c87a9a" stroke-width="10"/><ellipse cx="640" cy="290" rx="146" ry="174" fill="url(#${id}m)"/>
+   <path d="M560 180 L620 130 M570 230 L660 150 M700 400 L740 360" stroke="#fff" stroke-width="12" stroke-linecap="round" opacity=".8"/>
+   <g transform="translate(1010 250)"><path d="M0 0 H330" stroke="#a8743e" stroke-width="12" stroke-linecap="round"/>${[[40,'#ff8ab0','#c45a78',150],[150,'#7ab8f0','#3a7ab8',180],[260,'#ffd86a','#c8962a',110]].map(([x,c,s,h])=>`<circle cx="${x}" cy="0" r="9" fill="#c8a040"/><path d="M${x-44} 8 Q${x} -6 ${x+44} 8 L${x+40} ${h} Q${x} ${h+10} ${x-40} ${h}Z" fill="${c}" stroke="${s}" stroke-width="5" stroke-linejoin="round"/><path d="M${x-38} ${h-26} H${x+38}" stroke="#fff" stroke-width="7" opacity=".7"/>`).join('')}</g>
+   <g transform="translate(1180 560)"><path d="M0 40 H440 V110 Q440 210 330 210 H110 Q0 210 0 110Z" fill="url(#${id}t)" stroke="#9ab4c8" stroke-width="6"/>
+    <path d="M-10 30 H450 Q458 30 458 44 Q458 56 446 56 H-6 Q-18 56 -18 44 Q-18 30 -10 30Z" fill="#fff" stroke="#9ab4c8" stroke-width="5"/>
+    <g fill="#fff" stroke="#cde4f2" stroke-width="3">${[[60,22,26],[110,10,34],[170,20,28],[240,8,36],[310,18,28],[370,14,24]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}"/>`).join('')}</g>
+    <g transform="translate(250 -40)"><ellipse cx="0" cy="22" rx="34" ry="22" fill="#ffd83a" stroke="#c8961a" stroke-width="4"/><circle cx="22" cy="-6" r="18" fill="#ffd83a" stroke="#c8961a" stroke-width="4"/><path d="M38 -6 l16 4 -16 6Z" fill="#ff8a2a"/><circle cx="26" cy="-10" r="3.4" fill="#2a1a2e"/></g>
+    <path d="M70 206 L60 236 M370 206 L380 236" stroke="#c8a040" stroke-width="12" stroke-linecap="round"/></g>
+   <rect y="636" width="1600" height="16" fill="#a8d8e0"/><rect y="650" width="1600" height="350" fill="#f4fbff"/><g fill="#cdeaf2">${fl}</g>
+   <ellipse cx="1340" cy="902" rx="200" ry="56" fill="#ff9ac0" stroke="#e86a9a" stroke-width="6"/><ellipse cx="1340" cy="902" rx="170" ry="42" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="18 14"/></svg>`; }
+/* the toy chest: open lid (.betlo) or closed (.betlc, with .zu). viewBox 0 0 220 190 */
+function betKisteSVG(){ return `<svg viewBox="0 0 220 190" style="overflow:visible"><ellipse cx="110" cy="186" rx="104" ry="6" fill="rgba(0,0,0,.18)"/>
+  <g class="betlo"><path d="M18 82 L26 8 Q110 -6 194 8 L202 82Z" fill="#ffb88a" stroke="#a84a2a" stroke-width="4" stroke-linejoin="round"/><path d="M34 70 L40 20 Q110 10 180 20 L186 70Z" fill="#ffd2b0" opacity=".8"/>
+   ${betStar(70,44,9,'#fff3b0')}${betStar(150,40,7,'#fff3b0')}</g>
+  <rect x="12" y="76" width="196" height="22" rx="6" fill="#6a2a1a"/>
+  <path d="M10 88 H210 V170 Q210 184 196 184 H24 Q10 184 10 170Z" fill="#ff8a5a" stroke="#a84a2a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M10 108 H210 M10 160 H210" stroke="#d8603a" stroke-width="3" opacity=".7"/>
+  ${betStar5(56,134,16,'#ffe25a','#c8961a')}${betStar5(164,138,12,'#fff3b0','#c8961a')}<path d="M110 118 A16 16 0 1 0 110 150 A12 12 0 1 1 110 118Z" fill="#fff3c0" stroke="#c8961a" stroke-width="2"/>
+  <rect x="2" y="120" width="12" height="26" rx="5" fill="#c8a040" stroke="#7a5a1a" stroke-width="2.4"/><rect x="206" y="120" width="12" height="26" rx="5" fill="#c8a040" stroke="#7a5a1a" stroke-width="2.4"/>
+  <g class="betlc"><path d="M6 92 Q8 58 110 56 Q212 58 214 92Z" fill="#ff9a6a" stroke="#a84a2a" stroke-width="4" stroke-linejoin="round"/><path d="M30 80 Q110 64 190 80" stroke="#ffc8a8" stroke-width="5" fill="none" stroke-linecap="round"/>
+   <rect x="98" y="84" width="24" height="18" rx="4" fill="#c8a040" stroke="#7a5a1a" stroke-width="2.4"/></g></svg>`; }
+function betBallSVG(){ return `<svg viewBox="0 0 60 60" style="overflow:visible"><ellipse cx="30" cy="58" rx="20" ry="3" fill="rgba(0,0,0,.18)"/><circle cx="30" cy="30" r="26" fill="#ff5a6a" stroke="#a8243a" stroke-width="3"/>
+  <path d="M30 4 Q46 30 30 56 M30 4 Q14 30 30 56" stroke="#fff" stroke-width="6" fill="none"/><path d="M5 26 Q30 36 55 26" stroke="#ffd84a" stroke-width="6" fill="none"/><circle cx="20" cy="16" r="5" fill="#fff" opacity=".6"/></svg>`; }
+function betKlotzSVG(){ return `<svg viewBox="0 0 60 60" style="overflow:visible"><ellipse cx="30" cy="58" rx="22" ry="3" fill="rgba(0,0,0,.18)"/><path d="M6 18 L22 6 L54 6 L54 40 L38 54 L6 54Z" fill="#e8b46a" stroke="#8a5a2a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M6 18 H38 V54 M38 18 L54 6" fill="none" stroke="#8a5a2a" stroke-width="3" stroke-linejoin="round"/><path d="M6 18 L22 6 L54 6 L38 18Z" fill="#f4cc8a"/><path d="M38 18 L54 6 V40 L38 54Z" fill="#d09a52"/>
+  <path d="M15 26 H29 M15 26 V46 H29 M15 36 H26" stroke="#3a7ae8" stroke-width="4.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`; }
+function betKreiselSVG(){ return `<svg viewBox="0 0 60 70" style="overflow:visible"><ellipse cx="30" cy="68" rx="14" ry="2.4" fill="rgba(0,0,0,.18)"/><rect x="26" y="2" width="8" height="16" rx="3" fill="#8a5a2a"/>
+  <path d="M4 32 Q4 16 30 16 Q56 16 56 32 Q50 52 30 66 Q10 52 4 32Z" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M8 30 Q30 38 52 30 M14 44 Q30 50 46 44" stroke="#ffd84a" stroke-width="5" fill="none"/><path d="M12 24 Q30 30 48 24" stroke="#ff7aa8" stroke-width="4" fill="none"/></svg>`; }
+/* the washbasin on its cabinet (in front of Ehfje), a cup with two brushes. viewBox 0 0 300 240 */
+function betWbSVG(){ return `<svg viewBox="0 0 300 240" style="overflow:visible"><ellipse cx="150" cy="236" rx="130" ry="6" fill="rgba(0,0,0,.15)"/>
+  <path d="M240 24 V2 Q240 -10 226 -10 H206 Q196 -10 196 0" fill="none" stroke="#9ab0c4" stroke-width="12" stroke-linecap="round"/><circle cx="252" cy="8" r="9" fill="#cfdce8" stroke="#8aa0b4" stroke-width="3"/>
+  <path d="M30 50 H270 V228 Q270 236 262 236 H38 Q30 236 30 228Z" fill="#ffe0ec" stroke="#c87a9a" stroke-width="4"/>
+  <path d="M48 76 H146 V218 H48Z M154 76 H252 V218 H154Z" fill="#fff0f6" stroke="#e8a4c0" stroke-width="3"/><circle cx="134" cy="146" r="6" fill="#c8a040"/><circle cx="166" cy="146" r="6" fill="#c8a040"/>
+  ${betStar(96,146,12,'#ff9ac0',.8)}${betStar(204,146,10,'#9ad0ff',.9)}
+  <path d="M10 30 Q10 18 24 18 H276 Q290 18 290 30 V48 Q290 62 276 62 H24 Q10 62 10 48Z" fill="#fff" stroke="#9ab4c8" stroke-width="4"/>
+  <ellipse cx="150" cy="34" rx="100" ry="12" fill="#dceef8" stroke="#a8c4d8" stroke-width="3"/>
+  <g transform="translate(40 -6)"><path d="M-14 -10 L-12 26 H12 L14 -10Z" fill="#7ad8c8" stroke="#2a8a7a" stroke-width="3"/>
+   <path d="M-6 -12 L-14 -46" stroke="#ff8a3a" stroke-width="5" stroke-linecap="round"/><path d="M-16 -54 L-12 -42" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+   <path d="M5 -12 L10 -50" stroke="#3a8ae8" stroke-width="5" stroke-linecap="round"/><path d="M8 -58 L11 -46" stroke="#fff" stroke-width="7" stroke-linecap="round"/></g>
+  <g transform="translate(88 18) rotate(-10)"><rect x="-26" y="-9" width="44" height="18" rx="6" fill="#fff" stroke="#9ab4c8" stroke-width="3"/><rect x="16" y="-6" width="12" height="12" rx="3" fill="#ff5a6a"/><path d="M-20 -2 H8" stroke="#5ab4ff" stroke-width="4"/></g></svg>`; }
+/* Ehfje's toothbrush, lying: bristles left (their middle at 30,14), the handle to the right; .betpaste is the blob. viewBox 0 0 200 40 */
+function betBuersteSVG(){ return `<svg viewBox="0 0 200 40" style="overflow:visible"><path d="M44 22 Q120 18 194 26" stroke="#c43a7a" stroke-width="15" fill="none" stroke-linecap="round"/><path d="M44 22 Q120 18 194 26" stroke="#ff7ab8" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M120 18 Q150 17 180 21" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>${betStar(160,24,6,'#fff3b0')}
+  <rect x="8" y="18" width="46" height="10" rx="5" fill="#ff7ab8" stroke="#c43a7a" stroke-width="2.4"/>
+  <g stroke="#fff" stroke-width="4" stroke-linecap="round">${[14,22,30,38,46].map(x=>`<path d="M${x} 18 V4"/>`).join('')}</g><g stroke="#9ad8ff" stroke-width="1.4" opacity=".7">${[14,22,30,38,46].map(x=>`<path d="M${x} 18 V5"/>`).join('')}</g>
+  <path class="betpaste" d="M10 4 Q12 -6 24 -4 Q32 -12 40 -4 Q50 -6 50 4Z" fill="#fff" stroke="#8ad0f0" stroke-width="2"/></svg>`; }
+/* the bedside table, the lamp (.lit), the night light (a little moon, .lit), the music box (.swirl = its flower key, .betfig = the
+   unicorn on top, .play). */
+function betTischSVG(){ return `<svg viewBox="0 0 200 180" style="overflow:visible"><ellipse cx="100" cy="176" rx="86" ry="5" fill="rgba(0,0,0,.18)"/>
+  <path d="M30 120 L26 172 M170 120 L174 172" stroke="#6aa890" stroke-width="10" stroke-linecap="round"/>
+  <path d="M20 34 H180 V120 Q180 128 172 128 H28 Q20 128 20 120Z" fill="#a8e0c8" stroke="#4a8a72" stroke-width="4"/><path d="M34 50 H166 V110 H34Z" fill="#c8f0de" stroke="#6aa890" stroke-width="3"/>
+  <circle cx="100" cy="80" r="8" fill="#ffd86a" stroke="#c8962a" stroke-width="2.4"/>
+  <path d="M8 22 Q8 14 16 14 H184 Q192 14 192 22 V30 Q192 36 184 36 H16 Q8 36 8 30Z" fill="#8ad0b4" stroke="#4a8a72" stroke-width="4"/></svg>`; }
+function betLampeSVG(){ return `<svg viewBox="0 0 100 150" style="overflow:visible"><ellipse cx="50" cy="146" rx="30" ry="5" fill="rgba(0,0,0,.2)"/>
+  <path d="M26 146 Q26 130 50 128 Q74 130 74 146Z" fill="#ff9ac0" stroke="#c45a88" stroke-width="3"/><path d="M50 128 V64" stroke="#c8a040" stroke-width="6"/>
+  <path class="betsh" d="M20 70 L32 14 H68 L80 70Z" fill="#ffe6a0" stroke="#d8a040" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M22 62 H78" stroke="#ff9ac0" stroke-width="5"/>${betStar(50,40,8,'#ff9ac0',.8)}<ellipse class="betbl" cx="50" cy="72" rx="16" ry="5" fill="#fff8d0"/></svg>`; }
+function betNlSVG(){ return `<svg viewBox="0 0 60 60" style="overflow:visible"><path class="betnm" d="M36 6 A24 24 0 1 0 54 44 A20 20 0 1 1 36 6Z" fill="#fff0b0" stroke="#d8b04a" stroke-width="2.6" stroke-linejoin="round"/>
+  <circle cx="22" cy="30" r="2.2" fill="#8a6a2a"/><path d="M18 40 q5 4 10 0" stroke="#8a6a2a" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="16" cy="36" rx="3" ry="1.8" fill="#ffa8b8" opacity=".7"/></svg>`; }
+function betUhrSVG(){ const pet=[0,60,120,180,240,300].map(a=>`<ellipse cx="80" cy="117" rx="6.5" ry="10" transform="rotate(${a} 80 128)" fill="#ffd84a" stroke="#c8961a" stroke-width="2"/>`).join('');
+  return `<svg viewBox="0 0 160 180" style="overflow:visible"><ellipse cx="80" cy="176" rx="64" ry="5" fill="rgba(0,0,0,.2)"/>
+  <path d="M18 92 H142 V164 Q142 172 134 172 H26 Q18 172 18 164Z" fill="#ffaccb" stroke="#b8507a" stroke-width="4"/><path d="M18 100 H142 M18 160 H142" stroke="#e8c060" stroke-width="5"/>
+  ${betStar(36,140,8,'#fff3b0')}${betStar(124,140,8,'#fff3b0')}
+  <path d="M12 84 Q12 78 18 78 H142 Q148 78 148 84 V94 H12Z" fill="#ff8ab8" stroke="#b8507a" stroke-width="4"/>
+  <ellipse cx="80" cy="78" rx="34" ry="7" fill="#e8c060" stroke="#a8862a" stroke-width="3"/>
+  <g class="betfig"><path d="M80 76 V60" stroke="#c8a040" stroke-width="4"/><g transform="translate(80 46)"><ellipse rx="17" ry="11" fill="#fff" stroke="#b8a0d8" stroke-width="2.6"/>
+   <path d="M-10 6 V18 M-3 8 V18 M4 8 V18 M11 6 V18" stroke="#b8a0d8" stroke-width="3.6" stroke-linecap="round"/><circle cx="16" cy="-10" r="8.4" fill="#fff" stroke="#b8a0d8" stroke-width="2.6"/>
+   <path d="M18 -18 L24 -30 L22 -16Z" fill="#ffd84a" stroke="#c8961a" stroke-width="1.6"/><path d="M8 -16 Q2 -4 -6 -12 Q-2 -2 -12 -6" stroke="#ff8ac8" stroke-width="4" fill="none" stroke-linecap="round"/>
+   <path d="M-17 0 Q-28 2 -26 12" stroke="#9ab8ff" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="18" cy="-11" r="1.6" fill="#2a1a2e"/></g></g>
+  <circle cx="80" cy="128" r="22" fill="#fff4f8" stroke="#b8507a" stroke-width="3"/><g class="swirl">${pet}<circle cx="80" cy="128" r="8" fill="#ff7ab8" stroke="#b8507a" stroke-width="2.4"/></g></svg>`; }
+/* the big window (scene 5): night sky with roofs; stars and the moon sit in it as kids. viewBox 0 0 400 360 */
+function betFensterSVG(){ const id='bf'+(++LANC), r=seeded(97); let st=''; for(let i=0;i<40;i++) st+=`<circle cx="${(36+r()*328).toFixed(0)}" cy="${(36+r()*200).toFixed(0)}" r="${(.8+r()*1.6).toFixed(1)}" fill="#fff" opacity="${(.4+r()*.6).toFixed(2)}"/>`;
+  return `<svg viewBox="0 0 400 360" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1248"/><stop offset=".65" stop-color="#26307c"/><stop offset="1" stop-color="#4a3a8a"/></linearGradient></defs>
+  <rect x="24" y="24" width="352" height="306" fill="url(#${id})"/>${st}
+  <path d="M24 330 V290 L52 290 L52 270 L80 250 L108 270 L108 290 L160 290 L160 262 L186 240 L212 262 L212 296 L262 296 L262 276 L290 252 L320 274 L320 300 L376 300 L376 330Z" fill="#141a48"/>
+  <g fill="#ffd86a"><rect x="70" y="276" width="10" height="10"/><rect x="180" y="270" width="9" height="11"/><rect x="284" y="282" width="9" height="9"/></g>
+  <rect x="24" y="24" width="352" height="306" fill="none" stroke="#e8c898" stroke-width="22" rx="6"/><rect x="13" y="13" width="374" height="328" fill="none" stroke="#a87a4a" stroke-width="4" rx="10"/>
+  <path d="M200 24 V330 M24 177 H376" stroke="#e8c898" stroke-width="9"/><path d="M0 334 H400 Q406 334 406 342 V352 Q406 360 398 360 H2 Q-6 360 -6 352 V342 Q-6 334 0 334Z" fill="#d8b080" stroke="#a87a4a" stroke-width="4"/></svg>`; }
+/* a curtain (scene 5): gathered at the side; .zu spreads it over the window. viewBox 0 0 120 400 */
+function betVorhangSVG(r){ return `<svg viewBox="0 0 120 400" style="overflow:visible"><g${r?' transform="translate(120 0) scale(-1 1)"':''}><path d="M0 0 H120 Q96 120 110 230 Q118 320 100 400 H0Z" fill="#b48ae0" stroke="#6a4a9a" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M30 0 Q22 200 34 400 M66 0 Q56 200 70 400" stroke="#9a6ad0" stroke-width="6" fill="none" opacity=".8"/>
+  ${[[18,60],[84,120],[40,200],[90,280],[22,340],[60,40]].map(([x,y])=>betStar(x,y,8,'#fff3b0',.85)).join('')}<path d="M-4 0 H124" stroke="#8a6a4a" stroke-width="10" stroke-linecap="round"/></g></svg>`; }
+Object.assign(SVGP,{BETKISTE:[betKisteSVG,1],BETBALL:[betBallSVG,1],BETKLOTZ:[betKlotzSVG,1],BETKREISEL:[betKreiselSVG,1],BETWB:[betWbSVG,1],BETBUERSTE:[betBuersteSVG,1],
+  BETTISCH:[betTischSVG,1],BETLAMPE:[betLampeSVG,1],BETNL:[betNlSVG,1],BETUHR:[betUhrSVG,1],BETFENSTER:[betFensterSVG,1],BETVH:[betVorhangSVG,1]});
+
+/* ---------- the bed, seen from its foot: headboard and pillow behind, Ehfje, the blanket, the footboard in front.
+   The blanket's top edge goes from BETCOV[0] (folded down at her feet, cov 0) to BETCOV[1] (up to her chin, cov 1); from cov .62 on she
+   lies down. Bed units: viewBox 0 0 400 300 ---------- */
+const BETCOV=[245,172];
+function betBedBackSVG(){ return `<svg viewBox="0 0 400 300" style="overflow:visible"><ellipse cx="200" cy="298" rx="200" ry="8" fill="rgba(0,0,0,.2)"/>
+  <rect x="16" y="40" width="22" height="254" rx="9" fill="#7a9ad8" stroke="#3e5a98" stroke-width="4"/><rect x="362" y="40" width="22" height="254" rx="9" fill="#7a9ad8" stroke="#3e5a98" stroke-width="4"/>
+  <circle cx="27" cy="34" r="13" fill="#ffd86a" stroke="#c8962a" stroke-width="3"/><circle cx="373" cy="34" r="13" fill="#ffd86a" stroke="#c8962a" stroke-width="3"/>
+  <path d="M34 206 V84 Q34 40 84 40 Q138 40 158 18 Q200 -4 242 18 Q262 40 316 40 Q366 40 366 84 V206Z" fill="#a8c4f4" stroke="#3e5a98" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M56 200 V92 Q56 62 90 62 Q144 62 166 42 Q200 22 234 42 Q256 62 310 62 Q344 62 344 92 V200Z" fill="#c4d8fa" opacity=".9"/>
+  <path d="M212 30 A20 20 0 1 0 222 66 A15 15 0 1 1 212 30Z" fill="#ffe27a" stroke="#c8962a" stroke-width="2.4"/>${betStar5(150,70,10,'#fff3b0','#c8962a')}${betStar5(262,74,8,'#fff3b0','#c8962a')}${betStar5(110,100,6,'#fff3b0')}${betStar5(300,104,6,'#fff3b0')}
+  <path d="M40 168 H360 L374 252 H26Z" fill="#fbf6ff" stroke="#c8b8e0" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M112 150 Q100 120 132 118 H268 Q300 120 288 150 Q300 180 268 182 H132 Q100 180 112 150Z" fill="#fffaf2" stroke="#d0c0dc" stroke-width="3.4"/>
+  <g fill="#c8dcff">${[[140,134],[176,146],[214,132],[250,148],[160,166],[232,168],[268,130]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.4"/>`).join('')}</g>
+  <path d="M136 124 Q200 132 264 124" stroke="#e8dcf0" stroke-width="3" fill="none"/></svg>`; }
+function betBlanketSVG(dy){ const id='bd'+(++LANC), T=BETCOV[1];
+  return `<svg viewBox="0 0 400 300" style="overflow:visible"><defs><clipPath id="${id}"><rect x="-20" y="-40" width="440" height="330"/></clipPath>
+   <pattern id="${id}p" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="40" height="40" fill="#b898ee"/><path d="M0 20 H40 M20 0 V40" stroke="#a284de" stroke-width="2"/>
+    ${betStar(10,10,4.4,'#fff3b0')}<path d="M30 25 A5 5 0 1 0 33 34 A4 4 0 1 1 30 25Z" fill="#fff6c8"/></pattern></defs>
+  <g clip-path="url(#${id})"><g class="betdk" transform="translate(0 ${(dy||0).toFixed(1)})">
+   <path d="M20 ${T+4} Q200 ${T-8} 380 ${T+4} L398 ${T+160} L2 ${T+160}Z" fill="url(#${id}p)" stroke="#6a4ab0" stroke-width="3.4" stroke-linejoin="round"/>
+   <path d="M20 ${T+4} Q200 ${T-8} 380 ${T+4} L382 ${T+20} Q200 ${T+8} 18 ${T+20}Z" fill="#fffaf4" stroke="#c8b8dc" stroke-width="2.6" stroke-linejoin="round"/>
+   <path d="M60 ${T+40} Q200 ${T+30} 340 ${T+40}" stroke="#8a6ac8" stroke-width="2.4" fill="none" opacity=".6"/></g></g></svg>`; }
+function betBedFrontSVG(){ return `<svg viewBox="0 0 400 300" style="overflow:visible">
+  <path d="M10 258 Q200 246 390 258 V292 H10Z" fill="#a8c4f4" stroke="#3e5a98" stroke-width="4" stroke-linejoin="round"/><path d="M30 266 Q200 256 370 266" stroke="#c4d8fa" stroke-width="6" fill="none" stroke-linecap="round"/>
+  ${betStar5(120,276,7,'#fff3b0','#c8962a')}${betStar5(200,274,8,'#ffe27a','#c8962a')}${betStar5(280,276,7,'#fff3b0','#c8962a')}
+  <rect x="4" y="232" width="24" height="68" rx="9" fill="#7a9ad8" stroke="#3e5a98" stroke-width="4"/><rect x="372" y="232" width="24" height="68" rx="9" fill="#7a9ad8" stroke="#3e5a98" stroke-width="4"/>
+  <circle cx="16" cy="228" r="12" fill="#ffd86a" stroke="#c8962a" stroke-width="3"/><circle cx="384" cy="228" r="12" fill="#ffd86a" stroke="#c8962a" stroke-width="3"/></svg>`; }
+/* the bed as markup: o = {x,y,w (vh), cov, mood, arm, socke ('sleepy' …), sid (id of the bed)} */
+function betBedHTML(o){ const c=o.cov||0, [t,rot]=betLie(c);
+  return `<div class="tp2 betbed" style="left:${o.x}%;top:${o.y}%;width:${o.w}${o.u||'vh'}"><div class="betbb">${betBedBackSVG()}</div>
+   <div class="tp2 chr eef kid betin betpj" data-mood="${o.mood||'smile'}" data-arm="${o.arm||'dn'}" style="left:50%;top:${t.toFixed(2)}%;width:48%;rotate:${rot.toFixed(1)}deg"><div class="bb">${eefjeSVG()}</div></div>
+   <div class="betdkw">${betBlanketSVG(betCovY(c)-BETCOV[1])}</div><div class="betfb">${betBedFrontSVG()}</div>
+   ${o.socke?`<div class="tp2 chr sck kid betsk" data-mood="${o.socke}" style="left:78%;top:68%;width:15%"><div class="bb">${sockeSVG()}</div></div>`:''}</div>`; }
+const betCovY=c=>BETCOV[0]+(BETCOV[1]-BETCOV[0])*c;
+/* where Ehfje is in the bed for a blanket position: [top % of the bed, rotation]. Sitting: head at y 118; lying: head at 140 on the pillow */
+function betLie(c){ const l=Math.max(0,Math.min(1,(c-.62)/.38)), e=l*l*(3-2*l), yh=118+22*e; return [(yh+36)/300*100, -7*e]; }
+function betCover(c,B){ B=B||(TB&&TB.els.bett); if(!B) return; if(TB&&B===TB.els.bett) TST.cov=c; const g=B.querySelector('.betdk'); if(g) g.setAttribute('transform',`translate(0 ${(betCovY(c)-BETCOV[1]).toFixed(1)})`);
+  const E=B.querySelector('.betin'); if(E){ const [t,r]=betLie(c); E.style.top=t.toFixed(2)+'%'; E.style.rotate=r.toFixed(1)+'deg'; } }
+
+/* the open storybook: its pages and a leaf that turns. Pages: right side pictures, left side text */
+function betPage(k,side){ const lines=n=>Array.from({length:n},(_,i)=>`<i style="width:${70+((k*7+i*13)%26)}%"></i>`).join('');
+  if(side==='l'){ if(k===0) return `<div class="betpg betti"><b>✦ ✧ ✦</b><span>Märchen</span><b>✧ ✦ ✧</b></div>`; return `<div class="betpg"><div class="betln">${lines(7)}</div><div class="betorn">❦</div></div>`; }
+  if(k===0) return `<div class="betpg"><div class="betpic">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'betun'})}</div><div class="betln">${lines(2)}</div></div>`;
+  if(k===1) return `<div class="betpg"><div class="betpic"><div class="tp2 chr kiki" data-mood="happy" style="left:50%;top:52%;width:92%"><div class="bb">${kikiSVG()}</div></div></div><div class="betln">${lines(2)}</div></div>`;
+  if(k===2) return `<div class="betpg"><div class="betpic"><div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:50%;top:58%;width:74%"><div class="bb">${eefjeSVG()}<div class="tp2 hutk kid" style="left:50%;top:-6%;width:58%">${hutSVG()}</div></div></div></div><div class="betln">${lines(2)}</div></div>`;
+  return `<div class="betpg betend"><span>Ende</span><b>♥</b></div>`; }
+function betBuchHTML(){ return `<div class="betbk"><svg class="betcv" viewBox="0 0 400 260" preserveAspectRatio="none"><path d="M4 14 Q4 4 14 4 H386 Q396 4 396 14 V250 Q396 258 386 258 H14 Q4 258 4 250Z" fill="#b8504a" stroke="#6a2a22" stroke-width="4"/>
+   <path d="M16 12 H196 V250 H16Z M204 12 H384 V250 H204Z" fill="#f2e2c4"/><path d="M200 8 V254" stroke="#6a2a22" stroke-width="3"/></svg>
+   <div class="betpl"></div><div class="betpr"></div><div class="betleaf"><div class="f"></div><div class="b"></div></div></div>`; }
+/* show the book after k turns: left = text page k, right = picture k; underneath the leaf already the next picture */
+function betBookSet(k){ const B=TB&&TB.els.buch; if(!B) return; const L=B.querySelector('.betpl'), R=B.querySelector('.betpr'), F=B.querySelector('.betleaf'), n=3;
+  L.innerHTML=betPage(k,'l'); R.innerHTML=betPage(Math.min(k+1,n),'r'); F.style.transition='none'; F.style.transform='none'; void F.offsetWidth;
+  if(k>=n){ F.style.display='none'; R.innerHTML=betPage(n,'r'); return; } F.style.display=''; F.querySelector('.f').innerHTML=betPage(k,'r'); F.querySelector('.b').innerHTML=betPage(k+1,'l'); }
+
+/* ---------- the sets: evening in her room, the bathroom, night, the window, the dream ---------- */
+Object.assign(SETS2,{
+  bettabend:{clean:1, sky:'#fde4ec', broom:'abend'},
+  bettbad:{clean:1, sky:'#d4f0f0', broom:'bad'},
+  bettnacht:{sky:'#5a4e90', broom:'nacht', dcol:'20,14,52'},
+  bettwand:{sky:'#5a4e90', broom:'wand', dcol:'20,14,52'},
+  betttraum:{sky:'linear-gradient(180deg,#1a1450 0%,#3a2a86 34%,#8a5ab4 66%,#e88ab4 88%,#ffc0a8 100%)', stars:80, dcol:'24,14,60',
+    far:sil(hills(811,250,70,'#3e2e7a')+pines(813,26,70,'#2e2464',110)+hills(817,300,40,'#36286e'),56), gnd:'linear-gradient(180deg,#3a3070 0%,#2c2460 50%,#201a4c 100%)',
+    farp:[['CLD',18,40,6],['CLD',70,52,5]], mid:[['CLD',6,30,12],['CLD',94,44,14],['CLD',40,62,10]], fore:[['CLD',4,100,22],['CLD',52,106,22],['CLD',96,100,24]],
+    act:[['haus','HEXHAUS',42,82,20]]}
+});
+Object.assign(TSYL,{BALL:'BALL',ZAHN:'ZAHN',BUCH:'BUCH',UHR:'UHR',BETT:'BETT',TRAUM:'TRAUM'});
+
+/* ---------- sounds ---------- */
+const betLate=()=>!tale||!tale.t||tale.t.id!=='schlafen'||!taleOn();
+function betTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||betLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0008,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function betKnock(x){ betTone(x,260,120,160,.12,'triangle'); famNoise(x,.06,900,300,120,'lowpass'); }
+function betLid(x){ betTone(x,140,60,320,.18); famNoise(x,.1,700,160,260,'lowpass'); }
+let betScT=0; function betScrub(x){ const t=now(); if(t-betScT<90) return; betScT=t; famNoise(x,.045,3800+Math.random()*1200,5200,80); }
+function betRustle(x){ famNoise(x,.07,2600,1200,320); setTimeout(()=>famNoise(x,.05,3400,1800,180),160); }
+function betTick(x){ betTone(x,2400,2000,40,.05,'square'); }
+/* the music box's lullaby: the four little phrases, slowly, one after the other */
+function betLull(x){ [0,1,2,3].forEach(k=>setTimeout(()=>{ if(!betLate()) famLull(k,x); },k*2300)); }
+function betYawn(x){ famNoise(x,.05,500,260,900,'lowpass'); }
+
+/* ---------- helpers ---------- */
+/* a yawn: open mouth, a little bubble, then the next mood */
+function betGaehn(id,then,ms){ const e=TB&&TB.els[id]; if(!e) return; const big=id==='hexe'||id==='mama'||id==='papa';
+  mood(id,id==='boris'?'yawn':id==='mond'?'betgaehn':'yawn'); const [x,y]=relEl(e,[.5,id==='boris'?.4:id==='mond'?.3:.12]); bubble('gähn…',x,y-vu()*4,big?3.6:3.2,'#eef0ff'); betYawn(x);
+  try{ (e.querySelector(':scope>.bb')||e).animate([{transform:'none'},{transform:'scale(1.04,.97) translateY(1%)'},{transform:'scale(.98,1.03) translateY(-1.5%)',offset:.55},{transform:'none'}],{duration:ms||1500,easing:'ease-in-out'}); }catch(err){}
+  if(then) bLater(()=>mood(id,then),ms||1500); }
+/* the room's lamp: on (warm light) or off (only the little moon night light) */
+function betLight(on){ const L=TB&&TB.els.lampe; if(L) L.classList.toggle('lit',!!on); if(TB.lampL){ TB.lampL.rT=on?42:0; TB.lampL.kT=on?.85:0; } FX.darkT=on?(TB.sc.dark||.3):.62;
+  const N=TB.els.nl; if(N) N.classList.toggle('lit',!on); if(TB.nlL){ TB.nlL.rT=on?6:14; TB.nlL.kT=on?.3:.7; } }
+/* glowing stars drifting over the ceiling while the music box plays (a little projector) */
+function betProjector(cx,cy){ const t0=now(), r=seeded(5), S=Array.from({length:16},(_,i)=>({a:i/16*6.283+r()*.3,d:.12+r()*.28,s:.6+r()*.7,p:r()*6}));
+  FX.dr.push(tn=>{ if(!TB||betLate()) return false; const t=(tn-t0)/1000, cx2=FX.cx, W=innerWidth, H=innerHeight, u=vu(), al=Math.min(1,t/2);
+    S.forEach(q=>{ const a=q.a+t*.08, x=cx*W+Math.cos(a)*q.d*W, y=cy*H+Math.sin(a)*q.d*H*.45; if(y>H*.6) return; cx2.globalAlpha=al*(.45+.35*Math.sin(t*2+q.p)); cx2.fillStyle='#fff3c0';
+      cx2.beginPath(); const R=u*q.s*1.2; for(let i=0;i<10;i++){ const b=-Math.PI/2+i*Math.PI/5+t*.2, rr=i%2?R*.45:R; cx2[i?'lineTo':'moveTo'](x+Math.cos(b)*rr,y+Math.sin(b)*rr); } cx2.closePath(); cx2.fill(); });
+    cx2.globalAlpha=1; }); }
+/* little notes rising from the music box */
+function betNotes(on){ FX.em=FX.em.filter(e=>!e.betn); if(!on) return; FX.em.push({betn:1,rate:1.4,fn:()=>{ const U=TB&&TB.els.uhr; if(!U||!U.isConnected) return; const [x,y]=relEl(U,[.5,.2]), u=vu();
+  particle(rnd(['♪','♫','♩']),x+(Math.random()-.5)*u*6,y,u*(2.4+Math.random()),rnd(['#fff3b0','#ffd0e8','#d8e8ff']),(x,y)=>[{transform:`translate(${x}px,${y}px) scale(.5)`,opacity:0},
+    {transform:`translate(${x+(Math.random()-.5)*u*8}px,${y-u*6}px) scale(1)`,opacity:1,offset:.3},{transform:`translate(${x+(Math.random()-.5)*u*16}px,${y-u*18}px) scale(.9)`,opacity:0}],2200); }}); }
+
+/* ---------- the new gestures: putzen (brush teeth), blaettern (turn the pages), zudecken (tuck in) ---------- */
+Object.assign(G2,{
+ /* putzen: wipe back and forth anywhere around Ehfje's face – the toothbrush at her mouth follows the finger's sideways moves (a little up
+    and down too). Every turn of direction after at least 2.5 vh counts, plain moving counts a little; foam grows (--fm), bubbles rise.
+    A tap is a try. a:{id (Ehfje), br (the brush), n (turns)}; hook brushing(p) */
+ putzen:{ setup(){ TB.pz={p:0,q:0,dir:0,seg:0,lx:null,ly:null,ox:0,oy:0,mv:0,gain:0,tap:0,auto:false,fin:false}; const B=TB.els[TB.a.br];
+     B.getAnimations().forEach(q=>q.cancel()); B.style.transition='none'; B.style.rotate='0deg'; this.place(); g2loop(()=>this.place()); },
+   mouth(){ return relEl(TB.els[TB.a.id].querySelector('.bb'),[80/160,66/160]); },
+   place(){ const s=TB.pz, B=TB.els[TB.a.br], [mx,my]=this.mouth(), w=B.offsetWidth, h=B.offsetHeight; putAt(B,mx+s.ox+w*(.5-30/200),my+s.oy+h*(.5-14/40)); },
+   zone(x,y){ const [mx,my]=this.mouth(), u=vu(); return Math.abs(x-mx)<u*28&&Math.abs(y-my)<u*26; },
+   down(x,y){ const s=TB.pz; if(s.fin||s.auto) return; s.lx=null; s.mv=0; s.gain=0; if(this.zone(x,y)) poke2(); },
+   move(x,y){ const s=TB.pz; if(!TB.pd||s.fin||s.auto) return; if(!this.zone(x,y)){ s.lx=null; return; } if(s.lx==null){ s.lx=x; s.ly=y; return; }
+     const u=vu(), dx=x-s.lx, dy=y-s.ly, m=Math.hypot(dx,dy); s.lx=x; s.ly=y; s.mv+=m;
+     s.ox=Math.max(-u*4.5,Math.min(u*4.5,s.ox+dx*.5)); s.oy=Math.max(-u*1.4,Math.min(u*1.4,s.oy+dy*.2));
+     let g=m/(u*650); const d=Math.abs(dx)>=Math.abs(dy)*.5?Math.sign(dx):0;
+     if(d&&d!==s.dir&&m>u*.1){ if(s.seg>u*2.5) g+=1/(TB.a.n||8); s.dir=d; s.seg=0; } s.seg+=Math.abs(dx);
+     if(m>u*.3) poke2(); this.add(g); },
+   add(g){ const s=TB.pz, E=TB.els[TB.a.id], [mx,my]=this.mouth(), u=vu(); s.p=Math.min(1,s.p+g); s.gain+=g; E.style.setProperty('--fm',Math.min(1,s.p*1.6).toFixed(2));
+     if(g>0){ betScrub(mx); if(Math.random()<.3) fxAdd({k:'bub',x:mx+(Math.random()-.5)*u*7,y:my+u*1.5,vy:-(6+Math.random()*8)*u,ph:Math.random()*6,s:.45+Math.random()*.6,life:1.3+Math.random()*.6}); }
+     if(TB.sc.brushing) TB.sc.brushing(s.p);
+     const q=Math.floor(s.p*5); if(q>s.q){ s.q=q; chimeAt([660+q*110,990+q*110],mx); }
+     if(s.p>=1) this.finish(); },
+   finish(){ const s=TB.pz; if(s.fin) return; s.fin=true; s.ox=0; s.oy=0; const [mx,my]=this.mouth(); glitterBurst(mx,my,18,12);
+     fxBurst(mx,my,20,['rgba(255,255,255,.95)','rgba(190,230,255,.9)']); bLater(()=>done2(),400); },
+   up(){ const s=TB.pz; if(s.fin||s.auto) return; if(s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } } else if(s.gain<.03) miss2(); },
+   frames(){ const [mx,my]=this.mouth(), u=vu(), x=mx+u*12, y=my+u*4, f=[[x,y+u*8,1,0]]; for(let i=0;i<8;i++) f.push([x+(i%2?u*7:-u*7),y,.85,1]); f.push([x,y,1,0]); return f; },
+   hint(){ const s=TB.pz; if(s.auto||s.fin) return; ghost(this.frames(),2200); const B=TB.els[TB.a.br]; B.classList.remove('g2hint'); void B.offsetWidth; B.classList.add('g2hint'); bLater(()=>B.classList.remove('g2hint'),2200); },
+   auto(){ const s=TB.pz; if(s.auto||s.fin) return; s.auto=true; ghost(this.frames(),2200); const sc=TB.sc, run=tale.run; let k=0;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||TB.done||s.fin){ clearInterval(iv); return; } k++; s.ox=Math.sin(k*.9)*vu()*4; this.add(.035); },70); taleT.push(iv); } },
+
+ /* blaettern: put the finger on the book and pull it to the left – the right page turns with the finger (past ~55° it turns over by
+    itself, otherwise it springs back = a try); a tap on the book turns it too. a:{id (the book), n (turns)}; hook turned(k) */
+ blaettern:{ setup(){ TB.bt={k:0,dn:false,a:0,x0:0,mv:0,busy:false,fin:false,auto:false}; betBookSet(0); },
+   bk(){ return TB.els[TB.a.id].querySelector('.betbk'); }, leaf(){ return this.bk().querySelector('.betleaf'); },
+   down(x,y){ const s=TB.bt; if(s.fin||s.auto||s.busy) return; const r=this.bk().getBoundingClientRect(), u=vu();
+     if(x<r.left-u*6||x>r.right+u*12||y<r.top-u*12||y>r.bottom+u*8){ fxBurst(x,y,5,['rgba(255,255,255,.8)']); miss2(); return; }
+     s.dn=true; s.x0=x; s.mv=0; s.a=0; this.leaf().style.transition='none'; poke2(); },
+   move(x,y){ const s=TB.bt; if(!s.dn||s.busy) return; s.mv=Math.max(s.mv,Math.abs(x-s.x0)); const r=this.bk().getBoundingClientRect();
+     s.a=Math.max(0,Math.min(175,(s.x0-x)/(r.width*.5)*190)); this.leaf().style.transform=`rotateY(${(-s.a).toFixed(1)}deg)`; if(s.a>15) poke2(); },
+   up(){ const s=TB.bt; if(!s.dn) return; s.dn=false; if(s.busy||s.fin) return;
+     if(s.mv<vu()*2.5||s.a>55) return this.turn();
+     const F=this.leaf(); F.style.transition='transform .45s cubic-bezier(.3,1.4,.5,1)'; F.style.transform='none'; if(s.mv>vu()*5) miss2(); },
+   turn(){ const s=TB.bt, F=this.leaf(); if(s.busy||s.fin) return; s.busy=true; F.style.transition='transform .75s cubic-bezier(.35,.1,.3,1)'; F.style.transform='rotateY(-180deg)';
+     const [x]=ctr(this.bk()); betRustle(x); poke2();
+     bLater(()=>{ s.k++; betBookSet(s.k); s.busy=false; const R=this.bk().querySelector('.betpr'), [rx,ry]=ctr(R); glitterBurst(rx,ry,12,12); chimeAt([[784,988],[880,1109],[988,1318]][Math.min(2,s.k-1)],rx);
+       if(TB.sc.turned) TB.sc.turned(s.k); if(s.k>=(TB.a.n||3)){ s.fin=true; bLater(()=>done2(),1100); } else if(s.auto) bLater(()=>this.turn(),1500); },780); },
+   frames(){ const r=this.bk().getBoundingClientRect(), u=vu(), y=r.top+r.height*.55, x0=r.left+r.width*.82, x1=r.left+r.width*.22; return [[x0,y+u*6,1,0],[x0,y,.85,1],[(x0+x1)/2,y-u*4,.85,1],[x1,y,.85,1],[x1,y,1,0]]; },
+   hint(){ const s=TB.bt; if(s.auto||s.fin||s.busy||s.dn) return; ghost(this.frames(),2000); const F=this.leaf(); F.style.transition='transform .5s ease-in-out'; F.style.transform='rotateY(-30deg)';
+     bLater(()=>{ if(!s.dn&&!s.busy&&!s.fin){ F.style.transform='none'; } },650); },
+   auto(){ const s=TB.bt; if(s.auto||s.fin) return; s.auto=true; ghost(this.frames(),1400); if(!s.busy) bLater(()=>this.turn(),500); } },
+
+ /* zudecken: pull the blanket up – put the finger on it (or near its glowing edge) and move up; the blanket follows (progress kept), from
+    ~62 % Ehfje lies down. ~80 % is enough, then it comes up by itself; a tap is a try. a:{id (the bed)}; hook tucking(c) */
+ zudecken:{ setup(){ TB.zd={c:TST.cov||0,c0:0,y0:0,dn:false,mv:0,go:false,fin:false,auto:false,tap:0,end:false}; const G=el('div','betgrip'); TB.act.appendChild(G); TB.els.grip=G; this.grip();
+     g2loop(dt=>{ const s=TB.zd; if((s.go||s.auto)&&s.c<1) this.set(Math.min(1,s.c+dt*(s.go?.8:.4))); this.grip(); }); },
+   bed(){ return TB.els[TB.a.id].querySelector('.betbb').getBoundingClientRect(); },
+   edge(){ const r=this.bed(); return [r.left+r.width/2, r.top+r.height*betCovY(TB.zd.c)/300]; },
+   grip(){ const G=TB.els.grip; if(!G) return; const [x,y]=this.edge(); putAt(G,x+vu()*12,y); G.style.opacity=TB.zd.c>=1?0:1; },
+   down(x,y){ const s=TB.zd; if(s.fin||s.auto) return; const r=this.bed(), [,ey]=this.edge(), u=vu();
+     s.dn=x>r.left-u*6&&x<r.right+u*6&&y>ey-u*14&&y<r.bottom+u*8; s.mv=0; s.y0=y; s.c0=s.c; if(s.dn){ poke2(); TB.els.grip.classList.add('held'); } },
+   move(x,y){ const s=TB.zd; if(!s.dn||s.fin||s.auto) return; s.mv=Math.max(s.mv,Math.abs(y-s.y0)); const r=this.bed(), c=s.c0+(s.y0-y)/r.height*300/(BETCOV[0]-BETCOV[1]);
+     if(c>s.c&&s.mv>vu()) this.set(Math.min(1,c)); },
+   up(){ const s=TB.zd; if(TB.els.grip) TB.els.grip.classList.remove('held'); if(s.fin||s.auto) return; const was=s.dn; s.dn=false;
+     if(!was||s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } return; } if(s.c<=s.c0+.01) miss2(); },
+   set(c){ const s=TB.zd, old=s.c; s.c=c; betCover(c); if(Math.floor(c*6)>Math.floor(old*6)){ const [x]=this.edge(); chimeAt([523+Math.floor(c*6)*98],x); famNoise(x,.04,700,1500,200); poke2(); }
+     if(TB.sc.tucking) TB.sc.tucking(c);
+     if(c>=.8&&!s.go){ s.go=true; s.fin=true; } if(c>=1&&!s.end){ s.end=true; const [x,y]=this.edge(); glitterBurst(x,y,22,22); fxBurst(x,y,16); bLater(()=>done2(),500); } },
+   frames(){ const [x,y]=this.edge(), r=this.bed(), u=vu(), y1=r.top+r.height*BETCOV[1]/300, gx=x+u*12; return [[gx,y+u*8,1,0],[gx,y,.85,1],[gx,(y+y1)/2,.85,1],[gx,y1,.85,1],[gx,y1,1,0]]; },
+   hint(){ const s=TB.zd; if(s.fin||s.auto) return; const G=TB.els.grip; G.classList.remove('pulse'); void G.offsetWidth; G.classList.add('pulse'); ghost(this.frames(),2200); },
+   auto(){ const s=TB.zd; if(s.fin||s.auto) return; s.auto=true; s.fin=true; ghost(this.frames(),1800); } }
+});
+
+/* ---------- tale helpers ---------- */
+/* a toy jumps into the chest and is gone */
+function betInto(b){ const K=TB.els.kiste, u=vu(); if(!b||!K) return; const [x,y]=relEl(K,[.5,.42]); betKnock(x);
+  try{ b.animate([{transform:'none',opacity:1},{transform:`translateY(${-u*8}px) scale(1.15) rotate(-20deg)`,opacity:1,offset:.45},{transform:`translateY(${u*2}px) scale(.3) rotate(40deg)`,opacity:0}],{duration:650,easing:'ease-in-out',fill:'forwards'}); }catch(e){ b.style.opacity=0; }
+  bLater(()=>{ sqs(K); fxBurst(x,y,10); },560); }
+/* the toothbrush: standing in the cup on the basin, or at her mouth */
+function betCup(){ return eikAt(TB.els.wb,40/300,-32/240); }
+function betBrushHome(ms){ const B=TB.els.buerste; if(!B) return; const [x,y]=betCup(); B.style.transition=ms?`left ${ms}ms ease-in-out,top ${ms}ms ease-in-out,rotate ${ms}ms ease-in-out`:'none'; B.style.left=x+'%'; B.style.top=y+'%'; B.style.rotate='-72deg'; }
+function betBrushMouth(ms){ const B=TB.els.buerste, E=TB.els.hexe; if(!B||!E) return; const [mx,my]=relEl(E.querySelector('.bb'),[.5,66/160]), w=B.offsetWidth, h=B.offsetHeight, [x,y]=wpos(mx+w*(.5-30/200),my+h*(.5-14/40));
+  B.style.transition=`left ${ms}ms ease-in-out,top ${ms}ms ease-in-out,rotate ${ms}ms ease-in-out`; B.style.left=x+'%'; B.style.top=y+'%'; B.style.rotate='0deg'; }
+/* the end of the dream: back in her room, Ehfje asleep, smiling; Mama and Papa at the door */
+function betHeim(){ if(TB.els.heim) return; const U0=(trip&&trip.uni)|0;
+  const H=el('div','betheim',`<div class="eikroom">${betRoomSVG('nacht')}</div>
+    <div class="tp2 bettisch" style="left:79%;top:83%;width:25vh">${betTischSVG()}</div>
+    <div class="tp2 betnl lit" style="left:68%;top:31%;width:7vh">${betNlSVG()}</div>
+    ${betBedHTML({x:45,y:70,w:74,cov:1,mood:'asleep',socke:'sleepy'})}
+    <div class="tp2 u2 betsleep" style="left:15%;top:84%;width:14vh"><div class="ub">${uniSVG(HERD[U0],{cls:'uni'})}</div></div>
+    <div class="tp2 chr famp famma" data-mood="smile" data-arm="hug" style="left:83%;top:57%;width:27vh"><div class="bb">${mamaSVG()}</div></div>
+    <div class="tp2 chr famp fampa" data-mood="smile" data-arm="dn" style="left:93%;top:56%;width:28vh"><div class="bb">${papaSVG()}</div></div>`);
+  TB.st.appendChild(H); TB.els.heim=H; betUniSleep(true,H.querySelector('.u2')); TB.els.mama=H.querySelector('.famma'); TB.els.papa=H.querySelector('.fampa'); TB.els.hexe2=H.querySelector('.betin');
+  void H.offsetWidth; H.classList.add('on'); FX.L=[]; FX.em=[]; FX.darkT=.42; FX.dc='20,14,52';
+  light({el:H.querySelector('.betnl'),r0:4,rT:16,k0:.4,kT:.75}); light({el:TB.els.hexe2,r0:8,rT:24,k0:.3,kT:.55,oy:.3});
+  bLater(()=>zzzEl(TB.els.hexe2),1500); }
+
+/* ================= Eefje will noch nicht schlafen ================= */
+/* heart: bedtime, and Ehfje is "noch gar nicht müde!" – she says it again and again, while everyone around her gets sleepy one after the
+   other: Socke (1), Boris (2), Mama over the storybook (3), the unicorn at the music box (4), the stars and the moon (5) – and each time
+   she yawns a little more herself. Tucked in (6) she whispers that she doesn't want to miss anything; Mama: "In der Nacht kommen die
+   Träume. Und im Traum kannst du alles erleben." The dream (7) pays it off: she rides the unicorn up to the moon. Last image: asleep,
+   smiling. Calm and slow towards the end, so it can really be played at bedtime. */
+const BETDUR={};
+const BETT2={id:'schlafen', v2:true, eef:1, fam:1, dur:BETDUR, title:'Eefje will noch nicht schlafen', vtitle:'Ehfje will noch nicht schlafen', icon:'🛏️',
+ cover:'linear-gradient(180deg,#1a1a5a 0%,#3a3088 40%,#8a6ac0 75%,#ffc8a0 100%)',
+ cast(sc){ const A=TB.act, B=SETS2[sc.set];
+  if(B.broom){ const R=el('div','eikroom',betRoomSVG(B.broom)); A.insertBefore(R,A.firstChild); TB.els.room=R; }
+  const mk=efCast(sc);
+  if(sc.mama){ const [x,y,z]=sc.mama, M=mk('mama','famp famma',mamaSVG(),x,y,z); M.dataset.mood=TST.mam||'smile'; M.dataset.arm=TST.maa||'dn'; }
+  if(sc.papa){ const [x,y,z]=sc.papa, P=mk('papa','famp fampa',papaSVG(),x,y,z); P.dataset.mood=TST.pam||'smile'; P.dataset.arm=TST.paa||'dn'; }
+  if(sc.boris){ const [x,y,z,cls]=sc.boris, D=mk('boris','famdog'+(cls?' '+cls:''),borisSVG(),x,y,z); D.dataset.mood=TST.bom||'smile'; }
+  /* the bed with Ehfje in it (and Socke on the blanket) */
+  if(sc.bett){ const [x,y,w]=sc.bett, D=el('div','',betBedHTML({x,y,w,cov:TST.cov||0,mood:TST.efm||'smile',arm:TST.efa||'dn',socke:sc.bsk?(TST.skm||'smile'):null})).firstChild;
+    A.appendChild(D); TB.els.bett=D; TB.els.hexe=D.querySelector('.betin'); if(sc.bsk) TB.els.socke=D.querySelector('.betsk'); }
+  /* the dream: Ehfje riding the unicorn (the usual one stays hidden) */
+  if(sc.rider){ const [x,y,w]=sc.rider, R=el('div','tp2 chr betrider',`<div class="bb">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni flying'})}</div>`); R.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(R); TB.els.reiter=R;
+    const E=el('div','tp2 chr eef kid sitb',`<div class="bb">${eefjeSVG()}</div>`); E.style.cssText='left:53%;top:33%;width:44%'; E.dataset.mood=TST.efm||'happy'; E.dataset.arm=TST.efa||'up'; R.querySelector('.bb').appendChild(E); TB.els.hexe=E;
+    TB.els.uni.style.opacity=0; }
+  const E=TB.els.hexe; if(E) E.classList.toggle('betpj',!!TST.pj);
+  if(sc.buch){ const [x,y,w]=sc.buch, D=el('div','tp2 betbuch',betBuchHTML()); D.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(D); TB.els.buch=D; betBookSet(0); }
+  /* the window: curtains, stars and the moon sit in it */
+  const W=TB.els.fenster;
+  if(W){ ['l','r'].forEach(k=>{ const V=el('div','tp2 kid betvh '+k,betVorhangSVG(k==='r')); V.style.cssText=`left:${k==='l'?3:97}%;top:47%;width:22%`; W.appendChild(V); TB.els['v'+k]=V; });
+    (sc.stars||[]).forEach(([id,x,y,w])=>{ const S=el('div','tp2 chr kid stn',`<div class="bb">${sternSVG()}</div>`); S.style.cssText=`left:${x}%;top:${y}%;width:${w}%`; S.dataset.mood='smile'; S.style.setProperty('--sg',.7); W.insertBefore(S,TB.els.vl); TB.els[id]=S; }); }
+  if(sc.mond){ const [x,y,w]=sc.mond, M=el('div','tp2 luna betmn'+(W?' kid':''),betMoonSVG()); M.style.cssText=`left:${x}%;top:${y}%;width:${w}${W?'%':'vh'}`; M.dataset.mood=TST.mo||'awake';
+    if(W) W.insertBefore(M,TB.els.vl); else A.appendChild(M); TB.els.mond=M; }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='kiste'){ sqs(b); betKnock(x); return true; }
+  if(['ball','klotz','kreisel'].includes(id)){ sqs(b); betKnock(x); return true; }
+  if(id==='buerste'||id==='wb'){ if(b.classList.contains('tp2')) sqs(b); for(let i=0;i<5;i++) fxAdd({k:'bub',x:x+(Math.random()-.5)*u*5,y,vy:-(6+Math.random()*6)*u,ph:Math.random()*6,s:.5+Math.random()*.5,life:1.3}); return true; }
+  if(id==='buch'){ betRustle(x); return true; }
+  if(id==='uhr'){ sqs(b); famLull(Math.floor(Math.random()*4),x); return true; }
+  if(id==='lampe'||id==='nl'||id==='tisch'){ sqs(b); chime([988]); return true; }
+  if(/^s\d$/.test(id)){ sqs(b); bubble(b.dataset.mood==='sleepy'?'psst…':'hallo!',x,y-u*5,3,'#fff3b0'); chime([1318,1568]); return true; }
+  if(id==='mond'){ sqs(b); bubble(TST.mo==='asleep'?'schnarch…':'huhu!',x,y-u*6,3.6,'#fff3b0'); chime([523,659]); return true; }
+  if(id==='bett'||id==='fenster'||/^v[lr]$/.test(id)){ chime([784]); return true; }
+  if(id==='reiter'){ sqs(b); glitterBurst(x,y,10,10); chime([1175,1568]); return true; }
+  if(id==='boris'&&TST.bom==='sleepy'){ sqs(b); bubble('schnarch…',x,y-u*6,3.4,'#fff0d8'); return true; }
+  if(id==='socke'&&TST.skm==='sleepy'){ sqs(b); bubble('schnurr…',x,y-u*4,3.2,'#e0e0f0'); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – evening in her room: "Ich bin noch gar nicht müde!"; her spell sends the toys into the chest (drag); Socke yawns on the lid */
+ {set:'bettabend', dark:0, u:[8,73,15], ef:[31,63,38,'st'], mama:[88,57,30], sk:[49,84,10],
+  p:[['kiste','BETKISTE',68,76,27,'betki'],['ball','BETBALL',17,88,8.5,'bettoy'],['klotz','BETKLOTZ',42,91,8,'bettoy'],['kreisel','BETKREISEL',22,77,7.5,'bettoy']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'smile',pj:0,cov:0,mo:'awake'},
+  enter(){ onPh('Es war Abend',()=>{ chime([523,440]); });
+    talk('mama','Ehfje, es ist','sagte Mama'); onPh('Ehfje, es ist',()=>{ mood('mama','smile'); famArm('mama','up'); });
+    talk('hexe','Aber ich bin','rief Ehfje'); onPh('Aber ich bin',()=>{ mood('hexe','laugh'); efArm('up'); famArm('mama','dn'); const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y-vu()*8,8,10); });
+    talk('mama','Dann räum','sagte Mama'); onPh('Dann räum',()=>{ mood('mama','happy'); mood('hexe','worry'); efArm('dn'); ['ball','klotz','kreisel'].forEach((id,i)=>bLater(()=>wiggle(TB.els[id]),i*260)); });
+    onPh('hob Ehfje',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('Kribbel',()=>efSpell(12));
+    onPh('hüpft in die Kiste',()=>{ const K=TB.els.kiste; sqs(K); const [x,y]=relEl(K,[.5,.3]); glitterBurst(x,y,12,12); chimeAt([1175,1568],x); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('up'); famArm('mama','dn'); mood('mama','smile'); },
+  a:{t:'drag',ids:['ball','klotz','kreisel'],to:'kiste',w:'BALL'},
+  h:'Zieh die Spielsachen in die Kiste!',
+  s:'Es war Abend geworden. Draußen ging die Sonne unter, und Janneke schlief schon längst. Ehfje, es ist Zeit fürs Bett, sagte Mama. Aber ich bin noch gar nicht müde! rief Ehfje. Dann räum erst mal deine Spielsachen auf, sagte Mama. Da hob Ehfje ihren Finger: Kribbel, krabbel, Funkelschein – Spielsachen, hüpft in die Kiste hinein! Zieh die Spielsachen in die Kiste!',
+  item(id,b){ betInto(b); efSpell(5); mood('hexe',TB.left.length?'happy':'laugh'); if(TB.left.length===1) mood('mama','happy'); },
+  done(){ mood('hexe','laugh'); efArm('up'); mood('mama','happy'); },
+  d:[()=>{ onPh('Hopp, hopp',()=>{ const K=TB.els.kiste, [x,y]=relEl(K,[.5,.3]); [0,1,2].forEach(i=>bLater(()=>{ sqs(K); betKnock(x); fxBurst(x,y,6); },i*330)); },'d1');
+       onPh('Deckel klappte zu',()=>{ const K=TB.els.kiste, [x,y]=relEl(K,[.5,.35]); K.classList.add('zu'); sqs(K); betLid(x); glitterBurst(x,y,14,14); efArm('dn'); },'d1'); },
+     'Hopp, hopp, hopp! Alle Spielsachen hüpften in die Kiste, und der Deckel klappte zu.',
+     ()=>{ onPh('sprang Socke',()=>{ const S=TB.els.socke, K=TB.els.kiste, [kx,ky]=eikAt(K,.42,.31), f=(79/84-.5)*S.offsetHeight/TB.W.offsetHeight*100; mood('socke','happy'); famHop(S,kx,ky-f,800,14); },'d2');
+       onPh('gähnte ganz laut',()=>betGaehn('socke','sleepy',1700),'d2');
+       talk('hexe','Socke ist müde','kicherte','d2'); talk('hexe','Aber ich bin',null,'d2');
+       onPh('Socke ist müde',()=>{ mood('hexe','laugh'); },'d2'); onPh('Aber ich bin',()=>{ mood('hexe','happy'); efArm('up'); const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y-vu()*8,8,10); },'d2'); },
+     'Da sprang Socke auf die Kiste, machte es sich gemütlich und gähnte ganz laut. Socke ist müde, kicherte Ehfje. Aber ich bin noch gar nicht müde!', 700]},
+
+ /* 2 – in the bathroom with Papa: brush the teeth (putzen); a foam beard "wie Papa"; Boris yawns – and so does Ehfje */
+ {set:'bettbad', dark:0, u:[9,80,14], ef:[40,52,44,'st'], papa:[73,55,31], boris:[86,89,22,'lie'],
+  p:[['wb','BETWB',40,71,44,'betwb'],['buerste','BETBUERSTE',30,57,14,'betbr']],
+  front:['wb','buerste'],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',bom:'smile',pj:0},
+  enter(){ betBrushHome(0); onPh('ins Bad',()=>{ chime([659,784]); });
+    talk('papa','Zähne putzen','sagte Papa'); onPh('Zähne putzen',()=>{ mood('papa','happy'); famArm('papa','up'); });
+    onPh('gab ihr die Zahnbürste',()=>{ famArm('papa','dn'); efArm('putz'); mood('hexe','grin'); betBrushMouth(900); const [x,y]=ctr(TB.els.buerste); glitterBurst(x,y,8,8); chime([988,1318]); });
+    onPh('Boris lag',()=>{ famWag(1); mood('boris','happy'); bLater(()=>famWag(0),1600); });
+    onPh('hin und her',()=>{ mood('hexe','grin'); }); },
+  ready(){ efReady(); efArm('putz'); mood('hexe','grin'); famArm('papa','dn'); },
+  a:{t:'putzen',id:'hexe',br:'buerste',n:10,w:'ZAHN'},
+  h:'Putz die Zähne, hin und her!',
+  s:'Dann ging Ehfje mit Papa ins Bad. Zähne putzen! sagte Papa und gab ihr die Zahnbürste mit einem Klecks Zahnpasta. Boris lag auf dem Badeteppich und schaute zu. Putz Ehfje die Zähne, hin und her!',
+  brushing(p){ const B=TB.els.buerste; if(p>.06) B.classList.add('betnop'); if(p>.5&&!TST.b5){ TST.b5=1; mood('papa','laugh'); } },
+  done(){ mood('hexe','grin'); efArm('dn'); betBrushHome(800); mood('papa','happy'); },
+  d:[()=>{ onPh('Schrubb',()=>{ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.41]); for(let i=0;i<10;i++) fxAdd({k:'bub',x:x+(Math.random()-.5)*vu()*8,y,vy:-(6+Math.random()*8)*vu(),ph:Math.random()*6,s:.5+Math.random()*.6,life:1.6}); },'d1');
+       onPh('glänzten',()=>{ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.41]); glitterBurst(x,y,16,10); chimeAt([1568,2093],x); bubble('bling!',x+vu()*8,y-vu()*4,3.4,'#ffffff'); },'d1');
+       onPh('Schaumbart',()=>{ mood('hexe','laugh'); TB.els.hexe.style.setProperty('--fm',1); sqs(TB.els.hexe); },'d1');
+       talk('hexe','Papa, schau','rief Ehfje','d1'); onPh('Papa, schau',()=>{ mood('hexe','laugh'); efArm('up'); },'d1');
+       onPh('Papa lachte',()=>{ mood('papa','laugh'); const [x,y]=relEl(TB.els.papa,[.5,.12]); hearts(x,y,3); famGiggle(x,3); efArm('dn'); },'d1'); },
+     'Schrubb, schrubb, schrubb! Bald glänzten alle Zähne. Und Ehfje hatte einen dicken Schaumbart. Papa, schau mal, ich hab einen Bart wie du! rief Ehfje. Papa lachte.',
+     ()=>{ onPh('gähnte Boris',()=>{ TB.els.boris.classList.remove('lie'); betGaehn('boris','sleepy',1800); bLater(()=>TB.els.boris.classList.add('lie'),1900); },'d2');
+       talk('hexe','Boris ist müde','sagte Ehfje','d2'); talk('hexe','Aber ich bin','Ehfje hielt','d2');
+       onPh('Boris ist müde',()=>{ mood('hexe','happy'); },'d2'); onPh('Aber ich bin',()=>{ mood('hexe','happy'); efArm('up'); },'d2');
+       onPh('uaaah',()=>{ efArm('dn'); betGaehn('hexe','oh',1400); },'d2'); onPh('Hand vor den Mund',()=>{ efArm('hug'); mood('hexe','oh'); },'d2');
+       onPh('schmunzelte',()=>{ mood('papa','happy'); famArm('papa','up'); mood('hexe','laugh'); efArm('dn'); },'d2'); },
+     'Da gähnte Boris ganz laut. Boris ist müde, sagte Ehfje. Aber ich bin noch gar nicht … uaaah! Ehfje hielt sich schnell die Hand vor den Mund. Papa schmunzelte.', 700]},
+
+ /* 3 – in bed, in her starry pyjamas; Mama reads the storybook – turn the pages (blaettern); then Mama yawns over it */
+ {set:'bettnacht', dark:.3, u:[91,77,13], bett:[45,70,74], mama:[12,60,30],
+  p:[['tisch','BETTISCH',79,83,24,'bettisch'],['lampe','BETLAMPE',81,67,11,'betlp lit']], buch:[45,84,40],
+  lights:[{id:'lampe',r0:40,rT:40,k0:.85,kT:.85,oy:.4,warm:1,name:'lampL'}],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'hold',pj:1,cov:.62},
+  enter(){ onPh('Schlafanzug',()=>{ const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y,10,12); chime([784,988]); mood('hexe','happy'); });
+    onPh('setzte sich zu ihr',()=>{ mood('mama','happy'); }); onPh('Märchenbuch',()=>{ const B=TB.els.buch; sqs(B); const [x,y]=ctr(B); glitterBurst(x,y,12,16); betRustle(x); });
+    talk('hexe','Noch eine Geschichte','sagte Ehfje'); onPh('Noch eine',()=>{ mood('hexe','laugh'); }); onPh('Blätter',()=>{ mood('hexe','happy'); mood('mama','smile'); }); },
+  ready(){ efReady(); mood('hexe','happy'); mood('mama','smile'); },
+  a:{t:'blaettern',id:'buch',n:3,w:'BUCH'},
+  h:'Wisch über die Seite, dann blätterst du um!',
+  s:'Im Schlafanzug mit den gelben Sternen kuschelte sich Ehfje ins Bett. Mama setzte sich zu ihr und holte das dicke Märchenbuch. Noch eine Geschichte, bitte! sagte Ehfje. Blätter die Seiten um!',
+  turned(k){ mood('hexe',['happy','oh','laugh'][k-1]||'happy'); mood('mama',k===3?'laugh':'happy'); if(k===3){ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.2]); hearts(x,y,2); } },
+  done(){ mood('hexe','happy'); },
+  d:[()=>{ talk('hexe','Die sieht ja','kicherte','d1'); talk('hexe','Noch mal','rief','d1');
+       onPh('Die sieht ja',()=>{ mood('hexe','laugh'); efArm('up'); },'d1'); onPh('zu Ende',()=>{ mood('hexe','oh'); efArm('dn'); },'d1'); onPh('Noch mal',()=>{ mood('hexe','laugh'); },'d1'); },
+     'Da war ein Einhorn, ein Drache und eine kleine Hexe. Die sieht ja aus wie ich! kicherte Ehfje. Und dann war das Buch zu Ende. Noch mal! rief Ehfje.',
+     ()=>{ onPh('Mama gähnte',()=>betGaehn('mama','sleepy',1600),'d2');
+       onPh('ganz schwer',()=>{ const M=TB.els.mama; mood('mama','sleepy'); try{ M.querySelector('.bb').animate([{transform:'none'},{transform:'rotate(-5deg) translateY(1%)',offset:.5},{transform:'rotate(-2deg)'},{transform:'rotate(-6deg) translateY(1.5%)'}],{duration:1600,easing:'ease-in-out',fill:'forwards'}); }catch(e){} },'d2');
+       talk('hexe','Mama, nicht','rief Ehfje','d2'); talk('hexe','Mama ist müde',null,'d2');
+       onPh('Mama, nicht',()=>{ const M=TB.els.mama; mood('hexe','laugh'); efArm('up'); M.querySelector('.bb').getAnimations().forEach(q=>q.cancel()); mood('mama','oh'); sqs(M); },'d2');
+       onPh('Mama ist müde',()=>{ mood('mama','laugh'); mood('hexe','happy'); efArm('dn'); },'d2'); onPh('Aber ich bin',()=>{ mood('hexe','happy'); efArm('up'); },'d2'); },
+     'Aber Mama gähnte, und ihr Kopf wurde ganz schwer. Mama, nicht einschlafen! rief Ehfje und kicherte. Mama ist müde. Aber ich bin noch gar nicht müde!', 700]},
+
+ /* 4 – Papa brings the old music box; wind it up (stir) – the lullaby, stars wander over the wall; the unicorn falls asleep */
+ {set:'bettnacht', dark:.3, u:[17,84,15], bett:[45,70,74], papa:[94,58,30], bsk:1,
+  p:[['tisch','BETTISCH',78,83,26,'bettisch'],['lampe','BETLAMPE',85,66,11,'betlp lit'],['uhr','BETUHR',74,65.5,17,'betuhr']],
+  lights:[{id:'lampe',r0:40,rT:40,k0:.85,kT:.85,oy:.4,warm:1,name:'lampL'}],
+  st:{efm:'smile',efa:'dn',pam:'smile',paa:'dn',skm:'smile',pj:1,cov:.62},
+  enter(){ onPh('Kuss',()=>{ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.2]); hearts(x,y,3); mood('hexe','happy'); });
+    onPh('alten Spieluhr',()=>{ const U=TB.els.uhr, [x,y]=ctr(U); sqs(U); glitterBurst(x,y,12,12); chimeAt([1318,1568],x); mood('hexe','oh'); });
+    talk('papa','Wenn du sie','sagte Papa'); onPh('Wenn du sie',()=>{ mood('papa','happy'); famArm('papa','up'); }); onPh('Schlaflied',()=>{ famArm('papa','dn'); mood('hexe','happy'); });
+    onPh('Dreh den',()=>{ wiggle(TB.els.uhr); }); },
+  ready(){ efReady(); mood('hexe','happy'); famArm('papa','dn'); },
+  a:{t:'stir',id:'uhr',turns:2,w:'UHR'},
+  h:'Fahr mit dem Finger im Kreis um die Spieluhr!',
+  s:'Mama gab Ehfje einen Kuss, und dann kam Papa mit der alten Spieluhr. Wenn du sie aufziehst, singt sie dir ein Schlaflied, sagte Papa. Dreh den kleinen Schlüssel im Kreis herum!',
+  stirring(p){ const U=TB.els.uhr, q=Math.floor(p*16); if(q>(TB.uq||0)){ TB.uq=q; betTick(ctr(U)[0]); } if(p>.5) mood('hexe','smile'); },
+  done(){ const U=TB.els.uhr; U.classList.add('play'); betLull(ctr(U)[0]); betNotes(true); mood('hexe','happy'); mood('papa','happy'); },
+  d:[()=>{ onPh('drehte sich im Kreis',()=>{ const U=TB.els.uhr, [x,y]=relEl(U,[.5,.25]); glitterBurst(x,y,10,8); },'d1');
+       onPh('glitzernde Sterne',()=>{ betProjector(.45,.3); mood('hexe','oh'); bLater(()=>mood('hexe','happy'),1500); },'d1'); },
+     'Kling, klang, klong … die Spieluhr spielte ihr leises Lied, und das kleine Einhorn obendrauf drehte sich im Kreis. Über die Wand wanderten glitzernde Sterne.',
+     ()=>{ onPh('gähnte auch dein Einhorn',()=>{ const U=TB.els.uni, [x,y]=relEl(U,[.8,.2]); bubble('gähn…',x,y,3.2,'#eef0ff'); betYawn(x); const v=U.querySelector('.uni'); v.classList.remove('happy'); void v.getBoundingClientRect(); v.classList.add('happy'); },'d2');
+       onPh('legte den Kopf',()=>{ const U=TB.els.uni; kiPath(U,[[20,85]],1400); U.querySelector('.ub').style.rotate='9deg'; },'d2');
+       onPh('machte die Augen zu',()=>{ betUniSleep(true); zzz('uni',.45); mood('socke','sleepy'); },'d2');
+       talk('hexe','Das Einhorn ist','flüsterte','d2'); talk('hexe','Aber ich bin',null,'d2');
+       onPh('Das Einhorn ist',()=>{ mood('hexe','smile'); },'d2'); onPh('Aber ich bin',()=>{ mood('hexe','sleepy'); },'d2'); },
+     'Da gähnte auch dein Einhorn, legte den Kopf auf das Bett und machte die Augen zu. Das Einhorn ist müde, flüsterte Ehfje. Aber ich bin noch gar nicht müde.', 900]},
+
+ /* 5 – out of bed once more, to the window: the moon and the stars are still awake. Say good night to each (tapall) */
+ {set:'bettwand', dark:.12, u:[88,80,15], ef:[16,67,38,'st'],
+  p:[['fenster','BETFENSTER',55,47,64,'betfe']],
+  stars:[['s1',23,28,13],['s2',42,55,11],['s3',58,26,12],['s4',27,66,10]], mond:[73,34,22],
+  st:{efm:'happy',efa:'up',pj:1,cov:0,mo:'awake'},
+  enter(){ onPh('schaute aus dem Fenster',()=>{ mood('hexe','oh'); efArm('dn'); });
+    onPh('der Mond und die Sterne',()=>{ ['s1','s2','s3','s4','mond'].forEach((id,i)=>bLater(()=>{ const S=TB.els[id]; if(S){ sqs(S); const [x,y]=ctr(S); fxBurst(x,y,6); chimeAt([1047+i*131],x); } },i*240)); });
+    talk('hexe','Seht ihr','flüsterte Ehfje'); onPh('Seht ihr',()=>{ mood('hexe','laugh'); efArm('up'); });
+    onPh('Sag den Sternen',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('up'); },
+  a:{t:'tapall',ids:['s1','s2','s3','s4','mond'],m:'ring',w:'STERN'},
+  h:'Tipp auf die Sterne und sag Gute Nacht!',
+  s:'Ehfje kletterte noch einmal aus dem Bett und schaute aus dem Fenster. Draußen leuchteten der Mond und die Sterne. Seht ihr, die sind auch noch wach! flüsterte Ehfje. Sag den Sternen und dem Mond Gute Nacht!',
+  item(id,b){ const [x,y]=ctr(b), u=vu();
+    if(id==='mond'){ betGaehn('mond','asleep',1700); bLater(()=>{ b.classList.add('capdn'); zzz('mond',.5); },1200); mood('hexe','laugh'); return; }
+    b.dataset.mood='oh'; bubble('gähn…',x,y-u*5,3,'#fff3b0'); bLater(()=>{ b.dataset.mood='sleepy'; b.style.setProperty('--sg',.2); },900); mood('hexe',TB.left.length%2?'happy':'smile');
+    chimeAt([1568-(4-TB.left.length)*196],x); },
+  done(){ mood('hexe','smile'); efArm('dn'); },
+  d:[()=>{ onPh('blinzelte',()=>{ mood('mond','blink'); },'d1'); onPh('Gute Nacht, Ehfje',()=>{ const M=TB.els.mond, [x,y]=ctr(M); bubble('Gute Nacht!',x,y+vu()*8,3.2,'#fff3b0'); },'d1');
+       onPh('flüsterte: Gute',()=>{ mood('hexe','happy'); },'d1'); },
+     'Ein Stern nach dem anderen machte die Augen zu. Und zuletzt zog sich sogar der Mond die Zipfelmütze über die Ohren, blinzelte noch einmal und flüsterte: Gute Nacht, Ehfje.',
+     ()=>{ talk('hexe','Gute Nacht, Mond','flüsterte Ehfje','d2'); onPh('Gute Nacht, Mond',()=>{ mood('mond','asleep'); mood('hexe','sleepy'); efArm('up'); },'d2');
+       onPh('Vorhänge zu',()=>{ efArm('dn'); ['vl','vr'].forEach(k=>TB.els[k].classList.add('zu')); famNoise(innerWidth/2,.05,1800,900,900); FX.darkT=.3; },'d2');
+       onPh('tapste leise',()=>{ const E=TB.els.hexe; mood('hexe','sleepy'); kiPath(E,[[10,66],[-12,67]],2600); },'d2'); },
+     'Gute Nacht, Mond, flüsterte Ehfje. Sie zog die Vorhänge zu und tapste leise zurück in ihr Bett.', 900]},
+
+ /* 6 – Mama and Papa tuck her in (zudecken); "Ich bin noch gar nicht mü… mü… uaaah"; she doesn't want to miss anything – the dreams;
+    the light goes out, only the little moon night light stays on */
+ {set:'bettnacht', dark:.32, u:[19,86,13], bett:[45,70,74], bsk:1, mama:[11,60,30], papa:[94,58,30],
+  p:[['tisch','BETTISCH',78,83,26,'bettisch'],['lampe','BETLAMPE',85,66,11,'betlp lit'],['uhr','BETUHR',74,65.5,17,'betuhr'],['nl','BETNL',67,30,7,'betnl']],
+  lights:[{id:'lampe',r0:40,rT:40,k0:.85,kT:.85,oy:.4,warm:1,name:'lampL'},{id:'nl',r0:5,rT:5,k0:.3,kT:.3,name:'nlL'}],
+  st:{efm:'sleepy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'dn',skm:'sleepy',pj:1,cov:0},
+  enter(){ betUniSleep(true); TB.els.uni.querySelector('.ub').style.rotate='9deg'; zzz('uni',.35); zzz('socke',.3);
+    onPh('kamen Mama und Papa',()=>{ mood('mama','happy'); mood('papa','happy'); mood('hexe','smile'); });
+    talk('papa','Ab unter','sagte Papa'); onPh('Ab unter',()=>{ famArm('papa','up'); }); onPh('kleine Hexe',()=>{ mood('hexe','laugh'); });
+    onPh('Zieh Ehfje',()=>{ famArm('papa','dn'); mood('hexe','smile'); }); },
+  ready(){ efReady(); mood('hexe','smile'); famArm('papa','dn'); },
+  a:{t:'zudecken',id:'bett',w:'BETT'},
+  h:'Zieh die Decke ganz nach oben!',
+  s:'Da kamen Mama und Papa noch einmal herein. Ab unter die Decke, kleine Hexe! sagte Papa. Zieh Ehfje die Decke hoch, bis unters Kinn!',
+  tucking(c){ if(c>.65&&TST.efm!=='sleepy') mood('hexe','sleepy'); },
+  done(){ mood('hexe','sleepy'); mood('mama','happy'); mood('papa','happy'); },
+  d:[()=>{ onPh('kuschelte sich',()=>{ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.2]); hearts(x,y,2); },'d1');
+       talk('hexe','Ich bin noch','gähnte','d1'); onPh('uaaah',()=>betGaehn('hexe','sleepy',1700),'d1');
+       onPh('lächelten',()=>{ mood('mama','happy'); mood('papa','happy'); [TB.els.mama,TB.els.papa].forEach(P=>{ const [x,y]=relEl(P,[.5,.12]); hearts(x,y,2); }); },'d1'); },
+     'Ehfje kuschelte sich in ihr warmes Bett. Ich bin noch gar nicht mü… mü… uaaah, gähnte Ehfje. Mama und Papa lächelten.',
+     ()=>{ talk('hexe','Mama','flüsterte','d2'); talk('hexe','wenn ich schlafe','Weißt du','d2'); talk('mama','Weißt du','sagte Mama','d2'); talk('mama','In der Nacht',null,'d2');
+       onPh('verpasse ich',()=>{ mood('hexe','worry'); },'d2'); onPh('Weißt du',()=>{ mood('mama','smile'); famArm('mama','hug'); mood('hexe','sleepy'); },'d2');
+       onPh('kommen die Träume',()=>{ const [x,y]=relEl(TB.els.bett,[.5,.12]); for(let i=0;i<7;i++) bLater(()=>fxAdd({k:'glit',x:x+(Math.random()-.5)*vu()*30,y:y+Math.random()*vu()*6,vy:-(5+Math.random()*4)*vu(),ph:Math.random()*6,s:1,life:3,c:rnd(GLCOL)}),i*180); },'d2');
+       onPh('alles erleben',()=>{ mood('hexe','smile'); },'d2'); },
+     'Mama, flüsterte Ehfje, wenn ich schlafe, verpasse ich doch alles. Weißt du was, sagte Mama leise. In der Nacht kommen die Träume. Und im Traum kannst du alles erleben.',
+     ()=>{ onPh('Licht aus',()=>{ famArm('papa','up'); betLight(false); betTick(innerWidth*.8); },'d3');
+       onPh('Mondlicht',()=>{ const N=TB.els.nl; sqs(N); famArm('papa','dn'); },'d3');
+       talk('mama','Gute Nacht','Und Ehfje','d3'); talk('papa','Gute Nacht','Und Ehfje','d3');
+       onPh('machte die Augen zu',()=>{ mood('hexe','asleep'); zzz('hexe',.4); },'d3'); },
+     'Papa machte das Licht aus. Nur das kleine Mondlicht leuchtete noch. Gute Nacht, Ehfje. Und Ehfje machte die Augen zu.', 1400]},
+
+ /* 7 – the dream: Ehfje rides the unicorn up through glittering rings (fliegen) to the moon; then back in her bed, asleep and smiling */
+ {set:'betttraum', dark:0, fx:{glit:2}, u:[10,60,14], rider:[15,58,30], mond:[85,25,19],
+  st:{efm:'happy',efa:'up',pj:1,mo:'awake'},
+  enter(){ efRings([[32,52],[47,36],[61,46],[71,30]],9); TB.rings.forEach(R=>R.classList.add('show'));
+    onPh('kam der Traum',()=>{ const [x,y]=ctr(TB.els.reiter); glitterBurst(x,y,18,18); chimeAt([784,988,1318],x); });
+    onPh('schlafende Hexenhaus',()=>{ const H=TB.els.haus; if(H){ const [x,y]=relEl(H,[.54,.66]); glitterBurst(x,y,8,8); } });
+    onPh('zu den Wolken',()=>{ mood('hexe','laugh'); }); onPh('Flieg mit',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); },
+  a:{t:'fliegen',id:'reiter',rings:[[32,52],[47,36],[61,46],[71,30]],r:9,w:'TRAUM'},
+  h:'Flieg mit Ehfje durch die Ringe!',
+  s:'Und dann kam der Traum. Ehfje saß auf deinem Einhorn, und zusammen flogen sie hoch über das schlafende Hexenhaus, bis hinauf zu den Wolken. Flieg mit ihnen durch die glitzernden Ringe!',
+  ringPass(k){ mood('hexe',k%2?'laugh':'happy'); },
+  done(){ mood('hexe','laugh'); },
+  d:[()=>{ onPh('wartete der Mond',()=>{ const R=TB.els.reiter; R.style.rotate='0deg'; kiPath(R,[[70,34]],1800); mood('hexe','oh'); },'d1');
+       onPh('lächelte',()=>{ mood('mond','awake'); const M=TB.els.mond, [x,y]=ctr(M); glitterBurst(x,y,14,16); mood('hexe','happy'); },'d1');
+       onPh('Gute Nacht, Ehfje',()=>{ mood('mond','sing'); },'d1'); onPh('sagte der Mond',()=>{ mood('mond','awake'); },'d1');
+       onPh('Schlaf schön',()=>{ mood('mond','sing'); const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.2]); hearts(x,y,3); },'d1'); },
+     'Ganz oben wartete der Mond und lächelte. Gute Nacht, Ehfje, sagte der Mond. Schlaf schön, kleine Hexe.',
+     ()=>{ onPh('Und in ihrem Bett',()=>{ mood('mond','awake'); betHeim(); },'d2');
+       onPh('lächelte im Schlaf',()=>{ const E=TB.els.hexe2; if(E){ const [x,y]=relEl(E,[.5,.25]); glitterBurst(x,y,8,8); } },'d2');
+       talk('mama','Gute Nacht','flüsterten','d2'); talk('papa','Gute Nacht','flüsterten','d2');
+       onPh('Gute Nacht, flüsterten',()=>{ [TB.els.mama,TB.els.papa].forEach(P=>{ if(P){ P.dataset.mood='happy'; const [x,y]=relEl(P,[.5,.12]); hearts(x,y,2); } }); },'d2'); },
+     'Und in ihrem Bett schlief Ehfje tief und fest und lächelte im Schlaf. Gute Nacht, flüsterten Mama und Papa an der Tür.',
+     ()=>{ onPh('noch heute',()=>{ const E=TB.els.hexe2; if(E){ const [x,y]=relEl(E,[.5,.25]); glitterBurst(x,y,14,14); chimeAt([1318,1568,2093],x); } },'d3'); },
+     'Und wenn sie nicht aufgewacht ist, dann träumt sie noch heute.', 1800]}
+ ]};
+/*<BETT*/
 
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
@@ -13129,7 +13819,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -13186,6 +13876,11 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr famp fampa" data-mood="happy" data-arm="wide" style="left:88%;top:66%;width:20%"><div class="bb">${papaSVG()}</div></div>`+
     `<div class="tp2 splpf" style="left:16%;top:88%;width:26%">${splPfuetzeSVG(1)}</div>`+
     `<span class="tw" style="left:14%;top:14%;font-size:5vh">🍁</span><span class="tw" style="left:84%;top:20%;font-size:4vh;animation-delay:-.6s">🍂</span></div>`+tw;/*<SPLART*/
+  if(id==='schlafen') return `<div class="betart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 78% 22%,#5a4aa0 0,#3a3080 35%,#221c5a 75%)"></div>`+
+    `<div class="tp2 luna betmn" data-mood="asleep" style="left:78%;top:20%;width:20%">${betMoonSVG()}</div>`+
+    `<div class="tp2 betnl lit" style="left:16%;top:30%;width:8%">${betNlSVG()}</div>`+
+    betBedHTML({x:50,y:68,w:88,u:'%',cov:1,mood:'asleep',socke:'sleepy'})+
+    [[14,14,4],[40,10,3.4],[58,22,3],[92,48,3.4],[8,54,3]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.4}s">✦</span>`).join('')+`</div>`+tw;/*<BETTART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -13457,6 +14152,8 @@ regTale2(EINK2);
 regTale2(MAL2);
 /* Eefje und Papa auf dem Spielplatz: after the crayons, so the older lines keep their order in voice/clips.tsv */
 regTale2(SPL2);
+/* Eefje will noch nicht schlafen: after the playground, so the older lines keep their order in voice/clips.tsv */
+regTale2(BETT2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
