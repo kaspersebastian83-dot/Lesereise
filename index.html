@@ -1678,6 +1678,38 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .malmag{position:absolute;left:50%;top:-3%;width:2.6vh;height:2.6vh;border-radius:50%;translate:-50% 0;background:radial-gradient(circle at 35% 35%,#ff9ac0,#e8447a);box-shadow:0 .2vh .4vh rgba(0,0,0,.3)}
 .malart .tp2{position:absolute}
 /*<MALENCSS*/
+/*SPIELCSS>*/
+/* Eefje und Papa auf dem Spielplatz (all classes start with "spl") */
+.famp .splsit,.famp .splcr,.famp .splkl{display:none} .famp.splsitz .splsit,.famp.splcross .splcr{display:inline} .famp.splsitz .splst,.famp.splcross .splst{display:none} .famp.splsitz .famsh{transform:translateY(-22px)} .famp.splcross .famsh{display:none}
+.famp.splkids .splkl{display:inline}
+.famp[data-arm=push] .arm-push,.famp[data-arm=legs] .arm-legs,.famp[data-arm=wide] .arm-wide{display:inline}
+.tp2.famp.splnass{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.22)) drop-shadow(0 0 1.2vh rgba(140,200,255,.7)) saturate(1.15) brightness(.95)}
+.tp2.famp.splglow{filter:drop-shadow(0 0 1.4vh #fff) drop-shadow(0 0 3vh rgba(255,226,122,.9))}
+.tp2.famp.splglow>.bb{animation:splfl 1.6s ease-in-out infinite} @keyframes splfl{50%{transform:translateY(-3%)}}
+/* Ehfje sitting on Papa's shoulders: behind his head, her legs are drawn on him */
+.fampa.splkids>.bb>svg{position:relative;z-index:1} .eef.splback{z-index:0} .eef.splback .st,.eef.splback .sit{display:none} .eef.splback>.bb{animation:none}
+.tp2.eef.splback{filter:none}
+.splpf svg,.splsw svg,.splbr svg,.splei svg,.splsf svg,.splburg svg,.splturm svg,.spllat svg,.splspr svg{display:block;width:100%;overflow:visible}
+.tp2.splpf{filter:none} .splpf .splrip ellipse{transform-box:fill-box;transform-origin:center;animation:splrp 3s ease-out infinite} .splpf .splrip ellipse:nth-child(2){animation-delay:-1.5s}
+@keyframes splrp{0%{transform:scale(.4);opacity:0}30%{opacity:.9}100%{transform:scale(1.2);opacity:0}}
+.splpf.splhit .splrip ellipse{animation-duration:.9s}
+.tp2.splpf.splnx{filter:drop-shadow(0 0 1.6vh rgba(255,255,255,.95)) drop-shadow(0 0 3vh rgba(255,226,122,.8))}
+.tp2.splsw{transform-origin:50% 0;filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.2))}
+.tp2.splsw .eef{filter:none}
+.tp2.splbr{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.2))} .splbr .chr{filter:none}
+.tp2.splei{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.2))} .splei .splheap{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(var(--fl,0));opacity:calc(var(--fl,0)*3);transition:transform .5s,opacity .5s}
+.splei .splfill{opacity:var(--fl,0);transition:opacity .5s}
+.tp2.splsf{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.25))} .splsf .splsd{display:none} .splsf.full .splsd{display:inline} .tp2.splsf.held{scale:1.15;z-index:6;filter:drop-shadow(0 1.2vh 1vh rgba(0,0,0,.3))}
+.splsf svg{transform-origin:50% 77%}
+.tp2.splburg{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.18))} .splburg .splt1,.splburg .splt2,.splburg .splt3,.splburg .splfl{opacity:0;transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(.2);transition:opacity .6s,transform .7s cubic-bezier(.3,1.5,.5,1)}
+.splburg.b1 .splt1,.splburg.b2 .splt2,.splburg.b3 .splt3,.splburg.bf .splfl{opacity:1;transform:none}
+.tp2.splturm{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.2))}
+.tp2.splspr{filter:none} .splspr .splsg{transition:opacity .3s} .tp2.splspr.g2hint .splsg{opacity:.85!important} .tp2.splspr.twk .splsg{opacity:0}
+.tp2.spllat{filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.3))} .spllat .splgl{transition:fill .5s}
+.tp2.spllat.lit{filter:drop-shadow(0 0 1.6vh #ffe8a0) drop-shadow(0 0 4vh rgba(255,200,90,.8))} .spllat.lit .splgl{fill:#fff2a8}
+.tp2.splleaf{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25));z-index:5}
+.splart .tp2{position:absolute} .splart .famp>.bb,.splart .eef>.bb{animation:none}
+/*<SPIELCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -12510,6 +12542,568 @@ const MAL2={id:'malen', v2:true, eef:1, fam:1, dur:MDUR, title:'Eefje und die Wa
      'Und wenn sie nicht aufgehört haben, dann malen sie noch heute.', 1600]}
  ]};
 /*<MALEN*/
+/*SPIEL>*/
+/* ================= Eefje und Papa auf dem Spielplatz (all classes start with "spl"; checked: no .spl… class existed before) ================= */
+/* ---------- Papa: two more poses (sitting on something, Ehfje on his shoulders) and more arms, for all tales (hidden by default) ---------- */
+/* .splsitz: he sits astride (front view, knees out); .splcross: cross-legged; .splkids: Ehfje's legs dangle over his shoulders (she herself sits behind his head);
+   data-arm push (both hands out to the left, pushing the swing) | legs (holding her ankles) | wide (arms open to catch her) */
+const SPLPAPA0=papaSVG;
+papaSVG=function(){ let s=SPLPAPA0(); const K='#f2c8a8', KS='#c08a6a', SD='#2e5e3a', J='#3e5f9a', JD='#25406e';
+  const id=(s.match(/pattern id="(fp\d+)c"/)||[])[1];
+  const arm=(d,hx,hy)=>`<path d="${d}" stroke="${SD}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="${d}" stroke="url(#${id}c)" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="${hx}" cy="${hy}" r="6" fill="${K}" stroke="${KS}" stroke-width="2"/>`;
+  /* the standing legs and shoes go into one group so they can be swapped for the sitting ones */
+  s=s.replace(/(<path d="M58 148 L55 238[\s\S]*?<path d="M108 236[^>]*\/>)/,'<g class="splst">$1</g>');
+  const limb=(d,w)=>`<path d="${d}" stroke="${JD}" stroke-width="${w+5}" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" stroke="${J}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const shoe=(x,y,r)=>`<ellipse cx="${x}" cy="${y}" rx="13" ry="7.5" transform="rotate(${r} ${x} ${y})" fill="#7a4a2a" stroke="#3e2410" stroke-width="2.2"/>`;
+  const lap=`<path d="M52 144 L108 144 Q114 154 108 164 L52 164 Q46 154 52 144Z" fill="${J}" stroke="${JD}" stroke-width="2.6" stroke-linejoin="round"/>`;
+  /* astride (on the seesaw): knees out to the sides, shins down */
+  const sit=`<g class="splsit">${limb('M64 154 L34 180 L38 218',20)}${limb('M96 154 L126 180 L122 218',20)}${lap}
+    <circle cx="34" cy="180" r="9" fill="#4a6ca8" opacity=".6"/><circle cx="126" cy="180" r="9" fill="#4a6ca8" opacity=".6"/>${shoe(34,224,-14)}${shoe(126,224,14)}</g>`;
+  /* cross-legged (in the sand): knees far out, shins crossed in front */
+  const cross=`<g class="splcr">${limb('M66 154 L24 182',22)}${limb('M94 154 L136 182',22)}${limb('M24 184 L96 196',18)}${limb('M136 184 L64 196',18)}${lap}
+    ${shoe(102,195,-8)}${shoe(58,195,8)}</g>`;
+  const kidLeg=(x,r)=>`<g transform="rotate(${r} ${x} 64)"><path d="M${x} 62 V100" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M${x} 62 V100" stroke="#e8445a" stroke-width="8" stroke-dasharray="4.5 4.5" fill="none"/>
+    <path d="M${x-6} 98 Q${x-7} 110 ${x+3} 109 L${x+9} 108 Q${x+12} 106 ${x+9} 102 Q${x+4} 102 ${x+3} 97Z" fill="#3a2a4a" stroke="#1e1428" stroke-width="2"/></g>`;
+  const kids=`<g class="splkl">${kidLeg(64,8)}${kidLeg(96,-8)}</g>`;
+  const arms=`<g class="arm arm-push">${arm('M57 76 Q40 92 18 96',16,96)}${arm('M103 76 Q86 112 30 106',28,106)}</g>
+    <g class="arm arm-legs">${arm('M57 76 Q42 104 62 104',63,103)}${arm('M103 76 Q118 104 98 104',97,103)}</g>
+    <g class="arm arm-wide">${arm('M57 76 Q36 84 24 64',22,62)}${arm('M103 76 Q124 84 136 64',138,62)}</g>`;
+  s=s.replace('<g class="arm arm-dn">',sit+cross+'<g class="arm arm-dn">');
+  /* her legs in front of his shirt, his arms over them */
+  s=s.replace('<rect x="73" y="54" width="14" height="14" rx="4"',kids+arms+'<rect x="73" y="54" width="14" height="14" rx="4"');
+  return s; };
+
+/* ---------- drawn props ---------- */
+/* a puddle on the path; big = Papa's. viewBox 0 0 200 70 */
+function splPfuetzeSVG(big){ const id='sp'+(++LANC);
+  return `<svg viewBox="0 0 200 70" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8dcf8"/><stop offset=".6" stop-color="#6aaee6"/><stop offset="1" stop-color="#4a88cc"/></linearGradient></defs>
+  <path d="M8 40 Q12 12 70 12 Q130 4 172 16 Q200 28 192 46 Q178 66 110 66 Q36 68 14 56 Q4 50 8 40Z" fill="#6a5a3a" opacity=".22"/>
+  <path d="M16 40 Q20 20 70 18 Q124 12 166 22 Q190 30 184 44 Q170 60 110 60 Q42 62 22 52 Q12 48 16 40Z" fill="url(#${id})" stroke="#3a6aa8" stroke-width="2.4"/>
+  <ellipse cx="128" cy="30" rx="26" ry="6" fill="#fff" opacity=".45"/><ellipse cx="146" cy="28" rx="14" ry="4" fill="#fff" opacity=".4"/>
+  <path d="M40 30 Q70 23 102 25" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".75"/>
+  <g class="splrip" fill="none" stroke="#e8f8ff" stroke-width="1.8" opacity=".8"><ellipse cx="80" cy="42" rx="18" ry="5"/><ellipse cx="80" cy="42" rx="34" ry="9"/></g>
+  ${big?`<path d="M152 44 q6 -8 14 -4 q-4 8 -14 4Z" fill="#ff8a3a" stroke="#c0501a" stroke-width="1.4"/><path d="M40 48 q5 -7 12 -4 q-3 7 -12 4Z" fill="#ffc83a" stroke="#c8901a" stroke-width="1.4"/>`:''}</svg>`; }
+/* the swing frame (an A from the side; the swing hangs from its top at 150,26). viewBox 0 0 300 360 */
+function splGestellSVG(){ return `<svg viewBox="0 0 300 360" style="overflow:visible"><ellipse cx="150" cy="352" rx="140" ry="7" fill="rgba(0,0,0,.14)"/>
+  <path d="M158 30 L250 350" stroke="#7a4a22" stroke-width="16" stroke-linecap="round" opacity=".55"/><path d="M142 30 L64 350" stroke="#7a4a22" stroke-width="16" stroke-linecap="round" opacity=".55"/>
+  <path d="M150 24 L44 350" stroke="#7a4a22" stroke-width="19" stroke-linecap="round"/><path d="M150 24 L44 350" stroke="#d08a4a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M150 24 L256 350" stroke="#7a4a22" stroke-width="19" stroke-linecap="round"/><path d="M150 24 L256 350" stroke="#d08a4a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M146 40 L56 330 M154 40 L244 330" stroke="#f0b070" stroke-width="3" opacity=".7" stroke-linecap="round"/>
+  <path d="M90 236 L210 236" stroke="#7a4a22" stroke-width="13" stroke-linecap="round"/><path d="M90 236 L210 236" stroke="#d08a4a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="150" cy="24" r="20" fill="#d08a4a" stroke="#7a4a22" stroke-width="4"/><circle cx="150" cy="24" r="8" fill="#8a8a9a" stroke="#4a4a5a" stroke-width="3"/>
+  <path d="M38 348 L52 348 M248 348 L262 348" stroke="#5a3a1a" stroke-width="6" stroke-linecap="round"/></svg>`; }
+/* the swing: chains from the top (35,0) and the seat. viewBox 0 0 70 200 */
+function splSchaukelSVG(){ return `<svg viewBox="0 0 70 200" style="overflow:visible">
+  <path d="M33 0 L22 182" stroke="#6a6a7a" stroke-width="4" opacity=".5"/>
+  <path d="M35 0 L35 182" stroke="#5a5a6a" stroke-width="5"/><path d="M35 0 L35 182" stroke="#d8d8e8" stroke-width="3" stroke-dasharray="5 3"/>
+  <path d="M8 182 L60 182 Q64 182 64 186 L64 190 Q64 194 60 194 L8 194 Q4 194 4 190 L4 186 Q4 182 8 182Z" fill="#e8445a" stroke="#8a1a2a" stroke-width="2.6"/>
+  <path d="M10 185 H58" stroke="#ff9aa8" stroke-width="2" stroke-linecap="round"/></svg>`; }
+/* the sandbox, wooden frame in perspective. viewBox 0 0 600 200 */
+function splSandkastenSVG(){ const id='sk'+(++LANC), r=seeded(91); let dots=''; for(let i=0;i<70;i++){ const x=60+r()*480, y=56+r()*104; dots+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(1+r()*1.6).toFixed(1)}"/>`; }
+  return `<svg viewBox="0 0 600 200" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dc9a"/><stop offset="1" stop-color="#ecc878"/></linearGradient></defs>
+  <ellipse cx="300" cy="196" rx="300" ry="8" fill="rgba(0,0,0,.14)"/>
+  <path d="M70 30 L530 30 L590 168 L10 168Z" fill="url(#${id})"/>
+  <g fill="#d8b066" opacity=".7">${dots}</g>
+  <path d="M120 120 Q170 96 220 120Z M400 80 Q440 62 480 82Z" fill="#f8e4ae" opacity=".9"/>
+  <path d="M58 22 L542 22 L548 36 L52 36Z" fill="#c8844a" stroke="#7a4a22" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M52 30 L60 30 L18 172 L4 172Z" fill="#b8743a" stroke="#7a4a22" stroke-width="3" stroke-linejoin="round"/><path d="M540 30 L548 30 L596 172 L582 172Z" fill="#b8743a" stroke="#7a4a22" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M2 164 L598 164 L598 190 L2 190Z" fill="#d8945a" stroke="#7a4a22" stroke-width="3.4" stroke-linejoin="round"/><path d="M8 170 H592" stroke="#f0b880" stroke-width="3" opacity=".8"/>
+  <g fill="#7a4a22"><circle cx="30" cy="177" r="3"/><circle cx="570" cy="177" r="3"/><circle cx="300" cy="177" r="3"/></g>
+  <g transform="translate(520 120)"><path d="M0 -18 L5 -6 18 -5 8 4 11 17 0 10 -11 17 -8 4 -18 -5 -5 -6Z" fill="#ff7aa8" stroke="#c43a6a" stroke-width="2.4" stroke-linejoin="round"/></g>
+  <g transform="translate(80 140) rotate(-20)"><rect x="-20" y="-4" width="34" height="8" rx="4" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="2"/><path d="M14 -10 L26 -10 L26 10 L14 10Z" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="2"/><path d="M18 -10 V10 M22 -10 V10" stroke="#2a6ab8" stroke-width="1.6"/></g></svg>`; }
+/* the bucket: sand shows inside as --fl (0 … 1) rises. viewBox 0 0 100 110 */
+function splEimerSVG(){ return `<svg viewBox="0 0 100 110" style="overflow:visible"><ellipse cx="50" cy="106" rx="34" ry="4" fill="rgba(0,0,0,.16)"/>
+  <path d="M14 20 Q50 -14 86 20" fill="none" stroke="#2a6ab8" stroke-width="3.4"/>
+  <g class="splheap"><path d="M14 22 Q30 2 50 4 Q72 2 86 22Z" fill="#f2d088" stroke="#c8a050" stroke-width="2"/><g fill="#d8b066"><circle cx="36" cy="14" r="1.6"/><circle cx="56" cy="10" r="1.6"/><circle cx="70" cy="16" r="1.4"/></g></g>
+  <path d="M12 20 L88 20 L80 102 Q50 108 20 102Z" fill="#4aa0f0" stroke="#2a6ab8" stroke-width="3" stroke-linejoin="round"/>
+  <ellipse cx="50" cy="20" rx="38" ry="7" fill="#3a8ae0" stroke="#2a6ab8" stroke-width="3"/>
+  <ellipse class="splfill" cx="50" cy="21" rx="33" ry="5" fill="#f2d088"/>
+  <path d="M18 30 Q22 70 26 98" stroke="#a8d8ff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  <path d="M50 52 l4 8 9 1 -6.5 6 1.6 9 -8 -4.4 -8 4.4 1.6 -9 -6.5 -6 9 -1Z" fill="#ffd84a" stroke="#c8961a" stroke-width="1.6"/></svg>`; }
+/* the spade; the sand on it shows with .full. viewBox 0 0 60 120, the blade's middle at 30,92 */
+function splSchaufelSVG(){ return `<svg viewBox="0 0 60 120" style="overflow:visible">
+  <path d="M30 6 V70" stroke="#c8961a" stroke-width="9" stroke-linecap="round"/><path d="M30 6 V70" stroke="#ffd84a" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M18 4 H42" stroke="#c8961a" stroke-width="9" stroke-linecap="round"/><path d="M18 4 H42" stroke="#ffd84a" stroke-width="5" stroke-linecap="round"/>
+  <path d="M12 72 L48 72 Q52 100 30 116 Q8 100 12 72Z" fill="#ff5a6a" stroke="#a82a3a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M18 78 Q18 96 28 108" stroke="#ffb0b8" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g class="splsd"><path d="M12 82 Q30 60 48 82 Q30 90 12 82Z" fill="#f2d088" stroke="#c8a050" stroke-width="1.8"/><g fill="#d8b066"><circle cx="24" cy="78" r="1.5"/><circle cx="36" cy="76" r="1.5"/></g></g></svg>`; }
+/* the sandcastle: the middle tower comes out of the bucket, two more (.splt2 .splt3) and the leaf flag (.splfl) come later.
+   viewBox 0 0 240 150 */
+function splBurgSVG(){ const tw=(x,w,h,cls)=>{ const t=140-h; return `<g class="${cls}"><path d="M${x-w/2} 140 L${x-w/2+6} ${t+10} L${x+w/2-6} ${t+10} L${x+w/2} 140Z" fill="#e8c070" stroke="#9a7230" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M${x-w/2+6} ${t+10} V${t} h${(w-12)/5} v8 h${(w-12)/5} v-8 h${(w-12)/5} v8 h${(w-12)/5} v-8 h${(w-12)/5} V${t+10}" fill="#f0cc80" stroke="#9a7230" stroke-width="3.2" stroke-linejoin="round"/>
+    <path d="M${x-w/2+4} ${140-h*.45} H${x+w/2-4} M${x-w/2+2} ${140-h*.2} H${x+w/2-2}" stroke="#c89a50" stroke-width="2.6" opacity=".9"/>
+    <g fill="#b88a40"><circle cx="${x-8}" cy="${t+30}" r="2"/><circle cx="${x+10}" cy="${t+44}" r="2"/><circle cx="${x-4}" cy="${140-h*.3}" r="1.6"/></g></g>`; };
+  return `<svg viewBox="0 0 240 150" style="overflow:visible"><ellipse cx="120" cy="142" rx="112" ry="7" fill="#d8b066" opacity=".55"/>
+  ${tw(50,52,62,'splt2')}${tw(190,52,66,'splt3')}${tw(120,80,96,'splt1')}
+  <path class="splt1" d="M110 140 V122 Q120 110 130 122 V140Z" fill="#c8a050" opacity=".8"/>
+  <g class="splt1" fill="#fff"><circle cx="104" cy="96" r="3.4" fill="#ffd8e0" stroke="#e8a0b0" stroke-width="1.2"/><path d="M134 98 l3 -6 3 6Z" fill="#fff4d8" stroke="#d8b066" stroke-width="1.2"/></g>
+  <g class="splfl"><path d="M120 44 V8" stroke="#7a4a22" stroke-width="3" stroke-linecap="round"/><path d="M121 10 Q138 4 148 14 Q140 18 146 28 Q132 26 121 30Z" fill="#e8442a" stroke="#9a2a12" stroke-width="2" stroke-linejoin="round"/><path d="M122 20 Q132 18 142 20" stroke="#9a2a12" stroke-width="1.4" fill="none"/></g></svg>`; }
+/* the seesaw's stand. viewBox 0 0 120 110, the pivot at 60,16 */
+function splWippbockSVG(){ return `<svg viewBox="0 0 120 110" style="overflow:visible"><ellipse cx="60" cy="106" rx="56" ry="5" fill="rgba(0,0,0,.16)"/>
+  <path d="M60 16 L14 104 L106 104Z" fill="#5ab46a" stroke="#2a7a3a" stroke-width="4" stroke-linejoin="round"/><path d="M60 34 L34 92 M60 34 L86 92" stroke="#8ad89a" stroke-width="3" opacity=".7"/>
+  <circle cx="60" cy="16" r="12" fill="#8a8a9a" stroke="#4a4a5a" stroke-width="3.4"/><circle cx="60" cy="16" r="4" fill="#4a4a5a"/></svg>`; }
+/* the seesaw's board with handles and seats; it turns round its middle. viewBox 0 0 400 60 (the board's top at y 30) */
+function splBrettSVG(){ const grip=x=>`<path d="M${x} 30 V4" stroke="#2a6ab8" stroke-width="7" stroke-linecap="round"/><path d="M${x-12} 6 H${x+12}" stroke="#2a6ab8" stroke-width="8" stroke-linecap="round"/><path d="M${x-12} 6 H${x+12}" stroke="#ff7a8a" stroke-width="4" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 400 60" style="overflow:visible">${grip(92)}${grip(308)}
+  <path d="M4 30 L396 30 Q400 30 400 34 L400 42 Q400 46 396 46 L4 46 Q0 46 0 42 L0 34 Q0 30 4 30Z" fill="#ffb84a" stroke="#a8641a" stroke-width="3"/>
+  <path d="M8 34 H392" stroke="#ffe0a0" stroke-width="2.6" stroke-linecap="round"/>
+  <rect x="8" y="24" width="64" height="10" rx="5" fill="#e8445a" stroke="#8a1a2a" stroke-width="2.4"/><rect x="328" y="24" width="64" height="10" rx="5" fill="#e8445a" stroke="#8a1a2a" stroke-width="2.4"/>
+  <ellipse cx="40" cy="52" rx="16" ry="6" fill="#4a4a5a"/><ellipse cx="360" cy="52" rx="16" ry="6" fill="#4a4a5a"/></svg>`; }
+/* the big slide: ladder on the left, platform with a little roof, the chute down to the right. viewBox 0 0 400 440.
+   Rungs at SPLSPR, the chute's middle line SPLRUT (both in viewBox units) */
+const SPLSPR=[[77,398],[90,346],[102,294],[114,242],[127,190]], SPLRUT=[[236,156],[266,176],[292,214],[316,268],[342,334],[370,394],[398,420]];
+function splTurmSVG(){ const id='st'+(++LANC);
+  const rail=(a,b)=>`<path d="M${a[0]} ${a[1]} L${b[0]} ${b[1]}" stroke="#2a6ab8" stroke-width="10" stroke-linecap="round"/><path d="M${a[0]} ${a[1]} L${b[0]} ${b[1]}" stroke="#5ab4ff" stroke-width="5" stroke-linecap="round"/>`;
+  const chute=SPLRUT.map(([x,y],i)=>`${i?'L':'M'}${x} ${y}`).join(' ');
+  return `<svg viewBox="0 0 400 440" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe26a"/><stop offset="1" stop-color="#ffb02a"/></linearGradient></defs>
+  <ellipse cx="220" cy="432" rx="196" ry="8" fill="rgba(0,0,0,.15)"/>
+  <path d="M130 150 V430 M240 150 V430" stroke="#2a6ab8" stroke-width="13" stroke-linecap="round"/><path d="M130 150 V430 M240 150 V430" stroke="#5ab4ff" stroke-width="7" stroke-linecap="round"/>
+  <path d="M138 300 L232 300" stroke="#2a6ab8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M120 40 L185 2 L250 40Z" fill="#e8445a" stroke="#8a1a2a" stroke-width="4" stroke-linejoin="round"/><path d="M140 34 L185 10 L230 34" stroke="#ff9aa8" stroke-width="3" fill="none"/>
+  <path d="M134 40 V150 M236 40 V150" stroke="#2a6ab8" stroke-width="9" stroke-linecap="round"/><path d="M134 40 V150 M236 40 V150" stroke="#5ab4ff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M134 104 H236" stroke="#2a6ab8" stroke-width="7" stroke-linecap="round"/><path d="M134 104 H236" stroke="#ffd84a" stroke-width="3" stroke-linecap="round"/>
+  <g stroke="#2a6ab8" stroke-width="4">${[156,176,196,216].map(x=>`<path d="M${x} 106 V146"/>`).join('')}</g>
+  <path d="M118 146 L248 146 L248 160 L118 160Z" fill="#c8844a" stroke="#7a4a22" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="${chute}" fill="none" stroke="#c87a1a" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="${chute}" fill="none" stroke="url(#${id})" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="${SPLRUT.map(([x,y],i)=>`${i?'L':'M'}${x-4} ${y-16}`).join(' ')}" fill="none" stroke="#fff6c0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <path d="${chute}" fill="none" stroke="#ff8a2a" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 18" opacity=".6"/>
+  <path d="M358 404 V432 M398 420 V434" stroke="#2a6ab8" stroke-width="8" stroke-linecap="round"/>
+  ${rail([42,430],[112,150])}${rail([98,430],[160,150])}
+  <g stroke="#7a4a22" stroke-width="9" stroke-linecap="round">${SPLSPR.map(([x,y])=>`<path d="M${x-23} ${y} H${x+23}"/>`).join('')}</g>
+  <g stroke="#e0a060" stroke-width="5" stroke-linecap="round">${SPLSPR.map(([x,y])=>`<path d="M${x-23} ${y} H${x+23}"/>`).join('')}</g></svg>`; }
+/* a rung lighting up (tap target of the ladder). viewBox 0 0 60 20 */
+function splSprosseSVG(){ return `<svg viewBox="0 0 60 20" style="overflow:visible"><rect x="2" y="4" width="56" height="12" rx="6" fill="#fff6c0" opacity=".0" class="splsg"/></svg>`; }
+/* a street lamp; .lit makes it glow. viewBox 0 0 60 240, the light at 30,26 */
+function splLaterneSVG(){ return `<svg viewBox="0 0 60 240" style="overflow:visible"><ellipse cx="30" cy="236" rx="18" ry="4" fill="rgba(0,0,0,.25)"/>
+  <path d="M30 50 V232" stroke="#1e3a2e" stroke-width="9" stroke-linecap="round"/><path d="M30 50 V232" stroke="#3a6a52" stroke-width="4" stroke-linecap="round"/>
+  <path d="M18 232 Q18 214 30 212 Q42 214 42 232Z" fill="#2a4a3a" stroke="#1e3a2e" stroke-width="3"/>
+  <path d="M30 120 q-10 6 -6 14" stroke="#3a6a52" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M16 46 L44 46 L40 54 L20 54Z" fill="#2a4a3a" stroke="#1e3a2e" stroke-width="2.6" stroke-linejoin="round"/>
+  <path class="splgl" d="M14 14 L46 14 L42 46 L18 46Z" fill="#8a96a8" stroke="#1e3a2e" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M30 14 V46 M16 30 H44" stroke="#1e3a2e" stroke-width="2"/>
+  <path d="M8 14 L30 0 L52 14Z" fill="#2a4a3a" stroke="#1e3a2e" stroke-width="3" stroke-linejoin="round"/><circle cx="30" cy="0" r="3" fill="#2a4a3a"/></svg>`; }
+/* an autumn tree. viewBox 0 0 200 240 */
+function splBaumSVG(k){ const C=[['#f0902a','#ffb84a','#c8601a'],['#e8542a','#ff8a4a','#a8341a'],['#f2c02a','#ffe06a','#c8901a']][k||0];
+  return `<svg viewBox="0 0 200 240"><path d="M88 240 Q94 190 94 140 L106 140 Q106 190 112 240Z" fill="#7a5236" stroke="#3e2a1c" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M98 160 Q80 140 62 134 M102 152 Q122 134 140 128" stroke="#4a3222" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <g fill="${C[2]}"><circle cx="60" cy="104" r="42"/><circle cx="142" cy="102" r="44"/><circle cx="100" cy="70" r="54"/><circle cx="100" cy="120" r="42"/></g>
+  <g fill="${C[0]}"><circle cx="58" cy="100" r="38"/><circle cx="140" cy="98" r="40"/><circle cx="100" cy="66" r="50"/><circle cx="100" cy="116" r="38"/></g>
+  <g fill="${C[1]}" opacity=".7"><circle cx="84" cy="44" r="18"/><circle cx="130" cy="74" r="12"/><circle cx="46" cy="86" r="12"/><circle cx="110" cy="100" r="9"/></g></svg>`; }
+/* a piece of colourful picket fence. viewBox 0 0 400 80 */
+function splZaunSVG(){ const C=['#ff6a6a','#ffd84a','#5ab4ff','#6ad87a','#b48aff'];
+  return `<svg viewBox="0 0 400 80" style="overflow:visible"><path d="M0 34 H400 M0 62 H400" stroke="#a8743e" stroke-width="7"/>
+  ${Array.from({length:12},(_,i)=>{ const x=8+i*33, c=C[i%5]; return `<path d="M${x} 78 V16 L${x+11} 4 L${x+22} 16 V78Z" fill="${c}" stroke="#5a3a1a" stroke-width="2.4" stroke-linejoin="round"/>`; }).join('')}</svg>`; }
+Object.assign(SVGP,{SPLPF:[()=>splPfuetzeSVG(0),1],SPLPFB:[()=>splPfuetzeSVG(1),1],SPLGEST:[splGestellSVG,1],SPLSCH:[splSchaukelSVG,1],SPLSAND:[splSandkastenSVG,1],
+  SPLEIMER:[splEimerSVG,1],SPLSCHAUF:[splSchaufelSVG,1],SPLBURG:[splBurgSVG,1],SPLBOCK:[splWippbockSVG,1],SPLBRETT:[splBrettSVG,1],SPLTURM:[splTurmSVG,1],SPLSPR:[splSprosseSVG,1],
+  SPLLAT:[splLaterneSVG,1],SPLBAUM0:[()=>splBaumSVG(0),.83],SPLBAUM1:[()=>splBaumSVG(1),.83],SPLBAUM2:[()=>splBaumSVG(2),.83],SPLZAUN:[splZaunSVG,5]});
+
+/* ---------- the sets: an autumn afternoon, the playground, the evening ---------- */
+const SPLFAR=(s)=>sil(hills(s,236,70,'#d8c47a')+pines(s+2,24,80,'#c8843a',96)+pines(s+4,20,70,'#a8a040',60)+hills(s+6,292,40,'#b8c46a'),58);
+const SPLGND='linear-gradient(180deg,#b4cc6a 0%,#94b456 48%,#729444 100%)';
+const SPLSKY='linear-gradient(180deg,#6ab0ea 0%,#a8d4f2 48%,#ffe8c8 100%)';
+Object.assign(SETS2,{
+  splweg:{clean:1, sky:SPLSKY, sun:[84,14], farp:[['CLD',22,22,7],['CLD',60,15,6]], far:SPLFAR(701),
+    gnd:'linear-gradient(180deg,#b4cc6a 0%,#a0b45a 30%,#b49a6a 31%,#a88a5a 70%,#8a7048 100%)',
+    mid:[['SPLBAUM0',14,48,24],['SPLBAUM1',86,46,26],['SPLBAUM2',66,50,16]], fore:[['🍂',4,97,7],['🍁',96,98,8],['🌰',56,104,5]]},
+  splschaukel:{clean:1, sky:SPLSKY, sun:[86,13], farp:[['CLD',30,20,7],['CLD',70,14,6]], far:SPLFAR(711), gnd:SPLGND,
+    mid:[['SPLZAUN',12,54,10],['SPLZAUN',86,54,10],['SPLBAUM1',14,46,24],['SPLBAUM0',86,44,26]], fore:[['🍂',4,97,7],['🍁',95,98,8]]},
+  splsand:{clean:1, sky:SPLSKY, sun:[14,13], farp:[['CLD',40,18,7]], far:SPLFAR(721), gnd:SPLGND,
+    mid:[['SPLZAUN',20,54,10],['SPLZAUN',80,54,10],['SPLBAUM2',14,46,22],['SPLBAUM0',86,46,24]], fore:[['🍁',3,98,7],['🍂',97,97,8]]},
+  splwippe:{clean:1, sky:SPLSKY, sun:[80,12], farp:[['CLD',20,20,7],['CLD',52,14,6]], far:SPLFAR(731), gnd:SPLGND,
+    mid:[['SPLZAUN',14,54,10],['SPLZAUN',84,54,10],['SPLBAUM0',86,46,24],['SPLBAUM1',14,48,20]], fore:[['🍂',4,98,7],['🌰',96,98,5]]},
+  splrutsche:{clean:1, sky:'linear-gradient(180deg,#6aaae8 0%,#a8ccec 45%,#ffdcb0 100%)', sun:[88,20], farp:[['CLD',16,18,7]], far:SPLFAR(741), gnd:SPLGND,
+    mid:[['SPLZAUN',12,54,10],['SPLBAUM2',86,46,24],['SPLBAUM1',12,46,22]], fore:[['🍁',4,97,7],['🍂',96,98,7]]},
+  splabend:{sky:'linear-gradient(180deg,#24245e 0%,#4a3a86 32%,#a85a8a 62%,#f08a6a 84%,#ffb87a 100%)', moon:[16,14], stars:40, dcol:'24,16,56',
+    far:sil(hills(751,236,70,'#5a4a7a')+pines(753,24,80,'#3e3262',96)+hills(757,292,40,'#4a3e6a'),58), gnd:'linear-gradient(180deg,#6a6a5a 0%,#5a5648 30%,#6e6450 31%,#5a5040 70%,#463c30 100%)',
+    act:[['haus','HEXHAUS',91,49,40]], mid:[['SPLBAUM1',14,48,20]], fore:[['🍂',4,97,7]]}
+});
+Object.assign(TSYL,{'PFÜTZE':'PFÜT-ZE',SCHAUKEL:'SCHAU-KEL',WIPPE:'WIP-PE',RUTSCHE:'RUT-SCHE'});
+
+/* ---------- sounds: splash, swing, sand, seesaw, slide ---------- */
+const splLate=()=>!tale||!tale.t||tale.t.id!=='spielplatz'||!taleOn();
+function splTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||splLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.01); g.gain.exponentialRampToValueAtTime(.0008,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function splSplash(x,big){ famNoise(x,big?.3:.2,big?1800:1400,big?200:300,big?800:480,'lowpass'); splTone(x,big?300:520,big?120:220,big?260:160,.06); }
+function splWhoosh(x,k){ famNoise(x,.06+(k||0)*.012,500,1600,520); }
+function splScoop(x){ famNoise(x,.08,2600,1800,180); }
+function splPour(x){ for(let i=0;i<6;i++) setTimeout(()=>famNoise(x,.04,4000+Math.random()*1500,3000,90),i*70); }
+function splThump(x){ splTone(x,150,60,240,.16); famNoise(x,.08,500,150,200,'lowpass'); }
+function splSlideSnd(x,ms){ famNoise(x,.07,900,2400,ms||900); splTone(x,880,330,ms||900,.04); }
+function splTap(x){ splTone(x,420,260,120,.08,'triangle'); }
+
+/* ---------- helpers ---------- */
+/* the swing hangs from the frame's top: its pivot (top middle) on that point */
+function splHang(S,G){ const [ax,ay]=eikAt(G,150/300,26/360), h=S.offsetHeight/TB.W.offsetHeight*100; S.style.left=ax.toFixed(2)+'%'; S.style.top=(ay+h/2).toFixed(2)+'%'; }
+/* the seesaw board sits on the stand's pivot */
+function splOnBock(B,K){ const [ax,ay]=eikAt(K,.5,16/110), h=B.offsetHeight/TB.W.offsetHeight*100; B.style.left=ax.toFixed(2)+'%'; B.style.top=(ay-h*(38/60-.5)).toFixed(2)+'%'; }
+/* a point of the slide tower (viewBox 400 x 440) in % of the stage */
+function splOnTurm(x,y){ return eikAt(TB.els.turm,x/400,y/440).map(v=>+v.toFixed(2)); }
+/* Papa drips after the big puddle */
+function splDrip(on){ FX.em=FX.em.filter(e=>!e.spld); if(!on) return; FX.em.push({spld:1,rate:5,fn:()=>{ const P=TB&&TB.els.papa; if(!P||!P.isConnected) return; const r=P.getBoundingClientRect(), u=vu();
+  fxAdd({k:'foam',x:r.left+r.width*(.3+Math.random()*.4),y:r.top+r.height*(.3+Math.random()*.6),vx:(Math.random()-.5)*4*u,vy:2*u,g:70*u,yEnd:r.bottom-u*1,life:1,s:.35,amb:1}); }}); }
+/* sand grains falling (solid, not glowing): from x,y down to yEnd (px) */
+const SPLGR=[];
+function splGrains(x,y,n,yEnd,spread){ const u=vu(); for(let i=0;i<n;i++) SPLGR.push({x:x+(Math.random()-.5)*u*(spread||5),y:y+(Math.random()-.5)*u*2,vx:(Math.random()-.5)*8*u,vy:-Math.random()*4*u,
+    ye:yEnd+(Math.random()-.5)*u,r:u*(.28+Math.random()*.3),d:i*.014,c:Math.random()<.5?'#d8a858':'#f2d088',life:1.1});
+  if(!SPLGR.fn) SPLGR.fn=(tn,dt)=>{ const cx=FX.cx, u=vu(); for(let i=SPLGR.length-1;i>=0;i--){ const g=SPLGR[i]; if(g.d>0){ g.d-=dt; continue; } g.life-=dt;
+      if(g.y<g.ye){ g.vy+=110*u*dt; g.x+=g.vx*dt; g.y=Math.min(g.ye,g.y+g.vy*dt); } if(g.life<=0){ SPLGR.splice(i,1); continue; }
+      cx.globalAlpha=Math.min(1,g.life*3); cx.fillStyle=g.c; cx.beginPath(); cx.arc(g.x,g.y,g.r,0,6.283); cx.fill(); }
+    cx.globalAlpha=1; if(!SPLGR.length) return false; };
+  if(!FX.dr.includes(SPLGR.fn)) FX.dr.push(SPLGR.fn); }
+/* a big splash at x,y (px) */
+function splSplashAt(x,y,big){ const u=vu(); famDrops(x,y,big?40:18,big?1.5:.9); dingRing(x,y,u*(big?30:16),'rgba(255,255,255,.95)'); splSplash(x,big);
+  if(big) bLater(()=>dingRing(x,y,u*44,'rgba(220,240,255,.9)'),160); }
+/* the swing angle (deg, + = towards Papa on the right) */
+function splSwingSet(a){ const S=TB&&TB.els.schaukel; if(S) S.style.rotate=(-a).toFixed(2)+'deg'; }
+/* the seesaw: t = -1 (Papa's end down) … 1 (Ehfje's end down) */
+const SPLWA=11;
+function splTilt(t){ const B=TB&&TB.els.brett; if(B) B.style.rotate=(-t*SPLWA).toFixed(2)+'deg'; if(TB) TB.wt=t; }
+
+/* the swing keeps swinging by itself (also while the narration speaks and after the gesture): a pendulum with amplitude A (deg) that
+   eases towards AT. Pushes queued with s.q happen when it next comes to Papa's side. */
+function splSwingLoop(A0,T){ const sc=TB.sc, run=tale.run; const s=TB.sw={A:A0,AT:A0,A0,ph:-Math.PI/2,T:T||2.4,pv:0,k:0,q:0,fin:false,auto:false,cool:0,stop:false};
+  let t0=now(); const step=()=>{ if(!okRun(run,sc)) return; const t=now(), dt=Math.min(.05,(t-t0)/1000); t0=t;
+    s.A+=(s.AT-s.A)*Math.min(1,dt*1.6); s.ph+=dt*2*Math.PI/s.T; const a=s.A*Math.sin(s.ph), v=Math.cos(s.ph); splSwingSet(a); s.cool-=dt;
+    if(s.pv>0&&v<=0){ s.atP=true; if(s.q>0&&!s.fin){ s.q--; G2.schaukeln.push(false); } if(s.stop) s.AT=Math.max(2,s.AT*.8); } else if(v<0&&Math.sin(s.ph)<.3) s.atP=false;
+    if(Math.abs(a)>8&&Math.abs(v)>.85&&Math.random()<dt*6){ const S=TB.els.schaukel; if(S){ const [x,y]=relEl(S,[.5,.93]); fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*6*vu(),vy:-2*vu(),life:.6,s:.6,c:'rgba(255,255,255,.7)'}); } }
+    s.pv=v; requestAnimationFrame(step); }; requestAnimationFrame(step); return s; }
+/* where the seat is when the swing is at angle a (deg, + = right), px */
+function splSeatAt(a){ const S=TB.els.schaukel, G=TB.els.gestell, [ax,ay]=wpx(...eikAt(G,150/300,26/360)), L=S.offsetHeight*.93, r=a*Math.PI/180; return [ax+Math.sin(r)*L, ay+Math.cos(r)*L]; }
+
+/* ---------- the new gestures ---------- */
+Object.assign(G2,{
+ /* platschen (puddle jumping): every tap – on the glowing puddle or anywhere – makes Ehfje hop into the next puddle with a splash.
+    Taps while she is in the air are ignored. a:{id (who hops), ids (puddles, in order), ms, h (vh)}; hook hopped(k) */
+ platschen:{ setup(){ TB.pl={k:0,busy:false,auto:false,fin:false}; this.mark(); },
+   mark(){ const s=TB.pl; TB.a.ids.forEach((id,i)=>{ const P=TB.els[id]; if(P) P.classList.toggle('splnx',i===s.k&&!s.fin); }); },
+   down(){ const s=TB.pl; if(TB.done||s.fin||s.busy||s.auto) return; this.hop(); },
+   move(){}, up(){},
+   feet(E){ return (151/160-.5)*E.offsetHeight/TB.W.offsetHeight*100; },
+   hop(){ const s=TB.pl, a=TB.a, E=TB.els[a.id], P=TB.els[a.ids[s.k]]; if(s.fin||s.busy||!P) return; s.busy=true; poke2();
+     const [px,py]=eikAt(P,.5,.58), [x0]=ctr(E); efArm('up'); mood('hexe','happy'); splTone(x0,520,880,180,.05);
+     famHop(E,px,py-this.feet(E),a.ms||650,a.h||11,()=>this.land()); },
+   land(){ const s=TB.pl, a=TB.a, E=TB.els[a.id], P=TB.els[a.ids[s.k]]; const [fx,fy]=relEl(E.querySelector('.bb'),[.5,.93]);
+     splSplashAt(fx,fy,false); P.classList.remove('splhit'); void P.offsetWidth; P.classList.add('splhit'); efArm('dn'); sqs(E);
+     chimeAt([784+s.k*130,988+s.k*130],fx); s.k++; s.busy=false; if(TB.sc.hopped) TB.sc.hopped(s.k);
+     if(s.k>=a.ids.length){ s.fin=true; this.mark(); glitterBurst(fx,fy,16,14); bLater(()=>done2(),600); } else { this.mark(); if(s.auto) bLater(()=>this.hop(),500); } },
+   hint(){ const s=TB.pl; if(s.auto||s.fin) return; const P=TB.els[TB.a.ids[s.k]], [x,y]=ctr(P), u=vu(); P.classList.add('g2hint'); bLater(()=>P.classList.remove('g2hint'),2400);
+     ghost([[x+u*6,y+u*12,1,0],[x,y,1,1],[x,y,.78,1],[x,y,1,1],[x,y+u*6,1,0]],1500); },
+   auto(){ const s=TB.pl; if(s.auto||s.fin) return; s.auto=true; this.hint(); if(!s.busy) bLater(()=>this.hop(),700); } },
+
+ /* schaukeln (swing): the swing swings by itself; every tap (anywhere) gives it a push, together with Papa – right away when it is
+    on Papa's side, otherwise as soon as it comes back to him. Each push makes it swing higher; a push on Papa's side sparkles gold.
+    Taps while a push is waiting are ignored. a:{n, A1 (amplitude at the end, deg)}; hook pushed(k,good). Needs splSwingLoop (enter). */
+ schaukeln:{ setup(){ const s=TB.sw; s.k=0; s.q=0; s.fin=false; s.auto=false; s.tap=0; },
+   down(){ const s=TB.sw; if(!s||s.fin||s.auto||TB.done) return; poke2();
+     if(s.q>0||s.cool>0) return; if(s.atP||Math.sin(s.ph)>.45) this.push(true); else { s.q=1; const [x,y]=this.seat(); fxBurst(x,y,6,['rgba(255,255,255,.9)']); } },
+   move(){}, up(){},
+   seat(){ return splSeatAt(TB.sw.A*Math.sin(TB.sw.ph)); },
+   push(good){ const s=TB.sw, a=TB.a; if(s.fin) return; s.k++; s.cool=.5; const n=a.n||5, A1=a.A1||40; s.AT=s.A0+(A1-s.A0)*s.k/n;
+     const P=TB.els.papa, [x,y]=this.seat(), u=vu(); splWhoosh(x,s.k); if(P){ try{ P.querySelector('.bb').animate([{transform:'none'},{transform:'translateX(-6%) rotate(-4deg)'},{transform:'none'}],{duration:520,easing:'ease-out'}); }catch(e){} }
+     fxBurst(x,y,good?16:8,good?['rgba(255,226,122,.95)','rgba(255,255,255,.95)']:['rgba(255,255,255,.9)']); if(good) glitterBurst(x,y,8,10);
+     chimeAt([[523,659],[587,740],[659,831],[784,988],[880,1109],[988,1245]][Math.min(5,s.k-1)],x); poke2();
+     /* Papa takes a step back as she swings higher */
+     if(P&&a.back){ const [sx]=splSeatAt(s.AT), tx=wpos(sx+u*a.back,0)[0]; if(tx>parseFloat(P.style.left)) kiPath(P,[[tx,parseFloat(P.style.top)]],700); }
+     if(TB.sc.pushed) TB.sc.pushed(s.k,good);
+     if(s.k>=n){ s.fin=true; glitterBurst(x,y,18,18); bLater(()=>done2(),900); } else if(s.auto) s.q=1; },
+   hint(){ const s=TB.sw; if(!s||s.fin||s.auto) return; const [x,y]=splSeatAt(s.AT||s.A), u=vu(), S=TB.els.schaukel;
+     S.classList.add('g2hint'); bLater(()=>S.classList.remove('g2hint'),2200);
+     ghost([[x+u*4,y+u*12,1,0],[x,y,1,1],[x,y,.78,1],[x,y,1,1],[x+u*4,y+u*8,1,0]],1600); },
+   auto(){ const s=TB.sw; if(!s||s.fin||s.auto) return; s.auto=true; this.hint(); s.q=1; } },
+
+ /* schaufeln (spade): put the finger on the spade or into the sand – the spade follows it and fills with sand in the sandbox;
+    over the bucket the sand pours in. n scoops fill the bucket. Lifting the finger with sand on the spade lets it fall (a try);
+    a tap is a try too. a:{id (spade), to (bucket, --fl), sand (sandbox), n, r (vh)}; hook scooped(k) */
+ schaufeln:{ setup(){ const a=TB.a, F=TB.els[a.id]; TB.sf={k:0,hold:false,full:false,home:[F.style.left,F.style.top],fin:false,auto:false,tap:0,mv:0,x0:0,y0:0,pour:false};
+     TB.els[a.to].style.setProperty('--fl',0); },
+   inSand(x,y){ const r=TB.els[TB.a.sand].getBoundingClientRect(), fx=(x-r.left)/r.width, fy=(y-r.top)/r.height;
+     return fx>.06&&fx<.94&&fy>.14&&fy<.86&&!nearEl(TB.els[TB.a.to],x,y,vu()*3); },
+   mouth(){ return relEl(TB.els[TB.a.to],[.5,.2]); },
+   put(x,y){ const F=TB.els[TB.a.id]; putAt(F,x,y-(.77-.5)*F.offsetHeight); },
+   down(x,y){ const s=TB.sf, F=TB.els[TB.a.id]; if(s.fin||s.auto||s.pour) return; s.mv=0; s.x0=x; s.y0=y;
+     if(nearEl(F,x,y,vu()*6)||this.inSand(x,y)){ s.hold=true; F.classList.add('held'); F.getAnimations().forEach(q=>q.cancel()); F.style.transition='none'; this.put(x,y); if(this.inSand(x,y)) this.fill(x,y); poke2(); }
+     else s.hold=false; },
+   move(x,y){ const s=TB.sf; if(!s.hold||s.fin||s.auto||s.pour) return; s.mv=Math.max(s.mv,Math.hypot(x-s.x0,y-s.y0)); this.put(x,y);
+     if(!s.full&&this.inSand(x,y)&&s.mv>vu()*1) this.fill(x,y);
+     if(s.full){ const [mx,my]=this.mouth(); if(Math.hypot(x-mx,y-my)<vu()*(TB.a.r||11)||nearEl(TB.els[TB.a.to],x,y,vu()*2)) this.pourIn(); }
+     if(s.mv>vu()*4) poke2(); },
+   fill(x,y){ const s=TB.sf, F=TB.els[TB.a.id], u=vu(); if(s.full) return; s.full=true; F.classList.add('full'); splScoop(x); sqs(F);
+     splGrains(x,y-u*2,12,y+u*3,7); },
+   pourIn(){ const s=TB.sf, a=TB.a, F=TB.els[a.id], E=TB.els[a.to], u=vu(), [mx,my]=this.mouth(); if(!s.full||s.pour) return; s.full=false; s.pour=true; F.classList.remove('full');
+     try{ F.querySelector('svg').animate([{rotate:'0deg'},{rotate:'-70deg'},{rotate:'0deg'}],{duration:700,easing:'ease-in-out'}); }catch(e){}
+     splGrains(mx,my-u*5,26,my+u*.5,5);
+     splPour(mx); s.k++; const n=a.n||3; E.style.setProperty('--fl',(s.k/n).toFixed(2)); bLater(()=>sqs(E),300); chimeAt([[659,784],[784,988],[988,1318]][Math.min(2,s.k-1)],mx); poke2();
+     if(TB.sc.scooped) TB.sc.scooped(s.k);
+     if(s.k>=n){ s.fin=true; s.hold=false; F.classList.remove('held'); bLater(()=>{ glitterBurst(mx,my,16,14); this.home(); },500); bLater(()=>done2(),900); }
+     else bLater(()=>{ s.pour=false; },450); },
+   home(){ const s=TB.sf, F=TB.els[TB.a.id]; F.style.transition='left .6s cubic-bezier(.3,1.3,.5,1),top .6s cubic-bezier(.3,1.3,.5,1)'; F.style.left=s.home[0]; F.style.top=s.home[1]; },
+   up(x,y){ const s=TB.sf, F=TB.els[TB.a.id]; F.classList.remove('held'); if(s.fin||s.auto) return; const was=s.hold; s.hold=false;
+     if(s.full){ s.full=false; F.classList.remove('full'); const [bx,by]=relEl(F,[.5,.75]), u=vu(); splGrains(bx,by,16,by+u*6,4); miss2(); }
+     else if(!was||s.mv<vu()*2){ if(++s.tap>=2){ s.tap=0; hint2(false); } }
+     if(was&&!s.pour) this.home(); },
+   pick(){ return relEl(TB.els[TB.a.sand],[.3,.55]); },
+   frames(){ const F=TB.els[TB.a.id], [fx,fy]=relEl(F,[.5,.77]), [sx,sy]=this.pick(), [mx,my]=this.mouth(), u=vu();
+     return [[fx,fy+u*6,1,0],[fx,fy,.85,1],[sx,sy,.85,1],[sx+u*3,sy+u*1,.85,1],[(sx+mx)/2,Math.min(sy,my)-u*8,.85,1],[mx,my,.85,1],[mx,my-u*3,1,0]]; },
+   hint(){ const s=TB.sf; if(!s||s.fin||s.auto) return; const F=TB.els[TB.a.id]; F.classList.add('g2hint'); bLater(()=>F.classList.remove('g2hint'),2600); ghost(this.frames(),2600); },
+   auto(){ const s=TB.sf; if(s.fin||s.auto) return; s.auto=true; s.hold=false; const n=TB.a.n||3, F=TB.els[TB.a.id];
+     const one=()=>{ if(s.fin||!TB||TB.done) return; const [sx,sy]=this.pick(), [mx,my]=this.mouth(); ghost(this.frames(),1700); F.style.transition='none';
+       const P=(x,y)=>{ const h=F.offsetHeight; return wpos(x,y-(.77-.5)*h); };
+       kiPath(F,[P(sx,sy)],600,()=>{ this.fill(sx,sy); kiPath(F,[P((sx+mx)/2,Math.min(sy,my)-vu()*8),P(mx,my)],800,()=>{ s.pour=false; this.pourIn(); if(!s.fin) bLater(one,500); }); }); };
+     one(); } },
+
+ /* wippen (seesaw): up and down with the finger anywhere – moving down lowers Ehfje's end, moving up lifts it; a tap rocks it over to
+    the other side. Every time an end comes down it bumps (n bumps, both ends count once each in turn).
+    a:{n, len (vh of finger for the whole way)}; hook bumped(k,side) (side 1 = Ehfje's end down) */
+ wippen:{ setup(){ TB.wp={t:TB.wt||0,k:0,last:(TB.wt||0)<-.5?-1:(TB.wt||0)>.5?1:0,dn:false,ly:0,mv:0,x0:0,y0:0,fin:false,auto:false,tap:0,anim:0,gain:0}; },
+   set(t){ const s=TB.wp; t=Math.max(-1,Math.min(1,t)); s.t=t; splTilt(t); if(s.fin) return;
+     if(t>=.9&&s.last!==1) this.bump(1); else if(t<=-.9&&s.last!==-1) this.bump(-1); },
+   bump(side){ const s=TB.wp, B=TB.els.brett, u=vu(); s.last=side; s.k++; s.gain++; const [x,y]=relEl(B,[side>0?.1:.9,.9]); splThump(x);
+     for(let i=0;i<10;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*8,y,vx:(Math.random()-.5)*16*u,vy:-(3+Math.random()*6)*u,life:.9,s:1,c:'rgba(240,230,200,.8)'});
+     chimeAt([[523,659],[659,784],[784,988],[880,1109],[988,1318],[1175,1568]][Math.min(5,s.k-1)],x); poke2();
+     if(TB.sc.bumped) TB.sc.bumped(s.k,side); if(s.k>=(TB.a.n||6)){ s.fin=true; glitterBurst(...ctr(B),18,20); bLater(()=>done2(),700); } },
+   down(x,y){ const s=TB.wp; if(s.fin||s.auto) return; s.dn=true; s.ly=y; s.mv=0; s.x0=x; s.y0=y; s.gain=0; s.anim++; poke2(); },
+   move(x,y){ const s=TB.wp; if(!s.dn||s.fin||s.auto) return; const d=y-s.ly; s.ly=y; s.mv=Math.max(s.mv,Math.hypot(x-s.x0,y-s.y0)); this.set(s.t+d/(vu()*(TB.a.len||9))); if(s.mv>vu()*3) poke2(); },
+   up(x,y){ const s=TB.wp; if(!s.dn||s.fin||s.auto) return; s.dn=false; if(s.mv<vu()*2) this.flip(); else if(!s.gain&&s.mv>vu()*14) miss2(); },
+   flip(cb){ const s=TB.wp, from=s.t, to=from>0?-1:1, my=++s.anim, t0=now(), ms=520;
+     const step=()=>{ if(!TB||TB.wp!==s||s.anim!==my) return; const f=Math.min(1,(now()-t0)/ms), e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; this.set(from+(to-from)*e); if(f<1) requestAnimationFrame(step); else if(cb) cb(); };
+     requestAnimationFrame(step); },
+   frames(){ const B=TB.els.brett, [x,y]=relEl(B,[.14,.3]), u=vu(); return [[x,y-u*10,1,0],[x,y-u*10,.85,1],[x,y+u*8,.85,1],[x,y-u*10,.85,1],[x,y+u*8,.85,1],[x,y+u*8,1,0]]; },
+   hint(){ const s=TB.wp; if(!s||s.fin||s.auto) return; ghost(this.frames(),2400); const E=TB.els.hexe; if(E){ E.classList.add('g2hint'); bLater(()=>E.classList.remove('g2hint'),2400); } },
+   auto(){ const s=TB.wp; if(s.fin||s.auto) return; s.auto=true; ghost(this.frames(),2400); const go=()=>{ if(s.fin||!TB||TB.done) return; this.flip(()=>bLater(go,260)); }; go(); } }
+});
+
+/* ================= Eefje und Papa auf dem Spielplatz ================= */
+/* heart: an autumn afternoon, just Ehfje and Papa ("nur wir zwei"). Puddles, the swing, a sandcastle, the seesaw where Papa is far too
+   heavy (her spell makes him "federleicht" for a while). Then the big slide: at the top Ehfje is scared – "Papa, ich trau mich nicht."
+   – "Ich bin hier. Und unten fange ich dich auf." She slides, ganz ohne Zauber, into his arms, and again and again on her own.
+   On the way home, on Papa's shoulders, she lights the street lamps: "Papa, mit dir bin ich ganz mutig." – "Du warst ganz allein
+   mutig. Ich war nur da." Recurring: the red leaf (swing → castle flag → in her hand at the end), Papa's laugh. */
+const SPLDUR={};
+/* her feet are this far (in % of the stage) below her middle */
+const splFeet=E=>(151/160-.5)*E.offsetHeight/TB.W.offsetHeight*100;
+/* a red leaf drifting down onto x,y (px) */
+function splLeafTo(x,y,cb){ const L=el('div','tp2 splleaf','🍁'); L.style.fontSize='4vh'; TB.act.appendChild(L); putAt(L,x-vu()*16,y-vu()*30); TB.els.leaf=L;
+  const [x0,y0]=ctr(L), kf=[]; for(let i=0;i<=12;i++){ const f=i/12; kf.push({transform:`translate(${(x-x0)*f+Math.sin(f*9)*vu()*5}px,${(y-y0)*f}px) rotate(${Math.sin(f*7)*40}deg)`}); }
+  try{ const an=L.animate(kf,{duration:2600,easing:'ease-in-out',fill:'forwards'}); an.onfinish=()=>{ if(!L.isConnected) return; an.cancel(); putAt(L,x,y); if(cb) cb(); }; }catch(e){ putAt(L,x,y); if(cb) cb(); } }
+const SPL2={id:'spielplatz', v2:true, eef:1, fam:1, dur:SPLDUR, title:'Eefje und Papa auf dem Spielplatz', vtitle:'Ehfje und Papa auf dem Spielplatz', icon:'🛝',
+ cover:'linear-gradient(180deg,#6ab0ea 0%,#a8d4f2 38%,#ffe0b0 70%,#f0a040 100%)',
+ cast(sc){ const A=TB.act;
+  FAM2.cast.call(this,sc);
+  const mk=TB.mk;
+  /* Papa sitting on something (a kid of it), or with Ehfje on his shoulders */
+  if(sc.spa){ const [x,y,w,par]=sc.spa, P=mk('papa','famp fampa',papaSVG(),x,y,0,par); P.style.width=w+'%'; P.dataset.mood=TST.pam||'smile'; P.dataset.arm=TST.paa||'dn'; }
+  const P=TB.els.papa; if(P){ P.classList.toggle('splsitz',sc.pasit===1); P.classList.toggle('splcross',sc.pasit===2); if(sc.nass||TST.nass) P.classList.add('splnass'); }
+  if(sc.shoulder&&P){ P.classList.add('splkids'); const b=P.querySelector(':scope>.bb'), E=el('div','tp2 chr eef splback kid',`<div class="bb">${eefjeSVG()}</div>`);
+    E.style.cssText='left:50%;top:6%;width:84%'; b.insertBefore(E,b.firstChild); TB.els.hexe=E; E.dataset.mood=TST.efm||'happy'; E.dataset.arm=TST.efa||'dn'; }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(/^p\d$/.test(id)||id==='pb'){ sqs(b); splSplashAt(x,y,false); return true; }
+  if(id==='schaukel'||id==='gestell'){ if(TB.sw&&TB.sw.AT<30){ TB.sw.AT+=3; splWhoosh(x,1); } chime([659,880]); return true; }
+  if(id==='eimer'||id==='schaufel'||id==='sand'){ if(b.classList.contains('tp2')) sqs(b); splScoop(x); splGrains(x,y,8,y+u*3,5); return true; }
+  if(id==='burg'){ sqs(b); glitterBurst(x,y,10,10); chime([784,988]); return true; }
+  if(id==='brett'||id==='bock'){ sqs(TB.els.bock); splThump(x); return true; }
+  if(id==='turm'||/^r\d$/.test(id)){ chime([784]); return true; }
+  if(/^l\d$/.test(id)){ sqs(b); chime([988,1318]); return true; }
+  if(id==='leaf'){ sqs(b); chime([1175]); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – an autumn afternoon on the way to the playground: hop into the puddles (platschen); then Papa jumps into the biggest one */
+ {set:'splweg', dark:0, fx:{leaves:.5}, u:[6,76,15], ef:[13,66,22,'st'], papa:[24,62,24],
+  p:[['p1','SPLPF',32,85,16,'splpf'],['p2','SPLPF',49,89,18,'splpf'],['p3','SPLPF',65,85,16,'splpf'],['pb','SPLPFB',85,92,30,'splpf']],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',nass:0},
+  enter(){ onPh('bunter Herbsttag',()=>{ efGust(); chime([523,659]); });
+    talk('papa','Komm, Ehfje','Und dein Einhorn'); onPh('Komm, Ehfje',()=>{ mood('papa','happy'); famArm('papa','up'); });
+    onPh('Nur wir zwei',()=>{ mood('hexe','laugh'); efArm('up'); const [x,y]=ctr(TB.els.hexe); hearts(x,y-vu()*8,3); });
+    onPh('dein Einhorn',()=>{ uniHop(); famArm('papa','dn'); });
+    onPh('lauter Pfützen',()=>{ efArm('dn'); mood('hexe','oh'); ['p1','p2','p3','pb'].forEach((id,i)=>bLater(()=>{ const P=TB.els[id]; wiggle(P); const [x,y]=ctr(P); dingRing(x,y,vu()*10,'rgba(255,255,255,.8)'); },i*300)); });
+    onPh('Hüpf mit',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); famArm('papa','dn'); efArm('dn'); mood('hexe','happy'); mood('papa','smile'); },
+  a:{t:'platschen',id:'hexe',ids:['p1','p2','p3'],w:'PFÜTZE'},
+  h:'Tipp auf die Pfütze, dann hüpft Ehfje hinein!',
+  s:'Es war ein bunter Herbsttag. Die Blätter waren gelb und rot, und es hatte geregnet. Papa sagte: Komm, Ehfje, wir gehen auf den Spielplatz! Nur wir zwei. Und dein Einhorn kam natürlich auch mit. Auf dem Weg waren lauter Pfützen. Hüpf mit Ehfje in jede Pfütze!',
+  hopped(k){ mood('hexe','laugh'); const P=TB.els.papa; if(P) kiPath(P,[[[34,46,58][k-1],62]],900); if(k===2) mood('papa','laugh'); },
+  done(){ mood('hexe','laugh'); efArm('up'); mood('papa','happy'); },
+  d:[()=>{ onPh('Ehfje lachte',()=>{ mood('hexe','laugh'); const [x,y]=ctr(TB.els.hexe); hearts(x,y-vu()*8,2); },'d1');
+       onPh('nahm Papa Anlauf',()=>{ const P=TB.els.papa; mood('papa','happy'); famArm('papa','up'); kiPath(P,[[52,62]],700); mood('hexe','oh'); efArm('dn'); },'d1');
+       onPh('allergrößte',()=>{ const P=TB.els.papa, B=TB.els.pb, [bx,by]=eikAt(B,.5,.55), fo=(252/260-.5)*P.offsetHeight/TB.W.offsetHeight*100; famArm('papa','wide');
+         famHop(P,bx,by-fo,1000,16,()=>{ const [x,y]=relEl(B,[.5,.5]); splSplashAt(x,y,true); B.classList.remove('splhit'); void B.offsetWidth; B.classList.add('splhit');
+           P.classList.add('splnass'); TST.nass=1; splDrip(true); mood('papa','laugh'); famArm('papa','dn'); sqs(P); mood('hexe','oh'); }); },'d1'); },
+     'Platsch, platsch, platsch! Ehfje lachte. Und dann nahm Papa Anlauf und sprang in die allergrößte Pfütze. Platsch!',
+     ()=>{ talk('hexe','Papa, du bist','rief Ehfje','d2'); talk('papa','Na und','sagte Papa','d2'); talk('papa','Pfützenspringen',null,'d2');
+       onPh('nass von oben',()=>{ const P=TB.els.papa, [x,y]=relEl(P,[.5,.12]); bubble('brrr!',x,y,3.8,'#e0f0ff'); famDrops(x,y+vu()*6,12,.5); },'d2');
+       onPh('Papa, du bist',()=>{ mood('hexe','laugh'); efArm('up'); },'d2'); onPh('Na und',()=>{ mood('papa','happy'); efArm('dn'); },'d2');
+       onPh('Schönste',()=>{ mood('papa','laugh'); mood('hexe','laugh'); const [x,y]=ctr(TB.els.papa); hearts(x,y-vu()*10,3); },'d2'); },
+     'Papa war nass von oben bis unten. Papa, du bist ja ganz nass! rief Ehfje. Na und? sagte Papa und lachte. Pfützenspringen ist doch das Schönste!', 700]},
+
+ /* 2 – the swing: push it together with Papa every time it comes back to him (schaukeln); a red leaf lands on her nose */
+ {set:'splschaukel', dark:0, fx:{leaves:.3}, u:[88,76,15], ef:[14.5,76.7,169,'sitb','schaukel'], papa:[50,66,24],
+  p:[['gestell','SPLGEST',38,52,46],['schaukel','SPLSCH',38,40,13,'splsw']],
+  st:{efm:'happy',efa:'fwd',pam:'smile',paa:'push',nass:0},
+  enter(){ splHang(TB.els.schaukel,TB.els.gestell); splSwingLoop(5);
+    talk('hexe','Papa, schubs','rief sie'); onPh('rannte Ehfje',()=>{ chime([659,784]); sqs(TB.els.hexe); });
+    onPh('Papa, schubs',()=>{ mood('hexe','laugh'); }); onPh('Schubs die Schaukel',()=>{ mood('papa','happy'); TB.sw.AT=8; splWhoosh(innerWidth*.4,1); });
+    onPh('wenn sie zu Papa',()=>{ const S=TB.els.schaukel; S.classList.add('g2hint'); bLater(()=>S.classList.remove('g2hint'),1500); }); },
+  ready(){ efReady(); mood('hexe','happy'); mood('papa','smile'); },
+  a:{t:'schaukeln',n:5,A1:38,back:10,w:'SCHAUKEL'},
+  h:'Tipp, wenn die Schaukel zu Papa kommt!',
+  s:'Auf dem Spielplatz rannte Ehfje sofort zur Schaukel. Papa, schubs mich an! rief sie. Schubs die Schaukel mit an! Tipp immer, wenn sie zu Papa kommt.',
+  pushed(k,good){ mood('hexe',k>=2?'laugh':'happy'); if(good) mood('papa','happy'); if(k===3) bubble('hui!',...relEl(TB.els.hexe,[.5,.1]),3.6,'#fff0f8'); },
+  done(){ mood('hexe','laugh'); mood('papa','laugh'); },
+  d:[()=>{ talk('hexe','Höher, Papa','rief sie','d1'); talk('hexe','Ich kann',null,'d1');
+       onPh('Hui',()=>{ splWhoosh(innerWidth*.4,5); const E=TB.els.hexe; glitterBurst(...ctr(E),10,12); },'d1'); onPh('bunten Blättern',()=>{ efGust(); },'d1');
+       onPh('Höher, Papa',()=>{ mood('hexe','laugh'); },'d1'); onPh('Wolken',()=>{ mood('hexe','oh'); const [x,y]=relEl(TB.els.hexe,[.5,.2]); fxBurst(x,y,10); },'d1'); },
+     'Hui! Höher und höher flog Ehfje, bis hinauf zu den bunten Blättern. Höher, Papa! rief sie. Ich kann ja bis zu den Wolken sehen!',
+     ()=>{ onPh('lachte und lachte',()=>{ mood('hexe','laugh'); mood('papa','laugh'); TB.sw.stop=true; TB.sw.AT=14; },'d2');
+       onPh('rotes Blatt',()=>{ const E=TB.els.hexe, [x,y]=relEl(E.querySelector('.bb'),[.5,.36]); TB.sw.AT=4; splLeafTo(x+vu()*6,y-vu()*16,()=>{}); },'d2');
+       onPh('auf die Nase',()=>{ const L=TB.els.leaf, E=TB.els.hexe; if(L){ L.getAnimations().forEach(q=>q.cancel()); const [x,y]=relEl(E.querySelector('.bb'),[.5,.37]); putAt(L,x,y); sqs(L); } mood('hexe','oh'); chimeAt([1318,1568],innerWidth*.4); },'d2'); },
+     'Ehfje lachte und lachte. Und ein rotes Blatt fiel ihr genau auf die Nase.', 900]},
+
+ /* 3 – the sandbox: Papa sits in the sand; scoop sand into the bucket (schaufeln); Papa turns it over – a tower, then a castle with the red leaf */
+ {set:'splsand', dark:0, u:[91,70,13], ef:[23,77,22,'st'], papa:[68,76,24], pasit:2,
+  p:[['sand','SPLSAND',50,86,130],['burg','SPLBURG',57,75.5,36,'splburg'],['eimer','SPLEIMER',50,79,11,'splei'],['schaufel','SPLSCHAUF',35,85,6,'splsf']],
+  front:['hexe','eimer','schaufel'],
+  st:{efm:'happy',efa:'dn',pam:'happy',paa:'dn',nass:0},
+  enter(){ talk('papa','Wir bauen','sagte Papa'); onPh('Sandkasten',()=>{ chime([523,659]); });
+    onPh('mitten in den Sand',()=>{ const P=TB.els.papa; sqs(P); const [x,y]=relEl(P,[.5,.86]); splGrains(x,y-vu()*2,20,y+vu()*2,14); splThump(x); });
+    onPh('Wir bauen',()=>{ famArm('papa','up'); mood('papa','happy'); }); onPh('Nimm die Schaufel',()=>{ famArm('papa','dn'); const F=TB.els.schaufel; wiggle(F); mood('hexe','happy'); }); },
+  ready(){ efReady(); famArm('papa','dn'); mood('papa','smile'); },
+  a:{t:'schaufeln',id:'schaufel',to:'eimer',sand:'sand',n:3,r:11,w:'BURG'},
+  h:'Nimm Sand mit der Schaufel und schütte ihn in den Eimer!',
+  s:'Dann gingen sie zum Sandkasten. Papa setzte sich mitten in den Sand. Wir bauen eine Sandburg! sagte Papa. Nimm die Schaufel und füll den Eimer mit Sand!',
+  scooped(k){ mood('hexe',k>=2?'laugh':'happy'); if(k===2) mood('papa','laugh'); },
+  done(){ mood('hexe','laugh'); mood('papa','happy'); },
+  d:[()=>{ onPh('drehte ihn um',()=>{ const E=TB.els.eimer, B=TB.els.burg, [bx,by]=eikAt(B,.5,.93), h=E.offsetHeight/TB.W.offsetHeight*100; famArm('papa','hold');
+         E.style.transition='none'; kiPath(E,[[bx,by-h*.5]],700,()=>{ E.style.transition='rotate .5s ease-in-out'; E.style.rotate='180deg'; splGrains(...ctr(E),6,ctr(E)[1]+vu()*6,4); }); },'d1');
+       onPh('klopfte dreimal',()=>{ [0,1,2].forEach(i=>bLater(()=>{ const E=TB.els.eimer; sqs(E); const [x,y]=ctr(E); splTap(x); fxBurst(x,y-vu()*4,5,['rgba(255,240,200,.9)']); famArm('papa',i%2?'hold':'up'); },i*330)); },'d1');
+       onPh('ganz langsam hoch',()=>{ const E=TB.els.eimer, B=TB.els.burg; famArm('papa','up'); B.classList.add('b1'); E.style.transition='top 1.6s ease-in-out, opacity .6s 1.2s'; E.style.top=(parseFloat(E.style.top)-14)+'%'; E.style.opacity=0; mood('hexe','oh'); },'d1');
+       onPh('Ein Turm',()=>{ const [x,y]=ctr(TB.els.burg); glitterBurst(x,y,16,14); chimeAt([784,988,1175],x); mood('hexe','laugh'); famArm('papa','dn'); },'d1'); },
+     'Der Eimer war voll. Papa drehte ihn um, klopfte dreimal darauf, und dann hob er ihn ganz langsam hoch. Ein Turm!',
+     ()=>{ talk('hexe','Das ist unsere','sagte Ehfje','d2');
+       onPh('zwei Türme',()=>{ const B=TB.els.burg; famArm('papa','hold'); bLater(()=>{ B.classList.add('b2'); splScoop(ctr(B)[0]); sqs(B); },300); bLater(()=>{ B.classList.add('b3'); splScoop(ctr(B)[0]); sqs(B); },1100); },'d2');
+       onPh('rotes Blatt',()=>{ const B=TB.els.burg, [x,y]=relEl(B,[.55,.1]); efArm('up'); famArm('papa','dn'); bLater(()=>{ B.classList.add('bf'); glitterBurst(x,y,12,10); chimeAt([1175,1568],x); },700); },'d2');
+       onPh('Das ist unsere',()=>{ mood('hexe','laugh'); efArm('up'); mood('papa','laugh'); const [x,y]=ctr(TB.els.burg); hearts(x,y-vu()*6,3); },'d2'); },
+     'Papa baute noch zwei Türme dazu, und Ehfje steckte ein rotes Blatt ganz oben drauf. Das ist unsere Burg! sagte Ehfje stolz.', 800]},
+
+ /* 4 – the seesaw: Papa is far too heavy, Ehfje dangles up in the air; her spell makes him light as a feather – up and down (wippen) */
+ {set:'splwippe', dark:0, u:[7,76,13], p:[['bock','SPLBOCK',50,77,22],['brett','SPLBRETT',50,66,92,'splbr']],
+  ef:[14,7,23.9,'sitb','brett'], spa:[90,18,26,'brett'], pasit:1,
+  st:{efm:'happy',efa:'fwd',pam:'smile',paa:'push',nass:0},
+  enter(){ const B=TB.els.brett; splOnBock(B,TB.els.bock); splTilt(0); TB.act.appendChild(TB.els.bock);
+    onPh('wollten sie wippen',()=>{ chime([659,784]); });
+    onPh('viel zu schwer',()=>{ const t0=now(); const go=()=>{ const f=Math.min(1,(now()-t0)/500); splTilt(-f*f); if(f<1) requestAnimationFrame(go); else { const [x]=relEl(TB.els.brett,[.9,.9]); splThump(x); sqs(TB.els.papa); } }; requestAnimationFrame(go); mood('papa','laugh'); mood('hexe','oh'); });
+    onPh('ganz oben in der Luft',()=>{ TB.els.hexe.classList.add('wob'); mood('hexe','worry'); });
+    talk('hexe','Papa, du bist','rief Ehfje'); onPh('Papa, du bist',()=>{ mood('hexe','worry'); });
+    onPh('hob sie ihren',()=>{ const E=TB.els.hexe; E.classList.remove('wob'); efArm('up'); mood('hexe','happy'); }); onPh('Kribbel',()=>efSpell(12));
+    onPh('federleicht',()=>{ const P=TB.els.papa, E=TB.els.hexe, [x0,y0]=efFinger(), [x1,y1]=ctr(P), u=vu();
+      for(let i=0;i<16;i++) bLater(()=>{ const f=i/15; fxAdd({k:'spark',x:x0+(x1-x0)*f,y:y0+(y1-y0)*f-Math.sin(f*Math.PI)*u*12,vx:0,vy:-4*u,life:.8,s:1,c:rnd(GLCOL)}); },i*40);
+      bLater(()=>{ P.classList.add('splglow'); mood('papa','oh'); glitterBurst(x1,y1,18,18); chimeAt([1318,1568,2093],x1); bubble('huch!',x1,y1-u*14,3.6,'#e0ffd8');
+        const t0=now(); const go=()=>{ const f=Math.min(1,(now()-t0)/900); splTilt(-1+f*(2-f)); if(f<1) requestAnimationFrame(go); }; requestAnimationFrame(go); efArm('fwd'); },700); });
+    onPh('rauf und runter',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); const P=TB.els.papa; P.classList.add('splglow'); TB.els.hexe.classList.remove('wob'); efArm('fwd'); mood('hexe','happy'); mood('papa','happy'); if(Math.abs((TB.wt||0)+1)>.05&&Math.abs(TB.wt||0)>.05) splTilt(0); },
+  a:{t:'wippen',n:6,len:9,w:'WIPPE'},
+  h:'Fahr mit dem Finger rauf und runter!',
+  s:'Danach wollten sie wippen. Papa setzte sich auf die eine Seite, Ehfje auf die andere. Aber Papa war viel zu schwer! Ehfje hing ganz oben in der Luft. Papa, du bist zu schwer! rief Ehfje. Da hob sie ihren Finger: Kribbel, krabbel, Funkelschein – Papa soll federleicht sein! Jetzt wipp mit den beiden, rauf und runter!',
+  bumped(k,side){ const up=side>0?'papa':'hexe', dn=side>0?'hexe':'papa', [x,y]=relEl(TB.els[up],[.5,.1]); mood(up,'laugh'); mood(dn,'happy');
+    if(k%2) bubble(up==='papa'?'hui!':'juhu!',x,y,3.4,up==='papa'?'#e0ffd8':'#fff0f8'); },
+  done(){ mood('hexe','laugh'); mood('papa','laugh'); },
+  d:[()=>{ talk('hexe','Juhu','rief Ehfje','d1'); talk('papa','Hui','rief Papa','d1');
+       const rock=(n,ms)=>{ let k=0; const go=()=>{ if(k++>=n) return; G2.wippen.flip(()=>bLater(go,120)); }; TB.wp.fin=true; go(); };
+       onPh('Rauf und runter',()=>rock(3),'d1'); onPh('Juhu',()=>{ mood('hexe','laugh'); },'d1'); onPh('Hui',()=>{ mood('papa','laugh'); },'d1'); },
+     'Rauf und runter, rauf und runter! Juhu! rief Ehfje. Hui! rief Papa.',
+     ()=>{ onPh('Zauber vorbei',()=>{ const P=TB.els.papa; TB.wp.anim++; P.classList.remove('splglow'); fxBurst(...ctr(P),12,GLCOL); },'d2');
+       onPh('Plumps',()=>{ const s=TB.wp, from=s.t, t0=now(); const go=()=>{ const f=Math.min(1,(now()-t0)/350); splTilt(from+(-1-from)*f*f); if(f<1) requestAnimationFrame(go); else { const [x]=relEl(TB.els.brett,[.9,.9]); splThump(x); sqs(TB.els.papa); } }; requestAnimationFrame(go); mood('hexe','oh'); mood('papa','oh'); },'d2');
+       onPh('Beide mussten',()=>{ mood('hexe','laugh'); mood('papa','laugh'); const [x,y]=ctr(TB.els.brett); hearts(x,y-vu()*10,4); },'d2'); },
+     'Dann war der Zauber vorbei. Plumps! Papa war wieder schwer, und Ehfje schwebte wieder oben. Beide mussten so lachen.', 800]},
+
+ /* 5 – the big slide: climb the ladder, rung by rung (tapall, seq); at the top she is scared – Papa: "Ich bin hier." */
+ {set:'splrutsche', dark:0, u:[91,76,13], ef:[22,77,21,'st'], papa:[80,66,24],
+  p:[['turm','SPLTURM',40,50,71,'splturm'],...SPLSPR.map(([x,y],i)=>['r'+(i+1),'SPLSPR',(x/4).toFixed(2),(y/4.4).toFixed(2),5.6,'splspr','turm'])],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',nass:0},
+  enter(){ const E=TB.els.hexe, [x,y]=splOnTurm(26,430); E.style.left=(x-1)+'%'; E.style.top=(y-splFeet(E))+'%';
+    onPh('große Rutsche',()=>{ const T=TB.els.turm; sqs(T); glitterBurst(...relEl(T,[.8,.6]),12,20); mood('hexe','oh'); });
+    onPh('so hoch wie ein Baum',()=>{ const [x,y]=relEl(TB.els.turm,[.46,.04]); fxBurst(x,y,10); });
+    onPh('wollte hinauf',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('Kletter',()=>{ efArm('dn'); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','happy'); },
+  a:{t:'tapall',ids:['r1','r2','r3','r4','r5'],seq:1,w:'LEITER'},
+  h:'Tipp auf die Stufe, eine nach der anderen!',
+  s:'Und dann sah Ehfje die große Rutsche. Sie war so hoch wie ein Baum! Ehfje wollte hinauf. Kletter mit ihr die Leiter hoch! Tipp auf die Stufen, eine nach der anderen.',
+  item(id){ const k=+id.slice(1), E=TB.els.hexe, [x,y]=splOnTurm(...SPLSPR[k-1]); efArm(k%2?'up':'dn'); kiPath(E,[[x+.5,y-splFeet(E)-1.5],[x+.5,y-splFeet(E)]],380); splTap(ctr(E)[0]);
+    if(k===3) mood('hexe','smile'); },
+  done(){ const E=TB.els.hexe, [x,y]=splOnTurm(180,148); efArm('dn'); kiPath(E,[[x-6,y-splFeet(E)-3],[x,y-splFeet(E)]],700); },
+  d:[()=>{ onPh('schaute Ehfje hinunter',()=>{ mood('hexe','oh'); const E=TB.els.hexe; sqs(E); },'d1');
+       onPh('Das war aber hoch',()=>{ mood('hexe','worry'); const u=vu(), [x,y]=relEl(TB.els.turm,[.6,.9]); dingRing(x,y,u*20,'rgba(255,255,255,.6)'); },'d1');
+       onPh('wackelig',()=>{ TB.els.hexe.classList.add('wob'); },'d1'); },
+     'Oben angekommen, schaute Ehfje hinunter. Oh! Das war aber hoch. Ihre Knie wurden ganz wackelig.',
+     ()=>{ talk('hexe','Papa, ich','flüsterte','d2'); talk('papa','Ich bin hier','sagte Papa','d2'); talk('papa','Und unten',null,'d2');
+       onPh('Papa, ich',()=>{ mood('hexe','worry'); efArm('hug'); },'d2');
+       onPh('ganz nah',()=>{ const P=TB.els.papa, [x,y]=splOnTurm(372,430); kiPath(P,[[x+7,y-(252/260-.5)*P.offsetHeight/TB.W.offsetHeight*100]],1100); },'d2');
+       onPh('Ich bin hier',()=>{ mood('papa','smile'); famArm('papa','up'); TB.els.hexe.classList.remove('wob'); mood('hexe','oh'); },'d2');
+       onPh('fange ich dich',()=>{ famArm('papa','wide'); mood('papa','happy'); const [x,y]=ctr(TB.els.papa); hearts(x,y-vu()*12,3); mood('hexe','smile'); },'d2'); },
+     'Papa, ich trau mich nicht, flüsterte Ehfje. Papa kam ganz nah an die Rutsche. Ich bin hier, sagte Papa. Und unten fange ich dich auf.', 900]},
+
+ /* 6 – down the slide (trace; Ehfje follows the finger), right into Papa's arms; then again and again, all by herself */
+ {set:'splrutsche', dark:0, u:[91,76,13], ef:[30,30,21,'sitb'], papa:[80,66,24],
+  p:[['turm','SPLTURM',40,50,71,'splturm']],
+  st:{efm:'smile',efa:'fwd',pam:'happy',paa:'wide',nass:0},
+  enter(){ const E=TB.els.hexe, P=TB.els.papa, [px,py]=splOnTurm(372,430); P.style.left=(px+7)+'%'; P.style.top=(py-(252/260-.5)*P.offsetHeight/TB.W.offsetHeight*100)+'%';
+    this.seat=(x,y)=>{ const W=TB.W; E.style.left=(x-(80/160-.5)*E.offsetWidth/W.offsetWidth*100).toFixed(2)+'%'; E.style.top=(y-(.74-.5)*E.offsetHeight/W.offsetHeight*100).toFixed(2)+'%'; };
+    this.seat(...splOnTurm(238,152));
+    TB.sc.a.path=SPLRUT.slice(0,-1).map(([x,y])=>splOnTurm(x,y-8));
+    onPh('holte ganz tief Luft',()=>{ mood('hexe','oh'); sqs(E); const [x,y]=relEl(E.querySelector('.bb'),[.5,.4]); for(let i=0;i<6;i++) bLater(()=>fxAdd({k:'dust',x:x+vu()*3,y,vx:vu()*6,vy:-vu()*4,life:.8,s:.8,c:'rgba(255,255,255,.8)'}),i*80); });
+    onPh('breitete Papa',()=>{ famArm('papa','wide'); mood('papa','happy'); sqs(P); });
+    onPh('Ganz ohne Zauber',()=>{ mood('hexe','smile'); efArm('fwd'); }); onPh('nur mit Mut',()=>{ const [x,y]=ctr(E); glitterBurst(x,y,10,10); chime([784,988]); }); },
+  ready(){ efReady(); const E=TB.els.hexe; mood('hexe','smile'); efArm('fwd'); famArm('papa','wide');
+    let last=0; g2loop(dt=>{ if(!TB.S) return; const k=Math.max(0,TB.k-1), p=TB.S[k], x=parseFloat(E.style.left), y=parseFloat(E.style.top), W=TB.W;
+      const tx=p[0]-(80/160-.5)*E.offsetWidth/W.offsetWidth*100, ty=p[1]+3-(.74-.5)*E.offsetHeight/W.offsetHeight*100;
+      E.style.left=(x+(tx-x)*Math.min(1,dt*5)).toFixed(2)+'%'; E.style.top=(y+(ty-y)*Math.min(1,dt*5)).toFixed(2)+'%';
+      if(TB.k>last+3){ last=TB.k; splSlideSnd(ctr(E)[0],300); if(TB.k>12) mood('hexe','laugh'); } }); },
+  a:{t:'trace',path:[[30,30],[50,60],[70,80]],w:'RUTSCHE'},
+  h:'Fahr mit dem Finger die Rutsche hinunter!',
+  s:'Ehfje setzte sich oben auf die Rutsche und holte ganz tief Luft. Unten breitete Papa seine Arme aus. Ganz ohne Zauber, nur mit Mut. Fahr mit dem Finger die Rutsche hinunter!',
+  done(){ const E=TB.els.hexe, P=TB.els.papa, [x,y]=relEl(P,[.5,.42]), [wx,wy]=wpos(x,y); mood('hexe','laugh'); efArm('hug'); famArm('papa','hug'); kiPath(E,[[wx-1,wy]],500,()=>{ E.style.zIndex=3; }); },
+  d:[()=>{ onPh('Wusch',()=>{ splSlideSnd(innerWidth*.7,700); },'d1'); onPh('genau in Papas Arme',()=>{ const [x,y]=ctr(TB.els.papa); hearts(x,y-vu()*10,4); chimeAt([784,988,1318],x); },'d1');
+       onPh('im Kreis',()=>{ [TB.els.papa,TB.els.hexe].forEach(e=>{ try{ e.querySelector('.bb').animate([{transform:'none'},{transform:'scaleX(-1)'},{transform:'none'},{transform:'scaleX(-1)'},{transform:'none'}],{duration:1600,easing:'ease-in-out'}); }catch(err){} }); mood('papa','laugh'); },'d1'); },
+     'Wusch! Ehfje sauste hinunter, genau in Papas Arme. Papa wirbelte sie im Kreis herum.',
+     ()=>{ talk('hexe','Ich hab mich','rief Ehfje','d2'); talk('hexe','Noch mal','Und sie rutschte','d2');
+       onPh('Ich hab mich',()=>{ mood('hexe','laugh'); efArm('up'); const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y,16,14); },'d2');
+       onPh('Ganz allein',()=>{ famArm('papa','wide'); },'d2');
+       onPh('rutschte noch',()=>{ const E=TB.els.hexe, sc=TB.sc; E.style.zIndex=''; efArm('fwd');
+         const pts=SPLRUT.slice(0,-1).map(([x,y])=>splOnTurm(x,y-3)), W=TB.W, ox=(80/160-.5)*E.offsetWidth/W.offsetWidth*100, oy=(.74-.5)*E.offsetHeight/W.offsetHeight*100;
+         const once=(k)=>{ if(k>=3) return; E.getAnimations().forEach(q=>q.cancel()); E.style.transition='none'; E.style.opacity=0; E.style.left=(pts[0][0]-ox)+'%'; E.style.top=(pts[0][1]-oy)+'%';
+           bLater(()=>{ E.style.transition='opacity .2s'; E.style.opacity=1; mood('hexe','laugh'); splSlideSnd(ctr(E)[0],900); kiPath(E,pts.slice(1).map(([x,y])=>[x-ox,y-oy]),1000,()=>{ const [x,y]=ctr(E); fxBurst(x,y,8); bLater(()=>once(k+1),250); }); },200); };
+         once(0); },'d2'); },
+     'Ich hab mich getraut! rief Ehfje. Noch mal, Papa! Ganz allein! Und sie rutschte noch einmal, und noch einmal, und noch einmal.', 1200]},
+
+ /* 7 – evening: on Papa's shoulders on the way home Ehfje lights the street lamps with her spark (light); "mit dir bin ich ganz mutig" */
+ {set:'splabend', dark:.5, u:[8,80,12], papa:[22,64,25], shoulder:1,
+  p:[['l1','SPLLAT',40,56,8,'spllat'],['l2','SPLLAT',57,51,7,'spllat'],['l3','SPLLAT',71,47,6,'spllat'],['l4','SPLLAT',82,45,5.2,'spllat']],
+  lights:[{id:'papa',r0:28,rT:28,k0:.6,kT:.6,oy:.18,name:'pl'},{id:'haus',r0:6,rT:6,k0:.6,kT:.6,ox:.54,oy:.66,name:'hl'}],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'legs',nass:0},
+  enter(){ talk('papa','Komm auf','sagte Papa'); onPh('Langsam wurde es dunkel',()=>{ chime([392,523]); });
+    onPh('müde',()=>{ mood('hexe','smile'); }); onPh('Komm auf',()=>{ mood('papa','happy'); });
+    onPh('alles sehen',()=>{ mood('hexe','happy'); const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y,8,10); });
+    onPh('hob Ehfje',()=>{ efArm('up'); }); onPh('Kribbel',()=>efSpell(12));
+    onPh('leuchtet fein',()=>{ const [x,y]=efFinger(); fxBurst(x,y,12,FIRECOL); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); famArm('papa','legs'); },
+  a:{t:'light',ids:['l1','l2','l3','l4'],at:[.5,.12],from:'hexe',fat:[.72,.25],r:8,lr:20,w:'LATERNE'},
+  h:'Fahr mit dem Funken zu den Laternen!',
+  s:'Langsam wurde es dunkel, und es war Zeit, nach Hause zu gehen. Ehfje war müde von all dem Toben. Komm auf meine Schultern, sagte Papa. Von dort oben konnte Ehfje alles sehen. Da hob Ehfje ihren Finger: Kribbel, krabbel, Funkelschein – ihr Laternen, leuchtet fein! Bring den Funken zu jeder Laterne!',
+  item(id,K){ const k=+id.slice(1); mood('hexe',k>=2?'laugh':'happy'); if(k===2) mood('papa','happy'); sqs(K); },
+  done(){ mood('hexe','laugh'); efArm('dn'); mood('papa','happy'); },
+  d:[()=>{ talk('hexe','Papa, sagte','sagte Ehfje','d1'); talk('hexe','mit dir bin','Papa gab','d1');
+       onPh('bis zur Haustür',()=>{ const P=TB.els.papa; kiPath(P,[[52,61,.92]],2600); const H=TB.els.haus; if(H){ const [x,y]=relEl(H,[.54,.66]); glitterBurst(x,y,10,10); } },'d1');
+       onPh('mit dir bin',()=>{ mood('hexe','smile'); efArm('hug'); },'d1');
+       onPh('Kuss',()=>{ mood('papa','happy'); const [x,y]=relEl(TB.els.papa,[.5,.12]); hearts(x,y,5); chimeAt([784,988,1318],x); },'d1'); },
+     'Eine Laterne nach der anderen ging an, bis zur Haustür. Papa, sagte Ehfje leise, mit dir bin ich ganz mutig. Papa gab ihr einen Kuss.',
+     ()=>{ talk('papa','Du warst','sagte Papa','d2'); talk('papa','Ich war','Und Ehfje','d2');
+       onPh('Du warst',()=>{ mood('papa','smile'); },'d2'); onPh('lächelte',()=>{ mood('hexe','happy'); const [x,y]=ctr(TB.els.hexe); glitterBurst(x,y,12,12); },'d2'); },
+     'Du warst ganz allein mutig, sagte Papa. Ich war nur da. Und Ehfje lächelte.',
+     ()=>{ onPh('noch heute',()=>{ const P=TB.els.papa, [x,y]=ctr(P); glitterBurst(x,y,18,16); chimeAt([1318,1568,2093],x); uniHop(); },'d3'); },
+     'Und wenn sie nicht müde geworden sind, dann schaukeln sie noch heute.', 1600]}
+ ]};
+/*<SPIEL*/
 
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
@@ -12535,7 +13129,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -12586,6 +13180,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2" style="left:60%;top:38%;width:62%;rotate:-4deg;filter:drop-shadow(0 .4vh .6vh rgba(0,0,0,.2))">${malBlattSVG(['sun','rbw','dog','hz'])}</div>`+
     `<div class="tp2 chr eef malpf" data-mood="happy" data-arm="up" style="left:26%;top:64%;width:46%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2" style="left:80%;top:80%;width:17%">${malDoseSVG()}</div></div>`+tw;/*<MALART*/
+  if(id==='spielplatz') return `<div class="splart" style="position:absolute;inset:0">`+
+    `<div class="tp2" style="left:44%;top:52%;width:72%">${splTurmSVG()}</div>`+
+    `<div class="tp2 chr eef sitb" data-mood="laugh" data-arm="fwd" style="left:66%;top:58%;width:24%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr famp fampa" data-mood="happy" data-arm="wide" style="left:88%;top:66%;width:20%"><div class="bb">${papaSVG()}</div></div>`+
+    `<div class="tp2 splpf" style="left:16%;top:88%;width:26%">${splPfuetzeSVG(1)}</div>`+
+    `<span class="tw" style="left:14%;top:14%;font-size:5vh">🍁</span><span class="tw" style="left:84%;top:20%;font-size:4vh;animation-delay:-.6s">🍂</span></div>`+tw;/*<SPLART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -12855,6 +13455,8 @@ regTale2(FAM2);
 regTale2(EINK2);
 /* Eefje und die Wachsmalstifte: after the shopping trip, so the older lines keep their order in voice/clips.tsv */
 regTale2(MAL2);
+/* Eefje und Papa auf dem Spielplatz: after the crayons, so the older lines keep their order in voice/clips.tsv */
+regTale2(SPL2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');

@@ -1,7 +1,7 @@
 """Generate all game clips with ElevenLabs into audio/<key>.mp3 and write audio/manifest.json.
 
 Env: ELEVENLABS_API_KEY (required), VOICE_ID, MODEL_ID, ONLY_MISSING ("true"/"false"), ONLY_KEYS (comma list, optional),
-     ALIGN_PREFIXES (comma list, default "t2_flaumi_,t2_eefje_,t2_feenfest_,t2_klonki_,t2_peppio_,t2_tasse_,t2_kiki_,t2_picknick_,t2_einkauf_,t2_malen_"): these clips are made with character timestamps; next to the mp3 the
+     ALIGN_PREFIXES (comma list, default "t2_flaumi_,t2_eefje_,t2_feenfest_,t2_klonki_,t2_peppio_,t2_tasse_,t2_kiki_,t2_picknick_,t2_einkauf_,t2_malen_,t2_spielplatz_"): these clips are made with character timestamps; next to the mp3 the
      script writes audio/align/<key>.json = {"d": seconds, "cs": [start of every character of the text in 1/100 s], "e": loudness
      every 20 ms as digits 0-9}. The game uses it to time animations to the exact word and to move a character's mouth.
 """
@@ -14,7 +14,7 @@ VOICE = os.environ.get("VOICE_ID", "").strip() or "hSzY2zmYNQPukJaIll7k"
 MODEL = os.environ.get("MODEL_ID", "").strip() or "eleven_multilingual_v2"
 ONLY_MISSING = os.environ.get("ONLY_MISSING", "true").lower() != "false"
 ONLY_KEYS = {k.strip() for k in os.environ.get("ONLY_KEYS", "").split(",") if k.strip()}
-ALIGN_PREFIXES = tuple(p.strip() for p in (os.environ.get("ALIGN_PREFIXES", "") or "t2_flaumi_,t2_eefje_,t2_feenfest_,t2_klonki_,t2_peppio_,t2_tasse_,t2_kiki_,t2_picknick_,t2_einkauf_,t2_malen_").split(",") if p.strip())
+ALIGN_PREFIXES = tuple(p.strip() for p in (os.environ.get("ALIGN_PREFIXES", "") or "t2_flaumi_,t2_eefje_,t2_feenfest_,t2_klonki_,t2_peppio_,t2_tasse_,t2_kiki_,t2_picknick_,t2_einkauf_,t2_malen_,t2_spielplatz_").split(",") if p.strip())
 ALIGN_DIR = os.path.join(AUDIO, "align")
 
 if not KEY:
