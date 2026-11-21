@@ -1840,6 +1840,53 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.ulla.found,.tp2.hrn.found,.tp2.mouse.found{filter:drop-shadow(0 0 1.4vh rgba(255,240,170,.9))}
 .tp2.wldtor{filter:none}
 /*<WALDCSS*/
+/*TUINCSS>*/
+/* Eefje im Weihnachtsland (all classes start with "tui") */
+/* Ehfje's hat, scarf and boots over her */
+.tuiwear{position:absolute;inset:0;pointer-events:none} .tuiwear svg{display:block;width:100%;height:100%;overflow:visible}
+.tuiwear .tuiwm,.tuiwear .tuiws,.tuiwear .tuiwb{display:none}
+.eef.tw-m .tuiwm,.eef.tw-s .tuiws,.eef.tw-b .tuiwb{display:inline}
+.eef.ride .tuiwb,.eef.sitb .tuiwb,.eef.splback .tuiwb{display:none}
+/* the pram */
+.tp2.tuiwag{filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.2))} .tuiwag svg,.tuiwv svg,.tuidorf svg,.tuizug svg,.tuifl svg,.tuiburg svg,.tuikug svg,.tuibech svg,.tuitr svg{display:block;width:100%;overflow:visible}
+.tuiwag>.bb{position:relative} .tuiwv{position:absolute;inset:0;pointer-events:none}
+.tuiwag .famjn>.bb{animation-duration:3s}
+/* the glass doors */
+.tuitr{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:6;transition:opacity 1s 1.3s} .tuitr svg{height:100%}
+.tuitr .tuidl,.tuitr .tuidr{transition:transform 1.5s cubic-bezier(.5,0,.3,1)} .tuitr.open .tuidl{transform:translateX(-220px)} .tuitr.open .tuidr{transform:translateX(220px)} .tuitr.open{opacity:0}
+/* the little tree, its glowing spots and the baubles */
+.tp2.tuisp{width:7vh;height:7vh;border-radius:50%;filter:none;background:radial-gradient(circle,rgba(255,255,255,.95) 0,rgba(255,236,150,.8) 32%,rgba(255,220,120,0) 70%);animation:tuisp 1.6s ease-in-out infinite;transition:opacity .4s}
+@keyframes tuisp{50%{scale:1.25}} .tp2.tuisp.weg{opacity:0;animation:none}
+.tp2.tuikug{width:15%;filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.25));transform-origin:50% 0;animation:tuikin .6s cubic-bezier(.3,1.6,.5,1),tuiksw 2.6s ease-in-out .6s infinite}
+@keyframes tuikin{from{scale:.1;opacity:0}} @keyframes tuiksw{0%,100%{rotate:-6deg}50%{rotate:6deg}}
+.tp2.lit .tuitst{filter:drop-shadow(0 0 6px #ffe27a)}
+/* the village and the train */
+.tp2.tuidorf{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.2))} .tuidorf .tuiwin{fill:#5a5a6e;transition:fill .8s} .tuidorf.lit .tuiwin{fill:#ffd86a}
+.tp2.tuidorf.tuiwk{animation:tuiwk 1.4s ease-in-out}  @keyframes tuiwk{30%{scale:1.02}}
+.tp2.tuizug{filter:drop-shadow(0 .4vh .4vh rgba(0,0,0,.3))} .tuizug>.bb{transform-origin:50% 100%}
+.tuizug .tuikey{transform-box:fill-box;transform-origin:50% 100%;transform:rotate(var(--kr,0deg))}
+.tuizn{position:absolute;translate:-50% -50%;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .4s;border:.5vh dashed rgba(255,255,255,.85);box-shadow:0 0 2vh rgba(255,236,150,.6) inset}
+.tuizn.g2hint{opacity:1;animation:tuizp .5s ease-in-out infinite} @keyframes tuizp{50%{scale:1.15}}
+/* the snow corner */
+.tuisnow{position:absolute;left:-6%;right:-6%;top:69%;bottom:-6%;pointer-events:none;border-radius:50% 50% 0 0/16% 16% 0 0;background:radial-gradient(ellipse at 50% 0,#ffffff 0,#eef4fc 55%,#d8e4f4 100%)}
+.tp2.tuifl{filter:drop-shadow(0 0 1vh rgba(160,210,255,.95))}
+.tuirun .tuifan{transform-box:fill-box;transform-origin:center;animation:tuifan .35s linear infinite} @keyframes tuifan{to{transform:rotate(360deg)}}
+/* the bouncy castle */
+.tp2.tuiburg{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.18));transform-origin:50% 100%} .tp2.tuibv{filter:none}
+.tuiburg .tuiflag{transform-box:fill-box;transform-origin:0 50%;animation:tuifl 1.2s ease-in-out infinite} @keyframes tuifl{50%{transform:scaleX(.7) skewY(8deg)}}
+/* the giant tree's star */
+.tuisr .tuisg{opacity:0;transition:opacity 1.2s} .tp2.lit .tuisr .tuisg{opacity:1} .tp2.lit .tuisr{filter:drop-shadow(0 0 10px #fff2a0) drop-shadow(0 0 24px #ffd84a)}
+/* the café: scoops, the big sundae */
+.tp2.tuiin{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.2))}
+.tp2.tuibech{filter:drop-shadow(0 .6vh .6vh rgba(0,0,0,.2));animation:tuikin .7s cubic-bezier(.3,1.6,.5,1)} .tuibech .tuisk{opacity:0} .tuibech.spark .tuisk{opacity:1;transform-box:fill-box;transform-origin:center;animation:tuisk .3s linear infinite}
+@keyframes tuisk{50%{transform:rotate(25deg) scale(1.25)}}
+/* the drive home */
+.tuiheim{position:absolute;inset:0;z-index:8;opacity:0;transition:opacity 1.8s;pointer-events:none;overflow:hidden} .tuiheim.on{opacity:1}
+.tuihb{position:absolute;inset:0} .tuihb svg{width:100%;height:100%}
+.tuiheim .famp>.bb,.tuiheim .eef>.bb{animation:none}
+/* book page */
+.tuiart .tp2{position:absolute} .tuiart .famp>.bb,.tuiart .eef>.bb{animation:none}
+/*<TUINCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -14449,6 +14496,603 @@ const WLD2={id:'wald', v2:true, eef:1, dur:WLDDUR, title:'Eefje im tiefen Wald',
 function zzzAt(x,y){ const u=vu(); for(let i=0;i<3;i++) bLater(()=>particle('z',x+(i-1)*u*6,y,u*(2+Math.random()),'#eaff8a',(x,y)=>[{transform:`translate(${x}px,${y}px) scale(.5)`,opacity:0},
   {transform:`translate(${x+u*3}px,${y-u*4}px) scale(1)`,opacity:.95,offset:.3},{transform:`translate(${x+u*8}px,${y-u*12}px) scale(1.2)`,opacity:0}],2200),i*350); }
 /*<WALD*/
+/*TUIN>*/
+/* ================= Eefje im Weihnachtsland: drawn props and sets (all classes start with "tui"; checked: no .tui… class existed before) ================= */
+/* Ehfje's winter things, drawn over her (same viewBox as eefjeSVG): .tuiwm the red bobble hat, .tuiws the striped scarf, .tuiwb the
+   boots. They show with the classes tw-m / tw-s / tw-b on the .eef */
+function tuiWearSVG(){ const R='#e8344a', RD='#8a1a2a', W='#fff4f0';
+  const st=(x0,y0,x1,y1)=>`<path d="M${x0} ${y0} L${x1} ${y1}" stroke="${W}" stroke-width="3"/>`;
+  return `<svg class="tuiwr" viewBox="0 0 160 160" style="overflow:visible">
+  <g class="tuiwb">
+   <path d="M64 126 L78 126 L78 141 Q87 142 87 147 Q87 152 79 152 L66 152 Q62 152 62 148Z" fill="#8a4a2a" stroke="#4a2410" stroke-width="2.2" stroke-linejoin="round"/>
+   <path d="M82 126 L96 126 L98 148 Q98 152 93 152 L80 152 Q73 152 73 147 Q73 142 82 141Z" fill="#8a4a2a" stroke="#4a2410" stroke-width="2.2" stroke-linejoin="round"/>
+   <ellipse cx="71" cy="127" rx="8.5" ry="3.6" fill="#fffaf0" stroke="#c8b8a0" stroke-width="1.4"/><ellipse cx="89" cy="127" rx="8.5" ry="3.6" fill="#fffaf0" stroke="#c8b8a0" stroke-width="1.4"/>
+   <path d="M66 136 H76 M84 136 H94" stroke="#b8784a" stroke-width="1.6" stroke-linecap="round"/></g>
+  <g class="tuiws">
+   <path d="M86 78 L97 103 L86 107 L79 82Z" fill="${R}" stroke="${RD}" stroke-width="2" stroke-linejoin="round"/>${st(88,87,82,89)}${st(91,94,84,97)}
+   <path d="M86 107 l-1 4 M89 106 l0 4 M92 105 l1 4 M95 104 l1.4 3.6" stroke="${R}" stroke-width="1.8" stroke-linecap="round"/>
+   <path d="M60 71 Q80 81 100 71 L102 80 Q80 92 58 80Z" fill="${R}" stroke="${RD}" stroke-width="2.2" stroke-linejoin="round"/>
+   ${st(66,75,65,84)}${st(74,78,74,87)}${st(84,78,85,87)}${st(93,75,95,84)}</g>
+  <g class="tuiwm">
+   <path d="M57 38 Q57 12 80 11 Q103 12 103 38 Q80 31 57 38Z" fill="${R}" stroke="${RD}" stroke-width="2.4" stroke-linejoin="round"/>
+   <path d="M66 34 Q64 20 74 15 M80 31 V13 M94 34 Q96 20 86 15" stroke="#ff7a8a" stroke-width="2" fill="none" stroke-linecap="round" opacity=".8"/>
+   <path d="M54 37 Q80 29 106 37 L106 45 Q80 37 54 45Z" fill="${W}" stroke="#c8b0a8" stroke-width="2" stroke-linejoin="round"/>
+   <g fill="#e8c8c0">${[60,68,76,84,92,100].map((x,i)=>`<circle cx="${x}" cy="${40.6-Math.sin(i/5*Math.PI)*3}" r="1.3"/>`).join('')}</g>
+   <circle cx="80" cy="9" r="8" fill="${W}" stroke="#c8b0a8" stroke-width="2"/><circle cx="77" cy="6" r="2.4" fill="#fff"/></g></svg>`; }
+/* the same things lying on the bench at home (drag sources) */
+function tuiMuetzeSVG(){ return `<svg viewBox="0 0 60 50" style="overflow:visible"><ellipse cx="30" cy="47" rx="24" ry="3" fill="rgba(0,0,0,.18)"/>
+  <path d="M8 40 Q8 8 30 7 Q52 8 52 40 Q30 34 8 40Z" fill="#e8344a" stroke="#8a1a2a" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 34 Q16 20 24 14 M30 32 V10 M42 34 Q44 20 36 14" stroke="#ff7a8a" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M5 39 Q30 31 55 39 L55 47 Q30 40 5 47Z" fill="#fff4f0" stroke="#c8b0a8" stroke-width="2" stroke-linejoin="round"/><circle cx="30" cy="6" r="7" fill="#fff4f0" stroke="#c8b0a8" stroke-width="2"/></svg>`; }
+function tuiSchalSVG(){ const W='#fff4f0'; return `<svg viewBox="0 0 80 50" style="overflow:visible"><ellipse cx="40" cy="47" rx="34" ry="3" fill="rgba(0,0,0,.16)"/>
+  <path d="M6 18 Q40 4 74 18 L74 30 Q40 18 6 30Z" fill="#e8344a" stroke="#8a1a2a" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M10 28 Q14 40 10 44 L22 44 Q24 36 22 26Z M70 28 Q66 40 70 44 L58 44 Q56 36 58 26Z" fill="#e8344a" stroke="#8a1a2a" stroke-width="2.2" stroke-linejoin="round"/>
+  <g stroke="${W}" stroke-width="3"><path d="M22 12 V26 M34 9 V22 M46 9 V22 M58 12 V26"/><path d="M11 36 H23 M59 36 H70"/></g>
+  <path d="M10 44 v4 M14 44 v4 M18 44 v4 M22 44 v4 M58 44 v4 M62 44 v4 M66 44 v4 M70 44 v4" stroke="#e8344a" stroke-width="1.8" stroke-linecap="round"/></svg>`; }
+function tuiStiefelSVG(){ const b=(x)=>`<path d="M${x} 8 L${x+16} 8 L${x+16} 36 Q${x+28} 37 ${x+28} 44 Q${x+28} 50 ${x+18} 50 L${x+2} 50 Q${x-2} 50 ${x-2} 45Z" fill="#8a4a2a" stroke="#4a2410" stroke-width="2.4" stroke-linejoin="round"/>
+  <ellipse cx="${x+8}" cy="9" rx="10" ry="4.4" fill="#fffaf0" stroke="#c8b8a0" stroke-width="1.6"/><path d="M${x+2} 24 H${x+14}" stroke="#b8784a" stroke-width="2" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 70 56" style="overflow:visible"><ellipse cx="35" cy="52" rx="32" ry="3.4" fill="rgba(0,0,0,.18)"/>${b(6)}${b(36)}</svg>`; }
+/* a little wooden bench in the hall at home. viewBox 0 0 200 80 */
+function tuiBankSVG(){ return `<svg viewBox="0 0 200 80" style="overflow:visible"><ellipse cx="100" cy="76" rx="96" ry="5" fill="rgba(0,0,0,.16)"/>
+  <path d="M22 30 L18 76 M178 30 L182 76" stroke="#8a5a2e" stroke-width="10" stroke-linecap="round"/>
+  <rect x="6" y="20" width="188" height="16" rx="6" fill="#d8a060" stroke="#8a5a2e" stroke-width="3"/><path d="M14 26 H186" stroke="#f0c08a" stroke-width="2.4" opacity=".8"/></svg>`; }
+
+/* a pram (Kinderwagen), side view, hood on the left. Janneke sits in it (a kid of .bb), the front side is drawn again over her
+   legs (tuiWagenVSVG). viewBox 0 0 200 200 */
+function tuiWagenSVG(){ return `<svg viewBox="0 0 200 200" style="overflow:visible"><ellipse cx="100" cy="196" rx="80" ry="5" fill="rgba(0,0,0,.16)"/>
+  <path d="M60 150 L46 182 M140 150 L154 182 M60 150 L140 150" stroke="#5a6a7a" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M150 96 L176 46 L190 44" stroke="#5a6a7a" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="180" y="38" width="18" height="12" rx="5" fill="#3a3a44"/>
+  <path d="M30 96 Q28 40 74 30 Q86 30 88 40 L92 96Z" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M40 92 Q40 50 70 40 M54 94 Q54 58 78 44 M68 94 Q70 66 86 52" stroke="#6a9af0" stroke-width="2.4" fill="none"/>
+  <path d="M26 96 L172 96 Q170 150 100 152 Q30 150 26 96Z" fill="#4a8af0" stroke="#1a3a8a" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="46" cy="182" r="14" fill="#3a3a44" stroke="#1a1a22" stroke-width="2.4"/><circle cx="46" cy="182" r="5" fill="#aab4c4"/>
+  <circle cx="154" cy="182" r="14" fill="#3a3a44" stroke="#1a1a22" stroke-width="2.4"/><circle cx="154" cy="182" r="5" fill="#aab4c4"/></svg>`; }
+function tuiWagenVSVG(){ return `<svg viewBox="0 0 200 200" style="overflow:visible"><path d="M88 106 L172 106 Q170 150 100 152 Q46 150 34 120 Q60 112 88 106Z" fill="#4a8af0" stroke="#1a3a8a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M26 96 L172 96" stroke="#1a3a8a" stroke-width="5" stroke-linecap="round"/><path d="M44 130 Q100 144 160 122" stroke="#8ab8ff" stroke-width="3" fill="none" opacity=".8"/>
+  <g fill="#ffd84a"><circle cx="110" cy="126" r="3"/><circle cx="130" cy="120" r="2.4"/><circle cx="90" cy="132" r="2.4"/></g></svg>`; }
+
+/* the rooms behind everything (viewBox 1600 x 1000, cut to fit): 'flur' (the hall at home, frosty morning), 'halle' (the big glass
+   hall of the garden centre, full of lit trees), 'cafe' (the same hall at the café corner) */
+function tuiRoomSVG(kind){ const id='tr'+(++LANC);
+  if(kind==='flur'){ let fr=''; const r=seeded(311); for(let i=0;i<40;i++){ const x=1010+r()*360, y=150+r()*300, s=6+r()*14; fr+=`<path d="M${x} ${y-s} V${y+s} M${x-s} ${y} H${x+s} M${x-s*.7} ${y-s*.7} L${x+s*.7} ${y+s*.7} M${x+s*.7} ${y-s*.7} L${x-s*.7} ${y+s*.7}"/>`; }
+    let pl=''; for(let i=0;i<14;i++) pl+=`<path d="M${i*120-40} 640 L${i*150-300} 1000"/>`;
+    return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+     <linearGradient id="${id}w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdeedd"/><stop offset="1" stop-color="#f4dcbe"/></linearGradient>
+     <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88a52"/><stop offset="1" stop-color="#a86e3c"/></linearGradient>
+     <linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8d4ee"/><stop offset=".7" stop-color="#e6f0fa"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+     <rect width="1600" height="1000" fill="url(#${id}w)"/><rect y="440" width="1600" height="200" fill="#e8c8a4" opacity=".5"/><path d="M0 440 H1600" stroke="#c89a6a" stroke-width="8"/>
+     <rect x="120" y="110" width="300" height="530" rx="10" fill="#9a6a3e" stroke="#6a4222" stroke-width="10"/><rect x="150" y="140" width="240" height="210" rx="6" fill="#b8804a" stroke="#6a4222" stroke-width="5"/><rect x="150" y="380" width="240" height="230" rx="6" fill="#b8804a" stroke="#6a4222" stroke-width="5"/>
+     <circle cx="380" cy="390" r="12" fill="#ffd84a" stroke="#9a6a1a" stroke-width="4"/>
+     <g transform="translate(270 250)"><circle r="62" fill="none" stroke="#2e7a3e" stroke-width="26"/><circle r="62" fill="none" stroke="#3e9a4e" stroke-width="12" stroke-dasharray="14 10"/>
+      <g fill="#e8344a">${[0,1,2,3,4,5,6,7].map(i=>`<circle cx="${(Math.cos(i*.785)*62).toFixed(0)}" cy="${(Math.sin(i*.785)*62).toFixed(0)}" r="7"/>`).join('')}</g><path d="M-14 50 q14 16 28 0 l-6 34 -8 -14 -8 14Z" fill="#e8344a"/></g>
+     <path d="M560 180 H900" stroke="#8a5a2e" stroke-width="14" stroke-linecap="round"/><g fill="#6a4222">${[600,680,760,840].map(x=>`<circle cx="${x}" cy="196" r="9"/>`).join('')}</g>
+     <path d="M660 196 Q620 260 630 420 L740 420 Q740 260 700 196Z" fill="#2aa198" stroke="#17675f" stroke-width="6" stroke-linejoin="round"/><path d="M820 196 Q790 250 800 400 L890 400 Q894 250 860 196Z" fill="#3e5f9a" stroke="#25406e" stroke-width="6" stroke-linejoin="round"/>
+     <rect x="980" y="130" width="420" height="340" rx="16" fill="url(#${id}s)" stroke="#a8784a" stroke-width="14"/>
+     <path d="M990 400 Q1100 360 1200 392 Q1300 350 1390 384 V462 H990Z" fill="#fff"/><path d="M1060 360 l30 -70 l30 70Z M1290 356 l24 -56 l24 56Z" fill="#7aa6c8"/>
+     <g stroke="#fff" stroke-width="3" opacity=".75">${fr}</g><path d="M1190 130 V470 M980 300 H1400" stroke="#a8784a" stroke-width="10"/><path d="M960 470 H1420" stroke="#c89060" stroke-width="18" stroke-linecap="round"/>
+     <rect x="0" y="626" width="1600" height="22" fill="#e8c8a0"/><rect y="640" width="1600" height="360" fill="url(#${id}f)"/>
+     <g stroke="#8a5a32" stroke-width="3" opacity=".5">${pl}</g><ellipse cx="300" cy="800" rx="230" ry="60" fill="#c8404a" opacity=".85"/><ellipse cx="300" cy="800" rx="190" ry="44" fill="none" stroke="#ffd0a0" stroke-width="6" stroke-dasharray="18 12"/></svg>`; }
+  /* the glass hall */
+  const r=seeded(kind==='cafe'?421:401); let gar='', trees='', tiles='';
+  [[0,160,560,260],[540,150,1080,250],[1060,160,1620,260],[200,300,820,380],[800,290,1420,380]].forEach(([x0,y0,x1,y1],k)=>{ const mx=(x0+x1)/2, my=y1; gar+=`<path d="M${x0} ${y0} Q${mx} ${my+40} ${x1} ${y0}" stroke="#3a4a3a" stroke-width="3" fill="none" opacity=".6"/>`;
+    for(let i=1;i<14;i++){ const t=i/14, x=(1-t)*(1-t)*x0+2*(1-t)*t*mx+t*t*x1, y=(1-t)*(1-t)*y0+2*(1-t)*t*(my+40)+t*t*y0; gar+=`<circle class="tuilt" cx="${x.toFixed(0)}" cy="${(y+6).toFixed(0)}" r="7" fill="${['#ffe27a','#ff8aa8','#8ad0ff','#a8f08a','#fff'][(i+k)%5]}" style="animation-delay:${(-r()*3).toFixed(2)}s"/>`; } });
+  const tree=(x,y,h,c)=>{ let s=`<path d="M${x} ${y-h} L${x+h*.34} ${y-h*.45} L${x+h*.2} ${y-h*.47} L${x+h*.42} ${y} L${x-h*.42} ${y} L${x-h*.2} ${y-h*.47} L${x-h*.34} ${y-h*.45}Z" fill="${c}" stroke="#14301e" stroke-width="3" stroke-linejoin="round"/>`;
+    for(let i=0;i<9;i++){ const f=.2+r()*.75, w=f*h*.36; s+=`<circle class="tuilt" cx="${(x+(r()*2-1)*w).toFixed(0)}" cy="${(y-h+f*h).toFixed(0)}" r="${(4+r()*3).toFixed(1)}" fill="${['#ffe27a','#ff6a8a','#8ad0ff','#fff'][i%4]}" style="animation-delay:${(-r()*3).toFixed(2)}s"/>`; }
+    return s+`<path d="M${x} ${y-h-14} l5 10 l11 1 l-8 7 l3 11 l-11 -6 l-11 6 l3 -11 l-8 -7 l11 -1Z" fill="#ffd84a" stroke="#b8861a" stroke-width="2"/>`; };
+  if(kind==='cafe'){ trees=tree(120,640,260,'#24603a')+tree(1500,640,240,'#2a6a40');
+    trees+=`<rect x="560" y="300" width="480" height="230" rx="18" fill="#3a2a2a" stroke="#8a5a2e" stroke-width="14"/><text x="800" y="380" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#fff6e0">Café</text>
+     <g transform="translate(700 450)"><path d="M-22 -10 L0 50 L22 -10Z" fill="#e8b46a" stroke="#a8743a" stroke-width="4"/><circle cy="-22" r="22" fill="#ff9ac0"/></g><g transform="translate(800 450)"><path d="M-22 -10 L0 50 L22 -10Z" fill="#e8b46a" stroke="#a8743a" stroke-width="4"/><circle cy="-22" r="22" fill="#fff2b8"/></g><g transform="translate(900 450)"><path d="M-22 -10 L0 50 L22 -10Z" fill="#e8b46a" stroke="#a8743a" stroke-width="4"/><circle cy="-22" r="22" fill="#8a5a3a"/></g>`; }
+  else { [[90,640,300,'#24603a'],[300,640,240,'#2e6e44'],[520,640,280,'#24603a'],[1080,640,270,'#2a6a40'],[1290,640,230,'#2e6e44'],[1500,640,300,'#24603a'],[780,640,200,'#2a6a40']].forEach(([x,y,h,c])=>trees+=tree(x,y,h,c)); }
+  for(let i=-10;i<=26;i++) tiles+=`<path d="M${800+(i-8)*60} 640 L${800+(i-8)*190} 1000"/>`; for(let k=0;k<6;k++){ const y=640+Math.pow(k/5,1.6)*360; tiles+=`<path d="M0 ${y.toFixed(0)} H1600"/>`; }
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ab8d8"/><stop offset=".55" stop-color="#d8e6f2"/><stop offset="1" stop-color="#f6efe2"/></linearGradient>
+   <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8cfc2"/><stop offset="1" stop-color="#b8ad9e"/></linearGradient>
+   <radialGradient id="${id}l" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#ffe8b0" stop-opacity=".55"/><stop offset="1" stop-color="#ffe8b0" stop-opacity="0"/></radialGradient></defs>
+   <rect width="1600" height="1000" fill="url(#${id}g)"/>
+   <g stroke="#7a8a9a" stroke-width="8" opacity=".75">${[0,200,400,600,800,1000,1200,1400,1600].map(x=>`<path d="M${x} 0 L${800+(x-800)*1.25} 640"/>`).join('')}<path d="M0 120 H1600 M0 280 H1600 M0 450 H1600"/></g>
+   <path d="M0 0 H1600 V40 H0Z" fill="#6a7a8a"/>
+   <rect y="560" width="1600" height="90" fill="#efe6d8" opacity=".8"/>
+   <ellipse cx="800" cy="600" rx="900" ry="260" fill="url(#${id}l)"/>
+   ${trees}${gar}
+   <rect y="634" width="1600" height="14" fill="#a89a88"/><rect y="646" width="1600" height="354" fill="url(#${id}f)"/>
+   <g stroke="#a09484" stroke-width="3" opacity=".7">${tiles}</g></svg>`; }
+
+/* the big sliding glass doors at the entrance (two panels, they open with .open). viewBox 0 0 400 300 */
+function tuiTuerSVG(){ const pane=(x)=>`<rect x="${x}" y="40" width="140" height="256" rx="4" fill="rgba(210,232,250,.55)" stroke="#6a7a8a" stroke-width="7"/><path d="M${x+20} 70 L${x+50} 70 L${x+20} 140Z" fill="#fff" opacity=".5"/>`;
+  return `<svg viewBox="0 0 400 300" preserveAspectRatio="none" style="overflow:visible"><g class="tuidl">${pane(60)}</g><g class="tuidr">${pane(200)}</g>
+  <rect x="40" y="10" width="320" height="34" rx="6" fill="#2e6a44" stroke="#1a4228" stroke-width="4"/><g fill="#ffd84a">${[70,110,150,190,230,270,310].map((x,i)=>`<path transform="translate(${x} 27) scale(.6)" d="M0 -12 L3.5 -4 12 -3.6 5.6 2 7.4 10.6 0 6.4 -7.4 10.6 -5.6 2 -12 -3.6 -3.5 -4Z"/>`).join('')}</g>
+  <path d="M40 44 V300 M360 44 V300" stroke="#5a6a7a" stroke-width="10"/></svg>`; }
+
+/* a little tree that is not decorated yet, in a red pot; the baubles get hung on the spots TUIKH (fractions of the tree box). viewBox 0 0 200 260 */
+const TUIKH=[[.32,.66],[.68,.68],[.5,.46],[.38,.3],[.64,.36]];
+function tuiBaumSVG(){ const id='tb'+(++LANC);
+  return `<svg viewBox="0 0 200 260" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="#2e7a46"/><stop offset=".5" stop-color="#3e9a56"/><stop offset="1" stop-color="#24603a"/></linearGradient></defs>
+  <ellipse cx="100" cy="254" rx="60" ry="6" fill="rgba(0,0,0,.18)"/>
+  <path d="M74 214 L126 214 L120 254 L80 254Z" fill="#d8344a" stroke="#8a1a2a" stroke-width="3" stroke-linejoin="round"/><path d="M72 220 H128" stroke="#ffd84a" stroke-width="6"/>
+  <rect x="92" y="196" width="16" height="20" fill="#7a4a24" stroke="#4a2a14" stroke-width="2"/>
+  <path d="M100 6 L134 62 L118 60 L150 110 L128 108 L164 160 L140 158 L184 204 L16 204 L60 158 L36 160 L72 108 L50 110 L82 60 L66 62Z" fill="url(#${id})" stroke="#173e24" stroke-width="3.2" stroke-linejoin="round"/>
+  <g stroke="#173e24" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".5"><path d="M100 30 V190 M84 80 L100 96 L116 80 M76 128 L100 148 L124 128 M66 176 L100 196 L134 176"/></g>
+  <path class="tuitst" d="M100 -14 L104.6 -4.4 115 -3.4 107.2 3.6 109.4 14 100 8.6 90.6 14 92.8 3.6 85 -3.4 95.4 -4.4Z" fill="#ffd84a" stroke="#b8861a" stroke-width="2" stroke-linejoin="round"/></svg>`; }
+
+/* ---------- the miniature Christmas village: a table with snowy hills, houses and an oval track. viewBox 0 0 400 220 ---------- */
+const TUIOV={cx:200,cy:132,rx:150,ry:34};
+function tuiDorfSVG(){ const id='td'+(++LANC), r=seeded(503);
+  const house=(x,y,w,c,roof)=>`<g><rect x="${x}" y="${y-w*.8}" width="${w}" height="${w*.8}" fill="${c}" stroke="#5a3a2a" stroke-width="1.6"/><path d="M${x-3} ${y-w*.78} L${x+w/2} ${y-w*1.32} L${x+w+3} ${y-w*.78}Z" fill="${roof}" stroke="#5a3a2a" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M${x-4} ${y-w*.8} L${x+w/2} ${y-w*1.36} L${x+w+4} ${y-w*.8} L${x+w-2} ${y-w*.74} L${x+w/2} ${y-w*1.18} L${x+2} ${y-w*.74}Z" fill="#fff"/>
+    <rect class="tuiwin" x="${x+w*.18}" y="${y-w*.56}" width="${w*.22}" height="${w*.22}" fill="#ffd86a"/><rect class="tuiwin" x="${x+w*.6}" y="${y-w*.56}" width="${w*.22}" height="${w*.22}" fill="#ffd86a"/></g>`;
+  const fir=(x,y,h)=>`<path d="M${x} ${y-h} L${x+h*.32} ${y} L${x-h*.32} ${y}Z" fill="#2e7a46" stroke="#173e24" stroke-width="1.4"/><path d="M${x} ${y-h} L${x+h*.16} ${y-h*.5} L${x-h*.16} ${y-h*.5}Z" fill="#fff"/>`;
+  let ties=''; for(let i=0;i<40;i++){ const a=i/40*2*Math.PI, x=TUIOV.cx+Math.cos(a)*TUIOV.rx, y=TUIOV.cy+Math.sin(a)*TUIOV.ry, dx=Math.cos(a)*9, dy=Math.sin(a)*3; ties+=`<path d="M${(x-dx).toFixed(1)} ${(y-dy).toFixed(1)} L${(x+dx).toFixed(1)} ${(y+dy).toFixed(1)}"/>`; }
+  let flakes=''; for(let i=0;i<30;i++) flakes+=`<circle cx="${(r()*400).toFixed(0)}" cy="${(70+r()*80).toFixed(0)}" r="${(1+r()*1.6).toFixed(1)}" fill="#fff" opacity=".8"/>`;
+  return `<svg viewBox="0 0 400 220" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe8f4"/></linearGradient></defs>
+  <ellipse cx="200" cy="216" rx="196" ry="6" fill="rgba(0,0,0,.18)"/>
+  <path d="M8 140 L392 140 L388 214 L12 214Z" fill="#c8344a" stroke="#7a1a2a" stroke-width="3" stroke-linejoin="round"/><path d="M12 176 Q200 190 388 176" stroke="#ffd84a" stroke-width="4" fill="none" stroke-dasharray="10 8"/>
+  <path d="M4 142 Q4 100 40 92 Q80 60 130 78 Q170 50 220 72 Q270 48 320 74 Q370 72 396 104 L396 150 Q200 170 4 150Z" fill="url(#${id})" stroke="#a8bcd8" stroke-width="2.4"/>
+  ${fir(34,98,26)}${fir(372,100,30)}${fir(60,96,18)}
+  ${house(84,96,24,'#ffcf9a','#c8504a')}${house(140,82,30,'#bfe0ff','#5a6aa8')}${house(250,84,28,'#ffe6a8','#8a5a3a')}${house(300,96,22,'#ffd0e0','#c84a7a')}
+  <g><rect x="196" y="40" width="20" height="44" fill="#f8f4ec" stroke="#5a3a2a" stroke-width="1.6"/><path d="M193 42 L206 14 L219 42Z" fill="#5a6aa8" stroke="#5a3a2a" stroke-width="1.6" stroke-linejoin="round"/><rect class="tuiwin" x="201" y="52" width="10" height="14" rx="5" fill="#ffd86a"/><path d="M206 14 V6 M202 9 H210" stroke="#ffd84a" stroke-width="2"/></g>
+  <ellipse cx="${TUIOV.cx}" cy="${TUIOV.cy}" rx="${TUIOV.rx+9}" ry="${TUIOV.ry+5}" fill="none" stroke="#c8d4e4" stroke-width="10" opacity=".7"/>
+  <g stroke="#8a6a4a" stroke-width="3" opacity=".9">${ties}</g>
+  <ellipse cx="${TUIOV.cx}" cy="${TUIOV.cy}" rx="${TUIOV.rx-5}" ry="${TUIOV.ry-2}" fill="none" stroke="#6a7a8a" stroke-width="2.4"/><ellipse cx="${TUIOV.cx}" cy="${TUIOV.cy}" rx="${TUIOV.rx+5}" ry="${TUIOV.ry+2}" fill="none" stroke="#6a7a8a" stroke-width="2.4"/>
+  ${flakes}</svg>`; }
+/* the little toy train: a red engine with a wind-up key on top (.tuikey) and two wagons with presents, facing right. viewBox 0 0 150 64 */
+function tuiZugSVG(){ const wh=(x)=>`<circle cx="${x}" cy="56" r="6" fill="#2a2a32" stroke="#111" stroke-width="1.6"/><circle cx="${x}" cy="56" r="2" fill="#c8c8d0"/>`;
+  return `<svg viewBox="0 0 150 64" style="overflow:visible">
+  <g class="tuiwg"><rect x="2" y="30" width="34" height="22" rx="3" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="2"/><rect x="8" y="16" width="14" height="14" fill="#ffd84a" stroke="#b8861a" stroke-width="1.6"/><path d="M15 16 V30 M8 23 H22" stroke="#e8344a" stroke-width="2.4"/>
+   <rect x="22" y="20" width="10" height="10" fill="#a05ae0" stroke="#5a2a8a" stroke-width="1.6"/>${wh(10)}${wh(28)}
+   <rect x="40" y="30" width="34" height="22" rx="3" fill="#3e9a56" stroke="#1a5a2a" stroke-width="2"/><rect x="44" y="12" width="18" height="18" fill="#ff8ac0" stroke="#b83a74" stroke-width="1.6"/><path d="M53 12 V30 M44 21 H62" stroke="#fff" stroke-width="2.4"/>${wh(48)}${wh(66)}
+   <path d="M36 44 H40 M74 44 H80" stroke="#3a3a44" stroke-width="3"/></g>
+  <g class="tuilok"><rect x="80" y="26" width="46" height="26" rx="4" fill="#e8344a" stroke="#8a1a2a" stroke-width="2.4"/><rect x="80" y="12" width="22" height="18" rx="2" fill="#c8243a" stroke="#8a1a2a" stroke-width="2.2"/>
+   <rect x="85" y="16" width="12" height="9" rx="1.6" fill="#fff4c0"/><path d="M78 11 H104" stroke="#3a3a44" stroke-width="4" stroke-linecap="round"/>
+   <rect x="114" y="8" width="9" height="18" fill="#3a3a44" stroke="#111" stroke-width="1.6"/><path d="M111 8 H126" stroke="#3a3a44" stroke-width="4" stroke-linecap="round"/>
+   <path d="M126 30 Q138 36 126 50" fill="#ffd84a" stroke="#b8861a" stroke-width="2"/><circle cx="130" cy="38" r="3.4" fill="#fff6c0" stroke="#b8861a" stroke-width="1.4"/>
+   <path d="M126 50 L140 54 L126 54Z" fill="#6a6a78"/>${wh(90)}${wh(106)}${wh(120)}<path d="M90 56 H120" stroke="#ffd84a" stroke-width="2.4"/>
+   <g class="tuikey"><path d="M106 26 V18" stroke="#b8861a" stroke-width="3"/><path d="M106 18 Q94 4 98 0 Q104 -2 106 10 Q108 -2 114 0 Q118 4 106 18Z" fill="#ffd84a" stroke="#b8861a" stroke-width="2" stroke-linejoin="round"/></g></g></svg>`; }
+
+/* the snow machine: a blue box with a big round nozzle on a pole, blowing to the right (nozzle opening at TUIDUESE). viewBox 0 0 160 220 */
+const TUIDUESE=[.9,.2];
+function tuiKanoneSVG(){ return `<svg viewBox="0 0 160 220" style="overflow:visible"><ellipse cx="60" cy="216" rx="40" ry="5" fill="rgba(0,0,0,.18)"/>
+  <path d="M60 80 V212 M36 212 H84" stroke="#6a7a8a" stroke-width="8" stroke-linecap="round"/>
+  <rect x="10" y="20" width="96" height="66" rx="12" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="3.4"/><g stroke="#2a6ab8" stroke-width="2.4"><path d="M22 34 H58 M22 44 H58 M22 54 H58 M22 64 H58"/></g>
+  <circle cx="82" cy="54" r="12" fill="#fff" stroke="#2a6ab8" stroke-width="2.4"/><g class="tuifan"><path d="M82 44 L82 64 M72 54 H92" stroke="#2a6ab8" stroke-width="3"/></g>
+  <path d="M106 30 L148 24 L148 64 L106 76Z" fill="#8ad0ff" stroke="#2a6ab8" stroke-width="3" stroke-linejoin="round"/><ellipse cx="148" cy="44" rx="7" ry="20" fill="#e8f6ff" stroke="#2a6ab8" stroke-width="2.4"/>
+  <path d="M30 20 Q40 6 56 12 Q70 2 84 14 Q98 10 104 22Z" fill="#fff" stroke="#c8d8ee" stroke-width="2"/></svg>`; }
+/* a jolly snowman of white felt with a red scarf. viewBox 0 0 120 180 */
+function tuiMannSVG(){ return `<svg viewBox="0 0 120 180" style="overflow:visible"><ellipse cx="60" cy="176" rx="46" ry="5" fill="rgba(0,0,0,.16)"/>
+  <circle cx="60" cy="136" r="40" fill="#fff" stroke="#b8cae6" stroke-width="2.6"/><circle cx="60" cy="76" r="30" fill="#fff" stroke="#b8cae6" stroke-width="2.6"/><circle cx="60" cy="32" r="22" fill="#fff" stroke="#b8cae6" stroke-width="2.6"/>
+  <path d="M40 18 L80 18 L76 -2 L44 -2Z M34 18 H86" fill="#2a2a34" stroke="#2a2a34" stroke-width="4" stroke-linejoin="round"/><path d="M45 12 H75" stroke="#e8344a" stroke-width="4"/>
+  <circle cx="52" cy="28" r="3" fill="#2a2a34"/><circle cx="68" cy="28" r="3" fill="#2a2a34"/><path d="M60 34 L78 38 L60 40Z" fill="#ff8a2a"/><path d="M50 44 Q60 50 70 44" stroke="#2a2a34" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M38 54 Q60 64 82 54 L84 62 Q60 74 36 62Z" fill="#e8344a" stroke="#8a1a2a" stroke-width="2"/><path d="M70 62 L76 88 L66 88 L62 64Z" fill="#e8344a" stroke="#8a1a2a" stroke-width="2"/>
+  <g fill="#2a2a34"><circle cx="60" cy="74" r="3"/><circle cx="60" cy="88" r="3"/><circle cx="60" cy="124" r="3.4"/></g>
+  <path d="M32 72 L8 52 M88 72 L112 50 M14 56 l-8 -2 M106 54 l8 -4" stroke="#6a4024" stroke-width="4" stroke-linecap="round"/></svg>`; }
+/* one big soft snowflake (catchable) */
+function tuiFlockeSVG(){ const arm=a=>`<g transform="rotate(${a} 30 30)"><path d="M30 30 V5" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M30 13 L23 7 M30 13 L37 7 M30 21 L24 16 M30 21 L36 16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>`;
+  return `<svg viewBox="0 0 60 60" style="overflow:visible"><circle cx="30" cy="30" r="26" fill="rgba(200,230,255,.35)"/><g style="filter:drop-shadow(0 0 2px #8ac8ff)">${[0,60,120,180,240,300].map(arm).join('')}</g><circle cx="30" cy="30" r="5" fill="#fff"/></svg>`; }
+
+/* ---------- the bouncy castle: back part (floor, back wall, towers) and the front rim that is drawn over Ehfje. viewBox 0 0 400 300 ---------- */
+function tuiBurgSVG(){ const id='tbg'+(++LANC);
+  const tower=(x,y,w,h,c)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${w*.4}" fill="${c}" stroke="#8a1a2a" stroke-width="3"/><path d="M${x-4} ${y+8} Q${x+w/2} ${y-w*.9} ${x+w+4} ${y+8}Z" fill="#ffd84a" stroke="#b8861a" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M${x+w/2} ${y-w*.55} V${y-w*1.2}" stroke="#6a4024" stroke-width="3"/><path class="tuiflag" d="M${x+w/2} ${y-w*1.2} l18 6 l-18 6Z" fill="#3a7ae8"/><path d="M${x+w*.3} ${y+20} V${y+h-10}" stroke="#fff" stroke-width="5" opacity=".4" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 400 300" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6a7a"/><stop offset="1" stop-color="#e8344a"/></linearGradient></defs>
+  <ellipse cx="200" cy="294" rx="196" ry="8" fill="rgba(0,0,0,.2)"/>
+  <rect x="40" y="70" width="320" height="170" rx="30" fill="url(#${id})" stroke="#8a1a2a" stroke-width="3.4"/>
+  <g stroke="#c8243a" stroke-width="3" opacity=".6">${[80,120,160,200,240,280,320].map(x=>`<path d="M${x} 78 V232"/>`).join('')}</g>
+  <path d="M150 240 V150 Q200 100 250 150 V240Z" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="3"/>
+  ${tower(10,40,50,230,'#e8344a')}${tower(340,40,50,230,'#e8344a')}${tower(170,20,60,120,'#a05ae0')}
+  <path d="M60 68 Q80 52 100 68 Q120 52 140 68 Q160 52 180 68 M220 68 Q240 52 260 68 Q280 52 300 68 Q320 52 340 68" stroke="#ffd84a" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M20 240 H380 V280 Q200 296 20 280Z" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="3.4" stroke-linejoin="round"/><path d="M30 252 Q200 264 370 252" stroke="#8ab8ff" stroke-width="4" fill="none"/></svg>`; }
+function tuiBurgVSVG(){ return `<svg viewBox="0 0 400 300" style="overflow:visible"><path d="M24 226 Q200 214 376 226 L380 262 Q200 276 20 262Z" fill="#ffd84a" stroke="#b8861a" stroke-width="3.4" stroke-linejoin="round"/>
+  <g fill="#ff8a2a">${[60,120,180,240,300,340].map(x=>`<circle cx="${x}" cy="244" r="7"/>`).join('')}</g><path d="M30 232 Q200 222 370 232" stroke="#fff6b0" stroke-width="4" fill="none" opacity=".9"/></svg>`; }
+
+/* ---------- the giant tree in the middle of the hall; its star at the top is out (.tuisr) until it is lit (.lit). viewBox 0 0 300 600 ---------- */
+const TUISTAR=[150/300,46/600];
+function tuiRieseSVG(){ const id='tri'+(++LANC), r=seeded(611); let lt='', bl='';
+  for(let i=0;i<46;i++){ const f=.12+r()*.82, y=50+f*500, w=f*130; lt+=`<circle class="tuilt" cx="${(150+(r()*2-1)*w).toFixed(0)}" cy="${y.toFixed(0)}" r="${(4+r()*2.6).toFixed(1)}" fill="${['#ffe27a','#ff6a8a','#8ad0ff','#fff','#a8f08a'][i%5]}" style="animation-delay:${(-r()*3).toFixed(2)}s"/>`; }
+  for(let i=0;i<14;i++){ const f=.2+r()*.75, y=50+f*500, w=f*120; bl+=`<circle cx="${(150+(r()*2-1)*w).toFixed(0)}" cy="${y.toFixed(0)}" r="${(9+r()*5).toFixed(1)}" fill="${['#e8344a','#3a7ae8','#ffd24a','#a05ae0'][i%4]}" stroke="rgba(0,0,0,.3)" stroke-width="1.6"/>`; }
+  const tier=(y0,y1,w)=>`<path d="M150 ${y0} L${150+w} ${y1} Q150 ${y1+26} ${150-w} ${y1}Z" fill="url(#${id})" stroke="#14361f" stroke-width="3.4" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 300 600" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="#24603a"/><stop offset=".5" stop-color="#3a8a50"/><stop offset="1" stop-color="#1e5030"/></linearGradient></defs>
+  <ellipse cx="150" cy="594" rx="120" ry="8" fill="rgba(0,0,0,.2)"/><rect x="134" y="540" width="32" height="50" fill="#7a4a24" stroke="#4a2a14" stroke-width="3"/>
+  ${tier(330,550,150)}${tier(210,420,118)}${tier(110,300,88)}${tier(50,180,56)}
+  <path d="M60 520 Q150 560 240 520 M80 400 Q150 440 220 400 M96 290 Q150 316 204 290" stroke="#ffd84a" stroke-width="5" fill="none" opacity=".9"/>
+  ${bl}${lt}
+  <g class="tuisr"><path d="M150 18 L159 38 L181 40 L164 55 L169 77 L150 66 L131 77 L136 55 L119 40 L141 38Z" fill="#8a8a96" stroke="#5a5a66" stroke-width="3" stroke-linejoin="round"/>
+   <path class="tuisg" d="M150 18 L159 38 L181 40 L164 55 L169 77 L150 66 L131 77 L136 55 L119 40 L141 38Z" fill="#ffe27a" stroke="#d89a20" stroke-width="3" stroke-linejoin="round"/></g></svg>`; }
+
+/* ---------- the café ---------- */
+/* the ice-cream counter: glass front, three tubs (pink, vanilla, chocolate) the scoops are taken from. viewBox 0 0 400 200 */
+function tuiThekeSVG(){ const tub=(x,c,d)=>`<path d="M${x} 76 L${x+70} 76 L${x+64} 112 L${x+6} 112Z" fill="#e8eef6" stroke="#8a9aaa" stroke-width="2.4"/><path d="M${x+2} 78 Q${x+16} 54 ${x+35} 60 Q${x+52} 50 ${x+68} 78Z" fill="${c}" stroke="${d}" stroke-width="2.4"/><path d="M${x+20} 70 q8 -6 14 0" stroke="#fff" stroke-width="2.4" fill="none" opacity=".7"/>`;
+  return `<svg viewBox="0 0 400 200" style="overflow:visible"><ellipse cx="200" cy="196" rx="196" ry="5" fill="rgba(0,0,0,.16)"/>
+  <rect x="4" y="110" width="392" height="86" rx="8" fill="#ffd0e0" stroke="#c84a7a" stroke-width="3.4"/><g fill="#fff" opacity=".6">${[30,80,130,180,230,280,330,380].map(x=>`<circle cx="${x}" cy="152" r="9"/>`).join('')}</g>
+  <path d="M10 110 L30 40 L370 40 L390 110Z" fill="rgba(220,240,255,.45)" stroke="#8a9aaa" stroke-width="3"/>
+  ${tub(56,'#ff9ac0','#c84a7a')}${tub(166,'#fff2b8','#c8a84a')}${tub(276,'#8a5a3a','#4a2a14')}
+  <path d="M30 40 L370 40" stroke="#c8d4e4" stroke-width="4"/><rect x="0" y="104" width="400" height="12" rx="5" fill="#fff6fa" stroke="#c84a7a" stroke-width="2.4"/></svg>`; }
+/* one scoop of ice cream */
+function tuiKugelEisSVG(c){ const C={p:['#ff9ac0','#c84a7a'],v:['#fff2b8','#c8a84a'],s:['#8a5a3a','#4a2a14']}[c]||['#ff9ac0','#c84a7a'];
+  return `<svg viewBox="0 0 60 52" style="overflow:visible"><path d="M6 34 Q2 6 30 4 Q58 6 54 34 Q50 40 44 36 Q38 44 30 38 Q22 44 16 36 Q10 40 6 34Z" fill="${C[0]}" stroke="${C[1]}" stroke-width="2.6" stroke-linejoin="round"/>
+  <ellipse cx="20" cy="14" rx="7" ry="4" fill="#fff" opacity=".55" transform="rotate(-20 20 14)"/>${c==='s'?'<g fill="#fff4c0"><rect x="30" y="16" width="5" height="2" rx="1"/><rect x="40" y="24" width="5" height="2" rx="1" transform="rotate(40 42 25)"/><rect x="20" y="26" width="5" height="2" rx="1" transform="rotate(-30 22 27)"/></g>':''}</svg>`; }
+/* Ehfje's blue treasure-chest ice-cream box (the lid stands open behind). viewBox 0 0 100 90 */
+function tuiKisteSVG(){ return `<svg viewBox="0 0 100 90" style="overflow:visible"><ellipse cx="50" cy="86" rx="44" ry="4" fill="rgba(0,0,0,.2)"/>
+  <path d="M10 40 Q10 4 50 4 Q90 4 90 40Z" fill="#2a6ad8" stroke="#123a8a" stroke-width="3" stroke-linejoin="round"/><path d="M28 38 Q28 10 50 8 Q72 10 72 38" fill="none" stroke="#ffd84a" stroke-width="5"/>
+  <path d="M18 34 Q20 14 40 10" stroke="#8ab8ff" stroke-width="3" fill="none" opacity=".8" stroke-linecap="round"/>
+  <g class="tuiki"></g>
+  <path d="M6 44 L94 44 L90 84 L10 84Z" fill="#3a7ae8" stroke="#123a8a" stroke-width="3" stroke-linejoin="round"/><path d="M6 44 H94 V52 H6Z" fill="#2a6ad8" stroke="#123a8a" stroke-width="2.6"/>
+  <path d="M26 44 V84 M74 44 V84" stroke="#ffd84a" stroke-width="5"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#ffd84a" stroke="#b8861a" stroke-width="2"/><circle cx="50" cy="59" r="2.4" fill="#8a5a10"/><path d="M50 60 V65" stroke="#8a5a10" stroke-width="2"/>
+  <g fill="#fff"><path d="M16 70 l1.6 3.4 3.6.4 -2.7 2.4 .8 3.6 -3.3 -1.8 -3.3 1.8 .8 -3.6 -2.7 -2.4 3.6 -.4Z"/><path d="M84 66 l1.3 2.6 2.8.3 -2.1 1.9 .6 2.8 -2.6 -1.4 -2.6 1.4 .6 -2.8 -2.1 -1.9 2.8 -.3Z"/></g></svg>`; }
+/* the front of the chest again, over the scoops in it */
+function tuiKisteVSVG(){ return `<svg viewBox="0 0 100 90" style="overflow:visible"><path d="M6 44 L94 44 L90 84 L10 84Z" fill="#3a7ae8" stroke="#123a8a" stroke-width="3" stroke-linejoin="round"/><path d="M6 44 H94 V52 H6Z" fill="#2a6ad8" stroke="#123a8a" stroke-width="2.6"/>
+  <path d="M26 44 V84 M74 44 V84" stroke="#ffd84a" stroke-width="5"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#ffd84a" stroke="#b8861a" stroke-width="2"/><circle cx="50" cy="59" r="2.4" fill="#8a5a10"/><path d="M50 60 V65" stroke="#8a5a10" stroke-width="2"/>
+  <g fill="#fff"><path d="M16 70 l1.6 3.4 3.6.4 -2.7 2.4 .8 3.6 -3.3 -1.8 -3.3 1.8 .8 -3.6 -2.7 -2.4 3.6 -.4Z"/><path d="M84 66 l1.3 2.6 2.8.3 -2.1 1.9 .6 2.8 -2.6 -1.4 -2.6 1.4 .6 -2.8 -2.1 -1.9 2.8 -.3Z"/></g></svg>`; }
+/* Papa's giant ice-cream sundae: a tall glass, five scoops, cream, a wafer, a cherry and a sparkler. viewBox 0 0 100 180 */
+function tuiBecherSVG(){ const s=(x,y,c,d)=>`<path d="M${x-16} ${y+6} Q${x-18} ${y-16} ${x} ${y-17} Q${x+18} ${y-16} ${x+16} ${y+6}Z" fill="${c}" stroke="${d}" stroke-width="2.2"/>`;
+  return `<svg viewBox="0 0 100 180" style="overflow:visible"><ellipse cx="50" cy="176" rx="26" ry="4" fill="rgba(0,0,0,.18)"/>
+  <path d="M34 176 H66 M50 176 V150" stroke="#b8d4ee" stroke-width="6" stroke-linecap="round"/>
+  <path d="M14 70 L86 70 L72 150 L28 150Z" fill="rgba(220,240,255,.55)" stroke="#8aa8c8" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M22 104 L78 104 L72 148 L28 148Z" fill="#ff9ac0" opacity=".8"/><path d="M18 86 L82 86 L78 104 L22 104Z" fill="#fff2b8" opacity=".85"/>
+  ${s(30,66,'#8a5a3a','#4a2a14')}${s(70,66,'#ff9ac0','#c84a7a')}${s(50,58,'#fff2b8','#c8a84a')}${s(36,42,'#a8e08a','#4a8a3a')}${s(64,42,'#ffb84a','#b8761a')}
+  <path d="M26 30 Q30 10 50 14 Q70 10 74 30 Q62 26 50 30 Q38 26 26 30Z" fill="#fffaf4" stroke="#d8d0c8" stroke-width="2"/><path d="M34 22 Q50 2 66 22 Q56 18 50 22 Q44 18 34 22Z" fill="#fffaf4" stroke="#d8d0c8" stroke-width="2"/>
+  <circle cx="50" cy="8" r="7" fill="#e8243a" stroke="#8a1a2a" stroke-width="2"/><path d="M50 2 Q54 -8 60 -10" stroke="#3a7a2a" stroke-width="2" fill="none"/>
+  <path d="M70 34 L86 2" stroke="#e8b46a" stroke-width="7" stroke-linecap="round"/><path d="M70 34 L86 2" stroke="#a8743a" stroke-width="2" stroke-dasharray="3 3"/>
+  <path d="M24 34 L14 -6" stroke="#8a8a96" stroke-width="2.4"/><g class="tuisk"><circle cx="14" cy="-8" r="5" fill="#fff6c0"/><path d="M14 -20 V4 M2 -8 H26 M6 -16 L22 0 M22 -16 L6 0" stroke="#ffe27a" stroke-width="2" stroke-linecap="round"/></g></svg>`; }
+
+/* Janneke's little ice-cream cone on the counter (she only gets a tiny lick) */
+function tuiTuetchenSVG(){ return `<svg viewBox="0 0 40 60" style="overflow:visible"><path d="M8 22 L20 58 L32 22Z" fill="#e8b46a" stroke="#a8743a" stroke-width="2.2" stroke-linejoin="round"/><path d="M12 30 L28 30 M14 38 L26 38 M17 46 L23 46" stroke="#a8743a" stroke-width="1.4"/>
+  <path d="M6 24 Q4 4 20 4 Q36 4 34 24Z" fill="#fff2b8" stroke="#c8a84a" stroke-width="2.2"/></svg>`; }
+
+/* the drive home at night: a starry sky, snowy fields, the road and far-away lights (a full-stage overlay) */
+function tuiNachtSVG(){ const r=seeded(707); let st='', li='';
+  for(let i=0;i<70;i++) st+=`<circle class="tuilt" cx="${(r()*1600).toFixed(0)}" cy="${(r()*480).toFixed(0)}" r="${(1+r()*2.4).toFixed(1)}" fill="#fff" style="animation-delay:${(-r()*3).toFixed(2)}s"/>`;
+  for(let i=0;i<14;i++) li+=`<rect x="${(100+r()*1400).toFixed(0)}" y="${(520+r()*40).toFixed(0)}" width="10" height="10" fill="#ffd86a" opacity=".9"/>`;
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs><linearGradient id="tuing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060a2e"/><stop offset=".6" stop-color="#1e2a6a"/><stop offset="1" stop-color="#3a3a7a"/></linearGradient></defs>
+  <rect width="1600" height="1000" fill="url(#tuing)"/>${st}<circle cx="1320" cy="150" r="60" fill="#fff6c8"/><circle cx="1345" cy="138" r="56" fill="#0c1240"/>
+  <path d="M0 560 Q400 520 800 556 Q1200 520 1600 560 V1000 H0Z" fill="#dfe8f6"/>${li}<path d="M640 1000 L780 570 L820 570 L960 1000Z" fill="#4a4e60"/><path d="M800 590 V620 M800 660 V710 M800 760 V840 M800 900 V1000" stroke="#fff" stroke-width="8"/></svg>`; }
+
+Object.assign(SVGP,{TUIMUETZE:[tuiMuetzeSVG,1],TUISCHAL:[tuiSchalSVG,1],TUISTIEFEL:[tuiStiefelSVG,1],TUIBANK:[tuiBankSVG,1],TUITUER:[tuiTuerSVG,1],TUIBAUM:[tuiBaumSVG,1],
+  TUIDORF:[tuiDorfSVG,1],TUIKANONE:[tuiKanoneSVG,1],TUIMANN:[tuiMannSVG,1],TUIBURG:[tuiBurgSVG,1],TUIBURGV:[tuiBurgVSVG,1],TUIRIESE:[tuiRieseSVG,1],
+  TUITHEKE:[tuiThekeSVG,1],TUIEISP:[()=>tuiKugelEisSVG('p'),1],TUIEISV:[()=>tuiKugelEisSVG('v'),1],TUIEISS:[()=>tuiKugelEisSVG('s'),1],TUIKISTE:[tuiKisteSVG,1],TUIBECHER:[tuiBecherSVG,1],TUITUETCHEN:[tuiTuetchenSVG,1]});
+Object.assign(SETS2,{
+  tuiflur:{clean:1, sky:'#fdeedd', room:'flur'},
+  tuihalle:{clean:1, sky:'#d8e6f2', room:'halle'},
+  tuicafe:{clean:1, sky:'#d8e6f2', room:'cafe'}
+});
+TSYL.ZUG=TSYL.ZUG||'ZUG'; TSYL.BURG=TSYL.BURG||'BURG'; TSYL.EIS=TSYL.EIS||'EIS';
+
+/* ---------- sounds: sliding door, wind-up ticks, toot, boing, jingle bells, plopp ---------- */
+const tuiLate=()=>!tale||!tale.t||tale.t.id!=='tuin'||!taleOn();
+function tuiTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||tuiLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.015); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function tuiNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||tuiLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.04,d*.2)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function tuiSchwupp(x){ tuiNoise(x,.12,600,2600,520); }
+function tuiTick(x){ tuiTone(x,2600,2400,40,.05,'square'); }
+function tuiToot(x){ [0,1].forEach(i=>setTimeout(()=>{ tuiTone(x,i?523:587,i?523:587,i?520:220,.07,'triangle'); tuiTone(x,i?659:740,i?659:740,i?520:220,.05,'triangle'); },i*300)); }
+function tuiTschu(x){ tuiNoise(x,.05,2200,1400,180); }
+function tuiBoing(x,k){ const f=180+(k||0)*40; tuiTone(x,f,f*2.6,260,.12,'sine'); }
+function tuiBimmel(x){ [1568,1976,2349,1976].forEach((f,i)=>setTimeout(()=>tuiTone(x,f,f*.99,300,.045,'sine'),i*110)); }
+function tuiPlopp(x){ tuiTone(x,500,180,160,.12,'sine'); }
+function tuiPust(x){ tuiNoise(x,.05,900,1800,700); }
+
+/* ---------- helpers ---------- */
+/* put on the winter things that are on (TST.tw: 'm s b'); the overlay sits inside Ehfje's .bb */
+function tuiDress(E){ E=E||(TB&&TB.els.hexe); if(!E) return; const b=E.querySelector(':scope>.bb'); if(!b) return; if(!b.querySelector('.tuiwear')) b.appendChild(el('div','tuiwear',tuiWearSVG()));
+  const on=(TST.tw||'').split(' '); ['m','s','b'].forEach(k=>E.classList.toggle('tw-'+k,on.includes(k))); }
+function tuiWear(k){ const s=new Set((TST.tw||'').split(' ').filter(Boolean)); s.add(k); TST.tw=[...s].join(' '); tuiDress(); }
+/* Janneke in the pram: TB.els.wagen, she sits inside, the front side over her */
+function tuiPram(x,y,w){ const mk=TB.mk, W=mk('wagen','tuiwag',tuiWagenSVG(),x,y,w); const J=mk('janneke','famjn',jannekeSVG(),57,36,0,'wagen'); J.style.width='44%'; J.dataset.mood=TST.jam||'smile';
+  const V=el('div','kid tuiwv',tuiWagenVSVG()); W.querySelector('.bb').appendChild(V); return W; }
+/* a point inside an element in % of the stage (layout sizes, also correct while the camera flies in) */
+const tuiAt=(e,fx,fy)=>eikAt(e,fx,fy);
+/* Ehfje bounces once (in the bouncy castle): h vh high, ms long; the castle squashes when she lands */
+function tuiBounce(E,h,ms,cb){ if(!E) return; const u=vu(), kf=[]; for(let i=0;i<=14;i++){ const f=i/14, y=-Math.sin(f*Math.PI)*h*u, sq=f<.08||f>.92?.9:1; kf.push({transform:`translateY(${y.toFixed(1)}px) scale(${(2-sq).toFixed(2)},${sq})`}); }
+  E.getAnimations().filter(a=>a.id==='tuib').forEach(a=>a.cancel());
+  try{ const an=E.animate(kf,{duration:ms||800,easing:'linear'}); an.id='tuib'; an.onfinish=()=>{ if(cb) cb(); }; }catch(e){ if(cb) cb(); } }
+function tuiSquash(){ const B=TB&&TB.els.burg; if(!B) return; [B,TB.els.burgv].forEach(e=>{ if(!e) return; try{ e.animate([{transform:'none'},{transform:'scale(1.03,.95)'},{transform:'scale(.99,1.02)'},{transform:'none'}],{duration:420,easing:'ease-out'}); }catch(err){} }); }
+/* the toy train goes round the oval of the village; TB.tz: {t (angle), v (rad/s)} */
+function tuiZugAt(a){ const D=TB.els.dorf, r=D.getBoundingClientRect(), w=r.width/400, h=r.height/220, x=r.left+(TUIOV.cx+Math.cos(a)*TUIOV.rx)*w, y=r.top+(TUIOV.cy+Math.sin(a)*TUIOV.ry)*h; return [x,y]; }
+function tuiZugPlace(){ const Z=TB.els.zug, s=TB.tz; if(!Z||!s) return; const [x,y]=tuiZugAt(s.t), d=Math.sin(s.t); putAt(Z,x,y-Z.offsetHeight*.42);
+  Z.style.zIndex=d>0?3:1; Z.querySelector('.bb').style.transform=`scaleX(${d>=0?1:-1}) scale(${(.8+.2*d).toFixed(3)})`; }
+function tuiZugGo(v){ if(!TB||!TB.tz) return; TB.tz.v=v; if(TB.tz.loop) return; TB.tz.loop=1; const sc=TB.sc, run=tale.run; let t0=now(), q=0;
+  const step=()=>{ if(!okRun(run,sc)||!TB||!TB.tz) return; const t=now(), dt=Math.min(.05,(t-t0)/1000); t0=t; const s=TB.tz; s.t-=s.v*dt; tuiZugPlace();
+    if(s.v>.3){ q+=dt; if(q>.42){ q=0; const [x,y]=ctr(TB.els.zug); tuiTschu(x); fxAdd({k:'steam',x:x+(Math.random()-.5)*vu()*2,y:y-vu()*4,vy:-(4+Math.random()*3)*vu(),vx:(Math.random()-.5)*4*vu(),ph:Math.random()*6,s:1.1,life:1.6,c:'rgba(255,255,255,.9)'}); } }
+    requestAnimationFrame(step); };
+  requestAnimationFrame(step); }
+/* the giant star: its five points in stage %, as a five-pointed star drawn in one line (0 2 4 1 3 0) */
+function tuiStarPts(){ const T=TB.els.riese, [cx,cy]=tuiAt(T,TUISTAR[0],TUISTAR[1]+.006), W=TB.W, R=9.5, ax=W.offsetHeight/W.offsetWidth, P=[];
+  for(let i=0;i<5;i++){ const a=-Math.PI/2+i*2*Math.PI/5; P.push([+(cx+Math.cos(a)*R*ax).toFixed(2),+(cy+Math.sin(a)*R).toFixed(2)]); } return [0,2,4,1,3,0].map(i=>P[i]); }
+
+/* ---------- the four new gestures: aufziehen (wind up the toy train), flocken (catch the snowflakes), hopsen (bounce in the castle),
+   stapeln (scoops into the treasure chest) ---------- */
+Object.assign(G2,{
+ /* aufziehen: draw circles around the wind-up key of the little engine, either way round, small wobbly circles count too. The angle adds
+    up around the middle of the last points (or the key); every full turn is one click of the spring, a.n turns are enough. Progress stays
+    when the finger lifts. A stroke that adds nothing is a try. a:{id (the train), n, r (zone radius, vh)}; hooks winding(p), wound(k) */
+ aufziehen:{ c(){ const Z=TB.els[TB.a.id], k=Z&&Z.querySelector('.tuikey'); return k?ctr(k):[innerWidth/2,innerHeight/2]; },
+   setup(){ TB.az={p:0,k:0,run:0,lp:null,pts:[],auto:false,mv:0,sx:0,sy:0,g0:0,lc:0,fin:false,rot:0};
+     const Z=el('div','tuizn'); TB.act.appendChild(Z); TB.azz=Z; const s=(TB.a.r||18)*1.1; Z.style.width=Z.style.height=s+'vh'; putAt(Z,...this.c()); },
+   inZ(x,y){ const [cx,cy]=this.c(); return Math.hypot(x-cx,y-cy)<vu()*(TB.a.r||18); },
+   down(x,y){ const s=TB.az; if(s.auto||s.fin) return; s.lp=null; s.pts=[]; s.run=0; s.mv=0; s.sx=x; s.sy=y; s.g0=s.p; if(this.inZ(x,y)) poke2(); },
+   move(x,y){ const s=TB.az; if(!TB.pd||s.fin||s.auto) return; s.mv=Math.max(s.mv,Math.hypot(x-s.sx,y-s.sy)); if(!this.inZ(x,y)){ s.lp=null; s.pts=[]; return; }
+     const t=now(); s.pts.push([x,y,t]); while(s.pts.length>3&&t-s.pts[0][2]>900) s.pts.shift();
+     let [cx,cy]=this.c(); if(s.pts.length>6){ let mx=0,my=0; s.pts.forEach(p=>{ mx+=p[0]; my+=p[1]; }); mx/=s.pts.length; my/=s.pts.length;
+       let sp=0; s.pts.forEach(p=>{ sp=Math.max(sp,Math.hypot(p[0]-mx,p[1]-my)); }); if(sp>vu()*1.6){ cx=mx; cy=my; } }
+     const lp=s.lp; s.lp=[x,y]; if(!lp) return; const u=vu(); if(Math.hypot(x-cx,y-cy)<u*.7||Math.hypot(lp[0]-cx,lp[1]-cy)<u*.7) return;
+     let d=Math.atan2(y-cy,x-cx)-Math.atan2(lp[1]-cy,lp[0]-cx); while(d>Math.PI) d-=2*Math.PI; while(d<-Math.PI) d+=2*Math.PI; if(Math.abs(d)>1.1) return;
+     if(s.run&&Math.sign(d)!==Math.sign(s.run)){ s.run=0; s.pend=0; } s.run+=d; s.pend=(s.pend||0)+Math.abs(d); this.spin(d); if(Math.abs(s.run)>.9){ this.add(s.pend); s.pend=0; } },
+   spin(d){ const s=TB.az, Z=TB.els[TB.a.id]; s.rot+=d*57.3; Z.style.setProperty('--kr',(s.rot*2.2).toFixed(1)+'deg'); s.lc+=Math.abs(d); if(s.lc>Math.PI/3){ s.lc=0; tuiTick(this.c()[0]); } },
+   add(g){ const s=TB.az, n=TB.a.n||3; if(s.fin) return; s.p=Math.min(n,s.p+g/(2*Math.PI)); const [cx,cy]=this.c();
+     if(Math.random()<.5) fxAdd({k:'spark',x:cx+(Math.random()-.5)*vu()*5,y:cy+(Math.random()-.5)*vu()*5,vx:(Math.random()-.5)*14*vu(),vy:-(4+Math.random()*8)*vu(),life:.6,s:.7,c:rnd(GLCOL)});
+     if(TB.sc.winding) TB.sc.winding(s.p/n);
+     while(s.k<Math.floor(s.p)){ s.k++; chimeAt([660+s.k*160,990+s.k*160],cx); poke2(); fxBurst(cx,cy,14,GLCOL); sqs(TB.els[TB.a.id]); if(TB.sc.wound) TB.sc.wound(s.k); }
+     if(s.p>=n) this.finish(); },
+   finish(){ const s=TB.az; if(s.fin) return; s.fin=true; if(TB.azz) TB.azz.classList.remove('g2hint'); bLater(()=>done2(),500); },
+   up(){ const s=TB.az; if(s.auto||s.fin) return; if(s.mv<vu()*2||s.p-s.g0<.03) miss2(); },
+   frames(){ const [cx,cy]=this.c(), u=vu(), R=u*6.5, f=[[cx+R,cy+u*10,1,0]]; for(let i=0;i<=32;i++){ const a=i/16*Math.PI*2; f.push([cx+Math.cos(a)*R,cy+Math.sin(a)*R*.9,.85,1]); } f.push([cx+R,cy+u*4,1,0]); return f; },
+   hint(){ const s=TB.az; if(s.auto||s.fin) return; const Z=TB.azz; putAt(Z,...this.c()); Z.classList.remove('g2hint'); void Z.offsetWidth; Z.classList.add('g2hint'); bLater(()=>Z&&Z.classList.remove('g2hint'),3000); ghost(this.frames(),3000); },
+   auto(){ const s=TB.az; if(s.auto||s.fin) return; s.auto=true; ghost(this.frames(),2400,3); const sc=TB.sc, run=tale.run, d=.3;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||s.fin){ clearInterval(iv); return; } this.spin(d); this.add(d); },55); taleT.push(iv); } },
+
+ /* flocken: big soft snowflakes drift out of the snow machine, slowly, to the right and down, swaying. Tap one and it is caught (it
+    flies into Ehfje's hands). They slow down near a finger that rests on the screen, and every miss makes them all a little slower.
+    Lost ones fade and new ones come. a:{src (the machine), at:[fx,fy] (the nozzle), n, max, every (ms)}; hook caught(k,x,y) */
+ flocken:{ setup(){ const a=TB.a; TB.fl={b:[],k:0,slow:1,auto:false,fin:false,next:now()+200};
+     g2loop(dt=>{ const s=TB.fl; if(s.fin) return; const u=vu(), t=now();
+       if(s.b.filter(b=>!b.gone).length<(a.max||3)&&t>=s.next){ this.spawn(); s.next=t+(a.every||1500)/s.slow; }
+       s.b.forEach(b=>{ if(b.gone) return; let f=s.slow*(s.auto?.6:1); if(TB.pd){ const d=Math.hypot(TB.pd.cx-b.x,TB.pd.cy-b.y); if(d<u*16) f*=.2; }
+         b.age+=dt; b.vx*=Math.pow(.55,dt); b.x+=(b.vx+u*1.5)*f*dt; b.y+=b.vy*f*dt; const sx=Math.sin(b.age*1.6+b.ph)*u*2.2; b.el.style.rotate=(b.age*30+b.ph*40).toFixed(0)+'deg';
+         putAt(b.el,b.x+sx,b.y); if(b.y>innerHeight*.94||b.x>innerWidth*1.02) this.lose(b); }); }); },
+   src(){ const a=TB.a; return relEl(TB.els[a.src],a.at||TUIDUESE); },
+   spawn(){ const u=vu(), [sx,sy]=this.src(), e=el('div','tp2 tuifl',tuiFlockeSVG()); e.style.width=(9+Math.random()*2)+'vh'; TB.act.appendChild(e);
+     const b={el:e,x:sx,y:sy,vx:(16+Math.random()*14)*u,vy:(5+Math.random()*3)*u*TB.fl.slow,age:0,ph:Math.random()*6,gone:false}; putAt(e,b.x,b.y);
+     try{ e.animate([{scale:.2,opacity:0},{scale:1,opacity:1}],{duration:500,easing:'cubic-bezier(.3,1.6,.5,1)'}); }catch(err){} tuiPust(sx);
+     for(let i=0;i<5;i++) fxAdd({k:'snow',x:sx,y:sy+(Math.random()-.5)*u*3,vy:(2+Math.random()*3)*u,vx:(10+Math.random()*20)*u,ph:Math.random()*6,s:.4+Math.random()*.5,life:2.5,c:'rgba(235,245,255,.95)'});
+     TB.fl.b.push(b); return b; },
+   lose(b){ b.gone=true; b.el.style.transition='opacity .8s'; b.el.style.opacity=0; bLater(()=>b.el.remove(),900); TB.fl.slow=Math.max(.45,TB.fl.slow*.85); },
+   hit(x,y){ const u=vu(); let best=null,bd=1e9; TB.fl.b.forEach(b=>{ if(b.gone) return; const d=Math.hypot(x-b.x,y-b.y); if(d<Math.max(b.el.offsetWidth*.9,u*9)&&d<bd){ bd=d; best=b; } }); return best; },
+   down(x,y){ const s=TB.fl; if(s.fin||s.auto) return; const b=this.hit(x,y); if(b) return this.catchIt(b); s.slow=Math.max(.45,s.slow*.85); fxBurst(x,y,5,['rgba(235,245,255,.9)']); miss2(); },
+   move(){}, up(){},
+   catchIt(b){ const s=TB.fl; if(b.gone||s.fin) return; b.gone=true; const k=++s.k, n=TB.a.n||3, x=b.x, y=b.y, E=TB.els.hexe, [hx,hy]=E?relEl(E.querySelector('.bb'),[.5,.62]):[x,y];
+     dingRing(x,y,vu()*12,'#e8f6ff'); glitterBurst(x,y,12,12); chimeAt([[1175,1568],[1318,1760],[1568,2093],[1760,2349]][Math.min(3,k-1)],x); poke2();
+     try{ b.el.animate([{transform:'none'},{transform:`translate(${(hx-x)/2}px,${Math.min(0,hy-y)-vu()*8}px) scale(1.2)`},{transform:`translate(${hx-x}px,${hy-y}px) scale(.3)`,opacity:.2}],{duration:800,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>{ b.el.remove(); if(E){ sqs(E); glitterBurst(hx,hy,8,8); } }; }catch(e){ b.el.remove(); }
+     if(TB.sc.caught) TB.sc.caught(k,x,y);
+     if(k>=n){ s.fin=true; s.b.forEach(q=>{ if(!q.gone){ q.gone=true; q.el.style.transition='opacity .6s'; q.el.style.opacity=0; } }); bLater(()=>done2(),900); } },
+   next(){ const live=TB.fl.b.filter(b=>!b.gone&&b.age>.4); return live.length?live.reduce((m,q)=>q.y>m.y?q:m):null; },
+   hint(){ const s=TB.fl; if(s.fin||s.auto) return; const b=this.next(), u=vu(); let p;
+     if(b){ b.el.classList.add('g2hint'); bLater(()=>b.el&&b.el.classList.remove('g2hint'),1600); p=[b.x+u*3,b.y+u*2]; } else { const q=this.src(); p=[q[0]+u*14,q[1]+u*6]; }
+     ghost([[p[0]+u*5,p[1]+u*14,1,0],[p[0],p[1],1,1],[p[0],p[1],.75,1],[p[0],p[1],1,1],[p[0],p[1],1,0]],1400); },
+   auto(){ const s=TB.fl; if(s.auto||s.fin) return; s.auto=true; const step=()=>{ if(!TB||s.fin||TB.done) return; const b=this.next(); if(!b){ bLater(step,400); return; }
+       const u=vu(); ghost([[b.x,b.y+u*8,1,0],[b.x,b.y,.8,1],[b.x,b.y,1,0]],420); bLater(()=>{ if(!b.gone) this.catchIt(b); bLater(step,700); },240); };
+     step(); } },
+
+ /* hopsen: every tap – anywhere – makes Ehfje bounce in the bouncy castle, each time a bit higher (a.h0 + k·a.dh vh); the castle squashes
+    when she lands. Taps while she is in the air don't count (and are no miss). a.n bounces. a:{id, n, h0, dh}; hook hopped(k) */
+ hopsen:{ setup(){ TB.hp2={k:0,busy:false,auto:false,fin:false}; },
+   down(){ const h=TB.hp2; if(h.fin||h.busy||h.auto) return; this.hop(); }, move(){}, up(){},
+   hop(){ const h=TB.hp2, a=TB.a, E=TB.els[a.id]; if(h.fin||h.busy) return; h.busy=true; const hh=(a.h0||8)+h.k*(a.dh||3.2), ms=620+h.k*70, [x]=ctr(E);
+     tuiBoing(x,h.k); tuiSquash(); poke2(); if(TB.sc.jump) TB.sc.jump(h.k+1);
+     tuiBounce(E,hh,ms,()=>{ h.k++; h.busy=false; tuiSquash(); const [fx,fy]=relEl(E,[.5,.95]); glitterBurst(fx,fy,8,10); chimeAt([784+h.k*110],fx); fxBurst(fx,fy,8);
+       if(TB.sc.hopped) TB.sc.hopped(h.k); if(h.k>=a.n){ h.fin=true; bLater(()=>done2(),400); } else if(h.auto) bLater(()=>this.hop(),200); }); },
+   hint(){ const h=TB.hp2; if(h.auto||h.fin) return; const B=TB.els.burg||TB.els[TB.a.id], [x,y]=relEl(B,[.5,.55]), u=vu(); B.classList.add('g2hint'); bLater(()=>B.classList.remove('g2hint'),2200);
+     ghost([[x+u*6,y+u*14,1,0],[x,y,1,1],[x,y,.78,1],[x,y,1,1],[x,y,.78,1],[x,y,1,1],[x,y+u*6,1,0]],1800); },
+   auto(){ const h=TB.hp2; if(h.auto||h.fin) return; h.auto=true; this.hint(); if(!h.busy) bLater(()=>this.hop(),600); } },
+
+ /* stapeln: drag the scoops one by one into the treasure chest; each one lands on the one before (stacked). Like drag; dropped near the
+    chest it goes in, anywhere else it floats home. a:{ids, to (the chest)}; hook item(id,el) */
+ stapeln:Object.assign(Object.create(G2.drag),{
+   setup(){ G2.drag.setup.call(this); TB.stk=0; },
+   zone(){ const T=TB.els[TB.a.to], [x,y]=relEl(T,[.5,.35]); return {x,y,r:Math.max(T.getBoundingClientRect().width*.9,vu()*15)}; },
+   slot(id){ const T=TB.els[TB.a.to], k=TB.stk||0, [x,y]=relEl(T,[.5,.42]), u=vu(); return [x+[0,-u*1.2,u*1][k%3],y-k*u*3.3-u*.8]; },
+   success(id){ if(!TB.left.includes(id)) return; const b=TB.els[id]; TB.act.appendChild(b); b.classList.add('tuiin'); G2.drag.success.call(this,id); TB.stk=(TB.stk||0)+1; } })
+});
+
+/* ================= Eefje im Weihnachtsland ================= */
+/* a family trip to the Christmas show at Daniels Gartenzentrum (Ehfje, Mama, Papa, Janneke in the pram, the unicorn; Boris stays home).
+   Running gag: all day Ehfje asks "Jetzt Eis?" and the answer is "Noch nicht!" – Papa thinks ice cream in winter is mad ("Brrr!"). At
+   the end she gets her ice cream like always, in her blue treasure-chest box, and Papa orders the biggest sundae of all. */
+const TUIDUR={};
+const TUI2={id:'tuin', v2:true, eef:1, fam:1, dur:TUIDUR, title:'Eefje im Weihnachtsland', vtitle:'Ehfje im Weihnachtsland', icon:'🎄',
+ cover:'linear-gradient(180deg,#14305a 0%,#2e5a8a 40%,#8ab8d8 70%,#ffe0a0 100%)',
+ cast(sc){ const A=TB.act, B=SETS2[sc.set];
+  if(B.room){ const R=el('div','eikroom',tuiRoomSVG(B.room)); A.insertBefore(R,A.firstChild); TB.els.room=R; }
+  if(B.room==='halle'||B.room==='cafe') FX.em.push({rate:3,amb:1,fn:()=>{ const u=vu(); fxAdd({k:'glit',x:Math.random()*innerWidth,y:innerHeight*(.08+Math.random()*.55),vy:-u*.4,ph:Math.random()*6,s:.7+Math.random()*.5,life:1.8,amb:1,c:rnd(['rgba(255,226,122,.95)','rgba(255,150,180,.9)','rgba(150,210,255,.9)','rgba(255,255,255,.95)'])}); }});
+  if(sc.schnee){ const S=el('div','tuisnow'); const g=A.querySelector('.eikroom'); g?g.after(S):A.insertBefore(S,A.firstChild); }
+  FAM2.cast.call(this,sc); const mk=TB.mk; try{ alignLoad(['d4'].map(s=>TB.n(s))); }catch(e){}
+  if(sc.pram){ const [x,y,w]=sc.pram; tuiPram(x,y,w); }
+  /* Ehfje on Papa's shoulders (her legs are drawn on him, see SPIEL) */
+  const P=TB.els.papa; if(sc.shoulder&&P){ P.classList.add('splkids'); const b=P.querySelector(':scope>.bb'), E=el('div','tp2 chr eef splback kid',`<div class="bb">${eefjeSVG()}</div>`);
+    E.style.cssText='left:50%;top:6%;width:84%'; b.insertBefore(E,b.firstChild); TB.els.hexe=E; E.dataset.mood=TST.efm||'happy'; E.dataset.arm=TST.efa||'dn'; }
+  if(TB.els.hexe) tuiDress(TB.els.hexe);
+  /* the little village and its toy train */
+  if(sc.dorf){ const [x,y,w]=sc.dorf, D=el('div','tp2 tuidorf',tuiDorfSVG()); D.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(D); TB.els.dorf=D;
+    mk('zug','tuizug',tuiZugSVG(),x,y,w*.26); TB.tz={t:Math.PI/2,v:0}; const sc0=TB.sc; [0,300,800,1600,2600].forEach(ms=>setTimeout(()=>{ if(TB&&TB.sc===sc0&&TB.tz&&!TB.tz.loop) tuiZugPlace(); },ms)); }
+  /* the bouncy castle: back part, (Ehfje inside), front rim */
+  if(sc.burg){ const [x,y,w]=sc.burg, Bk=el('div','tp2 tuiburg',tuiBurgSVG()); Bk.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; const E=TB.els.hexe; E?A.insertBefore(Bk,E):A.appendChild(Bk); TB.els.burg=Bk;
+    const V=el('div','tp2 tuiburg tuibv',tuiBurgVSVG()); V.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(V); TB.els.burgv=V; }
+  if(sc.tuer){ const T=el('div','tuitr'+(TST.tuer?' open':''),tuiTuerSVG()); A.appendChild(T); TB.els.tuer=T; }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); });
+  A.querySelectorAll(':scope>.tp2>svg').forEach(v=>v.style.display='block'); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='zug'){ sqs(b); tuiToot(x); return true; }
+  if(id==='dorf'){ tuiBimmel(x); return true; }
+  if(id==='burg'||id==='burgv'){ tuiBoing(x,2); tuiSquash(); return true; }
+  if(id==='kanone'){ sqs(b); tuiPust(x); for(let i=0;i<6;i++) fxAdd({k:'snow',x:x+u*4,y:y-u*6,vy:(2+Math.random()*3)*u,vx:(10+Math.random()*20)*u,ph:Math.random()*6,s:.5+Math.random()*.5,life:2.5,c:'rgba(235,245,255,.95)'}); return true; }
+  if(id==='mann'){ sqs(b); bubble('hallo!',x,y-u*10,3.6,'#eef6ff'); chime([784,988]); return true; }
+  if(id==='riese'||id==='baum'||/^k\d$/.test(id)){ tuiBimmel(x); glitterBurst(x,y,8,10); return true; }
+  if(id==='wagen'){ sqs(b); FAM2.react('janneke',TB.els.janneke,x,y); return true; }
+  if(id==='kiste'||id==='becher'||id==='theke'||/^e\d$/.test(id)){ sqs(b); chime([988,1318]); return true; }
+  if(id==='bank'||/^w\d$/.test(id)){ if(b.classList.contains('tp2')) sqs(b); chime([784]); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a frosty morning in the hall at home: dress Ehfje warmly – hat, scarf, boots (drag onto her). Boris stays in his basket */
+ {set:'tuiflur', dark:0, u:[70,62,12], ef:[46,65,25,'st'], mama:[28,58,22], papa:[12,58,24], jn:'papa', boris:[63,87,15,'lie'],
+  p:[['bank','TUIBANK',85,88,30],['w1','TUIMUETZE',78,79,8.5],['w2','TUISCHAL',86,80,11],['w3','TUISTIEFEL',94,80.5,8.5]], front:['w1','w2','w3'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'smile',bom:'smile',hop:'jn',tw:'',tuer:0},
+  enter(){ talk('mama','Heute fahren','sagte Mama'); talk('mama','Da gibt es','Und eine Hüpf'); talk('hexe','Und eine Hüpf','rief Ehfje'); talk('hexe','Und danach','Ein Eis?'); talk('papa','Ein Eis?','lachte Papa'); talk('papa','Im Winter','Aber zuerst'); talk('mama','Aber zuerst','Zieh Ehfje');
+    onPh('glitzerte der Frost',()=>{ glitterBurst(innerWidth*.75,innerHeight*.3,14,30); chime([1568,2093]); });
+    onPh('Heute fahren',()=>{ mood('mama','happy'); famArm('mama','up'); }); onPh('Weihnachtsausstellung',()=>{ famArm('mama','dn'); mood('hexe','oh'); });
+    onPh('Und eine Hüpf',()=>{ mood('hexe','laugh'); efArm('up'); }); onPh('blauen Schatzkiste',()=>{ const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,3); });
+    onPh('Ein Eis?',()=>{ mood('papa','laugh'); efArm('dn'); mood('hexe','happy'); }); onPh('Brrr',()=>{ const P=TB.els.papa; P.classList.add('shiver'); bLater(()=>P.classList.remove('shiver'),1200); mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],3); });
+    onPh('Aber zuerst',()=>{ mood('papa','smile'); mood('mama','smile'); }); onPh('Zieh Ehfje',()=>{ ['w1','w2','w3'].forEach((id,i)=>bLater(()=>wiggle(TB.els[id]),i*220)); }); },
+  ready(){ efReady(); efArm('dn'); mood('hexe','happy'); mood('papa','smile'); },
+  a:{t:'drag',ids:['w1','w2','w3'],to:'hexe',w:'SCHAL'},
+  h:'Zieh die Mütze, den Schal und die Stiefel zu Ehfje!',
+  s:'Draußen glitzerte der Frost auf den Dächern. Heute fahren wir zu Daniels Gartenzentrum, sagte Mama. Da gibt es eine große Weihnachtsausstellung! Und eine Hüpfburg! rief Ehfje. Und danach ein Eis in meiner blauen Schatzkiste! Ein Eis? lachte Papa. Im Winter? Brrr! Aber zuerst musst du dich warm anziehen. Zieh Ehfje die Mütze, den Schal und die Stiefel an!',
+  item(id,b){ try{ b.animate([{opacity:1,transform:'none'},{opacity:0,transform:'scale(.6)'}],{duration:380,easing:'ease-in',fill:'forwards'}); }catch(e){ b.style.opacity=0; }
+    bLater(()=>{ tuiWear({w1:'m',w2:'s',w3:'b'}[id]); sqs(TB.els.hexe); const [x,y]=relEl(TB.els.hexe,[.5,id==='w1'?.12:id==='w2'?.48:.9]); glitterBurst(x,y,10,8); },300);
+    mood('hexe',TB.left.length%2?'laugh':'happy'); },
+  done(){ mood('hexe','laugh'); efArm('up'); mood('mama','happy'); },
+  d:[()=>{ onPh('warm eingepackt',()=>{ const [x,y]=relEl(TB.els.hexe,[.5,.3]); hearts(x,y,3); efArm('dn'); },'d1');
+       onPh('Boris gähnte',()=>{ mood('boris','yawn'); sqs(TB.els.boris); },'d1'); onPh('Körbchen',()=>{ mood('boris','sleepy'); },'d1'); },
+     'Fertig! Jetzt war Ehfje warm eingepackt, von der Mütze bis zu den Stiefeln. Boris gähnte und kuschelte sich in sein Körbchen. Er blieb lieber zu Hause, wo es warm ist.',
+     ()=>{ onPh('los ging',()=>{ mood('hexe','laugh'); efArm('up'); chime([523,659,784]); },'d2'); onPh('flog hinterher',()=>{ const U=TB.els.uni; uniFly(true); trail(U,1600); kiPath(U,[[86,40],[112,30]],1800); },'d2'); },
+     'Und los ging es! Alle stiegen ins Auto, und dein Einhorn flog hinterher.', 700]},
+
+ /* 2 – the big glass doors slide open: warm air, lights, a whole forest of Christmas trees. One little tree has no baubles yet –
+    tap its glowing branches (tapall). First "Jetzt Eis?" – "Noch nicht!" */
+ {set:'tuihalle', dark:0, u:[95,82,10], ef:[44,66,24,'st'], mama:[11,57,22], pram:[27,72,23], papa:[88,57,23],
+  p:[['baum','TUIBAUM',66,57,34]], tuer:1,
+  st:{efm:'oh',efa:'dn',mam:'smile',maa:'hold',pam:'smile',paa:'dn',jam:'smile',hop:0,tw:'m s b',tuer:0},
+  enter(){ const T=TB.els.baum; TUIKH.forEach(([fx,fy],i)=>{ const s=el('div','tp2 kid tuisp'); s.style.left=fx*100+'%'; s.style.top=fy*100+'%'; T.appendChild(s); TB.els['k'+(i+1)]=s; });
+    onPh('Schwupp',()=>{ const D=TB.els.tuer; D.classList.add('open'); TST.tuer=1; tuiSchwupp(innerWidth/2); });
+    onPh('überall funkelten',()=>{ mood('hexe','oh'); efArm('up'); glitterBurst(innerWidth/2,innerHeight*.3,24,60); chime([1175,1568,2093]); });
+    onPh('Weihnachtswald',()=>{ mood('hexe','laugh'); mood('janneke','oh'); });
+    talk('hexe','Jetzt Eis?','fragte Ehfje'); talk('mama','Noch nicht','lachte Mama'); onPh('Jetzt Eis?',()=>{ mood('hexe','happy'); efArm('dn'); }); onPh('Noch nicht',()=>{ mood('mama','laugh'); mood('hexe','oh'); });
+    onPh('kleines Bäumchen',()=>{ wiggle(TB.els.baum); mood('hexe','smile'); }); onPh('Tipp auf die',()=>{ ['k1','k2','k3','k4','k5'].forEach((id,i)=>bLater(()=>sqs(TB.els[id]),i*150)); }); },
+  ready(){ efReady(); TB.els.tuer.classList.add('open'); TST.tuer=1; mood('hexe','happy'); mood('mama','smile'); },
+  a:{t:'tapall',ids:['k1','k2','k3','k4','k5'],m:'ring',w:'KUGEL'},
+  h:'Tipp auf die leuchtenden Zweige!',
+  s:'Bei Daniels Gartenzentrum ging die große Glastür auf. Schwupp! Drinnen war es warm, überall funkelten Lichter, und es duftete nach Tannenbäumen. Ein ganzer Weihnachtswald! Jetzt Eis? fragte Ehfje. Noch nicht! lachte Mama. Da stand ein kleines Bäumchen, ganz ohne Schmuck. Tipp auf die Zweige, dann bekommt es Kugeln!',
+  item(id,b){ const k=+id.slice(1), K=el('div','tp2 kid tuikug',kugelSVG(['r','b','g','v','s'][k-1])); K.style.left=b.style.left; K.style.top=(parseFloat(b.style.top)+2)+'%'; TB.els.baum.appendChild(K);
+    b.classList.add('weg'); tuiBimmel(ctr(b)[0]); mood('hexe',TB.left.length%2?'laugh':'happy'); if(k===3){ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],3); } },
+  done(){ const T=TB.els.baum; T.classList.add('lit'); const [x,y]=relEl(T,[.5,0]); glitterBurst(x,y,16,14); mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('Kling, klang',()=>{ tuiBimmel(ctr(TB.els.baum)[0]); },'d1'); onPh('wie die großen',()=>{ efArm('dn'); mood('hexe','happy'); },'d1');
+       onPh('streckte',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); },'d1'); onPh('gluckste',()=>{ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],6); },'d1'); },
+     'Kling, klang! Jetzt glitzerte das kleine Bäumchen wie die großen. Janneke streckte die Hand nach einer roten Kugel aus und gluckste.', 700]},
+
+ /* 3 – the miniature Christmas village; the little toy train has stopped. Ehfje's spell, and the child winds up the engine (aufziehen) */
+ {set:'tuihalle', dark:0, u:[5,82,10], ef:[16,65,24,'st'], papa:[93,57,22], dorf:[60,71,86],
+  st:{efm:'smile',efa:'dn',pam:'smile',paa:'dn',hop:0,tw:'m s b'},
+  enter(){ onPh('Weihnachtsdorf',()=>{ mood('hexe','oh'); const D=TB.els.dorf; D.classList.add('tuiwk'); bLater(()=>D.classList.remove('tuiwk'),1600); tuiBimmel(ctr(D)[0]); });
+    onPh('stand still',()=>{ mood('hexe','worry'); const Z=TB.els.zug; wiggle(Z); });
+    talk('hexe','Kribbel','Dreh Kreise'); onPh('hob Ehfje',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('Kribbel',()=>efSpell(14)); onPh('fahr wieder',()=>{ const [x,y]=ctr(TB.els.zug); glitterBurst(x,y,12,10); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); },
+  a:{t:'aufziehen',id:'zug',n:3,r:18,w:'ZUG'},
+  h:'Mal mit dem Finger Kreise um den Schlüssel!',
+  s:'Dann kamen sie zu einem kleinen Weihnachtsdorf mit Häuschen, Schnee und einer Eisenbahn. Aber die kleine Lok stand still. Da hob Ehfje ihren Finger: Kribbel, krabbel, Funkelschein – kleiner Zug, fahr wieder fein! Mal Kreise um den Schlüssel, dann ziehst du die Lok auf!',
+  winding(p){ if(p>.3&&TST.efm!=='laugh'){ mood('hexe','laugh'); } },
+  wound(k){ efSpell(5); if(k===2) mood('papa','happy'); },
+  done(){ const D=TB.els.dorf; tuiToot(ctr(TB.els.zug)[0]); tuiZugGo(1.15); bLater(()=>{ D.classList.add('lit'); glitterBurst(...relEl(D,[.5,.35]),20,40); },700); mood('hexe','laugh'); efArm('dn'); },
+  d:[()=>{ onPh('Tuut',()=>{ tuiToot(ctr(TB.els.zug)[0]); },'d1'); onPh('Lichter an',()=>{ const D=TB.els.dorf; D.classList.add('lit'); chime([1175,1568,2093]); },'d1'); },
+     'Tuut, tuut! Die kleine Eisenbahn fuhr los, rund um das Weihnachtsdorf. Und in allen Häuschen gingen die Lichter an.',
+     ()=>{ talk('papa','Toll','sagte Papa','d2'); onPh('Toll',()=>{ mood('papa','laugh'); famArm('papa','up'); },'d2'); onPh('klatschte',()=>{ mood('hexe','laugh'); efArm('up'); const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,3); },'d2'); },
+     'Toll gemacht, kleine Hexe! sagte Papa. Und Ehfje klatschte in die Hände.', 700]},
+
+ /* 4 – the winter corner: a snowman and a snow machine blowing big soft flakes – catch three (flocken). One lands on Papa's nose.
+    Second "Jetzt Eis?" – "Noch nicht!" */
+ {set:'tuihalle', dark:0, u:[30,83,11], ef:[46,66,25,'st'], papa:[67,57,23], schnee:1,
+  p:[['kanone','TUIKANONE',14,43,24],['mann','TUIMANN',88,64,20]],
+  st:{efm:'oh',efa:'dn',pam:'smile',paa:'dn',hop:0,tw:'m s b'},
+  enter(){ FX.em.push({rate:7,amb:1,fn:()=>{ const K=TB&&TB.els.kanone; if(!K||!K.isConnected) return; const [x,y]=relEl(K,TUIDUESE), u=vu(); fxAdd({k:'snow',x,y:y+(Math.random()-.5)*u*3,vy:(3+Math.random()*4)*u,vx:(12+Math.random()*26)*u,ph:Math.random()*6,s:.3+Math.random()*.5,life:5,amb:1,c:'rgba(235,245,255,.95)'}); }});
+    onPh('lustiger Schneemann',()=>{ sqs(TB.els.mann); mood('hexe','happy'); }); onPh('Brumm, brumm',()=>{ const K=TB.els.kanone; K.classList.add('tuirun'); tuiPust(ctr(K)[0]); wiggle(K); });
+    talk('hexe','Jetzt Eis?','fragte Ehfje'); talk('papa','Noch nicht','lachte Papa'); talk('papa','Erst fangen','Fang drei');
+    onPh('Jetzt Eis?',()=>{ mood('hexe','smile'); }); onPh('Noch nicht',()=>{ mood('papa','laugh'); famArm('papa','up'); mood('hexe','oh'); }); onPh('Erst fangen',()=>{ famArm('papa','dn'); mood('papa','happy'); mood('hexe','laugh'); }); },
+  ready(){ efReady(); TB.els.kanone.classList.add('tuirun'); mood('hexe','happy'); efArm('up'); },
+  a:{t:'flocken',src:'kanone',at:TUIDUESE,n:3,max:3,every:1500,w:'FLOCKE'},
+  h:'Tipp auf eine Schneeflocke, dann hast du sie!',
+  s:'In der Winterecke stand ein lustiger Schneemann. Und daneben eine Schneemaschine! Brumm, brumm, machte sie, und heraus flogen dicke, weiche Flocken. Jetzt Eis? fragte Ehfje. Noch nicht! lachte Papa. Erst fangen wir Schneeflocken. Fang drei Schneeflocken!',
+  caught(k){ mood('hexe',k%2?'laugh':'happy'); efArm(k%2?'up':'fwd'); },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('auf Papas Nase',()=>{ const P=TB.els.papa, [nx,ny]=relEl(P.querySelector('.bb'),[.5,.2]), F=el('div','tp2 tuifl',tuiFlockeSVG()); F.style.width='5vh'; TB.act.appendChild(F); putAt(F,nx+vu()*10,ny-vu()*20);
+         const [fx,fy]=wpos(nx,ny); kiPath(F,[[fx+2,fy-6],[fx,fy]],1600,()=>{ mood('papa','oh'); }); TB.els.nf=F; },'d1');
+       onPh('Hatschi',()=>{ const F=TB.els.nf; if(F){ F.style.transition='opacity .3s'; F.style.opacity=0; } const P=TB.els.papa; sqs(P); mood('papa','laugh'); const [x,y]=relEl(P.querySelector('.bb'),[.5,.22]); bubble('hatschi!',x,y-vu()*6,4,'#eef6ff');
+         for(let i=0;i<10;i++) fxAdd({k:'snow',x,y,vy:(Math.random()-.5)*20*vu(),vx:(Math.random()-.5)*30*vu(),ph:Math.random()*6,s:.5,life:1.4,c:'rgba(235,245,255,.95)'}); },'d1');
+       onPh('alle lachten',()=>{ mood('hexe','laugh'); mood('papa','laugh'); const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,3); },'d1'); },
+     'Hab dich! Ehfje hatte drei Schneeflocken gefangen. Und eine Flocke landete genau auf Papas Nase. Hatschi! machte Papa, und alle lachten.', 800]},
+
+ /* 5 – the bouncy castle! Boots off, climb in, and every tap she bounces higher (hopsen). Then Papa climbs in too – BOING */
+ {set:'tuihalle', dark:0, u:[96,83,9], ef:[56,67,22,'st'], mama:[9,57,21], pram:[23,72,21], papa:[89,57,23], burg:[56,60,74],
+  st:{efm:'laugh',efa:'up',mam:'smile',maa:'hold',pam:'smile',paa:'dn',jam:'smile',hop:0,tw:'m s'},
+  enter(){ onPh('die Hüpfburg',()=>{ const B=TB.els.burg; tuiSquash(); glitterBurst(...relEl(B,[.5,.2]),16,40); chime([784,988,1175]); mood('hexe','laugh'); });
+    onPh('Stiefel aus',()=>{ const E=TB.els.hexe; sqs(E); }); onPh('kletterte hinein',()=>{ tuiBounce(TB.els.hexe,4,500); tuiBoing(innerWidth/2,0); }); },
+  ready(){ efReady(); mood('hexe','laugh'); efArm('up'); },
+  a:{t:'hopsen',id:'hexe',n:6,h0:7,dh:3.4,w:'BURG'},
+  h:'Tipp, tipp, tipp, dann hüpft Ehfje!',
+  s:'Und dann sah Ehfje sie: die Hüpfburg! Rot und gelb und riesengroß. Schnell zog Ehfje die Stiefel aus und kletterte hinein. Tipp, dann hüpft Ehfje. Und mit jedem Tipp hüpft sie höher!',
+  jump(k){ mood('hexe',k%2?'laugh':'happy'); efArm(k%2?'up':'fwd'); },
+  hopped(k){ if(k===3){ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],4); } if(k===5) mood('mama','laugh'); },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('Hui',()=>{ tuiBounce(TB.els.hexe,14,900); tuiBoing(innerWidth/2,5); },'d1');
+       onPh('nicht mehr nur',()=>{ mood('papa','laugh'); famArm('papa','up'); },'d1');
+       onPh('Er kletterte',()=>{ const P=TB.els.papa, V=TB.els.burgv; TB.act.insertBefore(P,V); famArm('papa','up'); kiPath(P,[[76,46],[68,56]],1200); },'d1');
+       onPh('BOING',()=>{ const P=TB.els.papa, E=TB.els.hexe; tuiBounce(P,5,600); tuiSquash(); tuiBoing(ctr(P)[0],0); bLater(()=>{ tuiBounce(E,26,1300); tuiBoing(ctr(E)[0],8); mood('hexe','oh'); },260); },'d1'); },
+     'Hui, so hoch! Da wollte Papa nicht mehr nur zugucken. Er kletterte auch in die Hüpfburg. Und BOING!',
+     ()=>{ onPh('Papa hüpfte',()=>{ const P=TB.els.papa, E=TB.els.hexe; [0,1,2].forEach(i=>bLater(()=>{ tuiBounce(P,6,560); tuiSquash(); bLater(()=>tuiBounce(E,20+i*3,1000),180); tuiBoing(ctr(E)[0],6+i); },i*1150)); mood('hexe','laugh'); },'d2');
+       talk('hexe','Jetzt Eis?','rief Ehfje','d2'); talk('papa','Gleich','rief Papa','d2');
+       onPh('Jetzt Eis?',()=>{ mood('hexe','happy'); efArm('up'); },'d2'); onPh('Gleich',()=>{ mood('papa','laugh'); mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],6); mood('mama','laugh'); },'d2'); },
+     'Papa hüpfte so doll, dass Ehfje bis fast unters Dach flog. Jetzt Eis? rief Ehfje von ganz oben. Gleich! rief Papa.', 800]},
+
+ /* 6 – the giant tree in the middle of the hall: its star is out. Papa lifts Ehfje onto his shoulders, her spell, and the child draws
+    the star (dots) – it shines again */
+ {set:'tuihalle', dark:.08, u:[6,81,10], papa:[52,58,26], shoulder:1, mama:[30,58,21], pram:[15,73,21],
+  p:[['riese','TUIRIESE',85,65.5,46]],
+  st:{efm:'happy',efa:'up',mam:'smile',maa:'hold',pam:'happy',paa:'legs',jam:'smile',hop:0,tw:'m s b'},
+  enter(){ TB.sc.a.pts=tuiStarPts();
+    onPh('allergrößte',()=>{ const R=TB.els.riese; wiggle(R); glitterBurst(...relEl(R,[.5,.4]),16,40); chime([784,1047,1318]); });
+    onPh('ausgegangen',()=>{ mood('hexe','oh'); mood('mama','oh'); const R=TB.els.riese; tuiTone(ctr(R)[0],520,260,600,.06,'triangle'); });
+    talk('mama','Oh, wie schade','sagte Mama'); onPh('auf seine Schultern',()=>{ const P=TB.els.papa; tuiBounce(P,3,500); mood('papa','laugh'); mood('hexe','laugh'); mood('mama','smile'); });
+    talk('hexe','Kribbel','Fahr mit'); onPh('hob ihren Finger',()=>{ efArm('up'); mood('hexe','happy'); }); onPh('Kribbel',()=>efSpell(16)); onPh('leuchtend sein',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,12,12); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); TB.sc.a.pts=tuiStarPts(); },
+  a:{t:'dots',pts:[[50,50]],sz:5,r:9,w:'STERN'},
+  h:'Fahr mit dem Finger von Stern zu Stern!',
+  s:'Mitten in der großen Halle stand der allergrößte Weihnachtsbaum. Aber oben auf der Spitze war der Stern ausgegangen. Oh, wie schade, sagte Mama. Da hob Papa Ehfje auf seine Schultern, und Ehfje hob ihren Finger: Kribbel, krabbel, Funkelschein – Stern, du sollst wieder leuchtend sein! Fahr mit dem Finger von Stern zu Stern!',
+  dotStep(k){ efSpell(4); if(k===3) mood('hexe','laugh'); },
+  done(){ const R=TB.els.riese; R.classList.add('lit'); TB.dst&&TB.dst.forEach(s=>{ s.style.transition='opacity .6s'; s.style.opacity=0; }); if(TB.dsv) TB.dsv.style.opacity=0;
+    glitterBurst(...relEl(R,TUISTAR),30,40); light({el:R,oy:TUISTAR[1],r0:4,rT:16,k0:.4,kT:.9,warm:.6}); FX.darkT=0; mood('hexe','laugh'); },
+  d:[()=>{ onPh('Pling',()=>{ chimeAt([1568,2093,2637],innerWidth*.85); },'d1'); onPh('Leute in der Halle',()=>{ mood('mama','oh'); mood('papa','oh'); },'d1');
+       onPh('ganz große Augen',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); mood('mama','happy'); mood('papa','laugh'); },'d1'); },
+     'Pling! Der große Stern leuchtete wieder, heller als alle Lichter. Alle Leute in der Halle staunten. Und Janneke machte ganz große Augen.', 800]},
+
+ /* 7 – the café. "Jetzt Eis?" – "Jetzt!" Her ice cream, like always, in her blue treasure chest: three scoops (stapeln). Papa orders
+    the biggest sundae; Janneke's first lick. The drive home in the dark */
+ {set:'tuicafe', dark:0, u:[6,82,10], ef:[15,66,24,'st'], mama:[43,57,20], papa:[92,57,22], jn:'papa',
+  p:[['theke','TUITHEKE',66,76,60],['kiste','TUIKISTE',30,80,15],['e1','TUIEISP',0,0,7.5],['e2','TUIEISV',0,0,7.5],['e3','TUIEISS',0,0,7.5]], front:['kiste','e1','e2','e3'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',jam:'smile',hop:'jn',tw:'m s b'},
+  enter(){ const T=TB.els.theke; [['e1',91],['e2',201],['e3',311]].forEach(([id,x])=>{ const E=TB.els[id], [px,py]=tuiAt(T,x/400,50/200); E.style.left=px+'%'; E.style.top=py+'%'; });
+    talk('hexe','Jetzt Eis?','fragte Ehfje'); talk('mama','Jetzt','Im Café');
+    onPh('ganz leise',()=>{ mood('hexe','smile'); }); onPh('Und Mama sagte',()=>{ mood('mama','happy'); }); onPh('Jetzt! Im',()=>{ mood('hexe','laugh'); efArm('up'); mood('mama','laugh'); famArm('mama','up'); const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,4); chime([784,988,1175,1568]); });
+    onPh('wie immer',()=>{ const K=TB.els.kiste; sqs(K); glitterBurst(...relEl(K,[.5,.3]),14,12); famArm('mama','dn'); efArm('dn'); }); onPh('Leg die',()=>{ ['e1','e2','e3'].forEach((id,i)=>bLater(()=>wiggle(TB.els[id]),i*220)); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('dn'); famArm('mama','dn'); },
+  a:{t:'stapeln',ids:['e1','e2','e3'],to:'kiste',w:'EIS'},
+  h:'Zieh die Eiskugeln in die blaue Schatzkiste!',
+  s:'Jetzt Eis? fragte Ehfje ganz leise. Und Mama sagte: Jetzt! Im Café bekam Ehfje ihr Eis, wie immer in ihrer blauen Schatzkiste. Leg die drei Kugeln in die Schatzkiste!',
+  item(id,b){ tuiPlopp(ctr(b)[0]); mood('hexe',TB.stk%2?'happy':'laugh'); const K=TB.els.kiste; sqs(K); },
+  done(){ mood('hexe','laugh'); efArm('up'); const K=TB.els.kiste; glitterBurst(...relEl(K,[.5,0]),20,16); },
+  d:[()=>{ onPh('Erdbeere',()=>sqs(TB.els.e1),'d1'); onPh('Vanille',()=>sqs(TB.els.e2),'d1'); onPh('Schokolade',()=>sqs(TB.els.e3),'d1');
+       onPh('allergrößten Eisbecher',()=>{ const T=TB.els.theke, [x,y]=tuiAt(T,.86,.18), B=el('div','tp2 tuibech',tuiBecherSVG()); B.style.cssText=`left:${x}%;top:${y-8}%;width:12vh`; TB.act.appendChild(B); TB.els.becher=B; sqs(B); mood('papa','oh'); chime([1175,1568]); },'d1');
+       onPh('Wunderkerze',()=>{ const B=TB.els.becher; if(B){ B.classList.add('spark'); const [x,y]=relEl(B,[.15,0]); glitterBurst(x,y,20,10); } },'d1');
+       talk('papa','Ein Eis im Winter','lachte Papa','d1'); onPh('Ein Eis im Winter',()=>{ mood('papa','happy'); },'d1'); onPh('Lecker',()=>{ mood('papa','laugh'); mood('hexe','laugh'); mood('mama','laugh'); },'d1'); },
+     'Erdbeere, Vanille und Schokolade! Und Papa? Papa bestellte den allergrößten Eisbecher mit Sahne und Wunderkerze. Ein Eis im Winter? Lecker! lachte Papa.',
+     ()=>{ onPh('einmal schlecken',()=>{ mood('janneke','oh'); sqs(TB.els.janneke); },'d2'); onPh('Brrr, kalt',()=>{ mood('janneke','cry'); const J=TB.els.janneke; J.classList.add('shiver'); bLater(()=>J.classList.remove('shiver'),900); },'d2');
+       onPh('und dann lachte',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); famGiggle(ctr(J)[0],8); hearts(...ctr(J),3); },'d2'); },
+     'Janneke durfte einmal schlecken. Brrr, kalt! Sie schüttelte sich, und dann lachte sie und wollte noch mal.',
+     ()=>{ onPh('Heimfahrt',()=>tuiHome(),'d3'); onPh('schliefen ein',()=>{ ['mama','janneke'].forEach(id=>mood(id,'sleepy')); },'d3');
+       talk('hexe','Das war','flüsterte','d3'); onPh('zu den Sternen',()=>{ mood('hexe','smile'); },'d3'); onPh('Das war',()=>{ mood('hexe','happy'); const H=TB.els.heim; if(H){ const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,3); } },'d3'); },
+     'Auf der Heimfahrt war es schon dunkel. Mama und Janneke schliefen ein. Nur Ehfje schaute noch zu den Sternen hinauf. Das war der schönste Tag, flüsterte sie.',
+     ()=>{ onPh('noch heute',()=>{ const H=TB.els.heim; glitterBurst(innerWidth/2,innerHeight*.35,24,50); chime([1318,1568,2093]); },'d4'); },
+     'Und wenn sie nicht aufgegessen haben, dann schlecken sie noch heute.', 1800]}
+ ]};
+
+/* the drive home at night: an overlay over the whole stage, the car from the front with the family inside (Papa drives) */
+function tuiHome(){ if(!TB||TB.els.heim) return; const H=el('div','tuiheim',`<div class="tuihb">${tuiNachtSVG()}</div>`); TB.act.appendChild(H); TB.els.heim=H;
+  const C=el('div','tp2 eikauto tuicar',`<div class="eikab">${eikAutoSVG()}<div class="eikin"></div><div class="eikgl"><div class="eikfog"></div></div><div class="eikwp">${eikWischerSVG()}</div></div>`);
+  C.style.cssText='left:50%;top:64%;width:76vh'; H.appendChild(C); C.style.setProperty('--fog',0); const I=C.querySelector('.eikin');
+  const put=(id,cls,svg,px,py,pw)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${svg}</div>`); e.style.cssText=`left:${px}%;top:${py}%;width:${pw}%`; I.appendChild(e); TB.els[id]=e; return e; };
+  const E=put('hexe','eef',eefjeSVG(),43,58,25); E.dataset.mood='smile'; E.dataset.arm='hug'; tuiDress(E);
+  put('sitz','eiksitz','<svg viewBox="0 0 60 50"><path d="M6 48 Q2 8 30 4 Q58 8 54 48Z" fill="#5ab4ff" stroke="#2a6ab8" stroke-width="3"/></svg>',59,74,17);
+  const J=put('janneke','famjn',jannekeSVG(),59,64,13); J.dataset.mood='smile';
+  const P=put('papa','famp fampa',papaSVG(),24,92,26); P.dataset.mood='smile'; P.dataset.arm='dn';
+  const M=put('mama','famp famma',mamaSVG(),76,92,26); M.dataset.mood='smile'; M.dataset.arm='dn';
+  I.appendChild(el('div','eiklenk','<svg viewBox="0 0 100 40"><path d="M8 40 Q8 4 50 4 Q92 4 92 40" stroke="#2a2a32" stroke-width="9" fill="none"/><path d="M50 40 V20" stroke="#2a2a32" stroke-width="7"/></svg>'));
+  FX.em.push({rate:4,amb:1,fn:()=>snowFlake()}); requestAnimationFrame(()=>H.classList.add('on')); }
+/*<TUIN*/
 
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
@@ -14474,7 +15118,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -14543,6 +15187,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr eef" data-mood="happy" data-arm="up" style="left:40%;top:56%;width:44%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2 chr pks" data-mood="happy" style="left:66%;top:78%;width:22%"><div class="bb">${piekSVG()}</div></div>`+
     [[54,16,3],[30,24,2.6],[76,26,3],[62,44,2.4],[20,58,2.6],[86,60,2.4],[46,30,2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#eaff8a;text-shadow:0 0 1vh #eaff8a;animation-delay:${-k*.5}s">●</span>`).join('')+`</div>`+tw;/*<WLDART*/
+  if(id==='tuin') return `<div class="tuiart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,#3a6a9a 0,#1e3a6a 50%,#0e1e40 90%)"></div><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:30%;border-radius:50% 50% 0 0/30% 30% 0 0;background:linear-gradient(180deg,#ffffff,#d8e4f4)"></div>`+
+    `<div class="tp2 lit" style="left:80%;top:44%;width:34%">${tuiBaumSVG()}</div>`+
+    `<div class="tp2 chr eef tw-m tw-s tw-b" data-mood="laugh" data-arm="up" style="left:40%;top:58%;width:46%"><div class="bb">${eefjeSVG()}<div class="tuiwear">${tuiWearSVG()}</div></div></div>`+
+    `<div class="tp2" style="left:70%;top:84%;width:20%">${tuiKisteSVG()}</div>`+
+    [['p',70,80.5],['v',68.6,77],['s',71,73.6]].map(([c,x,y])=>`<div class="tp2" style="left:${x}%;top:${y}%;width:8%">${tuiKugelEisSVG(c)}</div>`).join('')+
+    [[14,14,3.4],[30,30,2.6],[58,12,3],[90,22,2.6],[10,60,2.4],[52,34,2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">❄</span>`).join('')+`</div>`+tw;/*<TUIART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -14818,6 +15468,7 @@ regTale2(SPL2);
 regTale2(BETT2);
 /* Eefje im tiefen Wald: after bedtime, so the older lines keep their order in voice/clips.tsv */
 regTale2(WLD2);
+regTale2(TUI2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
