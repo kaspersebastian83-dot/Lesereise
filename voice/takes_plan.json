@@ -3863,16 +3863,8 @@
    "text": "Lies mit: Lol. Lamm. See. Men. Es. Turm. Nest. Ot.",
    "items": [
     {
-     "key": "silbe_lol",
-     "say": "Lol"
-    },
-    {
      "key": "silbe_lamm",
      "say": "Lamm"
-    },
-    {
-     "key": "silbe_see",
-     "say": "See"
     },
     {
      "key": "silbe_men",
@@ -3904,10 +3896,6 @@
     {
      "key": "silbe_tan",
      "say": "Tan"
-    },
-    {
-     "key": "silbe_fee",
-     "say": "Fee"
     },
     {
      "key": "silbe_pfan",
