@@ -37,6 +37,7 @@ jagen mit dem Einhorn ihrem Zauberhut hinterher (Teich, Apfelbaum, Wolken, Berg)
 steckt. Neue Gesten dort: Laub vom Besen fegen (hin und her wischen) und mit dem Besen durch glitzernde Ringe fliegen (der Besen
 folgt dem Finger, egal wo er aufgesetzt wird). Zum Schluss malt sie einen Glitzerkreis um den Mond, und die Flügel des Einhorns
 schimmern in allen Farben.
+„Eefje im tiefen Wald“: Am Waldrand findet Ehfje beim Blaubeerpflücken eine stachelige „Beere“ – den kleinen Igel Pieks, der sich verlaufen hat. Sie bringt ihn nach Hause: Zweige zur Seite schieben (mit dem Finger seitlich über den Vorhang aus Zweigen wischen, drei Lagen), mit dem leuchtenden Zauberfinger die Augen im Dunkeln anleuchten (Eichhörnchen, Maus und Ulla), von Stein zu Stein über den Bach hüpfen, den alten Baum Knorz kitzeln, bis die Glühwürmchen in seiner Krone aufwachen, und Pieks als Kugel den Weg zu seiner Familie hinunterschubsen (die Kugel folgt dem Finger am Weg entlang und rollt weiter, wenn man loslässt). Zum Schluss fliegt sie durch Glühwürmchen-Kreise heim.
 Niemand bleibt hängen: nach 7 s leuchtet das Richtige und die Bitte wird wiederholt, nach 2 falschen Tipps leuchtet es sofort,
 nach 22 s löst sich die Szene selbst und das Märchen geht weiter. Dasselbe gilt für die Abenteuer auf den Reisen.
 
