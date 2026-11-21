@@ -4112,6 +4112,29 @@
      "say": "Blitz"
     }
    ]
+  },
+  {
+   "id": "syl_x004_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Loll. Seh. Feh. Hams.",
+   "items": [
+    {
+     "key": "silbe_lol",
+     "say": "Loll"
+    },
+    {
+     "key": "silbe_see",
+     "say": "Seh"
+    },
+    {
+     "key": "silbe_fee",
+     "say": "Feh"
+    },
+    {
+     "key": "silbe_hams",
+     "say": "Hams"
+    }
+   ]
   }
  ]
 }
