@@ -4438,6 +4438,52 @@
      "say": "Nikolaus"
     }
    ]
+  },
+  {
+   "id": "vow_uml_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ä. Ö. Ü.",
+   "items": [
+    {
+     "key": "laut_ae",
+     "say": "Ä"
+    },
+    {
+     "key": "laut_oe",
+     "say": "Ö"
+    },
+    {
+     "key": "laut_ue",
+     "say": "Ü"
+    }
+   ]
+  },
+  {
+   "id": "cv_j_v3L",
+   "model": "eleven_v3",
+   "text": "Lies mit: Jah. Jeh. Jie. Joh. Juh.",
+   "items": [
+    {
+     "key": "silbe_ja",
+     "say": "Jah"
+    },
+    {
+     "key": "silbe_je",
+     "say": "Jeh"
+    },
+    {
+     "key": "silbe_ji",
+     "say": "Jie"
+    },
+    {
+     "key": "silbe_jo",
+     "say": "Joh"
+    },
+    {
+     "key": "silbe_ju",
+     "say": "Juh"
+    }
+   ]
   }
  ]
 }

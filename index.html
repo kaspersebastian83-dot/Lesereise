@@ -2176,18 +2176,19 @@ function uniSVG(p, opt){
 <script>
 "use strict";
 /* ================= DATA ================= */
-const SETS = ['MALOI','SNE','RTU','DHPF','BKWGZ'];
-const VOW = 'AEIOU';
+const SETS = ['MALOI','SNE','RTU','DHPF','BKWGZ','ÄÖÜJ'];
+const VOW = 'AEIOUÄÖÜ';
 const SOUND_TEXT = {A:'Aaaah',E:'Eeeeh',I:'Iiiih',O:'Ooooh',U:'Uuuuh',M:'Mmmmm',L:'Lllll',S:'Sssss',N:'Nnnnn',R:'Rrrrr',
-  F:'Fffff',W:'Wwwww',H:'Hhh',T:'T',D:'D',P:'P',B:'B',K:'K',G:'G',Z:'Ts'};
-const SOUND_TTS = {A:'aa',E:'ee',I:'ie',O:'oh',U:'uh',M:'mmm',L:'lll',S:'sss',N:'nnn',R:'rrr',F:'fff',W:'www',H:'h',T:'t',D:'d',P:'p',B:'b',K:'k',G:'g',Z:'ts'};
+  F:'Fffff',W:'Wwwww',H:'Hhh',T:'T',D:'D',P:'P',B:'B',K:'K',G:'G',Z:'Ts',Ä:'Äääh',Ö:'Öööh',Ü:'Üüüh',J:'Jjjj'};
+const SOUND_TTS = {A:'aa',E:'ee',I:'ie',O:'oh',U:'uh',M:'mmm',L:'lll',S:'sss',N:'nnn',R:'rrr',F:'fff',W:'www',H:'h',T:'t',D:'d',P:'p',B:'b',K:'k',G:'g',Z:'ts',Ä:'äh',Ö:'öh',Ü:'üh',J:'j'};
 const ANLAUT = {
   M:[['Maus','🐭'],['Mond','🌙'],['Mund','👄']], A:[['Apfel','🍎'],['Affe','🐒'],['Ameise','🐜'],['Anker','⚓']], L:[['Löwe','🦁'],['Lampe','💡'],['Lama','🦙'],['Lupe','🔍']],
   O:[['Oma','👵'],['Ohr','👂'],['Opa','👴']], I:[['Igel','🦔'],['Insel','🏝️']], S:[['Sonne','☀️'],['Sofa','🛋️'],['Salat','🥗']], N:[['Nase','👃'],['Nuss','🌰'],['Nudel','🍝']],
   E:[['Elefant','🐘'],['Ente','🦆'],['Engel','👼']], R:[['Rose','🌹'],['Rakete','🚀'],['Regen','🌧️'],['Roboter','🤖']], T:[['Tiger','🐯'],['Tomate','🍅'],['Tür','🚪'],['Trommel','🥁']],
   U:[['Uhr','⏰'],['Uhu','🦉']], D:[['Dino','🦖'],['Dose','🥫'],['Delfin','🐬']], H:[['Hase','🐰'],['Hund','🐶'],['Haus','🏠'],['Hose','👖']],
   P:[['Pilz','🍄'],['Pinguin','🐧'],['Papagei','🦜']], F:[['Fisch','🐟'],['Fuchs','🦊'],['Feder','🪶']], B:[['Banane','🍌'],['Ball','⚽'],['Bär','🐻'],['Brot','🍞']],
-  K:[['Katze','🐱'],['Kuh','🐮'],['Krone','👑'],['Kiwi','🥝']], W:[['Wal','🐳'],['Wolke','☁️'],['Wurm','🪱']], G:[['Gabel','🍴'],['Giraffe','🦒'],['Gitarre','🎸']], Z:[['Zebra','🦓'],['Zug','🚂'],['Zitrone','🍋']]
+  K:[['Katze','🐱'],['Kuh','🐮'],['Krone','👑'],['Kiwi','🥝']], W:[['Wal','🐳'],['Wolke','☁️'],['Wurm','🪱']], G:[['Gabel','🍴'],['Giraffe','🦒'],['Gitarre','🎸']], Z:[['Zebra','🦓'],['Zug','🚂'],['Zitrone','🍋']],
+  J:[['Jojo','🪀'],['Judo','🥋'],['Junge','👦'],['Juwel','💎']]
 };
 const WORDS = [
   ['MA-MA','👩'],['O-MA','👵'],['LA-MA','🦙'],['LI-MO','🥤'],['LI-LA','💜'],
@@ -2219,6 +2220,11 @@ const WORDS = [
   ['WOLF','🐺'],['KAK-TUS','🌵'],['BRE-ZEL','🥨'],['WIND','🌬️'],['KA-NU','🛶'],['ZAU-BER-STAB','🪄'],['KRAB-BE','🦀'],['BLITZ','⚡'],
   /* Nov 2026, second batch */
   ['MA-LEN','🎨'],['LE-SEN','📖'],['AM-SEL','🐦‍⬛'],['SEIL','🪢',3],['A-MEI-SE','🐜',3],['MEER','🌊'],['MAU-ER','🧱'],['TUN-NEL','🚇'],['REN-TIER','🦌',3],['TOPF','🍲'],['PI-LOT','🧑‍✈️'],['FAH-NE','🚩',3],['PA-PIER','📄',3],['HAI','🦈',3],['HAHN','🐓',3],['NAS-HORN','🦏'],['PFO-TE','🐾'],['FASS','🛢️'],['GANS','🪿'],['ZWIE-BEL','🧅',4],['GUR-KE','🥒'],['KRAN','🏗️'],['WAF-FEL','🧇'],['KLEID','👗',4],['ZIR-KUS','🎪'],['WURST','🌭'],['WOL-LE','🧶'],['KOF-FER','🧳'],['KRA-KE','🐙'],['NI-KO-LAUS','🎅'],
+  /* stage 6: Ä Ö Ü J */
+  ['BÄR','🐻'],['KÄ-SE','🧀'],['KÄ-FER','🐞'],['Ä-PFEL','🍎'],['KÄN-GU-RU','🦘'],['GE-MÜ-SE','🥦'],
+  ['LÖ-WE','🦁'],['LÖF-FEL','🥄'],['FLÖ-TE','🪈'],['KRÖ-TE','🐸'],
+  ['TÜR','🚪'],['TÜ-TE','🛍️'],['MÜT-ZE','🧢'],['HÜT-TE','🛖'],['KÜ-KEN','🐥'],['MÜS-LI','🥣'],
+  ['JO-JO','🪀'],['JU-DO','🥋'],['JUN-GE','👦'],['JU-WEL','💎'],
   ['KUH','🐮',4],['ZIE-GE','🐐',4],['PA-PA-GEI','🦜',4],['BEIN','🦵',4],['ZAHN','🦷',4],['GEIST','👻',4],['BIE-NE','🐝',4]
 ].map(([w,e,m])=>({syl:w.split('-'),word:w.replace(/-/g,''),emoji:e,min:m||0}));
 const PROMPTS = {
@@ -2299,7 +2305,7 @@ const CLIPS = {};           // key -> {text (for ElevenLabs), tts (device fallba
 /* Text sent to ElevenLabs. Bare syllables like "Me", "Hi", "We" get read as English words,
    so open syllables are written the German long-vowel way: Meh, Hie, Weh, Muh, Mah, Moh. */
 const cap = s => s[0].toUpperCase()+s.slice(1).toLowerCase();
-const LONG = {A:'ah',E:'eh',I:'ie',O:'oh',U:'uh'};
+const LONG = {A:'ah',E:'eh',I:'ie',O:'oh',U:'uh',Ä:'äh',Ö:'öh',Ü:'üh'};
 function sylVoice(s){ const v=s[s.length-1]; if(LONG[v] && (s.length===1 || (s.length===2 && !LONG[s[0]]))) return cap(s.slice(0,-1)+LONG[s[s.length-1]]); return cap(s); }
 const WORD_VOICE = {WAL:'Wahl'};
 const keyOf = s => s.toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss');
@@ -2634,7 +2640,7 @@ const TASKS={
 
 /* ================= HOME / NAV ================= */
 /* every letter is a star in the sky; found ones glow and can be tapped to hear them */
-const SKYPOS=(()=>{ const all=SETS.join('').split(''), rows=[[5,22,70,15],[7,8,92,28],[8,6,94,41]], out={}; let n=0;
+const SKYPOS=(()=>{ const all=SETS.join('').split(''), rows=[[6,16,78,15],[9,8,90,28],[9,8,90,41]], out={}; let n=0;
   rows.forEach(([cnt,x0,x1,y])=>{ for(let i=0;i<cnt;i++,n++) out[all[n]]=[x0+(x1-x0)*i/(cnt-1), y+((n*37)%7-3)]; }); return out; })();
 let skyShown=-1;
 function drawSky(){ const box=$('letterSky'), have=letters(); box.innerHTML='';

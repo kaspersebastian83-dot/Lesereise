@@ -15,7 +15,7 @@ FOLDERS = [f.strip() for f in os.environ.get("FOLDERS", "audio").split(",") if f
 KEYS = [k.strip() for k in os.environ.get("KEYS", "laut_,silbe_,wort_").split(",") if k.strip()]
 
 LAUT = {"m": "m", "l": "l", "s": "z", "n": "n", "r": "ʁ", "t": "t", "d": "d", "h": "h", "p": "p", "f": "f",
-        "b": "b", "k": "k", "w": "v", "g": "ɡ", "z": "ts", "a": "aː", "e": "eː", "i": "iː", "o": "oː", "u": "uː"}
+        "b": "b", "k": "k", "w": "v", "g": "ɡ", "z": "ts", "a": "aː", "e": "eː", "i": "iː", "o": "oː", "u": "uː", "ae": "ɛː", "oe": "øː", "ue": "yː", "j": "j"}
 texts = {}
 for line in open(os.path.join(ROOT, "voice", "clips.tsv"), encoding="utf-8"):
     if "\t" in line:

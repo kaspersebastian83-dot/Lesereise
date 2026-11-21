@@ -19,7 +19,7 @@ SR = 44100
 HOP = int(SR * 0.005)  # 5 ms frames
 os.makedirs(OUT, exist_ok=True)
 
-HELD = set("mnlsfwrhz")
+HELD = set("mnlsfwrhzj")
 VOICELESS_STOP = set("tpk")
 VOICED_STOP = set("bdg")
 
@@ -255,7 +255,7 @@ def main():
                     y = fade(level(np.concatenate([cons[:int(SR * 0.02)], grain_noise(cons, 0.42 if C == "h" else 0.55)])), 0.03, 0.12)
                 else:
                     target = 0.32 if C == "l" else 0.5
-                    y = fade(level(stretch(cons, max(0.1, min(1.0, dur / target)), C in "mnlw")), 0.03, 0.12)
+                    y = fade(level(stretch(cons, max(0.1, min(1.0, dur / target)), C in "mnlwj")), 0.03, 0.12)
             elif C in VOICELESS_STOP:
                 y = fade(level(seg[:on + int(SR * 0.008)]), 0.002, 0.02)
             elif C in VOICED_STOP:
