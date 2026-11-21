@@ -2573,8 +2573,14 @@ const TASKS={
   },
   /* 3 — slide consonant into vowel, then find the syllable */
   blend(first){
-    const L=letters(), cons=L.filter(l=>!VOW.includes(l)), vows=L.filter(l=>VOW.includes(l));
-    let c,v; do{ c=pickLetter(cons); v=rnd(vows) }while(c+v===G.last); G.last=c+v;
+    /* syllable pool: active letters, or (default) every letter – familiar pairs still come up about half the time */
+    const L=S.sylAll===false? letters() : SETS.join('').split(''), cons=L.filter(l=>!VOW.includes(l)), vows=L.filter(l=>VOW.includes(l));
+    const myC=letters().filter(l=>!VOW.includes(l)), myV=letters().filter(l=>VOW.includes(l));
+    G.recent=G.recent||[]; let c,v,n=0;
+    do{ const fam=S.sylAll!==false && Math.random()<.5;
+      c=fam? rnd(myC) : pickLetter(cons); v=fam? rnd(myV) : rnd(vows); n++;
+    }while((c+v===G.last || G.recent.includes(c+v)) && n<40);
+    G.last=c+v; G.recent=[c+v,...G.recent].slice(0,6);
     const sk='silbe_'+keyOf(c+v), ck='laut_'+keyOf(c), vk='laut_'+keyOf(v);
     const box=el('div','blend');
     const a=el('div','tile cA',S.mixed?c.toLowerCase():c), ar=el('button','arrow round','➜'), b=el('div','tile cB',S.mixed?v.toLowerCase():v);
@@ -15582,6 +15588,12 @@ function openParent(){
     <button data-v="0" class="${S.mixed?'':'sel'}">GROSSBUCHSTABEN</button>
     <button data-v="1" class="${S.mixed?'sel':''}">Groß und klein</button></div></div>
 
+  <h2>Silben-Brücke</h2>
+  <div class="box"><div class="seg" id="pSyl">
+    <button data-v="0" class="${S.sylAll===false?'sel':''}">Nur aktive Buchstaben</button>
+    <button data-v="1" class="${S.sylAll===false?'':'sel'}">Alle Buchstaben (100 Silben)</button></div>
+    <p>Bei „Alle“ kommen etwa die Hälfte der Silben aus den aktiven Buchstaben, der Rest aus allen anderen.</p></div>
+
   <h2>Rundenlänge</h2>
   <div class="box"><div class="seg" id="pLen">${[3,5,8].map(n=>`<button data-v="${n}" class="${S.roundLen===n?'sel':''}">${n} Aufgaben</button>`).join('')}</div></div>
 
@@ -15633,6 +15645,7 @@ function openParent(){
   const lv=$('pLevel');
   SETS.forEach((s,i)=>{ const b=el('button',i===S.level?'sel':'', (i+1)+' · +'+s.split('').join(' ')); b.onclick=()=>{S.level=i;S.streak=0;save();openParent()}; lv.appendChild(b); });
   $('pCase').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.mixed=v==='1'; save(); openParent(); };
+  $('pSyl').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.sylAll=v==='1'; save(); openParent(); };
   $('pLen').onclick=e=>{ const v=e.target.dataset.v; if(v==null)return; S.roundLen=+v; save(); openParent(); };
   $('pClose').onclick=()=>{ if(parentFrom==='bookScr') openBook(null,'back'); else if(parentFrom==='start') show('start'); else goHome(); };
   const ta=$('pList'); ta.value=clipList(false);
