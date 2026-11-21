@@ -4135,6 +4135,309 @@
      "say": "Hams"
     }
    ]
+  },
+  {
+   "id": "syl_x005_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Len. Am. Seil. Mei. Meer. Mau. Tun. Nel.",
+   "items": [
+    {
+     "key": "silbe_len",
+     "say": "Len"
+    },
+    {
+     "key": "silbe_am",
+     "say": "Am"
+    },
+    {
+     "key": "silbe_seil",
+     "say": "Seil"
+    },
+    {
+     "key": "silbe_mei",
+     "say": "Mei"
+    },
+    {
+     "key": "silbe_meer",
+     "say": "Meer"
+    },
+    {
+     "key": "silbe_mau",
+     "say": "Mau"
+    },
+    {
+     "key": "silbe_tun",
+     "say": "Tun"
+    },
+    {
+     "key": "silbe_nel",
+     "say": "Nel"
+    }
+   ]
+  },
+  {
+   "id": "syl_x006_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Ren. Tier. Topf. Lot. Fah. Pier. Hai. Hahn.",
+   "items": [
+    {
+     "key": "silbe_ren",
+     "say": "Ren"
+    },
+    {
+     "key": "silbe_tier",
+     "say": "Tier"
+    },
+    {
+     "key": "silbe_topf",
+     "say": "Topf"
+    },
+    {
+     "key": "silbe_lot",
+     "say": "Lot"
+    },
+    {
+     "key": "silbe_fah",
+     "say": "Fah"
+    },
+    {
+     "key": "silbe_pier",
+     "say": "Pier"
+    },
+    {
+     "key": "silbe_hai",
+     "say": "Hai"
+    },
+    {
+     "key": "silbe_hahn",
+     "say": "Hahn"
+    }
+   ]
+  },
+  {
+   "id": "syl_x007_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Pfoh. Fass. Gans. Zwie. Gur. Kran. Waf. Kleid.",
+   "items": [
+    {
+     "key": "silbe_pfo",
+     "say": "Pfoh"
+    },
+    {
+     "key": "silbe_fass",
+     "say": "Fass"
+    },
+    {
+     "key": "silbe_gans",
+     "say": "Gans"
+    },
+    {
+     "key": "silbe_zwie",
+     "say": "Zwie"
+    },
+    {
+     "key": "silbe_gur",
+     "say": "Gur"
+    },
+    {
+     "key": "silbe_kran",
+     "say": "Kran"
+    },
+    {
+     "key": "silbe_waf",
+     "say": "Waf"
+    },
+    {
+     "key": "silbe_kleid",
+     "say": "Kleid"
+    }
+   ]
+  },
+  {
+   "id": "syl_x008_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zir. Kus. Wurst. Kof. Fer. Krah. Laus.",
+   "items": [
+    {
+     "key": "silbe_zir",
+     "say": "Zir"
+    },
+    {
+     "key": "silbe_kus",
+     "say": "Kus"
+    },
+    {
+     "key": "silbe_wurst",
+     "say": "Wurst"
+    },
+    {
+     "key": "silbe_kof",
+     "say": "Kof"
+    },
+    {
+     "key": "silbe_fer",
+     "say": "Fer"
+    },
+    {
+     "key": "silbe_kra",
+     "say": "Krah"
+    },
+    {
+     "key": "silbe_laus",
+     "say": "Laus"
+    }
+   ]
+  },
+  {
+   "id": "w_x059_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Malen. Lesen. Amsel. Seil. Meer. Mauer.",
+   "items": [
+    {
+     "key": "wort_malen",
+     "say": "Malen"
+    },
+    {
+     "key": "wort_lesen",
+     "say": "Lesen"
+    },
+    {
+     "key": "wort_amsel",
+     "say": "Amsel"
+    },
+    {
+     "key": "wort_seil",
+     "say": "Seil"
+    },
+    {
+     "key": "wort_meer",
+     "say": "Meer"
+    },
+    {
+     "key": "wort_mauer",
+     "say": "Mauer"
+    }
+   ]
+  },
+  {
+   "id": "w_x060_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Tunnel. Rentier. Topf. Pilot. Fahne. Papier.",
+   "items": [
+    {
+     "key": "wort_tunnel",
+     "say": "Tunnel"
+    },
+    {
+     "key": "wort_rentier",
+     "say": "Rentier"
+    },
+    {
+     "key": "wort_topf",
+     "say": "Topf"
+    },
+    {
+     "key": "wort_pilot",
+     "say": "Pilot"
+    },
+    {
+     "key": "wort_fahne",
+     "say": "Fahne"
+    },
+    {
+     "key": "wort_papier",
+     "say": "Papier"
+    }
+   ]
+  },
+  {
+   "id": "w_x061_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Hai. Hahn. Nashorn. Pfote. Fass. Gans.",
+   "items": [
+    {
+     "key": "wort_hai",
+     "say": "Hai"
+    },
+    {
+     "key": "wort_hahn",
+     "say": "Hahn"
+    },
+    {
+     "key": "wort_nashorn",
+     "say": "Nashorn"
+    },
+    {
+     "key": "wort_pfote",
+     "say": "Pfote"
+    },
+    {
+     "key": "wort_fass",
+     "say": "Fass"
+    },
+    {
+     "key": "wort_gans",
+     "say": "Gans"
+    }
+   ]
+  },
+  {
+   "id": "w_x062_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Zwiebel. Gurke. Kran. Waffel. Kleid. Zirkus.",
+   "items": [
+    {
+     "key": "wort_zwiebel",
+     "say": "Zwiebel"
+    },
+    {
+     "key": "wort_gurke",
+     "say": "Gurke"
+    },
+    {
+     "key": "wort_kran",
+     "say": "Kran"
+    },
+    {
+     "key": "wort_waffel",
+     "say": "Waffel"
+    },
+    {
+     "key": "wort_kleid",
+     "say": "Kleid"
+    },
+    {
+     "key": "wort_zirkus",
+     "say": "Zirkus"
+    }
+   ]
+  },
+  {
+   "id": "w_x063_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Wurst. Wolle. Koffer. Krake. Nikolaus.",
+   "items": [
+    {
+     "key": "wort_wurst",
+     "say": "Wurst"
+    },
+    {
+     "key": "wort_wolle",
+     "say": "Wolle"
+    },
+    {
+     "key": "wort_koffer",
+     "say": "Koffer"
+    },
+    {
+     "key": "wort_krake",
+     "say": "Krake"
+    },
+    {
+     "key": "wort_nikolaus",
+     "say": "Nikolaus"
+    }
+   ]
   }
  ]
 }
