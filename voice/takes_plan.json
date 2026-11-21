@@ -4484,6 +4484,399 @@
      "say": "Juh"
     }
    ]
+  },
+  {
+   "id": "syl_x009_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Mäh. Möh. Müh. Läh. Löh. Lüh. Säh. Söh.",
+   "items": [
+    {
+     "key": "silbe_mae",
+     "say": "Mäh"
+    },
+    {
+     "key": "silbe_moe",
+     "say": "Möh"
+    },
+    {
+     "key": "silbe_mue",
+     "say": "Müh"
+    },
+    {
+     "key": "silbe_lae",
+     "say": "Läh"
+    },
+    {
+     "key": "silbe_loe",
+     "say": "Löh"
+    },
+    {
+     "key": "silbe_lue",
+     "say": "Lüh"
+    },
+    {
+     "key": "silbe_sae",
+     "say": "Säh"
+    },
+    {
+     "key": "silbe_soe",
+     "say": "Söh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x010_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Süh. Näh. Nöh. Nüh. Räh. Röh. Rüh. Täh.",
+   "items": [
+    {
+     "key": "silbe_sue",
+     "say": "Süh"
+    },
+    {
+     "key": "silbe_nae",
+     "say": "Näh"
+    },
+    {
+     "key": "silbe_noe",
+     "say": "Nöh"
+    },
+    {
+     "key": "silbe_nue",
+     "say": "Nüh"
+    },
+    {
+     "key": "silbe_rae",
+     "say": "Räh"
+    },
+    {
+     "key": "silbe_roe",
+     "say": "Röh"
+    },
+    {
+     "key": "silbe_rue",
+     "say": "Rüh"
+    },
+    {
+     "key": "silbe_tae",
+     "say": "Täh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x011_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Töh. Tüh. Däh. Döh. Düh. Häh. Höh. Hüh.",
+   "items": [
+    {
+     "key": "silbe_toe",
+     "say": "Töh"
+    },
+    {
+     "key": "silbe_tue",
+     "say": "Tüh"
+    },
+    {
+     "key": "silbe_dae",
+     "say": "Däh"
+    },
+    {
+     "key": "silbe_doe",
+     "say": "Döh"
+    },
+    {
+     "key": "silbe_due",
+     "say": "Düh"
+    },
+    {
+     "key": "silbe_hae",
+     "say": "Häh"
+    },
+    {
+     "key": "silbe_hoe",
+     "say": "Höh"
+    },
+    {
+     "key": "silbe_hue",
+     "say": "Hüh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x012_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Päh. Pöh. Püh. Fäh. Föh. Füh. Bäh. Böh.",
+   "items": [
+    {
+     "key": "silbe_pae",
+     "say": "Päh"
+    },
+    {
+     "key": "silbe_poe",
+     "say": "Pöh"
+    },
+    {
+     "key": "silbe_pue",
+     "say": "Püh"
+    },
+    {
+     "key": "silbe_fae",
+     "say": "Fäh"
+    },
+    {
+     "key": "silbe_foe",
+     "say": "Föh"
+    },
+    {
+     "key": "silbe_fue",
+     "say": "Füh"
+    },
+    {
+     "key": "silbe_bae",
+     "say": "Bäh"
+    },
+    {
+     "key": "silbe_boe",
+     "say": "Böh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x013_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Büh. Käh. Köh. Küh. Wäh. Wöh. Wüh. Gäh.",
+   "items": [
+    {
+     "key": "silbe_bue",
+     "say": "Büh"
+    },
+    {
+     "key": "silbe_kae",
+     "say": "Käh"
+    },
+    {
+     "key": "silbe_koe",
+     "say": "Köh"
+    },
+    {
+     "key": "silbe_kue",
+     "say": "Küh"
+    },
+    {
+     "key": "silbe_wae",
+     "say": "Wäh"
+    },
+    {
+     "key": "silbe_woe",
+     "say": "Wöh"
+    },
+    {
+     "key": "silbe_wue",
+     "say": "Wüh"
+    },
+    {
+     "key": "silbe_gae",
+     "say": "Gäh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x014_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Göh. Güh. Zäh. Zöh. Züh. Jäh. Jöh. Jüh.",
+   "items": [
+    {
+     "key": "silbe_goe",
+     "say": "Göh"
+    },
+    {
+     "key": "silbe_gue",
+     "say": "Güh"
+    },
+    {
+     "key": "silbe_zae",
+     "say": "Zäh"
+    },
+    {
+     "key": "silbe_zoe",
+     "say": "Zöh"
+    },
+    {
+     "key": "silbe_zue",
+     "say": "Züh"
+    },
+    {
+     "key": "silbe_jae",
+     "say": "Jäh"
+    },
+    {
+     "key": "silbe_joe",
+     "say": "Jöh"
+    },
+    {
+     "key": "silbe_jue",
+     "say": "Jüh"
+    }
+   ]
+  },
+  {
+   "id": "syl_x015_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Bär. Äh. Pfel. Kän. Löf. Flöh. Kröh. Tür.",
+   "items": [
+    {
+     "key": "silbe_baer",
+     "say": "Bär"
+    },
+    {
+     "key": "silbe_ae",
+     "say": "Äh"
+    },
+    {
+     "key": "silbe_pfel",
+     "say": "Pfel"
+    },
+    {
+     "key": "silbe_kaen",
+     "say": "Kän"
+    },
+    {
+     "key": "silbe_loef",
+     "say": "Löf"
+    },
+    {
+     "key": "silbe_floe",
+     "say": "Flöh"
+    },
+    {
+     "key": "silbe_kroe",
+     "say": "Kröh"
+    },
+    {
+     "key": "silbe_tuer",
+     "say": "Tür"
+    }
+   ]
+  },
+  {
+   "id": "syl_x016_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Müt. Hüt. Ken. Müs. Jun. Wel.",
+   "items": [
+    {
+     "key": "silbe_muet",
+     "say": "Müt"
+    },
+    {
+     "key": "silbe_huet",
+     "say": "Hüt"
+    },
+    {
+     "key": "silbe_ken",
+     "say": "Ken"
+    },
+    {
+     "key": "silbe_mues",
+     "say": "Müs"
+    },
+    {
+     "key": "silbe_jun",
+     "say": "Jun"
+    },
+    {
+     "key": "silbe_wel",
+     "say": "Wel"
+    }
+   ]
+  },
+  {
+   "id": "w_x064_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Käse. Käfer. Äpfel. Känguru. Gemüse. Löffel.",
+   "items": [
+    {
+     "key": "wort_kaese",
+     "say": "Käse"
+    },
+    {
+     "key": "wort_kaefer",
+     "say": "Käfer"
+    },
+    {
+     "key": "wort_aepfel",
+     "say": "Äpfel"
+    },
+    {
+     "key": "wort_kaenguru",
+     "say": "Känguru"
+    },
+    {
+     "key": "wort_gemuese",
+     "say": "Gemüse"
+    },
+    {
+     "key": "wort_loeffel",
+     "say": "Löffel"
+    }
+   ]
+  },
+  {
+   "id": "w_x065_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Flöte. Kröte. Tüte. Mütze. Hütte. Küken.",
+   "items": [
+    {
+     "key": "wort_floete",
+     "say": "Flöte"
+    },
+    {
+     "key": "wort_kroete",
+     "say": "Kröte"
+    },
+    {
+     "key": "wort_tuete",
+     "say": "Tüte"
+    },
+    {
+     "key": "wort_muetze",
+     "say": "Mütze"
+    },
+    {
+     "key": "wort_huette",
+     "say": "Hütte"
+    },
+    {
+     "key": "wort_kueken",
+     "say": "Küken"
+    }
+   ]
+  },
+  {
+   "id": "w_x066_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Müsli. Jojo. Judo. Junge. Juwel.",
+   "items": [
+    {
+     "key": "wort_muesli",
+     "say": "Müsli"
+    },
+    {
+     "key": "wort_jojo",
+     "say": "Jojo"
+    },
+    {
+     "key": "wort_judo",
+     "say": "Judo"
+    },
+    {
+     "key": "wort_junge",
+     "say": "Junge"
+    },
+    {
+     "key": "wort_juwel",
+     "say": "Juwel"
+    }
+   ]
   }
  ]
 }
