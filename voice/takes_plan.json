@@ -3817,6 +3817,25 @@
      "say": "Traum"
     }
    ]
+  },
+  {
+   "id": "w_x053_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Beere. Zweig. Stein.",
+   "items": [
+    {
+     "key": "wort_beere",
+     "say": "Beere"
+    },
+    {
+     "key": "wort_zweig",
+     "say": "Zweig"
+    },
+    {
+     "key": "wort_stein",
+     "say": "Stein"
+    }
+   ]
   }
  ]
 }
