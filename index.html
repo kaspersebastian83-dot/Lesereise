@@ -1932,6 +1932,69 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 /* book page */
 .gasart .tp2{position:absolute} .gasart .eef>.bb,.gasart .famdog>.bb{animation:none}
 /*<GASSICSS*/
+/*KREIDECSS>*/
+/* Eefje und das Kreidemeer (all classes start with "krd") */
+.krdstein svg,.krdka svg,.krdmini svg,.krdsink svg,.krdam svg,.krduhr svg,.krdfl svg,.krdweg svg,.krdstk svg,.krdstift svg,.krdkiste svg,.krdkugel svg,.krdwink svg,.krdfels svg,.krdfish svg{display:block;width:100%;overflow:visible}
+/* the chalk stone and its fossil */
+.tp2.krdstein{filter:drop-shadow(0 .5vh .6vh rgba(0,0,0,.2));transition:opacity .3s} .tp2.krdstein.krdhid{opacity:0}
+.krdstein .krdfos{opacity:0;transition:opacity .4s} .krdstein.dusty .krdfos{opacity:calc((1 - var(--g,1))*.9)} .krdstein.clean .krdfos{opacity:1}
+.tp2.krdstein.krdglow{filter:drop-shadow(0 0 1.2vh #fff6c0) drop-shadow(0 0 3vh rgba(110,215,255,.85));animation:krdglo 2.2s ease-in-out infinite} @keyframes krdglo{50%{scale:1.05}}
+/* the sparkles of the spell (scene 2) are on a bright sky: give them a golden glow */
+.tp2.fpt.krdfpt{filter:drop-shadow(0 0 .5vh #d89a10) drop-shadow(0 0 1.8vh #ffd84a)} .fpt.krdfpt>.bb{opacity:.95}
+/* the magic bubble around Ehfje and the unicorn */
+.krdbl{position:absolute;left:50%;top:48%;width:150%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.8) 0,rgba(255,255,255,0) 11%),radial-gradient(circle,rgba(200,245,255,0) 56%,rgba(220,250,255,.28) 66%,rgba(255,255,255,.75) 70.5%,rgba(255,255,255,0) 72%);
+  animation:krdbl 3.2s ease-in-out infinite} .krdbl.big{width:130%;top:46%} @keyframes krdbl{50%{scale:1.04 .97}}
+.krdbl.krdpop{animation:krdpop .7s cubic-bezier(.3,1.6,.5,1)} @keyframes krdpop{0%{scale:.3;opacity:0}100%{scale:1;opacity:1}}
+/* the bubble rings Ehfje flies through */
+.fring.krdbr{background:conic-gradient(#fff,#c8f6ff,#7ee0ff,#fff,#c8f6ff,#9ae8ff,#fff)} .fring.krdbr.show{opacity:.5} .fring.krdbr.on{opacity:1}
+/* fish */
+.krdfish{position:absolute;left:110%;translate:-50% -50%;pointer-events:none;z-index:2;animation:krdswim 10s linear infinite;filter:drop-shadow(0 .3vh .4vh rgba(0,40,70,.2))}
+.krdfish.r{animation-name:krdswimr} .krdfish.r svg{scale:-1 1} @keyframes krdswim{0%{left:112%}100%{left:-12%}} @keyframes krdswimr{0%{left:-12%}100%{left:112%}}
+.krdfish svg{animation:krdwg .5s ease-in-out infinite alternate} @keyframes krdwg{to{rotate:6deg}}
+/* Kalki: moods, the talking mouth, the shield plates, shivering and spinning */
+.tp2.krdka{filter:drop-shadow(0 0 1.2vh rgba(255,255,255,.65))} .krdka>.bb{position:relative;animation:krdbob 2.4s ease-in-out infinite} @keyframes krdbob{50%{transform:translateY(-7%) rotate(5deg)}}
+.krdka .ey,.krdka .m,.krdka .mo,.krdka .tear{display:none}
+.krdka[data-mood=smile] .ey-o,.krdka[data-mood=smile] .m-s{display:inline} .krdka[data-mood=happy] .ey-j,.krdka[data-mood=happy] .m-h{display:inline}
+.krdka[data-mood=worry] .ey-w,.krdka[data-mood=worry] .m-w,.krdka[data-mood=worry] .tear{display:inline} .krdka[data-mood=sleepy] .ey-c,.krdka[data-mood=sleepy] .m-s{display:inline}
+.krdka[data-mood=oh] .ey-o,.krdka[data-mood=oh] .m-o{display:inline}
+.krdka.talking .m{display:none!important} .krdka.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.25 + var(--mo,0)*1.1))}
+.krdka .krdpl{transition:opacity .4s} .krdka .krdpl.off{opacity:0} .krdka .krdpl.on{animation:krdplon .9s ease-out} @keyframes krdplon{0%{opacity:.3;filter:drop-shadow(0 0 3px #fff) brightness(1.6)}100%{opacity:1}}
+.krdka.krdfrier>.bb{animation:krdfr .16s linear infinite} @keyframes krdfr{0%,100%{transform:translateX(-2%)}50%{transform:translateX(2%)}}
+.krdka.krdspin>.bb{animation:krdsp 1.3s cubic-bezier(.4,0,.3,1)} @keyframes krdsp{to{transform:rotate(360deg)}}
+.tp2.krdmini,.tp2.krdsink,.tp2.krdwink{filter:drop-shadow(0 0 .8vh rgba(255,255,255,.75))} .krdmini>.bb{animation:krdbob 2.8s ease-in-out infinite}
+.tp2.krdwink{animation:krdwk 1.6s ease-in-out infinite} @keyframes krdwk{0%,100%{scale:1}50%{scale:1.3}}
+/* the loose plates float about */
+.tp2.krdfl{filter:drop-shadow(0 0 1.2vh rgba(255,255,255,.95));animation:krdfl 3.4s ease-in-out infinite} @keyframes krdfl{50%{translate:-50% -66%;rotate:24deg}} .tp2.krdfl.krdgo{animation:none}
+.tp2.krdfels{filter:none}
+/* Ammo the ammonite */
+.tp2.krdam{filter:drop-shadow(0 1vh 1.4vh rgba(0,40,60,.3))} .krdam>.bb{position:relative;animation:krdam 3.6s ease-in-out infinite} @keyframes krdam{50%{transform:translateY(-3%) rotate(-2deg)}}
+.krdam .krdlit{opacity:calc(var(--p,0)*.55);mix-blend-mode:screen;transition:opacity .3s} .krdam.krdlitup .krdlit{opacity:.6;animation:krdhue 2.4s linear infinite} @keyframes krdhue{to{filter:hue-rotate(360deg)}}
+.tp2.krdam.krdlitup{filter:drop-shadow(0 0 1.6vh rgba(255,255,255,.8)) drop-shadow(0 0 4vh rgba(255,190,240,.7))}
+.krdam .krdarm path{transform-box:fill-box;transform-origin:50% 0;animation:krdarm 1.4s ease-in-out infinite alternate} .krdam .krdarm path:nth-child(2n){animation-delay:-.7s} @keyframes krdarm{to{transform:rotate(12deg)}}
+.krdam .mo{display:none} .krdam.talking .m{display:none} .krdam.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.25 + var(--mo,0)*1.1))}
+.krdam.krdwig>.bb{animation:krdwig .7s ease-in-out} @keyframes krdwig{30%{transform:rotate(-6deg) scale(1.05)}70%{transform:rotate(5deg)}}
+/* the hourglass, the white layers, day and night flickering by */
+.tp2.krduhr{filter:drop-shadow(0 0 1.6vh rgba(255,240,180,.85))}
+.krduhr .krdst{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(calc(1 - var(--p,0)))} .krduhr .krdsb{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(calc(.04 + var(--p,0)*.96))}
+.krduhr .krdsr{opacity:0} .krduhr.run .krdsr{opacity:1;animation:krdsr .4s linear infinite} @keyframes krdsr{to{stroke-dashoffset:-6}}
+.krdlay{position:absolute;left:50%;bottom:-3%;width:112%;translate:-50% 0;height:calc(var(--h,0)*46%);border-radius:50% 50% 0 0/38% 38% 0 0;pointer-events:none;transition:height .3s;
+  background:repeating-linear-gradient(180deg,#fdfcf4 0 2.6vh,#eee8d6 2.6vh 3vh,#f8f4e6 3vh 5.4vh,#e6dec8 5.4vh 5.8vh);box-shadow:inset 0 1vh 2vh rgba(255,255,255,.9),0 -.4vh 2.4vh rgba(255,255,255,.55)}
+.krdlay.grow2{transition:height 3.2s ease-in-out}
+.krdtag{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .12s;background:linear-gradient(180deg,rgba(255,252,226,.95),rgba(255,236,190,.5));mix-blend-mode:soft-light}
+/* flashes and the sea shimmering over the hill */
+.krdflash{position:absolute;inset:0;pointer-events:none;opacity:0;z-index:30;background:radial-gradient(circle,#fff 0,#fffbea 42%,#dcf8ff 100%)}
+.krdsheen{position:absolute;inset:0;pointer-events:none;opacity:0;z-index:4;mix-blend-mode:multiply;
+  background:repeating-linear-gradient(172deg,rgba(255,255,255,0) 0 5vh,rgba(255,255,255,.35) 5vh 6vh),linear-gradient(180deg,rgba(120,215,240,.75),rgba(40,150,205,.85));background-size:100% 22vh,100% 100%;animation:krdshm 2.4s linear infinite}
+@keyframes krdshm{to{background-position:0 22vh,0 0}}
+/* the pavement with the chalk unicorn, the chalk */
+.tp2.krdweg{filter:drop-shadow(0 .5vh .7vh rgba(0,0,0,.2))} .krdweg .krdcol{opacity:0;transition:opacity 1.2s .6s} .krdweg.krddone .krdcol{opacity:1} .krdweg.krddone .krdgd{opacity:0;transition:opacity .8s}
+.krdweg.krdhint .krdgd{animation:krdgdh 1.1s ease-in-out 2} @keyframes krdgdh{50%{stroke:#fff;stroke-width:3.6px}}
+.tp2.krdstk{z-index:9;opacity:0;transition:opacity .2s;rotate:24deg;filter:drop-shadow(0 .4vh .4vh rgba(0,0,0,.3))} .tp2.krdstk.on{opacity:1}
+.tp2.krdstift,.tp2.krdkiste,.tp2.krdkugel{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.22))}
+/* book page */
+.krdart .tp2{position:absolute} .krdart .eef>.bb,.krdart .krdka>.bb,.krdart .krdam>.bb{animation:none}
+/*<KREIDECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -3282,7 +3345,7 @@ const G2={
      const dense=[]; for(let i=0;i<pts.length-1;i++){ const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
        for(let t=0;t<1;t+=.02){ const t2=t*t,t3=t2*t, f=(a,b,c,d)=>.5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t2+(-a+3*b-3*c+d)*t3); dense.push([f(p0[0],p1[0],p2[0],p3[0]),f(p0[1],p1[1],p2[1],p3[1])]); } }
      dense.push(pts[pts.length-1]); let L=0; const acc=[0]; for(let i=1;i<dense.length;i++){ L+=Math.hypot(dense[i][0]-dense[i-1][0],dense[i][1]-dense[i-1][1]); acc.push(L); }
-     for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1);
+     for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<0) j=acc.length-1; if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1);
        S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
      TB.S=S.map(p=>wpos(p[0],p[1])); TB.k=0; TB.dots=TB.S.map((p,i)=>{ if(TB.a.hoof||TB.a.paw){ if(i%5!==2) return null; const q=TB.S[Math.min(TB.S.length-1,i+1)], an=Math.atan2(q[1]-p[1],q[0]-p[0])*57.3+90;
        const d=el('div','tdot '+(TB.a.paw?'fampaw':'hoof')); d.style.left=p[0]+'%'; d.style.top=p[1]+'%'; d.style.rotate=(an+(i%10<5?-14:14)).toFixed(0)+'deg'; TB.act.appendChild(d); return d; }
@@ -6073,7 +6136,7 @@ Object.assign(SETS2,{
 function evenPath(pts,N){ const dense=[]; for(let i=0;i<pts.length-1;i++){ const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
     for(let t=0;t<1;t+=.02){ const t2=t*t,t3=t2*t, f=(a,b,c,d)=>.5*((2*b)+(-a+c)*t+(2*a-5*b+4*c-d)*t2+(-a+3*b-3*c+d)*t3); dense.push([f(p0[0],p1[0],p2[0],p3[0]),f(p0[1],p1[1],p2[1],p3[1])]); } }
   dense.push(pts[pts.length-1]); let L=0; const acc=[0]; for(let i=1;i<dense.length;i++){ L+=Math.hypot(dense[i][0]-dense[i-1][0],dense[i][1]-dense[i-1][1]); acc.push(L); }
-  const S=[]; for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1); S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
+  const S=[]; for(let k=0;k<N;k++){ const s=L*k/(N-1); let j=acc.findIndex(v=>v>=s); if(j<0) j=acc.length-1; if(j<1) j=1; const f=(s-acc[j-1])/((acc[j]-acc[j-1])||1); S.push([dense[j-1][0]+(dense[j][0]-dense[j-1][0])*f, dense[j-1][1]+(dense[j][1]-dense[j-1][1])*f]); }
   return S; }
 /* a box in stage % from an element and fractions of it [fx,fy,fw,fh] */
 function boxPct(id,f){ const r=TB.els[id].getBoundingClientRect(), W=TB.W.getBoundingClientRect(), q=f||[0,0,1,1];
@@ -15601,6 +15664,446 @@ const GAS2={id:'gassi', v2:true, eef:1, fam:1, dur:GASDUR, title:'Eefje geht mit
      'Und wenn sie nicht eingeschlafen sind, dann kuscheln sie noch heute.', 1800]}
  ]};
 /*<GASSI*/
+/*KREIDE>*/
+/* ================= Eefje und das Kreidemeer: drawn props and sets (all classes and helpers start with "krd"; checked: no krd…
+   name existed before) ================= */
+/* the white chalk stone Boris digs up; in the middle a fossil scallop (.krdfos) that shows once the stone is rubbed clean. viewBox 0 0 120 90 */
+function krdSteinSVG(){ const r=seeded(1201); let sp=''; for(let i=0;i<16;i++){ const x=14+r()*92, y=22+r()*58; sp+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(1+r()*1.8).toFixed(1)}" fill="#cfc8b4" opacity=".8"/>`; }
+  const rib=[-50,-30,-10,10,30,50].map(a=>{ const t=(a-90)*Math.PI/180; return `<path d="M60 70 L${(60+Math.cos(t)*30).toFixed(1)} ${(70+Math.sin(t)*30).toFixed(1)}"/>`; }).join('');
+  return `<svg viewBox="0 0 120 90" style="overflow:visible"><ellipse cx="60" cy="86" rx="54" ry="5" fill="rgba(0,0,0,.18)"/>
+  <path d="M8 66 Q4 34 30 22 Q52 10 80 16 Q110 22 114 52 Q118 80 88 84 Q58 90 30 86 Q10 82 8 66Z" fill="#f8f6ee" stroke="#b8b098" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M20 40 Q36 26 60 24 M84 26 Q100 32 104 46" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".9"/>${sp}
+  <g class="krdfos"><path d="M60 72 L32 48 Q36 30 60 28 Q84 30 88 48Z" fill="#ead9b8" stroke="#a8875a" stroke-width="2.6" stroke-linejoin="round"/>
+   <g stroke="#b8976a" stroke-width="2" fill="none">${rib}</g><path d="M50 70 h20 l-3 7 h-14Z" fill="#ead9b8" stroke="#a8875a" stroke-width="2"/>
+   <path d="M44 38 Q60 30 76 38" stroke="#fff6e0" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>`; }
+
+/* Kalki, the tiny round chalk alga (a coccolithophore): a soft round cell with a face, and 8 little shield plates around it.
+   Plates listed in `off` are missing (class off, they come back with .on). Moods: smile, happy, worry, sleepy, oh. viewBox 0 0 100 100 */
+const KRDPLA=[0,1,2,3,4,5,6,7].map(i=>{ const a=i*Math.PI/4-Math.PI/2; return [50+Math.cos(a)*33,50+Math.sin(a)*33,i*45]; });
+function krdPlate(x,y,rot,cls){ return `<g class="krdpl${cls?' '+cls:''}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rot})"><ellipse rx="15" ry="10" fill="#fdfdff" stroke="#8aaec4" stroke-width="2"/>
+  <ellipse rx="10" ry="6" fill="none" stroke="#b8d4e4" stroke-width="1.6"/><path d="M-10 0 H10 M0 -6 V6 M-7 -4.4 L7 4.4 M-7 4.4 L7 -4.4" stroke="#c8e0ec" stroke-width="1.1"/><ellipse rx="3" ry="2" fill="#e8f4fb"/></g>`; }
+function krdKalkiSVG(off,small){ off=off||[];
+  const pl=KRDPLA.map(([x,y,a],i)=>krdPlate(x,y,a+90,off.includes(i)?'off':'')).join('');
+  return `<svg viewBox="0 0 100 100" style="overflow:visible">${pl}
+  <circle cx="50" cy="50" r="25" fill="#c8f4e4" stroke="#4aa088" stroke-width="2.6"/>  <ellipse cx="42" cy="38" rx="8" ry="5" fill="#fff" opacity=".7"/>
+  ${small?`<g fill="#1e3a34"><circle cx="43" cy="52" r="2.4"/><circle cx="57" cy="52" r="2.4"/></g><path d="M45 58 q5 4 10 0" stroke="#1e3a34" stroke-width="1.8" fill="none" stroke-linecap="round"/>`:
+  `<g class="ey ey-o" fill="#1e3a34"><circle cx="42" cy="50" r="3.6"/><circle cx="58" cy="50" r="3.6"/><circle cx="43.2" cy="48.8" r="1.2" fill="#fff"/><circle cx="59.2" cy="48.8" r="1.2" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="#1e3a34" stroke-width="2.2" stroke-linecap="round"><path d="M38 51 q4 -5 8 0 M54 51 q4 -5 8 0"/></g>
+  <g class="ey ey-c" fill="none" stroke="#1e3a34" stroke-width="2.2" stroke-linecap="round"><path d="M38 51 q4 3 8 0 M54 51 q4 3 8 0"/></g>
+  <g class="ey ey-w" fill="#1e3a34"><circle cx="42" cy="51" r="3"/><circle cx="58" cy="51" r="3"/><path d="M37 45 l8 -3 M63 45 l-8 -3" stroke="#1e3a34" stroke-width="1.8" stroke-linecap="round"/></g>
+  <path class="m m-s" d="M44 58 q6 5 12 0" stroke="#1e3a34" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path class="m m-h" d="M43 57 q7 8 14 0Z" fill="#e8587a" stroke="#1e3a34" stroke-width="1.8" stroke-linejoin="round"/>
+  <path class="m m-w" d="M45 61 q5 -4 10 0" stroke="#1e3a34" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="50" cy="60" rx="3" ry="3.6" fill="#e8587a" stroke="#1e3a34" stroke-width="1.6"/>
+  <ellipse class="mo" cx="50" cy="59" rx="4.4" ry="3.4" fill="#e8587a" stroke="#1e3a34" stroke-width="1.6"/>
+  <path class="tear" d="M38 56 q-2 4 0 6 q2 -2 0 -6Z" fill="#8ad8ff"/>`}
+  <g fill="#ff9ab8" opacity=".55"><ellipse cx="35" cy="58" rx="4" ry="2.4"/><ellipse cx="65" cy="58" rx="4" ry="2.4"/></g></svg>`; }
+/* one loose shield plate (it floats about in scene 4). viewBox -18 -18 36 36 */
+function krdPlSVG(){ return `<svg viewBox="-18 -18 36 36" style="overflow:visible">${krdPlate(0,0,0,'')}</svg>`; }
+
+/* Ammo the ammonite: a big spiral shell (.krdsh, it lights up with --p) and a friendly head with little arms. viewBox 0 0 220 160 */
+function krdAmmoSVG(){ const cx=86, cy=82, q='krda'+(++LANC); let sp='M'+cx+' '+cy; for(let i=0;i<=120;i++){ const t=i/120*4.2*Math.PI, r=4+t*5.05; sp+=` L${(cx+Math.cos(t)*r).toFixed(1)} ${(cy-Math.sin(t)*r).toFixed(1)}`; }
+  let rb=''; for(let i=0;i<26;i++){ const t=1.6+i/26*11.6, r=4+t*5.05, r2=Math.max(2,r-15); rb+=`<path d="M${(cx+Math.cos(t)*r2).toFixed(1)} ${(cy-Math.sin(t)*r2).toFixed(1)} L${(cx+Math.cos(t)*r).toFixed(1)} ${(cy-Math.sin(t)*r).toFixed(1)}"/>`; }
+  return `<svg viewBox="0 0 220 160" style="overflow:visible"><defs><radialGradient id="${q}g" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffe8c8"/><stop offset=".6" stop-color="#f0b880"/><stop offset="1" stop-color="#c8804a"/></radialGradient>
+   <linearGradient id="${q}r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7fb0"/><stop offset=".2" stop-color="#ffb860"/><stop offset=".4" stop-color="#ffe870"/><stop offset=".6" stop-color="#7ee08a"/><stop offset=".8" stop-color="#6ac0ff"/><stop offset="1" stop-color="#b48cff"/></linearGradient></defs>
+  <g class="krdarm" fill="none" stroke="#e8a07a" stroke-width="5" stroke-linecap="round"><path d="M168 108 Q176 132 166 146"/><path d="M178 106 Q192 128 188 146"/><path d="M188 100 Q206 118 208 138"/><path d="M160 104 Q160 128 148 140"/></g>
+  <path d="M146 64 Q170 50 196 66 Q212 82 200 100 Q184 114 156 108 Q140 96 146 64Z" fill="#f8c0a0" stroke="#b8765a" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#2a1a2e"><circle cx="176" cy="78" r="6"/><circle cx="194" cy="80" r="5"/></g><g fill="#fff"><circle cx="178" cy="76" r="2"/><circle cx="195.5" cy="78.4" r="1.6"/></g>
+  <path class="m" d="M176 92 q9 7 18 0" stroke="#2a1a2e" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse class="mo" cx="185" cy="94" rx="6" ry="4.4" fill="#c84a6a" stroke="#2a1a2e" stroke-width="2"/><g fill="#ff8aa8" opacity=".6"><ellipse cx="168" cy="90" rx="5" ry="3"/><ellipse cx="202" cy="92" rx="4" ry="2.6"/></g>
+  <g class="krdsh"><circle cx="${cx}" cy="${cy}" r="72" fill="url(#${q}g)" stroke="#8a5432" stroke-width="3.4"/>
+   <circle cx="${cx}" cy="${cy}" r="72" fill="url(#${q}r)" class="krdlit"/>
+   <path d="${sp}" fill="none" stroke="#8a5432" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+   <g stroke="#a86a42" stroke-width="2" opacity=".7">${rb}</g><path d="M40 40 Q66 14 104 18" stroke="#fff4e0" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/></g></svg>`; }
+
+/* the magic hourglass on the sea floor: sand runs from the top (scaleY 1-p) into the bottom (scaleY p) with --p 0 … 1. viewBox 0 0 80 120 */
+function krdUhrSVG(){ return `<svg viewBox="0 0 80 120" style="overflow:visible"><ellipse cx="40" cy="116" rx="34" ry="4" fill="rgba(0,0,0,.2)"/>
+  <path d="M14 14 Q14 48 36 60 Q14 72 14 106 H66 Q66 72 44 60 Q66 48 66 14Z" fill="rgba(220,246,255,.45)" stroke="#9ad8f0" stroke-width="2.4"/>
+  <path class="krdst" d="M18 20 Q20 46 38 56 H42 Q60 46 62 20Z" fill="#fff6d8" stroke="#e8d498" stroke-width="1.4"/>
+  <path class="krdsb" d="M18 104 Q20 82 40 76 Q60 82 62 104Z" fill="#fff6d8" stroke="#e8d498" stroke-width="1.4"/>
+  <path class="krdsr" d="M40 58 V100" stroke="#fff6d8" stroke-width="2.4" stroke-dasharray="3 3"/>
+  <path d="M22 26 Q24 42 34 50" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".8"/>
+  <rect x="6" y="4" width="68" height="11" rx="4" fill="#b87a3a" stroke="#6a4218" stroke-width="2.4"/><rect x="6" y="105" width="68" height="11" rx="4" fill="#b87a3a" stroke="#6a4218" stroke-width="2.4"/>
+  <g fill="#ffe27a"><circle cx="40" cy="9.5" r="2.6"/><circle cx="40" cy="110.5" r="2.6"/><circle cx="16" cy="9.5" r="1.6"/><circle cx="64" cy="9.5" r="1.6"/><circle cx="16" cy="110.5" r="1.6"/><circle cx="64" cy="110.5" r="1.6"/></g>
+  <path d="M10 15 V105 M70 15 V105" stroke="#8a5428" stroke-width="4" stroke-linecap="round"/></svg>`; }
+
+/* a rounded rock on the sea floor (Kalki sits on it). viewBox 0 0 140 70 */
+function krdFelsSVG(){ return `<svg viewBox="0 0 140 70" style="overflow:visible"><ellipse cx="70" cy="66" rx="66" ry="5" fill="rgba(0,40,60,.18)"/>
+  <path d="M6 64 Q4 30 40 18 Q74 6 104 18 Q136 30 134 64Z" fill="#8ab0b4" stroke="#4a7276" stroke-width="3"/>
+  <path d="M24 40 Q44 22 70 20" stroke="#bfe0e0" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  <g fill="#6ad8a0" stroke="#2a8a5a" stroke-width="1.4"><circle cx="34" cy="60" r="5"/><circle cx="44" cy="62" r="4"/><circle cx="110" cy="58" r="5"/></g></svg>`; }
+
+/* the pavement in front of the house, with the unicorn Ehfje draws in chalk: a faint guide (.krdgd), the chalk lines that appear where
+   the finger goes (.krdink, one path per stroke, drawn with stroke-dasharray) and the coloured picture at the end (.krdcol). viewBox 0 0 320 150 */
+const KRDUNI=['M58 62 Q56 44 80 42 L116 42 Q138 42 140 60 Q142 82 118 86 L82 86 Q60 86 58 62Z',
+  'M128 46 Q130 28 142 18 Q154 10 166 16 Q178 22 172 32 Q166 38 154 36 Q150 46 140 54','M148 14 L156 -6 L160 14','M140 22 Q128 26 128 38 Q122 44 124 54',
+  'M60 58 Q42 50 36 64 Q32 78 44 86','M76 86 V114','M92 86 V114','M110 86 V114','M126 84 V114'];
+function krdWegSVG(){ const id='krdc'+(++LANC); let j=''; for(let x=0;x<=320;x+=64) j+=`<path d="M${x} 10 L${x-8} 146"/>`;
+  return `<svg viewBox="0 0 320 150" style="overflow:visible"><defs><filter id="${id}" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs>
+  <path d="M8 12 H312 L318 146 H2Z" fill="#a8a49c" stroke="#7a766e" stroke-width="2.4" stroke-linejoin="round"/>
+  <g stroke="#8e8a82" stroke-width="2">${j}<path d="M5 78 H315"/></g><g fill="#bab6ae" opacity=".7"><circle cx="30" cy="40" r="3"/><circle cx="210" cy="110" r="4"/><circle cx="290" cy="50" r="2.6"/><circle cx="120" cy="126" r="3"/></g>
+  <g transform="translate(64 18)">
+   <g class="krdcol" filter="url(#${id})"><path d="${KRDUNI[0]}" fill="#ffd2ea" opacity=".85"/><path d="M128 46 Q130 28 142 18 Q154 10 166 16 Q178 22 172 32 Q166 38 154 36 Q150 46 140 54 L128 50Z" fill="#ffd2ea" opacity=".85"/>
+    <path d="M148 14 L156 -6 L160 14Z" fill="#ffe27a"/><path d="${KRDUNI[3]}" stroke="#a88cff" stroke-width="7" fill="none" stroke-linecap="round"/><path d="${KRDUNI[4]}" stroke="#7ad0ff" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <circle cx="160" cy="24" r="2.6" fill="#3a2a4a"/><g fill="#ffe27a"><path d="M86 58 l3 6 6 1 -5 4 1 6 -5 -3 -5 3 1 -6 -5 -4 6 -1Z"/><path d="M110 66 l2 4 4 .6 -3 2.6 .7 4 -3.7 -2 -3.6 2 .7 -4 -3 -2.6 4 -.6Z"/></g></g>
+   <g class="krdgd" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.2" stroke-dasharray="1.5 6" stroke-linecap="round">${KRDUNI.map(d=>`<path d="${d}"/>`).join('')}</g>
+   <g class="krdink" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#${id})">${KRDUNI.map((d,i)=>`<path class="krdi0" data-i="${i}" d="${d}" stroke="rgba(255,255,255,.5)" stroke-width="6"/><path class="krdi1" data-i="${i}" d="${d}" stroke="#fdfdf8" stroke-width="3.2"/>`).join('')}</g></g></svg>`; }
+/* a stick of chalk (it follows the finger while drawing, and lies in Ehfje's hand) */
+function krdStiftSVG(){ return `<svg viewBox="0 0 30 60" style="overflow:visible"><rect x="8" y="4" width="14" height="48" rx="4" fill="#fdfdf6" stroke="#b8b4a4" stroke-width="2"/><path d="M8 40 H22" stroke="#e0dccc" stroke-width="2"/><path d="M11 8 V36" stroke="#fff" stroke-width="2" opacity=".9"/></svg>`; }
+
+Object.assign(SVGP,{KRDSTEIN:[krdSteinSVG,1],KRDPL:[krdPlSVG,1],KRDAMMO:[krdAmmoSVG,1],KRDUHR:[krdUhrSVG,1],KRDFELS:[krdFelsSVG,1],KRDWEG:[krdWegSVG,1],KRDSTIFT:[krdStiftSVG,1]});
+
+/* ---------- the sets: the white chalk hill, the warm old sea (surface, floor, reef, deep at dusk), the chalk hill at sunset, home ---------- */
+const KRDSAND='linear-gradient(180deg,#f8ecc8 0%,#e8d4a0 55%,#c8ac76 100%)';
+/* the far chalk hill: green hills behind, the big white hill with its layers, grass on top, a few bushes */
+function KRDBERGFAR(s,c1,c2,g){ const id='krdh'+s, top='M80 400 L80 330 Q150 250 260 190 Q380 120 520 110 Q680 104 800 170 Q880 214 940 300 L940 400Z';
+  let st=''; for(let y=140;y<400;y+=22) st+=`<path d="M0 ${y} Q500 ${y-14} 1000 ${y+6}" stroke="${c2}" stroke-width="5" fill="none"/>`;
+  return sil(hills(s+7,250,60,'#a8c88a')+`<clipPath id="${id}"><path d="${top}"/></clipPath><path d="${top}" fill="${c1}" stroke="${c2}" stroke-width="4"/><g clip-path="url(#${id})">${st}
+    <path d="M60 300 Q200 210 300 180 Q420 130 520 124 Q680 118 820 186 Q900 230 960 320 L960 260 Q880 160 800 140 Q680 92 520 96 Q380 100 260 160 Q150 220 60 280Z" fill="${g||'#8ab85a'}"/></g>`+hills(s+9,330,26,'#b8d48a'),66); }
+Object.assign(SETS2,{
+  krdberg:{clean:1, sky:'linear-gradient(180deg,#5aa8ea 0%,#a4d2f4 48%,#fff0d8 100%)', sun:[82,14], farp:[['CLD',24,20,7],['CLD',58,13,6]], far:KRDBERGFAR(1211,'#f8f6ee','#e2dac4'),
+    gnd:'linear-gradient(180deg,#c4d488 0%,#aec070 26%,#ece6d2 27%,#f6f2e6 62%,#ddd4bc 100%)',
+    mid:[['SPLBAUM2',10,56,18],['SPLBAUM0',90,52,22]], fore:[['🌼',3,97,7],['🍂',97,98,7],['🌾',60,104,9]]},
+  krdmeer:{clean:1, sky:'linear-gradient(180deg,#8ef0f2 0%,#46cade 26%,#1a9cc0 66%,#0e7aa2 100%)', rays:1, caus:1, surf:{h:8,bg:'linear-gradient(180deg,#d6f8ff 0%,#f0feff 100%)'},
+    gnd:KRDSAND, mid:[['KELP',9,58,46],['CORAL',21,64,17],['CORAL2',79,63,19],['KELP',92,56,48]], fore:[['KELP',1,86,40],['🐚',8,98,6],['🪸',92,99,9]]},
+  krdgrund:{clean:1, sky:'linear-gradient(180deg,#9af4f2 0%,#4cd2dc 34%,#22a8c8 74%,#1a88b0 100%)', rays:1, caus:1,
+    gnd:KRDSAND, mid:[['KELP',7,56,42],['CORAL2',18,63,16],['CORAL',30,66,11],['CORAL',84,62,18],['KELP',94,55,44]], fore:[['🐚',5,98,6],['🪸',95,99,9],['⭐',68,101,5]]},
+  krdriff:{clean:1, sky:'linear-gradient(180deg,#8eeaf6 0%,#40c0e0 36%,#1c90c4 76%,#167ab0 100%)', rays:1, caus:1,
+    gnd:KRDSAND, mid:[['CORAL',8,62,22],['CORAL2',16,66,14],['KELP',30,57,34],['CORAL2',88,61,22],['CORAL',95,65,14],['KELP',76,58,30]], fore:[['🪸',4,98,10],['🐚',93,98,6]]},
+  krdzeit:{sky:'linear-gradient(180deg,#3a96b8 0%,#1e6e98 40%,#124a74 80%,#0c3658 100%)', rays:1, dcol:'4,24,48',
+    gnd:'linear-gradient(180deg,#d8cca8 0%,#b8a880 55%,#8a7c5c 100%)', mid:[['KELPD',9,57,42],['KELPD',92,56,44]], fore:[['🐚',6,98,6]]},
+  krdabend:{clean:1, sky:'linear-gradient(180deg,#3a4a9a 0%,#8a6ab0 30%,#f09a8a 62%,#ffd09a 100%)', sun:[80,46], far:KRDBERGFAR(1221,'#fbe8dc','#e8ccb8','#8a9a5a'),
+    gnd:'linear-gradient(180deg,#b8b878 0%,#a0a466 26%,#f0dcc8 27%,#f8e8d8 62%,#e0c8b4 100%)', mid:[['SPLBAUM2',10,56,18],['SPLBAUM0',90,52,22]], fore:[['🌼',3,97,7],['🍂',97,98,7]]},
+  krdhof:{clean:1, sky:'linear-gradient(180deg,#ffae86 0%,#ffcc9c 40%,#fff0d0 100%)', sun:[14,30], farp:[['CLD',40,18,7],['CLD',66,12,6]],
+    far:sil(hills(1231,236,70,'#c8c890')+pines(1233,24,80,'#8ca870',96)+hills(1237,292,40,'#a8b880'),58), gnd:'linear-gradient(180deg,#a8cc74 0%,#86b05c 48%,#62904a 100%)',
+    act:[['haus','HEXHAUS',91,46,42]], mid:[['🌳',5,52,15]], fore:[['🌼',3,98,8],['🌷',97,99,8]]}
+});
+Object.assign(TSYL,{KLEIN:'KLEIN',KALKI:'KAL-KI',SCHNECKE:'SCHNE-CKE',ZEIT:'ZEIT',KREIDE:'KREI-DE'}); TSYL.STEIN=TSYL.STEIN||'STEIN'; TSYL.MEER=TSYL.MEER||'MEER';
+
+/* ---------- sounds: bubbles, a plate clicking into place, the shell ringing, sand running ---------- */
+const krdLate=()=>!tale||!tale.t||tale.t.id!=='kreide'||!taleOn();
+function krdTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||krdLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function krdNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||krdLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.04,d*.2)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function krdBlub(x,n){ for(let i=0;i<(n||2);i++) setTimeout(()=>krdTone(x,320+Math.random()*200,900+Math.random()*500,110,.06,'sine'),i*120); }
+function krdKlick(x){ krdTone(x,1800,2400,60,.06,'triangle'); setTimeout(()=>krdTone(x,2600,3000,50,.04,'sine'),70); }
+function krdSplash(x){ krdNoise(x,.18,1600,300,600,'lowpass'); setTimeout(()=>krdBlub(x,4),200); }
+function krdRiesel(x){ krdNoise(x,.035,5000,3200,260,'highpass'); }
+function krdKratz(x){ krdNoise(x,.03,2600,3600,90); }
+
+/* ---------- helpers ---------- */
+/* the magic bubble around Ehfje and the unicorn under water */
+function krdBlase(e,big){ if(!e) return; const b=e.querySelector(':scope>.bb')||e.querySelector(':scope>.ub')||e; if(b.querySelector(':scope>.krdbl')) return; b.appendChild(el('div','krdbl'+(big?' big':''))); }
+/* little fish swimming through the scene: [y %, size vh, colour, colour dark, seconds, delay, dir (1 = to the right)] */
+function krdFish(list){ (list||[]).forEach(([y,s,c,d,sec,del,dir],i)=>{ const F=el('div','krdfish'+(dir>0?' r':''),fishSVG(c,d)); F.style.cssText=`top:${y}%;width:${s}vh;animation-duration:${sec}s;animation-delay:${-del}s`;
+  TB.act.appendChild(F); TB.els['fi'+i]=F; }); }
+/* bubbles rising from somewhere (screen px) */
+function krdBubs(x,y,n,sp){ bubs(x,y,n||6,sp||4); }
+/* rising bubbles in the whole scene, all the time */
+function krdAmbient(rate){ FX.em.push({rate:rate||1.2,fn:()=>{ const u=vu(); fxAdd({k:'bub',x:innerWidth*Math.random(),y:innerHeight*(.9+Math.random()*.1),vy:-(6+Math.random()*8)*u,ph:Math.random()*6,s:.3+Math.random()*.5,life:6,amb:1}); }}); }
+/* Ehfje and the unicorn shrink to ladybird size, right where they stand */
+function krdShrink(ms){ const E=TB.els.hexe, U=TB.els.uni; ms=ms||2400;
+  [[E,.16,'50% 94%'],[U,.16,'50% 90%']].forEach(([e,s,o])=>{ if(!e) return; e.style.transformOrigin=o; e.style.transition=`scale ${ms}ms cubic-bezier(.5,0,.4,1)`; e.style.scale=s; });
+  if(U){ U.style.transition+=`, left ${ms}ms ease-in-out, top ${ms}ms ease-in-out`; const ex=parseFloat(E.style.left); U.style.left=(ex-3.2)+'%'; U.style.top=(parseFloat(E.style.top)+5.4)+'%'; }
+  for(let i=0;i<12;i++) bLater(()=>{ [E,U].forEach(e=>{ if(!e) return; const [x,y]=ctr(e); fxAdd({k:'spark',x:x+(Math.random()-.5)*vu()*6,y:y+(Math.random()-.5)*vu()*6,vx:(Math.random()-.5)*14*vu(),vy:-(6+Math.random()*12)*vu(),life:.8,s:.6+Math.random()*.6,c:rnd(GLCOL)}); }); },i*ms/12);
+  chime([1568,1318,1175,988,784,659]); }
+/* the camera dives into the fossil in the stone */
+function krdZoom(ms){ const st=TB.st, S=TB.els.stein; if(!st||!S) return; const [ax,ay]=relEl(S,[.5,.56]); ms=ms||2600;
+  st.style.transformOrigin=`${ax}px ${ay}px`; st.style.transition=`scale ${ms}ms cubic-bezier(.5,0,.3,1), opacity ${ms*.4}ms ease-in ${ms*.6}ms`; st.style.scale=14; st.style.opacity=0;
+  const fl=el('div','krdflash'); TB.W.appendChild(fl); try{ fl.animate([{opacity:0},{opacity:0,offset:.55},{opacity:1,offset:.92},{opacity:1}],{duration:ms+300,easing:'ease-in-out',fill:'forwards'}); }catch(e){ fl.style.opacity=1; }
+  windFx(3); bLater(()=>windFx(0),ms); chime([392,523,659,784,1047]); }
+/* the white flash after the dive fades away when the sea scene is there */
+function krdFlashOut(){ document.querySelectorAll('#taleWorld>.krdflash').forEach(f=>{ f.getAnimations().forEach(q=>q.cancel()); f.style.opacity=1; try{ f.animate([{opacity:1},{opacity:0}],{duration:1400,easing:'ease-out',fill:'forwards'}).onfinish=()=>f.remove(); }catch(e){ f.remove(); } setTimeout(()=>f.remove(),1600); }); }
+/* a shield plate flies home to its place on Kalki */
+function krdPlateHome(P,i,cb){ const K=TB.els.kalki; if(!P||!K) return; const [x,y]=KRDPLA[i], [tx,ty]=relEl(K.querySelector('svg'),[x/100,y/100]), [x0,y0]=ctr(P), u=vu();
+  P.getAnimations().forEach(q=>q.cancel()); P.classList.add('krdgo');
+  try{ P.animate([{transform:'none'},{transform:`translate(${(tx-x0)*.5}px,${(ty-y0)*.5-u*10}px) rotate(200deg) scale(1.2)`},{transform:`translate(${tx-x0}px,${ty-y0}px) rotate(400deg) scale(.8)`}],{duration:900,easing:'ease-in-out',fill:'forwards'})
+    .onfinish=()=>{ P.style.opacity=0; const g=K.querySelectorAll('.krdpl')[i]; if(g){ g.classList.remove('off'); g.classList.add('on'); } sqs(K); krdKlick(tx); glitterBurst(tx,ty,10,8); if(cb) cb(); }; }catch(e){ P.style.opacity=0; if(cb) cb(); }
+  trail(P,900); }
+/* a whole family of tiny Kalkis drifts in and dances around */
+function krdFamily(n){ const r=seeded(1251); TB.fam=TB.fam||[]; for(let i=0;i<(n||14);i++){ const k=el('div','tp2 chr krdmini',`<div class="bb">${krdKalkiSVG([],1)}</div>`), x=8+r()*84, y=14+r()*56, s=3.4+r()*3;
+    k.style.cssText=`left:${x}%;top:${y}%;width:${s}vh;opacity:0`; k.querySelector('.bb').style.animationDelay=(-r()*3).toFixed(2)+'s'; TB.act.appendChild(k); TB.fam.push(k);
+    const from=r()<.5?-12:112; try{ k.animate([{transform:`translateX(${from<0?-60:60}vw)`,opacity:0},{transform:'none',opacity:1}],{duration:1800+r()*1400,delay:i*90,easing:'cubic-bezier(.2,.8,.3,1)',fill:'forwards'}); }catch(e){ k.style.opacity=1; } } }
+/* Kalkis sinking slowly down onto the growing white layers (scene 6) */
+function krdSink(x){ const L=TB.els.lay; if(!L) return; const r=L.getBoundingClientRect(), u=vu(), k=el('div','tp2 krdsink',krdKalkiSVG([],1)), s=2+Math.random()*2.4; k.style.width=s+'vh';
+  TB.act.insertBefore(k,L); const px=x!=null?x:r.left+r.width*(.08+Math.random()*.84); putAt(k,px,innerHeight*(.06+Math.random()*.1)); const [x0,y0]=ctr(k), ty=r.top+u*1.2;
+  try{ k.animate([{transform:'none',opacity:0},{transform:`translate(${u*3}px,${(ty-y0)*.5}px) rotate(90deg)`,opacity:1,offset:.3},{transform:`translate(${-u*2}px,${ty-y0}px) rotate(200deg)`,opacity:1,offset:.9},{transform:`translate(${-u*2}px,${ty-y0}px) rotate(200deg)`,opacity:0}],{duration:3600+Math.random()*1600,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>k.remove(); }catch(e){ k.remove(); } }
+/* the white mountain of chalk layers (grows with --h 0 … 1) */
+function krdLayers(){ const L=el('div','krdlay'), g=TB.act.querySelector(':scope>.gnd'); if(g) g.after(L); else TB.act.appendChild(L); TB.els.lay=L; L.style.setProperty('--h',0); return L; }
+/* back home: a flash, and Ehfje stands big again next to Papa on the chalk hill at sunset (Boris, the unicorn) */
+function krdHome(){ const W=TB.W, old=TB.st, fl=el('div','krdflash'); W.appendChild(fl);
+  try{ fl.animate([{opacity:0},{opacity:1,offset:.4},{opacity:1,offset:.6},{opacity:0}],{duration:1500,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>fl.remove(); }catch(e){ fl.remove(); } chime([523,659,784,1047,1318]);
+  bLater(()=>{ const st=buildStage({set:'krdabend'}); W.insertBefore(st,fl); old.remove(); TB.st=st; TB.act=st._act; const A=st._act;
+    const add=(id,cls,html,x,y,w)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${html}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(e); TB.els[id]=e; return e; };
+    const U=el('div','u2'); U.style.cssText='left:12%;top:74%;width:15vh'; U.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; A.appendChild(U); TB.els.uni=U;
+    const P=add('papa','famp fampa',papaSVG(),56,58,24); P.dataset.mood='happy'; P.dataset.arm='dn';
+    const E=add('hexe','eef',eefjeSVG(),36,66,25); E.dataset.mood='laugh'; E.dataset.arm='up';
+    const B=add('boris','famdog',borisSVG(),74,80,19); B.dataset.mood='happy'; B.classList.add('famwag'); B.classList.add('flip');
+    const S=el('div','tp2 krdstein clean',krdSteinSVG()); S.style.cssText='left:84%;top:89%;width:12vh'; A.appendChild(S); TB.els.stein=S;
+    FX.L=[]; FX.em=[]; FX.darkT=0; FX.clean=true; FX.dc=null; glitterBurst(...ctr(E),24,20); },650); }
+/* the ice cream in the blue treasure box (scene 7, the running gag) */
+function krdEis(){ if(!TB||TB.els.kiste) return; const E=TB.els.hexe, K=el('div','tp2 krdkiste',tuiKisteSVG()); K.style.cssText='left:38%;top:84%;width:11vh;opacity:0'; TB.act.appendChild(K); TB.els.kiste=K;
+  [['p',-1.2,-3.4],['v',1.2,-5],['s',.2,-7]].forEach(([c,dx,dy],i)=>{ const I=el('div','tp2 krdkugel',tuiKugelEisSVG(c)); I.style.cssText=`left:${38+dx}%;top:${84+dy}%;width:4.2vh;opacity:0`; TB.act.appendChild(I);
+    bLater(()=>{ I.style.transition='opacity .4s, translate .5s cubic-bezier(.3,1.6,.5,1)'; I.style.opacity=1; chimeAt([988+i*180],ctr(I)[0]); },500+i*350); });
+  bLater(()=>{ K.style.transition='opacity .4s'; K.style.opacity=1; sqs(K); glitterBurst(...ctr(K),12,10); },100); }
+
+/* ---------- the new gesture: kreiden (draw the unicorn in chalk by following its faint lines) ---------- */
+Object.assign(G2,{
+ /* kreiden: the faint dotted lines of a unicorn lie on the pavement; where the finger goes along a line, the chalk line appears
+    (starting anywhere on a line, in either direction). ~55 % of all line points drawn is enough, then the whole picture is
+    finished and gets its colours. A short tap is a try (two → the hint); moving without drawing anything is a miss.
+    a:{id (the pavement prop with krdWegSVG), pct, tol (vh)}; hook drawing(p) */
+ kreiden:{ setup(){ const W=TB.els[TB.a.id], P=[...W.querySelectorAll('.krdgd path')], ink=[...W.querySelectorAll('.krdink path')];
+     TB.kd={W,L:P.map((p,i)=>{ const L=p.getTotalLength(), n=Math.max(4,Math.round(L/5)), pts=[]; for(let j=0;j<=n;j++){ const q=p.getPointAtLength(L*j/n); pts.push([q.x,q.y]); }
+       const ink2=ink.filter(e=>+e.dataset.i===i); ink2.forEach(e=>{ e.style.strokeDasharray=`0 ${L*2}`; }); return {p,L,pts,n,a:-1,b:-1,ink:ink2}; }),N:0,got:0,last:null,mv:0,gain:0,tap:0,fin:false,auto:false,q:0};
+     TB.kd.N=TB.kd.L.reduce((s,l)=>s+l.n+1,0);
+     const S=el('div','tp2 krdstk',krdStiftSVG()); S.style.width='3.4vh'; TB.act.appendChild(S); TB.kd.st=S; },
+   scr(l,j){ const m=l.p.getScreenCTM(), q=new DOMPoint(l.pts[j][0],l.pts[j][1]).matrixTransform(m); return [q.x,q.y]; },
+   paint(l){ if(l.a<0) return; const s=l.a/l.n*l.L, e=l.b/l.n*l.L; l.ink.forEach(p=>{ p.style.strokeDasharray=`${Math.max(.01,e-s).toFixed(2)} ${(l.L*2).toFixed(1)}`; p.style.strokeDashoffset=(-s).toFixed(2); }); },
+   prog(){ const k=TB.kd; k.got=k.L.reduce((s,l)=>s+(l.a<0?0:l.b-l.a+1),0); const p=k.got/k.N; if(TB.sc.drawing) TB.sc.drawing(p);
+     const q=Math.floor(p*12); if(q>k.q){ k.q=q; chimeAt([523+q*55],k.last?k.last[0]:innerWidth/2); poke2(); }
+     if(p>=(TB.a.pct||.55)) this.finish(); return p; },
+   at(x,y){ const k=TB.kd, tol=vu()*(TB.a.tol||5.5); let g=0;
+     k.L.forEach(l=>{ if(l.a<0){ let bj=-1,bd=tol; for(let j=0;j<=l.n;j++){ const [px,py]=this.scr(l,j), d=Math.hypot(x-px,y-py); if(d<bd){ bd=d; bj=j; } } if(bj>=0){ l.a=l.b=bj; g++; this.paint(l); } return; }
+       for(let j=Math.min(l.n,l.b+7);j>l.b;j--){ const [px,py]=this.scr(l,j); if(Math.hypot(x-px,y-py)<tol){ g+=j-l.b; l.b=j; break; } }
+       for(let j=Math.max(0,l.a-7);j<l.a;j++){ const [px,py]=this.scr(l,j); if(Math.hypot(x-px,y-py)<tol){ g+=l.a-j; l.a=j; break; } }
+       if(g) this.paint(l); });
+     if(g){ k.gain+=g; krdKratz(x); if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*12*vu(),vy:-(2+Math.random()*5)*vu(),s:.6+Math.random()*.6,life:.9,c:'rgba(255,255,255,.85)'}); this.prog(); }
+     return g; },
+   tip(x,y,on){ const S=TB.kd.st; if(!S) return; putAt(S,x+vu()*1.2,y-vu()*2.6); S.classList.toggle('on',!!on); },
+   down(x,y){ const k=TB.kd; if(k.fin||k.auto) return; k.last=[x,y]; k.p0=[x,y]; k.mv=0; k.gain=0; this.tip(x,y,1); this.at(x,y); },
+   move(x,y){ const k=TB.kd; if(!TB.pd||k.fin||k.auto) return; this.tip(x,y,1); k.mv=Math.max(k.mv,Math.hypot(x-k.p0[0],y-k.p0[1]));
+     const L=k.last; if(L){ const d=Math.hypot(x-L[0],y-L[1]), st=Math.max(1,Math.ceil(d/(vu()*1.5))); for(let i=1;i<=st;i++) this.at(L[0]+(x-L[0])*i/st,L[1]+(y-L[1])*i/st); } k.last=[x,y]; },
+   up(){ const k=TB.kd; if(!k||k.fin||k.auto) return; this.tip(0,0,0); k.last=null;
+     if(k.mv<vu()*2&&!k.gain){ if(++k.tap>=2){ k.tap=0; hint2(false); } } else if(!k.gain) miss2(); },
+   next(){ const k=TB.kd; return k.L.find(l=>l.a<0||l.a>0||l.b<l.n)||k.L[0]; },
+   frames(){ const k=TB.kd, l=this.next(), f=[]; if(l.a<0){ for(let j=0;j<=l.n;j+=Math.max(1,Math.round(l.n/8))) f.push([...this.scr(l,j),.85,1]); }
+     else { for(let j=l.b;j<=l.n;j+=Math.max(1,Math.round(l.n/8))) f.push([...this.scr(l,j),.85,1]); if(f.length<3) for(let j=l.a;j>=0;j-=Math.max(1,Math.round(l.n/8))) f.push([...this.scr(l,j),.85,1]); }
+     if(!f.length) f.push([...ctr(k.W),.85,1]); f[0]=[f[0][0],f[0][1],1,0]; f.push([f[f.length-1][0],f[f.length-1][1]+vu()*5,1,0]); return f; },
+   hint(){ const k=TB.kd; if(!k||k.fin||k.auto) return; const f=this.frames(); ghost(f,Math.max(1600,f.length*230)); k.W.classList.remove('krdhint'); void k.W.offsetWidth; k.W.classList.add('krdhint');
+     ghostTrail(Math.max(1600,f.length*230),(x,y)=>{ if(Math.random()<.5) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*8*vu(),vy:-3*vu(),life:.5,s:.7,c:'rgba(255,255,255,.9)'}); }); },
+   auto(){ const k=TB.kd; if(k.fin||k.auto) return; k.auto=true; const sc=TB.sc, run=tale.run; let l=null;
+     const iv=setInterval(()=>{ if(!okRun(run,sc)||k.fin){ clearInterval(iv); if(TB&&TB.kd) this.tip(0,0,0); return; }
+       if(!l||(l.a===0&&l.b===l.n)){ l=k.L.find(q=>!(q.a===0&&q.b===q.n)); if(!l){ this.finish(); return; } if(l.a<0){ l.a=l.b=0; } }
+       if(l.b<l.n) l.b++; else if(l.a>0) l.a--; const [x,y]=this.scr(l,l.b); this.tip(x,y,1); k.last=[x,y]; if(Math.random()<.4) krdKratz(x); this.paint(l); this.prog(); },45); taleT.push(iv); },
+   finish(){ const k=TB.kd; if(k.fin) return; k.fin=true; this.tip(0,0,0); k.L.forEach(l=>{ l.a=0; l.b=l.n; l.ink.forEach(p=>{ p.style.transition='stroke-dasharray 1s ease-out, stroke-dashoffset 1s ease-out'; }); this.paint(l); });
+     k.W.classList.add('krddone'); const [x,y]=ctr(k.W); bLater(()=>{ glitterBurst(x,y-vu()*4,30,30); fxBurst(x,y,24,['rgba(255,255,255,.95)','rgba(255,210,236,.95)','rgba(255,226,122,.95)']); chime([784,988,1175,1568]); },700);
+     bLater(()=>done2(),1300); } }
+});
+
+/* the spiral on Ammo's shell: like trace, but the path is laid along the drawn spiral when the gesture starts (outside → in) */
+G2.krdspirale=Object.assign(Object.create(G2.trace),{
+  setup(){ const C=TB.els[TB.a.id].querySelector('.krdsh circle'), r=C.getBoundingClientRect(), cx=r.left+r.width/2, cy=r.top+r.height/2, k=r.width/2/72, pts=[];
+    for(let i=0;i<=24;i++){ const t=(4.05-i/24*2.65)*Math.PI, rr=(4+t*5.05)*k; pts.push(wpos(cx+Math.cos(t)*rr, cy-Math.sin(t)*rr)); }
+    TB.a.path=pts; G2.trace.setup.call(this); } });
+
+/* ================= Eefje und das Kreidemeer ================= */
+/* heart: "klein ist ganz groß". Papa, Boris and Ehfje find a fossil shell on the white chalk hill – "here was a sea, long ago". She makes
+   herself tiny and flies into the old warm sea, gives Kalki (a tiny chalk alga) her shield plates back, meets Kalki's huge family and
+   Ammo the ammonite, and with a magic hourglass watches a very long time go by: the sleeping Kalkis pile up, layer on layer, into the
+   chalk hill. At home she draws a unicorn in chalk for Janneke – the chalk is made of tiny Kalkis. Socke stays home (no water). */
+const KRDDUR={};
+const KRDOFF=[1,2,4,5,7], KRDPMAP={p1:1,p2:2,p3:4,p4:5,p5:7};
+const KRD2={id:'kreide', v2:true, eef:1, fam:1, dur:KRDDUR, title:'Eefje und das Kreidemeer', vtitle:'Ehfje und das Kreidemeer', icon:'🐚',
+ cover:'linear-gradient(180deg,#5ad0e8 0%,#2aa0c8 45%,#bfeef4 75%,#f6f2e6 100%)',
+ cast(sc){ const A=TB.act; FAM2.cast.call(this,sc); const mk=TB.mk; try{ alignLoad(['d3','d4'].map(s=>TB.n(s))); }catch(e){}
+  if(sc.kalki){ const [x,y,z,par]=sc.kalki, K=mk('kalki','krdka',krdKalkiSVG(TST.kal?[]:KRDOFF),x,y,z,par); if(par) K.style.width=z+'%'; K.dataset.mood=TST.kam||'smile'; }
+  (sc.sp||[]).forEach(([id])=>{ const S=TB.els[id]; if(S) S.classList.add('krdfpt'); });
+  if(sc.ammo){ const [x,y,z]=sc.ammo, M=mk('ammo','krdam',krdAmmoSVG(),x,y,z); M.dataset.mood='smile'; }
+  if(sc.lay) krdLayers();
+  if(sc.blase){ krdBlase(TB.els.hexe); krdBlase(TB.els.uni,1); }
+  if(sc.amb) krdAmbient(sc.amb);
+  if(sc.fish) krdFish(sc.fish);
+  if(sc.stift&&TB.els.hexe){ const S=el('div','tp2 kid krdstift',krdStiftSVG()); S.style.cssText='left:77%;top:60%;width:9%;rotate:24deg'; TB.els.hexe.querySelector(':scope>.bb').appendChild(S); TB.els.stift=S; }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); });
+  A.querySelectorAll(':scope>.tp2>svg').forEach(v=>v.style.display='block'); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='stein'){ sqs(b); chime([784,988]); glitterBurst(x,y,8,8); return true; }
+  if(id==='kalki'||id==='mini'){ sqs(b); bubble(rnd(['hihi!','blubb!','hallo!']),x,y-u*5,3.2,'#d8fff0'); krdBlub(x); return true; }
+  if(id==='ammo'){ sqs(b); bubble(rnd(['blubb!','hallo!','hoho!']),x,y-u*10,3.8,'#ffe6d0'); krdBlub(x,3); return true; }
+  if(/^fi\d+$/.test(id)){ sqs(b); krdBlub(x); krdBubs(x,y,5); return true; }
+  if(/^p\d$/.test(id)||id==='uhr'||id==='fels'||id==='weg'){ if(b.classList.contains('tp2')) sqs(b); chime([1175]); krdBubs(x,y,3); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – the white chalk hill: Boris digs up a white stone; rub it clean (rub) – a fossil shell! Papa: here was a sea, long ago */
+ {set:'krdberg', dark:0, u:[9,78,12], ef:[27,66,25,'st'], papa:[45,58,24], boris:[64,81,19], fx:{leaves:.25},
+  p:[['stein','KRDSTEIN',80,88,15,'krdstein krdhid']],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',bom:'happy',hop:0},
+  enter(){ famWag(1);
+    onPh('weißen Kreideberg',()=>{ const [x,y]=wpx(50,40); glitterBurst(x,y,10,30); }); onPh('dein Einhorn',()=>uniHop());
+    onPh('blieb Boris',()=>{ const B=TB.els.boris; famTrot(74,900,()=>{ B.classList.remove('flip'); B.classList.add('famsnf'); mood('boris','sniff'); }); });
+    onPh('Schnüff, schnüff',()=>{ const [x,y]=famNose(); famSniff(x,1.4); bubble('schnüff!',x,y-vu()*7,3.2,'#fff6e0'); });
+    onPh('Er buddelte',()=>{ const B=TB.els.boris; B.classList.remove('famsnf'); B.classList.add('gasdig'); bLater(()=>B.classList.remove('gasdig'),900); const [x,y]=wpx(80,92); gasClods(x,y,8,1); gasDig(x); });
+    onPh('weißen Stein aus',()=>krdStoneUp());
+    talk('hexe','Der ist ja','sagte Ehfje'); onPh('Der ist ja',()=>{ mood('hexe','oh'); efArm('fwd'); }); onPh('Reib den',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); krdStoneUp(true); efArm('fwd'); mood('hexe','happy'); mood('boris','happy'); TB.els.boris.classList.remove('famsnf','gasdig'); },
+  a:{t:'rub',id:'stein',w:'STEIN'},
+  h:'Reib mit dem Finger über den Stein!',
+  s:'Es war einmal ein sonniger Herbsttag. Die kleine Hexe Ehfje ging mit Papa und Boris auf den großen weißen Kreideberg. Und dein Einhorn kam natürlich mit. Auf einmal blieb Boris stehen. Schnüff, schnüff! Er buddelte einen weißen Stein aus. Der ist ja ganz staubig, sagte Ehfje. Reib den Stein mit dem Finger sauber!',
+  rubbing(x,y){ if(Math.random()<.5) fxAdd({k:'dust',x,y,vx:(Math.random()-.5)*20*vu(),vy:-(5+Math.random()*10)*vu(),s:.8+Math.random(),life:1.2,c:'rgba(255,255,255,.85)'}); },
+  rubStep(cl){ mood('hexe',cl>.35?'laugh':'happy'); if(cl>.3){ famWag(1); mood('boris','oh'); } },
+  done(){ const S=TB.els.stein; S.classList.add('clean','krdglow'); mood('hexe','oh'); mood('boris','oh'); efArm('dn'); },
+  d:[()=>{ onPh('Eine Muschel',()=>{ const S=TB.els.stein; sqs(S); chimeAt([1047,1318,1568],ctr(S)[0]); mood('hexe','laugh'); efArm('up'); },'d1');
+       talk('papa','Das ist eine','sagte Papa','d1'); onPh('Das ist eine',()=>{ mood('papa','happy'); famArm('papa','up'); efArm('dn'); mood('hexe','happy'); },'d1'); onPh('sagte Papa',()=>famArm('papa','dn'),'d1'); },
+     'Und was war da im Stein? Eine Muschel, ganz aus Stein! Das ist eine Versteinerung, sagte Papa.',
+     ()=>{ talk('papa','Hier war','Ein Meer','d2'); talk('hexe','Ein Meer','staunte','d2'); talk('hexe','Das will',null,'d2');
+       onPh('Hier war',()=>{ mood('papa','smile'); famArm('papa','wide'); },'d2'); onPh('ein Meer.',()=>krdSheen(),'d2');
+       onPh('Ein Meer',()=>{ famArm('papa','dn'); mood('hexe','oh'); },'d2'); onPh('Das will',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2'); },
+     'Hier war vor langer, langer Zeit ein Meer. Ein Meer? staunte Ehfje. Das will ich sehen!', 700]},
+
+ /* 2 – the spell: tap the four sparkles around her (tapall); Ehfje and the unicorn shrink to ladybird size, Boris sniffs them with his
+    giant nose; then she sits on her broom and they fly right into the fossil shell (the camera dives in) */
+ {set:'krdberg', dark:0, u:[20,77,13], ef:[34,66,25,'st'], papa:[54,58,24], boris:[71,81,19],
+  p:[['stein','KRDSTEIN',62,89,13,'krdstein clean krdglow']], sp:[['sp1',21,50,6],['sp2',27,36,6],['sp3',42,37,6],['sp4',47,53,6]],
+  st:{efm:'happy',efa:'up',pam:'smile',paa:'dn',bom:'happy',hop:0},
+  enter(){ famWag(1); onPh('hob ihren Finger',()=>{ efArm('up'); mood('hexe','happy'); }); onPh('Kribbel',()=>{ efSpell(16); const [x,y]=efFinger(); glitterBurst(x,y,14,12); });
+    talk('hexe','Kribbel','Papa lachte'); onPh('Papa lachte',()=>{ mood('papa','laugh'); }); talk('papa','Aber kommt','Tipp auf'); onPh('Aber kommt',()=>{ famArm('papa','up'); mood('papa','happy'); });
+    onPh('Tipp auf',()=>{ famArm('papa','dn'); ['sp1','sp2','sp3','sp4'].forEach((k,i)=>bLater(()=>{ const s=TB.els[k]; if(s){ sqs(s); chime([1175+i*120]); } },i*200)); }); },
+  ready(){ efReady(); efArm('up'); mood('hexe','happy'); famArm('papa','dn'); },
+  a:{t:'tapall',ids:['sp1','sp2','sp3','sp4'],w:'KLEIN'},
+  h:'Tipp auf alle Funkelsterne!',
+  s:'Ehfje hob ihren Finger und rief: Kribbel, krabbel, Funkelschein – macht uns alle winzig klein! Papa lachte. Aber kommt rechtzeitig zum Abendessen zurück! Tipp auf alle Funkelsterne!',
+  item(id,b){ b.classList.add('lit'); const [x,y]=ctr(b), [hx,hy]=efFinger(), u=vu(); for(let i=0;i<8;i++) fxAdd({k:'spark',x:x+(hx-x)*i/8,y:y+(hy-y)*i/8,vx:0,vy:-2*u,life:.7,s:.8,c:rnd(GLCOL)}); mood('hexe','laugh'); },
+  done(){ mood('hexe','happy'); ['sp1','sp2','sp3','sp4'].forEach(k=>{ const s=TB.els[k]; if(s){ s.style.transition='opacity .8s'; s.style.opacity=0; } }); },
+  d:[()=>{ onPh('kleiner und kleiner',()=>{ mood('hexe','oh'); efArm('dn'); krdShrink(2400); },'d1'); onPh('Marienkäfer',()=>{ TB.els.hexe.dataset.mood='laugh'; },'d1');
+       onPh('Boris schnüffelte',()=>{ const B=TB.els.boris; famTrot(43,1300,()=>{ B.classList.add('flip','famsnf'); mood('boris','sniff'); famSniff(ctr(B)[0],1.2); }); },'d1');
+       onPh('riesig',()=>{ const [x,y]=famNose(); bubble('schnüff!',x,y-vu()*6,3.4,'#fff6e0'); famSniff(x,1.6); mood('hexe','laugh'); },'d1'); },
+     'Da wurden Ehfje und dein Einhorn kleiner und kleiner, bis sie so winzig waren wie ein Marienkäfer. Boris schnüffelte ganz erstaunt. Seine Nase war jetzt riesig!',
+     ()=>{ onPh('ihren Besen',()=>{ const E=TB.els.hexe; E.classList.add('ride'); E.dataset.arm='fwd'; uniFly(true); sqs(E); },'d2');
+       onPh('schwupp',()=>{ const E=TB.els.hexe, U=TB.els.uni, B=TB.els.boris; B.classList.remove('famsnf'); mood('boris','oh');
+         [E,U].forEach((e,i)=>{ const [x,y]=wpos(...ctr(e)); kiPath(e,[[x+6,y-18],[56+i*2,68],[62,85]],2000); trail(e,2000); }); },'d2');
+       onPh('mitten hinein',()=>krdZoom(2600),'d2'); },
+     'Ehfje setzte sich auf ihren Besen, und schwupp, flogen sie mitten hinein in die Muschel.', 2400]},
+
+ /* 3 – into the old sea: warm and turquoise; a magic bubble lets them breathe. Fly the broom down through the bubble rings (fliegen) */
+ {set:'krdmeer', dark:0, u:[8,30,16], flyU:1, ef:[18,26,24,'ride'], blase:1, amb:1.4,
+  st:{efm:'oh',efa:'fwd'},
+  enter(){ krdFlashOut(); const R=[[40,44],[60,62],[80,76]]; efRings(R,9); TB.rings.forEach(g=>g.classList.add('krdbr')); krdSplash(innerWidth*.2); const [x,y]=wpx(20,24); krdBubs(x,y,20,14);
+    onPh('Plitsch',()=>{ const [x,y]=wpx(20,24); krdSplash(x); krdBubs(x,y,16,12); });
+    onPh('warm und türkis',()=>{ mood('hexe','laugh'); uniHop(); }); onPh('Zauberblase',()=>{ [TB.els.hexe,TB.els.uni].forEach(e=>{ const b=e&&e.querySelector('.krdbl'); if(b){ b.classList.remove('krdpop'); void b.offsetWidth; b.classList.add('krdpop'); } }); krdBlub(innerWidth*.2,3); });
+    onPh('Flieg mit',()=>{ mood('hexe','happy'); TB.rings.forEach((g,i)=>bLater(()=>{ g.classList.add('show'); const [x,y]=ctr(g); krdBubs(x,y,8,6); krdBlub(x); },i*400)); }); },
+  ready(){ efReady(); mood('hexe','happy'); },
+  a:{t:'fliegen',id:'hexe',rings:[[40,44],[60,62],[80,76]],r:9,w:'MEER'},
+  h:'Flieg mit dem Finger durch die Blasenringe!',
+  s:'Plitsch, platsch! Auf einmal waren sie im Wasser. Das Meer war ganz warm und türkis, und überall glitzerte es. Um Ehfje und dein Einhorn schwebte eine Zauberblase, damit sie atmen konnten. Flieg mit Ehfje durch die Blasenringe, bis ganz nach unten!',
+  ringPass(k){ const R=TB.rings[k-1]; if(R){ const [x,y]=ctr(R); krdBubs(x,y,14,8); krdBlub(x,3); } mood('hexe','laugh'); },
+  done(){ mood('hexe','laugh'); },
+  d:[()=>{ onPh('kleine Fische',()=>krdFish([[30,7,'#ffb84a','#c8741a',9,0,1],[46,5.4,'#ff7fae','#c04a78',11,3,-1],[22,4.6,'#7ad8ff','#2a8ac8',8,5,1],[58,6,'#a8f06a','#4a9a2a',12,1,-1]]),'d1');
+       talk('hexe','Hallo, Fische','rief Ehfje','d1'); onPh('Hallo, Fische',()=>{ mood('hexe','laugh'); efArm('up'); },'d1'); onPh('rief Ehfje',()=>efArm('fwd'),'d1'); },
+     'Unten am Meeresgrund wuchsen bunte Pflanzen, und kleine Fische schwammen vorbei. Hallo, Fische! rief Ehfje.', 800]},
+
+ /* 4 – on the sea floor: Kalki, a tiny round chalk alga, has lost her shield plates in the waves; tap the plates (tapall), they fly back.
+    Then a whole family of Kalkis comes */
+ {set:'krdgrund', dark:0, u:[10,62,15], flyU:1, ef:[26,52,24,'ride'], blase:1, amb:1, kalki:[64,62,21],
+  p:[['fels','KRDFELS',64,79,26],['p1','KRDPL',44,26,8.5,'krdfl'],['p2','KRDPL',80,20,8.5,'krdfl'],['p3','KRDPL',91,46,8.5,'krdfl'],['p4','KRDPL',43,80,8.5,'krdfl'],['p5','KRDPL',87,86,8.5,'krdfl']],
+  st:{efm:'oh',efa:'fwd',kam:'worry',kal:0},
+  enter(){ ['p1','p2','p3','p4','p5'].forEach((k,i)=>{ const P=TB.els[k]; if(P) P.style.animationDelay=(-i*.7).toFixed(1)+'s'; });
+    onPh('leises Schniefen',()=>{ mood('hexe','oh'); const K=TB.els.kalki; sqs(K); });
+    onPh('winziges rundes',()=>{ const K=TB.els.kalki; sqs(K); glitterBurst(...ctr(K),8,8); });
+    talk('kalki','Ich bin Kalki','schniefte es'); talk('kalki','Die Wellen','Tipp auf'); onPh('Ich bin Kalki',()=>{ mood('hexe','smile'); });
+    onPh('friere ich',()=>{ const K=TB.els.kalki; K.classList.add('krdfrier'); mood('hexe','worry'); });
+    onPh('Tipp auf',()=>{ mood('hexe','happy'); ['p1','p2','p3','p4','p5'].forEach((k,i)=>bLater(()=>{ const P=TB.els[k]; if(P){ sqs(P); glitterBurst(...ctr(P),6,6); } },i*180)); }); },
+  ready(){ efReady(); mood('hexe','happy'); mood('kalki','worry'); TB.els.kalki.classList.add('krdfrier'); TB.kn=0; },
+  a:{t:'tapall',ids:['p1','p2','p3','p4','p5'],w:'KALKI'},
+  h:'Tipp auf die glitzernden Schildchen!',
+  s:'Am Meeresgrund hörte Ehfje ein leises Schniefen. Auf einem Stein saß ein winziges rundes Wesen. Ich bin Kalki, schniefte es. Die Wellen haben meine Schildchen weggespült. Ohne meine Schildchen friere ich. Tipp auf die Schildchen, dann fliegen sie zu Kalki zurück!',
+  item(id,b){ krdPlateHome(b,KRDPMAP[id],()=>{ TB.kn=(TB.kn||0)+1; const K=TB.els.kalki; if(!K) return; mood('kalki',TB.kn>=5?'happy':'oh'); if(TB.kn>=3) K.classList.remove('krdfrier'); }); mood('hexe','laugh'); },
+  done(){ TST.kal=1; TST.kam='happy'; const K=TB.els.kalki; bLater(()=>{ K.classList.remove('krdfrier'); K.querySelectorAll('.krdpl').forEach(g=>{ g.classList.remove('off'); g.classList.add('on'); }); mood('kalki','happy'); },1000); },
+  d:[()=>{ talk('kalki','Danke','rief Kalki','d1'); onPh('Danke',()=>{ const K=TB.els.kalki; hearts(...ctr(K),3); mood('hexe','laugh'); },'d1');
+       onPh('drehte sich',()=>{ const K=TB.els.kalki; K.classList.remove('krdspin'); void K.offsetWidth; K.classList.add('krdspin'); glitterBurst(...ctr(K),16,12); chime([988,1175,1318,1568]); },'d1'); },
+     'Jetzt hatte Kalki wieder alle Schildchen, rund und weiß wie kleine Teller. Danke! rief Kalki und drehte sich im Kreis.',
+     ()=>{ onPh('noch mehr Kalkis',()=>{ krdFamily(16); mood('hexe','oh'); },'d2'); onPh('ganz viele',()=>{ mood('hexe','laugh'); uniHop(); },'d2');
+       talk('kalki','Das ist meine','sagte Kalki','d2'); talk('kalki','Wir sind',null,'d2'); onPh('Wir sind',()=>{ (TB.fam||[]).forEach((k,i)=>bLater(()=>sqs(k),i*60)); chime([1318,1568,2093]); },'d2'); },
+     'Und da kamen noch mehr Kalkis, ganz viele! Das ist meine Familie, sagte Kalki. Wir sind klein, aber wir sind ganz viele.', 700]},
+
+ /* 5 – the reef: Ammo the ammonite swims up – a snail with a spiral house. Trace the spiral (krdspirale) and it shines in all colours;
+    everybody climbs on and off they go, round and round */
+ {set:'krdriff', dark:0, u:[9,60,14], flyU:1, ef:[22,44,23,'ride'], blase:1, amb:1, kalki:[34,30,8], ammo:[68,58,46],
+  st:{efm:'happy',efa:'fwd',kam:'happy',kal:1},
+  enter(){ const M=TB.els.ammo; try{ M.animate([{transform:'translateX(70vw)'},{transform:'translateX(70vw)',offset:.25},{transform:'none'}],{duration:3400,easing:'cubic-bezier(.25,.8,.3,1)'}); }catch(e){}
+    onPh('jemand Großes',()=>{ mood('hexe','oh'); mood('kalki','oh'); }); onPh('wie eine Spirale',()=>{ const M=TB.els.ammo; sqs(M); krdBlub(ctr(M)[0],3); });
+    onPh('Das war Ammo',()=>{ mood('hexe','laugh'); mood('kalki','happy'); }); talk('ammo','Wollt ihr','Fahr mit');
+    onPh('mein Haus',()=>{ const M=TB.els.ammo; M.classList.remove('krdwig'); void M.offsetWidth; M.classList.add('krdwig'); }); },
+  ready(){ efReady(); mood('hexe','happy'); const M=TB.els.ammo; g2loop(()=>{ if(!TB.S) return; const p=Math.min(1,(TB.k||0)/(TB.S.length-1)); M.style.setProperty('--p',p.toFixed(3)); }); },
+  a:{t:'krdspirale',id:'ammo',pearl:1,w:'SCHNECKE'},
+  h:'Fahr mit dem Finger die Spirale entlang!',
+  s:'Und dann kam jemand Großes angeschwommen: eine Schnecke mit einem Haus wie eine Spirale. Das war Ammo. Wollt ihr eine Runde mitfahren? fragte Ammo. Aber erst muss mein Haus leuchten. Fahr mit dem Finger die Spirale entlang!',
+  done(){ const M=TB.els.ammo; M.style.setProperty('--p',1); M.classList.add('krdlitup'); mood('hexe','laugh'); mood('kalki','happy'); glitterBurst(...relEl(M,[.4,.5]),30,24); },
+  d:[()=>{ onPh('leuchtete',()=>{ const M=TB.els.ammo; sqs(M); chimeAt([784,988,1175,1568],ctr(M)[0]); },'d1');
+       onPh('Alle stiegen auf',()=>{ const M=TB.els.ammo, b=M.querySelector(':scope>.bb'), E=TB.els.hexe, K=TB.els.kalki; flyStick(E,b,.36,.02,900,8); bLater(()=>{ if(K) flyStick(K,b,.62,.0,700,6); },300); },'d1');
+       onPh('hui',()=>{ const M=TB.els.ammo, U=TB.els.uni; krdBlub(ctr(M)[0],4); kiPath(M,[[52,40],[30,52],[44,72],[70,66],[74,46],[52,40],[30,52],[44,72],[68,60]],5200); trail(M,5200);
+         kiPath(U,[[40,30],[18,44],[30,64],[58,60],[64,36],[40,30],[18,44],[30,64],[54,52]],5400); trail(U,5400); },'d1'); },
+     'Ammos Haus leuchtete in allen Farben. Alle stiegen auf, und hui, ging die Fahrt los, rundherum und rundherum!',
+     ()=>{ onPh('lachte und lachte',()=>{ mood('hexe','laugh'); hearts(...ctr(TB.els.hexe),3); },'d2'); talk('hexe','Das ist besser',null,'d2'); onPh('Karussell',()=>{ glitterBurst(innerWidth/2,innerHeight*.4,16,30); chime([1175,1568]); },'d2'); },
+     'Ehfje lachte und lachte. Das ist besser als jedes Karussell!', 700]},
+
+ /* 6 – the time: Kalki gets sleepy; the Kalkis sink gently down. Press and hold the magic hourglass (hold): a very long time goes by,
+    the sleeping Kalkis pile up layer on layer into a big white mountain – the chalk hill! She says the spell and is big again,
+    next to Papa on the chalk hill at sunset */
+ {set:'krdzeit', dark:.08, u:[9,50,14], flyU:1, ef:[24,38,22,'ride'], blase:1, amb:.6, kalki:[40,44,9], lay:1,
+  p:[['uhr','KRDUHR',80,82,10,'krduhr']],
+  st:{efm:'smile',efa:'fwd',kam:'sleepy',kal:1},
+  enter(){ talk('kalki','Wir Kalkis','gähnte Kalki'); talk('kalki','Und dann sinken','Da sah'); onPh('müde',()=>{ mood('kalki','sleepy'); mood('hexe','smile'); });
+    onPh('gähnte',()=>{ const K=TB.els.kalki; sqs(K); bubble('aaah…',...relEl(K,[.5,0]),3,'#d8fff0'); }); onPh('ganz sanft nach unten',()=>{ for(let i=0;i<4;i++) bLater(()=>krdSink(),i*500); });
+    onPh('Zaubersanduhr',()=>{ const U=TB.els.uhr; sqs(U); glitterBurst(...ctr(U),12,10); chime([988,1318]); mood('hexe','oh'); }); onPh('Drück auf',()=>mood('hexe','happy')); },
+  ready(){ efReady(); mood('hexe','happy'); mood('kalki','sleepy'); const U=TB.els.uhr, L=TB.els.lay, K=TB.els.kalki, T=el('div','krdtag'); TB.act.appendChild(T); TB.els.tag=T; let ph=0, sk=0, kd=false;
+    g2loop(dt=>{ const h=TB.hp||0, on=TB.holding||TB.autoHold; U.style.setProperty('--p',h.toFixed(3)); U.classList.toggle('run',!!on); L.style.setProperty('--h',(h*.92).toFixed(3));
+      if(on){ ph+=dt*9; sk+=dt; if(sk>.16){ sk=0; krdSink(); if(Math.random()<.4) krdRiesel(ctr(U)[0]); } } T.style.opacity=on?(.28*(.5+.5*Math.sin(ph))).toFixed(3):'0';
+      if(h>.25&&!kd&&K){ kd=true; const [x,y]=relEl(L,[.42,0]); unstick(K); kiPath(K,[[wpos(x,y)[0],wpos(x,y)[1]-3]],2600,()=>{ K.style.transition='opacity 1.2s'; K.style.opacity=0; }); zzzEl(K); } }); },
+  a:{t:'hold',id:'uhr',ms:3600,grow:.06,pc:'rgba(255,246,200,.9)',w:'ZEIT'},
+  h:'Drück auf die Sanduhr und lass nicht los!',
+  s:'Langsam wurde Kalki müde. Wir Kalkis schlafen jetzt, gähnte Kalki. Und dann sinken wir ganz sanft nach unten. Da sah Ehfje im Sand eine Zaubersanduhr. Drück auf die Sanduhr und halt sie ganz fest!',
+  done(){ const L=TB.els.lay, U=TB.els.uhr, T=TB.els.tag; L.style.setProperty('--h',1); U.style.setProperty('--p',1); U.classList.remove('run'); if(T) T.style.opacity=0; const K=TB.els.kalki; if(K){ K.style.transition='opacity 1s'; K.style.opacity=0; } mood('hexe','oh'); },
+  d:[()=>{ onPh('länger als ein Jahr',()=>{ const T=TB.els.tag; let n=0; const iv=setInterval(()=>{ if(!TB||!T.isConnected||n++>24){ clearInterval(iv); if(T) T.style.opacity=0; return; } T.style.opacity=(n%2?.26:.02); },160); taleT.push(iv); },'d1');
+       onPh('Schicht für Schicht',()=>{ const L=TB.els.lay; for(let i=0;i<10;i++) bLater(()=>krdSink(),i*220); L.classList.add('grow2'); L.style.setProperty('--h',1.35); },'d1');
+       onPh('großer weißer Berg',()=>{ const L=TB.els.lay; glitterBurst(...relEl(L,[.5,.2]),20,30); chime([523,659,784,1047]); },'d1'); },
+     'Die Zeit lief, ganz lange, viel, viel länger als ein Jahr. Die Kalkis schliefen ein, eins auf dem anderen, Schicht für Schicht. Und so wuchs ein großer weißer Berg.',
+     ()=>{ talk('hexe','Das ist ja','rief Ehfje','d2'); talk('hexe','Der ist aus','Und dann','d2'); talk('hexe','Kribbel',null,'d2');
+       onPh('Das ist ja',()=>{ mood('hexe','laugh'); efArm('up'); },'d2'); onPh('lauter kleinen',()=>{ mood('hexe','happy'); },'d2');
+       onPh('Kribbel',()=>{ efArm('up'); efSpell(18); },'d2'); onPh('wieder groß',()=>krdHome(),'d2'); },
+     'Das ist ja der Kreideberg! rief Ehfje. Der ist aus lauter kleinen Kalkis gemacht! Und dann rief sie: Kribbel, krabbel, Funkelschein – jetzt will ich wieder groß sein!',
+     ()=>{ talk('papa','Da bist','sagte Papa','d3'); talk('papa','Gerade',null,'d3'); onPh('Da bist',()=>{ mood('papa','laugh'); famArm('papa','hug'); },'d3');
+       onPh('Gerade',()=>{ const E=TB.els.hexe, P=TB.els.papa; if(E){ E.dataset.mood='laugh'; E.dataset.arm='hug'; } if(P) hearts(...relEl(P,[.5,.3]),3); },'d3'); },
+     'Und schwupp, stand Ehfje wieder neben Papa auf dem Kreideberg. Da bist du ja, sagte Papa. Gerade rechtzeitig zum Abendessen!', 900]},
+
+ /* 7 – home, in front of the door: Papa gives her a stick of chalk; follow the faint lines and she draws a unicorn for Janneke (kreiden).
+    Janneke squeals, Mama claps; ice cream in the blue treasure box; "Klein ist ganz groß" */
+ {set:'krdhof', dark:0, u:[7,80,10], ef:[19,66,24,'st'], papa:[72,58,23], jn:'papa', mama:[86,59,21], boris:[9,86,14], stift:1,
+  p:[['weg','KRDWEG',50,86,70,'krdweg']],
+  st:{efm:'happy',efa:'fwd',pam:'smile',mam:'smile',maa:'dn',jam:'smile',bom:'happy',hop:0},
+  enter(){ famWag(1); onPh('ein Stück Kreide',()=>{ const S=TB.els.stift; if(S){ sqs(S); glitterBurst(...ctr(S),8,6); } mood('hexe','laugh'); });
+    talk('papa','Malst du','fragte Papa'); onPh('Malst du',()=>{ mood('papa','happy'); mood('janneke','oh'); }); onPh('nickte',()=>{ const E=TB.els.hexe; sqs(E); mood('hexe','happy'); });
+    onPh('Fahr mit',()=>{ const W=TB.els.weg; W.classList.remove('krdhint'); void W.offsetWidth; W.classList.add('krdhint'); }); },
+  ready(){ efReady(); mood('hexe','happy'); mood('janneke','smile'); TB.gq=0; },
+  a:{t:'kreiden',id:'weg',pct:.55,w:'KREIDE'},
+  h:'Fahr mit dem Finger die Linien nach!',
+  s:'Zu Hause vor der Tür gab Papa Ehfje ein Stück Kreide. Malst du etwas für Janneke? fragte Papa. Ehfje nickte. Fahr mit dem Finger die Linien nach, dann malt Ehfje ein Einhorn!',
+  drawing(p){ const q=Math.floor(p*4); if(q>TB.gq){ TB.gq=q; mood('hexe',q%2?'laugh':'happy'); if(q>=2){ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],2); } } },
+  done(){ mood('hexe','laugh'); mood('janneke','laugh'); mood('mama','happy'); mood('papa','happy'); },
+  d:[()=>{ onPh('Ein Einhorn aus Kreide',()=>{ const W=TB.els.weg; glitterBurst(...relEl(W,[.42,.4]),20,24); },'d1');
+       onPh('quietschte',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],6); bubble('hihi!',...relEl(J,[.5,0]),3.2,'#ffe0ea'); },'d1');
+       onPh('klatschte',()=>{ for(let i=0;i<5;i++) bLater(()=>{ famArm('mama',i%2?'dn':'up'); chimeAt([1568],ctr(TB.els.mama)[0]); famNoise(ctr(TB.els.mama)[0],.08,2400,1800,60); },i*230); bLater(()=>famArm('mama','dn'),1250); mood('mama','laugh'); },'d1'); },
+     'Ein Einhorn aus Kreide! Janneke quietschte vor Freude, und Mama klatschte in die Hände.',
+     ()=>{ onPh('ein Eis',()=>{ krdEis(); mood('hexe','laugh'); efArm('dn'); },'d2'); talk('hexe','Weißt du','flüsterte','d2'); talk('hexe','Die Kreide',null,'d2');
+       onPh('Weißt du',()=>{ mood('hexe','happy'); mood('janneke','oh'); },'d2'); onPh('lauter kleinen',()=>{ const S=TB.els.stift; if(S){ sqs(S); glitterBurst(...ctr(S),10,8); } },'d2');
+       onPh('Klein ist',()=>{ mood('janneke','laugh'); hearts(...relEl(TB.els.janneke,[.5,.3]),3); hearts(...relEl(TB.els.hexe,[.5,.2]),3); },'d2'); },
+     'Und dann gab es ein Eis, wie immer in der blauen Schatzkiste. Weißt du was, Janneke? flüsterte Ehfje. Die Kreide ist aus lauter kleinen Kalkis gemacht. Klein ist ganz groß!',
+     ()=>{ onPh('Kreidestrich',()=>krdWink(),'d3'); onPh('noch heute',()=>{ glitterBurst(innerWidth/2,innerHeight*.4,24,50); chime([1318,1568,2093]); },'d3'); },
+     'Und in jedem Kreidestrich wohnen noch heute ihre kleinen Meeresfreunde.', 1800]}
+ ]};
+/* scene 1: the stone pops up out of the ground where Boris digs */
+function krdStoneUp(now){ const S=TB&&TB.els.stein; if(!S||!S.classList.contains('krdhid')) return; S.classList.remove('krdhid'); if(now) return;
+  try{ S.animate([{transform:'translateY(40%) scale(.6)',opacity:0},{transform:'translateY(-30%) scale(1.1)',opacity:1,offset:.6},{transform:'none',opacity:1}],{duration:700,easing:'ease-out'}); }catch(e){}
+  const [x,y]=ctr(S); gasClods(x,y,8,-1); glitterBurst(x,y,10,8); chime([659,880]); }
+/* scene 1: for a moment the hill shimmers like water – here was a sea */
+function krdSheen(){ if(!TB) return; const S=el('div','krdsheen'); TB.st.appendChild(S); try{ S.animate([{opacity:0},{opacity:.85,offset:.3},{opacity:.85,offset:.65},{opacity:0}],{duration:3200,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>S.remove(); }catch(e){ S.remove(); }
+  krdBubs(innerWidth*.5,innerHeight*.8,16,60); krdBlub(innerWidth/2,3); }
+/* the last picture: little Kalki faces wink along the chalk lines */
+function krdWink(){ const W=TB&&TB.els.weg; if(!W) return; const P=[...W.querySelectorAll('.krdgd path')]; P.forEach((p,i)=>{ const L=p.getTotalLength(), q=p.getPointAtLength(L*.5), m=p.getScreenCTM(); if(!m) return; const r=new DOMPoint(q.x,q.y).matrixTransform(m);
+    bLater(()=>{ const k=el('div','tp2 krdwink',krdKalkiSVG([],1)); k.style.width='2.6vh'; TB.act.appendChild(k); putAt(k,r.x,r.y); glitterBurst(r.x,r.y,6,6); chimeAt([1568+i*60],r.x); },i*180); }); }
+/*<KREIDE*/
 
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
@@ -15626,7 +16129,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -15707,6 +16210,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr famdog" data-mood="happy" style="left:62%;top:80%;width:36%"><div class="bb">${borisSVG()}</div></div>`+
     `<svg class="gasartln" viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none"><path d="M42.4 66 Q55 80 69.6 78.6" fill="none" stroke="#6a1018" stroke-width="1.6" vector-effect="non-scaling-stroke" style="stroke-width:.9vh" stroke-linecap="round"/><path d="M42.4 66 Q55 80 69.6 78.6" fill="none" stroke="#e8343e" style="stroke-width:.5vh" vector-effect="non-scaling-stroke" stroke-linecap="round"/></svg>`+
     [[14,14,3.4],[30,30,2.6],[58,12,3],[86,24,2.6],[10,52,2.4],[50,34,2.2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;animation-delay:${-k*.5}s">${k%2?'🍁':'🍂'}</span>`).join('')+`</div>`+tw;/*<GASART*/
+  if(id==='kreide') return `<div class="krdart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,#bff4f8 0,#46c4de 45%,#127aa4 92%)"></div>`+
+    `<div style="position:absolute;left:-12%;right:-12%;bottom:-6%;height:30%;border-radius:50% 50% 0 0/34% 34% 0 0;background:repeating-linear-gradient(180deg,#fdfcf4 0 2.4vh,#e8e0c8 2.4vh 2.8vh)"></div>`+
+    `<div class="tp2 krdam" data-mood="smile" style="left:68%;top:62%;width:56%"><div class="bb">${krdAmmoSVG()}</div></div>`+
+    `<div class="tp2 chr eef ride" data-mood="laugh" data-arm="fwd" style="left:32%;top:40%;width:40%"><div class="bb">${eefjeSVG()}<div class="krdbl"></div></div></div>`+
+    `<div class="tp2 krdka" data-mood="happy" style="left:58%;top:24%;width:15%"><div class="bb">${krdKalkiSVG([])}</div></div>`+
+    [[12,16,3],[84,12,2.6],[20,70,2.4],[90,40,2.2],[46,10,2],[8,46,2.6]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">○</span>`).join('')+`</div>`+tw;/*<KRDART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -15985,6 +16494,8 @@ regTale2(WLD2);
 regTale2(TUI2);
 /* Eefje geht mit Boris spazieren: after the Weihnachtsland, so the older lines keep their order in voice/clips.tsv */
 regTale2(GAS2);
+/* Eefje und das Kreidemeer: after the walk with Boris, so the older lines keep their order in voice/clips.tsv */
+regTale2(KRD2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
