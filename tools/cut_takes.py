@@ -8,7 +8,7 @@ Output: <OUT>/<key>__<take>.mp3 for every syllable item, plus letter sounds:
 Env: OUT (default voice/kandidaten), TAKES (comma list of take ids or prefixes; default all)
 Needs ffmpeg with rubberband and numpy.
 """
-import json, os, subprocess, sys, glob
+import json, os, re, subprocess, sys, glob
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +19,7 @@ SR = 44100
 HOP = int(SR * 0.005)  # 5 ms frames
 os.makedirs(OUT, exist_ok=True)
 
-HELD = set("mnlsfwrhzj")
+HELD = set("mnlsfwrhz")
 VOICELESS_STOP = set("tpk")
 VOICED_STOP = set("bdg")
 
@@ -201,8 +201,63 @@ def vowel_onset(seg, c_end_hint, C):
             return k * HOP
     return hint * HOP
 
+# --- steady vowel sounds (Nov 2026) -------------------------------------------------------------
+# A vowel read on its own (v3) or at the end of a syllable rises/falls by up to an octave and turns creaky
+# at the end; stretched to 0.75 s that sounded odd. A "core" candidate takes only the steadiest stretch of
+# the vowel (flat pitch, flat level, clearly periodic) and holds it. Which sources get one is decided in
+# voice/auswahl.json: a pick "laut_<v>__<take>-core" uses that take's own laut_<v> item,
+# "laut_<v>__<take>-<c>core" the vowel of its silbe_<c><v> item (h/l/w/m/n before the vowel keep it pure).
+def _f0(x, i, w):
+    s = x[i:i + w] - x[i:i + w].mean(); e = float((s ** 2).sum())
+    if e < 1e-7: return 0.0, 0.0, 0.0
+    ac = np.correlate(s, s, "full")[w - 1:]; lo, hi = int(SR / 400), int(SR / 80)
+    k = lo + int(np.argmax(ac[lo:hi])); return SR / k, ac[k] / ac[0], np.sqrt(e / w)
+
+def steady_core(seg):
+    hop, w = int(SR * 0.01), int(SR * 0.03); n = (len(seg) - w) // hop
+    if n < 12: return None
+    F = [_f0(seg, i * hop, w) for i in range(n)]
+    f0 = np.array([a for a, b, c in F]); per = np.array([b for a, b, c in F]); rms = np.array([c for a, b, c in F])
+    top = rms.max(); start = int(np.argmax(rms > top * 0.5))       # skip the consonant, start in the vowel
+    for win in (0.28, 0.22, 0.18, 0.15, 0.12):                       # longest steady stretch wins
+        k = int(win / 0.01); best = None
+        for i in range(start, n - k):
+            fz, pv, rr = f0[i:i + k], per[i:i + k], rms[i:i + k]
+            if (pv < 0.6).any() or (fz <= 0).any() or (rr < top * 0.4).any(): continue
+            st = 12 * np.log2(fz / np.median(fz))
+            if st.max() - st.min() > 1.5: continue
+            q = st.std() * 2 + rr.std() / rr.mean() * 10 + (1 - pv.mean()) * 5
+            if best is None or q < best[0]: best = (q, i)
+        if best: a = best[1] * hop; return seg[a:a + k * hop + w]
+    return None
+
+def vowel_hold(seg, target=0.65):
+    core = steady_core(seg)
+    if core is None: return None
+    y = stretch(core, max(0.1, min(1.0, len(core) / SR / target)), True)
+    return pad(fade(level(y), 0.03, 0.12))
+
+def j_sound(seg):
+    """J = the glide plus a hint of the following vowel ("j(e)"), like b/d/g; held, a j is just an "i" """
+    e = env_db(band(seg, 700, 1400)); al = env_db(seg)
+    k0 = int(np.argmax(al > al.max() - 30))
+    on = next((k for k in range(k0, len(e)) if e[k] > e.max() - 10), None)
+    if on is None or on - k0 < 8: return None
+    return pad(fade(level(seg[:on * HOP + int(SR * 0.025)]), 0.004, 0.04))
+
+def core_wanted():
+    try: picks = json.load(open(os.path.join(ROOT, "voice", "auswahl.json"), encoding="utf-8"))
+    except Exception: return {}
+    out = {}
+    for v in picks.values():
+        m = re.fullmatch(r"laut_([a-z]+)__(.+)-([a-z]?)core", str(v))
+        if m:
+            V, tid, C = m.groups(); out[(tid, f"silbe_{C}{V}" if C else f"laut_{V}")] = v
+    return out
+
 DIAG = []
 def main():
+    WANT = core_wanted()
     takes = sorted(glob.glob(os.path.join(RAW, "*.json")))
     made = 0
     for jp in takes:
@@ -218,6 +273,9 @@ def main():
             key, say, a, b, t0, t1 = c
             seg = x[int(a * SR):int(b * SR)]
             if len(seg) < SR * 0.08: print("  !! zu kurz", key, tid); continue
+            if (tid, key) in WANT:
+                y = vowel_hold(seg)
+                if y is not None: encode(y, os.path.join(OUT, WANT[(tid, key)] + ".mp3")); made += 1
             if key.startswith("laut_"):          # vowel takes: "A. E. I. O. U."
                 core = seg
                 tempo = max(0.3, min(1.0, (len(core) / SR) / 0.75))
@@ -230,6 +288,10 @@ def main():
             if not key.startswith("silbe_") or not (len(syl) == 2 and syl[1] in "aeiou" and syl[0] not in "aeiou"):
                 continue
             C, V = syl[0], syl[1]
+            if C == "j":
+                y = j_sound(seg)
+                if y is not None: encode(y, os.path.join(OUT, f"laut_j__{tid}-{V}.mp3")); made += 1
+                continue
             # aligned consonant end = start of 2nd char of the item
             al = take["alignment"]; text = "".join(al["characters"])
             idx = text.find(say, text.find(":") + 1 if ":" in text[:20] else 0)
