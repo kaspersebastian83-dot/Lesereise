@@ -4877,6 +4877,106 @@
      "say": "Juwel"
     }
    ]
+  },
+  {
+   "id": "vow_uml_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Ä. Ö. Ü.",
+   "items": [
+    {
+     "key": "laut_ae",
+     "say": "Ä"
+    },
+    {
+     "key": "laut_oe",
+     "say": "Ö"
+    },
+    {
+     "key": "laut_ue",
+     "say": "Ü"
+    }
+   ]
+  },
+  {
+   "id": "vow_long_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Aah. Uuh. Ääh. Ööh. Üüh.",
+   "items": [
+    {
+     "key": "laut_a",
+     "say": "Aah"
+    },
+    {
+     "key": "laut_u",
+     "say": "Uuh"
+    },
+    {
+     "key": "laut_ae",
+     "say": "Ääh"
+    },
+    {
+     "key": "laut_oe",
+     "say": "Ööh"
+    },
+    {
+     "key": "laut_ue",
+     "say": "Üüh"
+    }
+   ]
+  },
+  {
+   "id": "vow_long_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Aah. Uuh. Ääh. Ööh. Üüh.",
+   "items": [
+    {
+     "key": "laut_a",
+     "say": "Aah"
+    },
+    {
+     "key": "laut_u",
+     "say": "Uuh"
+    },
+    {
+     "key": "laut_ae",
+     "say": "Ääh"
+    },
+    {
+     "key": "laut_oe",
+     "say": "Ööh"
+    },
+    {
+     "key": "laut_ue",
+     "say": "Üüh"
+    }
+   ]
+  },
+  {
+   "id": "vow_ext_v2",
+   "model": "eleven_multilingual_v2",
+   "text": "Lies mit: Aaah. Uuuh. Äääh. Öööh. Üüüh.",
+   "items": [
+    {
+     "key": "laut_a",
+     "say": "Aaah"
+    },
+    {
+     "key": "laut_u",
+     "say": "Uuuh"
+    },
+    {
+     "key": "laut_ae",
+     "say": "Äääh"
+    },
+    {
+     "key": "laut_oe",
+     "say": "Öööh"
+    },
+    {
+     "key": "laut_ue",
+     "say": "Üüüh"
+    }
+   ]
   }
  ]
 }
