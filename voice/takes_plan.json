@@ -4992,6 +4992,33 @@
      "say": "Knochen"
     }
    ]
+  },
+  {
+   "id": "w_x068_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Klein. Kalki. Schnecke. Zeit. Kreide.",
+   "items": [
+    {
+     "key": "wort_klein",
+     "say": "Klein"
+    },
+    {
+     "key": "wort_kalki",
+     "say": "Kalki"
+    },
+    {
+     "key": "wort_schnecke",
+     "say": "Schnecke"
+    },
+    {
+     "key": "wort_zeit",
+     "say": "Zeit"
+    },
+    {
+     "key": "wort_kreide",
+     "say": "Kreide"
+    }
+   ]
   }
  ]
 }
