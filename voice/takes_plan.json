@@ -4977,6 +4977,21 @@
      "say": "Üüüh"
     }
    ]
+  },
+  {
+   "id": "w_x067_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Leine. Knochen.",
+   "items": [
+    {
+     "key": "wort_leine",
+     "say": "Leine"
+    },
+    {
+     "key": "wort_knochen",
+     "say": "Knochen"
+    }
+   ]
   }
  ]
 }
