@@ -1995,6 +1995,80 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 /* book page */
 .krdart .tp2{position:absolute} .krdart .eef>.bb,.krdart .krdka>.bb,.krdart .krdam>.bb{animation:none}
 /*<KREIDECSS*/
+/*URKNALLCSS>*/
+/* Eefje und der Urknall (all classes start with "urk") */
+.urkrohr svg,.urkst svg,.urkfu svg,.urkwk svg,.urkst1 svg,.urkst2 svg,.urkst3 svg,.urkri svg,.urkerde svg,.urkson svg,.urkuhr svg{display:block;width:100%;overflow:visible}
+/* the telescope: its lens lights up while she holds it, all colours when it is done */
+.tp2.urkrohr{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.4)) drop-shadow(0 0 calc(var(--p,0)*2.4vh) rgba(190,230,255,.95))}
+.urkrohr .urkln{transition:opacity .3s} .tp2.urkrohr.lit{animation:urkhue 2.4s linear infinite;filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.4)) drop-shadow(0 0 2.4vh rgba(255,190,240,.95)) drop-shadow(0 0 5vh rgba(150,210,255,.8))}
+@keyframes urkhue{to{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.4)) drop-shadow(0 0 2.4vh rgba(255,190,240,.95)) drop-shadow(0 0 5vh rgba(150,210,255,.8)) hue-rotate(360deg)}}
+/* the stars to count, and the numbers */
+.tp2.urkst{filter:drop-shadow(0 0 .8vh rgba(255,226,122,.8));animation:urktw 2.6s ease-in-out infinite} @keyframes urktw{50%{scale:1.12}}
+.tp2.urkst:nth-of-type(2n){animation-delay:-1.1s} .tp2.urkst.lit{filter:drop-shadow(0 0 1.2vh #fff) drop-shadow(0 0 3.4vh #ffd84a)}
+.urknum{position:absolute;z-index:3;font-weight:900;font-size:10vh;line-height:1;color:#fff3a0;-webkit-text-stroke:.35vh #a8641a;text-shadow:0 0 2vh rgba(255,220,120,.9),0 .6vh 0 #a8641a;pointer-events:none}
+/* Fünkchen: hidden until it says hello; bobbing, its rays turn; moods and the talking mouth */
+.tp2.urkfu{filter:drop-shadow(0 0 1vh #fff3a0) drop-shadow(0 0 2.6vh rgba(255,200,90,.85));opacity:0;transition:opacity .6s} .tp2.urkfu.on{opacity:1}
+.urkfu>.bb{position:relative;animation:urkbob 2.2s ease-in-out infinite} @keyframes urkbob{50%{transform:translateY(-8%) rotate(6deg)}}
+.urkfu .urkry{transform-box:fill-box;transform-origin:50% 50%;animation:urkspin 6s linear infinite} @keyframes urkspin{to{transform:rotate(360deg)}}
+.urkfu .ey,.urkfu .m,.urkfu .mo{display:none}
+.urkfu[data-mood=smile] .ey-o,.urkfu[data-mood=smile] .m-s{display:inline} .urkfu[data-mood=happy] .ey-j,.urkfu[data-mood=happy] .m-h{display:inline}
+.urkfu[data-mood=laugh] .ey-j,.urkfu[data-mood=laugh] .m-h{display:inline} .urkfu[data-mood=laugh]>.bb{animation:urkbob .9s ease-in-out infinite}
+.urkfu[data-mood=worry] .ey-w,.urkfu[data-mood=worry] .m-w{display:inline} .urkfu[data-mood=oh] .ey-o,.urkfu[data-mood=oh] .m-o{display:inline}
+.urkfu.talking .m{display:none!important} .urkfu.talking .mo{display:inline;transform-box:fill-box;transform-origin:50% 30%;transform:scaleY(calc(.25 + var(--mo,0)*1.1))}
+.urkfu.urkwink>.bb{animation:urkwk 1.3s ease-in-out} @keyframes urkwk{30%{transform:scale(1.6) rotate(-12deg)}60%{transform:scale(1.3) rotate(10deg)}}
+/* the time rings and their clocks running backwards */
+.fring.urkzr{background:conic-gradient(#ffe27a,#fff6d0,#b48cff,#7ad0ff,#fff6d0,#ffe27a)}
+.tp2.urkuhr{opacity:0;transition:opacity .6s,scale .5s;filter:drop-shadow(0 0 1vh rgba(255,240,200,.6))} .tp2.urkuhr.on{opacity:.8} .tp2.urkuhr.past{opacity:0;scale:1.6}
+.urkuhr .urkh1{transform-box:view-box;transform-origin:50% 50%;animation:urkspin 1.6s linear infinite reverse} .urkuhr .urkh2{transform-box:view-box;transform-origin:50% 50%;animation:urkspin 9s linear infinite reverse}
+/* the tiny hot dot of the very beginning */
+.tp2.urkpkt{width:2.4vh;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff 0,#fff 38%,#fff6c8 58%,rgba(255,220,140,0) 76%);
+  box-shadow:0 0 2vh 1vh rgba(255,240,200,.85),0 0 6vh 3vh rgba(255,190,120,.5);animation:urkpk 1.6s ease-in-out infinite;transition:opacity 1s;filter:none} @keyframes urkpk{50%{scale:1.35}}
+.tp2.urkpkt.urkheiss{animation-duration:.55s;box-shadow:0 0 2.4vh 1.2vh rgba(255,250,220,.95),0 0 8vh 4vh rgba(255,170,100,.6)} .tp2.urkpkt.urkgone{opacity:0}
+.tp2.urkpkt.g2hint{animation:urkpk .4s ease-in-out 4}
+/* the whole world growing like a balloon (--s 0 … 1); its little dots move apart; it cools as it grows */
+.urkall{position:absolute;left:50%;top:46%;width:calc(3vh + var(--s,0)*170vh);aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;transition:width 1s cubic-bezier(.2,.9,.3,1.15);
+  background:radial-gradient(circle,#fff 0%,#fff3c0 10%,#ffc870 24%,#ff7a5a 40%,rgba(190,80,200,.6) 58%,rgba(90,50,170,.35) 74%,rgba(20,10,60,0) 100%)}
+.urkall::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(40,20,110,0) 0,rgba(40,20,110,.55) 55%,rgba(0,0,0,0) 100%);opacity:calc(var(--s,0)*.85)}
+.urkall i{position:absolute;width:.7vh;height:.7vh;border-radius:50%;background:#fff;box-shadow:0 0 .9vh #fff;translate:-50% -50%;opacity:calc(var(--s,0)*1.4)}
+.urkall.urkpuls{animation:urkpl .9s ease-out} @keyframes urkpl{0%{filter:brightness(1.7)}100%{filter:none}}
+.urkall.urkweiter{transition:width 7s ease-out;width:196vh}
+/* the little balloon that shows it */
+.tp2.urkbal{width:8vh;opacity:0;transition:width 2.2s ease-out,opacity .5s;filter:drop-shadow(0 .6vh 1vh rgba(0,0,0,.35))} .tp2.urkbal.on{opacity:1} .tp2.urkbal.big{width:17vh} .tp2.urkbal.bigger{width:21vh;transition:width 5s ease-out}
+.urkbb{position:relative;width:100%;aspect-ratio:.86;border-radius:50% 50% 48% 48%/54% 54% 46% 46%;background:radial-gradient(circle at 34% 28%,#ffe0ee 0,#ff6aa8 40%,#c8327a 100%)}
+.urkbb i{position:absolute;width:11%;aspect-ratio:1;border-radius:50%;background:#fff6a0;translate:-50% -50%;box-shadow:0 0 .6vh #fff}
+.urkbal b{display:block;width:12%;aspect-ratio:1;margin:-3% auto 0;background:#c8327a;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.urkbal b::after{content:"";display:block;width:.25vh;height:7vh;margin:100% auto 0;background:rgba(255,255,255,.55)}
+/* the gas cloud: thin and wide at first, dense with --c, smaller and hotter with --q / --hot */
+.tp2.urkwk{filter:drop-shadow(0 0 calc(var(--hot,0)*4vh) rgba(255,170,90,.9))}
+.urkwk>.bb>svg{transition:scale .8s ease-out,opacity .8s;scale:calc(1.5 - var(--c,0)*.5 - var(--q,0)*.45);opacity:calc(.35 + var(--c,0)*.65)}
+.urkwk .urkcore{opacity:var(--hot,0);transition:opacity .6s} .urkwk .swirl{transform-box:fill-box;transform-origin:50% 50%}
+.urkwk .urkbl{transform-box:fill-box;transform-origin:50% 50%;animation:urkbl 7s ease-in-out infinite} @keyframes urkbl{50%{transform:scale(1.06,.95) rotate(4deg)}}
+/* the stars */
+.tp2.urkst1{filter:drop-shadow(0 0 3vh rgba(255,220,120,.9)) drop-shadow(0 0 8vh rgba(255,170,80,.6))}
+.urkst1 .urkrays,.urkst2 .urkrays,.urkst3 .urkrays,.urkson .urkrays{transform-box:fill-box;transform-origin:50% 50%;animation:urkspin 16s linear infinite}
+.tp2.urkst2{filter:drop-shadow(0 0 1.2vh rgba(255,240,200,.9));animation:urktw 3s ease-in-out infinite}
+.tp2.urkst3{filter:drop-shadow(0 0 1.6vh rgba(255,230,150,.95));animation:urktw 3.4s ease-in-out infinite}
+.urkshine{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.8s;mix-blend-mode:screen;background:radial-gradient(circle at 64% 48%,rgba(255,230,160,.5) 0,rgba(255,190,120,.2) 30%,rgba(0,0,0,0) 62%)} .urkshine.on{opacity:1}
+.st3.urkhell>.l-sky{transition:filter 3s;filter:brightness(1.5) saturate(1.2)}
+/* the old red giant: breathing, its face, the sneeze, the star dust cloud around it */
+.tp2.urkri{filter:drop-shadow(0 0 3vh rgba(255,110,80,.7))} .urkri>.bb{position:relative;animation:urkri 4s ease-in-out infinite} @keyframes urkri{50%{transform:scale(1.03)}}
+.urkri .ey,.urkri .m{display:none} .urkri[data-mood=smile] .ey-o,.urkri[data-mood=smile] .m-s{display:inline} .urkri[data-mood=happy] .ey-j,.urkri[data-mood=happy] .m-s{display:inline}
+.urkri[data-mood=oh] .ey-o,.urkri[data-mood=oh] .m-o{display:inline} .urkri[data-mood=tick] .ey-c,.urkri[data-mood=tick] .m-o{display:inline}
+.urkri.urkin>.bb{animation:urkin 1.6s ease-in forwards} @keyframes urkin{to{transform:scale(1.12) translateY(-3%) rotate(-4deg)}}
+.urkri.urksnz>.bb{animation:urksnz .8s cubic-bezier(.3,1.5,.5,1)} @keyframes urksnz{0%{transform:scale(1.12) rotate(-4deg)}30%{transform:scale(.88,.96) translateY(4%) rotate(6deg)}100%{transform:none}}
+.urkneb{position:absolute;width:10vh;aspect-ratio:1;translate:-50% -50%;border-radius:50%;pointer-events:none;opacity:0;
+  background:radial-gradient(circle,rgba(255,255,255,0) 42%,rgba(255,190,240,.16) 54%,rgba(180,160,255,.14) 64%,rgba(120,200,255,.08) 76%,rgba(0,0,0,0) 88%);transition:width 3.2s cubic-bezier(.2,.8,.3,1),opacity 1.2s}
+.urkneb.on{width:110vh;opacity:1;animation:urknb 5s ease-in-out infinite 3s} @keyframes urknb{50%{filter:hue-rotate(40deg) brightness(1.15)}}
+.tp2.urkziel{color:#fff6c0;text-shadow:0 0 1.2vh #fff,0 0 3vh #ffd84a;animation:urktw 1.2s ease-in-out infinite;filter:none}
+.tp2.urkson{filter:drop-shadow(0 0 2vh rgba(255,220,100,.9))} .tp2.urkerde{filter:drop-shadow(0 0 1.4vh rgba(120,200,255,.85))}
+.urkerde>.bb{animation:none}
+/* Ehfje glitters: she is made of stardust */
+.eef.urkglitz>.bb{filter:drop-shadow(0 0 1vh rgba(255,240,180,.9)) drop-shadow(0 0 2.6vh rgba(210,170,255,.7))}
+/* the flash */
+.urkflash{position:absolute;inset:0;pointer-events:none;opacity:0;z-index:30;background:radial-gradient(circle,#fff 0,#fffbea 42%,#e4dcff 100%)}
+/* book page */
+.urkart .tp2{position:absolute} .urkart .eef>.bb,.urkart .urkfu>.bb{animation:none}
+/*<URKNALLCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -16104,6 +16178,420 @@ function krdSheen(){ if(!TB) return; const S=el('div','krdsheen'); TB.st.appendC
 function krdWink(){ const W=TB&&TB.els.weg; if(!W) return; const P=[...W.querySelectorAll('.krdgd path')]; P.forEach((p,i)=>{ const L=p.getTotalLength(), q=p.getPointAtLength(L*.5), m=p.getScreenCTM(); if(!m) return; const r=new DOMPoint(q.x,q.y).matrixTransform(m);
     bLater(()=>{ const k=el('div','tp2 krdwink',krdKalkiSVG([],1)); k.style.width='2.6vh'; TB.act.appendChild(k); putAt(k,r.x,r.y); glitterBurst(r.x,r.y,6,6); chimeAt([1568+i*60],r.x); },i*180); }); }
 /*<KREIDE*/
+/*URKNALL>*/
+/* ================= Eefje und der Urknall: drawn props and sets (all classes and helpers start with "urk"; checked: no urk…
+   name existed before) ================= */
+/* Papa's telescope on its tripod; the big lens (.urkln) lights up with --p 0 … 1 while her finger holds it. viewBox 0 0 140 150 */
+function urkRohrSVG(){ const q='urkr'+(++LANC);
+  return `<svg viewBox="0 0 140 150" style="overflow:visible"><defs><linearGradient id="${q}t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a8ae8"/><stop offset=".5" stop-color="#3a5ab8"/><stop offset="1" stop-color="#24387a"/></linearGradient>
+   <radialGradient id="${q}l" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#bfe8ff"/><stop offset="1" stop-color="#5aa0e0"/></radialGradient></defs>
+  <ellipse cx="70" cy="146" rx="46" ry="4" fill="rgba(0,0,0,.25)"/>
+  <g stroke="#6a4218" stroke-width="5" stroke-linecap="round"><path d="M70 92 L34 146"/><path d="M70 92 L106 146"/><path d="M70 92 L72 148"/></g>
+  <circle cx="70" cy="90" r="7" fill="#b87a3a" stroke="#6a4218" stroke-width="2.4"/>
+  <g transform="rotate(-34 70 80)">
+   <rect x="14" y="72" width="14" height="16" rx="3" fill="#24387a" stroke="#141e48" stroke-width="2.4"/><rect x="6" y="75" width="10" height="10" rx="2" fill="#141e48"/>
+   <path d="M26 70 L116 64 L116 96 L26 90Z" fill="url(#${q}t)" stroke="#141e48" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M30 74 L112 69" stroke="#a8c4ff" stroke-width="2.6" stroke-linecap="round" opacity=".8"/>
+   <rect x="44" y="67" width="8" height="26" rx="2" fill="#ffd25a" stroke="#a8781a" stroke-width="1.8"/><rect x="94" y="64" width="8" height="32" rx="2" fill="#ffd25a" stroke="#a8781a" stroke-width="1.8"/>
+   <g fill="#ffe27a"><path d="M68 76 l1.6 3.4 3.6 .4 -2.7 2.4 .8 3.6 -3.3 -1.9 -3.3 1.9 .8 -3.6 -2.7 -2.4 3.6 -.4Z"/><circle cx="82" cy="84" r="1.6"/><circle cx="60" cy="86" r="1.2"/></g>
+   <ellipse cx="118" cy="80" rx="7" ry="18" fill="#b87a3a" stroke="#6a4218" stroke-width="2.4"/>
+   <ellipse class="urkln" cx="119" cy="80" rx="4.6" ry="14" fill="url(#${q}l)"/></g></svg>`; }
+
+/* Fünkchen: a tiny glowing spark with a face, little rays all round. Moods: smile, happy, worry, oh, laugh; .mo for talk. viewBox 0 0 100 100 */
+function urkFunkiSVG(){ const q='urkf'+(++LANC);
+  const ry=[0,1,2,3,4,5,6,7].map(i=>{ const a=i*Math.PI/4, r0=31, r1=i%2?40:46; return `<path d="M${(50+Math.cos(a)*r0).toFixed(1)} ${(50+Math.sin(a)*r0).toFixed(1)} L${(50+Math.cos(a)*r1).toFixed(1)} ${(50+Math.sin(a)*r1).toFixed(1)}"/>`; }).join('');
+  return `<svg viewBox="0 0 100 100" style="overflow:visible"><defs><radialGradient id="${q}" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#fff3a8"/><stop offset="1" stop-color="#ffc44a"/></radialGradient></defs>
+  <g class="urkry" stroke="#fff6c8" stroke-width="4" stroke-linecap="round">${ry}</g>
+  <circle cx="50" cy="50" r="26" fill="url(#${q})" stroke="#f0a020" stroke-width="2.4"/><ellipse cx="41" cy="38" rx="7" ry="4.4" fill="#fff" opacity=".85"/>
+  <g class="ey ey-o" fill="#5a3a10"><circle cx="42" cy="50" r="3.6"/><circle cx="58" cy="50" r="3.6"/><circle cx="43.2" cy="48.8" r="1.2" fill="#fff"/><circle cx="59.2" cy="48.8" r="1.2" fill="#fff"/></g>
+  <g class="ey ey-j" fill="none" stroke="#5a3a10" stroke-width="2.4" stroke-linecap="round"><path d="M38 51 q4 -5 8 0 M54 51 q4 -5 8 0"/></g>
+  <g class="ey ey-w" fill="#5a3a10"><circle cx="42" cy="51" r="3"/><circle cx="58" cy="51" r="3"/><path d="M37 45 l8 -3 M63 45 l-8 -3" stroke="#5a3a10" stroke-width="1.8" stroke-linecap="round"/></g>
+  <path class="m m-s" d="M44 58 q6 5 12 0" stroke="#5a3a10" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path class="m m-h" d="M43 57 q7 8 14 0Z" fill="#ff6a8a" stroke="#5a3a10" stroke-width="1.8" stroke-linejoin="round"/>
+  <path class="m m-w" d="M45 61 q5 -4 10 0" stroke="#5a3a10" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="50" cy="60" rx="3" ry="3.8" fill="#ff6a8a" stroke="#5a3a10" stroke-width="1.6"/>
+  <ellipse class="mo" cx="50" cy="59" rx="4.4" ry="3.4" fill="#ff6a8a" stroke="#5a3a10" stroke-width="1.6"/>
+  <g fill="#ff9a6a" opacity=".55"><ellipse cx="35" cy="58" rx="4" ry="2.4"/><ellipse cx="65" cy="58" rx="4" ry="2.4"/></g></svg>`; }
+
+/* a spiral galaxy (two glowing arms around a bright middle), tilted. viewBox -60 -60 120 120 */
+function urkGalSVG(c1,c2,seed){ const q='urkg'+(++LANC), r=seeded(seed||7); let arm=['',''], dots='';
+  for(let a=0;a<2;a++){ let d=''; for(let i=0;i<=40;i++){ const t=i/40*3.4*Math.PI, rr=4+i*1.25, x=Math.cos(t+a*Math.PI)*rr, y=Math.sin(t+a*Math.PI)*rr; d+=(i?' L':'M')+x.toFixed(1)+' '+y.toFixed(1); } arm[a]=d; }
+  for(let i=0;i<26;i++){ const t=r()*6.28, rr=8+r()*46; dots+=`<circle cx="${(Math.cos(t)*rr).toFixed(1)}" cy="${(Math.sin(t)*rr).toFixed(1)}" r="${(.6+r()*1.2).toFixed(1)}" fill="#fff" opacity="${(.4+r()*.6).toFixed(2)}"/>`; }
+  return `<svg viewBox="-60 -60 120 120" style="overflow:visible"><defs><radialGradient id="${q}"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="${c1}"/><stop offset=".7" stop-color="${c2}" stop-opacity=".35"/><stop offset="1" stop-color="${c2}" stop-opacity="0"/></radialGradient></defs>
+  <g transform="scale(1 .5) rotate(-20)"><circle r="58" fill="url(#${q})"/><g fill="none" stroke-linecap="round"><path d="${arm[0]}" stroke="${c1}" stroke-width="7" opacity=".55"/><path d="${arm[1]}" stroke="${c1}" stroke-width="7" opacity=".55"/>
+   <path d="${arm[0]}" stroke="#fff" stroke-width="2" opacity=".7"/><path d="${arm[1]}" stroke="#fff" stroke-width="2" opacity=".7"/></g>${dots}<circle r="9" fill="#fff"/></g></svg>`; }
+/* a planet, with or without a ring. viewBox -40 -40 80 80 */
+function urkPlanSVG(c1,c2,ring){ const q='urkp'+(++LANC);
+  return `<svg viewBox="-40 -40 80 80" style="overflow:visible"><defs><radialGradient id="${q}" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".25" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></radialGradient><clipPath id="${q}c"><circle r="22"/></clipPath></defs>
+  ${ring?`<path d="M-38 4 A38 10 0 0 1 38 -4" fill="none" stroke="#ffe2b0" stroke-width="4" opacity=".8" transform="rotate(-12)"/>`:''}
+  <circle r="22" fill="url(#${q})"/><g clip-path="url(#${q}c)" fill="none" stroke="${c2}" stroke-width="3" opacity=".45"><path d="M-24 -6 Q0 -10 24 -4 M-24 6 Q0 2 24 8"/></g>
+  ${ring?`<path d="M38 -4 A38 10 0 0 1 -38 4" fill="none" stroke="#ffe2b0" stroke-width="4" transform="rotate(-12)"/>`:''}</svg>`; }
+
+/* the gas cloud of scenes 5 and 6: soft blobs and a spiral of tiny glowing bits (.swirl turns while she stirs), a hot core (.urkcore,
+   shows with --hot). viewBox 0 0 200 160 */
+function urkWolkeSVG(){ const q='urkw'+(++LANC), r=seeded(2741); let sw='';
+  for(let i=0;i<60;i++){ const t=i*.55, rr=6+i*1.15, x=100+Math.cos(t)*rr, y=80+Math.sin(t)*rr*.72; sw+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1.2+r()*1.8).toFixed(1)}" fill="${['#fff','#d8c8ff','#ffd8f0','#c8e8ff'][i%4]}" opacity="${(.5+r()*.5).toFixed(2)}"/>`; }
+  const bl=[[100,80,70,'#8a6ad8'],[62,70,44,'#c86ac8'],[140,90,46,'#6a8ae8'],[96,108,40,'#a87ae8'],[120,54,38,'#d88ad0']].map(([x,y,s,c],i)=>`<circle cx="${x}" cy="${y}" r="${s}" fill="url(#${q}${i})"/>`).join('');
+  const gr=[['#8a6ad8'],['#c86ac8'],['#6a8ae8'],['#a87ae8'],['#d88ad0']].map(([c],i)=>`<radialGradient id="${q}${i}"><stop offset="0" stop-color="${c}" stop-opacity=".75"/><stop offset=".6" stop-color="${c}" stop-opacity=".3"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>`).join('');
+  return `<svg viewBox="0 0 200 160" style="overflow:visible"><defs>${gr}<radialGradient id="${q}h"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#ffe27a"/><stop offset=".7" stop-color="#ff8a3a" stop-opacity=".6"/><stop offset="1" stop-color="#ff5a2a" stop-opacity="0"/></radialGradient></defs>
+  <g class="urkbl">${bl}</g><circle class="urkcore" cx="100" cy="80" r="48" fill="url(#${q}h)"/><g class="swirl">${sw}</g></svg>`; }
+
+/* a star: a glowing ball with soft rays (.urkrays turn slowly). viewBox -60 -60 120 120 */
+function urkSternSVG(c){ const q='urks'+(++LANC); c=c||['#fff8c8','#ffd25a','#ff9a3a'];
+  let rays=''; for(let i=0;i<12;i++){ const a=i*Math.PI/6, r1=i%2?50:58; rays+=`<path d="M${(Math.cos(a-.12)*30).toFixed(1)} ${(Math.sin(a-.12)*30).toFixed(1)} L${(Math.cos(a)*r1).toFixed(1)} ${(Math.sin(a)*r1).toFixed(1)} L${(Math.cos(a+.12)*30).toFixed(1)} ${(Math.sin(a+.12)*30).toFixed(1)}Z"/>`; }
+  return `<svg viewBox="-60 -60 120 120" style="overflow:visible"><defs><radialGradient id="${q}" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#fff"/><stop offset=".4" stop-color="${c[0]}"/><stop offset=".8" stop-color="${c[1]}"/><stop offset="1" stop-color="${c[2]}"/></radialGradient>
+   <radialGradient id="${q}g"><stop offset="0" stop-color="${c[1]}" stop-opacity=".55"/><stop offset="1" stop-color="${c[1]}" stop-opacity="0"/></radialGradient></defs>
+  <circle r="60" fill="url(#${q}g)"/><g class="urkrays" fill="${c[0]}" opacity=".9">${rays}</g><circle r="32" fill="url(#${q})"/><ellipse cx="-11" cy="-13" rx="10" ry="6" fill="#fff" opacity=".7"/></svg>`; }
+
+/* the huge old red star of scene 7, with a face: smile, oh, tick (the nose tickles: eyes squeezed), happy. viewBox -80 -80 160 160 */
+function urkRiesSVG(){ const q='urki'+(++LANC), r=seeded(2753); let sp='';
+  for(let i=0;i<12;i++){ const t=r()*6.28, rr=r()*52; sp+=`<circle cx="${(Math.cos(t)*rr).toFixed(1)}" cy="${(Math.sin(t)*rr).toFixed(1)}" r="${(3+r()*7).toFixed(1)}" fill="#ff9a6a" opacity=".45"/>`; }
+  return `<svg viewBox="-80 -80 160 160" style="overflow:visible"><defs><radialGradient id="${q}" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffe0b0"/><stop offset=".45" stop-color="#ff8a5a"/><stop offset="1" stop-color="#c8324a"/></radialGradient>
+   <radialGradient id="${q}g"><stop offset=".5" stop-color="#ff6a4a" stop-opacity=".45"/><stop offset="1" stop-color="#ff6a4a" stop-opacity="0"/></radialGradient></defs>
+  <circle r="80" fill="url(#${q}g)"/><circle r="60" fill="url(#${q})" stroke="#a8243a" stroke-width="3"/>${sp}<ellipse cx="-22" cy="-28" rx="16" ry="9" fill="#fff" opacity=".45"/>
+  <g class="ey ey-o" fill="#5a1420"><circle cx="-18" cy="-4" r="6"/><circle cx="18" cy="-4" r="6"/><circle cx="-16" cy="-6" r="2" fill="#fff"/><circle cx="20" cy="-6" r="2" fill="#fff"/></g>
+  <g class="ey ey-c" fill="none" stroke="#5a1420" stroke-width="3.4" stroke-linecap="round"><path d="M-26 -4 l8 -3 l-8 -3 M26 -4 l-8 -3 l8 -3"/></g>
+  <g class="ey ey-j" fill="none" stroke="#5a1420" stroke-width="3.4" stroke-linecap="round"><path d="M-25 -2 q7 -8 14 0 M11 -2 q7 -8 14 0"/></g>
+  <ellipse cx="0" cy="10" rx="6" ry="4.4" fill="#e85a5a" stroke="#5a1420" stroke-width="2"/>
+  <path class="m m-s" d="M-12 22 q12 9 24 0" stroke="#5a1420" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <ellipse class="m m-o" cx="0" cy="25" rx="7" ry="8" fill="#7a1a2a" stroke="#5a1420" stroke-width="2.4"/>
+  <g fill="#ff6a8a" opacity=".55"><ellipse cx="-34" cy="12" rx="8" ry="4.6"/><ellipse cx="34" cy="12" rx="8" ry="4.6"/></g></svg>`; }
+
+/* the little blue Earth, and our little Sun (scene 7). viewBox -30 -30 60 60 */
+function urkErdeSVG(){ const q='urke'+(++LANC);
+  return `<svg viewBox="-30 -30 60 60" style="overflow:visible"><defs><radialGradient id="${q}" cx=".38" cy=".32" r=".8"><stop offset="0" stop-color="#8ad0ff"/><stop offset=".6" stop-color="#2a7ae0"/><stop offset="1" stop-color="#14408a"/></radialGradient><clipPath id="${q}c"><circle r="20"/></clipPath></defs>
+  <circle r="26" fill="#7ac8ff" opacity=".25"/><circle r="20" fill="url(#${q})"/>
+  <g clip-path="url(#${q}c)"><path d="M-16 -10 Q-8 -16 -2 -10 Q2 -4 -4 0 Q-10 4 -8 10 Q-14 8 -18 0Z M4 -18 Q12 -16 14 -8 Q18 -2 12 2 Q6 0 6 -6 Q2 -12 4 -18Z M2 8 Q10 6 14 12 Q10 18 2 16Z" fill="#5ad07a" stroke="#2a8a4a" stroke-width="1.2"/>
+   <path d="M-20 4 Q-12 0 -4 4 M6 -14 Q12 -12 18 -14 M-8 14 Q0 10 8 14" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/></g>
+  <ellipse cx="-7" cy="-9" rx="6" ry="3.4" fill="#fff" opacity=".5"/></svg>`; }
+function urkSonneSVG(){ return urkSternSVG(['#fffbe0','#ffe04a','#ffa82a']); }
+/* a little star to tap and count (scene 1) */
+function urkPktSVG(){ return `<svg viewBox="0 0 40 40" style="overflow:visible"><circle cx="20" cy="20" r="18" fill="#fff6c0" opacity=".22"/><path d="M20 2 L25.3 14.6 L38.5 15.5 L28.4 24.2 L31.6 37.5 L20 30.2 L8.4 37.5 L11.6 24.2 L1.5 15.5 L14.7 14.6Z" fill="#fff3a0" stroke="#ffc83a" stroke-width="2" stroke-linejoin="round"/><circle cx="20" cy="21" r="5" fill="#fff"/></svg>`; }
+
+Object.assign(SVGP,{URKROHR:[urkRohrSVG,1],URKSTERNCHEN:[urkPktSVG,1],URKGAL1:[()=>urkGalSVG('#b48cff','#5a3ab8',11),1],URKGAL2:[()=>urkGalSVG('#7ad0ff','#2a5ab8',23),1],URKGAL3:[()=>urkGalSVG('#ff9ad0','#a83a8a',37),1],
+  URKPLAN1:[()=>urkPlanSVG('#ffc48a','#b8642a',1),1],URKPLAN2:[()=>urkPlanSVG('#8ae8c8','#2a8a7a',0),1],URKPLAN3:[()=>urkPlanSVG('#ff9a9a','#a83a4a',0),1],URKERDE:[urkErdeSVG,1],URKSONNE:[urkSonneSVG,1],URKSTERN:[()=>urkSternSVG(),1]});
+
+/* ---------- the sets: the meadow at night, space, the very beginning (black), the dark fog of tiny bits, space with the old red star ---------- */
+Object.assign(SETS2,{
+  urkgarten:{sky:'linear-gradient(180deg,#040624 0%,#0e1448 45%,#25306e 80%,#3c4084 100%)', moon:[88,13], stars:110, dcol:'6,6,30',
+    far:sil(hills(2711,250,60,'#1e2858')+pines(2713,26,80,'#151c44',90)+hills(2717,300,36,'#1a2a4a'),58), gnd:'linear-gradient(180deg,#2e5a4a 0%,#21463a 50%,#132c24 100%)',
+    act:[['haus','HEXHAUS',90,46,40]], mid:[['PINE',4,46,24],['PINE',13,52,16]], fore:[['🌿',3,97,12],['🌾',97,98,12]]},
+  urkall:{sky:'radial-gradient(120% 90% at 30% 40%,#2a1a5a 0%,#120c38 40%,#05041a 80%)', stars:150, dcol:'4,4,24',
+    farp:[['URKGAL1',80,22,26],['URKGAL2',14,74,16],['URKPLAN1',62,78,13],['URKPLAN2',30,14,8],['URKGAL3',44,40,10]]},
+  urkanfang:{sky:'radial-gradient(70% 60% at 50% 46%,#0a0618 0%,#030108 60%,#000 100%)', stars:0, dcol:'0,0,0'},
+  urknebel:{sky:'radial-gradient(110% 90% at 60% 45%,#1e1648 0%,#0e0a2a 50%,#040314 100%)', stars:0, dcol:'2,2,14'},
+  urkstaub:{sky:'radial-gradient(100% 80% at 70% 70%,#3a1a4a 0%,#1a0e3a 40%,#06051c 85%)', stars:140, dcol:'4,2,20', farp:[['URKGAL2',90,12,12],['URKGAL3',8,16,9]]}
+});
+Object.assign(TSYL,{FERNROHR:'FERN-ROHR',WELTALL:'WELT-ALL',URKNALL:'UR-KNALL',STAUB:'STAUB'}); TSYL.STERN=TSYL.STERN||'STERN'; TSYL.WOLKE=TSYL.WOLKE||'WOL-KE'; TSYL.LICHT=TSYL.LICHT||'LICHT';
+
+/* ---------- sounds: a whoosh, a clock ticking, the pling of the first star, a big sneeze, a soft hum ---------- */
+const urkLate=()=>!tale||!tale.t||tale.t.id!=='urknall'||!taleOn();
+function urkTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||urkLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function urkNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||urkLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.06,d*.25)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function urkWhoosh(x,up){ urkNoise(x,.12,up?400:2400,up?2600:300,700); }
+function urkTick(x,n){ for(let i=0;i<(n||1);i++) setTimeout(()=>{ urkTone(x,i%2?1500:1900,i%2?1400:1800,40,.05,'square'); },i*260); }
+function urkPling(x){ urkTone(x,1568,1568,900,.08,'sine'); setTimeout(()=>urkTone(x,2349,2349,900,.05,'sine'),120); setTimeout(()=>urkTone(x,3136,3136,1200,.035,'triangle'),240); }
+function urkHum(x){ urkTone(x,110,165,1400,.05,'sine'); urkTone(x,220,330,1400,.03,'sine'); }
+
+/* ---------- helpers ---------- */
+/* scene 1: a big number pops up over the star she just counted */
+function urkNum(n,x,y){ const u=vu(), N=el('div','urknum',String(n)); N.style.left=x+'px'; N.style.top=(y-u*7)+'px'; $('fx').appendChild(N);
+  try{ N.animate([{transform:'translate(-50%,-50%) scale(.3)',opacity:0},{transform:'translate(-50%,-90%) scale(1.15)',opacity:1,offset:.25},{transform:'translate(-50%,-110%) scale(1)',opacity:1,offset:.7},{transform:'translate(-50%,-150%) scale(.9)',opacity:0}],{duration:1700,easing:'ease-out',fill:'forwards'}).onfinish=()=>N.remove(); }catch(e){ N.remove(); }
+  setTimeout(()=>N.remove(),1900); }
+/* scene 2: starlight travels from a star down into the telescope, slowly (it is a long way) */
+function urkBeam(from,to,ms){ const sc=TB.sc, t0=now(); ms=ms||2600; FX.dr.push(tn=>{ if(!TB||TB.sc!==sc) return false; const f=(tn-t0)/ms; if(f>1) return false; const a=from(), b=to(); if(!a||!b) return;
+  const x=a[0]+(b[0]-a[0])*f, y=a[1]+(b[1]-a[1])*f; fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*6*vu(),vy:-4*vu(),life:.6,s:.8+Math.random()*.5,c:rnd(GLCOL)}); }); }
+/* streaks of stars rushing past while flying back in time */
+function urkWarp(rate){ FX.em=FX.em.filter(e=>!e.urkw); if(!rate) return; FX.em.push({urkw:1,rate,fn:()=>{ const u=vu(); fxAdd({k:'streak',x:innerWidth*(.2+Math.random()*.9),y:innerHeight*Math.random(),vx:(90+Math.random()*90)*u,vy:0,len:-(6+Math.random()*10)*u,life:.9}); }}); }
+/* tiny bits floating in the dark like fine fog (scene 5), they drift towards (x,y) when given */
+function urkMotes(rate,to){ FX.em=FX.em.filter(e=>!e.urkm); if(!rate) return; FX.em.push({urkm:1,rate,fn:()=>{ const u=vu(), x=innerWidth*Math.random(), y=innerHeight*(.08+Math.random()*.84), T=to&&to();
+  const vx=T?(T[0]-x)*.12:(Math.random()-.5)*4*u, vy=T?(T[1]-y)*.12:(Math.random()-.5)*4*u; fxAdd({k:'dust',x,y,vx,vy,s:.35+Math.random()*.4,life:5+Math.random()*3,amb:1,c:rnd(['rgba(220,210,255,.75)','rgba(255,220,245,.7)','rgba(200,230,255,.7)'])}); }}); }
+/* a white flash over the whole world (fades in), and its fading out in the next scene */
+function urkFlash(ms,hold){ const fl=el('div','urkflash'); TB.W.appendChild(fl); try{ fl.animate([{opacity:0},{opacity:0,offset:.5},{opacity:1,offset:.92},{opacity:1}],{duration:ms||2400,easing:'ease-in-out',fill:'forwards'}); }catch(e){ fl.style.opacity=1; } return fl; }
+function urkFlashOut(){ document.querySelectorAll('#taleWorld>.urkflash').forEach(f=>{ f.getAnimations().forEach(q=>q.cancel()); f.style.opacity=1; try{ f.animate([{opacity:1},{opacity:0}],{duration:1400,easing:'ease-out',fill:'forwards'}).onfinish=()=>f.remove(); }catch(e){ f.remove(); } setTimeout(()=>f.remove(),1600); }); }
+/* scene 2: the camera flies up into the starlight */
+function urkZoom(ms){ const st=TB.st; if(!st) return; const [ax,ay]=wpx(62,8); ms=ms||2600; st.style.transformOrigin=`${ax}px ${ay}px`;
+  st.style.transition=`scale ${ms}ms cubic-bezier(.5,0,.3,1), opacity ${ms*.4}ms ease-in ${ms*.6}ms`; st.style.scale=9; st.style.opacity=0; urkFlash(ms+300);
+  urkWhoosh(innerWidth*.6,1); chime([392,523,659,784,1047]); }
+/* scene 3: everything moves closer and closer together into one tiny bright dot */
+function urkConverge(ms){ ms=ms||5200; const [cx,cy]=wpx(50,46), st=TB.st;
+  [...st.querySelectorAll('.l-far>.m-e, .l-sky>i, .l-sky>.moon2')].forEach((e,i)=>{ const r=e.getBoundingClientRect(), x=r.left+r.width/2, y=r.top+r.height/2;
+    try{ e.animate([{transform:'none',opacity:1},{transform:`translate(${(cx-x)*.55}px,${(cy-y)*.55}px) scale(.5)`,opacity:1,offset:.6},{transform:`translate(${cx-x}px,${cy-y}px) scale(.05)`,opacity:0}],{duration:ms*(.8+Math.random()*.2),delay:Math.random()*400,easing:'ease-in',fill:'forwards'}); }catch(e){} });
+  urkWarp(0); const D=el('div','tp2 urkpkt'); D.style.cssText='left:50%;top:46%;opacity:0'; TB.act.appendChild(D); TB.els.dot=D;
+  bLater(()=>{ D.style.transition='opacity 1.2s'; D.style.opacity=1; urkHum(cx); glitterBurst(cx,cy,20,8); },ms*.75); }
+/* scene 4: the little balloon that shows how everything grows (dots on it move apart) */
+function urkBallon(){ if(TB.els.ballon) return; const B=el('div','tp2 urkbal',`<div class="urkbb">${[[30,34],[62,28],[46,58],[70,62],[28,68],[54,40]].map(([x,y])=>`<i style="left:${x}%;top:${y}%"></i>`).join('')}</div><b></b>`);
+  B.style.cssText='left:80%;top:60%'; TB.act.appendChild(B); TB.els.ballon=B; void B.offsetWidth; B.classList.add('on'); urkWhoosh(ctr(B)[0],1); }
+/* scene 5/6: little bits flying into the cloud */
+function urkInto(n){ const W=TB.els.wolke; if(!W) return; const [tx,ty]=ctr(W), u=vu(); for(let i=0;i<(n||8);i++){ const a=Math.random()*6.283, d=u*(30+Math.random()*30), x=tx+Math.cos(a)*d, y=ty+Math.sin(a)*d*.7;
+  fxAdd({k:'dust',x,y,vx:(tx-x)*.9,vy:(ty-y)*.9,s:.45+Math.random()*.4,life:1.1,c:rnd(['rgba(230,220,255,.9)','rgba(255,225,245,.9)','rgba(210,235,255,.9)'])}); } }
+/* scene 6: the cloud lights up – the very first star */
+function urkIgnite(){ const W=TB.els.wolke, F=TB.els.funki; if(!W||TB.els.stern) return; const [x,y]=ctr(W), A=TB.act;
+  const S=el('div','tp2 urkst1',urkSternSVG()); S.style.cssText=`left:${W.style.left};top:${W.style.top};width:34vh`; A.insertBefore(S,W); TB.els.stern=S;
+  if(F) stickTo(F,S,.5,.5);
+  const sh=el('div','urkshine'); TB.st.appendChild(sh); TB.els.shine=sh; void sh.offsetWidth; sh.classList.add('on');
+  try{ S.animate([{transform:'scale(.1)',opacity:0},{transform:'scale(1.25)',opacity:1,offset:.5},{transform:'none',opacity:1}],{duration:1100,easing:'cubic-bezier(.3,1.4,.5,1)'}); }catch(e){}
+  W.style.transition='opacity .6s'; W.style.opacity=0; bLater(()=>{ W.remove(); delete TB.els.wolke; },700);
+  fxBurst(x,y,60,['rgba(255,255,255,.95)','rgba(255,236,150,.95)','rgba(255,190,110,.9)'],50); glitterBurst(x,y,40,40); urkPling(x); chime([784,1047,1318,1568,2093]); }
+/* scene 6: stars light up everywhere, one after another */
+function urkStarsOn(n){ const r=seeded(2767), L=TB.st.querySelector('.l-sky'); for(let i=0;i<(n||40);i++){ const s=el('i','urkon'), z=1.5+r()*3;
+    s.style.cssText=`left:${(r()*100).toFixed(1)}%;top:${(r()*92).toFixed(1)}%;width:${z.toFixed(1)}px;height:${z.toFixed(1)}px;animation-duration:${(2+r()*3).toFixed(1)}s;opacity:0`;
+    L.appendChild(s); bLater(()=>{ s.style.transition='opacity .5s'; s.style.opacity=1; if(i%5===0) chime([1568+(i%4)*200]); },i*90); }
+  [[14,20],[86,30],[30,80],[76,84],[90,62],[8,52]].forEach(([x,y],i)=>bLater(()=>{ const S=el('div','tp2 urkst2',urkSternSVG(i%2?['#e8f4ff','#9ad0ff','#5a8ae8']:null)); S.style.cssText=`left:${x}%;top:${y}%;width:${(5+i%3*2)}vh`; TB.act.appendChild(S);
+    try{ S.animate([{transform:'scale(0)',opacity:0},{transform:'none',opacity:1}],{duration:700,easing:'cubic-bezier(.3,1.5,.5,1)'}); }catch(e){} const [px,py]=ctr(S); glitterBurst(px,py,8,6); },400+i*450)); }
+/* scene 7: the old red star sneezes – glittering star dust flies everywhere */
+function urkSneeze(){ const R=TB.els.riese; if(!R) return; const [x,y]=relEl(R,[.5,.6]), u=vu(); R.classList.remove('urkin'); R.classList.add('urksnz'); R.dataset.mood='oh';
+  for(let i=0;i<90;i++){ const a=Math.random()*6.283, v=(20+Math.random()*60)*u; fxAdd({k:'dust',x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v*.7,s:.5+Math.random()*.9,life:2.6+Math.random()*1.6,c:rnd(GLCOL)}); }
+  const N=el('div','urkneb'); TB.st.querySelector('.l-act').insertBefore(N,TB.els.uni); putAt(N,x,y); TB.els.neb=N; void N.offsetWidth; N.classList.add('on');
+  urkNoise(x,.2,2400,500,520,'lowpass'); urkTone(x,420,180,300,.06,'triangle'); glitterBurst(x,y,40,50); bLater(()=>{ R.classList.remove('urksnz'); R.dataset.mood='happy'; },1300); }
+/* scene 7: at the blinking light the star dust swirls together into our Sun and the little Earth */
+function urkForm(){ const Z=TB.els.ziel; if(!Z||TB.els.sonne) return; const [x,y]=ctr(Z), A=TB.act; Z.style.transition='opacity .6s'; Z.style.opacity=0;
+  for(let i=0;i<40;i++){ const a=Math.random()*6.283, d=vu()*(10+Math.random()*14), px=x+Math.cos(a)*d, py=y+Math.sin(a)*d; fxAdd({k:'dust',x:px,y:py,vx:(x-px)*1.2,vy:(y-py)*1.2,s:.6,life:.85,c:rnd(GLCOL)}); }
+  const S=prop('URKSONNE',0,0,14,'tp2 urkson'), E=prop('URKERDE',0,0,11,'tp2 chr urkerde'); [S,E].forEach(e=>{ A.appendChild(e); });
+  const [zx,zy]=wpos(x,y); S.style.left=(zx-6)+'%'; S.style.top=(zy-6)+'%'; E.style.left=(zx+4)+'%'; E.style.top=(zy+8)+'%'; TB.els.sonne=S; TB.els.erde=E;
+  [S,E].forEach((e,i)=>{ try{ e.animate([{transform:'scale(0) rotate(-120deg)',opacity:0},{transform:'none',opacity:1}],{duration:1000,delay:300+i*500,easing:'cubic-bezier(.3,1.4,.5,1)',fill:'backwards'}); }catch(err){} });
+  bLater(()=>{ glitterBurst(...ctr(S),16,12); chime([784,988,1175]); },400); bLater(()=>{ glitterBurst(...ctr(E),16,12); chime([1175,1568]); },900); }
+/* scene 7: what the star dust became, popping up round the Earth */
+function urkPops(list){ const E=TB.els.erde; if(!E) return; const [x,y]=ctr(E), u=vu();
+  list.forEach((ch,i)=>bLater(()=>{ const a=-Math.PI*.9+i*(Math.PI*.8/Math.max(1,list.length-1)), px=x+Math.cos(a)*u*12, py=y+Math.sin(a)*u*10;
+    particle(ch,px,py,u*5.2,'#fff',(X,Y)=>[{transform:`translate(${X}px,${Y}px) scale(.2)`,opacity:0},{transform:`translate(${X}px,${Y-u*3}px) scale(1.15)`,opacity:1,offset:.3},{transform:`translate(${X}px,${Y-u*4}px) scale(1)`,opacity:1,offset:.75},{transform:`translate(${X}px,${Y-u*8}px) scale(.8)`,opacity:0}],2600);
+    chimeAt([988+i*120],px); },i*300)); }
+/* back home: a flash, and Ehfje sits on the meadow next to Papa again; Fünkchen twinkles up in the sky */
+function urkHome(){ const W=TB.W, old=TB.st, fl=el('div','urkflash'); W.appendChild(fl);
+  try{ fl.animate([{opacity:0},{opacity:1,offset:.4},{opacity:1,offset:.6},{opacity:0}],{duration:1500,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>fl.remove(); }catch(e){ fl.remove(); } chime([523,659,784,1047,1318]);
+  bLater(()=>{ const st=buildStage({set:'urkgarten'}); W.insertBefore(st,fl); old.remove(); TB.st=st; TB.act=st._act; const A=st._act;
+    const add=(id,cls,html,x,y,w)=>{ const e=el('div','tp2 chr '+cls,`<div class="bb">${html}</div>`); e.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(e); TB.els[id]=e; return e; };
+    const U=el('div','u2'); U.style.cssText='left:13%;top:78%;width:13vh'; U.innerHTML=`<div class="ub">${uniSVG(HERD[(trip&&trip.uni)|0],{cls:'uni'})}</div>`; A.appendChild(U); TB.els.uni=U;
+    const R=prop('URKROHR',66,67,22,'tp2 urkrohr'); A.appendChild(R); TB.els.rohr=R;
+    const P=add('papa','famp fampa',papaSVG(),50,62,24); P.dataset.mood='happy'; P.dataset.arm='dn';
+    const E=add('hexe','eef',eefjeSVG(),31,70,24); E.dataset.mood='laugh'; E.dataset.arm='up'; E.classList.add('urkglitz');
+    const S=el('div','tp2 urkst3',urkSternSVG()); S.style.cssText='left:58%;top:15%;width:9vh'; A.appendChild(S); TB.els.fstern=S;
+    const F=add('funki','urkfu',urkFunkiSVG(),58,15,4.6); F.dataset.mood='happy';
+    FX.L=[]; FX.em=[]; FX.darkT=0; FX.dc=SETS2.urkgarten.dcol; FX.clean=false; FX.cs=false; glitterBurst(...ctr(E),24,20); },650); }
+
+/* ---------- the new gesture: ausdehnen (wipe outward from the tiny dot – and everything grows) ---------- */
+Object.assign(G2,{
+ /* ausdehnen: the tiny hot dot in the middle; a wipe that goes outward (away from the middle, at least ~9 vh) makes the whole world
+    grow one step – like blowing up a balloon. n steps (5). A wipe that starts far out still counts if it goes clearly outward.
+    A short tap is a try (two → the hint); moving without going outward is a miss. a:{id (the dot), all (the growing world), n}; hook growing(k,p) */
+ ausdehnen:{ setup(){ const a=TB.a; TB.ad={k:0,n:a.n||5,sw:null,tap:0,auto:false,fin:false}; },
+   c(){ return ctr(TB.els[TB.a.id]); },
+   down(x,y){ const d=TB.ad; if(d.fin||d.auto) return; const [cx,cy]=this.c(); d.sw={x0:x,y0:y,r0:Math.hypot(x-cx,y-cy),mv:0,ok:false}; },
+   move(x,y){ const d=TB.ad, s=d.sw; if(!s||d.fin||d.auto||!TB.pd) return; const [cx,cy]=this.c(), u=vu(), r=Math.hypot(x-cx,y-cy); s.mv=Math.max(s.mv,Math.hypot(x-s.x0,y-s.y0));
+     if(Math.random()<.5) fxAdd({k:'spark',x,y,vx:(x-cx)*.4,vy:(y-cy)*.4,life:.6,s:.9,c:rnd(['rgba(255,240,190,.95)','rgba(255,190,120,.9)','rgba(255,255,255,.95)'])});
+     if(!s.ok&&r-s.r0>u*9&&(s.r0<u*26||r-s.r0>u*14)){ s.ok=true; this.step(x,y); } },
+   up(){ const d=TB.ad, s=d.sw; d.sw=null; if(!s||d.fin||d.auto||s.ok) return; if(s.mv<vu()*2){ if(++d.tap>=2){ d.tap=0; hint2(false); } } else miss2(); },
+   step(x,y){ const d=TB.ad, a=TB.a; if(d.fin) return; d.k++; const p=d.k/d.n, A=TB.els[a.all||'all'], P=TB.els[a.id], [cx,cy]=this.c(), u=vu();
+     if(A){ A.style.setProperty('--s',p.toFixed(3)); A.classList.remove('urkpuls'); void A.offsetWidth; A.classList.add('urkpuls'); }
+     if(P) P.style.setProperty('--k',d.k);
+     const ang=x!=null?Math.atan2(y-cy,x-cx):Math.random()*6.283;
+     for(let i=0;i<26;i++){ const t=ang+(Math.random()-.5)*2.4, v=(30+Math.random()*50)*u; fxAdd({k:'dust',x:cx,y:cy,vx:Math.cos(t)*v,vy:Math.sin(t)*v,s:.5+Math.random()*.7,life:1.2,c:rnd(['rgba(255,240,190,.95)','rgba(255,170,110,.9)','rgba(255,255,255,.95)','rgba(210,170,255,.9)'])}); }
+     urkWhoosh(cx,1); chime([[523,659],[587,784],[659,880],[784,1047],[880,1175,1568]][Math.min(4,d.k-1)]); poke2();
+     if(TB.sc.growing) TB.sc.growing(d.k,p);
+     if(d.k>=d.n) this.finish(); },
+   finish(){ const d=TB.ad; if(d.fin) return; d.fin=true; const [x,y]=this.c(); fxBurst(x,y,50,['rgba(255,255,255,.95)','rgba(255,226,122,.95)','rgba(255,160,110,.9)'],60); glitterBurst(x,y,40,60); bLater(()=>done2(),900); },
+   dir(k){ return [-.5,.3,2.4,-2.2,1.3][k%5]; },
+   frames(k){ const [cx,cy]=this.c(), u=vu(), t=this.dir(k), x1=cx+Math.cos(t)*u*28, y1=cy+Math.sin(t)*u*24;
+     return [[cx,cy+u*8,1,0],[cx,cy,.85,1],[(cx+x1)/2,(cy+y1)/2,.85,1],[x1,y1,.85,1],[x1,y1,1,0]]; },
+   hint(){ const d=TB.ad; if(!d||d.fin||d.auto) return; ghost(this.frames(d.k),1700); const P=TB.els[TB.a.id]; if(P){ P.classList.remove('g2hint'); void P.offsetWidth; P.classList.add('g2hint'); bLater(()=>P.classList.remove('g2hint'),1800); }
+     ghostTrail(1700,(x,y)=>{ if(Math.random()<.5) fxAdd({k:'spark',x,y,vx:0,vy:-3*vu(),life:.5,s:.7,c:'rgba(255,240,190,.9)'}); }); },
+   auto(){ const d=TB.ad; if(d.fin||d.auto) return; d.auto=true; const sc=TB.sc, run=tale.run;
+     const go=()=>{ if(!okRun(run,sc)||d.fin) return; const f=this.frames(d.k); ghost(f.slice(1),900); bLater(()=>{ if(d.fin) return; const [x,y]=f[3]; this.step(x,y); if(!d.fin) bLater(go,700); },700); }; go(); } }
+});
+
+/* scene 3: a faint clock in the middle of every time ring, its hands running backwards */
+function urkClocks(){ (TB.rings||[]).forEach((R,i)=>{ const C=el('div','tp2 urkuhr',`<svg viewBox="-20 -20 40 40"><circle r="17" fill="rgba(255,255,255,.08)" stroke="rgba(255,240,200,.55)" stroke-width="1.4"/>${[0,1,2,3,4,5,6,7,8,9,10,11].map(k=>{ const a=k*Math.PI/6; return `<circle cx="${(Math.cos(a)*14).toFixed(1)}" cy="${(Math.sin(a)*14).toFixed(1)}" r=".9" fill="rgba(255,240,200,.7)"/>`; }).join('')}<path class="urkh1" d="M0 0 V-12" stroke="#fff6d0" stroke-width="1.8" stroke-linecap="round"/><path class="urkh2" d="M0 0 V-8" stroke="#ffe27a" stroke-width="2.4" stroke-linecap="round"/><circle r="1.6" fill="#fff"/></svg>`);
+  C.style.cssText=`left:${R.style.left};top:${R.style.top};width:10vh;animation-delay:${-i*.3}s`; TB.act.insertBefore(C,R); R._clock=C; }); }
+
+/* ================= Eefje und der Urknall ================= */
+/* heart: everything has a beginning, and we are all made of stardust. On a starry night Ehfje asks Papa where the stars come from.
+   Starlight is old, so with the telescope and a spell she flies back in time: everything moves closer together into one tiny, hot,
+   bright dot. Then everything grows like a balloon (the Big Bang – no bang at all, and it is still growing). It cools, gets dark; tiny
+   bits (Fünkchen is one of them) come together into a cloud, the cloud gets tighter and hotter – pling, the very first star. Much later
+   an old giant star sneezes stardust, and from it come new stars, our Sun, the Earth, mountains, seas, trees, animals – and you. */
+const URKDUR={};
+const URK2={id:'urknall', v2:true, eef:1, fam:1, dur:URKDUR, title:'Eefje und der Urknall', vtitle:'Ehfje und der Urknall', icon:'🌌',
+ cover:'linear-gradient(180deg,#05041a 0%,#2a1a5a 40%,#8a4ab0 72%,#ffb86a 100%)',
+ cast(sc){ const A=TB.act;
+  if(sc.all){ const W=el('div','urkall'), r=seeded(2777); for(let i=0;i<40;i++){ const a=r()*6.283, d=Math.sqrt(r())*44, s=el('i'); s.style.left=(50+Math.cos(a)*d).toFixed(1)+'%'; s.style.top=(50+Math.sin(a)*d).toFixed(1)+'%'; W.appendChild(s); }
+    A.insertBefore(W,A.firstChild); TB.els.all=W; W.style.setProperty('--s',0); }
+  if(sc.pkt){ const [x,y]=sc.pkt, P=el('div','tp2 urkpkt'); P.style.cssText=`left:${x}%;top:${y}%`; A.appendChild(P); TB.els.pkt=P; }
+  FAM2.cast.call(this,sc); const mk=TB.mk;
+  if(sc.wolke){ const [x,y,z]=sc.wolke, W=mk('wolke','urkwk',urkWolkeSVG(),x,y,z); W.style.setProperty('--c',TST.wc||0); }
+  if(sc.riese){ const [x,y,z]=sc.riese, R=mk('riese','urkri',urkRiesSVG(),x,y,z); R.dataset.mood='smile'; }
+  if(sc.funki){ const [x,y,z,par]=sc.funki, F=mk('funki','urkfu'+(TST.fon?' on':''),urkFunkiSVG(),x,y,z,par); if(par) F.style.width=z+'%'; F.dataset.mood=TST.fum||'smile'; }
+  if(sc.warp) urkWarp(sc.warp);
+  if(sc.motes) urkMotes(sc.motes);
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); });
+  A.querySelectorAll(':scope>.tp2>svg').forEach(v=>v.style.display='block'); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='funki'){ sqs(b); bubble(rnd(['hihi!','pling!','hallo!']),x,y-u*5,3.2,'#fff3b0'); chime([1568,2093]); return true; }
+  if(id==='riese'){ sqs(b); bubble(rnd(['hoho!','hallo!','hatschi?']),x,y-u*14,3.8,'#ffd8c8'); urkHum(x); return true; }
+  if(id==='rohr'){ sqs(b); chime([988,1318]); glitterBurst(...relEl(b,[.86,.16]),8,6); return true; }
+  if(/^s\d$/.test(id)||id==='stern'||id==='fstern'||id==='ziel'){ sqs(b); chime([1568+Math.random()*400]); glitterBurst(x,y,8,6); return true; }
+  if(id==='erde'||id==='sonne'){ sqs(b); bubble(id==='erde'?'hallo!':'warm!',x,y-u*6,3.2,'#e0f4ff'); chime([1175,1568]); return true; }
+  if(id==='wolke'||id==='pkt'||id==='dot'){ if(b.classList.contains('tp2')) sqs(b); chime([784,988]); urkInto&&TB.els.wolke&&urkInto(6); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a starry night on the meadow in front of the witch's house: count five stars (tapall) – big numbers pop up.
+    "Papa, where do the stars come from?" – "That's the oldest story in the world, even older than the chalk hill" */
+ {set:'urkgarten', dark:0, u:[14,79,12], ef:[30,70,24,'st'], papa:[48,62,24],
+  p:[['rohr','URKROHR',66,67,22,'urkrohr'],['s1','URKSTERNCHEN',20,22,6,'urkst'],['s2','URKSTERNCHEN',36,10,5.4,'urkst'],['s3','URKSTERNCHEN',52,25,6.4,'urkst'],['s4','URKSTERNCHEN',67,10,5,'urkst'],['s5','URKSTERNCHEN',77,30,5.6,'urkst']],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn'},
+  enter(){ onPh('Sternennacht',()=>{ ['s1','s2','s3','s4','s5'].forEach((k,i)=>bLater(()=>{ const s=TB.els[k]; if(s){ sqs(s); glitterBurst(...ctr(s),6,6); } },i*160)); });
+    onPh('dein Einhorn',()=>uniHop()); onPh('ganz viele Sterne',()=>{ mood('hexe','oh'); efArm('up'); });
+    talk('papa','Komm, wir','sagte Papa'); onPh('Komm, wir',()=>{ famArm('papa','up'); mood('papa','happy'); efArm('dn'); mood('hexe','happy'); });
+    onPh('Tipp auf',()=>{ famArm('papa','dn'); ['s1','s2','s3','s4','s5'].forEach((k,i)=>bLater(()=>{ const s=TB.els[k]; if(s){ sqs(s); chime([1175+i*120]); } },i*200)); }); },
+  ready(){ efReady(); famArm('papa','dn'); efArm('up'); mood('hexe','happy'); TB.cnt=0; },
+  a:{t:'tapall',ids:['s1','s2','s3','s4','s5'],w:'STERN'},
+  h:'Tipp auf die hellen Sterne!',
+  s:'Es war einmal eine klare Sternennacht. Die kleine Hexe Ehfje saß mit Papa auf der Wiese vor dem Hexenhaus, und dein Einhorn war natürlich auch dabei. Über ihnen funkelten ganz viele Sterne. Komm, wir zählen sie, sagte Papa. Tipp auf die hellen Sterne!',
+  item(id,b){ TB.cnt=(TB.cnt||0)+1; b.classList.add('lit'); const [x,y]=ctr(b); urkNum(TB.cnt,x,y); mood('hexe',TB.cnt%2?'laugh':'happy'); if(TB.cnt===3) mood('papa','laugh'); },
+  done(){ mood('hexe','laugh'); mood('papa','happy'); },
+  d:[()=>{ ['Eins','zwei','drei','vier','fünf'].forEach((w,i)=>onPh(w,()=>{ const s=TB.els['s'+(i+1)]; if(s){ sqs(s); urkNum(i+1,...ctr(s)); chimeAt([784+i*110],ctr(s)[0]); } },'d1'));
+       onPh('viele, viele mehr',()=>{ for(let i=0;i<8;i++) bLater(()=>glitterBurst(innerWidth*(.1+Math.random()*.8),innerHeight*(.05+Math.random()*.35),5,6),i*120); mood('hexe','oh'); },'d1');
+       talk('hexe','Papa, wo kommen','fragte Ehfje','d1'); onPh('Papa, wo kommen',()=>{ mood('hexe','happy'); efArm('dn'); },'d1'); },
+     'Eins, zwei, drei, vier, fünf! Und dahinter noch viele, viele mehr. Papa, wo kommen die Sterne eigentlich her? fragte Ehfje.',
+     ()=>{ talk('papa','Das ist die','sagte Papa','d2'); talk('papa','Noch viel','Die will','d2'); talk('hexe','Die will',null,'d2');
+       onPh('Das ist die',()=>{ mood('papa','happy'); famArm('papa','wide'); },'d2'); onPh('Kreideberg',()=>{ famArm('papa','dn'); mood('hexe','oh'); },'d2');
+       onPh('Die will',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2'); },
+     'Das ist die allerälteste Geschichte der Welt, sagte Papa. Noch viel älter als der Kreideberg. Die will ich sehen! rief Ehfje.', 600]},
+
+ /* 2 – the telescope: starlight is very long on its way, so we see the stars as they were long ago. Spell; hold the telescope (hold),
+    it lights up in all colours; Ehfje gets on her broom and flies up into the starlight with the unicorn (the camera follows) */
+ {set:'urkgarten', dark:0, u:[14,79,12], ef:[30,70,24,'st'], papa:[48,62,24],
+  p:[['rohr','URKROHR',66,67,22,'urkrohr'],['s1','URKSTERNCHEN',20,22,6,'urkst lit'],['s2','URKSTERNCHEN',36,10,5.4,'urkst lit'],['s3','URKSTERNCHEN',52,25,6.4,'urkst lit'],['s4','URKSTERNCHEN',67,10,5,'urkst lit'],['s5','URKSTERNCHEN',77,30,5.6,'urkst lit']],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn'},
+  enter(){ onPh('stellte sein Fernrohr',()=>{ const R=TB.els.rohr; sqs(R); famArm('papa','up'); glitterBurst(...relEl(R,[.86,.16]),10,8); chime([659,880]); });
+    talk('papa','Weißt du','sagte Papa'); talk('papa','das Licht','Da hatte');
+    onPh('ganz lange',()=>{ famArm('papa','dn'); const S=TB.els.s4, R=TB.els.rohr; urkBeam(()=>ctr(S),()=>relEl(R,[.86,.16]),3200); });
+    onPh('früher',()=>{ mood('hexe','oh'); }); onPh('Da hatte',()=>{ mood('hexe','happy'); efArm('up'); });
+    talk('hexe','Kribbel','Halt deinen'); onPh('Kribbel',()=>{ efSpell(16); const [x,y]=efFinger(); glitterBurst(x,y,14,12); });
+    onPh('Halt deinen',()=>{ efArm('fwd'); sqs(TB.els.rohr); }); },
+  ready(){ efReady(); efArm('fwd'); mood('hexe','happy'); famArm('papa','dn'); const R=TB.els.rohr; g2loop(()=>R.style.setProperty('--p',(TB.hp||0).toFixed(3))); },
+  a:{t:'hold',id:'rohr',ms:3200,grow:.05,pc:'rgba(200,230,255,.9)',w:'FERNROHR'},
+  h:'Halt den Finger auf das Fernrohr und lass nicht los!',
+  s:'Papa stellte sein Fernrohr auf. Weißt du, sagte Papa, das Licht von den Sternen ist ganz lange zu uns unterwegs. Darum sehen wir die Sterne so, wie sie früher einmal waren. Da hatte Ehfje eine Idee. Kribbel, krabbel, Funkelschein – wir fliegen in die Zeit hinein! Halt deinen Finger auf das Fernrohr!',
+  done(){ const R=TB.els.rohr; R.classList.add('lit'); R.style.setProperty('--p',1); mood('hexe','laugh'); mood('papa','oh'); },
+  d:[()=>{ onPh('allen Farben',()=>{ glitterBurst(...relEl(TB.els.rohr,[.86,.16]),20,14); chime([784,988,1175,1568]); },'d1');
+       talk('papa','Pass gut','rief Papa','d1'); onPh('Pass gut',()=>mood('papa','smile'),'d1');
+       onPh('winkte',()=>{ for(let i=0;i<4;i++) bLater(()=>famArm('papa',i%2?'dn':'up'),i*260); bLater(()=>famArm('papa','up'),1100); },'d1'); },
+     'Das Fernrohr leuchtete in allen Farben. Pass gut auf dich auf! rief Papa und winkte.',
+     ()=>{ onPh('ihren Besen',()=>{ const E=TB.els.hexe; E.classList.add('ride'); E.dataset.arm='fwd'; uniFly(true); sqs(E); },'d2');
+       onPh('schwupp',()=>{ const E=TB.els.hexe, U=TB.els.uni; kiPath(E,[[40,42],[58,14],[62,-12]],2300); trail(E,2300); kiPath(U,[[28,52],[50,20],[56,-8]],2500); trail(U,2500); urkWhoosh(innerWidth*.4,1); mood('papa','happy'); },'d2');
+       onPh('Sternenlicht',()=>urkZoom(2600),'d2'); },
+     'Ehfje setzte sich auf ihren Besen, und schwupp, flogen sie und dein Einhorn hinauf ins Sternenlicht.', 2600]},
+
+ /* 3 – back in time through space: fly through the three time rings (fliegen), the clocks run backwards; then everything moves closer
+    and closer together, until it all fits into one tiny dot */
+ {set:'urkall', dark:0, u:[10,52,12], flyU:1, ef:[20,44,20,'ride'],
+  st:{efm:'laugh',efa:'fwd'},
+  enter(){ urkFlashOut(); const R=[[42,58],[62,36],[82,58]]; efRings(R,9); TB.rings.forEach(g=>g.classList.add('urkzr')); urkClocks(); urkWarp(4);
+    onPh('durchs Weltall',()=>{ mood('hexe','laugh'); uniHop(); }); onPh('vorbei',()=>{ for(let i=0;i<5;i++) bLater(()=>glitterBurst(innerWidth*(.3+Math.random()*.6),innerHeight*(.1+Math.random()*.7),6,8),i*150); });
+    onPh('rückwärts',()=>{ mood('hexe','oh'); TB.rings.forEach((g,i)=>bLater(()=>{ g.classList.add('show'); if(g._clock) g._clock.classList.add('on'); urkTick(ctr(g)[0]); },i*350)); });
+    onPh('Tick, tack',()=>urkTick(innerWidth/2,4)); onPh('Flieg mit',()=>mood('hexe','happy')); },
+  ready(){ efReady(); mood('hexe','happy'); TB.rings.forEach(g=>{ if(g._clock) g._clock.classList.add('on'); }); },
+  a:{t:'fliegen',id:'hexe',rings:[[42,58],[62,36],[82,58]],r:9,w:'WELTALL'},
+  h:'Flieg mit dem Finger durch die Zeitringe!',
+  s:'Sie flogen durchs Weltall, an Planeten und Sternen vorbei. Und die Zeit lief rückwärts! Tick, tack, tick, tack, immer weiter zurück. Flieg mit Ehfje durch die Zeitringe!',
+  ringPass(k){ const R=TB.rings[k-1]; if(R){ urkTick(ctr(R)[0],2); if(R._clock){ R._clock.classList.remove('on'); R._clock.classList.add('past'); } } mood('hexe','laugh'); urkWarp(4+k*3); },
+  done(){ mood('hexe','laugh'); urkWarp(12); },
+  d:[()=>{ onPh('näher rückten',()=>{ urkConverge(5200); mood('hexe','oh'); },'d1'); onPh('Immer enger',()=>{ chime([1047,988,880,784]); },'d1');
+       onPh('winziges Pünktchen',()=>{ const D=TB.els.dot; if(D){ sqs(D); glitterBurst(...ctr(D),14,6); } mood('hexe','happy'); },'d1'); },
+     'Je weiter sie zurückflogen, desto näher rückten die Sterne zusammen. Immer enger und immer kleiner, bis alles in ein winziges Pünktchen passte.', 1400]},
+
+ /* 4 – the very beginning: everything was in one tiny, hot, bright dot. Wipe outward from it (ausdehnen, new): everything grows like
+    a balloon – the Big Bang, which did not bang at all; and it is still growing today */
+ {set:'urkanfang', dark:0, u:[9,40,10], flyU:1, ef:[19,32,17,'ride'], pkt:[50,46], all:1,
+  st:{efm:'oh',efa:'fwd'},
+  enter(){ onPh('ganz am Anfang',()=>{ const P=TB.els.pkt; sqs(P); urkHum(ctr(P)[0]); }); onPh('wirklich alles',()=>glitterBurst(...ctr(TB.els.pkt),10,4));
+    onPh('heiß',()=>{ TB.els.pkt.classList.add('urkheiss'); mood('hexe','oh'); }); talk('hexe','Ui, ist das','staunte Ehfje'); onPh('Ui, ist das',()=>mood('hexe','laugh'));
+    onPh('Wisch vom',()=>{ mood('hexe','happy'); const P=TB.els.pkt; P.classList.remove('g2hint'); void P.offsetWidth; P.classList.add('g2hint'); }); },
+  ready(){ efReady(); mood('hexe','happy'); TB.els.pkt.classList.add('urkheiss'); },
+  a:{t:'ausdehnen',id:'pkt',all:'all',n:5,w:'URKNALL'},
+  h:'Wisch mit dem Finger vom Pünktchen nach draußen!',
+  s:'Jetzt waren sie ganz am Anfang. Alles, wirklich alles, war in diesem winzigen Pünktchen. Und es war heiß, viel heißer als die Sonne! Ui, ist das hell! staunte Ehfje. Wisch vom Pünktchen nach draußen, dann wird alles größer!',
+  growing(k){ mood('hexe',k%2?'laugh':'oh'); if(k===1) TB.els.pkt.classList.add('urkgone'); if(k===3) uniHop(); },
+  done(){ TB.els.all.classList.add('full'); mood('hexe','laugh'); },
+  d:[()=>{ onPh('Urknall',()=>{ glitterBurst(innerWidth/2,innerHeight*.46,30,60); chime([523,784,1047]); },'d1'); onPh('gar nicht',()=>mood('hexe','laugh'),'d1');
+       onPh('Luftballon',()=>urkBallon(),'d1'); onPh('Aufpusten',()=>{ const B=TB.els.ballon; if(B){ B.classList.add('big'); urkWhoosh(ctr(B)[0],1); } },'d1'); },
+     'Das war der Urknall! Aber geknallt hat es gar nicht. Alles ist ganz schnell größer geworden, so wie ein Luftballon beim Aufpusten.',
+     ()=>{ onPh('Bis heute',()=>TB.els.all.classList.add('urkweiter'),'d2'); onPh('bisschen größer',()=>{ const B=TB.els.ballon; if(B) B.classList.add('bigger'); mood('hexe','oh'); },'d2'); },
+     'Und weißt du was? Bis heute wird die Welt immer noch ein kleines bisschen größer.', 900]},
+
+ /* 5 – it cools down and gets dark; tiny bits float like fine fog. Fünkchen, a tiny spark, is lonely. All bits want to come together a
+    little, like magnets: stir round and round (stir) – they snuggle up into one big, thick cloud, Fünkchen right in the middle */
+ {set:'urknebel', dark:0, u:[9,50,11], flyU:1, ef:[20,42,19,'ride'], wolke:[64,48,50], funki:[38,62,6], motes:6,
+  st:{efm:'oh',efa:'fwd',fum:'worry',wc:0},
+  enter(){ onPh('kühler',()=>mood('hexe','smile')); onPh('ganz dunkel',()=>mood('hexe','oh')); onPh('winzige Teilchen',()=>urkMotes(14));
+    onPh('Hallo, ich bin',()=>{ const F=TB.els.funki; F.classList.add('on'); TST.fon=1; sqs(F); glitterBurst(...ctr(F),8,6); mood('hexe','happy'); mood('funki','smile'); urkPling(ctr(F)[0]); });
+    talk('funki','Hallo, ich bin','piepste'); talk('funki','Aber ich bin','Alle Teilchen'); onPh('so dunkel',()=>{ mood('funki','worry'); mood('hexe','worry'); });
+    onPh('wie kleine Magnete',()=>{ urkMotes(10,()=>ctr(TB.els.wolke)); mood('hexe','happy'); }); onPh('Fahr mit',()=>sqs(TB.els.wolke)); },
+  ready(){ efReady(); const F=TB.els.funki; F.classList.add('on'); TST.fon=1; mood('funki','worry'); mood('hexe','happy'); urkMotes(10,()=>ctr(TB.els.wolke)); TB.wq=0; },
+  a:{t:'stir',id:'wolke',turns:2,pc:'rgba(210,190,255,.9)',w:'WOLKE'},
+  h:'Fahr mit dem Finger im Kreis herum!',
+  s:'Danach wurde es langsam kühler, und dann ganz dunkel. Überall schwebten winzige Teilchen, wie feiner Nebel. Hallo, ich bin Fünkchen! piepste eines. Aber ich bin so klein, und hier ist es so dunkel. Alle Teilchen wollen ein kleines bisschen zueinander, wie kleine Magnete. Fahr mit dem Finger rundherum, dann kommen alle zusammen!',
+  stirring(p){ const W=TB.els.wolke; W.style.setProperty('--c',p.toFixed(3)); if(Math.random()<.3) urkInto(2); const q=Math.floor(p*4); if(q>TB.wq){ TB.wq=q; mood('funki',q>=2?'happy':'oh'); } },
+  done(){ TST.wc=1; const W=TB.els.wolke, F=TB.els.funki; W.style.setProperty('--c',1); urkInto(16); mood('hexe','laugh'); urkMotes(3);
+    if(F) flyStick(F,W.querySelector(':scope>.bb'),.5,.5,1200,10,()=>mood('funki','happy')); },
+  d:[()=>{ onPh('kuschelten',()=>{ urkInto(20); sqs(TB.els.wolke); },'d1'); onPh('dicke Wolke',()=>{ glitterBurst(...ctr(TB.els.wolke),16,20); chime([523,659,784]); },'d1');
+       onPh('mittendrin',()=>{ const F=TB.els.funki; if(F){ sqs(F); hearts(...ctr(F),3); } mood('funki','laugh'); },'d1'); },
+     'Immer mehr Teilchen kamen dazu und kuschelten sich aneinander. So wurde daraus eine große, dicke Wolke. Und Fünkchen war mittendrin.', 600]},
+
+ /* 6 – the cloud gets tighter and warmer; tap it four times (pat): it gets smaller and hotter – pling! the very first star, Fünkchen
+    shining in it. Soon stars light up everywhere; it is never quite dark again */
+ {set:'urknebel', dark:0, u:[9,50,11], flyU:1, ef:[20,42,19,'ride'], wolke:[64,48,50], funki:[50,50,16,'wolke'], motes:3,
+  st:{efm:'happy',efa:'fwd',fum:'happy',wc:1},
+  enter(){ onPh('immer enger',()=>{ const W=TB.els.wolke; W.classList.remove('wob2'); void W.offsetWidth; W.classList.add('wob2'); }); onPh('wärmer',()=>TB.els.wolke.style.setProperty('--hot',.15));
+    talk('funki','Ganz schön eng','kicherte'); onPh('Ganz schön eng',()=>mood('hexe','laugh')); onPh('Tipp viermal',()=>mood('hexe','happy')); },
+  ready(){ efReady(); mood('funki','happy'); TB.els.wolke.style.setProperty('--hot',.15); },
+  a:{t:'pat',id:'wolke',at:[.5,.5],n:4,wait:700,w:'LICHT'},
+  h:'Tipp auf die Wolke!',
+  s:'In der Wolke wurde es immer enger und immer wärmer. Ganz schön eng hier! kicherte Fünkchen. Hilf ein bisschen mit. Tipp viermal auf die Wolke!',
+  patStep(k){ const W=TB.els.wolke; W.style.setProperty('--q',(k/4).toFixed(2)); W.style.setProperty('--hot',(.15+k*.21).toFixed(2)); mood('funki',k%2?'oh':'laugh'); urkInto(8); urkHum(ctr(W)[0]); },
+  done(){ mood('hexe','oh'); },
+  d:[()=>{ onPh('Pling',()=>urkIgnite(),'d1'); onPh('allererste Stern',()=>{ const S=TB.els.stern; if(S) glitterBurst(...ctr(S),24,26); mood('hexe','laugh'); efArm('up'); },'d1');
+       talk('funki','Ich leuchte','jubelte','d1'); onPh('Ich leuchte',()=>{ const F=TB.els.funki; if(F){ sqs(F); hearts(...ctr(F),4); } },'d1'); },
+     'Und plötzlich: Pling! Da ging ein Licht an. Aus der Wolke war ein Stern geworden, der allererste Stern! Ich leuchte! jubelte Fünkchen.',
+     ()=>{ onPh('überall Sterne',()=>urkStarsOn(46),'d2'); onPh('nie mehr ganz dunkel',()=>{ TB.st.classList.add('urkhell'); glitterBurst(innerWidth/2,innerHeight*.4,20,50); chime([1047,1318,1568]); efArm('fwd'); },'d2'); },
+     'Bald gingen überall Sterne an, so viele, dass man sie gar nicht mehr zählen konnte. Jetzt war es nie mehr ganz dunkel.', 900]},
+
+ /* 7 – much later an old giant star has to sneeze: stardust flies everywhere. Trace the glitter path to the blinking light (trace):
+    the stardust becomes our Sun and the Earth – mountains, seas, trees, animals, and you. Spell, back home on the meadow with Papa:
+    "Papa, I'm made of stardust!" – "Me too. All of us!" Fünkchen winks from the sky */
+ {set:'urkstaub', dark:0, u:[8,46,11], flyU:1, ef:[17,38,19,'ride'], riese:[36,64,40],
+  p:[['fstern','URKSTERN',62,15,10,'urkst3'],['ziel','✦',84,68,5,'urkziel']], funki:[50,52,46,'fstern'],
+  st:{efm:'happy',efa:'fwd',fum:'happy'},
+  enter(){ onPh('riesengroßer',()=>{ const R=TB.els.riese; sqs(R); urkHum(ctr(R)[0]); mood('hexe','oh'); });
+    onPh('kitzelte',()=>{ const R=TB.els.riese; R.dataset.mood='tick'; R.classList.add('urkin'); }); onPh('Haa',()=>{ const R=TB.els.riese; R.dataset.mood='oh'; R.classList.add('urkin'); });
+    onPh('hatschi',()=>urkSneeze()); onPh('glitzernder',()=>mood('hexe','laugh'));
+    onPh('Fahr mit',()=>{ const Z=TB.els.ziel; sqs(Z); glitterBurst(...ctr(Z),8,6); mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); if(!TB.els.neb) urkSneeze(); const R=TB.els.riese; R.classList.remove('urkin'); R.dataset.mood='happy'; },
+  a:{t:'trace',path:[[44,54],[54,40],[66,42],[76,54],[84,68]],end:'ziel',pearl:1,w:'STAUB'},
+  h:'Fahr mit dem Finger den Glitzerweg entlang!',
+  s:'Viele, viele Jahre später lebte im Weltall ein riesengroßer, alter Stern. Eines Tages kitzelte es ihn in der Nase. Haa, haa, hatschi! Da flog glitzernder Sternenstaub durchs ganze Weltall. Fahr mit dem Sternenstaub zu dem blinkenden Licht!',
+  done(){ urkForm(); mood('hexe','laugh'); },
+  d:[()=>{ onPh('unsere Sonne',()=>{ const S=TB.els.sonne; if(S){ sqs(S); glitterBurst(...ctr(S),10,8); } },'d1'); onPh('unsere Erde',()=>{ const E=TB.els.erde; if(E){ sqs(E); glitterBurst(...ctr(E),10,8); } },'d1');
+       onPh('Berge und Meere',()=>urkPops(['⛰️','🌊']),'d1'); onPh('Bäume und Tiere',()=>urkPops(['🌳','🦋','🐟','🐞']),'d1');
+       onPh('Und du auch',()=>{ const E=TB.els.hexe; mood('hexe','laugh'); efArm('up'); E.classList.add('urkglitz'); glitterBurst(...ctr(E),24,16); hearts(...ctr(E),3); },'d1'); },
+     'Aus dem Sternenstaub wurden neue Sterne, unsere Sonne und unsere Erde. Und auf der Erde wurden daraus Berge und Meere, Bäume und Tiere. Und du auch!',
+     ()=>{ talk('hexe','Tschüss','rief Ehfje','d2'); onPh('Tschüss',()=>efArm('up'),'d2');
+       onPh('rief Ehfje',()=>{ const F=TB.els.funki; if(F){ sqs(F); bubble('tschüss!',...relEl(F,[.5,-.2]),3.4,'#fff3b0'); chimeAt([1568,2093],ctr(F)[0]); } },'d2');
+       talk('hexe','Kribbel',null,'d2'); onPh('Kribbel',()=>{ efArm('up'); efSpell(18); },'d2'); onPh('zu Hause sein',()=>urkHome(),'d2'); },
+     'Tschüss, Fünkchen! rief Ehfje. Und dann rief sie: Kribbel, krabbel, Funkelschein – jetzt will ich wieder zu Hause sein!',
+     ()=>{ talk('hexe','Papa, ich bin','rief sie','d3'); talk('papa','Ich auch',null,'d3'); onPh('Papa, ich bin',()=>{ mood('hexe','laugh'); efArm('up'); },'d3');
+       onPh('Papa lachte',()=>mood('papa','laugh'),'d3'); onPh('Wir alle',()=>{ famArm('papa','wide'); hearts(...relEl(TB.els.hexe,[.5,.2]),3); hearts(...relEl(TB.els.papa,[.5,.2]),2); },'d3'); },
+     'Und schwupp, saß Ehfje wieder bei Papa auf der Wiese. Papa, ich bin aus Sternenstaub! rief sie. Papa lachte. Ich auch. Wir alle!',
+     ()=>{ onPh('zu den Sternen',()=>{ mood('hexe','happy'); efArm('up'); famArm('papa','dn'); },'d4');
+       onPh('zwinkert',()=>{ const F=TB.els.funki; if(F){ F.dataset.mood='laugh'; F.classList.remove('urkwink'); void F.offsetWidth; F.classList.add('urkwink'); glitterBurst(...ctr(F),14,10); chime([1568,2093]); } },'d4'); },
+     'Und wenn du heute Nacht zu den Sternen schaust, dann zwinkert dir Fünkchen noch heute zu.', 1800]}
+ ]};
+/*<URKNALL*/
+
 
 
 /* ================= THE STORYBOOK: the hub. Ulla the owl opens it; one page per tale, one for the reading game ================= */
@@ -16129,7 +16617,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -16216,6 +16704,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr eef ride" data-mood="laugh" data-arm="fwd" style="left:32%;top:40%;width:40%"><div class="bb">${eefjeSVG()}<div class="krdbl"></div></div></div>`+
     `<div class="tp2 krdka" data-mood="happy" style="left:58%;top:24%;width:15%"><div class="bb">${krdKalkiSVG([])}</div></div>`+
     [[12,16,3],[84,12,2.6],[20,70,2.4],[90,40,2.2],[46,10,2],[8,46,2.6]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">○</span>`).join('')+`</div>`+tw;/*<KRDART*/
+  if(id==='urknall') return `<div class="urkart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 62% 46%,#ffe8a8 0,#ff9a6a 8%,#8a4ab0 26%,#2a1a5a 52%,#05041a 90%)"></div>`+
+    `<div class="tp2" style="left:78%;top:20%;width:30%;opacity:.85">${urkGalSVG('#b48cff','#5a3ab8',11)}</div>`+
+    `<div class="tp2 urkst1" style="left:62%;top:48%;width:36%">${urkSternSVG()}<div class="tp2 chr urkfu on kid" data-mood="happy" style="left:50%;top:50%;width:46%"><div class="bb">${urkFunkiSVG()}</div></div></div>`+
+    `<div class="tp2 chr eef ride" data-mood="laugh" data-arm="fwd" style="left:28%;top:62%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2" style="left:14%;top:20%;width:11%">${urkPlanSVG('#ffc48a','#b8642a',1)}</div>`+
+    [[10,46,2.6],[40,12,3],[90,62,2.4],[50,86,2.2],[86,88,2.6],[30,34,2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff6c0;animation-delay:${-k*.5}s">✦</span>`).join('')+`</div>`+tw;/*<URKART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -16496,6 +16990,8 @@ regTale2(TUI2);
 regTale2(GAS2);
 /* Eefje und das Kreidemeer: after the walk with Boris, so the older lines keep their order in voice/clips.tsv */
 regTale2(KRD2);
+/* Eefje und der Urknall: after the Kreidemeer, so the older lines keep their order in voice/clips.tsv */
+regTale2(URK2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
