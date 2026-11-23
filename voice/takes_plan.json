@@ -5019,6 +5019,29 @@
      "say": "Kreide"
     }
    ]
+  },
+  {
+   "id": "w_x069_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Fernrohr. Weltall. Urknall. Staub.",
+   "items": [
+    {
+     "key": "wort_fernrohr",
+     "say": "Fernrohr"
+    },
+    {
+     "key": "wort_weltall",
+     "say": "Weltall"
+    },
+    {
+     "key": "wort_urknall",
+     "say": "Urknall"
+    },
+    {
+     "key": "wort_staub",
+     "say": "Staub"
+    }
+   ]
   }
  ]
 }
