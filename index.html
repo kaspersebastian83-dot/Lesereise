@@ -2069,6 +2069,39 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 /* book page */
 .urkart .tp2{position:absolute} .urkart .eef>.bb,.urkart .urkfu>.bb{animation:none}
 /*<URKNALLCSS*/
+/*WEIHRONTECSS>*/
+/* Eefje schmückt ihr Zimmer (all classes start with "wrt") */
+.wrtfe svg,.wrtki svg,.wrtbm svg,.wrtpap svg,.wrtsch svg,.wrtfly svg{display:block;width:100%;overflow:visible}
+.eikroom.wrtroom{transition:filter .8s} .eikroom.wrtroom.wrtdim{filter:brightness(.6)}
+/* the window: snow falls outside; the chain and the paper star appear step by step */
+.tp2.wrtfe{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.22))}
+.wrtfe .wrtsn circle,.wrtfe .wrtsn2 circle{animation:wrtfall linear infinite;transform-box:fill-box}
+@keyframes wrtfall{from{transform:translate(0,-20px)}50%{transform:translate(8px,170px)}to{transform:translate(-4px,350px)}}
+.wrtfe .wrtsn2{opacity:0;transition:opacity 1.6s} .wrtfe.viel .wrtsn2{opacity:1} .wrtfe.viel .wrtsn{opacity:1}
+.wrtfe .wrtfog{opacity:0;transition:opacity 1.4s} .wrtfe.beschlagen .wrtfog{opacity:.72} .wrtfe.beschlagen.krddone .wrtfog{opacity:.5} .wrtfe.wrtklar .wrtfog{opacity:.28;transition:opacity 3s}
+.wrtfe .krdgd,.wrtfe .krdink,.wrtfe .krdcol{opacity:0;transition:opacity .8s} .wrtfe.wrtmal .krdgd,.wrtfe.wrtmal .krdink{opacity:1}
+.wrtfe.krddone .krdgd{opacity:0} .wrtfe.krddone .krdcol,.wrtfe.wrtdrawn .krdcol{opacity:1} .wrtfe.wrtdrawn .krdink{opacity:.85}
+.wrtfe.krdhint .krdgd{animation:wrtgdh 1.1s ease-in-out 2} @keyframes wrtgdh{50%{stroke:#2a5a9a;stroke-width:4px}}
+.wrtfe .wrtc{opacity:0;transition:opacity .4s} .wrtfe.c1 .wrtc1,.wrtfe.c2 .wrtc2,.wrtfe.c3 .wrtc3,.wrtfe.c4 .wrtc4{opacity:1}
+.wrtfe .wrtc.wrtpop{animation:wrtpop .5s cubic-bezier(.3,1.6,.5,1)} @keyframes wrtpop{from{transform:translateY(-10px)}}
+.wrtfe .wrtbg{opacity:0;transition:opacity .4s} .wrtfe .wrtbb{fill:#d8d0c8;transition:fill .3s}
+.wrtfe .wrtb.on .wrtbb,.wrtfe.lit .wrtbb{fill:var(--c)} .wrtfe .wrtb.on .wrtbg{opacity:.45}
+.wrtfe.lit .wrtbg{animation:wrtglow 2.2s ease-in-out infinite;animation-delay:inherit} .wrtfe.lit .wrtb{animation-delay:inherit}
+@keyframes wrtglow{0%,100%{opacity:.25}50%{opacity:.6}}
+.wrtfe .wrtpst{opacity:0;transition:opacity .6s} .wrtfe.pst .wrtpst{opacity:1} .wrtfe.pst.lit .wrtpst{filter:drop-shadow(0 0 6px #ffe27a)}
+.wrtfe.nacht.lit .wrtpst{filter:drop-shadow(0 0 10px #ffe27a)}
+/* the box: dusty grey at first, the lid opens */
+.tp2.wrtki{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.3))} .wrtki.dusty>svg{filter:grayscale(var(--g,1)) sepia(calc(var(--g,1)*.5)) brightness(calc(1 - var(--g,1)*.25))}
+.wrtki .wrtlid{transform-box:fill-box;transform-origin:50% 100%;transition:transform .6s cubic-bezier(.3,1.5,.5,1)} .wrtki.auf .wrtlid{transform:translate(-4%,-46%) rotate(-24deg)}
+.wrtki .wrtin{opacity:0;transition:opacity .6s .2s} .wrtki.auf .wrtin{opacity:1}
+/* the little fir; the paper; the switch; the fingertip in the fog; things flying */
+.tp2.wrtbm{filter:drop-shadow(0 .8vh .8vh rgba(0,0,0,.25))} .wrtbm.star .tstar{filter:drop-shadow(0 0 4px #ffe27a)} .wrtbm.lights .lit{filter:drop-shadow(0 0 3px #fff6c0)}
+.tp2.kgl.hung.wrtwob{animation:wrtwob 1.6s ease-out,kswing 2.4s ease-in-out 1.6s infinite} @keyframes wrtwob{0%{rotate:0}20%{rotate:22deg}45%{rotate:-16deg}70%{rotate:9deg}100%{rotate:0}}
+.tp2.wrtpap{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.25));transition:opacity .5s} .wrtpap .wrtcut{opacity:0;transition:opacity .4s} .wrtpap.cut .wrtcut{opacity:1} .wrtpap .wrtsheet{transition:opacity .5s} .wrtpap.cut .wrtsheet{opacity:0}
+.tp2.wrtsch{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.3))} .wrtsch .wrtrk{transition:transform .2s;transform-box:fill-box;transform-origin:50% 50%} .wrtsch.an .wrtrk{transform:scaleY(-1)} .wrtsch.an .wrtled{fill:#6ad87a}
+.wrtfp{position:absolute;width:4vh;height:4vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:9;opacity:0;transition:opacity .2s;background:radial-gradient(circle,rgba(255,255,255,.9) 0,rgba(220,240,255,.5) 40%,rgba(220,240,255,0) 70%)} .wrtfp.on{opacity:1}
+.tp2.wrtfly{z-index:9;filter:drop-shadow(0 0 1.4vh rgba(255,226,122,.95))}
+/*<WEIHRONTECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -16591,6 +16624,351 @@ const URK2={id:'urknall', v2:true, eef:1, fam:1, dur:URKDUR, title:'Eefje und de
      'Und wenn du heute Nacht zu den Sternen schaust, dann zwinkert dir Fünkchen noch heute zu.', 1800]}
  ]};
 /*<URKNALL*/
+/*WEIHRONTE>*/
+/* ================= Eefje schmückt ihr Zimmer: drawn props, sets, sounds and helpers (all classes and helpers start with "wrt"; checked:
+   no wrt… name existed before) ================= */
+
+/* her room: the room of the bedtime tale without its window (the window is a prop of its own here). By day the walls are the light
+   evening-room colours, at night the darker ones. */
+function wrtRoomSVG(night){ let s=betRoomSVG('wand'); if(night) return s;
+  [['#6a5ea0','#fde4ec'],['#4e4484','#f4cede'],['#fff6c0','#ffffff'],['#9a6a48','#d89a5e'],['#7a5238','#b87a42'],['#7a96d0','#a8d0f4'],['#c8a8d8','#f8d8e4'],['#a8784a','#d8a46a'],['opacity="0.22"','opacity="0.55"']]
+    .forEach(([a,b])=>{ s=s.split(a).join(b); }); return s; }
+
+/* the window: winter outside (snowy roofs, falling snow), a fog layer (.wrtfog) for breathing on it, the snowflake she draws into the
+   fog (.krdgd guide / .krdink lines / .krdcol finished, the same classes as the chalk gesture), the fairy-light chain over the top
+   (segments .wrtc1 … .wrtc4, bulbs .wrtb) and the golden paper star (.wrtpst). States are classes on the prop. viewBox 0 0 400 380 */
+const WRTHK=[[30,20],[115,20],[200,20],[285,20],[370,20]];
+const WRTFL=(()=>{ const cx=112, cy=256, r=44, out=[]; for(let i=0;i<3;i++){ const a=i*Math.PI/3+Math.PI/2; out.push(`M${(cx+Math.cos(a)*r).toFixed(1)} ${(cy+Math.sin(a)*r).toFixed(1)} L${(cx-Math.cos(a)*r).toFixed(1)} ${(cy-Math.sin(a)*r).toFixed(1)}`); }
+  for(let i=0;i<6;i++){ const a=i*Math.PI/3+Math.PI/2, bx=cx+Math.cos(a)*r*.6, by=cy+Math.sin(a)*r*.6, l=r*.3;
+    const p1=[bx+Math.cos(a+2.4)*l,by+Math.sin(a+2.4)*l], p2=[bx+Math.cos(a-2.4)*l,by+Math.sin(a-2.4)*l];
+    out.push(`M${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L${bx.toFixed(1)} ${by.toFixed(1)} L${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`); } return out; })();
+const WRTBC=['#ff5a6a','#ffd84a','#6ad87a','#5ab4ff','#ff9ad8'];
+function wrtFensterSVG(night){ const id='wrtf'+(++LANC), r=seeded(night?3301:3307);
+  const sky=night?`<stop offset="0" stop-color="#0a1248"/><stop offset=".65" stop-color="#26307c"/><stop offset="1" stop-color="#4a3a8a"/>`
+                 :`<stop offset="0" stop-color="#9cc0e4"/><stop offset=".6" stop-color="#c8dcf0"/><stop offset="1" stop-color="#e8eef8"/>`;
+  let st=''; if(night) for(let i=0;i<30;i++) st+=`<circle cx="${(36+r()*328).toFixed(0)}" cy="${(36+r()*170).toFixed(0)}" r="${(.8+r()*1.6).toFixed(1)}" fill="#fff" opacity="${(.4+r()*.6).toFixed(2)}"/>`;
+  const flakes=(n,big,cls)=>{ let f=''; for(let i=0;i<n;i++){ const x=30+r()*340, s=(big?2.6:1.6)+r()*(big?2.4:1.4), d=(big?3.4:6)+r()*(big?2.6:4); f+=`<circle cx="${x.toFixed(0)}" cy="0" r="${s.toFixed(1)}" style="animation-duration:${d.toFixed(1)}s;animation-delay:${(-r()*d).toFixed(1)}s"/>`; } return `<g class="${cls}" fill="#fff">${f}</g>`; };
+  let chain=''; for(let k=1;k<WRTHK.length;k++){ const [x0,y0]=WRTHK[k-1], [x1,y1]=WRTHK[k], mx=(x0+x1)/2, my=72; let b='';
+    for(let j=1;j<=5;j++){ const t=j/6, x=(1-t)*(1-t)*x0+2*(1-t)*t*mx+t*t*x1, y=(1-t)*(1-t)*y0+2*(1-t)*t*my+t*t*y1, c=WRTBC[(k+j)%5];
+      b+=`<g class="wrtb" style="--c:${c};animation-delay:${(-(k*5+j)*.37).toFixed(2)}s"><circle class="wrtbg" cx="${x.toFixed(1)}" cy="${(y+7).toFixed(1)}" r="13" fill="${c}"/><rect x="${(x-2.6).toFixed(1)}" y="${(y-1).toFixed(1)}" width="5.2" height="4" rx="1" fill="#3a5a3a"/><ellipse class="wrtbb" cx="${x.toFixed(1)}" cy="${(y+7).toFixed(1)}" rx="4.6" ry="6.4" fill="${c}"/></g>`; }
+    chain+=`<g class="wrtc wrtc${k}"><path d="M${x0} ${y0} Q${mx} ${my*2-y0} ${x1} ${y1}" fill="none" stroke="#2e5a34" stroke-width="2.6"/>${b}</g>`; }
+  const hooks=WRTHK.map(([x,y])=>`<circle class="wrthk" cx="${x}" cy="${y}" r="4.4" fill="#c8a070" stroke="#8a6a4a" stroke-width="2"/>`).join('');
+  const pst=`<g class="wrtpst"><path d="M288 22 V64" stroke="#d8b860" stroke-width="1.6"/><g transform="translate(288 100)">${wrtStarPath(36,'#ffd84a','#c8962a')}<path d="M0 -36 L0 0" stroke="#fff3b0" stroke-width="1.4" opacity=".5"/></g></g>`;
+  const col=`<g class="krdcol"><g fill="#e8f6ff" opacity=".9">${WRTFL.map(d=>`<path d="${d}" stroke="#bfe6ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`).join('')}</g>
+    <g fill="#fff">${[[112,212],[150,232],[150,280],[112,300],[74,280],[74,232]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3.4"/>`).join('')}</g><circle cx="112" cy="256" r="6" fill="#fff"/></g>`;
+  return `<svg viewBox="0 0 400 380" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1">${sky}</linearGradient><clipPath id="${id}c"><rect x="24" y="24" width="352" height="306"/></clipPath></defs>
+  <rect x="24" y="24" width="352" height="306" fill="url(#${id})"/>
+  <g clip-path="url(#${id}c)">${st}
+   ${night?`<path d="M330 70 A30 30 0 1 0 330 130 A22 22 0 1 1 330 70Z" fill="#fff3c0"/><circle cx="322" cy="100" r="54" fill="#fff6c8" opacity=".12"/>`:`<circle cx="320" cy="80" r="40" fill="#fff" opacity=".35"/>`}
+   <path d="M24 330 V282 L56 282 L56 262 L86 240 L116 262 L116 286 L168 286 L168 258 L196 236 L224 258 L224 292 L272 292 L272 270 L302 246 L334 270 L334 296 L376 296 L376 330Z" fill="${night?'#1a2058':'#8a8ab0'}"/>
+   <path d="M52 264 L86 238 L120 264 L112 266 L86 248 L60 266Z M164 260 L196 234 L228 260 L220 262 L196 244 L172 262Z M268 272 L302 244 L338 272 L330 274 L302 254 L276 274Z" fill="#fff"/>
+   <g fill="${night?'#ffd86a':'#fff3c8'}" opacity="${night?1:.8}"><rect x="74" y="268" width="11" height="11"/><rect x="186" y="264" width="10" height="12"/><rect x="292" y="276" width="10" height="10"/></g>
+   <g fill="#2e6a4a"><path d="M140 300 L152 268 L164 300Z M348 304 L358 278 L368 304Z"/></g><path d="M140 300 L152 268 L164 300 L158 298 L152 284 L146 298Z M348 304 L358 278 L368 304 L362 302 L358 290 L354 302Z" fill="#fff" opacity=".8"/>
+   <path d="M24 330 V310 Q120 298 200 306 Q290 296 376 308 V330Z" fill="#f4f8ff"/>
+   ${flakes(22,false,'wrtsn')}${flakes(40,true,'wrtsn2')}
+   <rect class="wrtfog" x="24" y="24" width="352" height="306" fill="#eef4fa"/>
+   ${col}
+   <g class="krdgd" fill="none" stroke="rgba(90,120,160,.75)" stroke-width="2.6" stroke-dasharray="1.5 7" stroke-linecap="round">${WRTFL.map(d=>`<path d="${d}"/>`).join('')}</g>
+   <g class="krdink" fill="none" stroke-linecap="round" stroke-linejoin="round">${WRTFL.map((d,i)=>`<path data-i="${i}" d="${d}" stroke="rgba(170,215,250,.85)" stroke-width="9"/><path data-i="${i}" d="${d}" stroke="#ffffff" stroke-width="4"/>`).join('')}</g></g>
+  <rect x="24" y="24" width="352" height="306" fill="none" stroke="#e8c898" stroke-width="22" rx="6"/><rect x="13" y="13" width="374" height="328" fill="none" stroke="#a87a4a" stroke-width="4" rx="10"/>
+  <path d="M200 24 V330 M24 177 H376" stroke="#e8c898" stroke-width="9"/><path d="M0 334 H400 Q406 334 406 342 V352 Q406 360 398 360 H2 Q-6 360 -6 352 V342 Q-6 334 0 334Z" fill="#d8b080" stroke="#a87a4a" stroke-width="4"/>
+  ${pst}${hooks}${chain}</svg>`; }
+/* a five-pointed star path centred on 0,0 with radius R */
+function wrtStarPath(R,fill,stroke,cls){ let d=''; for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?R*.42:R; d+=(i?'L':'M')+(Math.cos(a)*rr).toFixed(1)+' '+(Math.sin(a)*rr).toFixed(1)+' '; }
+  return `<path${cls?` class="${cls}"`:''} d="${d}Z" fill="${fill}" stroke="${stroke}" stroke-width="${(R/12).toFixed(1)}" stroke-linejoin="round"/>`; }
+/* which classes the window gets from the state of the story so far */
+function wrtFeCls(){ let c=''; for(let k=1;k<=Math.min(4,TST.fc||0);k++) c+=' c'+(5-k); if(TST.fl) c+=' lit'; if(TST.ps) c+=' pst'; if(TST.fm) c+=' wrtdrawn'; if(TST.viel) c+=' viel'; return c; }
+function wrtFeSet(){ const F=TB&&TB.els.fenster; if(!F) return; ['c1','c2','c3','c4','lit','pst','wrtdrawn','viel'].forEach(k=>F.classList.remove(k)); wrtFeCls().trim().split(/\s+/).filter(Boolean).forEach(k=>F.classList.add(k)); }
+
+/* the old Christmas box from the attic: dusty at first; .auf opens the lid (and lets the glitter inside show). viewBox 0 0 220 170 */
+function wrtKisteSVG(){ const id='wrtk'+(++LANC);
+  return `<svg viewBox="0 0 220 170" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8484a"/><stop offset="1" stop-color="#9a2432"/></linearGradient>
+   <radialGradient id="${id}g"><stop offset="0" stop-color="#fff6c0"/><stop offset=".5" stop-color="#ffe27a" stop-opacity=".7"/><stop offset="1" stop-color="#ffd25a" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="110" cy="164" rx="100" ry="7" fill="rgba(0,0,0,.22)"/>
+  <g class="wrtin"><ellipse cx="110" cy="70" rx="96" ry="46" fill="url(#${id}g)"/>
+   <path d="M40 74 Q70 40 100 70 Q130 44 168 72" fill="none" stroke="#2e5a34" stroke-width="3"/>${[[52,62,'#ff5a6a'],[76,52,'#ffd84a'],[100,66,'#5ab4ff'],[128,56,'#6ad87a'],[156,64,'#ff9ad8']].map(([x,y,c])=>`<ellipse cx="${x}" cy="${y}" rx="5" ry="7" fill="${c}"/>`).join('')}
+   <circle cx="66" cy="80" r="13" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="2"/><circle cx="150" cy="82" r="12" fill="#ffd24a" stroke="#b8860b" stroke-width="2"/><g transform="translate(112 54) rotate(-12)">${wrtStarPath(16,'#ffd84a','#c8962a')}</g></g>
+  <path d="M14 70 H206 V150 Q206 160 196 160 H24 Q14 160 14 150Z" fill="url(#${id})" stroke="#6a1420" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M100 70 V160 M120 70 V160" stroke="#ffd25a" stroke-width="7"/><path d="M20 84 H200" stroke="#ff8a8a" stroke-width="3" opacity=".5"/>
+  <g fill="#e8c860" stroke="#9a7a20" stroke-width="2"><rect x="10" y="66" width="20" height="20" rx="3"/><rect x="190" y="66" width="20" height="20" rx="3"/><rect x="10" y="144" width="20" height="18" rx="3"/><rect x="190" y="144" width="20" height="18" rx="3"/></g>
+  <g transform="translate(110 118)">${wrtStarPath(15,'#fff3b0','#c8962a')}</g>
+  <g class="wrtlid"><path d="M8 50 Q8 40 18 40 H202 Q212 40 212 50 V72 H8Z" fill="url(#${id})" stroke="#6a1420" stroke-width="4" stroke-linejoin="round"/><path d="M100 40 V72 M120 40 V72" stroke="#ffd25a" stroke-width="7"/>
+   <path d="M110 40 Q90 18 80 30 Q76 42 110 42 Q144 42 140 30 Q130 18 110 40Z" fill="#ffd25a" stroke="#b8860b" stroke-width="2.6" stroke-linejoin="round"/><circle cx="110" cy="40" r="6" fill="#ffe27a" stroke="#b8860b" stroke-width="2"/></g></svg>`; }
+
+/* the little fir in a red pot, only for her room: bulbs (.lit, show with .lights) and the star on top (.tstar, shows with .star) –
+   the same classes as the Advent fir, so the same CSS works. viewBox 0 0 120 176; the tip is at 60,10 */
+const WRTHOOK=[[.34,.42],[.66,.46],[.26,.62],[.52,.56],[.74,.64],[.4,.74]];
+function wrtBaumSVG(){ const id='wrtt'+(++LANC);
+  const lit=[[52,40],[70,50],[40,66],[62,72],[84,70],[32,92],[54,96],[78,98],[94,92],[46,118],[70,120],[22,116]].map(([x,y],i)=>`<circle class="lit" cx="${x}" cy="${y}" r="3" fill="${['#ffe27a','#fff','#ffb0c8','#a8e0ff'][i%4]}"/>`).join('');
+  return `<svg viewBox="0 0 120 176" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e9a56"/><stop offset="1" stop-color="#1e6a3a"/></linearGradient></defs>
+  <ellipse cx="60" cy="172" rx="34" ry="4" fill="rgba(0,0,0,.22)"/>
+  <path d="M38 140 H82 L76 172 H44Z" fill="#d8484a" stroke="#7a1a24" stroke-width="2.6" stroke-linejoin="round"/><path d="M34 136 H86 V146 H34Z" fill="#e85a5a" stroke="#7a1a24" stroke-width="2.6"/>
+  <rect x="54" y="126" width="12" height="12" fill="#7a4a24"/>
+  <path d="M60 8 L86 52 L72 50 L98 90 L80 88 L108 130 L12 130 L40 88 L22 90 L48 50 L34 52Z" fill="url(#${id})" stroke="#14402a" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M60 8 L72 30 L60 26 L48 30Z M60 50 L78 76 L60 70 L42 76Z M60 90 L86 118 L60 112 L34 118Z" fill="#6ac47a" opacity=".45"/>
+  ${lit}<g class="tstar" transform="translate(60 2)">${wrtStarPath(13,'#ffe27a','#d89a20')}</g></svg>`; }
+
+/* the sheet of golden paper Papa holds for her (scene 3); .cut: the sheet goes, the cut-out star stays. viewBox 0 0 160 160 */
+function wrtPapierSVG(){ return `<svg viewBox="0 0 160 160" style="overflow:visible"><g class="wrtsheet"><path d="M6 10 L150 4 L156 150 L10 156Z" fill="#ffd25a" stroke="#c8962a" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M6 10 L150 4 L156 150Z" fill="#ffe27a" opacity=".6"/><path d="M20 30 L60 22 M100 130 L140 120" stroke="#fff6c0" stroke-width="3" stroke-linecap="round" opacity=".7"/></g>
+  <g class="wrtcut" transform="translate(80 84)">${wrtStarPath(62,'#ffd84a','#c8962a')}</g></svg>`; }
+/* the light switch next to the door frame. viewBox 0 0 60 80 */
+function wrtSchalterSVG(){ return `<svg viewBox="0 0 60 80" style="overflow:visible"><rect x="4" y="4" width="52" height="72" rx="8" fill="#fdfcf6" stroke="#b8b0a0" stroke-width="3"/>
+  <rect class="wrtrk" x="16" y="16" width="28" height="48" rx="5" fill="#fff" stroke="#c8c0b0" stroke-width="2.6"/><circle class="wrtled" cx="30" cy="28" r="3.4" fill="#ffb84a"/></svg>`; }
+
+Object.assign(SVGP,{WRTKISTE:[wrtKisteSVG,1.29],WRTBAUM:[wrtBaumSVG,.68],WRTPAPIER:[wrtPapierSVG,1],WRTSCHALTER:[wrtSchalterSVG,.75],WRTSTERN:[()=>`<svg viewBox="-20 -20 40 40" style="overflow:visible">${wrtStarPath(18,'#ffe27a','#d89a20')}</svg>`,1]});
+
+/* ---------- the sets: her room by day and at night ---------- */
+Object.assign(SETS2,{
+  wrttag:{clean:1, sky:'#fde4ec'},
+  wrtnacht:{sky:'#5a4e90', dcol:'16,12,44', wn:1}
+});
+Object.assign(TSYL,{STAUB:TSYL.STAUB||'STAUB',FENSTER:TSYL.FENSTER||'FENS-TER',PAPIER:TSYL.PAPIER||'PA-PIER',KUGEL:TSYL.KUGEL||'KU-GEL',FLOCKE:TSYL.FLOCKE||'FLO-CKE',STERN:TSYL.STERN||'STERN',LICHT:TSYL.LICHT||'LICHT'});
+
+/* ---------- sounds: a sneeze, a lid, a little bell for the bulbs, scissors, breath on the glass, the light switch ---------- */
+const wrtLate=()=>!tale||!tale.t||tale.t.id!=='weihronte'||!taleOn();
+function wrtTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||wrtLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function wrtNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||wrtLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.05,d*.25)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function wrtHatschi(x){ wrtNoise(x,.16,2600,500,480,'lowpass'); wrtTone(x,520,220,260,.05,'triangle'); }
+function wrtLid(x){ wrtTone(x,180,90,260,.12,'triangle'); wrtNoise(x,.06,900,300,200,'lowpass'); }
+let wrtSqT=0; function wrtSquee(x){ const t=now(); if(t-wrtSqT<120) return; wrtSqT=t; wrtTone(x,1700+Math.random()*500,2300+Math.random()*400,90,.018,'sine'); }
+function wrtSnip(x){ [0,1].forEach(i=>setTimeout(()=>{ wrtNoise(x,.1,5200,3800,70,'highpass'); wrtTone(x,2600,1800,40,.03,'square'); },i*260)); }
+function wrtHauch(x){ wrtNoise(x,.09,700,420,1300,'lowpass'); }
+function wrtKlick(x){ wrtTone(x,1800,900,30,.08,'square'); wrtNoise(x,.06,3000,1500,60); }
+function wrtBimmel(x,n){ for(let i=0;i<(n||5);i++) setTimeout(()=>wrtTone(x,[1568,1760,2093,2349,2637][i%5],[1568,1760,2093,2349,2637][i%5],420,.035,'sine'),i*150); }
+
+/* ---------- helpers ---------- */
+/* the hooks over the window, in % of the world (for the dots gesture) */
+function wrtHookPts(){ const F=TB.els.fenster; return WRTHK.map(([x,y])=>{ const p=eikAt(F,x/400,y/380); return [+p[0].toFixed(2),+p[1].toFixed(2)]; }); }
+/* the points of the star on the golden paper, in the order she draws it in one stroke */
+function wrtStarPts(){ const P=TB.els.papier, [cx,cy]=eikAt(P,.5,84/160), W=TB.W, R=P.offsetHeight/W.offsetHeight*100*.36, ax=W.offsetHeight/W.offsetWidth, out=[];
+  for(let i=0;i<5;i++){ const a=-Math.PI/2+i*2*Math.PI/5; out.push([+(cx+Math.cos(a)*R*ax).toFixed(2),+(cy+Math.sin(a)*R).toFixed(2)]); } return [0,2,4,1,3,0].map(i=>out[i]); }
+/* the bulbs of the chain light up one after the other */
+function wrtChainOn(ms){ const F=TB.els.fenster; if(!F) return; const B=[...F.querySelectorAll('.wrtb')]; TST.fl=1;
+  B.forEach((b,i)=>bLater(()=>{ b.classList.add('on'); const [x,y]=ctr(b); if(i%3===0) chimeAt([1175+(i%5)*130],x); if(i%2===0) glitterBurst(x,y,4,4); },i*(ms||90)));
+  bLater(()=>{ F.classList.add('lit'); B.forEach(b=>b.classList.remove('on')); },B.length*(ms||90)+200); }
+/* the kugeln already hanging on the tree (from scene 4 on) */
+function wrtHung(T){ (TST.bk||[]).forEach(([e,f],i)=>{ const b=prop(e,f[0]*100,f[1]*100,4.6,'tp2 kgl hung kid'); b.style.animationDelay=(-i*.6)+'s'; T.appendChild(b); TB.els['hk'+i]=b; }); }
+/* lights in the dark room: the tree, the chain, the paper star, the star on the tree */
+function wrtGlow(k){ const F=TB.els.fenster, T=TB.els.baum;
+  if(F){ light({el:F,oy:.06,r0:4,rT:30*k,k0:.2,kT:.75*k,warm:.6,flick:1}); light({el:F,ox:.22,oy:.26,r0:2,rT:16*k,k0:.2,kT:.7*k,warm:.9}); }
+  if(T){ light({el:T,oy:.5,r0:4,rT:30*k,k0:.2,kT:.85*k,warm:.5,flick:1}); light({el:T,oy:.02,r0:2,rT:14*k,k0:.2,kT:.9*k,warm:1}); } }
+/* the star flies out of the box up to the very top of the tree */
+function wrtStarUp(cb){ const K=TB.els.kiste, T=TB.els.baum; if(!K||!T) return cb&&cb(); const S=prop('WRTSTERN',0,0,6,'tp2 wrtfly'); TB.act.appendChild(S); const [kx,ky]=eikAt(K,.5,.32); S.style.left=kx+'%'; S.style.top=ky+'%';
+  const [tx,ty]=eikAt(T,.5,8/176); glitterBurst(...ctr(S),10,8); chime([988,1318]);
+  kiPath(S,[[kx,ky-12],[(kx+tx)/2,Math.min(ky,ty)-14],[tx,ty]],1500,()=>{ S.remove(); T.classList.add('star'); TST.bs=1; const [x,y]=relEl(T,[.5,.02]); glitterBurst(x,y,24,20); fxBurst(x,y,20,GLCOL); chime([1318,1568,2093]); if(cb) cb(); }); trail(S,1500); }
+/* the room goes dark (the big light off) or bright again */
+function wrtDark(on){ const R=TB.els.room; FX.darkT=on?.62:.28; if(R) R.classList.toggle('wrtdim',!!on); }
+
+/* ---------- the new gesture: fenstermalen (draw into the fogged-up window with the fingertip). Like the chalk drawing (kreiden), but
+   without the chalk: where the finger goes along the dotted snowflake, a clear line appears in the fog. a:{id (the window), pct, tol} ---------- */
+G2.fenstermalen=Object.assign(Object.create(G2.kreiden),{
+  setup(){ G2.kreiden.setup.call(this); const k=TB.kd; if(k.st) k.st.remove(); const S=el('div','wrtfp'); TB.act.appendChild(S); k.st=S; },
+  tip(x,y,on){ const S=TB.kd&&TB.kd.st; if(!S) return; putAt(S,x,y); S.classList.toggle('on',!!on); if(on){ wrtSquee(x); if(Math.random()<.35) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*6*vu(),vy:-2*vu(),life:.5,s:.7,c:'rgba(230,245,255,.95)'}); } }
+});
+
+/* ================= Eefje schmückt ihr Zimmer ================= */
+/* heart: Christmas is coming – Ehfje calls it "Weihronte" (a child's word, it means nothing else), and she keeps calling it that, however
+   often Papa and Mama say "Weihnachten". With Papa she opens the dusty old box from the attic, hangs the fairy lights over the window,
+   draws a paper star; Mama brings a little fir only for her room, Ehfje hangs the baubles; she breathes on the window and draws a
+   snowflake – and outside it really starts to snow; Socke climbs the tree and sits on top instead of the star. In the evening the whole
+   family comes, the big light goes off, she switches the decorations on – and in the end everybody says "Frohe Weihronte!" */
+const WRTDUR={};
+const WRT2={id:'weihronte', v2:true, eef:1, fam:1, dur:WRTDUR, title:'Eefje schmückt ihr Zimmer', vtitle:'Ehfje schmückt ihr Zimmer', icon:'🎄',
+ cover:'linear-gradient(180deg,#3a2a6a 0%,#8a4a8a 40%,#e8789a 72%,#ffd88a 100%)',
+ cast(sc){ const A=TB.act, night=!!SETS2[sc.set].wn;
+  const R=el('div','eikroom wrtroom',wrtRoomSVG(night)); A.insertBefore(R,A.firstChild); TB.els.room=R;
+  FAM2.cast.call(this,sc);
+  if(sc.fe){ const [x,y,w]=sc.fe, F=el('div','tp2 wrtfe'+(night?' nacht':''),wrtFensterSVG(night)); F.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; R.after(F); TB.els.fenster=F; wrtFeSet(); if(sc.off) F.classList.remove('lit'); }
+  const K=TB.els.kiste; if(K&&TST.kauf) K.classList.add('auf');
+  const T=TB.els.baum; if(T){ wrtHung(T); if(TST.bs&&!sc.off) T.classList.add('star'); }
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='kiste'){ sqs(b); wrtLid(x); glitterBurst(x,y-u*4,8,8); return true; }
+  if(id==='fenster'){ chime([988,1318]); if(TST.fl) wrtBimmel(x,3); glitterBurst(x,y,8,8); return true; }
+  if(id==='baum'){ sqs(b); wrtBimmel(x,4); glitterBurst(x,y,10,12); return true; }
+  if(/^hk\d$/.test(id)||/^kugel\d$/.test(id)){ sqs(b); chime([1568+Math.random()*400]); return true; }
+  if(id==='papier'){ sqs(b); famNoise(x,.05,2600,1400,200); return true; }
+  if(id==='schalter'){ sqs(b); wrtKlick(x); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a cold winter day in her room, snow outside. "Papa, wann ist endlich Weihronte?" Papa brings the dusty old box from the attic;
+    wipe the dust off (rub) – Hatschi! the lid pops open, it glitters inside. "Die Weihronte-Kiste!" – "Das heißt Weihnachten." – "Sag ich doch!" */
+ {set:'wrttag', dark:0, u:[9,81,14], fe:[40,42,50], ef:[27,74,30,'st'], papa:[80,64,30], sk:[42,87,10],
+  p:[['kiste','WRTKISTE',57,81,20,'wrtki']], front:['kiste'],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',skm:'smile',fc:0,fl:0,ps:0,fm:0,viel:0,kauf:0,bk:[],bs:0},
+  enter(){ onPh('rieselte der Schnee',()=>{ const F=TB.els.fenster; glitterBurst(...relEl(F,[.5,.4]),10,16); chime([1318,1175,988]); });
+    onPh('mit Socke',()=>{ sqs(TB.els.socke); mood('socke','happy'); }); onPh('deinem Einhorn',()=>uniHop());
+    talk('hexe','Papa, wann','fragte Ehfje'); onPh('Papa, wann',()=>{ mood('hexe','happy'); efArm('up'); });
+    onPh('Papa lachte',()=>{ mood('papa','laugh'); mood('hexe','smile'); efArm('dn'); }); talk('papa','Bald!','Er stellte'); onPh('schmücken wir',()=>{ famArm('papa','wide'); mood('hexe','laugh'); });
+    onPh('alte Kiste',()=>{ famArm('papa','dn'); const K=TB.els.kiste; sqs(K); wrtLid(ctr(K)[0]); mood('hexe','oh'); });
+    onPh('ganz staubig',()=>{ const K=TB.els.kiste, [x,y]=ctr(K); for(let i=0;i<14;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*16,y:y-vu()*4,vx:(Math.random()-.5)*14*vu(),vy:-(4+Math.random()*8)*vu(),s:.8+Math.random(),life:1.4,c:'rgba(220,210,190,.6)'}); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); famArm('papa','dn'); mood('papa','smile'); },
+  a:{t:'rub',id:'kiste',w:'STAUB'},
+  h:'Wisch mit dem Finger den Staub von der Kiste!',
+  s:'Es war ein kalter Wintertag, und draußen rieselte der Schnee. Die kleine Hexe Ehfje spielte mit Socke und deinem Einhorn in ihrem Zimmer. Papa, wann ist endlich Weihronte? fragte Ehfje. Papa lachte. Bald! Und darum schmücken wir heute dein Zimmer. Er stellte eine alte Kiste vom Dachboden auf den Boden. Die war ganz staubig. Wisch den Staub weg!',
+  rubStep(p){ mood('hexe',p>.4?'laugh':'happy'); if(p>.3&&!TB.wn){ TB.wn=1; mood('socke','happy'); sqs(TB.els.socke); } },
+  done(){ mood('hexe','oh'); efArm('dn'); TST.kauf=1; },
+  d:[()=>{ onPh('Hatschi',()=>{ const E=TB.els.hexe; mood('hexe','laugh'); sqs(E); wrtHatschi(ctr(E)[0]); const [x,y]=relEl(E,[.5,.22]); fxBurst(x,y,12,['rgba(220,210,190,.7)']); },'d1');
+       onPh('Deckel sprang auf',()=>{ const K=TB.els.kiste, [x,y]=relEl(K,[.5,.3]); K.classList.add('auf'); TST.kauf=1; sqs(K); wrtLid(x); fxBurst(x,y,30,GLCOL); glitterBurst(x,y,30,30); chime([784,988,1175,1568]); mood('papa','oh'); },'d1');
+       onPh('glitzerte und funkelte',()=>{ const K=TB.els.kiste; for(let i=0;i<5;i++) bLater(()=>glitterBurst(...relEl(K,[.2+Math.random()*.6,.3]),6,8),i*180); mood('hexe','laugh'); efArm('up'); },'d1'); },
+     'Hatschi! Ehfje musste niesen, und der Deckel sprang auf. In der Kiste glitzerte und funkelte es.',
+     ()=>{ talk('hexe','Die Weihronte-Kiste','rief Ehfje','d2'); talk('papa','Das heißt','Sag ich doch','d2'); talk('hexe','Sag ich doch',null,'d2');
+       onPh('Die Weihronte-Kiste',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2'); onPh('Papa schmunzelte',()=>{ mood('papa','happy'); efArm('dn'); mood('hexe','smile'); },'d2');
+       onPh('Sag ich doch',()=>{ mood('hexe','happy'); efArm('up'); },'d2'); onPh('Weihronte!',()=>{ mood('papa','laugh'); const [x,y]=relEl(TB.els.hexe,[.5,.2]); hearts(x,y,2); glitterBurst(x,y,8,10); },'d2'); },
+     'Die Weihronte-Kiste! rief Ehfje. Papa schmunzelte. Das heißt Weihnachten, mein Schatz. Sag ich doch, sagte Ehfje: Weihronte!', 700]},
+
+ /* 2 – the fairy lights go over the window, from hook to hook (dots); Socke wants to play with the cable. Spell: the chain lights up */
+ {set:'wrttag', dark:0, u:[9,81,14], fe:[40,42,50], ef:[57,74,30,'st'], papa:[80,64,30], sk:[24,86,10],
+  p:[['kiste','WRTKISTE',88,85,16,'wrtki']], front:['kiste'],
+  st:{efm:'happy',efa:'fwd',pam:'smile',paa:'dn',skm:'smile'},
+  enter(){ TB.sc.a.pts=wrtHookPts().reverse(); onPh('Lichterkette aus der Kiste',()=>{ const K=TB.els.kiste; sqs(K); glitterBurst(...relEl(K,[.5,.3]),10,10); efArm('up'); mood('hexe','happy'); });
+    talk('papa','Die kommt','sagte Papa'); onPh('Die kommt',()=>{ famArm('papa','up'); }); onPh('ans Fenster',()=>{ famArm('papa','dn'); const F=TB.els.fenster; F.querySelectorAll('.wrthk').forEach((h,i)=>bLater(()=>{ const [x,y]=ctr(h); dingRing(x,y,vu()*5,'#ffe27a'); chimeAt([988+i*120],x); },i*200)); });
+    onPh('Socke wollte',()=>{ const S=TB.els.socke; mood('socke','happy'); famHop(S,34,86,700,10); });
+    talk('hexe','Nein, Socke','kicherte'); onPh('Nein, Socke',()=>{ mood('hexe','laugh'); }); onPh('Häng die',()=>{ mood('hexe','happy'); efArm('up'); }); },
+  ready(){ efReady(); TB.sc.a.pts=wrtHookPts().reverse(); mood('hexe','happy'); efArm('up'); bLater(()=>{ if(TB.dsv){ const l=TB.dsv.querySelector('.dl'); if(l) l.style.opacity=0; } },60); },
+  a:{t:'dots',pts:[[30,14],[37,14],[44,14],[51,14],[58,14]],sz:4.6,r:9,w:'FENSTER'},
+  h:'Fahr mit dem Finger von Haken zu Haken!',
+  s:'Zuerst holte Ehfje die Lichterkette aus der Kiste. Die kommt ans Fenster, sagte Papa. Aber Socke wollte mitspielen und tapste nach dem langen Kabel. Nein, Socke, das ist doch kein Wollknäuel! kicherte Ehfje. Häng die Lichterkette von Haken zu Haken!',
+  dotStep(k){ if(k>1){ TST.fc=k-1; wrtFeSet(); const F=TB.els.fenster, s=F.querySelector('.wrtc'+(6-k)); if(s){ s.classList.remove('wrtpop'); void s.getBoundingClientRect(); s.classList.add('wrtpop'); } }
+    if(TB.dsv){ const l=TB.dsv.querySelector('.dl'); if(l) l.style.opacity=0; }
+    if(k===3){ const S=TB.els.socke; mood('socke','happy'); famHop(S,40,85,600,12); bubble('miau!',...relEl(S,[.5,0]),3.2,'#e0e0f0'); }
+    mood('hexe',k%2?'laugh':'happy'); },
+  done(){ TST.fc=4; wrtFeSet(); TB.dst&&TB.dst.forEach(s=>{ s.style.transition='opacity .5s'; s.style.opacity=0; }); mood('hexe','laugh'); mood('papa','happy'); },
+  d:[()=>{ onPh('hob Ehfje',()=>{ efArm('up'); mood('hexe','happy'); },'d1'); talk('hexe','Kribbel','Und schon','d1'); onPh('Kribbel',()=>efSpell(18),'d1');
+       onPh('leuchtend sein',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,14,14); },'d1'); onPh('Und schon',()=>{ wrtChainOn(80); mood('hexe','oh'); },'d1');
+       onPh('allen Farben',()=>{ mood('hexe','laugh'); mood('papa','laugh'); wrtBimmel(ctr(TB.els.fenster)[0],5); },'d1'); },
+     'Da hob Ehfje ihren Finger: Kribbel, krabbel, Funkelschein – Lichter, ihr sollt leuchtend sein! Und schon leuchtete die Kette in allen Farben.',
+     ()=>{ talk('hexe','Weihronte-Lichter','jubelte','d2'); onPh('Weihronte-Lichter',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2');
+       onPh('Socke saß',()=>{ const S=TB.els.socke, F=TB.els.fenster, [fx,fy]=eikAt(F,.62,342/380), f=(.42)*S.offsetHeight/TB.W.offsetHeight*100; famHop(S,fx,fy-f,900,16); efArm('dn'); },'d2');
+       onPh('staunte',()=>{ mood('socke','happy'); const [x,y]=relEl(TB.els.socke,[.5,.1]); glitterBurst(x,y,8,8); },'d2'); },
+     'Weihronte-Lichter! jubelte Ehfje. Und Socke saß auf der Fensterbank und staunte.', 700]},
+
+ /* 3 – the golden paper star: Papa holds the sheet, she draws the star from point to point (dots); snip, snap – Papa cuts it out, and
+    it hangs in the window. "Ein Weihronte-Stern!" */
+ {set:'wrttag', dark:0, u:[9,81,14], fe:[40,42,50], ef:[30,74,30,'st'], papa:[84,64,30], sk:[44,56,8],
+  p:[['papier','WRTPAPIER',66,45,30,'wrtpap'],['kiste','WRTKISTE',88,85,16,'wrtki']], front:['kiste'],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'up',skm:'smile'},
+  enter(){ TB.sc.a.pts=wrtStarPts(); onPh('einen Stern basteln',()=>{ mood('hexe','happy'); efArm('up'); });
+    onPh('goldenes Papier',()=>{ const P=TB.els.papier; sqs(P); glitterBurst(...ctr(P),12,16); chime([988,1175]); });
+    talk('hexe','Ich male','Fahr mit'); onPh('Ich male',()=>{ mood('hexe','laugh'); }); onPh('schneidest',()=>{ mood('papa','laugh'); });
+    onPh('Fahr mit',()=>{ mood('hexe','happy'); efArm('fwd'); }); },
+  ready(){ efReady(); TB.sc.a.pts=wrtStarPts(); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'dots',pts:[[50,50]],sz:4.4,r:9,w:'PAPIER'},
+  h:'Fahr mit dem Finger von Punkt zu Punkt!',
+  s:'Als Nächstes wollte Ehfje einen Stern basteln. Papa hielt ein Blatt goldenes Papier hoch. Ich male den Stern, und du schneidest ihn aus, Papa! Fahr mit dem Finger von Punkt zu Punkt!',
+  dotStep(k){ efSpell(4); if(k===3) mood('hexe','laugh'); if(k===5) mood('papa','oh'); },
+  done(){ mood('hexe','laugh'); mood('papa','happy'); TST.ps=1; },
+  d:[()=>{ onPh('Schnipp',()=>{ wrtSnip(ctr(TB.els.papier)[0]); },'d1');
+       onPh('schnitt den Stern aus',()=>{ const P=TB.els.papier; P.classList.add('cut'); TB.dst&&TB.dst.forEach(s=>{ s.style.transition='opacity .4s'; s.style.opacity=0; }); if(TB.dsv) TB.dsv.style.opacity=0;
+         wrtSnip(ctr(P)[0]); const [x,y]=ctr(P); glitterBurst(x,y,20,24); },'d1');
+       onPh('mitten ins Fenster',()=>{ const P=TB.els.papier, F=TB.els.fenster, [tx,ty]=eikAt(F,288/400,100/380); kiPath(P,[[(parseFloat(P.style.left)+tx)/2,20],[tx,ty,.34]],1300,()=>{ P.style.opacity=0; TST.ps=1; wrtFeSet(); const [x,y]=relEl(F,[288/400,100/380]); glitterBurst(x,y,16,14); chime([1318,1568]); }); trail(P,1300); efArm('up'); },'d1'); },
+     'Schnipp, schnapp machte die Schere, und Papa schnitt den Stern aus. Ehfje hängte ihn mitten ins Fenster.',
+     ()=>{ talk('hexe','Ein Weihronte-Stern','sagte Ehfje','d2'); talk('papa','Der schönste',null,'d2'); onPh('Ein Weihronte-Stern',()=>{ mood('hexe','laugh'); efArm('up'); },'d2');
+       onPh('Der schönste',()=>{ mood('papa','happy'); famArm('papa','wide'); efArm('dn'); hearts(...relEl(TB.els.papa,[.5,.2]),2); },'d2'); },
+     'Ein Weihronte-Stern! sagte Ehfje stolz. Der schönste Stern der Welt, sagte Papa.', 700]},
+
+ /* 4 – Mama comes in with a little fir in a pot, only for her room. "Ein Weihronte-Baum!" – "Ein Weihnachtsbaum." Hang the baubles from
+    the box on the tree (hang); Socke taps them with his paw, pling, pling */
+ {set:'wrttag', dark:0, u:[7,82,13], fe:[40,42,50], ef:[22,74,30,'st'], mama:[112,65,28], sk:[38,89,10],
+  p:[['baum','WRTBAUM',66,63,46,'tan wrtbm'],['kiste','WRTKISTE',48,88,16,'wrtki'],['kugel1','KUGR',42,80,6,'kgl'],['kugel2','KUGB',46.5,78,6,'kgl'],['kugel3','KUGG',51,79,6,'kgl'],['kugel4','KUGS',55.5,81,6,'kgl']],
+  front:['kiste','kugel1','kugel2','kugel3','kugel4'],
+  st:{efm:'happy',efa:'dn',mam:'happy',maa:'dn',skm:'smile'},
+  enter(){ const T=TB.els.baum; T.style.opacity=0;
+    onPh('Tür auf',()=>{ chime([523,659]); famNoise(innerWidth*.9,.05,500,300,300,'lowpass'); });
+    onPh('Mama kam herein',()=>{ const M=TB.els.mama; kiPath(M,[[98,65],[87,65]],1600); mood('mama','happy'); mood('hexe','oh'); });
+    onPh('Tannenbäumchen',()=>{ const T=TB.els.baum; T.style.transition='opacity .6s'; T.style.opacity=1; try{ T.animate([{transform:'translateX(18vw)'},{transform:'none'}],{duration:1200,easing:'ease-out'}); }catch(e){} bLater(()=>glitterBurst(...relEl(T,[.5,.4]),14,20),900); });
+    talk('hexe','Ein Weihronte-Baum','rief Ehfje'); talk('mama','Ein Weihnachtsbaum','Häng die'); onPh('Ein Weihronte-Baum',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); });
+    onPh('und lachte',()=>{ mood('mama','laugh'); efArm('dn'); mood('hexe','happy'); }); onPh('Häng die',()=>{ ['kugel1','kugel2','kugel3','kugel4'].forEach((id,i)=>bLater(()=>sqs(TB.els[id]),i*200)); }); },
+  ready(){ efReady(); const T=TB.els.baum; T.style.opacity=1; T.getAnimations().forEach(q=>q.cancel()); const M=TB.els.mama; if(M){ M.getAnimations().forEach(q=>q.cancel()); M.style.left='87%'; } mood('hexe','happy'); },
+  a:{t:'hang',ids:['kugel1','kugel2','kugel3','kugel4'],tree:'baum',hooks:WRTHOOK,w:'KUGEL'},
+  h:'Zieh eine Kugel an einen leuchtenden Zweig!',
+  s:'Da ging die Tür auf, und Mama kam herein. Sie trug ein kleines Tannenbäumchen in einem Topf. Ein Weihronte-Baum! rief Ehfje. Ein Weihnachtsbaum, sagte Mama und lachte. Nur für dein Zimmer. Häng die bunten Kugeln an das Bäumchen!',
+  item(id,b){ const T=TB.els.baum, h=TB.hks.find(q=>q.used&&!q.wrt); if(h) h.wrt=1; const e={kugel1:'KUGR',kugel2:'KUGB',kugel3:'KUGG',kugel4:'KUGS'}[id];
+    TST.bk=(TST.bk||[]).concat([[e,h?h.f:[.5,.5]]]); mood('hexe',TST.bk.length%2?'laugh':'happy'); if(TST.bk.length===2) mood('mama','happy');
+    if(TST.bk.length===3){ const S=TB.els.socke; famHop(S,56,88,600,10); mood('socke','happy'); } },
+  done(){ mood('hexe','laugh'); efArm('up'); mood('mama','laugh'); },
+  d:[()=>{ onPh('glänzten die Kugeln',()=>{ (TB.els.baum.querySelectorAll('.kgl')||[]).forEach((k,i)=>bLater(()=>{ const [x,y]=ctr(k); glitterBurst(x,y,6,6); chimeAt([1175+i*150],x); },i*220)); },'d1');
+       onPh('Socke tippte',()=>{ const S=TB.els.socke; sqs(S); famHop(S,58,86,500,8); },'d1');
+       onPh('schaukelten',()=>{ TB.els.baum.querySelectorAll('.kgl').forEach(k=>{ k.classList.remove('wrtwob'); void k.getBoundingClientRect(); k.classList.add('wrtwob'); }); },'d1');
+       onPh('Pling, pling',()=>{ wrtBimmel(ctr(TB.els.baum)[0],4); mood('socke','happy'); mood('hexe','laugh'); },'d1'); },
+     'Rot, blau, gold und silber glänzten die Kugeln. Socke tippte mit der Pfote dagegen, und die Kugeln schaukelten hin und her. Pling, pling!', 800]},
+
+ /* 5 – it gets dark outside. She breathes on the glass (Hhhhaaa – fog) and draws a snowflake into it (fenstermalen, new). And outside it
+    really starts to snow, big thick flakes. "Echte Weihronte-Flocken!" Boris runs in and barks at the snow */
+ {set:'wrttag', dark:.1, u:[90,82,13], fe:[40,42,50], ef:[61,74,30,'st'], sk:[44,56,8], boris:[118,88,22],
+  p:[['baum','WRTBAUM',76,63,46,'tan wrtbm']],
+  st:{efm:'happy',efa:'dn',skm:'smile',bom:'happy'},
+  enter(){ const F=TB.els.fenster; F.classList.add('wrtmal');
+    onPh('langsam dunkel',()=>{ FX.darkT=.18; }); onPh('ans Fenster',()=>{ mood('hexe','happy'); efArm('fwd'); });
+    onPh('Hhhhaaa',()=>{ const F=TB.els.fenster; F.classList.add('beschlagen'); wrtHauch(ctr(F)[0]); const [x,y]=relEl(F,[.3,.6]); for(let i=0;i<10;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*12,y,vx:-(4+Math.random()*8)*vu(),vy:-(2+Math.random()*4)*vu(),s:1+Math.random(),life:1.2,c:'rgba(240,248,255,.6)'}); mood('hexe','oh'); });
+    onPh('ganz beschlagen',()=>{ mood('hexe','laugh'); }); onPh('Mal mit',()=>{ const F=TB.els.fenster; F.classList.remove('krdhint'); void F.offsetWidth; F.classList.add('krdhint'); mood('hexe','happy'); }); },
+  ready(){ efReady(); const F=TB.els.fenster; F.classList.add('beschlagen','wrtmal'); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'fenstermalen',id:'fenster',pct:.5,tol:6,w:'FLOCKE'},
+  h:'Fahr mit dem Finger die Punkte am Fenster nach!',
+  s:'Draußen wurde es langsam dunkel. Ehfje stellte sich ans Fenster und hauchte gegen die Scheibe: Hhhhaaa! Da wurde das Glas ganz beschlagen. Mal mit dem Finger eine Schneeflocke an das Fenster!',
+  drawing(p){ const q=Math.floor(p*4); if(q>(TB.dq||0)){ TB.dq=q; mood('hexe',q%2?'laugh':'happy'); } },
+  done(){ TST.fm=1; TST.viel=1; mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('Eine Schneeflocke',()=>{ const F=TB.els.fenster; glitterBurst(...relEl(F,[112/400,256/380]),16,14); },'d1');
+       onPh('schau mal',()=>{ const F=TB.els.fenster; F.classList.add('wrtklar'); mood('hexe','oh'); },'d1');
+       onPh('dicke Flocken',()=>{ const F=TB.els.fenster; F.classList.add('viel'); TST.viel=1; FX.em.push({rate:3,fn:()=>{ const r=F.getBoundingClientRect(), u=vu(); fxAdd({k:'glit',x:r.left+r.width*(.1+Math.random()*.8),y:r.top+r.height*.1,vy:(6+Math.random()*5)*u,ph:Math.random()*6,s:.6,life:2.2,c:'rgba(255,255,255,.6)'}); }}); chime([1568,1318,1175,988]); },'d1'); },
+     'Eine Schneeflocke! Und schau mal: Draußen fielen auf einmal ganz viele dicke Flocken.',
+     ()=>{ talk('hexe','Echte Weihronte-Flocken','rief Ehfje','d2'); onPh('Echte Weihronte-Flocken',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2');
+       onPh('Boris kam',()=>{ const B=TB.els.boris; kiPath(B,[[100,88],[90,88]],1300); famWag(1); },'d2');
+       onPh('Wuff, wuff',()=>{ const B=TB.els.boris, [x,y]=relEl(B,[.3,.2]); famWoof(x); bLater(()=>famWoof(x),300); bubble('wuff!',x,y-vu()*4,3.6,'#fff0d8'); mood('hexe','laugh'); },'d2'); },
+     'Echte Weihronte-Flocken! rief Ehfje. Boris kam ins Zimmer gelaufen, sah den Schnee und bellte: Wuff, wuff!', 800]},
+
+ /* 6 – only the star on top is missing. But who sits on the tip? Socke! "Du bist doch kein Weihronte-Stern!" Tickle him (pat) – he jumps
+    into her arms. Then the golden star goes on top */
+ {set:'wrttag', dark:.12, u:[9,81,14], fe:[40,42,50], ef:[44,74,30,'st'], sk:[70,38,10], boris:[16,90,20,'lie'],
+  p:[['baum','WRTBAUM',70,63,46,'tan wrtbm'],['kiste','WRTKISTE',90,85,16,'wrtki']], front:['socke','kiste'],
+  st:{efm:'happy',efa:'dn',skm:'happy',bom:'happy'},
+  enter(){ onPh('ganz oben',()=>{ const T=TB.els.baum; const [x,y]=relEl(T,[.5,.06]); dingRing(x,y,vu()*6,'#ffe27a'); });
+    onPh('Socke!',()=>{ const S=TB.els.socke; sqs(S); bubble('miau!',...relEl(S,[.5,0]),3.4,'#e0e0f0'); mood('hexe','oh'); });
+    talk('hexe','Socke, du bist','lachte Ehfje'); onPh('Socke, du bist',()=>{ mood('hexe','laugh'); efArm('up'); }); onPh('Kitzel',()=>{ mood('hexe','happy'); efArm('fwd'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'pat',id:'socke',at:[.5,.5],n:3,wait:400,w:'STERN'},
+  h:'Tipp auf Socke und kitzel ihn!',
+  s:'Jetzt fehlte nur noch der Stern ganz oben auf dem Bäumchen. Aber wer saß da plötzlich auf der Spitze? Socke! Socke, du bist doch kein Weihronte-Stern! lachte Ehfje. Kitzel Socke, dann springt er runter!',
+  patStep(k,x,y){ const S=TB.els.socke; bubble(['hihi!','mau!','miau!'][k-1],x,y-vu()*5,3.2,'#e0e0f0'); mood('hexe',k%2?'laugh':'happy'); wiggle(TB.els.baum); },
+  done(){ mood('hexe','laugh'); TST.bs=1; },
+  d:[()=>{ onPh('großen Satz',()=>{ const S=TB.els.socke, E=TB.els.hexe; efArm('hug'); flyStick(S,E.querySelector(':scope>.bb'),.5,.52,1000,14,()=>{ sqs(E); hearts(...ctr(S),3); }); },'d1');
+       onPh('Ehfjes Arme',()=>{ mood('hexe','laugh'); mood('socke','happy'); },'d1'); },
+     'Hihi, miau! Socke sprang mit einem großen Satz herunter, mitten in Ehfjes Arme.',
+     ()=>{ onPh('goldenen Stern',()=>{ efArm('up'); wrtStarUp(()=>mood('hexe','laugh')); },'d2'); onPh('fertig',()=>{ uniHop(); glitterBurst(...relEl(TB.els.baum,[.5,.4]),20,24); },'d2'); },
+     'Dann zauberte Ehfje den goldenen Stern auf die Spitze. Jetzt war das Bäumchen fertig.', 800]},
+
+ /* 7 – evening: Mama, Papa with Janneke, Boris all come into her room; Papa switches the big light off, it is dark. Hold the light switch
+    (hold): everything lights up. "Frohe Weihnachten" – "Frohe Weihronte!" – and in the end everybody says it */
+ {set:'wrtnacht', dark:.62, u:[8,82,13], fe:[40,42,50], ef:[28,74,30,'st'], mama:[48,65,27], papa:[86,64,30], jn:'papa', boris:[60,90,20], off:1,
+  p:[['baum','WRTBAUM',70,63,46,'tan wrtbm'],['schalter','WRTSCHALTER',95,48,7,'wrtsch']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'carry',jam:'smile',bom:'happy',hop:0},
+  enter(){ wrtGlow(.25); onPh('alle in Ehfjes Zimmer',()=>{ mood('hexe','happy'); });
+    onPh('die kleine Janneke',()=>{ sqs(TB.els.janneke); mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],3); }); onPh('und Boris',()=>{ famWag(1); sqs(TB.els.boris); bLater(()=>famWag(0),1400); });
+    onPh('ganz dunkel',()=>{ mood('hexe','oh'); mood('mama','oh'); }); talk('hexe','Bereit?','fragte Ehfje'); onPh('Bereit?',()=>{ mood('hexe','laugh'); efArm('up'); });
+    onPh('Halt deinen',()=>{ const S=TB.els.schalter; sqs(S); glitterBurst(...ctr(S),8,6); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('dn'); },
+  a:{t:'hold',id:'schalter',ms:2600,grow:.05,pc:'rgba(255,230,150,.9)',w:'LICHT'},
+  h:'Halt den Finger auf den Schalter!',
+  s:'Am Abend kamen alle in Ehfjes Zimmer: Mama, Papa, die kleine Janneke und Boris. Das große Licht war aus, und es war ganz dunkel. Bereit? fragte Ehfje. Halt deinen Finger auf den Schalter!',
+  done(){ const S=TB.els.schalter; S.classList.add('an'); wrtKlick(ctr(S)[0]); TST.fl=1; wrtFeSet(); const T=TB.els.baum; T.classList.add('lights','star'); wrtGlow(1); FX.darkT=.4;
+    wrtBimmel(innerWidth/2,5); glitterBurst(...relEl(T,[.5,.4]),30,30); glitterBurst(...relEl(TB.els.fenster,[.5,.12]),24,30); mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('leuchtete alles',()=>{ for(let i=0;i<6;i++) bLater(()=>glitterBurst(innerWidth*(.2+Math.random()*.6),innerHeight*(.15+Math.random()*.5),6,10),i*160); },'d1');
+       onPh('Oooh',()=>{ ['mama','papa','janneke'].forEach(id=>mood(id,'oh')); mood('hexe','laugh'); },'d1'); },
+     'Und auf einmal leuchtete alles: die Lichterkette, die Kugeln, der Stern im Fenster und der Stern auf dem Bäumchen. Oooh! staunten alle.',
+     ()=>{ talk('mama','Frohe Weihnachten','sagte Mama','d2'); talk('hexe','Frohe Weihronte','rief Ehfje','d2'); talk('papa','Na gut','Und Janneke','d2');
+       onPh('Frohe Weihnachten',()=>{ mood('mama','happy'); famArm('mama','up'); },'d2'); onPh('Frohe Weihronte',()=>{ mood('hexe','laugh'); efArm('up'); famArm('mama','dn'); uniHop(); },'d2');
+       onPh('lachte Papa',()=>{ mood('papa','laugh'); mood('mama','laugh'); },'d2'); onPh('Na gut',()=>{ mood('papa','happy'); },'d2');
+       onPh('quietschte',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],6); hearts(...ctr(J),3); hearts(...relEl(TB.els.hexe,[.5,.2]),3); },'d2'); },
+     'Frohe Weihnachten, sagte Mama. Frohe Weihronte! rief Ehfje. Da lachte Papa und sagte: Na gut. Frohe Weihronte! Und Janneke quietschte vor Freude.',
+     ()=>{ onPh('nicht ausgegangen',()=>{ mood('hexe','happy'); efArm('dn'); mood('papa','smile'); },'d3'); onPh('noch heute',()=>{ glitterBurst(...relEl(TB.els.baum,[.5,.3]),20,30); wrtBimmel(innerWidth*.7,5); },'d3'); },
+     'Und wenn die Lichter nicht ausgegangen sind, dann leuchtet Ehfjes Weihronte-Zimmer noch heute.', 1800]}
+ ]};
+/*<WEIHRONTE*/
 
 
 
@@ -16617,7 +16995,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -16710,6 +17088,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr eef ride" data-mood="laugh" data-arm="fwd" style="left:28%;top:62%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2" style="left:14%;top:20%;width:11%">${urkPlanSVG('#ffc48a','#b8642a',1)}</div>`+
     [[10,46,2.6],[40,12,3],[90,62,2.4],[50,86,2.2],[86,88,2.6],[30,34,2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff6c0;animation-delay:${-k*.5}s">✦</span>`).join('')+`</div>`+tw;/*<URKART*/
+  if(id==='weihronte') return `<div class="wrtart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 60% 40%,#ffe4ec 0,#f4b8cc 45%,#b86a9a 92%)"></div><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:24%;border-radius:50% 50% 0 0/30% 30% 0 0;background:linear-gradient(180deg,#d89a5e,#b87a42)"></div>`+
+    `<div class="tp2 wrtfe lit c1 c2 c3 c4 pst" style="left:24%;top:30%;width:40%">${wrtFensterSVG(false)}</div>`+
+    `<div class="tp2 tan wrtbm lights star" style="left:72%;top:58%;width:34%">${wrtBaumSVG()}${[['r',.34,.42],['b',.66,.46],['g',.26,.62],['s',.74,.64]].map(([c,x,y])=>`<div class="tp2 kgl hung kid" style="left:${x*100}%;top:${y*100}%;width:16%">${kugelSVG(c)}</div>`).join('')}</div>`+
+    `<div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:40%;top:64%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 chr sck" data-mood="happy" style="left:16%;top:84%;width:16%"><div class="bb">${sockeSVG()}</div></div>`+
+    [[12,62,3],[56,12,2.6],[90,18,3],[88,84,2.4],[50,90,2.2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">❄</span>`).join('')+`</div>`+tw;/*<WRTART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -16992,6 +17376,8 @@ regTale2(GAS2);
 regTale2(KRD2);
 /* Eefje und der Urknall: after the Kreidemeer, so the older lines keep their order in voice/clips.tsv */
 regTale2(URK2);
+/* Eefje schmückt ihr Zimmer: after the Urknall, so the older lines keep their order in voice/clips.tsv */
+regTale2(WRT2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
