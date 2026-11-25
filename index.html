@@ -2151,6 +2151,29 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .wkkkranz.lit{filter:drop-shadow(0 0 1.6vh rgba(255,214,120,.9)) drop-shadow(0 .5vh .6vh rgba(0,0,0,.25))}
 .wkklampe{pointer-events:none} .tp2.wkkkr{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25))} .tp2.wkknk{z-index:9}
 /*<WEIHRONTEKEKSECSS*/
+/*AUFRAEUMENCSS>*/
+/* Eefje räumt ihr Zimmer auf (all classes start with "rfm") */
+.rfmbett svg,.rfmki svg,.rfmhf svg,.rfmmess svg,.rfmtoy svg,.rfmkl svg,.rfmki2 svg,.rfmst svg,.rfmso svg,.rfmkorb svg,.rfmtk svg,.rfmohr svg,.rfmhornk svg,.rfmmaus svg,.rfmartk svg{display:block;width:100%;overflow:visible}
+.tp2.rfmbett{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.18))}
+.rfmbett .rfmgl{opacity:0;transition:opacity .7s} .rfmbett.glatt .rfmgl{opacity:1} .rfmbett .rfmzk{transition:opacity .7s} .rfmbett.glatt .rfmzk{opacity:0}
+.tp2.rfmki{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.15))}
+.rfmki .rfmkb{transform-box:fill-box;transform-origin:50% 100%;transform:scale(calc(1.14 - var(--kf,0)*.14),calc(.4 + var(--kf,0)*.6));transition:transform .25s}
+.tp2.rfmhf{transition:opacity .5s;filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.2))} .rfmhf.aus{opacity:0}
+.rfmhf .hk,.rfmhf .hs,.rfmhf .ht{transition:opacity .4s} .rfmhf.nok .hk,.rfmhf.nos .hs,.rfmhf.not .ht{opacity:0}
+.tp2.rfmmess,.tp2.rfmtoy,.tp2.rfmkl,.tp2.rfmso,.tp2.rfmtk,.tp2.rfmhornk{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.22))}
+.tp2.rfmtoy.rfmglow{filter:drop-shadow(0 0 1.2vh rgba(255,226,122,.95)) drop-shadow(0 0 .4vh #fff)} .rfmtoy.rfmglow>svg{animation:rfmbob 1.2s ease-in-out infinite} @keyframes rfmbob{50%{transform:translateY(-12%) rotate(6deg)}}
+.tp2.rfmhid{opacity:0}
+.tp2.rfmki2,.tp2.rfmst,.tp2.rfmkorb{filter:drop-shadow(0 .5vh .6vh rgba(0,0,0,.22))} .rfmki2.near>svg{filter:drop-shadow(0 0 1.2vh #fff6a8)}
+.rfmki2.nope>svg{animation:rfmnope .5s} @keyframes rfmnope{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+.rfmkorb .q1,.rfmkorb .q2,.rfmkorb .q3{opacity:0;transition:opacity .3s} .rfmkorb.q1 .q1,.rfmkorb.q2 .q2,.rfmkorb.q3 .q3{opacity:1}
+.tp2.rfmunten{pointer-events:none;filter:none}
+.efl.rfmmaus{width:4.8vh;font-size:1vh} .efl.rfmmaus>svg{animation:rfmzapp 1.4s ease-in-out infinite;animation-delay:inherit} @keyframes rfmzapp{50%{transform:translateY(-6%) scaleX(1.06)}}
+.tp2.bsn.rfmbr.held{transition:none} .tp2.bsn.rfmbr.rfmfeg{z-index:8}
+.rfmhop.dusty>.bb>svg{filter:grayscale(var(--g,1)) brightness(calc(1 - var(--g,1)*.38)) sepia(calc(var(--g,1)*.35))}
+.famjn.rfmkrab>.bb{animation:rfmkrab .45s ease-in-out infinite} @keyframes rfmkrab{50%{transform:translateY(-4%) rotate(-5deg)}}
+.tp2.rfmohr{filter:drop-shadow(0 .2vh .2vh rgba(0,0,0,.25));rotate:-24deg}
+.rfmhop>.dust{width:40%}
+/*<AUFRAEUMENCSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -17457,6 +17480,439 @@ const WKK2={id:'kekse', v2:true, eef:1, fam:1, dur:WKKDUR, title:'Eefje backt We
      'Und wenn sie nicht alle aufgegessen sind, dann knuspern sie noch heute.', 1800]}
  ]};
 /*<WEIHRONTEKEKSE*/
+/*AUFRAEUMEN>*/
+/* ================= Eefje räumt ihr Zimmer auf: drawn props, sets, sounds and helpers (all classes and helpers start with "rfm"; checked:
+   no rfm… name existed before) ================= */
+
+/* her room by day: the evening room of the bedtime tale with a blue sky, a little sun and white clouds in the window */
+function rfmRoomSVG(){ let s=betRoomSVG('abend');
+  [['<stop offset="0" stop-color="#ff9a7a"/><stop offset=".55" stop-color="#ffc48a"/><stop offset="1" stop-color="#ffe6b0"/>','<stop offset="0" stop-color="#86c4f2"/><stop offset=".55" stop-color="#b4dcfa"/><stop offset="1" stop-color="#e4f4ff"/>'],
+   ['<circle cx="330" cy="452" r="62" fill="#ffd660"/><circle cx="330" cy="452" r="92" fill="#ffe08a" opacity=".35"/>','<circle cx="404" cy="214" r="56" fill="#fff4b0" opacity=".45"/><circle cx="404" cy="214" r="34" fill="#ffe25a"/>'],
+   ['<g fill="#ffb0b8" opacity=".8">','<g fill="#ffffff" opacity=".95">'],
+   ['fill="#c8705a" opacity="0.55"','fill="#7ab48a" opacity="0.75"']].forEach(([a,b])=>{ s=s.split(a).join(b); }); return s; }
+
+/* the little parts, so the heap can reuse them: a toy block (colour k: r b g y, a letter), a sock, a ball, a book, the teddy */
+const RFMC={r:['#ff5a6a','#a8243a','#ffa0aa'],b:['#4a9aff','#1e5ab8','#a0ccff'],y:['#ffd23a','#b8860b','#ffe98a'],g:['#5ad27a','#2a8a4a','#a8ecb8'],p:['#ff8ac0','#c04a80','#ffc4e0']};
+function rfmKlotzG(k,L){ const [c,d,l]=RFMC[k];
+  return `<path d="M6 18 L22 6 L54 6 L54 40 L38 54 L6 54Z" fill="${c}" stroke="${d}" stroke-width="3" stroke-linejoin="round"/><path d="M6 18 L22 6 L54 6 L38 18Z" fill="${l}"/>
+   <path d="M38 18 L54 6 V40 L38 54Z" fill="${d}" opacity=".4"/><path d="M6 18 H38 V54 M38 18 L54 6" fill="none" stroke="${d}" stroke-width="3" stroke-linejoin="round"/>
+   ${L&&RFML[L]?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="${RFML[L]}" stroke="${d}" stroke-width="7.6"/><path d="${RFML[L]}" stroke="#fff" stroke-width="4.4"/></g>`:''}`; }
+/* the letters on the blocks, drawn as strokes on the front face (no <text>: Chrome sometimes draws scaled svg text in the wrong size) */
+const RFML={A:'M12.5 49 L22 27 L31.5 49 M15.8 41.5 H28.2',M:'M12.5 49 V27 L22 40 L31.5 27 V49',O:'M22 27 C10 27 10 49 22 49 C34 49 34 27 22 27Z',E:'M30.5 27 H13.5 V49 H30.5 M13.5 38 H27.5',I:'M22 27 V49 M16 27 H28 M16 49 H28'};
+function rfmSockG(k){ const [c,d,l]=RFMC[k];
+  return `<path d="M14 4 H36 V40 Q36 46 42 50 L46 54 Q51 61 44 66 Q37 71 29 66 L10 53 Q3 48 6 40 L14 30Z" fill="${c}" stroke="${d}" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M14 4 H36 V13 H14Z" fill="#fff" stroke="${d}" stroke-width="2.4" stroke-linejoin="round"/><path d="M14 21 H36 M14 29 H36" stroke="${l}" stroke-width="4.4"/>
+   <path d="M29 66 Q37 71 44 66 Q51 61 46 54 L40 58 Q35 63 29 61Z" fill="${d}" opacity=".35"/>`; }
+function rfmBallG(){ return `<circle cx="30" cy="30" r="26" fill="#ff5a6a" stroke="#a8243a" stroke-width="3"/><path d="M30 4 Q46 30 30 56 M30 4 Q14 30 30 56" stroke="#fff" stroke-width="6" fill="none"/>
+   <path d="M5 26 Q30 36 55 26" stroke="#ffd84a" stroke-width="6" fill="none"/><circle cx="20" cy="16" r="5" fill="#fff" opacity=".6"/>`; }
+function rfmBuchG(k){ const [c,d]=RFMC[k];
+  return `<path d="M6 22 L20 50 L20 56 L6 28Z" fill="${d}"/><path d="M20 50 L76 36 L76 42 L20 56Z" fill="#fffaf0" stroke="#c8b8a0" stroke-width="2"/>
+   <path d="M6 22 L60 8 L76 36 L20 50Z" fill="${c}" stroke="${d}" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M38 22 l3 7 7 .4 -5.6 4.4 2 7 -6.4-4 -6.4 4 2-7 -5.6-4.4 7-.4Z" fill="#fff6c0" stroke="${d}" stroke-width="1.2" stroke-linejoin="round"/>`; }
+function rfmTeddyG(){ const F='#c8884a', D='#7a4a22', L='#f0c890';
+  return `<circle cx="18" cy="14" r="9" fill="${F}" stroke="${D}" stroke-width="2.6"/><circle cx="52" cy="14" r="9" fill="${F}" stroke="${D}" stroke-width="2.6"/><circle cx="18" cy="14" r="4.4" fill="${L}"/><circle cx="52" cy="14" r="4.4" fill="${L}"/>
+   <ellipse cx="35" cy="60" rx="22" ry="18" fill="${F}" stroke="${D}" stroke-width="2.6"/><ellipse cx="35" cy="62" rx="12" ry="10" fill="${L}"/>
+   <ellipse cx="12" cy="56" rx="7" ry="11" fill="${F}" stroke="${D}" stroke-width="2.6" transform="rotate(30 12 56)"/><ellipse cx="58" cy="56" rx="7" ry="11" fill="${F}" stroke="${D}" stroke-width="2.6" transform="rotate(-30 58 56)"/>
+   <ellipse cx="20" cy="76" rx="9" ry="6" fill="${F}" stroke="${D}" stroke-width="2.6"/><ellipse cx="50" cy="76" rx="9" ry="6" fill="${F}" stroke="${D}" stroke-width="2.6"/>
+   <circle cx="35" cy="28" r="19" fill="${F}" stroke="${D}" stroke-width="2.6"/><ellipse cx="35" cy="34" rx="9" ry="7" fill="${L}"/>
+   <circle cx="28" cy="25" r="2.6" fill="#2a1a2e"/><circle cx="42" cy="25" r="2.6" fill="#2a1a2e"/><ellipse cx="35" cy="31" rx="3.4" ry="2.4" fill="#4a2a1a"/>
+   <path d="M31 36 q4 3 8 0" fill="none" stroke="#4a2a1a" stroke-width="1.8" stroke-linecap="round"/><path d="M27 44 L35 48 L43 44 L35 51Z" fill="#ff5a6a" stroke="#a8243a" stroke-width="1.4" stroke-linejoin="round"/>`; }
+const rfmSv=(vb,inner,sh)=>`<svg viewBox="${vb}" style="overflow:visible">${sh||''}${inner}</svg>`;
+const RFMSH=(cx,cy,rx)=>`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="3" fill="rgba(0,0,0,.18)"/>`;
+function rfmKlotzSVG(k,L){ return rfmSv('0 0 60 60',rfmKlotzG(k,L),RFMSH(30,58,22)); }
+function rfmSockSVG(k){ return rfmSv('0 0 50 72',rfmSockG(k),RFMSH(28,70,18)); }
+function rfmBuchSVG(k){ return rfmSv('0 0 80 60',rfmBuchG(k),RFMSH(42,57,32)); }
+function rfmTeddySVG(){ return rfmSv('0 0 70 86',rfmTeddyG(),RFMSH(35,83,26)); }
+
+/* a toy box in one colour, open at the top, a white block on the front. viewBox 0 0 120 100 */
+function rfmKisteSVG(k,full){ const [c,d,l]=RFMC[k];
+  const blk=full?`<g transform="translate(14 -6) scale(.6)">${rfmKlotzG('r','A')}</g><g transform="translate(46 -12) scale(.6)">${rfmKlotzG('b','M')}</g><g transform="translate(74 -5) scale(.6)">${rfmKlotzG('y','O')}</g><g transform="translate(34 2) scale(.5)">${rfmKlotzG('g','E')}</g>`:'';
+  return `<svg viewBox="0 0 120 100" style="overflow:visible"><ellipse cx="60" cy="97" rx="56" ry="4" fill="rgba(0,0,0,.2)"/>
+   <path d="M10 30 L16 18 H104 L110 30Z" fill="${d}"/>${blk}
+   <path d="M8 30 H112 L104 94 Q103 97 100 97 H20 Q17 97 16 94Z" fill="${c}" stroke="${d}" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M8 30 H112" stroke="${l}" stroke-width="5" stroke-linecap="round"/><path d="M20 44 H100" stroke="${l}" stroke-width="3" opacity=".6"/>
+   <g transform="translate(60 66)"><rect x="-17" y="-17" width="34" height="34" rx="7" fill="#fff" opacity=".9"/><g transform="translate(-13 -14) scale(.45)">${rfmKlotzG(k)}</g></g></svg>`; }
+/* the three boxes stacked by the shelf (after the blocks are tidied). viewBox 0 0 120 150 */
+function rfmStapelSVG(){ const box=(k,y,s)=>`<g transform="translate(${60-60*s} ${y}) scale(${s})">${rfmKisteSVG(k,1).replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'')}</g>`;
+  return `<svg viewBox="0 0 120 150" style="overflow:visible">${box('y',96,.56)}${box('b',50,.62)}${box('r',4,.68).replace('<ellipse','<ellipse opacity="0"')}</svg>`; }
+
+/* the laundry basket, in two layers so Socke can sit in it: back (the dark inside and the socks that peek out, .q1 … .q3) and front.
+   Both viewBox 0 0 140 110 */
+function rfmKorbHSVG(){ return `<svg viewBox="0 0 140 110" style="overflow:visible"><ellipse cx="70" cy="28" rx="63" ry="14" fill="#7a5a2e"/>
+   <g class="q1" transform="translate(22 -4) rotate(-28) scale(.5)">${rfmSockG('p')}</g><g class="q2" transform="translate(62 -10) rotate(10) scale(.5)">${rfmSockG('g')}</g><g class="q3" transform="translate(96 -2) rotate(30) scale(.5)">${rfmSockG('b')}</g></svg>`; }
+function rfmKorbSVG(){ let wv=''; for(let i=1;i<6;i++) wv+=`<path d="M${10+i*1.2} ${30+i*13} Q70 ${46+i*12} ${130-i*1.2} ${30+i*13}" stroke="#c89a5a" stroke-width="2.6" fill="none"/>`;
+  for(let i=1;i<9;i++){ const x=8+i*14.2; wv+=`<path d="M${x} ${36+Math.abs(70-x)*.1} L${70+(x-70)*.86} 102" stroke="#c89a5a" stroke-width="2.4" fill="none"/>`; }
+  return `<svg viewBox="0 0 140 110" style="overflow:visible"><ellipse cx="70" cy="106" rx="60" ry="4" fill="rgba(0,0,0,.2)"/>
+   <path d="M7 28 Q11 94 24 104 H116 Q129 94 133 28 Q70 46 7 28Z" fill="#f0d4a0" stroke="#a87a42" stroke-width="4" stroke-linejoin="round"/>${wv}
+   <path d="M7 28 Q70 46 133 28" fill="none" stroke="#a87a42" stroke-width="8" stroke-linecap="round"/><path d="M7 28 Q70 46 133 28" fill="none" stroke="#e8c088" stroke-width="3" stroke-linecap="round"/>
+   <path d="M18 44 Q8 44 10 56 Q14 62 20 58" fill="none" stroke="#a87a42" stroke-width="5" stroke-linecap="round"/><path d="M122 44 Q132 44 130 56 Q126 62 120 58" fill="none" stroke="#a87a42" stroke-width="5" stroke-linecap="round"/></svg>`; }
+
+/* the big heap after the spell went wrong: a heap of clothes with the blocks (.hk), the socks (.hs) and the toys (.ht) on it.
+   viewBox 0 0 260 170 */
+function rfmHaufenSVG(){ const g=(cls,t,inner)=>`<g class="${cls}" transform="${t}">${inner}</g>`;
+  return `<svg viewBox="0 0 260 170" style="overflow:visible"><ellipse cx="130" cy="166" rx="124" ry="6" fill="rgba(0,0,0,.2)"/>
+   <g class="hb"><path d="M10 164 Q16 116 52 104 Q70 66 112 66 Q140 50 168 70 Q206 74 214 104 Q248 118 252 164Z" fill="#c4a8e4" stroke="#7a5aa8" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M40 130 Q70 120 96 136 M130 100 Q160 92 186 110 M150 140 Q180 128 222 146" fill="none" stroke="#9a7ac8" stroke-width="4" stroke-linecap="round"/>
+    <path d="M60 104 Q52 140 70 164 L92 164 Q76 136 84 102Z" fill="#ffd27a" stroke="#c8962a" stroke-width="3" stroke-linejoin="round"/><path d="M66 120 h14 M64 136 h16 M68 152 h14" stroke="#fff" stroke-width="3"/></g>
+   ${g('ht','',`<g transform="translate(96 22) scale(.8)">${rfmTeddyG()}</g><g transform="translate(30 70) scale(.8)">${rfmBallG()}</g><g transform="translate(160 64) rotate(-12) scale(.9)">${rfmBuchG('b')}</g><g transform="translate(176 106) rotate(14) scale(.8)">${rfmBuchG('g')}</g>`)}
+   ${g('hs','',`<g transform="translate(120 96) rotate(-70) scale(.7)">${rfmSockG('p')}</g><g transform="translate(206 70) rotate(40) scale(.7)">${rfmSockG('g')}</g><g transform="translate(40 120) rotate(20) scale(.6)">${rfmSockG('b')}</g>`)}
+   ${g('hk','',`<g transform="translate(70 112) scale(.6)">${rfmKlotzG('r','A')}</g><g transform="translate(140 118) scale(.56)">${rfmKlotzG('b','M')}</g><g transform="translate(188 130) rotate(10) scale(.55)">${rfmKlotzG('y','O')}</g><g transform="translate(112 132) rotate(-8) scale(.5)">${rfmKlotzG('b','E')}</g>`)}</svg>`; }
+
+/* her bed from the side: head end left, a heart on the headboard; the dark space under it; the blanket crumpled (.rfmzk) or smooth
+   (.rfmgl, the bed gets .glatt). viewBox 0 0 400 260 */
+function rfmBettSVG(){ const id='rfb'+(++LANC);
+  let st=''; [[150,160],[200,176],[250,158],[300,174],[330,152],[180,192],[280,194]].forEach(([x,y])=>st+=betStar(x,y,7,'#fff6c0'));
+  return `<svg viewBox="0 0 400 260" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2840" stop-opacity=".85"/><stop offset="1" stop-color="#5a4058" stop-opacity=".55"/></linearGradient></defs>
+   <ellipse cx="200" cy="254" rx="196" ry="7" fill="rgba(0,0,0,.2)"/>
+   <rect x="54" y="192" width="300" height="60" fill="url(#${id})"/>
+   <rect x="50" y="170" width="306" height="28" rx="7" fill="#f6b8d2" stroke="#b05a84" stroke-width="4"/><path d="M60 184 H346" stroke="#ffd8e8" stroke-width="3" opacity=".8"/>
+   <rect x="52" y="144" width="302" height="30" rx="11" fill="#fffaf4" stroke="#d8c8c0" stroke-width="3"/>
+   <g class="rfmgl"><path d="M110 140 Q110 130 120 130 H346 Q358 130 358 142 V200 Q358 208 348 208 H120 Q110 208 110 200Z" fill="#8ad0f4" stroke="#3a8ac0" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M110 148 H358" stroke="#fff" stroke-width="10" opacity=".85"/>${st}</g>
+   <g class="rfmzk"><path d="M114 168 Q118 122 156 134 Q176 104 212 128 Q236 108 262 132 Q294 110 318 136 Q352 126 356 160 L360 190 Q336 200 304 188 Q264 202 222 190 Q182 202 144 190 Q116 194 114 180Z" fill="#8ad0f4" stroke="#3a8ac0" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M150 150 Q170 160 184 146 M222 140 Q236 158 256 146 M276 152 Q300 166 320 150 M180 178 Q210 170 238 180" fill="none" stroke="#3a8ac0" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+    <path d="M304 188 Q330 214 312 236 Q294 222 296 196Z" fill="#6ab8e4" stroke="#3a8ac0" stroke-width="4" stroke-linejoin="round"/>${betStar(186,150,7,'#fff6c0')}${betStar(270,164,7,'#fff6c0')}</g>
+   <path d="M6 252 V64 Q6 28 33 28 Q60 28 60 64 V252Z" fill="#f2a0c4" stroke="#b05a84" stroke-width="5" stroke-linejoin="round"/>
+   <path d="M33 74 C21 62 11 76 33 94 C55 76 45 62 33 74Z" fill="#fff" opacity=".85"/><path d="M14 120 H52 M14 140 H52" stroke="#ffd0e4" stroke-width="4"/>
+   <path d="M348 252 V120 Q348 98 371 98 Q394 98 394 120 V252Z" fill="#f2a0c4" stroke="#b05a84" stroke-width="5" stroke-linejoin="round"/><circle cx="371" cy="124" r="8" fill="#fff" opacity=".8"/></svg>`; }
+/* her pillow: flat as a pancake (--kf 0) … thick and soft (1). viewBox 0 0 120 70 */
+function rfmKissenSVG(){ return `<svg viewBox="0 0 120 70" style="overflow:visible"><g class="rfmkb"><path d="M10 42 Q4 14 30 12 Q60 6 92 12 Q118 14 110 42 Q116 66 90 66 Q60 70 30 66 Q4 66 10 42Z" fill="#fff" stroke="#c4a8c8" stroke-width="3.4"/>
+   <path d="M26 26 Q60 18 94 26" stroke="#efe2f2" stroke-width="5" fill="none" stroke-linecap="round"/>${betStar(40,44,6,'#ffd8ec')}${betStar(80,48,6,'#d8ecff')}${betStar(60,36,5,'#fff0b0')}</g></svg>`; }
+/* a dust mouse: a grey fluff ball with little eyes, ears and a tail. viewBox 0 0 44 32 */
+function rfmMausSVG(){ let f=''; for(let i=0;i<14;i++){ const a=i/14*Math.PI*2, r=11+(i%2)*2.4; f+=`${i?'L':'M'}${(22+Math.cos(a)*r*1.25).toFixed(1)} ${(18+Math.sin(a)*r).toFixed(1)} `; }
+  return `<svg viewBox="0 0 44 32" style="overflow:visible"><path d="M36 22 Q44 22 42 30" fill="none" stroke="#8a8090" stroke-width="2" stroke-linecap="round"/>
+   <path d="${f}Z" fill="#b8b0bc" stroke="#8a8090" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9" r="4" fill="#c8c0cc" stroke="#8a8090" stroke-width="1.4"/><circle cx="21" cy="7" r="4" fill="#c8c0cc" stroke="#8a8090" stroke-width="1.4"/>
+   <circle cx="13" cy="17" r="2.2" fill="#fff"/><circle cx="20" cy="17" r="2.2" fill="#fff"/><circle cx="13.4" cy="17.4" r="1.2" fill="#2a1a2e"/><circle cx="20.4" cy="17.4" r="1.2" fill="#2a1a2e"/><circle cx="16.6" cy="21" r="1.3" fill="#ff9ab8"/></svg>`; }
+
+Object.assign(SVGP,{
+  RFMKLR:[()=>rfmKlotzSVG('r','A'),1],RFMKLB:[()=>rfmKlotzSVG('b','M'),1],RFMKLY:[()=>rfmKlotzSVG('y','O'),1],RFMKLB2:[()=>rfmKlotzSVG('b','E'),1],RFMKLG:[()=>rfmKlotzSVG('g','E'),1],
+  RFMKIR:[()=>rfmKisteSVG('r'),1],RFMKIB:[()=>rfmKisteSVG('b'),1],RFMKIY:[()=>rfmKisteSVG('y'),1],RFMKIVOLL:[()=>rfmKisteSVG('r',1),1],RFMSTAPEL:[rfmStapelSVG,.8],
+  RFMSOP:[()=>rfmSockSVG('p'),.7],RFMSOG:[()=>rfmSockSVG('g'),.7],RFMSOB:[()=>rfmSockSVG('b'),.7],RFMKORB:[rfmKorbSVG,1],RFMKORBH:[rfmKorbHSVG,1],
+  RFMBALL:[()=>rfmSv('0 0 60 60',rfmBallG(),RFMSH(30,58,20)),1],RFMBUCHB:[()=>rfmBuchSVG('b'),1.33],RFMBUCHG:[()=>rfmBuchSVG('g'),1.33],RFMBUCHR:[()=>rfmBuchSVG('r'),1.33],RFMTEDDY:[rfmTeddySVG,.81],
+  RFMHAUFEN:[rfmHaufenSVG,1],RFMKISSEN:[rfmKissenSVG,1]
+});
+
+/* ---------- the set: her room by day ---------- */
+Object.assign(SETS2,{ rfmtag:{clean:1, sky:'#fde4ec'} });
+Object.assign(TSYL,{BALL:TSYL.BALL||'BALL',KLOTZ:TSYL.KLOTZ||'KLOTZ',SOCKE:TSYL.SOCKE||'SO-CKE',BETT:TSYL.BETT||'BETT',BESEN:TSYL.BESEN||'BE-SEN',HASE:TSYL.HASE||'HA-SE',TURM:TSYL.TURM||'TURM'});
+
+/* ---------- sounds: the whirl of the spell, things landing, wooden blocks, a sock, the pillow, dust mice squeaking, the tower falling ---------- */
+const rfmLate=()=>!tale||!tale.t||tale.t.id!=='aufraeumen'||!taleOn();
+function rfmTone(x,f0,f1,ms,v,type,dl){ const ac=feeAC(); if(!ac||rfmLate()) return; try{ const t=ac.currentTime+(dl||0), out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function rfmNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||rfmLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.05,d*.25)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function rfmWhoosh(x){ rfmNoise(x,.09,400,2400,900); rfmNoise(x,.07,2400,500,900); }
+function rfmPlumps(x){ rfmTone(x,150,60,320,.16,'sine'); rfmNoise(x,.1,700,180,300,'lowpass'); }
+function rfmKlack(x,k){ const f=[1100,1300,950,1200][(k||0)%4]; rfmTone(x,f,f*.7,70,.09,'triangle'); rfmTone(x,f*1.5,f,40,.04,'square',.01); }
+function rfmSchwupp(x){ rfmNoise(x,.07,600,2200,220); }
+function rfmFlausch(x){ rfmNoise(x,.07,900,400,260,'lowpass'); }
+function rfmPiep(x){ rfmTone(x,2600+Math.random()*500,3400,90,.03,'sine'); }
+function rfmRumms(x){ for(let i=0;i<7;i++) setTimeout(()=>rfmKlack(x+(Math.random()-.5)*200,i),i*90+Math.random()*40); rfmTone(x,120,50,500,.12,'sine'); }
+
+/* ---------- helpers ---------- */
+/* which classes the heap gets from the story so far */
+function rfmHfSet(){ const H=TB&&TB.els.haufen; if(!H) return; H.classList.toggle('aus',!TST.haufen); H.classList.toggle('nok',!TST.hk); H.classList.toggle('nos',!TST.hs); H.classList.toggle('not',!TST.ht); }
+/* the pillow's thickness */
+function rfmKf(p){ const K=TB&&TB.els.kissen; if(K) K.style.setProperty('--kf',Math.max(0,Math.min(1,p)).toFixed(3)); }
+/* the spell: everything lying around flies up and whirls through the room until rfmLand() lets it all fall onto the heap */
+function rfmWirbel(ids){ const W=TB.W.getBoundingClientRect(), C=[W.left+W.width*.5,W.top+W.height*.4], u=vu(), R=Math.min(W.width*.34,u*58), sc=TB.sc, run=tale.run;
+  const it=ids.map((id,i)=>{ const e=TB.els[id]; if(!e) return null; e.getAnimations().forEach(q=>q.cancel()); const [x,y]=ctr(e); return {e,x,y,a:i/ids.length*Math.PI*2,r:R*(.55+(i%3)*.22),f:0}; }).filter(Boolean);
+  TB.rfmW={it,go:true,t0:now()}; rfmWhoosh(C[0]);
+  const step=()=>{ const w=TB&&TB.rfmW; if(!w||!w.go||!okRun(run,sc)) return; const t=(now()-w.t0)/1000, ramp=Math.min(1,t/.9);
+    w.it.forEach((q,i)=>{ const a=q.a+t*2.6, tx=C[0]+Math.cos(a)*q.r, ty=C[1]+Math.sin(a)*q.r*.42-u*Math.sin(t*3+i)*3, px=q.x+(tx-q.x)*ramp, py=q.y+(ty-q.y)*ramp;
+      q.cx=px; q.cy=py; q.e.style.transform=`translate(${(px-q.x).toFixed(1)}px,${(py-q.y).toFixed(1)}px) rotate(${(t*260+i*40)%360}deg)`;
+      if(Math.random()<.12) fxAdd({k:'spark',x:px,y:py,vx:0,vy:0,life:.5,s:1,c:rnd(['rgba(255,226,122,.9)','rgba(255,190,240,.9)','rgba(200,230,255,.9)'])}); });
+    if(Math.floor(t*1.6)>(w.wh||0)){ w.wh=Math.floor(t*1.6); rfmWhoosh(C[0]); }
+    requestAnimationFrame(step); };
+  requestAnimationFrame(step); }
+function rfmLand(cb){ const w=TB&&TB.rfmW; const H=TB.els.haufen; if(!w||!H){ TST.haufen=1; rfmHfSet(); return cb&&cb(); } w.go=false; const [hx,hy]=relEl(H,[.5,.55]), u=vu();
+  w.it.forEach((q,i)=>{ const x0=q.cx||q.x, y0=q.cy||q.y, tx=hx+(Math.random()-.5)*u*14, ty=hy+(Math.random()-.5)*u*6;
+    try{ q.e.animate([{transform:q.e.style.transform},{transform:`translate(${(tx-q.x).toFixed(1)}px,${(ty-q.y-u*10).toFixed(1)}px) rotate(${i*50}deg) scale(.8)`,offset:.6},{transform:`translate(${(tx-q.x).toFixed(1)}px,${(ty-q.y).toFixed(1)}px) rotate(${i*50+20}deg) scale(.6)`,opacity:0}],{duration:520+i*40,easing:'ease-in',fill:'forwards'}); }catch(e){} });
+  bLater(()=>{ TST.haufen=1; rfmHfSet(); sqs(H); rfmPlumps(hx); fxBurst(hx,hy,30,['rgba(255,255,255,.9)','rgba(220,210,190,.8)']); for(let i=0;i<14;i++) fxAdd({k:'dust',x:hx+(Math.random()-.5)*u*26,y:hy+u*6,vx:(Math.random()-.5)*30*u,vy:-(4+Math.random()*8)*u,s:1+Math.random(),life:1.3,c:'rgba(230,220,200,.6)'});
+    w.it.forEach(q=>q.e.style.visibility='hidden'); if(cb) cb(); },560+w.it.length*40); }
+/* a block flies onto the tower; the k-th (1-based) sits at the k-th level */
+const RFMTURM=[50,89.5,5.2];
+function rfmTurmY(k){ return RFMTURM[1]-(k-1)*RFMTURM[2]; }
+function rfmTurmKlotz(k){ const K=TB.els.kiste, cols=['r','b','y','g','p'], L=['A','M','O','E','I'];
+  const B=el('div','tp2 rfmtk',rfmKlotzSVG(cols[(k-1)%5],L[(k-1)%5])); B.style.cssText=`left:${RFMTURM[0]+(k%2?.4:-.4)}%;top:${rfmTurmY(k)}%;width:7.4vh;z-index:${3+k}`; TB.act.appendChild(B); TB.els['tk'+k]=B;
+  if(K){ const [kx,ky]=relEl(K,[.5,.2]), [bx,by]=ctr(B), u=vu();
+    try{ B.animate([{transform:`translate(${kx-bx}px,${ky-by}px) scale(.6) rotate(-40deg)`},{transform:`translate(${(kx-bx)/2}px,${Math.min(ky,by)-by-u*14}px) scale(1.1) rotate(-200deg)`},{transform:'none'}],{duration:620,easing:'ease-in-out'}); }catch(e){} }
+  bLater(()=>{ sqs(B); const [x,y]=ctr(B); rfmKlack(x,k); glitterBurst(x,y,6,6); },600); }
+/* the tower falls: the blocks tumble across the floor */
+function rfmUmfallen(){ const u=vu(); let x0=innerWidth/2; for(let k=1;k<=9;k++){ const B=TB.els['tk'+k]; if(!B) continue; const [bx,by]=ctr(B); x0=bx; const s=k%2?1:-1, dx=s*(6+k*3.4+Math.random()*6)*u, dy=(88-rfmTurmY(k))*innerHeight/100*.9+Math.random()*u*3;
+    try{ const an=B.animate([{transform:'none'},{transform:`translate(${dx*.5}px,${-u*(4+k)}px) rotate(${s*120}deg)`,offset:.4},{transform:`translate(${dx}px,${dy}px) rotate(${s*(200+k*30)}deg)`}],{duration:700+k*60,easing:'ease-in',fill:'forwards'}); }catch(e){} }
+  rfmRumms(x0); bLater(()=>{ fxBurst(x0,innerHeight*.86,24,['rgba(255,255,255,.9)','rgba(255,226,122,.9)']); },700); }
+/* Socke into the laundry basket: between its back and its front, the head peeking out over the rim */
+function rfmSockeKorb(cb){ const S=TB.els.socke, K=TB.els.korb; if(!S||!K) return cb&&cb(); TB.act.insertBefore(S,K); const [x,y]=eikAt(K,.5,.08);
+  S.classList.add('flip'); famHop(S,x,y,800,16,()=>{ sqs(K); rfmPlumps(ctr(K)[0]); if(cb) cb(); }); }
+/* the sock on Socke's ear */
+function rfmOhrSocke(){ const S=TB.els.socke; if(!S||TB.els.ohrs) return; const b=S.querySelector(':scope>.bb'), O=el('div','tp2 kid rfmohr',rfmSockSVG('p')); O.style.cssText='left:30%;top:4%;width:34%'; b.appendChild(O); TB.els.ohrs=O; sqs(O); }
+/* the unicorn's horn (screen px) – a little block stuck on it in scene 2 */
+function rfmHorn(){ const U=TB.els.uni, v=U.querySelector('.uni')||U, r=v.getBoundingClientRect(), fl=getComputedStyle(U).transform.indexOf('-1')>=0; return [r.left+r.width*(fl?.12:.88), r.top+r.height*.06]; }
+
+/* ---------- the new gesture: besenfegen. Like fegen (sweep things off with strokes back and forth), but she sweeps with her broom:
+   the broom follows the finger, and what flies off are dust mice (they scurry off with a squeak and a little dust cloud).
+   a:{id (the zone under the bed), n, br (the broom prop)} ---------- */
+G2.besenfegen=Object.assign(Object.create(G2.fegen),{
+  setup(){ G2.fegen.setup.call(this); const B=TB.els[TB.a.br]; if(B){ B.getAnimations().forEach(q=>q.cancel()); B.classList.add('rfmfeg'); TB.fg.br=B; TB.fg.bh=[B.style.left,B.style.top]; } },
+  hold(x,y){ const B=TB.fg.br; if(!B) return; const h=B.getBoundingClientRect().height; putAt(B,x+h*.12,y-h*.36); B.style.rotate=(TB.fg.dir>0?16:TB.fg.dir<0?-4:6)+'deg'; },
+  down(x,y){ G2.fegen.down.call(this,x,y); if(TB.fg.br&&!TB.fg.auto){ TB.fg.br.classList.add('held'); this.hold(x,y); } },
+  move(x,y){ if(TB.pd&&TB.fg.br&&!TB.fg.auto&&!TB.done) this.hold(x,y); G2.fegen.move.call(this,x,y); },
+  up(x,y){ G2.fegen.up.call(this,x,y); const f=TB.fg; if(f.br&&!f.auto&&!TB.done){ f.br.classList.remove('held'); f.br.style.rotate=''; f.br.style.transition='left .5s ease-out,top .5s ease-out'; f.br.style.left=f.bh[0]; f.br.style.top=f.bh[1]; bLater(()=>{ f.br.style.transition=''; },520); } },
+  add(g,dx){ G2.fegen.add.call(this,g,dx); const f=TB.fg; if(f.auto&&f.br&&!TB.done){ const z=this.zone(), t=now()/1000; this.hold((z.l+z.r)/2+Math.sin(t*9)*(z.r-z.l)*.3,(z.t+z.b)/2+vu()*2); } },
+  fly(L,dx){ const u=vu(), s=Math.sign(dx)||1, [x,y]=ctr(L); L.getAnimations().forEach(q=>q.cancel()); rfmPiep(x);
+    try{ L.animate([{transform:L.style.transform||'none',opacity:1},{transform:`translate(${s*6}vh,-2vh) scaleX(${s<0?-1:1})`,offset:.25},{transform:`translate(${s*(26+Math.random()*16)}vh,${-(1+Math.random()*3)}vh) scaleX(${s<0?-1:1})`,opacity:0}],{duration:1100+Math.random()*400,easing:'ease-in',fill:'forwards'}); }catch(e){}
+    for(let i=0;i<5;i++) fxAdd({k:'dust',x,y,vx:-s*(4+Math.random()*10)*u,vy:-(2+Math.random()*5)*u,s:.9+Math.random(),life:1,c:'rgba(200,192,206,.65)'});
+    if(TB.sc.mausweg) TB.sc.mausweg(x,y,s); },
+  finish(){ const f=TB.fg; if(f&&f.br){ f.br.classList.remove('held','rfmfeg'); f.br.style.rotate=''; } G2.fegen.finish.call(this); }
+});
+/* a point of the room picture (viewBox 1600 x 1000, sliced) in screen px – the room stretches a bit past the stage */
+function rfmRoomPt(x,y){ const R=TB.els.room, r=R.getBoundingClientRect(), s=Math.max(r.width/1600,r.height/1000); return [r.left+(r.width-1600*s)/2+x*s, r.top+(r.height-1000*s)/2+y*s]; }
+/* things hop out of the heap to where they lie (they start hidden with .rfmhid) */
+function rfmAusHaufen(ids,ms){ const H=TB.els.haufen; if(!H) return ids.forEach(id=>TB.els[id]&&TB.els[id].classList.remove('rfmhid')); const [hx,hy]=relEl(H,[.5,.4]), u=vu();
+  ids.forEach((id,i)=>bLater(()=>{ const e=TB.els[id]; if(!e) return; e.classList.remove('rfmhid'); const [x,y]=ctr(e);
+    try{ e.animate([{transform:`translate(${hx-x}px,${hy-y}px) scale(.5)`},{transform:`translate(${(hx-x)/2}px,${Math.min(hy,y)-y-u*12}px) scale(1.1) rotate(${i%2?-160:160}deg)`},{transform:'none'}],{duration:650,easing:'ease-in-out'}); }catch(e){}
+    bLater(()=>{ sqs(e); rfmKlack(x,i); },640); },i*(ms||220))); }
+function rfmZeig(ids){ ids.forEach(id=>{ const e=TB.els[id]; if(e){ e.classList.remove('rfmhid'); e.getAnimations().forEach(q=>q.cancel()); } }); }
+/* a character walks / crawls in to x,y (and stays there) */
+function rfmHin(id,x,y,ms,cls){ const E=TB.els[id]; if(!E) return; if(cls) E.classList.add(cls); kiPath(E,[[x,y]],ms||1600,()=>{ if(cls) E.classList.remove(cls); }); }
+function rfmDa(id,x,y){ const E=TB.els[id]; if(!E) return; E.getAnimations().forEach(q=>q.cancel()); E.style.left=x+'%'; E.style.top=y+'%'; E.classList.remove('rfmkrab'); }
+
+/* ================= Eefje räumt ihr Zimmer auf ================= */
+/* heart: her room is one big mess, and Mama says it's time to tidy up (and Janneke's Hoppel has gone missing). "Aufräumen ist langweilig!
+   Ich zaubere einfach!" – but the spell whirls everything into one huge heap (and Socke sits on top). So they tidy up together, with no
+   magic, and it turns into a game: the blocks go into the box of their colour, the socks into the laundry basket (and Socke jumps in
+   too – "Du bist doch keine Socke!"), she shakes up the pillow, her broom sweeps the dust mice from under the bed – and there is
+   Hoppel. She gives him back to Janneke. In the afternoon there is room to play: she and Janneke build a tower – Janneke knocks it
+   over, everybody laughs, "Macht nichts – aufräumen kann ich ja jetzt!" */
+const RFMDUR={}, RFMBETT=[21,70,44];
+const RFMMESS=['k1','k2','k3','s1','s2','s3','b2','ball','teddy','kreisel','buch'];
+const RFM2={id:'aufraeumen', v2:true, eef:1, fam:1, dur:RFMDUR, title:'Eefje räumt ihr Zimmer auf', vtitle:'Ehfje räumt ihr Zimmer auf', icon:'🧸',
+ cover:'linear-gradient(180deg,#6a4aa8 0%,#b07ad0 38%,#f4a8c8 70%,#ffe4a8 100%)',
+ cast(sc){ const A=TB.act; if(sc.st) Object.assign(TST,sc.st);
+  const R=el('div','eikroom rfmroom',rfmRoomSVG()); A.insertBefore(R,A.firstChild); TB.els.room=R;
+  const [bx,by,bw]=RFMBETT, B=el('div','tp2 rfmbett'+(TST.gl?' glatt':''),rfmBettSVG()); B.style.cssText=`left:${bx}%;top:${by}%;width:${bw}vh`; R.after(B); TB.els.bett=B;
+  const [kx,ky]=eikAt(B,.27,.45), K=el('div','tp2 rfmki',rfmKissenSVG()); K.style.cssText=`left:${kx}%;top:${ky}%;width:${(bw*.3).toFixed(1)}vh`; B.after(K); TB.els.kissen=K; rfmKf(TST.kf||0);
+  if(sc.unten){ const [ux,uy]=eikAt(B,.5,.875), U=el('div','tp2 rfmunten'); U.style.cssText=`left:${ux}%;top:${uy}%;width:${(bw*.72).toFixed(1)}vh;height:${(bw*.65*.19).toFixed(1)}vh`; K.after(U); TB.els.unten=U;
+    [[10,62],[22,40],[34,70],[47,46],[60,66],[73,42],[86,64],[94,36]].forEach(([x,y],i)=>{ const L=el('span','efl rfmmaus',rfmMausSVG()); L.style.cssText=`left:${x}%;top:${y}%;animation-delay:${(-i*.37).toFixed(2)}s`+(i%2?';scale:-1 1':''); U.appendChild(L); }); }
+  FAM2.cast.call(this,sc);
+  if(sc.hp){ const [x,y,z,cls]=sc.hp, H=TB.mk('hoppel','famhop rfmhop'+(cls?' '+cls:''),hoppelSVG(),x,y,z); if(/rfmdirt/.test(cls||'')){ H.classList.add('dusty'); H.style.setProperty('--g',1); } }
+  if(sc.br){ const [x,y,z]=sc.br, b=TB.mk('besen','bsn rfmbr',besenSVG(),x,y,z); b.dataset.mood='awake'; }
+  rfmHfSet();
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='bett'||id==='kissen'){ sqs(b); rfmFlausch(x); fxBurst(x,y-u*3,8,['rgba(255,255,255,.95)']); return true; }
+  if(id==='haufen'){ sqs(b); rfmPlumps(x); return true; }
+  if(/^k[r-y]$/.test(id)||id==='kiste'||id==='stapel'){ sqs(b); rfmKlack(x,1); return true; }
+  if(/^k\d$|^tk\d$/.test(id)){ sqs(b); rfmKlack(x,2); glitterBurst(x,y,6,6); return true; }
+  if(/^s\d$|^so\d$/.test(id)||id==='korb'||id==='korbh'){ sqs(b); rfmSchwupp(x); return true; }
+  if(['ball','teddy','kreisel','buch','b2'].includes(id)){ sqs(b); chime([988,1318]); glitterBurst(x,y,6,8); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – her room is one big mess. Mama: "Heute wird aufgeräumt! Und Jannekes Hoppel ist verschwunden." – "Aufräumen ist langweilig. Ich
+    zaubere einfach!" Tap all the toys (tapall) – the spell whirls everything round the room and down onto one huge heap, Socke on top */
+ {set:'rfmtag', dark:0, u:[8,80,12], ef:[40,63,30,'st'], mama:[114,57,26], sk:[27,66,8],
+  p:[['haufen','RFMHAUFEN',55,83,30,'rfmhf'],
+     ['k1','RFMKLR',45,93,6,'rfmmess'],['k2','RFMKLB',93,92,6,'rfmmess'],['k3','RFMKLY',63,95,5.5,'rfmmess'],
+     ['s1','RFMSOP',7,94,5.5,'rfmmess'],['s2','RFMSOG',33,94,5.5,'rfmmess'],['s3','RFMSOB',20,69,5,'rfmmess'],['b2','RFMBUCHG',73,87,5.6,'rfmmess'],
+     ['ball','RFMBALL',18,90,7.5,'rfmtoy'],['teddy','RFMTEDDY',53,85,9,'rfmtoy'],['kreisel','BETKREISEL',66,80,7,'rfmtoy'],['buch','RFMBUCHR',82,94,6.6,'rfmtoy']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'smile',haufen:0,hk:1,hs:1,ht:1,kf:0,gl:0,hop:0},
+  enter(){ onPh('Durcheinander',()=>{ RFMMESS.forEach((id,i)=>bLater(()=>TB.els[id]&&wiggle(TB.els[id]),i*90)); chime([659,523]); });
+    onPh('Spielsachen.',()=>{ mood('socke','oh'); });
+    onPh('kam Mama herein',()=>{ rfmHin('mama',86,57,1700); mood('mama','smile'); mood('hexe','oh'); });
+    talk('mama','Ehfje, heute','Aufräumen ist'); onPh('Ehfje, heute',()=>{ mood('mama','happy'); famArm('mama','up'); });
+    onPh('Jannekes Hoppel',()=>{ famArm('mama','dn'); mood('mama','oh'); }); onPh('verschwunden',()=>{ mood('hexe','oh'); });
+    talk('hexe','Aufräumen ist','maulte'); onPh('Aufräumen ist',()=>{ mood('hexe','worry'); efArm('dn'); mood('mama','smile'); });
+    talk('hexe','Ich zaubere','Tipp alle'); onPh('Ich zaubere',()=>{ mood('hexe','laugh'); efArm('up'); efSpell(10); });
+    onPh('Tipp alle',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); rfmDa('mama',86,57); mood('hexe','happy'); efArm('up'); mood('mama','smile'); famArm('mama','dn'); },
+  a:{t:'tapall',ids:['ball','teddy','kreisel','buch'],w:'BALL'},
+  h:'Tipp alle Spielsachen an!',
+  s:'Ehfjes Zimmer war ein einziges Durcheinander. Überall lagen Bauklötze, Socken, Bücher und Spielsachen. Da kam Mama herein. Ehfje, heute wird aufgeräumt! Und schau mal, ob du Jannekes Hoppel findest. Der ist verschwunden. Aufräumen ist langweilig, maulte Ehfje. Ich zaubere einfach! Tipp alle Spielsachen an!',
+  item(id,b){ b.classList.add('rfmglow'); const n=4-TB.left.length; mood('hexe',n%2?'laugh':'happy'); efSpell(5); if(n===2){ mood('socke','oh'); sqs(TB.els.socke); } },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ talk('hexe','Kribbel','Da flogen','d1'); onPh('Kribbel',()=>{ efSpell(22); mood('hexe','laugh'); efArm('up'); },'d1');
+       onPh('geschwind',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,16,16); chime([988,1318,1568]); },'d1');
+       onPh('Da flogen',()=>{ rfmWirbel(RFMMESS); mood('hexe','oh'); mood('mama','oh'); },'d1');
+       onPh('rundherum, rundherum',()=>{ mood('socke','oh'); sqs(TB.els.socke); mood('hexe','laugh'); },'d1');
+       onPh('plumps',()=>rfmLand(()=>{ const S=TB.els.socke; famHop(S,55,73,700,18,()=>{ mood('socke','happy'); }); mood('hexe','oh'); }),'d1'); },
+     'Kribbel, krabbel, Zauberwind – Spielsachen, räumt euch auf geschwind! Da flogen alle Spielsachen hoch in die Luft und wirbelten durchs Zimmer, rundherum, rundherum – und plumps! landeten sie auf einem riesigen Haufen.',
+     ()=>{ onPh('Ganz oben',()=>{ const S=TB.els.socke; sqs(S); bubble('miau?',...relEl(S,[.5,0]),3.2,'#e0e0f0'); },'d2');
+       talk('hexe','Ups','sagte Ehfje','d2'); onPh('Ups',()=>{ mood('hexe','oh'); efArm('dn'); },'d2'); onPh('Mama lachte',()=>{ mood('mama','laugh'); },'d2');
+       talk('mama','Das war wohl',null,'d2'); onPh('Das war wohl',()=>{ mood('mama','happy'); mood('hexe','smile'); },'d2');
+       onPh('Komm, wir',()=>{ famArm('mama','wide'); mood('hexe','happy'); },'d2'); onPh('ohne Zauber',()=>{ famArm('mama','dn'); mood('hexe','laugh'); uniHop(); },'d2'); },
+     'Ganz oben auf dem Haufen saß Socke und machte große Augen. Ups, sagte Ehfje. Mama lachte. Das war wohl ein Durcheinander-Zauber! Komm, wir räumen zusammen auf. Ganz ohne Zauber.', 700]},
+
+ /* 2 – the blocks hop out of the heap; Mama puts down three boxes, red, blue and yellow: sort every block into the box of its colour.
+    "Das ist ja gar nicht langweilig!" – and the unicorn still has a little yellow block on its horn */
+ {set:'rfmtag', dark:0, u:[8,82,12], ef:[30,64,30,'st'], mama:[93,55,25], sk:[55,73,8],
+  p:[['haufen','RFMHAUFEN',55,83,30,'rfmhf'],
+     ['k1','RFMKLR',40,93,7.4,'rfmkl rfmhid'],['k2','RFMKLB',51,95,7.4,'rfmkl rfmhid'],['k3','RFMKLY',62,93,7.4,'rfmkl rfmhid'],['k4','RFMKLB2',45,85,6.8,'rfmkl rfmhid'],
+     ['kr','RFMKIR',69,86,15,'rfmki2 rfmhid'],['kb','RFMKIB',81,89,15,'rfmki2 rfmhid'],['ky','RFMKIY',93,86,15,'rfmki2 rfmhid']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'happy',haufen:1,hk:1,hs:1,ht:1,kf:0,gl:0,hop:0},
+  enter(){ onPh('Bauklötze dran',()=>{ TST.hk=0; rfmHfSet(); rfmAusHaufen(['k1','k2','k3','k4']); mood('hexe','happy'); mood('socke','oh'); });
+    onPh('eine rote',()=>{ rfmAusHaufen(['kr']); }); onPh('eine blaue',()=>{ rfmAusHaufen(['kb']); }); onPh('eine gelbe',()=>{ rfmAusHaufen(['ky']); });
+    talk('mama','Jeder Klotz','sagte Mama'); onPh('Jeder Klotz',()=>{ mood('mama','happy'); famArm('mama','up'); });
+    onPh('Zieh die',()=>{ famArm('mama','dn'); efArm('fwd'); }); },
+  ready(){ efReady(); TST.hk=0; rfmHfSet(); rfmZeig(['k1','k2','k3','k4','kr','kb','ky']); mood('hexe','happy'); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'sort',ids:['k1','k2','k3','k4'],to:{k1:'kr',k2:'kb',k3:'ky',k4:'kb'},slot:[.5,.24],w:'KLOTZ'},
+  h:'Zieh jeden Klotz in die Kiste mit der gleichen Farbe!',
+  s:'Zuerst kamen die Bauklötze dran. Mama stellte drei Kisten hin: eine rote, eine blaue und eine gelbe. Jeder Klotz kommt in die Kiste mit seiner Farbe, sagte Mama. Zieh die Klötze in die richtigen Kisten!',
+  item(id,b,pid){ TB.rfmN=TB.rfmN||{}; const n=TB.rfmN[pid]=(TB.rfmN[pid]||0)+1; if(n>1) bLater(()=>{ b.style.left=(parseFloat(b.style.left)+2.4)+'%'; },460);
+    rfmKlack(ctr(b)[0],n); const t=4-TB.left.length; mood('hexe',t%2?'laugh':'happy'); if(t===2){ mood('mama','laugh'); } if(t===3){ mood('socke','happy'); sqs(TB.els.socke); } },
+  wrong(id,pid){ mood('hexe','oh'); bubble('hoppla!',...relEl(TB.els[pid],[.5,0]),3.2,'#fff0d8'); bLater(()=>mood('hexe','happy'),900); },
+  done(){ mood('hexe','laugh'); efArm('up'); mood('mama','happy'); },
+  d:[()=>{ onPh('Klack, klack',()=>{ ['kr','kb','ky'].forEach((id,i)=>bLater(()=>{ const K=TB.els[id]; sqs(K); rfmKlack(ctr(K)[0],i); },i*260)); },'d1');
+       talk('hexe','Das ist ja gar','staunte','d1'); talk('hexe','Das ist ja wie',null,'d1');
+       onPh('gar nicht langweilig',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d1'); onPh('wie ein Spiel',()=>{ hearts(...relEl(TB.els.hexe,[.5,.2]),3); efArm('dn'); },'d1'); },
+     'Klack, klack, klack! Alle Klötze waren in ihren Kisten. Das ist ja gar nicht langweilig! staunte Ehfje. Das ist ja wie ein Spiel!',
+     ()=>{ onPh('dein Einhorn',()=>{ const [hx,hy]=rfmHorn(), [px,py]=wpos(hx,hy), B=prop('RFMKLY',px,py-2,3.6,'tp2 rfmhornk'); TB.act.appendChild(B); TB.els.hornk=B; sqs(B); wiggle(TB.els.uni); },'d2');
+       onPh('auf seinem Horn',()=>{ wiggle(TB.els.uni); mood('hexe','oh'); },'d2'); onPh('ein kleiner gelber',()=>{ const B=TB.els.hornk; if(B) glitterBurst(...ctr(B),8,8); mood('hexe','laugh'); },'d2');
+       onPh('Hopp!',()=>{ const B=TB.els.hornk, K=TB.els.ky; if(!B||!K) return; uniHop(); const [kx,ky]=eikAt(K,.5,.22);
+         kiPath(B,[[(parseFloat(B.style.left)+kx)/2,20],[kx,ky]],1200,()=>{ B.style.transition='opacity .3s'; B.style.opacity=0; sqs(K); rfmKlack(ctr(K)[0],3); glitterBurst(...relEl(K,[.5,.2]),14,12); chime([1318,1568]); }); trail(B,1200); },'d2'); },
+     'Nur dein Einhorn wackelte mit dem Kopf. Auf seinem Horn steckte noch ein kleiner gelber Klotz. Hopp! flog er in die gelbe Kiste.', 700]},
+
+ /* 3 – the socks hop out of the heap: on the bed, on the floor, on the window sill. Mama brings the laundry basket – drag the socks in.
+    And then somebody else jumps in: Socke! "Du bist doch keine Socke! Du bist ein Kater!" – he peeks out with a sock on his ear */
+ {set:'rfmtag', dark:0, u:[8,82,12], ef:[38,64,30,'st'], mama:[92,55,25], sk:[60,75,8],
+  p:[['haufen','RFMHAUFEN',55,84,27,'rfmhf'],['stapel','RFMSTAPEL',79,66,16,'rfmst'],
+     ['so1','RFMSOP',26,68,6,'rfmso rfmhid'],['so2','RFMSOG',52,95,6,'rfmso rfmhid'],['so3','RFMSOB',19,43,5.6,'rfmso rfmhid'],
+     ['korbh','RFMKORBH',75,85,19,'rfmkorb rfmhid'],['korb','RFMKORB',75,85,19,'rfmkorb rfmhid']],
+  front:['korbh','socke','korb'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'happy',haufen:1,hk:0,hs:1,ht:1,kf:0,gl:0,hop:0},
+  enter(){ onPh('Socken dran',()=>{ TST.hs=0; rfmHfSet(); rfmAusHaufen(['so1','so2','so3'],300); mood('socke','oh'); });
+    onPh('sogar auf der Fensterbank',()=>{ const S=TB.els.so3; sqs(S); glitterBurst(...ctr(S),8,8); mood('hexe','laugh'); });
+    onPh('Wäschekorb',()=>{ ['korbh','korb'].forEach(id=>{ const K=TB.els[id]; K.classList.remove('rfmhid'); try{ K.animate([{transform:'translateX(30vh)',opacity:0},{transform:'none',opacity:1}],{duration:900,easing:'ease-out'}); }catch(e){} }); famArm('mama','up'); mood('mama','happy'); bLater(()=>famArm('mama','dn'),900); });
+    onPh('Zieh alle',()=>{ efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); TST.hs=0; rfmHfSet(); rfmZeig(['so1','so2','so3','korbh','korb']); mood('hexe','happy'); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'drag',ids:['so1','so2','so3'],to:'korb',w:'SOCKE'},
+  h:'Zieh die Socken in den Wäschekorb!',
+  s:'Jetzt waren die Socken dran. Die lagen überall: auf dem Bett, auf dem Boden und sogar auf der Fensterbank! Mama brachte den Wäschekorb. Zieh alle Socken in den Korb!',
+  item(id,b){ const n=3-TB.left.length, KH=TB.els.korbh; rfmSchwupp(ctr(b)[0]); b.style.transition='left .45s ease-out,top .45s ease-out,opacity .35s .4s,scale .35s .4s'; b.style.opacity=0; b.style.scale=.5;
+    bLater(()=>{ KH.classList.add('q'+n); sqs(TB.els.korb); },650); mood('hexe',n%2?'laugh':'happy'); if(n===2){ mood('socke','oh'); sqs(TB.els.socke); } },
+  done(){ mood('hexe','laugh'); efArm('dn'); mood('mama','happy'); },
+  d:[()=>{ onPh('Plumps',()=>{ rfmSockeKorb(()=>{ mood('socke','happy'); }); mood('hexe','oh'); },'d1');
+       onPh('Socke!',()=>{ const S=TB.els.socke; sqs(S); mood('mama','laugh'); },'d1');
+       talk('hexe','Nein, Socke','lachte Ehfje','d1'); talk('hexe','Du bist doch',null,'d1');
+       onPh('Nein, Socke',()=>{ mood('hexe','laugh'); efArm('up'); },'d1'); onPh('ein Kater',()=>{ efArm('dn'); hearts(...relEl(TB.els.socke,[.5,.1]),2); },'d1'); },
+     'Plumps! Da sprang noch jemand in den Wäschekorb: Socke! Nein, Socke! lachte Ehfje. Du bist doch keine Socke. Du bist ein Kater!',
+     ()=>{ onPh('Miau',()=>{ const S=TB.els.socke; sqs(S); bubble('miau!',...relEl(S,[.5,0]),3.4,'#e0e0f0'); chime([784,659]); },'d2');
+       onPh('mit einer Socke',()=>{ rfmOhrSocke(); mood('hexe','laugh'); uniHop(); },'d2'); },
+     'Miau! machte Socke und guckte aus dem Korb heraus, mit einer Socke auf dem Ohr.', 700]},
+
+ /* 4 – the bed: the blanket is crumpled, the pillow flat as a pancake – shake it up (shake). The unicorn pulls the blanket smooth with
+    its mouth. Then the books, the ball and the teddy go onto the shelf – and the heap is gone */
+ {set:'rfmtag', dark:0, u:[31,66,10], ef:[46,64,30,'st'], sk:[86,90,8.5],
+  p:[['haufen','RFMHAUFEN',62,85,21,'rfmhf'],['stapel','RFMSTAPEL',79,66,16,'rfmst']],
+  st:{efm:'happy',efa:'dn',skm:'happy',haufen:1,hk:0,hs:0,ht:1,kf:0,gl:0,hop:0},
+  enter(){ onPh('ganz zerknautscht',()=>{ const B=TB.els.bett; wiggle(B); mood('hexe','oh'); });
+    onPh('platt wie ein Pfannkuchen',()=>{ const K=TB.els.kissen; sqs(K); mood('hexe','laugh'); bubble('platt!',...relEl(K,[.5,0]),3,'#ffe8f4'); });
+    onPh('Schüttel',()=>{ mood('hexe','happy'); efArm('fwd'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'shake',id:'kissen',n:9,up:7,pcs:['rgba(255,255,255,.98)','rgba(255,236,248,.95)','rgba(240,248,255,.95)'],w:'BETT'},
+  h:'Wackel mit dem Finger schnell über dem Kissen hin und her!',
+  s:'Dann war das Bett dran. Die Decke war ganz zerknautscht, und das Kissen war platt wie ein Pfannkuchen. Schüttel das Kissen auf! Wackel mit dem Finger ganz schnell darüber hin und her.',
+  shaking(p){ TST.kf=p; rfmKf(p); const q=Math.floor(p*3); if(q>(TB.rq||0)){ TB.rq=q; rfmFlausch(ctr(TB.els.kissen)[0]); mood('hexe',q%2?'laugh':'happy'); } },
+  done(){ TST.kf=1; rfmKf(1); mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('dick und weich',()=>{ const K=TB.els.kissen; sqs(K); rfmFlausch(ctr(K)[0]); glitterBurst(...ctr(K),12,10); },'d1');
+       onPh('dein Einhorn',()=>{ const U=TB.els.uni; kiPath(U,[[26,62],[22,65]],1100); efArm('dn'); },'d1');
+       onPh('mit dem Maul',()=>{ wiggle(TB.els.uni); },'d1');
+       onPh('Decke glatt',()=>{ const U=TB.els.uni, B=TB.els.bett; kiPath(U,[[27,62],[31,66]],1000); B.classList.add('glatt'); TST.gl=1; rfmFlausch(ctr(B)[0]); const [x,y]=relEl(B,[.6,.62]); glitterBurst(x,y,24,22); chime([988,1175,1568]); },'d1');
+       talk('hexe','Fertig ist','freute','d1'); onPh('Fertig ist',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d1'); },
+     'Das Kissen wurde dick und weich. Und dein Einhorn half mit: Es zog mit dem Maul die Decke glatt. Fertig ist mein Hexenbett! freute sich Ehfje.',
+     ()=>{ onPh('Zum Schluss',()=>{ efArm('fwd'); mood('hexe','happy'); },'d2');
+       onPh('ins Regal',()=>{ const H=TB.els.haufen, [sx,sy]=wpos(...rfmRoomPt(1305,250)); kiPath(H,[[(parseFloat(H.style.left)+sx)/2,40,.7],[sx,sy,.25]],1300,()=>{ H.style.opacity=0; const [x,y]=rfmRoomPt(1305,250); glitterBurst(x,y,20,20); rfmKlack(x,2); }); trail(H,1300); },'d2');
+       onPh('weg war der Haufen',()=>{ TST.haufen=0; TST.ht=0; mood('hexe','laugh'); efArm('up'); hearts(...relEl(TB.els.hexe,[.5,.2]),3); },'d2'); },
+     'Zum Schluss stellte Ehfje die Bücher, den Ball und den Teddy ins Regal. Und weg war der Haufen!', 700]},
+
+ /* 5 – under the bed it is dark and dusty: little dust mice live there. Her broom can sweep as well as fly: sweep them out (besenfegen,
+    new). They scurry off, Socke after them – and under the bed two long ears peek out: Hoppel! */
+ {set:'rfmtag', dark:.06, u:[88,84,12], ef:[56,63,30,'st'], sk:[73,90,8.5], unten:1, br:[66,70,6.2], hp:[29,85,8,'hide'],
+  p:[['stapel','RFMSTAPEL',79,66,16,'rfmst']],
+  st:{efm:'happy',efa:'dn',skm:'happy',haufen:0,hk:0,hs:0,ht:0,kf:1,gl:1,hop:0},
+  enter(){ onPh('dunkel und staubig',()=>{ const U=TB.els.unten; U.querySelectorAll('.rfmmaus').forEach((m,i)=>bLater(()=>{ m.classList.remove('lfw'); void m.offsetWidth; m.classList.add('lfw'); if(i%3===0) rfmPiep(ctr(m)[0]); },i*120)); mood('hexe','oh'); });
+    onPh('Staubmäuse',()=>{ mood('socke','oh'); sqs(TB.els.socke); });
+    onPh('Zauberbesen',()=>{ const B=TB.els.besen; sqs(B); glitterBurst(...ctr(B),12,14); chime([523,659,784]); mood('hexe','happy'); });
+    talk('hexe','Mein Besen','Feg die'); onPh('Mein Besen',()=>{ mood('hexe','laugh'); efArm('up'); }); onPh('auch fegen',()=>{ const B=TB.els.besen; sqs(B); bubble('hui!',...relEl(B,[.5,0]),3.2,'#ffe8b0'); efArm('dn'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('dn'); },
+  a:{t:'besenfegen',id:'unten',br:'besen',n:7,w:'BESEN'},
+  h:'Fahr mit dem Finger unter dem Bett hin und her!',
+  s:'Unter dem Bett war es dunkel und staubig. Da wohnten lauter kleine Staubmäuse. Ehfje holte ihren Zauberbesen. Mein Besen kann nicht nur fliegen. Er kann auch fegen! Feg die Staubmäuse unter dem Bett hervor!',
+  sweeping(p){ const q=Math.floor(p*4); if(q>(TB.rq||0)){ TB.rq=q; mood('hexe',q%2?'laugh':'happy'); if(q===2){ const S=TB.els.socke; mood('socke','oh'); famHop(S,66,90,500,8); } } },
+  mausweg(x,y,s){ if(Math.random()<.4) bubble(rnd(['piep!','iiek!']),x,y-vu()*3,2.6,'#f0eaf4'); },
+  done(){ mood('hexe','laugh'); efArm('up'); const B=TB.els.besen; if(B){ B.style.transition='left .6s ease-out,top .6s ease-out'; B.style.left='66%'; B.style.top='70%'; } },
+  d:[()=>{ onPh('Husch',()=>{ mood('socke','happy'); },'d1');
+       onPh('Socke flitzte',()=>{ const S=TB.els.socke; S.classList.add('rfmrenn'); kiPath(S,[[90,90],[112,90]],1300); },'d1');
+       onPh('Aber was war das',()=>{ mood('hexe','oh'); efArm('dn'); },'d1');
+       onPh('zwei lange Ohren',()=>{ const H=TB.els.hoppel; H.classList.add('peek'); glitterBurst(...ctr(H),10,8); chime([1175,1568]); },'d1'); },
+     'Husch, husch! Die Staubmäuse kullerten davon, und Socke flitzte hinterher. Aber was war das? Unter dem Bett guckten zwei lange Ohren hervor.',
+     ()=>{ talk('hexe','Hoppel!','rief Ehfje','d2'); talk('hexe','Da bist du',null,'d2');
+       onPh('Hoppel!',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2'); onPh('Da bist du',()=>{ hearts(...ctr(TB.els.hoppel),3); },'d2'); },
+     'Hoppel! rief Ehfje. Da bist du ja!', 700]},
+
+ /* 6 – Hoppel is all grey with dust: wipe it off (rub). Janneke crawls in, Mama after her – Janneke is sad, she misses Hoppel. "Hier,
+    Janneke, dein Hoppel!" – she squeaks with joy. "Du hast Hoppel gefunden!" – "Beim Aufräumen!" */
+ {set:'rfmtag', dark:0, u:[8,82,12], ef:[30,64,30,'st'], hp:[48,84,15,'rfmdirt'], mama:[114,57,25], jn:[114,86,13], sk:[21,67,8],
+  p:[['stapel','RFMSTAPEL',79,66,16,'rfmst']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',jam:'smile',skm:'smile',haufen:0,hk:0,hs:0,ht:0,kf:1,gl:1,hop:0},
+  enter(){ onPh('zog Hoppel',()=>{ const H=TB.els.hoppel; sqs(H); efArm('fwd'); mood('hexe','happy'); });
+    onPh('ganz grau',()=>{ const H=TB.els.hoppel, [x,y]=ctr(H); for(let i=0;i<10;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*8,y:y-vu()*3,vx:(Math.random()-.5)*12*vu(),vy:-(3+Math.random()*6)*vu(),s:.8+Math.random(),life:1.3,c:'rgba(200,192,206,.6)'}); mood('hexe','worry'); });
+    onPh('Wisch',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'rub',id:'hoppel',w:'HASE'},
+  h:'Wisch mit dem Finger über Hoppel!',
+  s:'Ehfje zog Hoppel unter dem Bett hervor. Der arme Hoppel war ganz grau vor Staub. Wisch den Staub von Hoppel ab!',
+  rubStep(p){ mood('hexe',p>.4?'laugh':'happy'); },
+  done(){ mood('hexe','laugh'); efArm('up'); const H=TB.els.hoppel; H.classList.remove('dusty'); },
+  d:[()=>{ onPh('wieder ganz sauber',()=>{ const H=TB.els.hoppel; sqs(H); glitterBurst(...ctr(H),16,14); chime([1175,1568]); },'d1');
+       onPh('krabbelte Janneke',()=>{ rfmHin('janneke',70,86,2600,'rfmkrab'); efArm('dn'); mood('hexe','oh'); },'d1');
+       onPh('Mama kam',()=>{ rfmHin('mama',87,57,1800); },'d1');
+       onPh('ganz traurig',()=>{ mood('janneke','cry'); mood('mama','smile'); },'d1'); },
+     'Jetzt war Hoppel wieder ganz sauber. Da krabbelte Janneke ins Zimmer, und Mama kam hinterher. Janneke schaute ganz traurig, denn sie vermisste ihren Hoppel.',
+     ()=>{ talk('hexe','Hier, Janneke','sagte Ehfje','d2'); onPh('Hier, Janneke',()=>{ rfmDa('janneke',70,86); rfmDa('mama',87,57); efArm('fwd'); mood('hexe','happy'); famHoppelTo('janneke',.78,.5,36,1100,()=>{ TST.hop='jn'; }); },'d2');
+       onPh('quietschte',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],5); },'d2');
+       onPh('ganz fest',()=>{ const J=TB.els.janneke; hearts(...relEl(J,[.6,.3]),4); mood('hexe','laugh'); efArm('dn'); },'d2'); },
+     'Hier, Janneke, dein Hoppel! sagte Ehfje. Janneke quietschte vor Freude und drückte Hoppel ganz fest.',
+     ()=>{ talk('mama','Du hast','sagte Mama','d3'); talk('hexe','Beim Aufräumen','sagte Ehfje','d3');
+       onPh('Du hast',()=>{ mood('mama','happy'); famArm('mama','wide'); },'d3'); onPh('Beim Aufräumen',()=>{ famArm('mama','dn'); mood('hexe','laugh'); efArm('up'); uniHop(); },'d3');
+       onPh('stolz',()=>{ hearts(...relEl(TB.els.hexe,[.5,.2]),3); },'d3'); },
+     'Du hast Hoppel gefunden! sagte Mama. Beim Aufräumen! sagte Ehfje stolz.', 700]},
+
+ /* 7 – in the afternoon Papa comes home: "Was für ein schönes, ordentliches Zimmer!" – now there is room to play. Tap the box: a block
+    flies onto the tower (pat). Janneke crawls up, reaches out – rumms, the tower falls. Everybody laughs: "Macht nichts – aufräumen kann
+    ich ja jetzt!" */
+ {set:'rfmtag', dark:.05, u:[93,84,11], ef:[29,64,30,'st'], mama:[75,55,24], papa:[114,57,28], jn:[64,87,13], boris:[12,91,17,'lie'], sk:[20,67,8],
+  p:[['kiste','RFMKIVOLL',39,88,13,'rfmki2']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'dn',jam:'happy',bom:'happy',skm:'smile',haufen:0,hk:0,hs:0,ht:0,kf:1,gl:1,hop:'jn'},
+  enter(){ onPh('kam Papa nach Hause',()=>{ rfmHin('papa',89,57,1800); chime([523,659]); });
+    talk('papa','Oh,','staunte er'); talk('papa','was für ein','Jetzt ist'); onPh('Oh,',()=>{ mood('papa','oh'); });
+    onPh('was für ein',()=>{ mood('papa','laugh'); famArm('papa','wide'); mood('hexe','laugh'); }); onPh('ordentliches Zimmer',()=>{ famArm('papa','dn'); uniHop(); });
+    talk('hexe','Jetzt ist','sagte Ehfje'); onPh('Jetzt ist',()=>{ mood('hexe','happy'); efArm('up'); });
+    talk('hexe','Komm, Janneke','Tipp auf'); onPh('Komm, Janneke',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],3); efArm('dn'); });
+    onPh('Tipp auf',()=>{ efArm('fwd'); }); },
+  ready(){ efReady(); rfmDa('papa',89,57); mood('papa','smile'); famArm('papa','dn'); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'pat',id:'kiste',at:[.5,.3],n:5,wait:700,w:'TURM'},
+  h:'Tipp auf die Kiste mit den Klötzen!',
+  s:'Am Nachmittag kam Papa nach Hause. Oh, staunte er, was für ein schönes, ordentliches Zimmer! Jetzt ist ganz viel Platz zum Spielen, sagte Ehfje. Komm, Janneke, wir bauen einen Turm! Tipp auf die Kiste, dann fliegt ein Klotz auf den Turm!',
+  patStep(k){ rfmTurmKlotz(k); mood('hexe',k%2?'laugh':'happy'); if(k===2){ mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],2); } if(k===3) mood('papa','happy'); if(k===4){ mood('mama','happy'); famWag(1); } },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('höher und höher',()=>{ for(let k=1;k<=5;k++){ const B=TB.els['tk'+k]; if(B) bLater(()=>{ glitterBurst(...ctr(B),5,6); chimeAt([784+k*130],ctr(B)[0]); },k*150); } efArm('dn'); },'d1');
+       onPh('krabbelte Janneke',()=>{ rfmHin('janneke',58,87,1600,'rfmkrab'); mood('janneke','laugh'); },'d1');
+       onPh('kleine Hand',()=>{ const J=TB.els.janneke; wiggle(J); mood('hexe','oh'); },'d1');
+       onPh('rumms',()=>{ rfmDa('janneke',58,87); rfmUmfallen(); ['hexe','mama','papa'].forEach(id=>mood(id,'oh')); mood('janneke','oh'); },'d1'); },
+     'Der Turm wurde höher und höher. Da krabbelte Janneke heran, streckte ihre kleine Hand aus – und rumms! fiel der ganze Turm um.',
+     ()=>{ onPh('alle mussten lachen',()=>{ ['hexe','mama','papa'].forEach(id=>mood(id,'laugh')); famWoof(ctr(TB.els.boris)[0]); famWag(1); },'d2');
+       onPh('sogar Janneke',()=>{ const J=TB.els.janneke; mood('janneke','laugh'); sqs(J); famGiggle(ctr(J)[0],6); hearts(...relEl(J,[.5,.2]),3); },'d2');
+       talk('hexe','Macht nichts','sagte Ehfje','d2'); talk('hexe','Aufräumen kann',null,'d2');
+       onPh('Macht nichts',()=>{ mood('hexe','happy'); },'d2'); onPh('Aufräumen kann',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); efSpell(8); },'d2'); },
+     'Die Klötze kullerten durchs ganze Zimmer, und alle mussten lachen, sogar Janneke. Macht nichts, sagte Ehfje. Aufräumen kann ich ja jetzt!',
+     ()=>{ onPh('nicht fertig',()=>{ mood('hexe','happy'); efArm('dn'); },'d3'); onPh('noch heute',()=>{ glitterBurst(innerWidth*.5,innerHeight*.6,24,40); chime([1047,1318,1568,2093]); },'d3'); },
+     'Und wenn sie nicht fertig geworden sind, dann räumen sie noch heute auf.', 1800]}
+ ]};
+/*<AUFRAEUMEN*/
 
 
 
@@ -17483,7 +17939,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},{k:'tale',t:WKK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},{k:'tale',t:WKK2},{k:'tale',t:RFM2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -17588,6 +18044,13 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     [['herz',40,86],['mond',58,90],['baum',76,86],['pfote',90,78]].map(([sh,x,y])=>`<div class="tp2 wkkk gold deko" style="left:${x}%;top:${y}%;width:14%">${wkkKeksSVG(sh)}</div>`).join('')+
     `<div class="tp2 chr sck" data-mood="happy" style="left:12%;top:84%;width:16%"><div class="bb">${wkkSockeSVG()}</div></div>`+
     [[12,14,3],[50,8,2.6],[88,14,3],[34,26,2.2],[92,52,2.4]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">❄</span>`).join('')+`</div>`+tw;/*<WKKART*/
+  if(id==='aufraeumen') return `<div class="rfmart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,#fff2f8 0,#f8c8dc 50%,#b47aa8 96%)"></div><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:26%;border-radius:50% 50% 0 0/30% 30% 0 0;background:linear-gradient(180deg,#d89a5e,#b87a42)"></div>`+
+    [['g','E',83],['y','O',74.5],['b','M',66],['r','A',57.5]].map(([c,L,y],i)=>`<div class="tp2 rfmartk" style="left:${76+(i%2?1.5:-1)}%;top:${y}%;width:19%">${rfmKlotzSVG(c,L)}</div>`).join('')+
+    `<div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:44%;top:57%;width:46%"><div class="bb">${eefjeSVG()}</div></div>`+
+    `<div class="tp2 rfmartk" style="left:16%;top:84%;width:28%">${rfmKorbHSVG()}</div>`+
+    `<div class="tp2 chr sck" data-mood="happy" style="left:16%;top:74%;width:15%"><div class="bb">${sockeSVG()}<div class="tp2 kid rfmohr" style="left:30%;top:4%;width:34%">${rfmSockSVG('p')}</div></div></div>`+
+    `<div class="tp2 rfmartk" style="left:16%;top:84%;width:28%">${rfmKorbSVG()}</div>`+
+    [[12,16,3],[50,10,2.6],[88,18,3],[30,34,2.2],[92,44,2.4]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">✦</span>`).join('')+`</div>`+tw;/*<RFMART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -17873,6 +18336,7 @@ regTale2(URK2);
 /* Eefje schmückt ihr Zimmer: after the Urknall, so the older lines keep their order in voice/clips.tsv */
 regTale2(WRT2);
 regTale2(WKK2);
+regTale2(RFM2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
