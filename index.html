@@ -2102,6 +2102,55 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .wrtfp{position:absolute;width:4vh;height:4vh;translate:-50% -50%;border-radius:50%;pointer-events:none;z-index:9;opacity:0;transition:opacity .2s;background:radial-gradient(circle,rgba(255,255,255,.9) 0,rgba(220,240,255,.5) 40%,rgba(220,240,255,0) 70%)} .wrtfp.on{opacity:1}
 .tp2.wrtfly{z-index:9;filter:drop-shadow(0 0 1.4vh rgba(255,226,122,.95))}
 /*<WEIHRONTECSS*/
+/*WEIHRONTEKEKSECSS>*/
+/* Eefje backt Weihronte-Kekse (all classes start with "wkk") */
+.wkkbowl svg,.wkktue svg,.wkkzt svg,.wkkpf svg,.wkkofen svg,.wkkuhr svg,.wkkgross svg,.wkkkranz svg,.wkkkr svg,.wkkform svg,.wkkk svg,.wkkteller svg,.wkksb svg,.wkkloch svg{display:block;width:100%;overflow:visible}
+.eikroom.wkkroom{transition:filter 1.6s} .eikroom.wkkroom.wkkabend{filter:brightness(.86) sepia(.3) saturate(1.2)}
+.wkkroom .wkksn circle{animation:wkkfall linear infinite;transform-box:fill-box}
+@keyframes wkkfall{from{transform:translate(0,0)}50%{transform:translate(10px,190px)}to{transform:translate(-6px,380px)}}
+.wkkroom .wkklg{opacity:0;transition:opacity 1.6s} .wkkroom.wkkabend .wkklg{opacity:.6} .wkkroom.wkkabend .wkkfw{fill:#ffd86a}
+/* the bowl: flour heap (--lv), dough (.teig), spoon (.loeffel) */
+.tp2.wkkbowl{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.25))}
+.wkkbowl .wkkmehl{transform-box:view-box;transform-origin:100px 54px;transform:scale(calc(.3 + var(--lv,0)*.7),var(--lv,0));opacity:calc(var(--lv,0)*5);transition:opacity .6s}
+.wkkbowl.teig .wkkmehl{opacity:0} .wkkbowl .wkkdough{opacity:0;transition:opacity .8s} .wkkbowl.teig .wkkdough{opacity:1}
+.wkkbowl .wkkloe{opacity:0;transition:opacity .5s} .wkkbowl.loeffel .wkkloe{opacity:1}
+.wkkbowl .ring2.flat{top:32%}
+/* the flour bag, the butter, sugar and eggs */
+.tp2.wkktue{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.25))} .tp2.wkktue.lift{scale:1.1;z-index:9}
+.tp2.wkkzt{filter:drop-shadow(0 .5vh .6vh rgba(0,0,0,.25))}
+/* the big flour cloud */
+.wkkpuff{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:12;background:radial-gradient(circle at var(--x) var(--y),rgba(255,255,255,.98) 0,rgba(255,255,255,.9) 18%,rgba(255,253,246,.55) 42%,rgba(255,253,246,0) 70%);animation:wkkpuff 2.5s ease-out forwards}
+@keyframes wkkpuff{0%{opacity:0;transform:scale(.3)}12%{opacity:1;transform:scale(1)}45%{opacity:.95}100%{opacity:0;transform:scale(1.25)}}
+/* the blob of dough on Mama's nose */
+.tp2.wkkkl{border-radius:50% 46% 54% 48%;background:radial-gradient(circle at 35% 35%,#fff2c8 0,#f6dc9a 45%,#d8b060 100%);box-shadow:0 .2vh .3vh rgba(0,0,0,.25);z-index:9}
+/* the paw prints in the dough */
+.tp2.wkkpf{pointer-events:none} .wkkpf .wp{opacity:0;transition:opacity .3s} .wkkpf.on .wp,.wkkpf .wp.on{opacity:1} .wkkpf.wkkglanz{filter:drop-shadow(0 0 1.2vh rgba(255,236,150,.95))}
+/* the cutters, the holes, the cookies */
+.tp2.wkkform{z-index:8;filter:drop-shadow(0 .7vh .7vh rgba(0,0,0,.35))} .tp2.wkkform.lift{scale:1.15;z-index:9}
+.tp2.wkkform.wkkpress>svg{animation:fpress .32s ease-in-out}
+.wkkloch{position:absolute;width:16%;translate:-50% -50%;pointer-events:none}
+.tp2.wkkk{filter:drop-shadow(0 .5vh .5vh rgba(0,0,0,.25))} .wkkk .kgold{opacity:0;transition:opacity .8s} .wkkk.gold .kgold{opacity:1}
+.wkkk .kdeko{opacity:0;transition:opacity .6s} .wkkk.deko .kdeko{opacity:1}
+/* the oven: the tray inside (.in), the glow (--gl), the cookies browning (--bk) */
+.tp2.wkkofen{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.25))} .wkkofen .wkkin{opacity:0;transition:opacity .4s} .wkkofen.in .wkkin{opacity:1}
+.wkkofen .wkkglow{opacity:var(--gl,0);transition:opacity 1s} .wkkofen .wkkob{opacity:var(--bk,0)} .wkkofen.an .wkkled{fill:#ff5a3a}
+/* the kitchen timer: the pointer turns round the pivot, it shakes when it rings */
+.tp2.wkkuhr{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.3))} .wkkuhr .wkkzg{transform-box:view-box;transform-origin:70px 82px}
+.wkkuhr.tickt>svg{animation:wkktick 1.04s steps(2) infinite} @keyframes wkktick{0%{transform:rotate(-2deg)}100%{transform:rotate(2deg)}}
+.wkkuhr.kling>svg{animation:wkkkling .12s linear 12} @keyframes wkkkling{0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg) translateY(-2%)}75%{transform:rotate(7deg) translateY(-2%)}}
+/* the big star cookie with the icing */
+.tp2.wkkgross{filter:drop-shadow(0 .8vh 1vh rgba(0,0,0,.25))}
+.wkkgross .krdcol{opacity:0;transition:opacity 1s .5s} .wkkgross.krddone .krdcol{opacity:1} .wkkgross.krddone .krdgd{opacity:0;transition:opacity .8s}
+.wkkgross.krdhint .krdgd{animation:wkkgdh 1.1s ease-in-out 2} @keyframes wkkgdh{50%{stroke:#fff;stroke-width:6px}}
+.wkkgross .wkkstreu{opacity:0;transition:opacity 1.2s} .wkkgross.streu .wkkstreu{opacity:1}
+.wkksb{position:absolute;width:6vh;translate:-8% -96%;pointer-events:none;z-index:9;opacity:0;transition:opacity .2s;filter:drop-shadow(0 .4vh .4vh rgba(0,0,0,.3))} .wkksb.on{opacity:1}
+/* the plate, the wreath, the crumbs */
+.tp2.wkkteller{filter:drop-shadow(0 .5vh .6vh rgba(0,0,0,.2))}
+.tp2.wkkkranz{filter:drop-shadow(0 .5vh .6vh rgba(0,0,0,.25))} .wkkkranz .wkkflm{opacity:0;transition:opacity .8s;transform-box:fill-box;transform-origin:50% 100%}
+.wkkkranz.lit .wkkflm{opacity:1;animation:wkkflk 1.3s ease-in-out infinite alternate} @keyframes wkkflk{from{transform:scale(1,1)}to{transform:scale(.86,1.12)}}
+.wkkkranz.lit{filter:drop-shadow(0 0 1.6vh rgba(255,214,120,.9)) drop-shadow(0 .5vh .6vh rgba(0,0,0,.25))}
+.wkklampe{pointer-events:none} .tp2.wkkkr{filter:drop-shadow(0 .3vh .3vh rgba(0,0,0,.25))} .tp2.wkknk{z-index:9}
+/*<WEIHRONTEKEKSECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -16969,6 +17018,445 @@ const WRT2={id:'weihronte', v2:true, eef:1, fam:1, dur:WRTDUR, title:'Eefje schm
      'Und wenn die Lichter nicht ausgegangen sind, dann leuchtet Ehfjes Weihronte-Zimmer noch heute.', 1800]}
  ]};
 /*<WEIHRONTE*/
+/*WEIHRONTEKEKSE>*/
+/* ================= Eefje backt Weihronte-Kekse: drawn props, sets, sounds and helpers (all classes and helpers start with "wkk";
+   checked: no wkk… name existed before) ================= */
+
+/* the kitchen in winter: the kitchen of the shopping tale, but snow falls outside its window, roofs with snow, two paper stars hang in
+   the window. With abend the walls are warmer and the lamp glows. */
+function wkkRoomSVG(){ let s=eikRoomSVG('kueche'); const id='wkw'+(++LANC), r=seeded(4401);
+  let fl=''; for(let i=0;i<34;i++){ const x=964+r()*432, rr=2.4+r()*3.2, d=5+r()*5; fl+=`<circle cx="${x.toFixed(0)}" cy="120" r="${rr.toFixed(1)}" style="animation-duration:${d.toFixed(1)}s;animation-delay:${(-r()*d).toFixed(1)}s"/>`; }
+  const win=`<defs><clipPath id="${id}"><rect x="960" y="150" width="440" height="330"/></clipPath></defs><g clip-path="url(#${id})">
+    <path d="M960 480 V404 L1004 404 L1004 372 L1040 344 L1076 372 L1076 410 L1150 410 L1150 384 L1192 352 L1234 384 L1234 420 L1300 420 L1300 392 L1340 362 L1380 392 L1380 426 L1400 426 V480Z" fill="#9a9ac0"/>
+    <path d="M1000 374 L1040 342 L1080 374 L1070 376 L1040 354 L1010 376Z M1146 386 L1192 350 L1238 386 L1228 388 L1192 362 L1156 388Z M1296 394 L1340 360 L1384 394 L1374 396 L1340 372 L1306 396Z" fill="#fff"/>
+    <g class="wkkfw" fill="#fff3c8"><rect x="1030" y="382" width="16" height="16"/><rect x="1180" y="392" width="16" height="16"/><rect x="1330" y="400" width="14" height="14"/></g>
+    <path d="M960 480 V452 Q1070 432 1180 446 Q1290 430 1400 448 V480Z" fill="#f6f9ff"/>
+    <g class="wkksn" fill="#fff">${fl}</g></g>
+    <path d="M1070 150 V196 M1300 150 V186" stroke="#c8962a" stroke-width="3"/><g transform="translate(1070 226) rotate(-8)">${wrtStarPath(30,'#ffd84a','#c8962a')}</g><g transform="translate(1300 212) rotate(10)">${wrtStarPath(24,'#ff8aa8','#c8506a')}</g>`;
+  s=s.replace(/<g stroke="#e8f2ff" stroke-width="3" opacity="\.7">[\s\S]*?<\/g>/,win);
+  s=s.split('stop-color="#8a9ab0"').join('stop-color="#a8c0e0"').split('stop-color="#c0cad8"').join('stop-color="#eef2fa"');
+  /* a fir garland over the cupboards and a glow under the lamp (only seen in the evening) */
+  let gar=''; for(let i=0;i<22;i++){ const x=50+i*20, y=96+Math.sin(i/21*Math.PI)*22; gar+=`<ellipse cx="${x}" cy="${y.toFixed(0)}" rx="16" ry="8" transform="rotate(${(i%2?24:-24)} ${x} ${y.toFixed(0)})" fill="${['#2e7a3e','#3e9a4e','#256a34'][i%3]}"/>`; }
+  gar+=[[90,110,'#e8344a'],[190,122,'#ffd24a'],[290,122,'#3a7ae8'],[390,110,'#e8344a']].map(([x,y,c])=>`<circle cx="${x}" cy="${y}" r="9" fill="${c}" stroke="rgba(0,0,0,.25)" stroke-width="2"/>`).join('');
+  s=s.replace('<circle cx="700" cy="190"',`<g>${gar}</g><ellipse class="wkklg" cx="800" cy="170" rx="190" ry="70" fill="#fff3c0"/><circle cx="700" cy="190"`);
+  return s; }
+
+/* cookie shapes, centred on 0,0, about 30 wide */
+const WKKSH={
+  stern:(()=>{ let d=''; for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?13:30; d+=(i?'L':'M')+(Math.cos(a)*rr).toFixed(1)+' '+(Math.sin(a)*rr).toFixed(1)+' '; } return d+'Z'; })(),
+  herz:'M0 26 C-14 16 -30 4 -28 -10 C-26 -24 -8 -26 0 -12 C8 -26 26 -24 28 -10 C30 4 14 16 0 26Z',
+  mond:'M10 -27 A28 28 0 1 0 10 27 A30 30 0 0 1 10 -27Z',
+  baum:'M0 -30 L16 -8 L8 -8 L22 12 L5 12 L5 26 L-5 26 L-5 12 L-22 12 L-8 -8 L-16 -8Z',
+  pfote:'M0 2 C14 2 20 14 16 22 C12 28 4 24 0 24 C-4 24 -12 28 -16 22 C-20 14 -14 2 0 2Z M-20 -6 A7 9 0 1 0 -20.01 -6Z M-8 -16 A7 9 0 1 0 -8.01 -16Z M8 -16 A7 9 0 1 0 7.99 -16Z M20 -6 A7 9 0 1 0 19.99 -6Z'
+};
+const WKKKS=['stern','herz','mond','baum'];
+/* a cookie: raw (pale), baked (.gold), decorated (.deko: icing and sprinkles). viewBox -36 -36 72 72 */
+function wkkKeksSVG(sh){ const d=WKKSH[sh]||WKKSH.stern, r=seeded(sh.length*31+7);
+  let st=''; for(let i=0;i<9;i++){ const x=(r()-.5)*30, y=(r()-.5)*30; st+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="5" height="2" rx="1" transform="rotate(${(r()*180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})" fill="${['#ff5a8a','#5ab4ff','#ffd84a','#6ad87a','#c87aff'][i%5]}"/>`; }
+  return `<svg viewBox="-36 -36 72 72" style="overflow:visible"><path d="${d}" fill="#f6e0b0" stroke="#d0a868" stroke-width="2.4" stroke-linejoin="round" fill-rule="nonzero"/>
+  <path class="kgold" d="${d}" fill="#e2a24e" stroke="#a8682a" stroke-width="2.4" stroke-linejoin="round"/>
+  <g class="kdeko"><path d="${d}" fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round" transform="scale(.74)" stroke-dasharray="6 3"/><g clip-path="none">${st}</g></g></svg>`; }
+/* a cookie cutter: shiny metal outline. viewBox -36 -36 72 72 */
+function wkkFormSVG(sh){ const d=WKKSH[sh];
+  return `<svg viewBox="-36 -36 72 72" style="overflow:visible"><path d="${d}" fill="rgba(255,255,255,.18)" stroke="#5a6a84" stroke-width="6" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="#f4f8fe" stroke-width="2.2" stroke-linejoin="round"/></svg>`; }
+/* the hole a cutter leaves in the dough */
+function wkkLochSVG(sh){ return `<svg viewBox="-36 -36 72 72" style="overflow:visible"><path d="${WKKSH[sh]}" fill="#c8945a" stroke="#a87440" stroke-width="2" stroke-linejoin="round" opacity=".85"/></svg>`; }
+
+/* the mixing bowl: the flour heap grows with --lv (pour), .teig turns it into dough, .swirl turns while stirring, the wooden spoon
+   (.wkkloe, shows with .loeffel) is moved round the rim by JS. viewBox 0 0 200 140 */
+function wkkSchuesselSVG(){ const id='wks'+(++LANC);
+  return `<svg viewBox="0 0 200 140" style="overflow:visible"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7ac0f0"/><stop offset="1" stop-color="#3a86c8"/></linearGradient></defs>
+  <ellipse cx="100" cy="136" rx="70" ry="5" fill="rgba(0,0,0,.18)"/>
+  <ellipse cx="100" cy="44" rx="92" ry="22" fill="#d8ecfa" stroke="#2a6aa8" stroke-width="4"/>
+  <g class="wkkmehl"><path d="M30 50 Q50 14 100 8 Q150 14 170 50 Q100 62 30 50Z" fill="#fffdf6" stroke="#e0d8c8" stroke-width="2"/><path d="M70 22 Q100 12 128 22" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></g>
+  <g class="wkkdough"><ellipse cx="100" cy="46" rx="80" ry="17" fill="#f6dc9a" stroke="#d8b060" stroke-width="2"/>
+   <g transform="translate(100 46) scale(1 .22)"><g class="swirl"><path d="M0 0 C10 -12 26 -2 24 14 C22 36 -12 40 -28 20 C-46 0 -30 -34 4 -40 C42 -44 62 -12 52 22" fill="none" stroke="#e8c070" stroke-width="7" stroke-linecap="round"/></g></g></g>
+  <g class="wkkloe"><path d="M100 46 L108 -40" stroke="#c88a4a" stroke-width="7" stroke-linecap="round"/><path d="M100 46 L108 -40" stroke="#e8b070" stroke-width="2.4" stroke-linecap="round" opacity=".8"/><ellipse cx="99" cy="48" rx="11" ry="7" fill="#c88a4a" stroke="#8a5a2a" stroke-width="2"/></g>
+  <path d="M8 44 Q12 130 100 132 Q188 130 192 44 Q150 70 100 68 Q50 70 8 44Z" fill="url(#${id})" stroke="#1e5a96" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#fff" opacity=".85"><circle cx="40" cy="82" r="5"/><circle cx="70" cy="100" r="5"/><circle cx="104" cy="108" r="5"/><circle cx="140" cy="98" r="5"/><circle cx="168" cy="78" r="5"/><circle cx="56" cy="64" r="3"/><circle cx="150" cy="66" r="3"/></g>
+  <path d="M26 66 Q40 100 76 116" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".55"/></svg>`; }
+
+/* the paper bag of flour (pour from its open top-left corner). viewBox 0 0 120 160 */
+function wkkTueteSVG(){ return `<svg viewBox="0 0 120 160" style="overflow:visible"><path d="M16 30 L104 30 L110 150 Q60 158 10 150Z" fill="#f4ead6" stroke="#a8946a" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M16 30 L26 10 L94 10 L104 30Z" fill="#fffaf0" stroke="#a8946a" stroke-width="3.4" stroke-linejoin="round"/><path d="M26 10 Q60 22 94 10" fill="none" stroke="#e8dcc0" stroke-width="2.4"/>
+  <path d="M30 16 Q44 4 56 16 Q66 6 80 14" fill="#fff" stroke="#e8e0d0" stroke-width="1.6"/>
+  <rect x="22" y="62" width="76" height="40" rx="6" fill="#4a8ae8" stroke="#2a5aa8" stroke-width="2.4"/><text x="60" y="91" font-family="ui-rounded,system-ui,sans-serif" font-weight="700" font-size="25" text-anchor="middle" fill="#fff">MEHL</text>
+  <g transform="translate(60 124)"><path d="M0 -14 C4 -6 10 -2 14 -6 C10 2 6 8 0 14 C-6 8 -10 2 -14 -6 C-10 -2 -4 -6 0 -14Z" fill="#f0c860" stroke="#b8862a" stroke-width="1.6"/></g></svg>`; }
+/* butter and sugar for scene 2. viewBoxes 0 0 90 50 / 0 0 70 90 */
+function wkkButterSVG(){ return `<svg viewBox="0 0 90 50" style="overflow:visible"><path d="M6 18 L70 10 L86 22 L84 42 L20 48 L6 36Z" fill="#ffe98a" stroke="#c8a83a" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M6 18 L70 10 L86 22 L22 30Z" fill="#fff4b8" stroke="#c8a83a" stroke-width="2.4" stroke-linejoin="round"/><path d="M22 30 L20 48" stroke="#c8a83a" stroke-width="2.4"/></svg>`; }
+function wkkZuckerSVG(){ return `<svg viewBox="0 0 70 90" style="overflow:visible"><rect x="8" y="14" width="54" height="72" rx="6" fill="#fff" stroke="#b8b8c8" stroke-width="3"/><rect x="8" y="40" width="54" height="24" fill="#ff8ab0"/>
+  <path d="M8 20 Q35 4 62 20" fill="#f4f4fa" stroke="#b8b8c8" stroke-width="3"/><g fill="#fff"><circle cx="24" cy="52" r="3"/><circle cx="36" cy="48" r="3"/><circle cx="46" cy="55" r="3"/></g></svg>`; }
+
+/* the paw prints Socke leaves in the dough: the same box as the dough board (TEIG, viewBox 0 0 200 100), prints .wp0 … .wp4 */
+const WKKPF=[[112,76,-15],[132,58,-5],[152,76,-15],[172,60,-5]];
+function wkkPfotenSVG(){ return `<svg viewBox="0 0 200 100" style="overflow:visible">${WKKPF.map(([x,y,a],i)=>`<g class="wp wp${i}" transform="translate(${x} ${y}) rotate(${a+90}) scale(.26)"><path d="${WKKSH.pfote}" fill="#d8b47a" stroke="#b88a4a" stroke-width="3"/></g>`).join('')}</svg>`; }
+
+/* the oven: a window with the tray inside (.in), the cookies inside brown with --bk, the glow with --gl. viewBox 0 0 200 250 */
+function wkkOfenSVG(){ const id='wko'+(++LANC), ck=[[66,'stern'],[88,'herz'],[110,'mond'],[132,'baum'],[150,'pfote']];
+  const kk=ck.map(([x,sh])=>`<g transform="translate(${x} 158) scale(.3)"><path d="${WKKSH[sh]}" fill="#f6e0b0" stroke="#d0a868" stroke-width="5"/><path class="wkkob" d="${WKKSH[sh]}" fill="#e2a24e" stroke="#a8682a" stroke-width="5"/></g>`).join('');
+  return `<svg viewBox="0 0 200 250" style="overflow:visible"><defs><radialGradient id="${id}"><stop offset="0" stop-color="#ffd27a"/><stop offset="1" stop-color="#ff7a2a"/></radialGradient></defs>
+  <ellipse cx="100" cy="246" rx="94" ry="6" fill="rgba(0,0,0,.18)"/>
+  <rect x="8" y="10" width="184" height="232" rx="14" fill="#f8f4ec" stroke="#a8a090" stroke-width="4"/>
+  <rect x="8" y="10" width="184" height="46" rx="14" fill="#e8e2d6" stroke="#a8a090" stroke-width="4"/>
+  ${[40,74,160].map(x=>`<circle cx="${x}" cy="33" r="11" fill="#fff" stroke="#8a8478" stroke-width="3"/><path d="M${x} 33 V24" stroke="#5a5448" stroke-width="3" stroke-linecap="round"/>`).join('')}<circle class="wkkled" cx="118" cy="33" r="6" fill="#c8c0b0"/>
+  <rect x="22" y="66" width="156" height="160" rx="12" fill="#e2dccf" stroke="#9a9284" stroke-width="3.4"/><rect x="40" y="74" width="120" height="10" rx="5" fill="#b8b0a0" stroke="#8a8478" stroke-width="2"/>
+  <rect x="38" y="96" width="124" height="112" rx="10" fill="#3a2c2a" stroke="#6a5a54" stroke-width="3"/>
+  <rect class="wkkglow" x="40" y="98" width="120" height="108" rx="9" fill="url(#${id})"/>
+  <g class="wkkin"><path d="M46 168 H154" stroke="#8a8a9a" stroke-width="5" stroke-linecap="round"/>${kk}</g>
+  <path d="M44 104 L76 104 L52 196 L44 196Z" fill="#fff" opacity=".14"/>
+  <rect x="26" y="226" width="22" height="14" rx="3" fill="#8a8478"/><rect x="152" y="226" width="22" height="14" rx="3" fill="#8a8478"/></svg>`; }
+
+/* the kitchen timer: a red, round timer; .wkkzg (the pointer knob) turns, a yellow wedge shows how far it is wound (wkkWedge).
+   The pivot is at 70,82. viewBox 0 0 140 150 */
+function wkkUhrSVG(){ const ticks=Array.from({length:12},(_,i)=>{ const a=i*Math.PI/6, x0=70+Math.cos(a)*40, y0=82+Math.sin(a)*40, x1=70+Math.cos(a)*(i%3?35:31), y1=82+Math.sin(a)*(i%3?35:31);
+    return `<path d="M${x0.toFixed(1)} ${y0.toFixed(1)} L${x1.toFixed(1)} ${y1.toFixed(1)}" stroke="#8a6a6a" stroke-width="${i%3?2:3.4}" stroke-linecap="round"/>`; }).join('');
+  return `<svg viewBox="0 0 140 150" style="overflow:visible"><ellipse cx="70" cy="146" rx="46" ry="5" fill="rgba(0,0,0,.2)"/>
+  <rect x="60" y="14" width="20" height="14" rx="4" fill="#ffd24a" stroke="#b8862a" stroke-width="2.6"/><circle cx="70" cy="12" r="6" fill="#ffd24a" stroke="#b8862a" stroke-width="2.6"/>
+  <path d="M30 128 L22 144 M110 128 L118 144" stroke="#b82a3a" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="70" cy="82" r="58" fill="#ff6a6a" stroke="#a82030" stroke-width="4"/><path d="M28 56 Q40 34 64 28" fill="none" stroke="#ffb0b0" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="70" cy="82" r="45" fill="#fffaf0" stroke="#d8c8b8" stroke-width="2.4"/>
+  <path class="wkkwed" d="M70 82 L70 42 A40 40 0 0 1 70 42Z" fill="#ffe27a" opacity=".85"/>${ticks}
+  <g class="wkkzg"><path d="M70 75 L108 82 L70 89Z" fill="#3a7ae8" stroke="#1a3a8a" stroke-width="2.4" stroke-linejoin="round"/><circle cx="70" cy="82" r="11" fill="#ffd24a" stroke="#b8862a" stroke-width="2.6"/><circle cx="67" cy="79" r="3.4" fill="#fff6c0"/></g></svg>`; }
+
+/* the big star cookie for the icing (scene 6): baked, the dotted guide (.krdgd), the icing (.krdink, data-i) and the finished
+   pattern (.krdcol), the sprinkles (.wkkstreu, show with .streu). The five lines are the points of a smaller star. viewBox 0 0 300 300 */
+const WKKGL=(()=>{ const cx=150, cy=158, R=88, r0=40, P=[]; for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?r0:R; P.push([cx+Math.cos(a)*rr, cy+Math.sin(a)*rr]); }
+  const f=p=>p[0].toFixed(1)+' '+p[1].toFixed(1); return [0,2,4,6,8].map(k=>`M${f(P[(k+9)%10])} L${f(P[k])} L${f(P[k+1])}`); })();
+function wkkGrossSVG(){ const big=(()=>{ let d=''; for(let i=0;i<10;i++){ const a=-Math.PI/2+i*Math.PI/5, rr=i%2?62:140; d+=(i?'L':'M')+(150+Math.cos(a)*rr).toFixed(1)+' '+(158+Math.sin(a)*rr).toFixed(1)+' '; } return d+'Z'; })(), r=seeded(5501);
+  let st=''; for(let i=0;i<40;i++){ const a=r()*6.283, d=r()*118, x=150+Math.cos(a)*d*.9, y=158+Math.sin(a)*d*.86; st+=`<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="9" height="3.6" rx="1.8" transform="rotate(${(r()*180).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})" fill="${['#ff5a8a','#5ab4ff','#ffd84a','#6ad87a','#c87aff'][i%5]}"/>`; }
+  return `<svg viewBox="0 0 300 300" style="overflow:visible"><ellipse cx="150" cy="292" rx="120" ry="8" fill="rgba(0,0,0,.18)"/>
+  <path d="${big}" fill="#e2a24e" stroke="#a8682a" stroke-width="6" stroke-linejoin="round"/><path d="${big}" fill="none" stroke="#f0be70" stroke-width="3" stroke-linejoin="round" transform="translate(150 158) scale(.92) translate(-150 -158)"/>
+  <g fill="#c8803a" opacity=".6"><circle cx="120" cy="140" r="3"/><circle cx="178" cy="132" r="2.6"/><circle cx="150" cy="200" r="3"/><circle cx="196" cy="190" r="2.4"/><circle cx="104" cy="194" r="2.4"/></g>
+  <g class="krdcol"><g fill="none" stroke-linecap="round" stroke-linejoin="round">${WKKGL.map(d=>`<path d="${d}" stroke="rgba(190,150,110,.55)" stroke-width="13"/><path d="${d}" stroke="#fffdf8" stroke-width="9"/>`).join('')}</g>
+   <circle cx="150" cy="158" r="13" fill="#fffdf8" stroke="rgba(190,150,110,.55)" stroke-width="2.6"/><circle cx="150" cy="158" r="5" fill="#ff5a8a"/></g>
+  <g class="krdgd" fill="none" stroke="rgba(120,70,30,.75)" stroke-width="4" stroke-dasharray="1.5 10" stroke-linecap="round">${WKKGL.map(d=>`<path d="${d}"/>`).join('')}</g>
+  <g class="krdink" fill="none" stroke-linecap="round" stroke-linejoin="round">${WKKGL.map((d,i)=>`<path data-i="${i}" d="${d}" stroke="rgba(190,150,110,.55)" stroke-width="13"/><path data-i="${i}" d="${d}" stroke="#fffdf8" stroke-width="9"/>`).join('')}</g>
+  <g class="wkkstreu">${st}</g></svg>`; }
+/* the piping bag that follows the finger (tip at the bottom left). viewBox 0 0 60 80 */
+function wkkBeutelSVG(){ return `<svg viewBox="0 0 60 80" style="overflow:visible"><path d="M4 76 L16 46 Q8 30 18 12 Q34 -2 52 10 Q62 28 46 44 Z" fill="#eaf4ff" stroke="#6a8ab8" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M4 76 L12 56 L22 62Z" fill="#c8d0dc" stroke="#6a8ab8" stroke-width="2.4" stroke-linejoin="round"/><path d="M22 20 Q34 12 44 18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M16 46 Q30 50 46 44" fill="none" stroke="#6a8ab8" stroke-width="2.4"/></svg>`; }
+
+/* the Advent wreath for the evening: four candles, flames show with .lit. viewBox 0 0 200 120 */
+function wkkKranzSVG(){ return `<svg viewBox="0 0 200 120" style="overflow:visible"><g transform="translate(0 36)">${kranzgSVG().replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'')}</g>
+  ${[[44,58],[82,48],[118,48],[156,58]].map(([x,y],i)=>`<rect x="${x-7}" y="${y}" width="14" height="${44-(y-48)}" rx="3" fill="${['#e8344a','#ffd24a','#e8344a','#ffd24a'][i]}" stroke="rgba(0,0,0,.3)" stroke-width="1.6"/><path d="M${x} ${y} V${y-5}" stroke="#3a2a1a" stroke-width="1.6"/><g class="wkkflm"><ellipse cx="${x}" cy="${y-12}" rx="5" ry="9" fill="#ffd84a"/><ellipse cx="${x}" cy="${y-10}" rx="2.4" ry="5" fill="#fff6c0"/></g>`).join('')}</svg>`; }
+/* the plate for the cookies. viewBox 0 0 160 60 */
+function wkkTellerSVG(){ return `<svg viewBox="0 0 160 60" style="overflow:visible"><ellipse cx="80" cy="36" rx="76" ry="20" fill="#fff" stroke="#b8c4d4" stroke-width="2.6"/><ellipse cx="80" cy="34" rx="54" ry="12" fill="#eef4fa"/>
+  <path d="M14 38 Q80 60 146 38" fill="none" stroke="#ff8ab0" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/></svg>`; }
+/* a crumb cluster on the floor. viewBox 0 0 40 24 */
+function wkkKruemelSVG(){ return `<svg viewBox="0 0 40 24" style="overflow:visible"><g fill="#d8a050" stroke="#9a6a2a" stroke-width="1.4"><path d="M6 14 l6 -4 5 3 -2 6 -7 1Z"/><path d="M22 8 l5 -2 3 4 -4 4 -4 -2Z"/><circle cx="32" cy="18" r="2.6"/><circle cx="16" cy="6" r="1.8"/></g></svg>`; }
+
+Object.assign(SVGP,{WKKSCHUESSEL:[wkkSchuesselSVG,1.43],WKKTUETE:[wkkTueteSVG,.75],WKKBUTTER:[wkkButterSVG,1.8],WKKZUCKER:[wkkZuckerSVG,.78],WKKPFOTEN:[wkkPfotenSVG,2],
+  WKKOFEN:[wkkOfenSVG,.8],WKKUHR:[wkkUhrSVG,.93],WKKGROSS:[wkkGrossSVG,1],WKKKRANZ:[wkkKranzSVG,1.67],WKKTELLER:[wkkTellerSVG,2.67],WKKKRUEMEL:[wkkKruemelSVG,1.67],
+  WKKFSTERN:[()=>wkkFormSVG('stern'),1],WKKFHERZ:[()=>wkkFormSVG('herz'),1],WKKFMOND:[()=>wkkFormSVG('mond'),1],WKKFBAUM:[()=>wkkFormSVG('baum'),1]});
+
+/* ---------- the set: the kitchen in winter ---------- */
+Object.assign(SETS2,{ wkkkueche:{clean:1, sky:'#fff4dc'} });
+Object.assign(TSYL,{MEHL:TSYL.MEHL||'MEHL','KRÜMEL':TSYL['KRÜMEL']||'KRÜ-MEL',UHR:TSYL.UHR||'UHR',KEKS:TSYL.KEKS||'KEKS',HERZ:TSYL.HERZ||'HERZ',MOND:TSYL.MOND||'MOND',BAUM:TSYL.BAUM||'BAUM'});
+
+/* ---------- sounds: flour puff, plopp, tick-tock, the timer bell, the icing, the rolling pin, little paws ---------- */
+const wkkLate=()=>!tale||!tale.t||tale.t.id!=='kekse'||!taleOn();
+function wkkTone(x,f0,f1,ms,v,type){ const ac=feeAC(); if(!ac||wkkLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function wkkNoise(x,v,f0,f1,ms,type){ const ac=feeAC(); if(!ac||wkkLate()) return; try{ const t=ac.currentTime, out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.05,d*.25)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function wkkPuffSnd(x){ wkkNoise(x,.2,1400,260,900,'lowpass'); wkkTone(x,160,70,300,.08,'sine'); }
+function wkkPlopp(x){ wkkTone(x,520,180,140,.12,'sine'); }
+function wkkTick(x,k){ wkkTone(x,k%2?2400:1900,k%2?2300:1800,40,.05,'square'); }
+function wkkKling(x){ [0,1,2,3].forEach(i=>setTimeout(()=>{ wkkTone(x,2637,2637,500,.05,'sine'); wkkTone(x,3136,3136,400,.03,'sine'); },i*170)); }
+let wkkSqT=0; function wkkSquish(x){ const t=now(); if(t-wkkSqT<110) return; wkkSqT=t; wkkNoise(x,.035,900+Math.random()*300,500,120,'lowpass'); }
+function wkkTapp(x){ wkkTone(x,300,160,90,.08,'triangle'); wkkNoise(x,.03,800,400,80,'lowpass'); }
+function wkkPlatsch(x){ wkkNoise(x,.12,700,200,260,'lowpass'); wkkTone(x,260,90,200,.08,'sine'); }
+function wkkKnusper(x){ for(let i=0;i<3;i++) setTimeout(()=>wkkNoise(x,.07,3200,1800,70,'highpass'),i*110); }
+function wkkFlammen(x){ wkkNoise(x,.05,1800,600,260,'bandpass'); }
+
+/* ---------- helpers ---------- */
+/* the wooden spoon goes round the rim with the stirring (TB.ss = the angle she has turned so far) */
+function wkkSpoon(a){ const B=TB&&TB.els.schuessel, L=B&&B.querySelector('.wkkloe'); if(!L) return; const t=a!=null?a:(TB.ss||0);
+  L.setAttribute('transform',`translate(${(Math.cos(t)*46).toFixed(1)} ${(Math.sin(t)*8).toFixed(1)}) rotate(${(Math.cos(t)*-10).toFixed(1)} 100 46)`); }
+/* the bowl as far as the story has got: flour (--lv), dough (.teig), spoon (.loeffel) */
+function wkkBowl(){ const B=TB&&TB.els.schuessel; if(!B) return; B.style.setProperty('--lv',TST.lv||0); B.classList.toggle('teig',TST.bt==='teig'); B.classList.toggle('loeffel',!!TST.loe); if(TST.loe) wkkSpoon(0); }
+/* the big white flour cloud */
+function wkkPuff(x,y){ const P=el('div','wkkpuff'); P.style.setProperty('--x',x+'px'); P.style.setProperty('--y',y+'px'); $('fx').appendChild(P); setTimeout(()=>P.remove(),2600); wkkPuffSnd(x);
+  const u=vu(); for(let i=0;i<40;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*u*20,y:y-u*4,vx:(Math.random()-.5)*60*u,vy:-(6+Math.random()*26)*u,s:1.2+Math.random()*1.6,life:1.6+Math.random(),c:'rgba(255,255,255,.85)'});
+  fxBurst(x,y,30,['rgba(255,255,255,.95)','rgba(250,246,236,.9)'],50); }
+/* Socke covered in flour */
+function wkkSockeSVG(){ return sockeSVG().split('#2c2840').join('#fbfaf6').split('#141220').join('#aaa4b4').split('#4a4460').join('#e4e0e8').replace('<g stroke="#fff" stroke-width="1.2"','<g stroke="#9a94a4" stroke-width="1.2"'); }
+function wkkWeiss(){ const S=TB&&TB.els.socke; if(!S||!TST.skw||S.classList.contains('wkkweiss')) return; S.classList.add('wkkweiss'); const b=S.querySelector(':scope>.bb'); if(b) b.innerHTML=wkkSockeSVG(); }
+/* a cookie prop (shape, state classes) */
+function wkkKeks(sh,x,y,z,cls){ const k=el('div','tp2 wkkk'+(cls?' '+cls:''),wkkKeksSVG(sh)); k.style.cssText=`left:${x}%;top:${y}%;width:${z}vh`; k.dataset.sh=sh; return k; }
+/* the tray with the cookies cut so far; on the tray they sit in a row */
+function wkkTraySlots(B,n){ const out=[]; for(let i=0;i<n;i++) out.push(eikAt(B,.14+i*.18,-.55)); return out; }
+function wkkFillTray(B,z,cls){ const L=TST.kk||[]; wkkTraySlots(B,L.length).forEach(([x,y],i)=>{ const k=wkkKeks(L[i],x,y,z,cls); TB.act.appendChild(k); TB.els['tk'+i]=k; }); }
+/* the crumbs on Boris's nose (a little cluster next to his nose) */
+function wkkNasenKruemel(){ const B=TB.els.boris; if(!B||TB.els.nkr) return; const n=B.querySelector('.famnose'); if(!n) return; const [x,y]=ctr(n), [px,py]=wpos(x,y-vu()*1.2);
+  const K=prop('WKKKRUEMEL',px,py,3.6,'tp2 wkkkr wkknk'); TB.act.appendChild(K); TB.els.nkr=K; sqs(K); }
+/* evening: the walls go warm, the lamp and the wreath glow */
+function wkkAbend(on){ const R=TB.els.room; TST.abend=on?1:0; if(R) R.classList.toggle('wkkabend',!!on); FX.darkT=on?.3:0;
+  if(on&&!TB.els.lampe){ const L=el('div','tp2 wkklampe'); L.style.cssText='left:50%;top:11%;width:4vh;height:4vh'; TB.act.appendChild(L); TB.els.lampe=L; light({el:L,r0:10,rT:62,k0:.3,kT:.85,warm:1}); }
+  const K=TB.els.kranz; if(K&&on&&!K.classList.contains('lit')){ K.classList.add('lit'); wkkFlammen(ctr(K)[0]); light({el:K,oy:.2,r0:2,rT:26,k0:.2,kT:.9,warm:1,flick:1}); }
+  const T=TB.els.teller; if(T&&on) light({el:T,oy:.3,r0:2,rT:18,k0:.2,kT:.6,warm:.8}); }
+/* the dial target: a star on the face of the timer (low on the right) */
+function wkkUhrMark(){ const U=TB.els.uhr, a=50*Math.PI/180; return eikAt(U,(70+Math.cos(a)*35)/140,(82+Math.sin(a)*35)/150).map(v=>+v.toFixed(2)); }
+/* the yellow wedge on the timer follows the pointer */
+function wkkWedge(da){ const U=TB&&TB.els.uhr, W=U&&U.querySelector('.wkkwed'); if(!W) return; let a0=-90, a1=da; if(a1<a0) a1=a0; const sw=Math.min(359,a1-a0);
+  const p=a=>[70+Math.cos(a*Math.PI/180)*40, 82+Math.sin(a*Math.PI/180)*40]; const [x0,y0]=p(a0), [x1,y1]=p(a0+sw);
+  W.setAttribute('d',`M70 82 L${x0.toFixed(1)} ${y0.toFixed(1)} A40 40 0 ${sw>180?1:0} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}Z`); }
+
+/* ---------- the new gesture: spritzen (pipe icing along the dotted lines on the big cookie). Like the chalk drawing (kreiden), but a
+   piping bag follows the finger and white icing comes out where it goes. a:{id (the cookie), pct, tol} ---------- */
+G2.spritzen=Object.assign(Object.create(G2.kreiden),{
+  setup(){ G2.kreiden.setup.call(this); const k=TB.kd; if(k.st) k.st.remove(); const S=el('div','wkksb',wkkBeutelSVG()); TB.act.appendChild(S); k.st=S; },
+  tip(x,y,on){ const S=TB.kd&&TB.kd.st; if(!S) return; putAt(S,x,y); S.classList.toggle('on',!!on); if(on){ wkkSquish(x); if(Math.random()<.3) fxAdd({k:'spark',x,y,vx:(Math.random()-.5)*6*vu(),vy:-2*vu(),life:.5,s:.7,c:'rgba(255,255,255,.95)'}); } }
+});
+
+/* the cutters: like drag, but only a drop on the dough counts (the dough is big, the plain drag zone would also take a tap) */
+G2.ausstechen=Object.assign(Object.create(G2.drag),{ zone(){ const T=TB.els[TB.a.to], [x,y]=ctr(T); return {x,y,r:T.getBoundingClientRect().width*.5}; } });
+
+/* ================= Eefje backt Weihronte-Kekse ================= */
+/* heart: the day after she decorated her room, Ehfje bakes Christmas cookies with Mama – "Weihronte-Kekse", of course. The flour goes
+   puff and Socke is a white "Weihronte-Schneekater"; her spell makes the spoon whizz and a blob of dough lands on Mama's nose ("maybe
+   without magic"); Socke walks over the rolled dough – "Weihronte-Pfoten!" – and the paw print becomes a cookie too. The kitchen timer
+   ticks, Papa and Janneke come in ("smells like Weihnachten" – "like Weihronte!"); she pipes icing on the big star and magics sprinkles
+   on all of them. Then the moon cookie is missing: the crumbs lead to Boris. In the evening Papa says "Frohe Weihnachten" – and this
+   time Mama says "Frohe Weihronte!" together with Ehfje. */
+const WKKDUR={};
+const WKK2={id:'kekse', v2:true, eef:1, fam:1, dur:WKKDUR, title:'Eefje backt Weihronte-Kekse', vtitle:'Ehfje backt Weihronte-Kekse', icon:'🍪',
+ cover:'linear-gradient(180deg,#6a3a2a 0%,#b8683a 38%,#f0b070 72%,#fff0c8 100%)',
+ cast(sc){ const A=TB.act;
+  const R=el('div','eikroom wkkroom',wkkRoomSVG()); A.insertBefore(R,A.firstChild); TB.els.room=R; if(TST.abend) R.classList.add('wkkabend');
+  FAM2.cast.call(this,sc); wkkWeiss(); wkkBowl();
+  const T=TB.els.teig; if(T){ T.style.setProperty('--rp',TST.rp||0); }
+  const P=TB.els.pfoten; if(P&&TST.pf) P.classList.add('on');
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='schuessel'){ sqs(b); wkkPlopp(x); fxBurst(x,y-u*4,8,['rgba(255,255,255,.9)']); return true; }
+  if(id==='tuete'){ sqs(b); fxBurst(x,y-u*6,10,['rgba(255,255,255,.9)']); wkkNoise(x,.05,1200,500,200,'lowpass'); return true; }
+  if(id==='ofen'){ sqs(b); wkkTone(x,880,880,120,.04); glitterBurst(x,y,8,8); return true; }
+  if(id==='uhr'){ sqs(b); wkkTick(x,0); setTimeout(()=>wkkTick(x,1),220); return true; }
+  if(id==='teig'||id==='pfoten'||id==='gross'||id==='teller'||id==='kranz'){ sqs(b); chime([784]); return true; }
+  if(/^tk\d$|^kk\d$/.test(id)){ sqs(b); wkkKnusper(x); glitterBurst(x,y,6,6); return true; }
+  if(/^f\d$/.test(id)||id==='blech'){ sqs(b); wkkTone(x,1568,1568,200,.04); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – a snowy winter morning in the kitchen. "Heute backen wir Weihnachtskekse" – "Weihronte-Kekse!" First the flour (pour) – puff, a
+    big white cloud, and Socke is all white: "Ein Weihronte-Schneekater!" */
+ {set:'wkkkueche', dark:0, u:[7,84,12], ef:[22,66,26,'st'], mama:[85,57,24], sk:[33,72,8], boris:[95,91,15,'lie'],
+  p:[['tisch','EIKTISCH',52,88,100],['schuessel','WKKSCHUESSEL',50,70,19,'wkkbowl'],['tuete','WKKTUETE',69,68,20,'wkktue']],
+  front:['tisch','socke','schuessel','tuete'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'smile',bom:'sleepy',lv:0,bt:'',loe:0,skw:0,rp:0,pf:0,kk:[],abend:0},
+  enter(){ onPh('dicker Schnee',()=>{ const R=TB.els.room; glitterBurst(innerWidth*.8,innerHeight*.3,10,14); chime([1318,1175,988]); });
+    talk('mama','Heute backen','sagte Mama'); onPh('Heute backen',()=>{ mood('mama','happy'); famArm('mama','wide'); });
+    talk('hexe','Weihronte-Kekse','rief Ehfje'); onPh('Weihronte-Kekse',()=>{ famArm('mama','dn'); mood('hexe','laugh'); efArm('up'); });
+    onPh('hüpfte',()=>{ const E=TB.els.hexe; famHop(E,22,66,500,8); });
+    onPh('Socke und',()=>{ sqs(TB.els.socke); mood('socke','happy'); efArm('dn'); mood('hexe','happy'); }); onPh('dein Einhorn',()=>uniHop());
+    onPh('das Mehl',()=>{ const T=TB.els.tuete; sqs(T); glitterBurst(...relEl(T,[.5,.2]),8,10); mood('mama','smile'); });
+    onPh('Zieh die',()=>{ efArm('fwd'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'pour',id:'tuete',to:'schuessel',lv:[0,1],lip:[-.3,-.44],tilt:-112,ms:3000,col:'rgba(255,255,255,.96)',pc:'rgba(255,255,255,.95)',w:'MEHL'},
+  h:'Zieh die Mehltüte über die Schüssel und halt sie still!',
+  s:'Draußen lag dicker Schnee, aber in der Küche war es warm und gemütlich. Heute backen wir Weihnachtskekse, sagte Mama. Weihronte-Kekse! rief Ehfje und hüpfte vor Freude. Socke und dein Einhorn schauten neugierig zu. Zuerst kommt das Mehl in die Schüssel. Zieh die Tüte über die Schüssel und halt sie still!',
+  pouring(p){ TST.lv=p; if(p>.3&&!TB.wp){ TB.wp=1; mood('hexe','laugh'); mood('socke','oh'); } if(p>.6&&!TB.wq){ TB.wq=1; famArm('mama','up'); mood('mama','happy'); } },
+  done(){ TST.lv=1; mood('hexe','happy'); efArm('dn'); },
+  d:[()=>{ onPh('rieselte',()=>{ const B=TB.els.schuessel; sqs(B); },'d1');
+       onPh('Puff',()=>{ const B=TB.els.schuessel, [x,y]=relEl(B,[.5,.2]); wkkPuff(x,y); mood('hexe','oh'); mood('mama','oh'); mood('socke','oh'); famArm('mama','dn');
+         bLater(()=>{ TST.skw=1; wkkWeiss(); },700); },'d1');
+       onPh('durch die Küche',()=>{ const u=vu(); for(let i=0;i<14;i++) fxAdd({k:'dust',x:Math.random()*innerWidth,y:innerHeight*(.2+Math.random()*.5),vx:(Math.random()-.5)*20*u,vy:(2+Math.random()*4)*u,s:1+Math.random(),life:2,c:'rgba(255,255,255,.7)'}); },'d1'); },
+     'Das Mehl rieselte in die Schüssel. Und auf einmal machte es: Puff! Eine dicke weiße Wolke flog durch die Küche.',
+     ()=>{ onPh('ganz weiß',()=>{ const S=TB.els.socke; sqs(S); mood('socke','oh'); bubble('mau?',...relEl(S,[.5,0]),3.2,'#fff'); },'d2');
+       talk('hexe','Ein Weihronte-Schneekater','kicherte','d2'); onPh('Ein Weihronte-Schneekater',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); },'d2');
+       onPh('auch Mama',()=>{ mood('mama','laugh'); mood('socke','happy'); efArm('dn'); const [x,y]=relEl(TB.els.socke,[.5,.3]); glitterBurst(x,y,8,8); },'d2'); },
+     'Als die Wolke weg war, war Socke ganz weiß. Ein Weihronte-Schneekater! kicherte Ehfje. Da musste auch Mama lachen.', 700]},
+
+ /* 2 – butter, sugar and two eggs go in (plopp, plopp); stir (stir). It is heavy – her spell makes the spoon whizz round by itself,
+    faster and faster, and splat: a blob of dough lands on Mama's nose. "Vielleicht lieber ohne Zauber." */
+ {set:'wkkkueche', dark:0, u:[94,84,11], ef:[15,58,40,'st'], mama:[87,50,36], sk:[33,73,10],
+  p:[['tisch','EIKTISCH',50,93,150],['schuessel','WKKSCHUESSEL',51,64,38,'wkkbowl'],['butter','WKKBUTTER',74,77,5.4,'wkkzt'],['zucker','WKKZUCKER',81,71,12,'wkkzt'],['ei1','EGG',72,68,6.4,'wkkzt'],['ei2','EGG',77,69,6.4,'wkkzt']],
+  front:['tisch','socke','schuessel','butter','zucker','ei1','ei2'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'happy',lv:1,skw:1},
+  enter(){ onPh('Butter',()=>{ const B=TB.els.butter; flyInto(B,TB.els.schuessel,()=>{ wkkPlopp(ctr(TB.els.schuessel)[0]); sqs(TB.els.schuessel); },900); });
+    onPh('Zucker',()=>{ const Z=TB.els.zucker, S=TB.els.schuessel; try{ Z.animate([{rotate:'0deg'},{rotate:'-60deg'},{rotate:'-60deg'},{rotate:'0deg'}],{duration:1600}); }catch(e){}
+      streamFx(()=>relEl(Z,[.2,.1]),()=>relEl(S,[.5,.3]),1100,'rgba(255,255,255,.9)'); });
+    onPh('zwei Eier',()=>{ ['ei1','ei2'].forEach((k,i)=>bLater(()=>flyInto(TB.els[k],TB.els.schuessel,()=>{ wkkPlopp(ctr(TB.els.schuessel)[0]); sqs(TB.els.schuessel); bubble('plopp!',...relEl(TB.els.schuessel,[.5,.1]),3.4,'#fff6c0'); },800),i*500)); });
+    onPh('Jetzt wird',()=>{ TST.bt='teig'; TST.loe=1; wkkBowl(); const S=TB.els.schuessel; glitterBurst(...relEl(S,[.5,.3]),12,14); mood('mama','happy'); famArm('mama','wide'); });
+    talk('mama','Jetzt wird','sagte Mama'); onPh('Rühr mit',()=>{ famArm('mama','dn'); efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); TST.bt='teig'; TST.loe=1; wkkBowl(); ['butter','zucker','ei1','ei2'].forEach(k=>{ const e=TB.els[k]; if(e&&k!=='zucker'){ e.getAnimations().forEach(q=>q.cancel()); e.style.visibility='hidden'; } }); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'stir',id:'schuessel',turns:2,pc:'rgba(255,230,160,.95)',w:'LÖFFEL'},
+  h:'Rühr mit dem Finger in der Schüssel, immer im Kreis!',
+  s:'Dann kamen Butter, Zucker und zwei Eier dazu. Plopp, plopp! Jetzt wird gerührt, sagte Mama. Rühr mit dem Löffel, immer rundherum!',
+  stirring(p){ wkkSpoon(); if(p>.5&&!TB.wp){ TB.wp=1; mood('hexe','worry'); } },
+  done(){ mood('hexe','worry'); efArm('dn'); wkkSpoon(); },
+  d:[()=>{ talk('hexe','Puh','stöhnte','d1'); talk('hexe','Mit Zauber',null,'d1'); onPh('Puh',()=>{ mood('hexe','worry'); },'d1');
+       onPh('Mit Zauber',()=>{ mood('hexe','happy'); },'d1'); onPh('hob ihren',()=>{ efArm('up'); },'d1'); onPh('Kribbel',()=>efSpell(18),'d1');
+       onPh('eins, zwei',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,14,14); },'d1'); },
+     'Puh, ist das schwer! stöhnte Ehfje. Mit Zauber geht das schneller! Sie hob ihren Finger: Kribbel, krabbel, Zauberei – Löffel, rühr, eins, zwei, drei!',
+     ()=>{ onPh('sauste der',()=>{ const B=TB.els.schuessel; B.classList.add('wild'); const sw=B.querySelector('.swirl'); if(sw) sw.style.transform=''; let a=0, sp=4; const run=tale.run, sc=TB.sc;
+         const iv=setInterval(()=>{ if(!okRun(run,sc)||!B.classList.contains('wild')){ clearInterval(iv); return; } sp=Math.min(22,sp*1.03); a+=sp*.04; wkkSpoon(a); if(sw) sw.style.transform=`rotate(${(a*57.3).toFixed(0)}deg)`;
+           if(Math.random()<.25){ const [x,y]=relEl(B,[.5,.32]); fxAdd({k:'spark',x:x+(Math.random()-.5)*vu()*20,y,vx:(Math.random()-.5)*30*vu(),vy:-14*vu(),life:.6,s:1.2,c:'rgba(255,226,140,.95)'}); } },30); taleT.push(iv);
+         mood('hexe','oh'); efArm('dn'); glitterBurst(...relEl(B,[.5,.3]),12,12); },'d2');
+       onPh('immer schneller',()=>{ mood('mama','oh'); wiggle(TB.els.schuessel); },'d2');
+       onPh('platsch',()=>{ const B=TB.els.schuessel, M=TB.els.mama, bb=M.querySelector(':scope>.bb'), [x0,y0]=wpos(...relEl(B,[.5,.3])), K=el('div','tp2 wkkkl'); K.style.cssText=`left:${x0}%;top:${y0}%;width:3.6vh;height:2.8vh`; TB.act.appendChild(K); TB.els.klecks=K;
+         wkkPlatsch(ctr(B)[0]); const [tx,ty]=wpos(...relEl(bb,[.5,.19])); kiPath(K,[[(x0+tx)/2,Math.min(y0,ty)-18],[tx,ty]],700,()=>{ wkkPlatsch(ctr(M)[0]); sqs(M); mood('mama','oh'); fxBurst(...ctr(K),12,['rgba(246,220,154,.95)']); B.classList.remove('wild'); wkkSpoon(0); }); },'d2'); },
+     'Da sauste der Löffel ganz allein im Kreis, immer schneller und schneller. Und platsch! flog ein Klecks Teig mitten auf Mamas Nase.',
+     ()=>{ talk('hexe','Ups','sagte Ehfje','d3'); talk('mama','Vielleicht',null,'d3'); onPh('Ups',()=>{ mood('hexe','oh'); efArm('hug'); },'d3');
+       onPh('wischte',()=>{ const K=TB.els.klecks; famArm('mama','up'); if(K){ K.style.transition='opacity .6s'; K.style.opacity=0; } },'d3');
+       onPh('und lachte',()=>{ mood('mama','laugh'); famArm('mama','dn'); mood('hexe','laugh'); efArm('dn'); },'d3'); },
+     'Ups! sagte Ehfje. Mama wischte sich die Nase ab und lachte: Vielleicht backen wir lieber ohne Zauber.', 700]},
+
+ /* 3 – roll the dough out (roll). Then Socke jumps on the table and walks right across it: tapp, tapp, tapp – "Weihronte-Pfoten!" */
+ {set:'wkkkueche', dark:0, u:[95,84,11], ef:[15,58,40,'st'], mama:[90,50,36], sk:[82,72,11],
+  p:[['tisch','EIKTISCH',50,93,150],['teig','TEIG',50,72,24,'tp2 teig2'],['pfoten','WKKPFOTEN',50,72,24,'wkkpf'],['holz','HOLZ',50,72,7.2,'holz2']],
+  front:['tisch','teig','pfoten','socke','holz'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'smile',rp:0,bt:'teig',loe:1,skw:1},
+  enter(){ onPh('auf den Tisch',()=>{ const T=TB.els.teig; sqs(T); glitterBurst(...ctr(T),10,12); famArm('mama','up'); });
+    onPh('Nudelholz',()=>{ const H=TB.els.holz; sqs(H); glitterBurst(...ctr(H),8,8); chime([988,1175]); famArm('mama','dn'); mood('hexe','happy'); });
+    onPh('ganz flach',()=>{ mood('mama','happy'); }); onPh('Roll ihn',()=>{ efArm('fwd'); }); },
+  ready(){ efReady(); efArm('fwd'); mood('hexe','happy'); },
+  a:{t:'roll',id:'teig',pin:'holz',len:150,pct:.7,w:'TEIG'},
+  h:'Fahr mit dem Nudelholz über den Teig, hin und her!',
+  s:'Mama legte den Teig auf den Tisch und gab Ehfje das Nudelholz. Jetzt muss der Teig ganz flach werden. Roll ihn aus, immer hin und her!',
+  rolling(p){ TST.rp=p; if(p>.35&&!TB.wp){ TB.wp=1; mood('hexe','laugh'); } if(p>.5&&!TB.wq){ TB.wq=1; mood('socke','happy'); sqs(TB.els.socke); } },
+  done(){ TST.rp=1; mood('hexe','happy'); efArm('dn'); const H=TB.els.holz; bLater(()=>{ if(H){ H.style.transition='opacity .5s'; H.style.opacity=0; } },700); },
+  d:[()=>{ onPh('groß und flach',()=>{ glitterBurst(...ctr(TB.els.teig),14,18); },'d1');
+       onPh('sprang Socke',()=>{ const S=TB.els.socke, T=TB.els.teig, [x,y]=eikAt(T,.95,.42); famHop(S,x,y,600,10); mood('socke','happy'); mood('mama','oh'); },'d1');
+       onPh('lief mitten',()=>{ const S=TB.els.socke, T=TB.els.teig, P=TB.els.pfoten; TST.pf=1;
+         const pts=WKKPF.map(([px,py])=>eikAt(T,px/200,py/100-.12)); kiPath(S,pts.map(p=>[p[0],p[1]]),2400);
+         WKKPF.forEach((_,i)=>bLater(()=>{ const w=P.querySelector('.wp'+i); if(w) w.classList.add('on'); wkkTapp(ctr(P)[0]); },300+i*470));
+         mood('hexe','oh'); },'d1');
+       onPh('Tapp, tapp',()=>{ const S=TB.els.socke; bubble('tapp!',...relEl(S,[.5,0]),3,'#fff'); },'d1'); },
+     'Der Teig wurde groß und flach und glatt. Aber da sprang Socke auf den Tisch und lief mitten über den Teig. Tapp, tapp, tapp!',
+     ()=>{ talk('mama','Oh nein','rief Mama','d2'); talk('hexe','Schau mal',null,'d2'); onPh('Oh nein',()=>{ mood('mama','oh'); famArm('mama','up'); },'d2');
+       onPh('Doch Ehfje',()=>{ mood('hexe','laugh'); famArm('mama','dn'); },'d2'); onPh('Weihronte-Pfoten',()=>{ efArm('up'); uniHop(); const P=TB.els.pfoten; P.classList.add('on','wkkglanz'); glitterBurst(...relEl(P,[.8,.6]),20,20); mood('mama','laugh'); },'d2'); },
+     'Oh nein, Socke! rief Mama. Doch Ehfje lachte: Schau mal, Mama! Weihronte-Pfoten!', 700]},
+
+ /* 4 – the cutters: star, heart, moon, tree – drag each one onto the dough (drag, a word for each); the cookies hop onto the tray.
+    And the paw print becomes a cookie too */
+ {set:'wkkkueche', dark:0, u:[94,62,10], ef:[12,58,36,'st'], sk:[93,79,9],
+  p:[['tisch','EIKTISCH',50,93,150],['teig','TEIG',37,73,26,'tp2 teig2'],['pfoten','WKKPFOTEN',37,73,26,'wkkpf on'],['blech','BLECH',78,74,5.4,'tp2 blech'],
+     ['f1','WKKFSTERN',66,90,9,'wkkform'],['f2','WKKFHERZ',74,91,9,'wkkform'],['f3','WKKFMOND',82,90,9,'wkkform'],['f4','WKKFBAUM',90,91,9,'wkkform']],
+  front:['tisch','teig','pfoten','blech','socke','f1','f2','f3','f4'],
+  st:{efm:'happy',efa:'dn',skm:'happy',rp:1,pf:1,kk:[],skw:1},
+  enter(){ onPh('die Formen',()=>{ ['f1','f2','f3','f4'].forEach((k,i)=>bLater(()=>{ const F=TB.els[k]; sqs(F); glitterBurst(...ctr(F),6,6); chimeAt([1175+i*130],ctr(F)[0]); },i*180)); mood('hexe','laugh'); });
+    onPh('einen Stern',()=>wiggle(TB.els.f1)); onPh('ein Herz',()=>wiggle(TB.els.f2)); onPh('einen Mond',()=>wiggle(TB.els.f3)); onPh('einen Baum',()=>wiggle(TB.els.f4));
+    onPh('Zieh die',()=>{ efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); efArm('fwd'); mood('hexe','happy'); },
+  a:{t:'ausstechen',ids:['f1','f2','f3','f4'],to:'teig',w:{f1:'STERN',f2:'HERZ',f3:'MOND',f4:'BAUM'}},
+  h:'Zieh eine Form auf den Teig!',
+  s:'Jetzt kommen die Formen! Mama legte einen Stern, ein Herz, einen Mond und einen Baum auf den Tisch. Zieh die Formen auf den Teig, dann stechen sie Kekse aus!',
+  item(id,b){ const k=(TST.kk||[]).length, sh={f1:'stern',f2:'herz',f3:'mond',f4:'baum'}[id], T=TB.els.teig, sp=[[.17,.58],[.33,.48],[.33,.78],[.5,.62]][k], [sx,sy]=eikAt(T,sp[0],sp[1]);
+    b.style.transition='left .35s ease-out,top .35s ease-out'; b.style.left=sx+'%'; b.style.top=sy+'%'; TST.kk=(TST.kk||[]).concat([sh]);
+    bLater(()=>{ b.classList.remove('wkkpress'); void b.offsetWidth; b.classList.add('wkkpress'); wkkTapp(ctr(b)[0]); },380);
+    bLater(()=>{ const h=el('div','wkkloch',wkkLochSVG(sh)); h.style.left=sp[0]*100+'%'; h.style.top=sp[1]*100+'%'; T.appendChild(h);
+      const [px,py]=wpos(...ctr(b)), c=wkkKeks(sh,px,py,7.4); TB.act.appendChild(c); TB.els['kk'+k]=c; const B=TB.els.blech, [tx,ty]=wkkTraySlots(B,5)[k];
+      kiPath(c,[[(px+tx)/2,Math.min(py,ty)-14],[tx,ty]],750,()=>{ sqs(c); wkkPlopp(ctr(c)[0]); }); glitterBurst(...ctr(b),10,10);
+      b.style.transition='opacity .5s'; b.style.opacity=0; mood('hexe',k%2?'happy':'laugh'); if(k===2){ const S=TB.els.socke; sqs(S); mood('socke','happy'); } },720); },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('lagen auf dem Blech',()=>{ for(let i=0;i<4;i++){ const c=TB.els['kk'+i]; if(c) bLater(()=>{ sqs(c); chimeAt([988+i*130],ctr(c)[0]); },i*180); } efArm('dn'); },'d1');
+       onPh('Pfotenabdruck',()=>{ const P=TB.els.pfoten; P.classList.add('wkkglanz'); glitterBurst(...relEl(P,[.78,.6]),16,16); efSpell(10); mood('hexe','happy'); },'d1');
+       onPh('auch ein Keks',()=>{ const P=TB.els.pfoten, B=TB.els.blech, [x0,y0]=eikAt(P,.78,.62), c=wkkKeks('pfote',x0,y0,7.4); TB.act.appendChild(c); TB.els.kk4=c; TST.kk=(TST.kk||[]).concat(['pfote']);
+         P.classList.remove('on','wkkglanz'); const [tx,ty]=wkkTraySlots(B,5)[4]; kiPath(c,[[(x0+tx)/2,Math.min(y0,ty)-16],[tx,ty]],900,()=>{ sqs(c); glitterBurst(...ctr(c),12,10); chime([1318,1568]); }); trail(c,900); },'d1');
+       onPh('Weihronte-Pfoten-Keks',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); const S=TB.els.socke; sqs(S); bubble('miau!',...relEl(S,[.5,0]),3.2,'#fff'); },'d1'); },
+     'Stern, Herz, Mond und Baum lagen auf dem Blech. Und Sockes Pfotenabdruck wurde auch ein Keks: ein Weihronte-Pfoten-Keks!', 800]},
+
+ /* 5 – the tray goes into the oven; set the kitchen timer to the star (dial). Tick, tack – the cookies go golden brown and it smells
+    lovely; Papa comes in with Janneke: "Hier riecht es nach Weihnachten!" – "Nach Weihronte!" – kling, kling: ready */
+ {set:'wkkkueche', dark:0, u:[8,84,12], ef:[22,64,27,'st'], mama:[63,57,24], boris:[69,90,15,'lie'], papa:[-12,57,26], jn:'papa',
+  p:[['ofen','WKKOFEN',84,63,44,'wkkofen'],['tisch','EIKTISCH',33,95,84],['uhr','WKKUHR',40,73,24,'wkkuhr']],
+  front:['tisch','uhr'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',bom:'sleepy',pam:'smile',paa:'carry',jam:'smile',dA:-90},
+  enter(){ TST.kk=(TST.kk&&TST.kk.length?TST.kk:WKKKS.slice()); if(!TST.kk.includes('pfote')) TST.kk=TST.kk.concat(['pfote']); TB.sc.a.mark=wkkUhrMark(); const O=TB.els.ofen; O.style.setProperty('--gl',0); O.style.setProperty('--bk',0); wkkWedge(-90); const U=TB.els.uhr, z=U.querySelector('.wkkzg'); if(z) z.style.transform='rotate(-90deg)';
+    onPh('in den Ofen',()=>{ const O=TB.els.ofen; O.classList.add('in'); sqs(O); wkkTone(ctr(O)[0],220,140,240,.08,'triangle'); famArm('mama','up'); mood('mama','happy'); });
+    onPh('backen',()=>{ const O=TB.els.ofen; O.classList.add('an'); O.style.setProperty('--gl',.35); famArm('mama','dn'); light({el:O,oy:.6,r0:2,rT:12,k0:.2,kT:.5,warm:1}); });
+    onPh('Stell die',()=>{ const U=TB.els.uhr; sqs(U); glitterBurst(...ctr(U),10,10); efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady();  const O=TB.els.ofen; O.classList.add('in','an'); O.style.setProperty('--gl',.35); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'dial',id:'uhr',c:[.5,82/150],part:'.wkkzg',from:-90,mark:[40,73],msz:5,tol:16,R:11,w:'UHR'},
+  h:'Dreh die Uhr mit dem Finger bis zum Stern!',
+  s:'Mama schob das Blech in den Ofen. Jetzt müssen die Kekse backen. Stell die Küchenuhr! Dreh sie mit dem Finger bis zum Stern!',
+  dialing(da){ wkkWedge(da); const q=Math.floor((da+90)/30); if(q>(TB.wq||0)){ TB.wq=q; wkkTick(ctr(TB.els.uhr)[0],q); } },
+  done(){ mood('hexe','laugh'); efArm('dn'); const U=TB.els.uhr; U.classList.add('tickt'); },
+  d:[()=>{ onPh('Tick, tack',()=>{ const U=TB.els.uhr, x=ctr(U)[0], run=tale.run, sc=TB.sc; let k=0; const iv=setInterval(()=>{ if(!okRun(run,sc)||!U.classList.contains('tickt')){ clearInterval(iv); return; } wkkTick(x,k++); },520); taleT.push(iv); },'d1');
+       onPh('goldbraun',()=>{ const O=TB.els.ofen, t0=now(); O.style.setProperty('--gl',.8); const iv=setInterval(()=>{ const f=Math.min(1,(now()-t0)/2600); O.style.setProperty('--bk',f.toFixed(2)); if(f>=1) clearInterval(iv); },60); taleT.push(iv);
+         FX.em.push({rate:2,fn:()=>{ const r=O.getBoundingClientRect(), u=vu(); fxAdd({k:'dust',x:r.left+r.width*(.3+Math.random()*.4),y:r.top+r.height*.3,vx:(Math.random()-.5)*6*u,vy:-(6+Math.random()*6)*u,s:1.4+Math.random(),life:2.4,c:'rgba(255,230,190,.35)'}); }}); },'d1');
+       onPh('duftete',()=>{ const O=TB.els.ofen, B=TB.els.boris; smellFx(()=>relEl(O,[.5,.35]),()=>famNose(),2600); bLater(()=>{ if(B){ mood('boris','sniff'); B.classList.add('famsnf'); famSniff(ctr(B)[0]); } },1600); mood('hexe','happy'); mood('mama','happy'); },'d1'); },
+     'Tick, tack, tick, tack machte die Uhr. Im Ofen wurden die Kekse langsam goldbraun, und es duftete herrlich.',
+     ()=>{ onPh('Da kam Papa',()=>{ const P=TB.els.papa; kiPath(P,[[2,57],[10,57]],1600); mood('papa','happy'); },'d2');
+       talk('papa','Mmh','sagte Papa','d2'); talk('hexe','Nach Weihronte',null,'d2'); onPh('Mmh',()=>{ mood('papa','happy'); sqs(TB.els.janneke); mood('janneke','laugh'); },'d2');
+       onPh('nach Weihnachten',()=>{ mood('papa','laugh'); },'d2'); onPh('Nach Weihronte',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); mood('mama','laugh'); const B=TB.els.boris; if(B) B.classList.remove('famsnf'); },'d2'); },
+     'Da kam Papa mit Janneke in die Küche. Mmh, hier riecht es nach Weihnachten! sagte Papa. Nach Weihronte! rief Ehfje.',
+     ()=>{ onPh('Kling',()=>{ const U=TB.els.uhr; U.classList.remove('tickt'); U.classList.add('kling'); wkkKling(ctr(U)[0]); bubble('kling!',...relEl(U,[.5,0]),4,'#ffe27a'); mood('hexe','oh'); efArm('dn'); },'d3');
+       onPh('fertig',()=>{ const O=TB.els.ofen; O.style.setProperty('--gl',.15); glitterBurst(...relEl(O,[.5,.55]),24,20); chime([1318,1568,2093]); mood('hexe','laugh'); efArm('up'); TST.gold=1; },'d3'); },
+     'Kling, kling! machte die Uhr. Die Kekse waren fertig.', 700]},
+
+ /* 6 – the icing on the big star (spritzen, new: a piping bag follows the finger, white icing where it goes along the dots). Then her
+    spell: sprinkles rain on all the cookies. "Die schönsten Weihronte-Kekse der Welt!" */
+ {set:'wkkkueche', dark:0, u:[95,84,11], ef:[13,58,38,'st'], mama:[91,50,36], sk:[69,75,9],
+  p:[['tisch','EIKTISCH',50,93,150],['gross','WKKGROSS',45,62,46,'wkkgross'],['blech','BLECH',83,81,5.4,'tp2 blech']],
+  front:['tisch','gross','socke','blech'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'happy',gold:1,skw:1},
+  enter(){ wkkFillTray(TB.els.blech,7.4,'gold'); onPh('weißen Zuckerguss',()=>{ const G=TB.els.gross; sqs(G); glitterBurst(...ctr(G),12,16); chime([988,1175]); mood('hexe','happy'); });
+    onPh('Verzier',()=>{ const G=TB.els.gross; G.classList.remove('krdhint'); void G.offsetWidth; G.classList.add('krdhint'); efArm('fwd'); }); },
+  ready(){ efReady(); efArm('fwd'); mood('hexe','happy'); },
+  a:{t:'spritzen',id:'gross',pct:.55,tol:6,w:'KEKS'},
+  h:'Fahr mit dem Finger die Punkte auf dem Keks nach!',
+  s:'Als die Kekse kalt waren, machte Mama weißen Zuckerguss. Verzier den großen Stern! Fahr mit dem Zuckerguss die Punkte nach!',
+  drawing(p){ const q=Math.floor(p*4); if(q>(TB.dq||0)){ TB.dq=q; mood('hexe',q%2?'laugh':'happy'); } },
+  done(){ mood('hexe','laugh'); efArm('dn'); },
+  d:[()=>{ talk('mama','Wunderschön','sagte Mama','d1'); onPh('Wunderschön',()=>{ mood('mama','happy'); famArm('mama','wide'); mood('hexe','laugh'); },'d1'); onPh('hob ihren',()=>{ efArm('up'); mood('hexe','happy'); famArm('mama','dn'); },'d1');
+       onPh('Kribbel',()=>efSpell(20),'d1'); onPh('macht die Kekse',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,16,16); },'d1'); },
+     'Wunderschön! sagte Mama. Und Ehfje hob ihren Finger: Kribbel, krabbel, kunterbunt – Streusel, macht die Kekse bunt!',
+     ()=>{ onPh('rieselten',()=>{ const G=TB.els.gross; G.classList.add('streu'); for(let i=0;i<5;i++){ const c=TB.els['tk'+i]; if(c) bLater(()=>{ c.classList.add('deko'); sqs(c); glitterBurst(...ctr(c),6,6); },300+i*200); }
+         const u=vu(); for(let i=0;i<60;i++) bLater(()=>fxAdd({k:'glit',x:innerWidth*(.25+Math.random()*.65),y:innerHeight*.2,vy:(10+Math.random()*8)*u,ph:Math.random()*6,s:.8,life:2.5,c:rnd(['rgba(255,90,138,.95)','rgba(90,180,255,.95)','rgba(255,216,74,.95)','rgba(106,216,122,.95)'])}),i*25);
+         chime([1568,1318,1175,1568,2093]); TST.deko=1; mood('hexe','oh'); },'d2');
+       talk('hexe','Die schönsten','rief Ehfje','d2'); onPh('Die schönsten',()=>{ mood('hexe','laugh'); efArm('up'); uniHop(); const S=TB.els.socke; if(S){ sqs(S); mood('socke','happy'); } },'d2'); },
+     'Da rieselten bunte Zuckerstreusel auf alle Kekse. Die schönsten Weihronte-Kekse der Welt! rief Ehfje.', 800]},
+
+ /* 7 – on the plate: star, heart, tree, paw … but where is the moon? Follow the crumbs (tapall) – to Boris, crumbs on his nose. Mama gives
+    him a dog biscuit instead. In the evening the Advent wreath glows: "Frohe Weihnachten" – "Frohe Weihronte!", Ehfje and Mama together */
+ {set:'wkkkueche', dark:0, u:[8,84,12], ef:[22,63,26,'st'], mama:[60,56,24], papa:[76,57,26], jn:'papa', boris:[91,88,19,'lie'], sk:[9,93,8],
+  p:[['tisch','EIKTISCH',42,86,96],['teller','WKKTELLER',36,73,8,'wkkteller'],['kranz','WKKKRANZ',55,71,11,'wkkkranz'],
+     ['c1','WKKKRUEMEL',60,82,3.4,'wkkkr'],['c2','WKKKRUEMEL',66,95,3.6,'wkkkr'],['c3','WKKKRUEMEL',74,93,3.6,'wkkkr'],['c4','WKKKRUEMEL',81,96,3.6,'wkkkr'],['c5','WKKKRUEMEL',86,91,3.6,'wkkkr']],
+  front:['tisch','teller','kranz','c1','c2','c3','c4','c5','boris'],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',pam:'smile',paa:'carry',jam:'smile',bom:'smile',deko:1,skw:1},
+  enter(){ const T=TB.els.teller, L=(TST.kk||WKKKS.concat(['pfote'])).filter(s=>s!=='mond');
+    L.forEach((sh,i)=>{ const [x,y]=eikAt(T,.24+i*.17,.32+(i%2)*.06), c=wkkKeks(sh,x,y,6.4,'gold deko'); TB.act.appendChild(c); TB.els['tk'+i]=c; });
+    onPh('auf einen Teller',()=>{ sqs(TB.els.teller); efArm('fwd'); });
+    onPh('Stern, Herz',()=>{ (TST.kk||[]).filter(s=>s!=='mond').forEach((_,i)=>bLater(()=>{ const c=TB.els['tk'+i]; if(c){ sqs(c); chimeAt([988+i*130],ctr(c)[0]); } },i*260)); });
+    onPh('Nanu',()=>{ mood('hexe','oh'); efArm('dn'); mood('mama','oh'); }); onPh('Wo ist',()=>{ mood('papa','oh'); });
+    onPh('Krümel',()=>{ ['c1','c2','c3','c4','c5'].forEach((k,i)=>bLater(()=>{ const c=TB.els[k]; sqs(c); glitterBurst(...ctr(c),4,4); },i*160)); });
+    onPh('Folg der',()=>{ mood('hexe','happy'); efArm('fwd'); }); },
+  ready(){ efReady(); efArm('fwd'); mood('hexe','happy'); },
+  a:{t:'tapall',ids:['c1','c2','c3','c4','c5'],w:'KRÜMEL'},
+  h:'Tipp auf die Krümel, einen nach dem anderen!',
+  s:'Ehfje legte alle Kekse auf einen Teller. Stern, Herz, Baum, Pfote. Nanu? Wo ist denn der Mond? Auf dem Boden lagen Krümel. Folg der Krümelspur! Tipp auf die Krümel!',
+  item(id,b){ const n=5-TB.left.length; wkkKnusper(ctr(b)[0]); b.style.transition='opacity .6s .3s'; b.style.opacity=0; mood('hexe',n%2?'laugh':'happy');
+    if(n===3){ const B=TB.els.boris; sqs(B); mood('boris','oh'); } },
+  done(){ mood('hexe','oh'); efArm('dn'); },
+  d:[()=>{ onPh('einmal um den Tisch',()=>{ const B=TB.els.boris; dingRing(...ctr(B),vu()*20,'#ffe27a'); },'d1');
+       onPh('lag Boris',()=>{ const B=TB.els.boris; sqs(B); mood('boris','oh'); mood('hexe','oh'); },'d1');
+       onPh('Krümel auf der Nase',()=>{ wkkNasenKruemel(); mood('mama','laugh'); },'d1'); },
+     'Die Krümel führten einmal um den Tisch herum. Und da lag Boris und hatte ganz viele Krümel auf der Nase.',
+     ()=>{ talk('hexe','Boris, hast','fragte Ehfje','d2'); talk('mama','Kekse sind','Und sie gab','d2');
+       onPh('Boris, hast',()=>{ mood('hexe','happy'); efArm('fwd'); },'d2');
+       onPh('Wuff',()=>{ const B=TB.els.boris, [x,y]=relEl(B,[.3,.2]); famWoof(x); bubble('wuff!',x,y-vu()*4,3.6,'#fff0d8'); famWag(1); mood('boris','happy'); const K=TB.els.nkr; if(K){ K.style.transition='opacity .5s'; K.style.opacity=0; } },'d2');
+       onPh('lachten alle',()=>{ ['hexe','mama','papa'].forEach(id=>mood(id,'laugh')); mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],4); },'d2');
+       onPh('Kekse sind',()=>{ mood('mama','happy'); famArm('mama','up'); },'d2');
+       onPh('Hundekeks',()=>{ famArm('mama','dn'); const B=TB.els.boris; sqs(B); hearts(...relEl(B,[.3,.2]),2); chime([784,988]); },'d2'); },
+     'Boris, hast du den Weihronte-Mond gegessen? fragte Ehfje. Wuff! machte Boris und wedelte mit dem Schwanz. Da lachten alle. Kekse sind doch nichts für Hunde! sagte Mama. Und sie gab Boris einen Hundekeks.',
+     ()=>{ onPh('Am Abend',()=>{ wkkAbend(1); famWag(0); mood('boris','sleepy'); efArm('dn'); },'d3');
+       onPh('knabberten',()=>{ const c=TB.els.tk0; if(c){ wkkKnusper(ctr(c)[0]); sqs(c); } mood('hexe','happy'); },'d3');
+       talk('papa','Frohe Weihnachten','sagte Papa','d3'); talk('hexe','Frohe Weihronte','riefen','d3'); talk('mama','Frohe Weihronte','riefen','d3');
+       onPh('Frohe Weihnachten',()=>{ mood('papa','happy'); },'d3');
+       onPh('Frohe Weihronte',()=>{ mood('hexe','laugh'); mood('mama','laugh'); efArm('up'); famArm('mama','up'); uniHop(); const [x,y]=relEl(TB.els.kranz,[.5,.2]); glitterBurst(x,y,20,20); },'d3');
+       onPh('zusammen',()=>{ hearts(...relEl(TB.els.hexe,[.5,.2]),2); hearts(...relEl(TB.els.mama,[.5,.15]),2); },'d3');
+       onPh('musste Papa',()=>{ mood('papa','laugh'); famArm('mama','dn'); sqs(TB.els.papa); mood('janneke','laugh'); },'d3'); },
+     'Am Abend saßen alle zusammen in der Küche und knabberten Kekse. Frohe Weihnachten, sagte Papa. Frohe Weihronte! riefen Ehfje und Mama zusammen. Da musste Papa lachen.',
+     ()=>{ onPh('aufgegessen',()=>{ mood('hexe','happy'); efArm('dn'); },'d4'); onPh('noch heute',()=>{ const T=TB.els.teller; glitterBurst(...relEl(T,[.5,.3]),20,24); wkkKnusper(ctr(T)[0]); chime([1318,1568,2093]); },'d4'); },
+     'Und wenn sie nicht alle aufgegessen sind, dann knuspern sie noch heute.', 1800]}
+ ]};
+/*<WEIHRONTEKEKSE*/
 
 
 
@@ -16995,7 +17483,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},{k:'tale',t:WKK2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -17094,6 +17582,12 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:40%;top:64%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
     `<div class="tp2 chr sck" data-mood="happy" style="left:16%;top:84%;width:16%"><div class="bb">${sockeSVG()}</div></div>`+
     [[12,62,3],[56,12,2.6],[90,18,3],[88,84,2.4],[50,90,2.2]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">❄</span>`).join('')+`</div>`+tw;/*<WRTART*/
+  if(id==='kekse') return `<div class="wkkart" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,#fff4dc 0,#f8d8a0 50%,#c8804a 96%)"></div><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:26%;border-radius:50% 50% 0 0/30% 30% 0 0;background:repeating-linear-gradient(90deg,#fff6f0 0 6%,#f4a8b0 6% 12%)"></div>`+
+    `<div class="tp2 wkkgross krddone streu" style="left:62%;top:46%;width:48%">${wkkGrossSVG()}</div>`+
+    `<div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:26%;top:56%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
+    [['herz',40,86],['mond',58,90],['baum',76,86],['pfote',90,78]].map(([sh,x,y])=>`<div class="tp2 wkkk gold deko" style="left:${x}%;top:${y}%;width:14%">${wkkKeksSVG(sh)}</div>`).join('')+
+    `<div class="tp2 chr sck" data-mood="happy" style="left:12%;top:84%;width:16%"><div class="bb">${wkkSockeSVG()}</div></div>`+
+    [[12,14,3],[50,8,2.6],[88,14,3],[34,26,2.2],[92,52,2.4]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">❄</span>`).join('')+`</div>`+tw;/*<WKKART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -17378,6 +17872,7 @@ regTale2(KRD2);
 regTale2(URK2);
 /* Eefje schmückt ihr Zimmer: after the Urknall, so the older lines keep their order in voice/clips.tsv */
 regTale2(WRT2);
+regTale2(WKK2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
