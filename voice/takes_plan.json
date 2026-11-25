@@ -5042,6 +5042,21 @@
      "say": "Staub"
     }
    ]
+  },
+  {
+   "id": "w_x070_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Mehl. Krümel.",
+   "items": [
+    {
+     "key": "wort_mehl",
+     "say": "Mehl"
+    },
+    {
+     "key": "wort_kruemel",
+     "say": "Krümel"
+    }
+   ]
   }
  ]
 }
