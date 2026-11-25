@@ -5057,6 +5057,21 @@
      "say": "Krümel"
     }
    ]
+  },
+  {
+   "id": "w_x071_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Klotz. Socke.",
+   "items": [
+    {
+     "key": "wort_klotz",
+     "say": "Klotz"
+    },
+    {
+     "key": "wort_socke",
+     "say": "Socke"
+    }
+   ]
   }
  ]
 }
