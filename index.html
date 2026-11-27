@@ -2174,6 +2174,27 @@ i.fly{position:absolute;width:1vh;height:1vh;border-radius:50%;background:#fff6a
 .tp2.rfmohr{filter:drop-shadow(0 .2vh .2vh rgba(0,0,0,.25));rotate:-24deg}
 .rfmhop>.dust{width:40%}
 /*<AUFRAEUMENCSS*/
+/*ZUHAUSECSS>*/
+/* Ehfjes Abenteuer zu Hause (all classes start with "zhs") */
+.zhsgd svg,.zhsding svg,.zhsrl svg,.zhssf svg,.zhstopf svg,.zhsnb svg,.zhshb svg,.zhshf svg,.zhsfl svg,.zhsartx svg{display:block;width:100%;overflow:visible}
+.tp2.zhsgd{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.2))}
+.tp2.zhsding,.tp2.zhsrl,.tp2.zhssf,.tp2.zhsnb{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.22))}
+.zhsding.zhshang>svg{transform-origin:50% 0;animation:zhsswing 2.6s ease-in-out infinite} @keyframes zhsswing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.tp2.zhshb,.tp2.zhshf{filter:drop-shadow(0 .6vh .8vh rgba(0,0,0,.2));transition:opacity .4s}
+.zhshb>.bb,.zhshf>.bb{position:relative} .zhshb .zl,.zhshf .zl{position:absolute;inset:0} .zhshb .zl.zb,.zhshf .zl.zs{position:relative}
+.zhshb .zb,.zhshf .zd{-webkit-clip-path:inset(-30% calc((1 - var(--o,0))*100%) -30% -10%);clip-path:inset(-30% calc((1 - var(--o,0))*100%) -30% -10%)}
+.tp2.zhsnone,.tp2.zhshid{opacity:0}
+.rfmbett.zhsleer .rfmgl,.rfmbett.zhsleer .rfmzk{opacity:0}
+.zhssf .zhssch{opacity:0;transition:opacity .5s} .zhssf.zhsschaum .zhssch{opacity:1}
+.zhstopf .zhsdampf{animation:zhsdampf 2.4s ease-in-out infinite} .zhstopf .zhsdampf+.zhsdampf{animation-delay:-1.2s}
+@keyframes zhsdampf{0%{opacity:0;transform:translateY(6px)}40%{opacity:.6}100%{opacity:0;transform:translateY(-14px)}}
+.tp2.zhstopf{filter:drop-shadow(0 .4vh .5vh rgba(0,0,0,.22))}
+.zhsroom.zhslit .zhsst{filter:drop-shadow(0 0 6px #fff6a0)} .zhsroom.zhslit .zhsst path{animation:zhstw 1.6s ease-in-out infinite}
+.zhsroom.zhslit .zhsst path:nth-child(3n){animation-delay:-.6s} .zhsroom.zhslit .zhsst path:nth-child(3n+1){animation-delay:-1.1s} @keyframes zhstw{50%{opacity:.5}}
+.tp2.zhsnb2{z-index:6} .zhsnb2 .bubble2{border:.3vh solid rgba(255,255,255,.95);box-shadow:0 0 1.2vh rgba(255,255,255,.9),inset 0 0 .8vh rgba(180,230,255,.8)}
+.tp2.zhsted{filter:drop-shadow(0 .3vh .4vh rgba(0,0,0,.22))} .zhsted svg{display:block;width:100%;overflow:visible}
+.chr.zhsli>.bb{scale:-1 1}
+/*<ZUHAUSECSS*/
 /*OLDBOOKCSS>*/
 /* the storybook as a very old magic book: worn leather boards with gold tooling, brass corners and a clasp; yellowed parchment
    pages with foxing; the page block on each side shows how far she has read; a silk ribbon; folded page corners */
@@ -17913,6 +17934,445 @@ const RFM2={id:'aufraeumen', v2:true, eef:1, fam:1, dur:RFMDUR, title:'Eefje rä
      'Und wenn sie nicht fertig geworden sind, dann räumen sie noch heute auf.', 1800]}
  ]};
 /*<AUFRAEUMEN*/
+/*ZUHAUSE>*/
+/* ================= Ehfjes Abenteuer zu Hause: drawn props, rooms, sets, sounds, helpers and the new gesture (all classes and helpers
+   start with "zhs"; checked: no zhs… name existed before) ================= */
+
+/* ---------- the rooms ---------- */
+/* the bathroom by day: the night window of the bedtime tale gets a blue sky with a little sun and a cloud */
+function zhsBadSVG(){ let s=betBadSVG();
+  s=s.replace('fill="#1a2468"','fill="#8ccaf4"').replace('<path d="M330 150 A26 26 0 1 0 330 202 A20 20 0 1 1 330 150Z" fill="#fff3c0"/>','<circle cx="330" cy="168" r="24" fill="#ffe25a"/><circle cx="330" cy="168" r="38" fill="#fff4b0" opacity=".45"/><path d="M196 236 Q200 214 222 220 Q232 202 252 214 Q270 210 268 234Z" fill="#fff"/>')
+   .replace(/<g fill="#fff"><circle cx="210"[\s\S]*?<\/g>/,'');
+  return s; }
+/* inside the cave: the blanket from below – blue with little stars (.zhsst, they glow after the spell), cushions on a soft rug,
+   and on the left the bright way out. viewBox 1600 x 1000 */
+function zhsHoeInSVG(){ const id='zhi'+(++LANC); let st=''; const r=seeded(717);
+  for(let i=0;i<34;i++){ const x=80+r()*1440, y=40+r()*(380-Math.abs(x-800)*.12); st+=betStar(x.toFixed(0)*1,y.toFixed(0)*1,10+r()*9,'#fff3b0'); }
+  let fold=''; for(let i=0;i<9;i++){ const x=i*200-20; fold+=`<path d="M${x} 0 Q${x+30} 300 ${x+90} 560" stroke="#2c5c98" stroke-width="10" fill="none" opacity=".35" stroke-linecap="round"/>`; }
+  return `<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;display:block"><defs>
+   <linearGradient id="${id}c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5aa6dc"/><stop offset=".7" stop-color="#3c7cbc"/><stop offset="1" stop-color="#2e5e9c"/></linearGradient>
+   <radialGradient id="${id}o" cx=".02" cy=".62" r=".5"><stop offset="0" stop-color="#fff6d8"/><stop offset=".35" stop-color="#ffe0a8" stop-opacity=".7"/><stop offset="1" stop-color="#ffe0a8" stop-opacity="0"/></radialGradient>
+   <linearGradient id="${id}f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88a52"/><stop offset="1" stop-color="#a86e3c"/></linearGradient></defs>
+   <rect width="1600" height="1000" fill="url(#${id}c)"/>${fold}
+   <path d="M0 0 H1600 V120 Q1400 200 1200 150 Q1000 230 800 160 Q600 230 400 150 Q200 210 0 130Z" fill="#7ec4ee" opacity=".55"/>
+   <g class="zhsst">${st}</g>
+   <path d="M0 560 Q800 520 1600 560 V1000 H0Z" fill="url(#${id}f)"/>
+   <ellipse cx="820" cy="800" rx="700" ry="170" fill="#f4a8c8"/><ellipse cx="820" cy="800" rx="640" ry="140" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="34 22" opacity=".8"/>
+   <g transform="translate(250 640)"><ellipse cx="0" cy="40" rx="150" ry="60" fill="#ffd27a" stroke="#c8962a" stroke-width="8"/><path d="M-120 36 Q0 0 120 36" stroke="#fff2c0" stroke-width="8" fill="none"/></g>
+   <g transform="translate(1380 650)"><ellipse cx="0" cy="40" rx="160" ry="62" fill="#b8a0ee" stroke="#7a5ab8" stroke-width="8"/>${betStar(0,30,22,'#fff6c0')}</g>
+   <rect x="0" y="300" width="260" height="400" fill="url(#${id}o)"/></svg>`; }
+const ZHSROOM={flur:()=>tuiRoomSVG('flur'), zimmer:()=>rfmRoomSVG(), abend:()=>betRoomSVG('abend'), bad:zhsBadSVG, kueche:()=>eikRoomSVG('kueche'), innen:zhsHoeInSVG};
+
+/* ---------- things for the hall: her cap, scarf and backpack, and her own little coat rack with three hooks ---------- */
+function zhsMuetzeSVG(){ return `<svg viewBox="0 0 70 66" style="overflow:visible"><ellipse cx="35" cy="63" rx="26" ry="3" fill="rgba(0,0,0,.16)"/>
+   <path d="M8 46 Q6 12 35 10 Q64 12 62 46Z" fill="#ff5a6a" stroke="#a8243a" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M20 44 Q18 22 26 15 M35 44 V12 M50 44 Q52 22 44 15" fill="none" stroke="#d83a50" stroke-width="2.6" stroke-linecap="round"/>
+   <rect x="5" y="42" width="60" height="16" rx="7" fill="#ffd8de" stroke="#a8243a" stroke-width="3"/><path d="M12 46 V54 M20 46 V54 M28 46 V54 M36 46 V54 M44 46 V54 M52 46 V54 M60 46 V54" stroke="#ffb0bc" stroke-width="2.4"/>
+   <circle cx="35" cy="8" r="9" fill="#fff" stroke="#c8b8c0" stroke-width="2.6"/><circle cx="32" cy="5" r="2.6" fill="#f4eef2"/></svg>`; }
+function zhsSchalSVG(){ let s=''; for(let i=0;i<6;i++) s+=`<path d="M${i<3?8:30} ${18+i%3*28} h16 v12 h-16Z" fill="#3ac8c0"/>`;
+  return `<svg viewBox="0 0 54 112" style="overflow:visible"><ellipse cx="27" cy="110" rx="20" ry="2.6" fill="rgba(0,0,0,.14)"/>
+   <path d="M8 8 Q27 -2 46 8 L46 100 H30 V20 Q27 16 24 20 V100 H8Z" fill="#ffd23a" stroke="#b8860b" stroke-width="3" stroke-linejoin="round"/>${s}
+   <path d="M8 8 Q27 -2 46 8 L46 20 Q27 10 8 20Z" fill="#ffe680" stroke="#b8860b" stroke-width="2.6" stroke-linejoin="round"/>
+   <path d="M10 100 v8 M14 100 v9 M18 100 v8 M22 100 v9 M32 100 v8 M36 100 v9 M40 100 v8 M44 100 v9" stroke="#b8860b" stroke-width="2.4" stroke-linecap="round"/></svg>`; }
+function zhsRucksackSVG(){ return `<svg viewBox="0 0 84 96" style="overflow:visible"><ellipse cx="42" cy="93" rx="32" ry="3" fill="rgba(0,0,0,.16)"/>
+   <path d="M32 14 Q32 2 42 2 Q52 2 52 14" fill="none" stroke="#7a3aa8" stroke-width="5" stroke-linecap="round"/>
+   <path d="M10 40 Q10 12 42 12 Q74 12 74 40 V82 Q74 92 64 92 H20 Q10 92 10 82Z" fill="#b07ae0" stroke="#5a2a88" stroke-width="3.4" stroke-linejoin="round"/>
+   <path d="M12 38 Q42 50 72 38" fill="none" stroke="#5a2a88" stroke-width="3" stroke-linecap="round"/><path d="M12 38 Q12 16 42 15 Q72 16 72 38 Q42 50 12 38Z" fill="#c89af0" opacity=".7"/>
+   <rect x="20" y="54" width="44" height="30" rx="9" fill="#ff8ac0" stroke="#5a2a88" stroke-width="3"/>${betStar5(42,69,10,'#ffe25a','#b8860b')}
+   <circle cx="42" cy="44" r="3.6" fill="#ffd23a" stroke="#5a2a88" stroke-width="1.8"/></svg>`; }
+/* the coat rack at her height: a painted board with three wooden hooks. viewBox 0 0 300 110; the hooks end at y 86, x 60/150/240 */
+const ZHSHAKEN=[[.2,.79],[.5,.79],[.8,.79]];
+function zhsGardSVG(){ const hk=x=>`<path d="M${x} 40 V70 Q${x} 86 ${x+12} 86" fill="none" stroke="#8a5420" stroke-width="9" stroke-linecap="round"/><path d="M${x} 40 V70 Q${x} 86 ${x+12} 86" fill="none" stroke="#d8a46a" stroke-width="3.4" stroke-linecap="round"/><circle cx="${x}" cy="38" r="9" fill="#c88a52" stroke="#8a5420" stroke-width="3"/>`;
+  const arcs=['#ff5a6a','#ffd23a','#5ad27a','#4a9aff'].map((c,i)=>`<path d="M${120+i*8} 36 A${30-i*8} ${30-i*8} 0 0 1 ${180-i*8} 36" stroke="${c}" stroke-width="7" fill="none"/>`).join('');
+  return `<svg viewBox="0 0 300 110" style="overflow:visible"><rect x="6" y="10" width="288" height="50" rx="20" fill="#f4c890" stroke="#a8743e" stroke-width="5"/>
+   <path d="M24 22 H276" stroke="#fde4bc" stroke-width="4" stroke-linecap="round" opacity=".8"/>${arcs}${betStar(36,34,9,'#ff8ac0')}${betStar(264,34,9,'#7ab8f0')}${betStar(92,30,6,'#ffffff')}${betStar(208,30,6,'#ffffff')}
+   ${hk(60)}${hk(150)}${hk(240)}</svg>`; }
+
+/* ---------- the cave: two chairs with her starry bed blanket over them, in two layers so the family can sit inside.
+   Back (.zhshb): the dark inside and the blanket hanging down behind and at the sides. Front (.zhshf): the chairs and the blanket roof
+   with its scalloped edge. In both the blanket part is a separate layer (.zl.zd) that is uncovered from left to right (--o 0..1).
+   Both viewBox 0 0 400 260 ---------- */
+const ZHSDK=[[10,46],[390,46]];
+function zhsStuhlG(x,fl){ const s=fl?-1:1, X=v=>x+s*v;
+  return `<path d="M${X(18)} 160 L${X(10)} 252 M${X(92)} 160 L${X(100)} 252" stroke="#b8763a" stroke-width="10" stroke-linecap="round"/><path d="M${X(16)} 214 H${X(96)}" stroke="#b8763a" stroke-width="7"/>
+   <path d="M${X(18)} 160 L${X(10)} 252 M${X(92)} 160 L${X(100)} 252" stroke="#f0b060" stroke-width="4.4" stroke-linecap="round"/>
+   <path d="M${X(14)} 150 V58 Q${X(14)} 36 ${X(54)} 36 Q${X(94)} 36 ${X(94)} 58 V150Z" fill="#f0b060" stroke="#b8763a" stroke-width="5" stroke-linejoin="round"/>
+   <path d="M${X(28)} 140 V66 Q${X(28)} 50 ${X(54)} 50 Q${X(80)} 50 ${X(80)} 66 V140Z" fill="#ffe0a0"/>
+   <path d="M${X(4)} 148 H${X(104)} L${X(110)} 166 H${X(-2)}Z" fill="#e89a48" stroke="#b8763a" stroke-width="5" stroke-linejoin="round"/>`; }
+function zhsDeckePat(id){ return `<pattern id="${id}" width="46" height="46" patternUnits="userSpaceOnUse"><rect width="46" height="46" fill="#8ad0f4"/>${betStar(12,12,6,'#fff6c0')}${betStar(35,34,4.6,'#ffffff',.85)}</pattern>`; }
+function zhsHoeBackSVG(){ const id='zhb'+(++LANC);
+  return `<div class="zl zb"><svg viewBox="0 0 400 260" style="overflow:visible"><defs>${zhsDeckePat(id+'p')}
+    <linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34447e"/><stop offset="1" stop-color="#5a5a9e"/></linearGradient></defs>
+   <ellipse cx="200" cy="254" rx="196" ry="7" fill="rgba(0,0,0,.2)"/>
+   <path d="M30 70 Q200 50 370 70 L364 252 H36Z" fill="url(#${id}g)"/><path d="M36 252 Q200 232 364 252Z" fill="#46468a"/>
+   <path d="M50 90 Q120 150 110 250 M350 90 Q280 150 290 250 M200 70 V250" stroke="#4a5a9a" stroke-width="4" fill="none" opacity=".5"/>
+   <path d="M10 54 Q2 150 2 236 Q14 248 26 238 Q36 248 44 236 L40 70Z" fill="url(#${id}p)" stroke="#3a8ac0" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M390 54 Q398 150 398 236 Q386 248 374 238 Q364 248 356 236 L360 70Z" fill="url(#${id}p)" stroke="#3a8ac0" stroke-width="4" stroke-linejoin="round"/></svg></div>`; }
+function zhsHoeFrontSVG(){ const id='zhf'+(++LANC);
+  return `<div class="zl zs"><svg viewBox="0 0 400 260" style="overflow:visible">${zhsStuhlG(28,0)}${zhsStuhlG(372,1)}</svg></div>
+   <div class="zl zd"><svg viewBox="0 0 400 260" style="overflow:visible"><defs>${zhsDeckePat(id+'p')}</defs>
+   <path d="M8 58 Q16 26 82 24 Q200 46 318 24 Q384 26 392 58 L386 100 Q362 114 339.5 100 Q316 114 293 100 Q269.5 114 246.5 100 Q223 114 200 100 Q177 114 153.5 100 Q130 114 107 100 Q83.5 114 60.5 100 Q37 114 14 100Z" fill="url(#${id}p)" stroke="#3a8ac0" stroke-width="4.4" stroke-linejoin="round"/>
+   <path d="M18 92 Q37 104 60.5 92 Q83.5 104 107 92 Q130 104 153.5 92 Q177 104 200 92 Q223 104 246.5 92 Q269.5 104 293 92 Q316 104 339.5 92 Q362 104 382 92" stroke="#fff" stroke-width="5" fill="none" opacity=".85" stroke-linecap="round"/>
+   <path d="M34 40 Q82 26 130 30 Q200 46 270 30 Q318 26 366 40" stroke="#c4ecff" stroke-width="5" fill="none" opacity=".8" stroke-linecap="round"/></svg></div>`; }
+/* the folded blanket (a roll with stars) that becomes the roof. viewBox 0 0 60 40 */
+function zhsRolleSVG(){ return `<svg viewBox="0 0 60 40" style="overflow:visible"><path d="M8 10 Q30 2 52 10 Q60 22 52 32 Q30 40 8 32 Q0 22 8 10Z" fill="#8ad0f4" stroke="#3a8ac0" stroke-width="3" stroke-linejoin="round"/>
+   <path d="M10 18 Q30 12 50 18 M10 26 Q30 20 50 26" stroke="#3a8ac0" stroke-width="2" fill="none" opacity=".6"/>${betStar(22,20,4,'#fff6c0')}${betStar(40,24,3.4,'#fff6c0')}</svg>`; }
+
+/* ---------- the bathroom: a bar of soap with foam. viewBox 0 0 60 36 ---------- */
+function zhsSeifeSVG(){ return `<svg viewBox="0 0 60 36" style="overflow:visible"><ellipse cx="30" cy="33" rx="24" ry="3" fill="rgba(0,0,0,.15)"/>
+   <path d="M8 18 Q8 10 18 10 H42 Q52 10 52 18 V24 Q52 32 42 32 H18 Q8 32 8 24Z" fill="#ff9ac0" stroke="#c04a80" stroke-width="2.8"/><path d="M14 16 H46" stroke="#ffd0e4" stroke-width="3" stroke-linecap="round"/>
+   <g class="zhssch" fill="#fff" stroke="#c8dcec" stroke-width="1.4"><circle cx="16" cy="10" r="6"/><circle cx="26" cy="6" r="7"/><circle cx="37" cy="8" r="6"/><circle cx="46" cy="11" r="4.4"/><circle cx="31" cy="1" r="3.6"/></g></svg>`; }
+
+/* ---------- the kitchen: the pot with noodles in tomato sauce (.swirl turns while stirring), a step stool, plates, Boris' bowl and a
+   single noodle ---------- */
+function zhsNudelG(n,sc){ let s=''; const r=seeded(sc||5);
+  for(let i=0;i<n;i++){ const a=r()*6.28, R=8+r()*30, x=Math.cos(a)*R, y=Math.sin(a)*R; let d=`M${x.toFixed(1)} ${y.toFixed(1)}`; let ang=r()*6.28;
+    for(let k=0;k<4;k++){ ang+=(r()-.5)*2.4; d+=` q${(Math.cos(ang)*7).toFixed(1)} ${(Math.sin(ang)*7).toFixed(1)} ${(Math.cos(ang+.5)*12).toFixed(1)} ${(Math.sin(ang+.5)*12).toFixed(1)}`; }
+    s+=`<path d="${d}" stroke="#d8a428" stroke-width="5.4" fill="none" stroke-linecap="round"/><path d="${d}" stroke="#ffe27a" stroke-width="3" fill="none" stroke-linecap="round"/>`; }
+  return s; }
+function zhsTopfSVG(){ return `<svg viewBox="0 0 160 112" style="overflow:visible">
+   <path d="M12 34 H2 Q-4 34 -2 42 H12 M148 34 H158 Q164 34 162 42 H148" stroke="#5a6a7a" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <path d="M12 30 H148 V92 Q148 108 128 108 H32 Q12 108 12 92Z" fill="#ff7a5a" stroke="#a83a2a" stroke-width="4" stroke-linejoin="round"/>
+   <path d="M20 44 Q22 96 40 100" stroke="#ffb0a0" stroke-width="6" fill="none" stroke-linecap="round" opacity=".7"/>
+   <ellipse cx="80" cy="30" rx="70" ry="16" fill="#c83a2a" stroke="#a83a2a" stroke-width="4"/><ellipse cx="80" cy="31" rx="62" ry="12" fill="#e8442e"/>
+   <g transform="translate(80 31) scale(1 .3)"><g class="swirl">${zhsNudelG(9,11)}<circle cx="-30" cy="10" r="5" fill="#ff8a6a"/><circle cx="24" cy="-18" r="4" fill="#ff8a6a"/><circle cx="8" cy="28" r="4.6" fill="#ff8a6a"/></g></g>
+   <path d="M68 22 Q74 0 64 -16" class="zhsdampf" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/><path d="M96 20 Q90 0 100 -18" class="zhsdampf" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/></svg>`; }
+function zhsHockerSVG(){ return `<svg viewBox="0 0 100 70" style="overflow:visible"><ellipse cx="50" cy="67" rx="44" ry="3" fill="rgba(0,0,0,.18)"/>
+   <path d="M18 22 L10 66 M82 22 L90 66" stroke="#2a8a7a" stroke-width="9" stroke-linecap="round"/><path d="M14 46 H86" stroke="#2a8a7a" stroke-width="6"/>
+   <rect x="4" y="10" width="92" height="16" rx="7" fill="#5ad2b4" stroke="#2a8a7a" stroke-width="4"/>${betStar(50,18,5,'#fff')}</svg>`; }
+function zhsTellerSVG(full,sc){ return `<svg viewBox="0 0 100 40" style="overflow:visible"><ellipse cx="50" cy="26" rx="48" ry="13" fill="#e4eef6" stroke="#9ab0c4" stroke-width="2.6"/><ellipse cx="50" cy="24" rx="34" ry="8" fill="#fff"/>
+   <g class="zhsvoll"${full?'':' style="opacity:0"'}><g transform="translate(50 20) scale(.62 .26)">${zhsNudelG(7,sc||3)}</g><ellipse cx="50" cy="19" rx="12" ry="4" fill="#e8442e"/></g></svg>`; }
+function zhsNapfSVG(){ return `<svg viewBox="0 0 80 40" style="overflow:visible"><ellipse cx="40" cy="37" rx="34" ry="3" fill="rgba(0,0,0,.18)"/>
+   <path d="M6 14 H74 L66 34 Q64 37 60 37 H20 Q16 37 14 34Z" fill="#4a9aff" stroke="#1e5ab8" stroke-width="3" stroke-linejoin="round"/><ellipse cx="40" cy="14" rx="34" ry="6" fill="#a0ccff" stroke="#1e5ab8" stroke-width="3"/>
+   <path d="M30 24 l3 -4 3 4 3 -4 3 4 3 -4 3 4" stroke="#fff" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
+   <g class="zhsvoll" style="opacity:0"><g transform="translate(40 11) scale(.7 .2)">${zhsNudelG(6,9)}</g><ellipse cx="40" cy="10" rx="8" ry="2.6" fill="#e8442e"/></g></svg>`; }
+function zhsNudelSVG(){ return `<svg viewBox="0 0 70 30" style="overflow:visible"><path d="M4 18 Q14 2 24 16 Q34 30 44 14 Q54 0 66 14" stroke="#d8a428" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <path d="M4 18 Q14 2 24 16 Q34 30 44 14 Q54 0 66 14" stroke="#ffe27a" stroke-width="3.4" fill="none" stroke-linecap="round"/><circle cx="30" cy="20" r="3" fill="#e8442e"/></svg>`; }
+
+Object.assign(SVGP,{
+  ZHSMUETZE:[zhsMuetzeSVG,1],ZHSSCHAL:[zhsSchalSVG,1],ZHSRUCKSACK:[zhsRucksackSVG,.88],ZHSGARD:[zhsGardSVG,1],ZHSROLLE:[zhsRolleSVG,1],ZHSSEIFE:[zhsSeifeSVG,1],
+  ZHSTOPF:[zhsTopfSVG,1],ZHSHOCKER:[zhsHockerSVG,1],ZHSTELLER:[()=>zhsTellerSVG(0,3),1],ZHSTELLER2:[()=>zhsTellerSVG(0,7),1],ZHSNAPF:[zhsNapfSVG,1],ZHSNUDEL:[zhsNudelSVG,1]
+});
+
+/* ---------- the sets ---------- */
+Object.assign(SETS2,{
+  zhsflur:{clean:1, sky:'#fdeedd', zroom:'flur'},
+  zhszimmer:{clean:1, sky:'#fde4ec', zroom:'zimmer'},
+  zhsinnen:{sky:'#2a3a7a', zroom:'innen', dcol:'10,14,40'},
+  zhsbad:{clean:1, sky:'#d4f0f0', zroom:'bad'},
+  zhskueche:{clean:1, sky:'#fff4dc', zroom:'kueche'},
+  zhsabend:{clean:1, sky:'#fde4ec', zroom:'abend'}
+});
+Object.assign(TSYL,{'MÜTZE':TSYL['MÜTZE']||'MÜT-ZE',DECKE:TSYL.DECKE||'DE-CKE','HÖHLE':TSYL['HÖHLE']||'HÖH-LE',SEIFE:TSYL.SEIFE||'SEI-FE',NUDEL:TSYL.NUDEL||'NU-DEL',BUCH:TSYL.BUCH||'BUCH',PAPA:TSYL.PAPA||'PA-PA'});
+
+/* ---------- sounds: hanging up, the blanket, a sneeze, a bump, noodles flying and landing, a slurp ---------- */
+const zhsLate=()=>!tale||!tale.t||tale.t.id!=='zuhause'||!taleOn();
+function zhsTone(x,f0,f1,ms,v,type,dl){ const ac=feeAC(); if(!ac||zhsLate()) return; try{ const t=ac.currentTime+(dl||0), out=klOut(ac,x), o=ac.createOscillator(), g=ac.createGain(); o.type=type||'sine';
+  o.frequency.setValueAtTime(f0,t); o.frequency.exponentialRampToValueAtTime(f1,t+ms/1000); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0006,t+ms/1000);
+  o.connect(g); g.connect(out); o.start(t); o.stop(t+ms/1000+.05); }catch(e){} }
+function zhsNoise(x,v,f0,f1,ms,type,dl){ const ac=feeAC(); if(!ac||zhsLate()) return; try{ const t=ac.currentTime+(dl||0), out=klOut(ac,x), d=(ms||300)/1000;
+  const n=ac.createBufferSource(); n.buffer=klNoise(ac); n.loop=true; const bp=ac.createBiquadFilter(); bp.type=type||'bandpass'; bp.Q.value=1.2; bp.frequency.setValueAtTime(f0,t); bp.frequency.exponentialRampToValueAtTime(f1,t+d);
+  const g=ac.createGain(); g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(v,t+Math.min(.05,d*.25)); g.gain.exponentialRampToValueAtTime(.0005,t+d); n.connect(bp); bp.connect(g); g.connect(out); n.start(t); n.stop(t+d+.05); }catch(e){} }
+function zhsKlick(x){ zhsTone(x,900,700,60,.08,'triangle'); zhsTone(x,1400,1000,40,.04,'square',.03); }
+function zhsWusch(x){ zhsNoise(x,.07,500,1800,420); }
+function zhsBums(x){ zhsTone(x,140,55,360,.16,'sine'); zhsNoise(x,.09,500,150,260,'lowpass'); }
+function zhsHatschi(x){ zhsNoise(x,.06,1800,2600,180); zhsNoise(x,.1,3000,900,260,'bandpass',.22); zhsTone(x,700,420,180,.04,'triangle',.22); }
+function zhsHui(x){ zhsTone(x,500,1400,380,.05,'sine'); }
+function zhsPlatsch(x){ zhsNoise(x,.08,1200,300,200,'lowpass'); zhsTone(x,320,140,160,.05,'sine'); }
+function zhsSchlurf(x){ zhsNoise(x,.07,600,3000,520); }
+function zhsBlubb(x){ zhsTone(x,180,90,240,.05,'sine'); zhsTone(x,260,120,200,.04,'sine',.16); }
+
+/* ---------- helpers ---------- */
+/* the cave: both layers get the same blanket state o (0 = only the chairs, 1 = the blanket over them) */
+function zhsDecke(o){ o=Math.max(0,Math.min(1,o)); ['hb','hf'].forEach(id=>{ const H=TB&&TB.els[id]; if(H) H.style.setProperty('--o',o.toFixed(3)); });
+  const R=TB&&TB.els.rolle, G=TB&&TB.els.grip; if(R||G){ const [x,y]=zhsEcke(o); if(R){ putAt(R,x,y); R.style.scale=(1-o*.55).toFixed(3); R.style.opacity=o>.94?0:1; } if(G){ putAt(G,x,y); G.style.opacity=o>=1?0:1; } } }
+/* the leading edge of the blanket on the screen (screen px) */
+function zhsEcke(o){ const H=TB.els.hf, r=H.querySelector('.zs svg').getBoundingClientRect(), [a,b]=ZHSDK, x=a[0]+(b[0]-a[0])*o, y=a[1]+6-16*Math.min(1,Math.sin(o*Math.PI)*3);
+  return [r.left+r.width*x/400, r.top+r.height*y/260]; }
+/* a point of the cave (svg coords 400 x 260) in % of the stage */
+function zhsHoeAt(x,y){ return eikAt(TB.els.hf,x/400,y/260); }
+/* the cave grows (pat in the last scene): both layers to width w vh and top y % */
+function zhsWachs(w,y,ms){ ['hb','hf'].forEach(id=>{ const H=TB.els[id]; if(!H) return; H.style.transition=`width ${ms||800}ms cubic-bezier(.3,1.4,.5,1),top ${ms||800}ms cubic-bezier(.3,1.4,.5,1)`; H.style.width=w+'vh'; if(y!=null) H.style.top=y+'%'; }); }
+/* a character walks / crawls to x,y */
+function zhsHin(id,x,y,ms,cls,cb){ const E=TB.els[id]; if(!E) return; if(cls) E.classList.add(cls); kiPath(E,[[x,y]],ms||1600,()=>{ if(cls) E.classList.remove(cls); if(cb) cb(); }); }
+function zhsDa(id,x,y,w){ const E=TB.els[id]; if(!E) return; E.getAnimations().forEach(q=>q.cancel()); E.style.left=x+'%'; E.style.top=y+'%'; if(w) E.style.width=w+'vh'; E.classList.remove('rfmkrab'); }
+/* noodles jump out of the pot in an arc to a target element (cb when they land) */
+function zhsNudelFlug(from,T,n,ms,cb){ if(!from||!T) return; const [x0,y0]=relEl(from,[.5,.25]), [x1,y1]=relEl(T,[.5,.4]), u=vu();
+  for(let i=0;i<(n||3);i++) bLater(()=>{ const mx=(x0+x1)/2+(Math.random()-.5)*u*8, my=Math.min(y0,y1)-u*(18+Math.random()*8), d=ms||1100;
+    const p=document.createElement('span'); p.className='zhsfl'; p.innerHTML=zhsNudelSVG(); p.style.cssText=`width:${(u*6).toFixed(1)}px;translate:-50% -50%`; $('fx').appendChild(p);
+    try{ p.animate([{transform:`translate(${x0}px,${y0}px) rotate(0deg) scale(.6)`,opacity:0},{transform:`translate(${x0}px,${y0-u*4}px) rotate(60deg)`,opacity:1,offset:.1},
+      {transform:`translate(${mx}px,${my}px) rotate(260deg)`,opacity:1,offset:.5},{transform:`translate(${x1}px,${y1}px) rotate(420deg) scale(.8)`,opacity:1,offset:.95},{transform:`translate(${x1}px,${y1}px) scale(.4)`,opacity:0}],{duration:d,easing:'ease-in-out',fill:'forwards'}).onfinish=()=>p.remove(); }catch(e){ p.remove(); }
+    setTimeout(()=>p.remove(),d+300); },i*120);
+  zhsHui(x0); bLater(()=>{ zhsPlatsch(x1); if(cb) cb(); },(ms||1100)+(n||3)*120-80); }
+
+/* ---------- the new gesture: hoehle. Like ausbreiten (spread the picnic blanket): the folded blanket lies on the first chair, a glowing
+   corner sits at its edge; the finger pulls it over to the other chair and the blanket roof opens as far as the finger gets (progress
+   kept). Starting anywhere near the edge or the chairs counts; ~70 % is enough, then it settles by itself. A tap is a try.
+   a:{id (the front layer 'hf')}; hook spread(o) ---------- */
+G2.hoehle=Object.assign(Object.create(G2.ausbreiten),{
+  setup(){ TB.ab={o:0,o0:0,dn:false,mv:0,sx:0,sy:0,go:false,fin:false,auto:false,tap:0};
+    if(!TB.els.grip){ const G=el('div','famgrip'); TB.act.appendChild(G); TB.els.grip=G; } zhsDecke(0);
+    g2loop(dt=>{ const s=TB.ab; if((s.go||s.auto)&&s.o<1) this.set(Math.min(1,s.o+dt*(s.go?1.1:.55))); }); },
+  pts(){ return [zhsEcke(0),zhsEcke(1)]; },
+  down(x,y){ const s=TB.ab; if(s.fin||s.auto) return; const [cx,cy]=zhsEcke(s.o), u=vu(); s.dn=Math.hypot(x-cx,y-cy)<u*20||nearEl(TB.els.hf.querySelector('.zs svg'),x,y,u*4);
+    s.mv=0; s.sx=x; s.sy=y; s.o0=s.o; if(s.dn){ poke2(); TB.els.grip.classList.add('held'); } },
+  set(o){ const s=TB.ab, old=s.o; s.o=o; zhsDecke(o); if(Math.floor(o*5)>Math.floor(old*5)){ const [x,y]=zhsEcke(o); chimeAt([523+Math.floor(o*5)*110],x); zhsWusch(x); poke2(); if(TB.sc.spread) TB.sc.spread(o); }
+    if(o>=.7&&!s.go){ s.go=true; s.fin=true; } if(o>=1&&s.fin&&!s.end){ s.end=true; const [x,y]=relEl(TB.els.hf,[.5,.3]); glitterBurst(x,y,26,24); fxBurst(x,y,20); bLater(()=>done2(),500); } },
+  frames(){ const s=TB.ab, a=zhsEcke(s.o), b=zhsEcke(1), m=zhsEcke((s.o+1)/2), u=vu(); return [[a[0],a[1]+u*6,1,0],[a[0],a[1],.85,1],[m[0],m[1],.85,1],[b[0],b[1],.85,1],[b[0],b[1]+u*4,1,0]]; }
+});
+/* ================= Ehfjes Abenteuer zu Hause ================= */
+/* heart: Ehfje is ready for Kita – but today the Kita is closed. "Zu Hause gibt es gar keine Abenteuer!" Mama: "Abenteuer gibt es
+   überall. Man muss sie nur finden." So she finds them: she builds a cave from two chairs and her starry bed blanket, her magic finger
+   finds glowing eyes in the dark (Socke, Boris and her teddy) and her spell makes the blanket stars shine; washing hands "wie in der
+   Kita" turns into a soap-bubble hunt (Socke sneezes), her noodle spell sends the noodles flying onto the plates (one lands on Boris'
+   head), and at quiet time she reads to everybody in the cave until they all fall asleep. In the evening Papa wants into the cave too –
+   bums, too big. Her spell makes the cave bigger and bigger until the whole family fits. "Abenteuer gibt es nämlich überall." */
+const ZHSBETT=[21,70,44];
+const ZHS2={id:'zuhause', v2:true, eef:1, fam:1, dur:{}, title:'Eefjes Abenteuer zu Hause', vtitle:'Ehfjes Abenteuer zu Hause', icon:'⛺',
+ cover:'linear-gradient(180deg,#3a5aa8 0%,#7ab0e4 38%,#f4b8d0 72%,#ffe8b0 100%)',
+ cast(sc){ const A=TB.act; if(sc.st) Object.assign(TST,sc.st);
+  const R=el('div','eikroom zhsroom',ZHSROOM[SETS2[sc.set].zroom]()); A.insertBefore(R,A.firstChild); TB.els.room=R;
+  let after=R;
+  if(sc.bett){ const [bx,by,bw]=ZHSBETT, B=el('div','tp2 rfmbett glatt'+(TST.leer?' zhsleer':''),rfmBettSVG()); B.style.cssText=`left:${bx}%;top:${by}%;width:${bw}vh`; after.after(B); after=B; TB.els.bett=B;
+    const [kx,ky]=eikAt(B,.27,.45), K=el('div','tp2 rfmki',rfmKissenSVG()); K.style.cssText=`left:${kx}%;top:${ky}%;width:${(bw*.3).toFixed(1)}vh`; B.after(K); after=K; TB.els.kissen=K; K.style.setProperty('--kf',1); }
+  if(sc.hoe){ const [x,y,w]=sc.hoe, cs=`left:${x}%;top:${y}%;width:${w}vh;--o:${TST.dk?1:0}`;
+    const HB=el('div','tp2 zhshb',`<div class="bb">${zhsHoeBackSVG()}</div>`); HB.style.cssText=cs; after.after(HB); TB.els.hb=HB;
+    const HF=el('div','tp2 zhshf',`<div class="bb">${zhsHoeFrontSVG()}</div>`); HF.style.cssText=cs; A.appendChild(HF); TB.els.hf=HF; }
+  FAM2.cast.call(this,sc); if(TB.els.hf) A.appendChild(TB.els.hf);
+  if(sc.buch){ const [x,y,w]=sc.buch, D=el('div','tp2 betbuch',betBuchHTML()); D.style.cssText=`left:${x}%;top:${y}%;width:${w}vh`; A.appendChild(D); TB.els.buch=D; betBookSet(0); }
+  (sc.augen||[]).forEach(([id,fx,fy,w,c])=>{ const P=TB.els[id]; if(!P) return; const E=el('div','tp2 kid wldaug',wldAugenSVG(c)); E.style.cssText=`left:${fx*100}%;top:${fy*100}%;width:${w}%`;
+    (P.querySelector(':scope>.bb')||P).appendChild(E); TB.els['a'+id]=E; E._L=light({el:E,r0:2.2,rT:2.2,k0:1,kT:1}); });
+  (sc.front||[]).forEach(id=>{ if(TB.els[id]) A.appendChild(TB.els[id]); }); },
+ react(id,b,x,y){ const u=vu();
+  if(id==='hb'||id==='hf'){ ['hb','hf'].forEach(k=>TB.els[k]&&wiggle(TB.els[k])); zhsWusch(x); fxBurst(x,y-u*3,8,['rgba(255,246,192,.95)','rgba(255,255,255,.9)']); return true; }
+  if(id==='gard'||id==='muetze'||id==='schal'||id==='rucksack'){ sqs(b); zhsKlick(x); return true; }
+  if(id==='seife'){ sqs(b); bubs(x,y,6); chime([1175,1568]); return true; }
+  if(id==='topf'){ sqs(b); zhsBlubb(x); return true; }
+  if(id==='teddy'){ sqs(b); bubble('brumm!',x,y-u*5,3.2,'#ffe8c8'); chime([392,523]); return true; }
+  if(id==='bett'||id==='kissen'){ sqs(b); rfmFlausch(x); return true; }
+  if(/^t\d$|^napf$|^hocker$|^ofen$|^tisch$|^wb$/.test(id)){ sqs(b); chime([784]); return true; }
+  return FAM2.react(id,b,x,y); },
+ sc:[
+ /* 1 – the hall in the morning: her cap, scarf and backpack are ready for Kita. Mama: "Die Kita ist heute zu." Ehfje is sad – "Und zu
+    Hause gibt es gar keine Abenteuer." – "Abenteuer gibt es überall. Man muss sie nur finden." Hang her things on her hooks (drag) */
+ {set:'zhsflur', dark:0, u:[93,82,10], ef:[26,66,26,'st'], mama:[114,58,24], boris:[66,88,15,'lie'], sk:[9,88,8],
+  p:[['gard','ZHSGARD',52,50,36,'zhsgd'],['schal','ZHSSCHAL',17,90,5.4,'zhsding'],['muetze','ZHSMUETZE',38,92,8,'zhsding'],['rucksack','ZHSRUCKSACK',47,88,10,'zhsding']],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',bom:'smile',skm:'smile'},
+  enter(){ onPh('im Flur',()=>{ mood('hexe','happy'); });
+    onPh('Ihre Mütze',()=>{ ['muetze','schal','rucksack'].forEach((id,i)=>bLater(()=>{ const e=TB.els[id]; wiggle(e); zhsKlick(ctr(e)[0]); },i*260)); });
+    onPh('in die Kita',()=>{ mood('hexe','laugh'); efArm('up'); hearts(...relEl(TB.els.hexe,[.5,.15]),2); });
+    onPh('Da kam Mama',()=>{ zhsHin('mama',82,58,1700); efArm('dn'); mood('hexe','happy'); });
+    talk('mama','Ehfje, die Kita','Zu?'); onPh('Ehfje, die Kita',()=>{ mood('mama','oh'); famArm('mama','up'); }); onPh('heute zu',()=>{ famArm('mama','dn'); mood('hexe','oh'); });
+    talk('hexe','Zu?','Ehfje machte'); onPh('Zu?',()=>{ mood('hexe','oh'); efArm('dn'); });
+    onPh('trauriges Gesicht',()=>{ mood('hexe','cry'); mood('socke','oh'); mood('boris','oh'); });
+    talk('hexe','Aber da sind','Abenteuer gibt'); onPh('Aber da sind',()=>{ mood('hexe','worry'); }); onPh('gar keine Abenteuer',()=>{ mood('hexe','cry'); });
+    talk('mama','Abenteuer gibt','sagte Mama'); talk('mama','Man muss','Häng'); onPh('Abenteuer gibt',()=>{ mood('mama','happy'); famArm('mama','wide'); mood('hexe','oh'); });
+    onPh('nur finden',()=>{ famArm('mama','dn'); mood('mama','smile'); mood('hexe','smile'); mood('socke','smile'); mood('boris','smile'); });
+    onPh('Häng deine',()=>{ efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); zhsDa('mama',82,58); famArm('mama','dn'); mood('mama','smile'); mood('hexe','happy'); efArm('fwd'); mood('socke','smile'); mood('boris','smile'); },
+  a:{t:'drag',ids:['muetze','schal','rucksack'],to:'gard',w:'MÜTZE'},
+  h:'Zieh die Mütze, den Schal und den Rucksack an die Haken!',
+  s:'Ehfje stand schon im Flur. Ihre Mütze, ihr Schal und ihr Rucksack lagen bereit, denn gleich ging es in die Kita. Da kam Mama in den Flur. Ehfje, die Kita ist heute zu. Zu? Ehfje machte ein ganz trauriges Gesicht. Aber da sind doch Peppio und Niklas! Und zu Hause gibt es gar keine Abenteuer. Abenteuer gibt es überall, sagte Mama. Man muss sie nur finden. Häng deine Sachen an die Haken!',
+  item(id,b){ const G=TB.els.gard, k={muetze:0,schal:1,rucksack:2}[id], [hx,hy]=eikAt(G,...ZHSHAKEN[k]);
+    bLater(()=>{ const h=b.offsetHeight/TB.W.offsetHeight*100; b.style.transition='left .35s ease-out,top .35s ease-out'; b.style.left=hx+'%'; b.style.top=(hy+h*.42)+'%'; b.classList.add('zhshang'); zhsKlick(ctr(b)[0]); },60);
+    const n=3-TB.left.length; mood('hexe',n%2?'happy':'smile'); if(n===2){ famWag(1); mood('boris','happy'); } },
+  done(){ mood('hexe','happy'); efArm('dn'); },
+  d:[()=>{ onPh('überlegte',()=>{ mood('hexe','smile'); },'d1');
+       talk('hexe','Na gut','sagte sie','d1'); talk('hexe','Dann suche',null,'d1');
+       onPh('Na gut',()=>{ mood('hexe','happy'); },'d1'); onPh('Dann suche',()=>{ mood('hexe','laugh'); efArm('up'); efSpell(10); },'d1');
+       onPh('zu Hause!',()=>{ glitterBurst(...efFinger(),14,14); chime([784,988,1318]); },'d1'); },
+     'Ehfje überlegte. Na gut, sagte sie. Dann suche ich eben Abenteuer. Hier, bei uns zu Hause!',
+     ()=>{ onPh('Wuff',()=>{ const B=TB.els.boris; B.classList.remove('lie'); sqs(B); famWoof(ctr(B)[0]); famWag(1); bubble('wuff!',...relEl(B,[.8,.1]),3.6,'#fff0d8'); },'d2');
+       onPh('Miau',()=>{ const S=TB.els.socke; sqs(S); mood('socke','happy'); bubble('miau!',...relEl(S,[.5,0]),3.2,'#e0e0f0'); chime([784,659]); },'d2');
+       onPh('dein Einhorn',()=>{ uniHop(); },'d2'); onPh('Alle wollten',()=>{ mood('hexe','laugh'); efArm('up'); hearts(...relEl(TB.els.hexe,[.5,.15]),3); },'d2'); },
+     'Wuff! machte Boris. Miau! machte Socke. Und dein Einhorn wackelte mit dem Schweif. Alle wollten mitmachen.', 700]},
+
+ /* 2 – her room: "Jedes Abenteuer fängt mit einem Versteck an. Wir bauen eine Höhle!" Two chairs; the unicorn brings the big starry
+    blanket from her bed – pull it over the chairs (hoehle, new). Socke slips in first, Boris after him, then Ehfje: "Huh, ist das dunkel!" */
+ {set:'zhszimmer', dark:0, u:[88,82,12], ef:[40,64,27,'st'], sk:[30,90,8], boris:[91,90,14,'lie'], bett:1, hoe:[64,74,64],
+  p:[['rolle','ZHSROLLE',26,64,9,'zhsrl zhshid']],
+  front:['rolle'],
+  st:{efm:'happy',efa:'dn',skm:'smile',bom:'smile',dk:0,leer:0},
+  enter(){ const HF=TB.els.hf, HB=TB.els.hb; HF.classList.add('zhsnone'); HB.classList.add('zhsnone');
+    talk('hexe','Jedes Abenteuer','sagte Ehfje'); talk('hexe','Wir bauen','Sie stellte'); onPh('Jedes Abenteuer',()=>{ mood('hexe','happy'); efArm('up'); });
+    onPh('Wir bauen',()=>{ mood('hexe','laugh'); efSpell(8); chime([659,784,988]); });
+    onPh('zwei Stühle',()=>{ HF.classList.remove('zhsnone'); HB.classList.remove('zhsnone'); try{ HF.animate([{transform:'translateY(-14vh)',opacity:0},{transform:'none',opacity:1}],{duration:700,easing:'cubic-bezier(.3,1.5,.5,1)'}); }catch(e){} bLater(()=>{ zhsKlick(ctr(HF)[0]); zhsBums(ctr(HF)[0]); },650); efArm('dn'); });
+    onPh('dein Einhorn brachte',()=>{ const U=TB.els.uni; kiPath(U,[[50,66],[30,62]],1300); });
+    onPh('große Decke',()=>{ const B=TB.els.bett, Ro=TB.els.rolle; B.classList.add('zhsleer'); TST.leer=1; rfmFlausch(ctr(B)[0]); Ro.classList.remove('zhshid'); sqs(Ro);
+      bLater(()=>{ const [x,y]=wpos(...zhsEcke(0)); kiPath(Ro,[[(26+x)/2,44],[x,y]],1200); trail(Ro,1200); kiPath(TB.els.uni,[[60,60],[88,82]],1800); },500); });
+    onPh('Zieh die Decke',()=>{ efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); const HF=TB.els.hf, HB=TB.els.hb; HF.classList.remove('zhsnone'); HB.classList.remove('zhsnone'); TST.leer=1; TB.els.bett.classList.add('zhsleer');
+    const Ro=TB.els.rolle; Ro.getAnimations().forEach(q=>q.cancel()); Ro.classList.remove('zhshid'); zhsDa('uni',88,82); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'hoehle',id:'hf',w:'DECKE'},
+  h:'Zieh die Decke mit dem Finger von einem Stuhl zum anderen!',
+  s:'Jedes Abenteuer fängt mit einem Versteck an, sagte Ehfje. Wir bauen eine Höhle! Sie stellte zwei Stühle auf, und dein Einhorn brachte die große Decke von ihrem Bett. Zieh die Decke über die Stühle!',
+  spread(o){ const q=Math.floor(o*5); mood('hexe',q%2?'laugh':'happy'); if(q===2){ mood('socke','oh'); sqs(TB.els.socke); } },
+  done(){ TST.dk=1; zhsDecke(1); mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('Fertig war',()=>{ hearts(...relEl(TB.els.hf,[.5,.25]),3); uniHop(); },'d1');
+       onPh('Socke schlüpfte',()=>{ const S=TB.els.socke, [x,y]=zhsHoeAt(150,230); zhsHin('socke',x,y,1300,null,()=>{ mood('socke','happy'); }); },'d1');
+       onPh('Dann kam Boris',()=>{ const B=TB.els.boris, [x,y]=zhsHoeAt(262,222); B.classList.add('zhsli','famrun'); famWag(1); zhsHin('boris',x,y,1600,null,()=>{ B.classList.remove('famrun'); famWoof(ctr(B)[0]); }); },'d1'); },
+     'Fertig war die Höhle! Socke schlüpfte als Erster hinein. Dann kam Boris hinterher.',
+     ()=>{ onPh('krabbelte Ehfje',()=>{ const E=TB.els.hexe, [x,y]=zhsHoeAt(200,190); mood('hexe','laugh'); efArm('fwd'); kiPath(E,[[x,y,.55]],1500,()=>{ E.style.transition='opacity .5s'; E.style.opacity=0; }); },'d2');
+       talk('hexe','Huh','ist das dunkel','d2'); onPh('dunkel hier drin',()=>{ FX.darkT=.3; bubble('huh!',...relEl(TB.els.hf,[.5,.45]),3.6,'#e8e0ff'); },'d2'); },
+     'Und dann krabbelte Ehfje hinein. Huh, ist das dunkel hier drin!', 700]},
+
+ /* 3 – inside the cave it is dark, and eyes glow at the back. Her glowing magic finger (torch) shows who it is: her teddy, Socke and
+    Boris (who licks her nose: "Du bist ein Höhlen-Hund!"). Then her spell makes the blanket stars shine like a real starry sky */
+ {set:'zhsinnen', dark:.9, u:[90,76,12], ef:[21,64,32,'st'], sk:[56,82,9], boris:[80,85,19,'lie'],
+  p:[['teddy','RFMTEDDY',38,84,10,'zhsted']],
+  augen:[['teddy',.5,.33,42],['socke',.5,.36,56],['boris',.86,.42,22,'#ffd27a']],
+  lights:[{id:'hexe',r0:15,rT:15,k0:.75,kT:.75,oy:.5},{id:'uni',r0:10,rT:10,k0:.55,kT:.55}],
+  st:{efm:'oh',efa:'dn',skm:'smile',bom:'smile'},
+  enter(){ onPh('leuchteten Augen',()=>{ ['teddy','socke','boris'].forEach((id,i)=>bLater(()=>{ const A=TB.els['a'+id]; if(A){ sqs(A); chimeAt([392-i*30],ctr(A)[0]); } },i*300)); mood('hexe','oh'); });
+    onPh('Zauberfinger',()=>{ mood('hexe','happy'); efArm('up'); const [x,y]=efFinger(); glitterBurst(x,y,10,8); chimeAt([1318,1568],x); TB.fL=light({fn:()=>efFinger(),r0:2,rT:7,k0:.9,kT:.9}); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('up'); if(!TB.fL) TB.fL=light({fn:()=>efFinger(),r0:2,rT:7,k0:.9,kT:.9}); },
+  a:{t:'torch',ids:['teddy','socke','boris'],r:18,lr:12,w:'HÖHLE'},
+  h:'Fahr mit dem Finger durch das Dunkle!',
+  s:'In der Höhle war es dunkel. Und da hinten leuchteten Augen! Ehfje ließ ihren Zauberfinger leuchten. Leuchte mit dem Finger, wer da guckt!',
+  item(id,b){ wldAugenWeg(id); const [x,y]=ctr(b), u=vu();
+    if(id==='teddy'){ bubble('brumm!',x,y-u*6,3.4,'#ffe8c8'); chimeAt([392,523],x); }
+    else if(id==='socke'){ mood('socke','happy'); bubble('miau!',x,y-u*5,3.2,'#e0e0f0'); chimeAt([784,659],x); }
+    else { mood('boris','happy'); famWag(1); famWoof(x); bubble('wuff!',x+u*6,y-u*6,3.6,'#fff0d8'); }
+    mood('hexe',TB.tLeft.length%2?'laugh':'happy'); },
+  done(){ FX.darkT=.6; mood('hexe','laugh'); },
+  d:[()=>{ onPh('Da waren Socke',()=>{ sqs(TB.els.socke); },'d1'); onPh('Boris und der Teddy',()=>{ sqs(TB.els.boris); sqs(TB.els.teddy); },'d1');
+       onPh('schleckte',()=>{ const B=TB.els.boris; B.classList.remove('lie'); B.classList.add('zhsli','famrun'); famWag(1); kiPath(B,[[31,86]],1100,()=>{ B.classList.remove('famrun'); try{ B.querySelector('.bb').animate([{transform:'none'},{transform:'translateY(-34%) rotate(14deg)',offset:.45},{transform:'translateY(-34%) rotate(10deg)',offset:.7},{transform:'none'}],{duration:900,easing:'ease-out'}); }catch(e){} bLater(()=>{ const [x,y]=relEl(TB.els.hexe.querySelector('.bb'),[.5,.3]); hearts(x,y,2); zhsSchlurf(x); },350); }); },'d1');
+       talk('hexe','Igitt','lachte Ehfje','d1'); talk('hexe','Du bist',null,'d1');
+       onPh('Igitt',()=>{ mood('hexe','laugh'); efArm('up'); },'d1'); onPh('Höhlen-Hund',()=>{ famWag(1); famWoof(ctr(TB.els.boris)[0]); efArm('dn'); },'d1'); },
+     'Da waren Socke, Boris und der Teddy! Boris schleckte Ehfje über die Nase. Igitt! lachte Ehfje. Du bist ein Höhlen-Hund!',
+     ()=>{ talk('hexe','Kribbel','Da leuchteten','d2'); onPh('Kribbel',()=>{ mood('hexe','laugh'); efArm('up'); efSpell(22); },'d2');
+       onPh('groß und klein',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,16,16); chime([988,1318,1568]); },'d2');
+       onPh('Da leuchteten',()=>{ zhsSterne(); mood('socke','oh'); mood('boris','oh'); },'d2');
+       onPh('Sternenhimmel',()=>{ mood('hexe','happy'); mood('socke','happy'); mood('boris','happy'); uniHop(); hearts(...relEl(TB.els.hexe,[.5,.2]),3); },'d2'); },
+     'Kribbel, krabbel, Funkelschein – Sterne, leuchtet groß und klein! Da leuchteten die Sterne an der Decke wie ein echter Sternenhimmel.', 900]},
+
+ /* 4 – lunch is ready, but first wash hands, "das machen wir in der Kita auch": she rubs the soap until it foams – soap bubbles fly
+    through the bathroom: catch them (pop). Boris snaps at them, the last one lands on Socke's nose – "Hatschi!" */
+ {set:'zhsbad', dark:0, u:[9,80,14], ef:[40,52,44,'st'], boris:[86,89,22,'lie'], sk:[67,90,10],
+  p:[['wb','BETWB',40,71,44,'betwb'],['seife','ZHSSEIFE',55,60,5.6,'zhssf']],
+  front:['wb','seife'],
+  st:{efm:'happy',efa:'dn',skm:'smile',bom:'smile'},
+  enter(){ onPh('Mittagessen',()=>{ chime([523,659,784]); mood('hexe','laugh'); bubble('Mittagessen!',innerWidth*.86,innerHeight*.3,3.6,'#d8fff6'); });
+    talk('hexe','Vorher','sagte Ehfje'); talk('hexe','Das machen',null); onPh('Vorher',()=>{ mood('hexe','happy'); efArm('up'); }); onPh('Das machen',()=>{ efArm('dn'); });
+    onPh('rubbelte',()=>{ const S=TB.els.seife; S.classList.add('zhsschaum'); sqs(S); bubs(...ctr(S),10); zhsBlubb(ctr(S)[0]); efArm('fwd'); });
+    onPh('Seifenblasen durchs Bad',()=>{ const [x,y]=relEl(TB.els.seife,[.5,0]); bubs(x,y,14,8); mood('boris','oh'); mood('socke','oh'); }); onPh('Tipp die',()=>{ mood('hexe','laugh'); }); },
+  ready(){ efReady(); TB.els.seife.classList.add('zhsschaum'); mood('hexe','happy'); efArm('fwd'); },
+  a:{t:'pop',n:5,src:'seife',at:[.5,.1],top:12,max:3,every:1300,v:8,sz:8,spread:16,w:'SEIFE'},
+  h:'Tipp die Seifenblasen an, bevor sie wegfliegen!',
+  s:'Mittagessen! rief Mama. Vorher Hände waschen, sagte Ehfje. Das machen wir in der Kita auch. Sie rubbelte die Seife, bis es schäumte. Da flogen Seifenblasen durchs Bad! Tipp die Seifenblasen an!',
+  popped(k,x,y){ mood('hexe',k%2?'laugh':'happy'); if(k===2){ const B=TB.els.boris; B.classList.remove('lie'); sqs(B); famWag(1); famWoof(ctr(B)[0]); } if(k===3) mood('socke','happy'); },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('Plopp',()=>{ for(let i=0;i<3;i++) bLater(()=>{ const x=innerWidth*(.3+Math.random()*.4), y=innerHeight*(.25+Math.random()*.3); bubs(x,y,6); chimeAt([880+i*120],x); },i*300); },'d1');
+       onPh('Boris schnappte',()=>{ const B=TB.els.boris; B.classList.remove('lie'); famWag(1); try{ B.querySelector('.bb').animate([{transform:'none'},{transform:'translateY(-10%) rotate(-8deg)'},{transform:'none'}],{duration:500,iterations:2}); }catch(e){} famWoof(ctr(B)[0]); },'d1');
+       onPh('Und eine landete',()=>{ zhsBlaseNase(); },'d1'); },
+     'Plopp, plopp, plopp! Boris schnappte nach den Seifenblasen. Und eine landete genau auf Sockes Nase.',
+     ()=>{ onPh('Hatschi',()=>{ const S=TB.els.socke, [x,y]=relEl(S,[.5,.3]); zhsHatschi(x); sqs(S); mood('socke','oh'); const N=TB.els.nb; if(N){ N.remove(); TB.els.nb=null; } bubs(x,y,10); fxBurst(x,y,12,['rgba(220,248,255,.9)']); bubble('hatschi!',x,y-vu()*6,3.6,'#e0e0f0'); },'d2');
+       talk('hexe','Gesundheit','kicherte','d2'); talk('hexe','Und meine',null,'d2');
+       onPh('Gesundheit',()=>{ mood('hexe','laugh'); efArm('up'); mood('socke','happy'); },'d2'); onPh('blitzsauber',()=>{ glitterBurst(...relEl(TB.els.hexe,[.5,.55]),14,12); chime([1175,1568]); efArm('dn'); },'d2'); },
+     'Hatschi! nieste Socke. Gesundheit, Socke! kicherte Ehfje. Und meine Hände sind jetzt blitzsauber.', 700]},
+
+ /* 5 – the kitchen: Mama cooks noodles with tomato sauce, Ehfje may stand on the stool and stir (stir). Her noodle spell sends the
+    noodles flying onto the plates – and one onto Boris' head. Schlapp! */
+ {set:'zhskueche', dark:0, u:[95,64,9], ef:[45,79,27,'st'], mama:[81,57,25], boris:[92,89,17], sk:[25,95,7.5],
+  p:[['tisch','EIKTISCH',12,93,36],['t1','ZHSTELLER',6,86,10],['t2','ZHSTELLER2',19,86,10],['ofen','WKKOFEN',60,82,30,'wkkofen an'],['topf','ZHSTOPF',60,63,18,'zhstopf'],['hocker','ZHSHOCKER',45,95,13],['napf','ZHSNAPF',80,96,7.6]],
+  st:{efm:'happy',efa:'dn',mam:'smile',maa:'dn',skm:'smile',bom:'smile'},
+  enter(){ onPh('kochte Mama',()=>{ const T=TB.els.topf; sqs(T); zhsBlubb(ctr(T)[0]); mood('mama','happy'); famArm('mama','up'); });
+    onPh('Tomatensoße',()=>{ famArm('mama','dn'); });
+    onPh('auf den Hocker',()=>{ const E=TB.els.hexe; mood('hexe','laugh'); sqs(E); });
+    onPh('Rühr im Topf',()=>{ efArm('fwd'); mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); efArm('fwd'); famArm('mama','dn'); },
+  a:{t:'stir',id:'topf',turns:2,pc:'rgba(255,150,120,.9)',w:'NUDEL'},
+  h:'Rühr mit dem Finger im Kreis!',
+  s:'In der Küche kochte Mama Nudeln mit Tomatensoße. Ehfje durfte auf den Hocker steigen und umrühren. Rühr im Topf, immer im Kreis!',
+  stirring(p){ const q=Math.floor(p*4); if(q>(TB.zq||0)){ TB.zq=q; mood('hexe',q%2?'laugh':'happy'); zhsBlubb(ctr(TB.els.topf)[0]); if(q===2){ mood('boris','sniff'); } } },
+  done(){ mood('hexe','laugh'); efArm('up'); },
+  d:[()=>{ onPh('das duftet',()=>{ mood('hexe','happy'); const [x,y]=relEl(TB.els.topf,[.5,.1]); for(let i=0;i<6;i++) fxAdd({k:'dust',x:x+(Math.random()-.5)*vu()*8,y,vx:(Math.random()-.5)*6*vu(),vy:-(6+Math.random()*6)*vu(),s:1.4+Math.random(),life:1.6,c:'rgba(255,255,255,.55)'}); famWag(1); },'d1');
+       onPh('eine Idee',()=>{ mood('hexe','laugh'); },'d1');
+       onPh('Kribbel',()=>{ efArm('up'); efSpell(20); mood('mama','oh'); },'d1');
+       onPh('großen Sprung',()=>{ const [x,y]=efFinger(); glitterBurst(x,y,16,16); chime([988,1318,1568]); },'d1');
+       onPh('hüpften die Nudeln',()=>{ const T=TB.els.topf; sqs(T); zhsNudelFlug(T,TB.els.t1,3,1300,()=>zhsVoll('t1')); bLater(()=>zhsNudelFlug(T,TB.els.t2,3,1200,()=>zhsVoll('t2')),350); bLater(()=>zhsNudelFlug(T,TB.els.napf,2,1000,()=>zhsVoll('napf')),700); },'d1');
+       onPh('auf den Tellern',()=>{ mood('hexe','laugh'); mood('mama','laugh'); },'d1'); },
+     'Mmh, das duftet! Ehfje hatte eine Idee. Kribbel, krabbel, Nudelschwung – Nudeln, macht den großen Sprung! Da hüpften die Nudeln aus dem Topf, hoch durch die Luft – und landeten auf den Tellern.',
+     ()=>{ onPh('Nur eine lange',()=>{ zhsNudelFlug(TB.els.topf,TB.els.boris,1,1200,()=>{ const B=TB.els.boris, N=el('div','tp2 kid zhsnb',zhsNudelSVG()); N.style.cssText='left:76%;top:2%;width:46%'; B.querySelector('.bb').appendChild(N); TB.els.nudel=N; sqs(B); mood('boris','oh'); }); },'d2');
+       onPh('schielte',()=>{ const B=TB.els.boris; try{ B.querySelector('.bb').animate([{transform:'none'},{transform:'rotate(-6deg)'},{transform:'none'}],{duration:900}); }catch(e){} },'d2');
+       onPh('Alle mussten',()=>{ mood('hexe','laugh'); mood('mama','laugh'); famArm('mama','wide'); mood('socke','happy'); },'d2');
+       onPh('Schlapp',()=>{ const N=TB.els.nudel, B=TB.els.boris; zhsSchlurf(ctr(B)[0]); if(N){ N.style.transition='opacity .3s,scale .3s'; N.style.opacity=0; N.style.scale=.3; } mood('boris','happy'); famWag(1); famArm('mama','dn'); hearts(...relEl(B,[.8,.1]),2); },'d2'); },
+     'Nur eine lange Nudel landete auf dem Kopf von Boris. Boris schielte nach oben. Alle mussten lachen. Schlapp! hatte er sie aufgeschleckt.', 700]},
+
+ /* 6 – quiet time, like in Kita: everybody snuggles into the cave, Ehfje reads to them from her storybook (blaettern). Socke yawns,
+    Boris yawns, the unicorn closes its eyes – and when Mama looks in, they are all fast asleep. Ehfje too */
+ {set:'zhszimmer', dark:.14, u:[35,81,10], ef:[56,70,25,'st'], sk:[43,84,7.5], boris:[71,84,13,'lie'], mama:[114,57,25], bett:1, hoe:[57,72,70], buch:[56,86,28],
+  front:['hf','hexe','buch'],
+  st:{efm:'happy',efa:'dn',skm:'smile',bom:'smile',mam:'smile',maa:'dn',dk:1,leer:1},
+  enter(){ onPh('Ruhezeit',()=>{ mood('hexe','smile'); FX.darkT=.18; });
+    onPh('Märchenbuch',()=>{ const B=TB.els.buch; sqs(B); glitterBurst(...ctr(B),12,16); betRustle(ctr(B)[0]); });
+    onPh('kuschelten sich',()=>{ sqs(TB.els.socke); sqs(TB.els.boris); uniHop(); });
+    talk('hexe','Ich lese','sagte Ehfje'); talk('hexe','wie in der Kita','Blätter'); onPh('Ich lese',()=>{ mood('hexe','laugh'); }); onPh('Blätter',()=>{ mood('hexe','happy'); }); },
+  ready(){ efReady(); mood('hexe','happy'); },
+  a:{t:'blaettern',id:'buch',n:3,w:'BUCH'},
+  h:'Wisch über die Seite, dann blätterst du um!',
+  s:'Nach dem Essen ist in der Kita Ruhezeit. Ehfje holte ihr Märchenbuch. Socke, Boris und dein Einhorn kuschelten sich in die Höhle. Ich lese euch vor, sagte Ehfje, wie in der Kita. Blätter die Seiten um!',
+  turned(k){ mood('hexe',['happy','oh','laugh'][k-1]||'happy'); if(k===1) uniHop(); if(k===2){ sqs(TB.els.boris); famWag(1); } if(k===3){ mood('socke','happy'); hearts(...relEl(TB.els.hexe,[.5,.2]),2); } },
+  done(){ mood('hexe','happy'); },
+  d:[()=>{ onPh('erzählte',()=>{ mood('hexe','happy'); },'d1');
+       onPh('gähnte Socke',()=>betGaehn('socke','sleepy',1700),'d1');
+       onPh('gähnte Boris',()=>{ famWag(0); betGaehn('boris','sleepy',1800); },'d1');
+       onPh('die Augen zu',()=>{ betUniSleep(true); zzz('uni',.45); },'d1'); },
+     'Ehfje erzählte von einem Einhorn, von einem Drachen und von einer kleinen Hexe. Da gähnte Socke. Dann gähnte Boris. Und dann machte dein Einhorn die Augen zu.',
+     ()=>{ onPh('Als Mama',()=>{ zhsHin('mama',87,57,1800); },'d2');
+       onPh('tief und fest',()=>{ zzz('socke',.4); zzz('boris',.5); FX.darkT=.26; },'d2');
+       onPh('Und Ehfje auch',()=>{ betGaehn('hexe','asleep',1500); bLater(()=>{ zzz('hexe',.5); mood('mama','happy'); famArm('mama','hug'); },1500); },'d2'); },
+     'Als Mama hereinschaute, schliefen alle tief und fest. Und Ehfje auch.', 1100]},
+
+ /* 7 – evening: Papa comes home. "Na, wie war dein Tag ohne Kita?" – "Ich war in einer Höhle, im Seifenblasen-Bad und in der
+    Nudel-Küche!" Papa wants into the cave too – bums, much too big. Tap the cave: her spell makes it bigger and bigger (pat) until the
+    whole family fits. "Abenteuer gibt es nämlich überall." */
+ {set:'zhsabend', dark:.06, u:[12,85,10], ef:[30,66,25,'st'], papa:[114,57,27], mama:[92,57,24], jn:[80,88,12], boris:[50,88,13,'lie'], sk:[66,88,7.5], bett:1, hoe:[58,76,46],
+  front:['hf'],
+  st:{efm:'happy',efa:'dn',pam:'smile',paa:'dn',mam:'smile',maa:'dn',jam:'happy',skm:'smile',bom:'smile',dk:1,leer:1},
+  enter(){ onPh('kam Papa nach Hause',()=>{ zhsHin('papa',82,57,1800); chime([523,659]); mood('hexe','laugh'); });
+    talk('papa','Na, wie war','Ich war'); onPh('Na, wie war',()=>{ mood('papa','happy'); famArm('papa','wide'); });
+    talk('hexe','Ich war','rief Ehfje'); onPh('Ich war',()=>{ famArm('papa','dn'); mood('hexe','laugh'); efArm('up'); });
+    onPh('Seifenblasen-Bad',()=>{ const [x,y]=relEl(TB.els.hexe,[.6,.2]); bubs(x,y,8); }); onPh('Nudel-Küche',()=>{ mood('papa','laugh'); efArm('dn'); });
+    onPh('Papa wollte',()=>{ const [x,y]=zhsHoeAt(250,150); zhsHin('papa',x,y-6,1500); mood('papa','happy'); });
+    onPh('bums',()=>{ ['hb','hf'].forEach(k=>wiggle(TB.els[k])); zhsBums(ctr(TB.els.hf)[0]); mood('papa','oh'); bubble('bums!',...relEl(TB.els.hf,[.62,.2]),3.8,'#ffe8c0'); mood('hexe','oh'); });
+    onPh('viel zu groß',()=>{ zhsHin('papa',84,57,900); mood('papa','laugh'); mood('hexe','laugh'); mood('mama','laugh'); mood('janneke','laugh'); });
+    onPh('Tipp auf',()=>{ mood('hexe','happy'); efArm('up'); }); },
+  ready(){ efReady(); zhsDa('papa',84,57); mood('papa','smile'); mood('hexe','happy'); efArm('up'); },
+  a:{t:'pat',id:'hf',at:[.5,.32],n:3,wait:900,w:'PAPA'},
+  h:'Tipp auf die Höhle!',
+  s:'Am Abend kam Papa nach Hause. Na, wie war dein Tag ohne Kita? Ich war in einer Höhle, im Seifenblasen-Bad und in der Nudel-Küche! rief Ehfje. Papa wollte auch in die Höhle. Aber bums! Er war viel zu groß. Tipp auf die Höhle, dann zaubert Ehfje sie größer!',
+  patStep(k){ const W=[0,70,86,100][k], Y=[0,68,60,52][k]; efSpell(12); zhsWachs(W,Y,700); const HB=TB.els.hb; try{ HB.querySelector('.bb').animate([{transform:'none'},{transform:`scale(${1.06+k*.05},${.94-k*.05})`},{transform:'none'}],{duration:480,easing:'ease-out'}); }catch(e){}
+    zhsHui(ctr(TB.els.hf)[0]); mood('hexe',k%2?'laugh':'happy'); if(k===2){ mood('papa','oh'); mood('janneke','laugh'); famGiggle(ctr(TB.els.janneke)[0],3); } if(k===3){ mood('papa','laugh'); mood('mama','laugh'); } },
+  done(){ mood('hexe','laugh'); efArm('up'); TST.big=1; },
+  d:[()=>{ onPh('größer und größer',()=>{ const [x,y]=relEl(TB.els.hf,[.5,.3]); glitterBurst(x,y,24,30); chime([784,988,1318,1568]); ['papa','mama','uni','hexe','janneke','boris','socke'].forEach(id=>{ const E=TB.els[id]; if(E) TB.act.insertBefore(E,TB.els.hf); }); },'d1');
+       onPh('Papa, Mama',()=>{ zhsRein('papa',[236,180],null,22); bLater(()=>zhsRein('mama',[168,182],null,20),200); },'d1');
+       onPh('Janneke',()=>{ zhsRein('janneke',[168,244],'rfmkrab'); },'d1');
+       onPh('Boris, Socke',()=>{ zhsRein('boris',[236,250]); bLater(()=>zhsRein('socke',[262,246]),250); },'d1');
+       onPh('Ehfje und',()=>{ zhsRein('hexe',[204,218]); },'d1');
+       onPh('dein Einhorn',()=>{ zhsRein('uni',[140,226]); },'d1'); },
+     'Die Höhle wurde größer und größer, bis alle hineinpassten: Papa, Mama, Janneke, Boris, Socke, Ehfje und dein Einhorn.',
+     ()=>{ talk('mama','Morgen ist','sagte Mama','d2'); onPh('Morgen ist',()=>{ mood('mama','happy'); },'d2');
+       talk('hexe','Dann erzähle','sagte Ehfje','d2'); talk('hexe','Abenteuer gibt',null,'d2');
+       onPh('Dann erzähle',()=>{ mood('hexe','laugh'); efArm('up'); },'d2'); onPh('Peppio und Niklas',()=>{ hearts(...relEl(TB.els.hexe,[.5,.15]),3); },'d2');
+       onPh('Abenteuer gibt',()=>{ mood('hexe','happy'); efSpell(10); },'d2'); onPh('überall',()=>{ uniHop(); mood('papa','laugh'); famWag(1); },'d2'); },
+     'Morgen ist die Kita wieder auf, sagte Mama. Dann erzähle ich Peppio und Niklas von meinen Abenteuern, sagte Ehfje. Abenteuer gibt es nämlich überall.',
+     ()=>{ onPh('herausgekrabbelt',()=>{ mood('hexe','happy'); efArm('dn'); },'d3'); onPh('noch heute',()=>{ zhsSterne(); glitterBurst(innerWidth*.5,innerHeight*.5,24,40); chime([1047,1318,1568,2093]); },'d3'); },
+     'Und wenn sie nicht herausgekrabbelt sind, dann sitzen sie noch heute in ihrer Höhle.', 1800]}
+ ]};
+/* the bubble that lands on Socke's nose (scene 4) */
+function zhsBlaseNase(){ const S=TB.els.socke; if(!S) return; const [sx,sy]=relEl(S.querySelector('.bb'),[.5,.4]), [x0,y0]=wpx(50,20), N=el('div','tp2 pb2 zhsnb2','<div class="bubble2"></div>'); N.style.fontSize=(vu()*2.6)+'px'; TB.act.appendChild(N); TB.els.nb=N;
+  putAt(N,sx,sy); try{ N.animate([{transform:`translate(${x0-sx}px,${y0-sy}px) scale(1.4)`},{transform:`translate(${(x0-sx)*.4}px,${(y0-sy)*.6}px)`,offset:.5},{transform:'none'}],{duration:1600,easing:'ease-in-out'}); }catch(e){}
+  bLater(()=>{ sqs(S); mood('socke','oh'); chimeAt([1568],sx); },1600); }
+/* the plates fill with noodles */
+function zhsVoll(id){ const T=TB.els[id]; if(!T) return; const g=T.querySelector('.zhsvoll'); if(g){ g.style.transition='opacity .3s'; g.style.opacity=1; } sqs(T); }
+/* the stars on the blanket shine (scene 3 inside, and at the very end) */
+function zhsSterne(){ const R=TB.els.room; if(R) R.classList.add('zhslit'); FX.darkT=Math.min(FX.darkT,.35);
+  const u=vu(); for(let i=0;i<14;i++) bLater(()=>{ const x=innerWidth*(.08+Math.random()*.84), y=innerHeight*(.06+Math.random()*.3); glitterBurst(x,y,5,6); chimeAt([1047+Math.random()*900],x); if(i%3===0) light({x,y,r0:2,rT:9,k0:.5,kT:.5}); },i*110); }
+/* a character moves into the big cave, to a point of the cave (svg coords) */
+function zhsRein(id,pt,cls,w){ const E=TB.els[id]; if(!E) return; const [x,y]=zhsHoeAt(pt[0],pt[1]); if(w){ E.style.transition='width 1.3s ease-in-out'; E.style.width=w+'vh'; }
+  if(id==='uni') return kiPath(E,[[x,y]],1300); zhsHin(id,x,y,1400,cls); }
+/*<ZUHAUSE*/
 
 
 
@@ -17939,7 +18399,7 @@ function owlSVG(){ return `<svg viewBox="0 0 120 152">
   </g></svg>`; }
 const BOOK={i:0,open:false,busy:false,leaf:null,drag:null,run:0,hints:0,idle:null};
 const flaumiOn=()=>!!(S.flaumiOn||/[?&]flaumi=1/.test(location.search));
-const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},{k:'tale',t:WKK2},{k:'tale',t:RFM2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
+const bItems=()=>[{k:'lesen'},{k:'advent'},...((flaumiOn()||!FLAUMI2.wip)?[{k:'tale',t:FLAUMI2}]:[]),{k:'tale',t:EEFJE2},{k:'tale',t:FEEN2},{k:'tale',t:KLONKI2},{k:'tale',t:PEPPIO2},{k:'tale',t:TAS2},{k:'tale',t:KIKI2},{k:'tale',t:FAM2},{k:'tale',t:EINK2},{k:'tale',t:MAL2},{k:'tale',t:SPL2},{k:'tale',t:BETT2},{k:'tale',t:WLD2},{k:'tale',t:TUI2},{k:'tale',t:GAS2},{k:'tale',t:KRD2},{k:'tale',t:URK2},{k:'tale',t:WRT2},{k:'tale',t:WKK2},{k:'tale',t:RFM2},{k:'tale',t:ZHS2},...(nikoPage()?[{k:'tale',t:NIKO2}]:[]),...TALES.map(t=>({k:'tale',t}))];
 function bArt(it){ const tw=[[10,14],[84,10],[90,70],[14,80],[50,8],[70,88]].map(([x,y],k)=>`<span class="tw" style="left:${x}%;top:${y}%;animation-delay:${-k*.4}s">✦</span>`).join('');
   if(it.k==='lesen'){ const L=letters().slice(0,8); return `<div class="art" style="width:66%">${uniSVG(HERD[0],{cls:'uni'})}</div>`+tw+
     L.map((l,k)=>`<span class="lt" style="left:${8+k*11}%;top:${k%2?12:22}%;animation-delay:${-k*.3}s">${l}</span>`).join(''); }
@@ -18051,6 +18511,13 @@ if(id==='einkauf') return `<div class="eikart" style="position:absolute;inset:0"
     `<div class="tp2 chr sck" data-mood="happy" style="left:16%;top:74%;width:15%"><div class="bb">${sockeSVG()}<div class="tp2 kid rfmohr" style="left:30%;top:4%;width:34%">${rfmSockSVG('p')}</div></div></div>`+
     `<div class="tp2 rfmartk" style="left:16%;top:84%;width:28%">${rfmKorbSVG()}</div>`+
     [[12,16,3],[50,10,2.6],[88,18,3],[30,34,2.2],[92,44,2.4]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">✦</span>`).join('')+`</div>`+tw;/*<RFMART*/
+  if(id==='zuhause') return `<div class="zhsartx" style="position:absolute;inset:0"><div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 36%,#fff4f8 0,#f8c8dc 48%,#7a7ac8 96%)"></div><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:28%;border-radius:50% 50% 0 0/30% 30% 0 0;background:linear-gradient(180deg,#d89a5e,#b87a42)"></div>`+
+    `<div class="tp2 zhshb" style="left:58%;top:67%;width:80%;--o:1"><div class="bb">${zhsHoeBackSVG()}</div></div>`+
+    `<div class="tp2 chr sck" data-mood="happy" style="left:50%;top:80%;width:12%"><div class="bb">${sockeSVG()}</div></div>`+
+    `<div class="tp2 chr famdog lie" data-mood="happy" style="left:69%;top:80%;width:22%"><div class="bb">${borisSVG()}</div></div>`+
+    `<div class="tp2 zhshf" style="left:58%;top:67%;width:80%;--o:1"><div class="bb">${zhsHoeFrontSVG()}</div></div>`+
+    `<div class="tp2 chr eef" data-mood="laugh" data-arm="up" style="left:22%;top:60%;width:40%"><div class="bb">${eefjeSVG()}</div></div>`+
+    [[12,14,3],[50,8,2.6],[88,14,3],[34,26,2.2],[92,40,2.4]].map(([x,y,z],k)=>`<span class="tw" style="left:${x}%;top:${y}%;font-size:${z}vh;color:#fff;animation-delay:${-k*.5}s">✦</span>`).join('')+`</div>`+tw;/*<ZHSART*/
   if(id==='picknick') return `<div class="famart" style="position:absolute;inset:0">`+
     `<div class="famband famgold" style="top:30%;height:24%">${famSeeSVG()}</div>`+
     `<div class="tp2 famdk" style="left:52%;top:82%;width:84%">${famDeckeSVG()}</div>`+
@@ -18337,6 +18804,8 @@ regTale2(URK2);
 regTale2(WRT2);
 regTale2(WKK2);
 regTale2(RFM2);
+/* Ehfjes Abenteuer zu Hause: after the tidying-up tale, so the older lines keep their order in voice/clips.tsv */
+regTale2(ZHS2);
 if(!S.tales||typeof S.tales!=='object') S.tales={};
 let tale=null, taleRun=0, TA=null, taleT=[];
 const taleOn=()=>$('tale').classList.contains('on');
