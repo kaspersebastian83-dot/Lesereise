@@ -5072,6 +5072,21 @@
      "say": "Socke"
     }
    ]
+  },
+  {
+   "id": "w_x072_v3",
+   "model": "eleven_v3",
+   "text": "Lies mit: Decke. Höhle.",
+   "items": [
+    {
+     "key": "wort_decke",
+     "say": "Decke"
+    },
+    {
+     "key": "wort_hoehle",
+     "say": "Höhle"
+    }
+   ]
   }
  ]
 }
